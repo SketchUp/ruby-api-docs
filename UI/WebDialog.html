@@ -1,0 +1,4111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: UI::WebDialog
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "UI::WebDialog";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (W)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span>
+     &raquo; 
+    <span class="title">WebDialog</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: UI::WebDialog
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">UI::WebDialog</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Ruby WebDialog class allows you to create and interact with DHTML
+dialog boxes from Ruby. This is the best way to generate complex, embedded
+UIs inside SketchUp, but it does generally require HTML and Javascript
+expertise.</p>
+
+<p>If your goal is to simply display a website to your users, consider using
+UI.getURL, which will show them a web page in their default browser rather
+than inside a dialog in SketchUp.</p>
+
+<p>See this blog post for a detailed, step-by-step example: <a
+href="http://sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html">sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html</a></p>
+
+<p>Starting with SketchUp 2013, you can embed a special HTML link in your
+dialog that will launch Extension Warehouse and show a specified
+extension&#39;s page. This can be useful if your extension has a dependency
+on another one and you would like to direct the user to install that
+extension.</p>
+
+<p>For example, to launch an extension&#39;s page whose URL is: <a
+href="http://extensions.sketchup.com/en/content/advanced-camera-tools">extensions.sketchup.com/en/content/advanced-camera-tools</a>
+The link would be:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>&lt;a href=&quot;skp:launchEW@advanced-camera-tools&quot;&gt;Get Advanced Camera Tools&lt;/a&gt;</code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_action_callback-instance_method" title="#add_action_callback (instance method)">#<strong>add_action_callback</strong>(callback_name) {|dialog, params| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_action_callback method establishes a Ruby callback method that your
+web dialog can call to perform some function.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#allow_actions_from_host-instance_method" title="#allow_actions_from_host (instance method)">#<strong>allow_actions_from_host</strong>(hostname)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>By default, actions are only allowed on the host where the webdialog is
+displayed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#bring_to_front-instance_method" title="#bring_to_front (instance method)">#<strong>bring_to_front</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The bring_to_front method is used to bring the webdialog to the front of
+all the windows on the desktop.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The close method is used to close the webdialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#execute_script-instance_method" title="#execute_script (instance method)">#<strong>execute_script</strong>(script)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The execute_script method is used to execute a JavaScript string on the web
+dialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_default_dialog_color-instance_method" title="#get_default_dialog_color (instance method)">#<strong>get_default_dialog_color</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_default_dialog_color method is used to get the default dialog color
+for the web dialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_element_value-instance_method" title="#get_element_value (instance method)">#<strong>get_element_value</strong>(element_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_element_value method is used to get a value, with a given
+element_id, from the web dialog&#39;s DOM.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(dialog_title, scrollable, pref_key, width, height, left, top, resizable)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The new method is used to create a new webdialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_height-instance_method" title="#max_height (instance method)">#<strong>max_height</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The max_height method is used to get the maximum height that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_height%3D-instance_method" title="#max_height= (instance method)">#<strong>max_height=</strong>(height)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The max_height= method is used to set the maximum height that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_width-instance_method" title="#max_width (instance method)">#<strong>max_width</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The max_width method is used to get the maximum width that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_width%3D-instance_method" title="#max_width= (instance method)">#<strong>max_width=</strong>(width)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The max_width= method is used to set the maximum width that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min_height-instance_method" title="#min_height (instance method)">#<strong>min_height</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The min_width method is used to get the minimum height that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min_height%3D-instance_method" title="#min_height (instance method)">#<strong>min_height</strong>(height)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The min_height= method is used to set the minimum height that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min_width-instance_method" title="#min_width (instance method)">#<strong>min_width</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The min_width method is used to get the minimum width that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#min_width%3D-instance_method" title="#min_width= (instance method)">#<strong>min_width=</strong>(width)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The min_width= method is used to set the minimum width that the user is
+allowed to resize the dialog to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#navigation_buttons_enabled%3D-instance_method" title="#navigation_buttons_enabled= (instance method)">#<strong>navigation_buttons_enabled=</strong>(nav_buttons)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The navigation_buttons_enabled= method is used to set whether the home,
+next, and back buttons are visible at the top of the WebDialog on the mac.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#navigation_buttons_enabled%3F-instance_method" title="#navigation_buttons_enabled? (instance method)">#<strong>navigation_buttons_enabled?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The navigation_buttons_enabled? method is used to get whether the home,
+next, and back buttons are visible at the top of the WebDialog on the mac.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#post_url-instance_method" title="#post_url (instance method)">#<strong>post_url</strong>(url, data)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The post_url method is used to send the data to a url using the HTTP POST
+method.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#screen_scale_factor-instance_method" title="#screen_scale_factor (instance method)">#<strong>screen_scale_factor</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The screen_scale_factor method returns the ratio of screen pixels to
+logical window units (called &#39;points&#39; on Mac) for the screen this
+WebDialog is currently in.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_background_color-instance_method" title="#set_background_color (instance method)">#<strong>set_background_color</strong>(color)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_background_color method is used to set the background color for the
+webdialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_file-instance_method" title="#set_file (instance method)">#<strong>set_file</strong>(filename, path)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_file method is used to identify a local HTML file to display in the
+webdialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_full_security-instance_method" title="#set_full_security (instance method)">#<strong>set_full_security</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_full_security method is used to place the WebDialog into a higher
+security mode where remote URLs and plugins (such as Flash) are not allowed
+inside the browser.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_html-instance_method" title="#set_html (instance method)">#<strong>set_html</strong>(html_string)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_html method is used to load a webdialog with a string of provided
+HTML.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_on_close-instance_method" title="#set_on_close (instance method)">#<strong>set_on_close</strong> { ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_on_close method is used to establish one or more activities to
+perform when the dialog closes (such as saving values stored in the
+dialog).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_position-instance_method" title="#set_position (instance method)">#<strong>set_position</strong>(left, top)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_position method is used to set the position of the webdialog
+relative to the screen, in pixels.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_size-instance_method" title="#set_size (instance method)">#<strong>set_size</strong>(w, h)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_size method is used to set the size of the webdialog, in pixels.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_url-instance_method" title="#set_url (instance method)">#<strong>set_url</strong>(url)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_url method is used to load a webdialog with the content at a
+specific URL.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show-instance_method" title="#show (instance method)">#<strong>show</strong> {|dialog| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The show method is used to display a non-modal dialog box.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_modal-instance_method" title="#show_modal (instance method)">#<strong>show_modal</strong> {|dialog| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The show_modal method is used to display a modal dialog box.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#visible%3F-instance_method" title="#visible? (instance method)">#<strong>visible?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The visible? method is used to tell if the webdialog is currently shown.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_image-instance_method" title="#write_image (instance method)">#<strong>write_image</strong>(image_path, option, top_left_x, top_left_y, bottom_right_x, bottom_right_y)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The write_image method is used to grab a portion of the web dialog screen
+and save the image to the given file path.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(dialog_title, scrollable, pref_key, width, height, left, top, resizable)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The new method is used to create a new webdialog.</p>
+
+<p>Default width is 250. Default height is 250. Default left is 0. Default top
+is 0. WebDialogs are resizable by default.</p>
+
+<p>Note that the browser which is embedded inside the dialog depends on the
+user&#39;s OS. On Mac, Safari is embedded, while on the PC whatever version
+of Internet Explorer is installed will be embedded.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dlg'>dlg</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>WebDialog</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ShowSketchupDotCom</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>739</span><span class='comma'>,</span> <span class='int'>641</span><span class='comma'>,</span> <span class='int'>150</span><span class='comma'>,</span> <span class='int'>150</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns dialog - the newly created WebDialog object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>dialog_title</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The title to be displayed in the webdialog.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>scrollable</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if you want to allow scrollbars, false if you do not want to allow
+scrollbars.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>pref_key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The registry entry where the location and size of the dialog will be saved.
+If preferences_key is not included, the location and size will not be
+stored.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>width</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The width of the webdialog.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>height</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The height of the webdialog.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>left</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of pixels from the left.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>top</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of pixels from the top.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>resizable</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if you want the webdialog to be resizable, false if not.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_action_callback-instance_method">
+  
+    #<strong>add_action_callback</strong>(callback_name) {|dialog, params| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_action_callback method establishes a Ruby callback method that your
+web dialog can call to perform some function.</p>
+
+<p>Use the skp:callback_method_name to invoke the callback method from your
+webdialog. Your JavaScript in the webdialog will invoke the callback method
+with a string representing arguments to the callback method.</p>
+
+<p>Note that you&#39;re sending data down to Ruby as a single string
+that&#39;s passed via the window.location bar. In Internet Explorer on PC,
+there is a length limit of 2038 characters for this bar, so if you&#39;re
+needing to pass large data down you might consider using get_element_value
+to pull in a longer string from a hidden input field in the HTML.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># In Ruby code...
+</span><span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_add_action_callback'>add_action_callback</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby_messagebox</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_dialog'>dialog</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='op'>|</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You called ruby_messagebox with: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+<span class='rbrace'>}</span>
+
+<span class='comment'># JavaScript inside the page loaded into the WebDialog:
+</span><span class='comment'># window.location = &#39;skp:ruby_messagebox@Hello World&#39;;</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>callback_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the callback method to be invoked from the webdialog.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>dialog</tt>, <tt>params</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='name'>dialog</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The dialog.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>params</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Any parameters passed to the dialog from HTML. This is passed as a single
+string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="allow_actions_from_host-instance_method">
+  
+    #<strong>allow_actions_from_host</strong>(hostname)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>By default, actions are only allowed on the host where the webdialog is
+displayed. The allow_actions_from_host method is used to selectively allow
+actions to take place on a host remote from the host where the webdialog
+exists. If the webdialog is local, no remote host is allowed unless you use
+this method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_allow_actions_from_host'>allow_actions_from_host</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hostname</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name (domain) of the host that your webdialog can access safely.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="bring_to_front-instance_method">
+  
+    #<strong>bring_to_front</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The bring_to_front method is used to bring the webdialog to the front of
+all the windows on the desktop. See show_modal for how to ensure that your
+WedDialogs are on top.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_bring_to_front'>bring_to_front</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  
+    #<strong>close</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The close method is used to close the webdialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="execute_script-instance_method">
+  
+    #<strong>execute_script</strong>(script)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The execute_script method is used to execute a JavaScript string on the web
+dialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_js_command'>js_command</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>document.getElementById(&#39;id&#39;).innerHTML = &#39;&lt;b&gt;Hi!&lt;/b&gt;&#39;</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_execute_script'>execute_script</span><span class='lparen'>(</span><span class='id identifier rubyid_js_command'>js_command</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>script</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The JavaScript script to execute on the webdialog.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_default_dialog_color-instance_method">
+  
+    #<strong>get_default_dialog_color</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_default_dialog_color method is used to get the default dialog color
+for the web dialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_get_default_dialog_color'>get_default_dialog_color</span>
+<span class='comment'>#ece9d8</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>color - a six digit hexidecimal number representing the color</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_element_value-instance_method">
+  
+    #<strong>get_element_value</strong>(element_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_element_value method is used to get a value, with a given
+element_id, from the web dialog&#39;s DOM.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code># In Ruby code:
+dialog.get_element_value(&quot;myTextInput&quot;)
+
+# In webdialog&#39;s HTML:
+&lt;input type=&quot;text&quot; id=&quot;myTextInput&quot; value=&quot;hello&quot;&gt;</code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns String containing the retrieved value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>element_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the element in your HTML code.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>String containing the retrieved value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_height-instance_method">
+  
+    #<strong>max_height</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The max_height method is used to get the maximum height that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_max_height'>max_height</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>height - the maximum height in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_height=-instance_method">
+  
+    #<strong>max_height=</strong>(height)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The max_height= method is used to set the maximum height that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_max_height'>max_height</span> <span class='op'>=</span> <span class='int'>400</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>height</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The maximum height in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_width-instance_method">
+  
+    #<strong>max_width</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The max_width method is used to get the maximum width that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_max'>max</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_max_width'>max_width</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>width - the maximum width in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_width=-instance_method">
+  
+    #<strong>max_width=</strong>(width)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The max_width= method is used to set the maximum width that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_max_width'>max_width</span> <span class='op'>=</span> <span class='int'>500</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>width</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The maximum width in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min_height-instance_method">
+  
+    #<strong>min_height</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The min_width method is used to get the minimum height that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_min_height'>min_height</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>height - the minimum height in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min_height=-instance_method">
+  
+    #<strong>min_height</strong>(height)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The min_height= method is used to set the minimum height that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_min_height'>min_height</span> <span class='op'>=</span> <span class='int'>100</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>height</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The minimum height in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min_width-instance_method">
+  
+    #<strong>min_width</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The min_width method is used to get the minimum width that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_min'>min</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_min_width'>min_width</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>width - the minimum width in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="min_width=-instance_method">
+  
+    #<strong>min_width=</strong>(width)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The min_width= method is used to set the minimum width that the user is
+allowed to resize the dialog to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_min_width'>min_width</span> <span class='op'>=</span> <span class='int'>200</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>width</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The minimum width in pixels</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="navigation_buttons_enabled=-instance_method">
+  
+    #<strong>navigation_buttons_enabled=</strong>(nav_buttons)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The navigation_buttons_enabled= method is used to set whether the home,
+next, and back buttons are visible at the top of the WebDialog on the mac.
+This method has no use on the PC, as these buttons are never displayed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_navigation_buttons_enabled'>navigation_buttons_enabled</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns dialog - the updated WebDialog</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>nav_buttons</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true to hide the buttons, false to show them</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>dialog - the updated WebDialog</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="navigation_buttons_enabled?-instance_method">
+  
+    #<strong>navigation_buttons_enabled?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The navigation_buttons_enabled? method is used to get whether the home,
+next, and back buttons are visible at the top of the WebDialog on the mac.
+This method has no use on the PC, as these buttons are never displayed.</p>
+
+<p>On the mac, this defaults to true for new WebDialogs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_nav_buttons'>nav_buttons</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_navigation_buttons_enabled?'>navigation_buttons_enabled?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nav_buttons - true if the buttons are visible.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="post_url-instance_method">
+  
+    #<strong>post_url</strong>(url, data)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The post_url method is used to send the data to a url using the HTTP POST
+method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_post_url'>post_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.mydomain.com/formchecker.cgi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The url to send the data.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The data to be sent.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="screen_scale_factor-instance_method">
+  
+    #<strong>screen_scale_factor</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The screen_scale_factor method returns the ratio of screen pixels to
+logical window units (called &#39;points&#39; on Mac) for the screen this
+WebDialog is currently in. On a retina screen Mac, this ratio will be
+greater than 1.0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_factor'>factor</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_screen_scale_factor'>screen_scale_factor</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>screen scale factor</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_background_color-instance_method">
+  
+    #<strong>set_background_color</strong>(color)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_background_color method is used to set the background color for the
+webdialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_set_background_color'>set_background_color</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>f3f0f0</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A six digit hexidecimal color.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_file-instance_method">
+  
+    #<strong>set_file</strong>(filename, path)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_file method is used to identify a local HTML file to display in the
+webdialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_file'>set_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:\\mypage.html</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The filename for the webdialog file (HTML file).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A path that filename is relative to.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_full_security-instance_method">
+  
+    #<strong>set_full_security</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_full_security method is used to place the WebDialog into a higher
+security mode where remote URLs and plugins (such as Flash) are not allowed
+inside the browser. This defaults to false when a new WebDialog is created.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_full_security'>set_full_security</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>dialog - the updated WebDialog</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_html-instance_method">
+  
+    #<strong>set_html</strong>(html_string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_html method is used to load a webdialog with a string of provided
+HTML.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_html'>html</span><span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;b&gt;Hello world!&lt;/b&gt;</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_html'>set_html</span><span class='lparen'>(</span><span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>html_string</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A string of valid html to display in your webdialog.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_on_close-instance_method">
+  
+    #<strong>set_on_close</strong> { ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_on_close method is used to establish one or more activities to
+perform when the dialog closes (such as saving values stored in the
+dialog).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_on_close'>set_on_close</span><span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Closing the webDialog</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Ruby block to perform when the dialog closes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_position-instance_method">
+  
+    #<strong>set_position</strong>(left, top)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_position method is used to set the position of the webdialog
+relative to the screen, in pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_position'>set_position</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>50</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>left</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of pixels from the left.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>top</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The number of pixels from the top of the screen.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_size-instance_method">
+  
+    #<strong>set_size</strong>(w, h)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_size method is used to set the size of the webdialog, in pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_size'>set_size</span><span class='lparen'>(</span><span class='int'>320</span><span class='comma'>,</span><span class='int'>240</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>w</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Width of the webdialog.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>h</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Height of the webdialog.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_url-instance_method">
+  
+    #<strong>set_url</strong>(url)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_url method is used to load a webdialog with the content at a
+specific URL. This method allows you to load web sites in a webdialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The URL for a specific web site.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show-instance_method">
+  
+    #<strong>show</strong> {|dialog| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The show method is used to display a non-modal dialog box.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span> <span class='lbrace'>{</span>
+  <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_execute_script'>execute_script</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>alert(10)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>dialog</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(optional) Ruby code to perform when the dialog is first displayed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_modal-instance_method">
+  
+    #<strong>show_modal</strong> {|dialog| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The show_modal method is used to display a modal dialog box. In SketchUp 6
+and 7, this behaves differently on Mac vs. PC. On the PC, it shows a truly
+modal dialog, meaning so long as the WebDialog is visible, no input can be
+performed elsewhere inside SketchUp. On the Mac, “modal” WebDialogs do not
+behave this way, but instead are “always on top” of other windows.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show_modal'>show_modal</span> <span class='lbrace'>{</span>
+  <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_execute_script'>execute_script</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>alert(10)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>dialog</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>(optional) Ruby code to perform when the dialog is first displayed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="visible?-instance_method">
+  
+    #<strong>visible?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The visible? method is used to tell if the webdialog is currently shown.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_vis'>vis</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>visibility - true if visible.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_image-instance_method">
+  
+    #<strong>write_image</strong>(image_path, option, top_left_x, top_left_y, bottom_right_x, bottom_right_y)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The write_image method is used to grab a portion of the web dialog screen
+and save the image to the given file path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_write_image'>write_image</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c:/grab.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>70</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_write_image'>write_image</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c:/grab.png</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>image_path</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The destination path of the saved image.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>option</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Specifies what method to use when saving the image. For JPG/JPEG images,
+this specifies the image quality and can range from 1 to 100. For PNG
+images this specifies the compression algorithm: &lt;4 (best speed), 4-8
+(default), or &gt;=9 (best compression).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>top_left_x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The x coordinate of the upper left corner of the region to grab.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>top_left_y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The x coordinate of the upper left corner of the region to grab.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>bottom_right_x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The x coordinate of the lower right corner of the region to grab.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>bottom_right_y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The x coordinate of the lower right corner of the region to grab.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:18 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

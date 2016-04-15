@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Geom::PolygonMesh
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Geom::PolygonMesh";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span>
+     &raquo; 
+    <span class="title">PolygonMesh</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Geom::PolygonMesh
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Geom::PolygonMesh</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The PolygonMesh class contains methods to create polygon mesh structures.
+This is useful if you need to write a custom importer/exporter in Ruby that
+works at the level of triangulated polygons. For example, you can determine
+the triangles that make up a 15-sided SketchUp face by using this class, or
+write a SketchupImporter that reads a data file, creates a mesh from it,
+and draws faces based on the mesh.</p>
+
+<p>You can construct a mesh manually using the methods of this class, or you
+can get a mesh from a face by calling the Face.mesh method. See
+Entities.add_faces_from_mesh for an easy way to convert a mesh back into
+faces.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Grab a mesh from a given face.
+</span><span class='id identifier rubyid_my_mesh'>my_mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_some_face'>some_face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span>
+
+<span class='comment'># Create a new group that we will populate with the mesh.
+</span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span> <span class='id identifier rubyid_my_mesh'>my_mesh</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="NO_SMOOTH_OR_HIDE-constant" class="">Geom::PolygonMesh::NO_SMOOTH_OR_HIDE
+        </dt>
+      
+        <dt id="HIDE_BASED_ON_INDEX-constant" class="">Geom::PolygonMesh::HIDE_BASED_ON_INDEX
+        </dt>
+      
+        <dt id="SOFTEN_BASED_ON_INDEX-constant" class="">Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX
+        </dt>
+      
+        <dt id="AUTO_SOFTEN-constant" class="">Geom::PolygonMesh::AUTO_SOFTEN
+        </dt>
+      
+        <dt id="SMOOTH_SOFT_EDGES-constant" class="">Geom::PolygonMesh::SMOOTH_SOFT_EDGES
+        </dt>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_point-instance_method" title="#add_point (instance method)">#<strong>add_point</strong>(point)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_point method is used to add a point to the mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_polygon-instance_method" title="#add_polygon (instance method)">#<strong>add_polygon</strong>(points)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_polygon method is used for adding a polygon to a polygon mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_points-instance_method" title="#count_points (instance method)">#<strong>count_points</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The count_points method is used to count the number of points in a mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_polygons-instance_method" title="#count_polygons (instance method)">#<strong>count_polygons</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The count_polygons count the number of polygons in the mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(numpts, numpolys)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new empty polygon mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normal_at-instance_method" title="#normal_at (instance method)">#<strong>normal_at</strong>(index)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The normal_at method is used to determine the normal at a particular index
+in the mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_at-instance_method" title="#point_at (instance method)">#<strong>point_at</strong>(index)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The point_at method is used to retrieve the point at a specific index in
+the mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_index-instance_method" title="#point_index (instance method)">#<strong>point_index</strong>(point)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The point_index method is used to retrieve the index of a point in the
+mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#points-instance_method" title="#points (instance method)">#<strong>points</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The points method is used to retrieve an array of points (vertices) in the
+mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#polygon_at-instance_method" title="#polygon_at (instance method)">#<strong>polygon_at</strong>(index)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The polygon_at method is used to retrieve an array of vertex index values
+for a polygon at a specific index.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#polygon_points_at-instance_method" title="#polygon_points_at (instance method)">#<strong>polygon_points_at</strong>(index)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The polygon_points_at method is used to retrieve the points for a polygon
+that is at a specific index in the mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#polygons-instance_method" title="#polygons (instance method)">#<strong>polygons</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The polygons method is used to retrieve an array of all polygons in the
+mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_point-instance_method" title="#set_point (instance method)">#<strong>set_point</strong>(index, point)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_point method is used to set the point at a specific index in the
+mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_uv-instance_method" title="#set_uv (instance method)">#<strong>set_uv</strong>(index, point)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_uv method is used to define UV mapping coordinates to points in the
+mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transform%21-instance_method" title="#transform! (instance method)">#<strong>transform!</strong>(transform)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The transform! method is used to apply a transformation to a mesh.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uv_at-instance_method" title="#uv_at (instance method)">#<strong>uv_at</strong>(index, front)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The uv_at method is used to access a uv (texture coordinates) at a specific
+index.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uvs-instance_method" title="#uvs (instance method)">#<strong>uvs</strong>(front)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The uvs method is used to retrieve an array of uv coordinates in the mesh.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(numpts, numpolys)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new empty polygon mesh. The number of points and polygons are
+optional and are just used as a hint to decide how much space to
+pre-allocate to speed up adding points and polygons.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns mesh - the new PolygonMesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>numpts</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>How many points will be in the mesh.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>numpolys</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>How many polygons will be in the mesh.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_point-instance_method">
+  
+    #<strong>add_point</strong>(point)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_point method is used to add a point to the mesh.</p>
+
+<p>The index can be used for creating polygons.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns index - the index in the mesh for the point</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>index - the index in the mesh for the point</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_polygon-instance_method">
+  
+    #<strong>add_polygon</strong>(points)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_polygon method is used for adding a polygon to a polygon mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns index - the index of the polygon in the mesh if successful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A list of points that represent the polygon&#39;s vertices.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>index - the index of the polygon in the mesh if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="count_points-instance_method">
+  
+    #<strong>count_points</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The count_points method is used to count the number of points in a mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_num'>num</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_count_points'>count_points</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>points - the number of points in a mesh, if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="count_polygons-instance_method">
+  
+    #<strong>count_polygons</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The count_polygons count the number of polygons in the mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_nump'>nump</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_count_polygons'>count_polygons</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>polygons - the number of polygons in the mesh, if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="normal_at-instance_method">
+  
+    #<strong>normal_at</strong>(index)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The normal_at method is used to determine the normal at a particular index
+in the mesh. This only works for meshes retrieved from Sketchup::Face.mesh.</p>
+
+<p>Index is 1 based (starts at 1).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_normal'>normal</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_normal_at'>normal_at</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns normal - a normal on success, nil on failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The index in the mesh where the normal is that you want to retrieve.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>normal - a normal on success, nil on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_at-instance_method">
+  
+    #<strong>point_at</strong>(index)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The point_at method is used to retrieve the point at a specific index in
+the mesh.</p>
+
+<p>Index is 1 based (starts at 1).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point_from_index'>point_from_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_point_at'>point_at</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns point - a Point3d object on success, nil on failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The index in the mesh where the point is that you want to retrieve.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>point - a Point3d object on success, nil on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_index-instance_method">
+  
+    #<strong>point_index</strong>(point)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The point_index method is used to retrieve the index of a point in the
+mesh.</p>
+
+<p>Returns 0 if point is not found.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_point_index'>point_index</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns index - the index in the mesh for the Point3d object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>index - the index in the mesh for the Point3d object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="points-instance_method">
+  
+    #<strong>points</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The points method is used to retrieve an array of points (vertices) in the
+mesh</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
+<span class='comment'># Returns array of points in the mesh.
+</span><span class='id identifier rubyid_num'>num</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_points'>points</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>points - an array of points (vertices) if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="polygon_at-instance_method">
+  
+    #<strong>polygon_at</strong>(index)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The polygon_at method is used to retrieve an array of vertex index values
+for a polygon at a specific index.</p>
+
+<p>Index is 1 based (starts at 1).  The returned array can contain negative
+values with the sign indicating a hidden edge. For example, a return value
+of [-1, 2, 3] indicates that the edge from 1 to 2 is hidden. The negative
+values should not be used as an index for point_at, take the positive value
+of the index value in the polygon array.  So if you get [-1, 2,3] use 1 as
+the arg to point_at.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_polygon'>polygon</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_polygon_at'>polygon_at</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns vertices - an array of vertex index values if successful nil on
+failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The index of the desired polygon.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>vertices - an array of vertex index values if successful nil on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="polygon_points_at-instance_method">
+  
+    #<strong>polygon_points_at</strong>(index)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The polygon_points_at method is used to retrieve the points for a polygon
+that is at a specific index in the mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_polygon_points_at'>polygon_points_at</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns points - an array of points that make up the polygon if successful,
+nil on failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An index for a polygon in the mesh.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>points - an array of points that make up the polygon if successful, nil on
+failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="polygons-instance_method">
+  
+    #<strong>polygons</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The polygons method is used to retrieve an array of all polygons in the
+mesh.</p>
+
+<p>The returned array can contain negative values with the sign indicating a
+hidden edge. For example, a return value of [-1, 2, 3] indicates that the
+edge from 1 to 2 is hidden.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_polygons'>polygons</span> <span class='op'>=</span> <span class='id identifier rubyid_polygonmesh'>polygonmesh</span><span class='period'>.</span><span class='id identifier rubyid_polygons'>polygons</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>polygons - an array of polygons if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_point-instance_method">
+  
+    #<strong>set_point</strong>(index, point)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_point method is used to set the point at a specific index in the
+mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_set_point'>set_point</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns polygonmesh - a PolygonMesh object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The index where the point will be set.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object to set at the index.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>polygonmesh - a PolygonMesh object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_uv-instance_method">
+  
+    #<strong>set_uv</strong>(index, point)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_uv method is used to define UV mapping coordinates to points in the
+mesh.</p>
+
+<p>Beware that the polygons connected to the point will share UV coordiates so
+UV mapping coordinates needs to be continuous across the polygon mesh.</p>
+
+<p>When setting the UV for a point one need to make sure to have the correct
+index for the point. It&#39;s therefore best to add the points using
+add_point and use the index it returns for following calls to set_uv and
+add_polygon.</p>
+
+<p>NOTE: If you don&#39;t specify how many points you will be adding to the
+mesh when you initiate it you may risk the UV data becoming out of sync.</p>
+
+<p>If you are not able to calculate how many points there will be in your mesh
+make sure to not specify an index in set_uv higher than the number of times
+you have called set_uv.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span>
+<span class='comment'># Create points for a triangle.
+</span><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point4'>point4</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='comment'># Create UV mapping to tile 2x cross triangle.
+</span><span class='id identifier rubyid_uv1'>uv1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_uv2'>uv2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_uv3'>uv3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_uv4'>uv4</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='comment'># Add points and UV data to mesh.
+</span><span class='id identifier rubyid_index1'>index1</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index2'>index2</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index3'>index3</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_index4'>index4</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point4'>point4</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_set_uv'>set_uv</span><span class='lparen'>(</span><span class='id identifier rubyid_index1'>index1</span><span class='comma'>,</span> <span class='id identifier rubyid_uv1'>uv1</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_set_uv'>set_uv</span><span class='lparen'>(</span><span class='id identifier rubyid_index2'>index2</span><span class='comma'>,</span> <span class='id identifier rubyid_uv2'>uv2</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_set_uv'>set_uv</span><span class='lparen'>(</span><span class='id identifier rubyid_index3'>index3</span><span class='comma'>,</span> <span class='id identifier rubyid_uv3'>uv3</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_set_uv'>set_uv</span><span class='lparen'>(</span><span class='id identifier rubyid_index4'>index4</span><span class='comma'>,</span> <span class='id identifier rubyid_uv4'>uv4</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='comment'># Add polygons.
+</span><span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_index1'>index1</span><span class='comma'>,</span> <span class='id identifier rubyid_index2'>index2</span><span class='comma'>,</span> <span class='id identifier rubyid_index3'>index3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_index1'>index1</span><span class='comma'>,</span> <span class='id identifier rubyid_index3'>index3</span><span class='comma'>,</span> <span class='id identifier rubyid_index4'>index4</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An Integer representing the UV index.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object representing UV coordinates.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transform!-instance_method">
+  
+    #<strong>transform!</strong>(transform)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The transform! method is used to apply a transformation to a mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>PolygonMesh</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_transform!'>transform!</span><span class='lparen'>(</span><span class='id identifier rubyid_tr'>tr</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns polygonmesh - the PolygonMesh object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Transformation object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>polygonmesh - the PolygonMesh object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uv_at-instance_method">
+  
+    #<strong>uv_at</strong>(index, front)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The uv_at method is used to access a uv (texture coordinates) at a specific
+index.</p>
+
+<p>“UVs” is a way of referring to the u,v texture coordinates (as opposed to
+the X, Y, and Z axis that you construct your meshes on), which are points
+defining 1-by-1 positions within an image. These coordinates connect to
+points in your 3D model, to position an image texture onto it&#39;s surface
+(similar to virtual “thumb tacks”)</p>
+
+<p>These coordinates pin an exact spot on an image that you wish to use to
+texture your model to a specific point on an object&#39;s surface. Between
+these points, your software will stretch the image smoothly. This is what
+is referred to as UV mapping.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_uv_at'>uv_at</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns point - a Point3d object where the x equals the u value and the y
+equals the v value. Returns nil on failure.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The index for the texture coordinate.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>front</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Set to true to get the UV for the front size, false for the back side.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>point - a Point3d object where the x equals the u value and the y equals
+the v value. Returns nil on failure.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uvs-instance_method">
+  
+    #<strong>uvs</strong>(front)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The uvs method is used to retrieve an array of uv coordinates in the mesh.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Get a mesh with front and back UVs.
+</span><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span><span class='lparen'>(</span><span class='int'>1</span> <span class='op'>|</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_uvs'>uvs</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns points - an array of uv coordinates if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>front</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>points - an array of uv coordinates if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:19 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

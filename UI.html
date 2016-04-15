@@ -1,0 +1,3487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: UI
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "UI";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo;
+    
+    
+    <span class="title">UI</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="class_list.html"></iframe>
+
+      <div id="content"><h1>Module: UI
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The UI module contains a number of methods for creating simple UI elements
+from a SketchUp Ruby script.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="UI/Command.html" title="UI::Command (class)">Command</a></span>, <span class='object_link'><a href="UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span>, <span class='object_link'><a href="UI/WebDialog.html" title="UI::WebDialog (class)">WebDialog</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_context_menu_handler-class_method" title="add_context_menu_handler (class method)">.<strong>add_context_menu_handler</strong> {|menu| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_context_menu_handler method is used to register a block of code
+with SketchUp that will be called when a context menu is to be displayed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#beep-class_method" title="beep (class method)">.<strong>beep</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The beep method plays a system beep sound.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_cursor-class_method" title="create_cursor (class method)">.<strong>create_cursor</strong>(filename, hot_x, hot_y)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The create_cursor method is used to create a cursor from an image file at
+the specified location.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inputbox-class_method" title="inputbox (class method)">.<strong>inputbox</strong>(prompts, defaults, title_or_list, title)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a dialog box for inputting user information.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspector_names-class_method" title="inspector_names (class method)">.<strong>inspector_names</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The inspector_names method is used to returns the names of all the
+inspectors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#menu-class_method" title="menu (class method)">.<strong>menu</strong>(menuname = &quot;Extensions&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The menu method retrieves a SketchUp&#39;s menu object with a given name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#messagebox-class_method" title="messagebox (class method)">.<strong>messagebox</strong>(string, type = MB_OK)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a dialog box containing static text with a series of buttons for
+the user to choose from.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#model_info_pages-class_method" title="model_info_pages (class method)">.<strong>model_info_pages</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The model_info_pages method is used to returns the names of all the
+available model info pages.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#openpanel-class_method" title="openpanel (class method)">.<strong>openpanel</strong>(title, directory, filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The openpanel method is used to display the Open dialog box.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#openURL-class_method" title="openURL (class method)">.<strong>openURL</strong>(URL)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The openURL method is used to open the default Web browser to a URL.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#play_sound-class_method" title="play_sound (class method)">.<strong>play_sound</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The play_sound method is used to play a sound file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#preferences_pages-class_method" title="preferences_pages (class method)">.<strong>preferences_pages</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The preferences_pages method is used to returns the names of all the
+preferences pages.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#refresh_inspectors-class_method" title="refresh_inspectors (class method)">.<strong>refresh_inspectors</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Tells SketchUp to refresh all inspectors such as the Component Browser and
+the Outliner.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#savepanel-class_method" title="savepanel (class method)">.<strong>savepanel</strong>(title, directory, filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The savepanel method is used to display the Save dialog box.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select_directory-class_method" title="select_directory (class method)">.<strong>select_directory</strong>(options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The select_directory method is used to display the OS dialog for selecting
+one or several directories from the file system.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_cursor-class_method" title="set_cursor (class method)">.<strong>set_cursor</strong>(cursor_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_cursor method is used to change the cursor to a new cursor with a
+given cursor id.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_toolbar_visible-class_method" title="set_toolbar_visible (class method)">.<strong>set_toolbar_visible</strong>(name, visible)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_toolbar_visible method is used to set whether a given toolbar is
+visible.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_inspector-class_method" title="show_inspector (class method)">.<strong>show_inspector</strong>(name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The show_inspector method is used to display the inspector with the given
+name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_model_info-class_method" title="show_model_info (class method)">.<strong>show_model_info</strong>(page_name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The show_model_info method is used to display the model info dialog for a
+specific page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_preferences-class_method" title="show_preferences (class method)">.<strong>show_preferences</strong>(page_name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The show_preferences method is used to display a SketchUp preferences
+dialog.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_timer-class_method" title="start_timer (class method)">.<strong>start_timer</strong>(seconds, repeat = false) {|procedure| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The start_timer method is used to start a timer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stop_timer-class_method" title="stop_timer (class method)">.<strong>stop_timer</strong>(id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The stop_timer method is used to stop a timer based on its id.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#toolbar-class_method" title="toolbar (class method)">.<strong>toolbar</strong>(name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The toolbar method is used to get a Ruby toolbar by name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#toolbar_names-class_method" title="toolbar_names (class method)">.<strong>toolbar_names</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The toolbar_names method is used to return the name of all the available
+native toolbars (this differs between PC and Mac).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#toolbar_visible%3F-class_method" title="toolbar_visible? (class method)">.<strong>toolbar_visible?</strong>(name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The toolbar_visible? method is used to determine whether a given toolbar is
+visible.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_context_menu_handler-class_method">
+  
+    .<strong>add_context_menu_handler</strong> {|menu| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_context_menu_handler method is used to register a block of code
+with SketchUp that will be called when a context menu is to be displayed.
+The context menu handler can then display the context menu with the items
+that you have added.</p>
+
+<p>Be careful with what you do in a context menu handler. If you perform an
+operation takes take a long time, such as traversing the model or selection
+in a large model it will delay the menu.</p>
+
+<p>See the contextmenu.rb script in the Plugins/examples directory for an
+example.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Right click on anything to see a Hello World item.
+</span><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_add_context_menu_handler'>add_context_menu_handler</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_context_menu'>context_menu</span><span class='op'>|</span>
+  <span class='id identifier rubyid_context_menu'>context_menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="#menu-class_method" title="UI.menu (method)">menu</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A block of code that takes a menu as its only as its only argument.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>count - the number of context handlers that are registered</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="beep-class_method">
+  
+    .<strong>beep</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The beep method plays a system beep sound.</p>
+
+<p>The beep method does not accept any arguments nor return any values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_cursor-class_method">
+  
+    .<strong>create_cursor</strong>(filename, hot_x, hot_y)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The create_cursor method is used to create a cursor from an image file at
+the specified location. This must be called from within a custom Tool. See
+the Tool class for a complete example.</p>
+
+<p>Since SketchUp 2016 it is possible to provide vector images for the
+cursors. SVG format for Windows and PDF format for OS X.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_cursor_id'>cursor_id</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='id identifier rubyid_cursor_path'>cursor_path</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pointer.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_cursor_path'>cursor_path</span>
+  <span class='id identifier rubyid_cursor_id'>cursor_id</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_create_cursor'>create_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_path'>cursor_path</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_onSetCursor'>onSetCursor</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'>set_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_id'>cursor_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns ID - ID associated with the cursor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Filename for an image.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hot_x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An x coordinate that is the “hotpoint” for the cursor computed from the
+left edge of your cursor image.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>hot_y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A y coordinate that is the “hotpoint” for the cursor computed from the top
+edge of the of your cursor image. For example, a value of (hot_x, hot_y) =
+(5,10) would identify the hotpoint of the cursor at 5 pixels from the left
+edge of your cursor image and 10 pixels from the top edge of your cursor
+image.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ID - ID associated with the cursor</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inputbox-class_method">
+  
+    .<strong>inputbox</strong>(prompts, defaults, title_or_list, title)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a dialog box for inputting user information. The dialog box
+contains input fields with static text prompts, optional default values,
+optional drop down selections, and optional title.</p>
+
+<p>You can also use this method to display drop down lists of options, by
+passing an optional param.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># With three params, it shows all text boxes:
+</span><span class='id identifier rubyid_prompts'>prompts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Name?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Age?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gender</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_defaults'>defaults</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Male</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='id identifier rubyid_prompts'>prompts</span><span class='comma'>,</span> <span class='id identifier rubyid_defaults'>defaults</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tell me about yourself.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># With four params, it shows a drop down box for prompts that have
+</span><span class='comment'># pipe-delimited lists of options. In this case, the Gender prompt
+</span><span class='comment'># is a drop down instead of a text box.
+</span><span class='id identifier rubyid_prompts'>prompts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Name?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Age?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gender</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_defaults'>defaults</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Male</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_list'>list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Male|Female</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='id identifier rubyid_prompts'>prompts</span><span class='comma'>,</span> <span class='id identifier rubyid_defaults'>defaults</span><span class='comma'>,</span> <span class='id identifier rubyid_list'>list</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tell me about yourself.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns results - An array of returned values if the user did not cancel
+the dialog.  If the user canceled the dialog, false is returned.  The
+returned values in the array will be in the same order as the input fields.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>prompts</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of prompt names appearing in the input box adjacent to input
+fields.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>defaults</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of default values for the input fields.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>title_or_list</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If 3 params are passed, then this value is a string containing the title of
+the input box. If a total of 4 params are passed, then this is an array
+containing pipe-separated strings of options.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>title</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The title for the input box.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>results - An array of returned values if the user did not cancel the
+dialog.  If the user canceled the dialog, false is returned.  The returned
+values in the array will be in the same order as the input fields.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspector_names-class_method">
+  
+    .<strong>inspector_names</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The inspector_names method is used to returns the names of all the
+inspectors. Inspectors are another name for the various floating dialog
+windows that you can activate from withing SketchUp, such as the Materials
+window.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_inspectors'>inspectors</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inspector_names'>inspector_names</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>inspectors - an array of strings containing the names of inspectors.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="menu-class_method">
+  
+    .<strong>menu</strong>(menuname = &quot;Extensions&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The menu method retrieves a SketchUp&#39;s menu object with a given name.
+This is the first step toward adding your own custom items to the bottom of
+SketchUp&#39;s menus.</p>
+
+<p>Valid menu names are: “File”, “Edit”, “View”, “Camera”, “Draw”, “Tools”,
+“Window”, “Extensions” and “Help”.</p>
+
+<p>Note that the “Extensions” menu was named “Plugins” prior to SketchUp 2015.
+For backward compatibility “Plugins” still works.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_tool_menu'>tool_menu</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_menu'>menu</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tools</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tool_menu'>tool_menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cheese Tool</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cheese activated.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns menu - a menu object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>menuname</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;Extensions&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Optional. The name of an existing menu. Default menu is “Extensions”</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>menu - a menu object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="messagebox-class_method">
+  
+    .<strong>messagebox</strong>(string, type = MB_OK)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a dialog box containing static text with a series of buttons for
+the user to choose from.</p>
+
+<p>Valid message box types are:</p>
+<ul><li>
+<p><code>MB_OK</code> - Contains an OK button.</p>
+</li><li>
+<p><code>MB_OKCANCEL</code> - Contains OK and Cancel buttons.</p>
+</li><li>
+<p><code>MB_ABORTRETRYCANCEL</code> - Contains Abort, Retry, and Cancel
+buttons.</p>
+</li><li>
+<p><code>MB_YESNOCANCEL</code> - Contains Yes, No, and Cancel buttons.</p>
+</li><li>
+<p><code>MB_YESNO</code> - Contains Yes and No buttons.</p>
+</li><li>
+<p><code>MB_RETRYCANCEL</code> - Contains Retry and Cancel buttons.</p>
+</li><li>
+<p><code>MB_MULTILINE</code> - Contains and OK button.</p>
+</li></ul>
+
+<p>Return values can be any of following:</p>
+<ul><li>
+<p><code>IDOK</code></p>
+</li><li>
+<p><code>IDCANCEL</code></p>
+</li><li>
+<p><code>IDABORT</code></p>
+</li><li>
+<p><code>IDRETRY</code></p>
+</li><li>
+<p><code>IDIGNORE</code></p>
+</li><li>
+<p><code>IDYES</code></p>
+</li><li>
+<p><code>IDNO</code></p>
+</li></ul>
+
+<p>In an <code>MB_MULTILINE</code> message box, the message is displayed as a
+multi-line message with scrollbars (as needed). <code>MB_MULTILNE</code>
+also allows a third string argument that will be used as the title for the
+messagebox.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Do you like cheese?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>MB_YESNO</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span> <span class='op'>==</span> <span class='const'>IDYES</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SketchUp likes cheese too!</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>message</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The message that you want to display.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>type</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>MB_OK</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The message box type, which will be a constant from the list in the method
+comments.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number corresponding to what the user selected.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="model_info_pages-class_method">
+  
+    .<strong>model_info_pages</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The model_info_pages method is used to returns the names of all the
+available model info pages. These include UI windows such as Components,
+Credits, and Units.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mypages'>mypages</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_model_info_pages'>model_info_pages</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>mypages - an array of strings containing the names of model info pages.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="openpanel-class_method">
+  
+    .<strong>openpanel</strong>(title, directory, filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The openpanel method is used to display the Open dialog box. The path that
+is returned can then be used inside code to open a text or image file. See
+the standard Ruby class File for examples of reading and writing from disk.</p>
+
+<p>Bug Fixed in SketchUp 2014: Wildcards were not working properly from SU7 to
+SU2013. Wildcard filters did not populate the file type dropdown. The
+filter string would be shown in the file name field with &#39;*&#39;
+characters converted to &#39;_&#39; characters. Note, the format of a
+wildcard filter string has been changed.</p>
+
+<pre class="code"><code class="">See the description of the filename parameter below for details.</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open SKP File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>model.skp</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open Image File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Image Files|*.jpg;*.png;||</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open CAD File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DXF|*.dxf|DWG|*.dwg||</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns string - the full path and name of the file selected, or nil if the
+dialog was canceled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>title</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The title to apply to the open dialog box.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>directory</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The default directory for the open panel.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The default filename for the open panel. On Windows, you can alternatively
+pass a wildcard filter using this format: UIname|wildcard||. Additional
+filter dropdown list items can be added by adding additional pairs of
+filter name and filter like this: UIname1|wildcard1|UIname2|wildcard2||.
+Also multiple wildcard filters can be combined into a single line using a
+semicolon-separated list in the filter field:
+ui_name|wildcard1;wildcard2||.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string - the full path and name of the file selected, or nil if the dialog
+was canceled.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="openURL-class_method">
+  
+    .<strong>openURL</strong>(URL)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The openURL method is used to open the default Web browser to a URL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>URL</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A string URL.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="play_sound-class_method">
+  
+    .<strong>play_sound</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The play_sound method is used to play a sound file. Valid sound files
+include .wav and .mp3 files on the Mac and .wav files on the PC.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_play_sound'>play_sound</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/mediadiscussion.wav</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the relative path to the filename from the SketchUp install directory, or
+an absolute path to the file. (See Sketchup.find_support_file for a way to
+search for a specific file.)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="preferences_pages-class_method">
+  
+    .<strong>preferences_pages</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The preferences_pages method is used to returns the names of all the
+preferences pages. These include windows like Extensions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_prefs'>prefs</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_preferences_pages'>preferences_pages</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>prefspages - an array of strings containing the names of prefspages.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="refresh_inspectors-class_method">
+  
+    .<strong>refresh_inspectors</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Tells SketchUp to refresh all inspectors such as the Component Browser and
+the Outliner. This is useful when you need to manually force a refresh
+after you&#39;ve made a change to the document via Ruby. Generally,
+SketchUp will keep these in sync for you, but occasionally it does not,
+such as when model.start_operation has disabled UI updates.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_refresh_inspectors'>refresh_inspectors</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="savepanel-class_method">
+  
+    .<strong>savepanel</strong>(title, directory, filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The savepanel method is used to display the Save dialog box. The path that
+is returned can then be used inside code to save out a text or image file.
+See the standard Ruby class File for examples of reading and writing from
+disk.</p>
+
+<p>Bug Fixed in SketchUp 2014: Wildcards were not working properly from SU7 to
+SU2013. Semicolon-separated lists of wildcards did not populate the file
+type dropdown. The filter string would be shown in the file name field with
+&#39;*&#39; characters converted to &#39;_&#39; characters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_path_to_save_to'>path_to_save_to</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_savepanel'>savepanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Save Image File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:\\</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Shapes.jpg</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns string - the full path and name of the file selected or nil if the
+dialog was canceled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>title</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The title to apply to the save dialog box.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>directory</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The default directory for the save panel.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The default filename for the save panel. On Windows, you can alternatively
+pass a mask, like “*.txt”, to have all the .txt files display. If you want
+multiple file types to display, you can supply multiple masks for the
+filename and separate them with a semicolon, like this:
+“<strong>.txt;</strong>.doc”.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string - the full path and name of the file selected or nil if the dialog
+was canceled.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select_directory-class_method">
+  
+    .<strong>select_directory</strong>(options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The select_directory method is used to display the OS dialog for selecting
+one or several directories from the file system.</p>
+
+<p>Options:</p>
+<ul><li>
+<p>:title             string  The title for the dialog.</p>
+</li><li>
+<p>:directory         string  Force the starting directory for the dialog. If</p>
+
+<pre class="code"><code class=""><span class='kw'>not</span> <span class='id identifier rubyid_specified'>specified</span> <span class='id identifier rubyid_the'>the</span> <span class='id identifier rubyid_last'>last</span> <span class='id identifier rubyid_chosen'>chosen</span> <span class='id identifier rubyid_directory'>directory</span> <span class='id identifier rubyid_will'>will</span> <span class='id identifier rubyid_be'>be</span>
+<span class='id identifier rubyid_used'>used</span>
+</code></pre>
+</li><li>
+<p>:select_multiple   boolean Set to true to allow multiple items to be</p>
+
+<pre class="code"><code class="">selected.</code></pre>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Default title and folder:
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span>
+
+<span class='comment'># Custom dialog title:
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Select Image Directory</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Force a start folder:
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>directory:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/images</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Allow multiple items to the selected:
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>select_multiple:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+
+<span class='comment'># Custom dialog title and force a start folder:
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span>
+  <span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Select Image Directory</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='label'>directory:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/images</span><span class='tstring_end'>&quot;</span></span>
+<span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns string or array - A string with the full path of the directory
+selected when :select_multiple option is set to false otherwise an array of
+strings or nil if the user cancelled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>hash (optional)   The dialog can be customized by providing a hash or named
+arguments of options.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string or array - A string with the full path of the directory selected
+when :select_multiple option is set to false otherwise an array of strings
+or nil if the user cancelled.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2015</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_cursor-class_method">
+  
+    .<strong>set_cursor</strong>(cursor_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_cursor method is used to change the cursor to a new cursor with a
+given cursor id. See UI.create_cursor and the Tool class for details on
+creating your own tools with arbitrary cursors.</p>
+
+<p>If you call this while a standard SketchUp tool is active, you will not see
+your custom cursor, as these tools are constantly setting their own cursors
+to indicate SketchUp&#39;s state.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onSetCursor'>onSetCursor</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'>set_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_id'>cursor_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>cursor_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The id of the cursor you want to display.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_toolbar_visible-class_method">
+  
+    .<strong>set_toolbar_visible</strong>(name, visible)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_toolbar_visible method is used to set whether a given toolbar is
+visible.  Note that the toolbars and their names are different on the Mac
+vs. PC, so be careful and be sure to test when using this method in a
+cross-platform script.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_toolbar_visible'>set_toolbar_visible</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - true if successful, false if not.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of a Ruby toolbar.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>visible</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True to make the toolbar visible, false to hide it.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - true if successful, false if not.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_inspector-class_method">
+  
+    .<strong>show_inspector</strong>(name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The show_inspector method is used to display the inspector with the given
+name. You can get the list of valid inspectors with UI.inspector_names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_inspector'>show_inspector</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful, false if unsuccessful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of inspector that you want to display.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_model_info-class_method">
+  
+    .<strong>show_model_info</strong>(page_name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The show_model_info method is used to display the model info dialog for a
+specific page. You can get the list of valid dialogs with
+UI.model_info_pages.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_model_info'>show_model_info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Credits</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>page_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the model info dialog you want to display.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_preferences-class_method">
+  
+    .<strong>show_preferences</strong>(page_name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The show_preferences method is used to display a SketchUp preferences
+dialog. You can get the list of valid dialogs with UI.preferences_pages.</p>
+
+<p>Note that under OSX this method doesn&#39;t currently work.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_preferences'>show_preferences</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GraphicsCard</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>page_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the preferences dialog you want to display.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start_timer-class_method">
+  
+    .<strong>start_timer</strong>(seconds, repeat = false) {|procedure| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The start_timer method is used to start a timer. This is an effective
+method to create a repeating snippet of code for arbitrary animation.</p>
+
+<p>See this blog post for an detailed example of custom animation using
+timers: <a
+href="http://sketchupapi.blogspot.com/2008/10/animate-yo-cheese.html">sketchupapi.blogspot.com/2008/10/animate-yo-cheese.html</a></p>
+
+<p>Note that there is a bug that if you open a modal window in a non-repeating
+timer the timer will repeat until the window is closed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Beep once after 10 seconds.
+</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_start_timer'>start_timer</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns timer - a timer ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>seconds</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The time in seconds before your code should be called.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>repeat</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if you want the timer to repeat, false (or omit) if you do not want it
+to repeat.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>procedure</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The procedure you want to execute after seconds has expired.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>timer - a timer ID</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stop_timer-class_method">
+  
+    .<strong>stop_timer</strong>(id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The stop_timer method is used to stop a timer based on its id.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Stop timer before it triggers.
+</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_start_timer'>start_timer</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span> <span class='rbrace'>}</span>
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_stop_timer'>stop_timer</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The timer id for the timer that you want to stop.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="toolbar-class_method">
+  
+    .<strong>toolbar</strong>(name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The toolbar method is used to get a Ruby toolbar by name. If the toolbar
+doesn&#39;t exist a new one will be created.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_toolbar'>toolbar</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns toolbar - a Toolbar object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the Ruby toolbar.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>toolbar - a Toolbar object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="toolbar_names-class_method">
+  
+    .<strong>toolbar_names</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The toolbar_names method is used to return the name of all the available
+native toolbars (this differs between PC and Mac). These toolbar names do
+not include Ruby toolbars.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_toolbar_names'>toolbar_names</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>names - Array of strings representing toolbar names.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="toolbar_visible?-class_method">
+  
+    .<strong>toolbar_visible?</strong>(name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The toolbar_visible? method is used to determine whether a given toolbar is
+visible. Note that the toolbars and their names are different on the Mac
+vs. PC, so be careful and be sure to test when using this method in a
+cross-platform script.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_toolbar_visible?'>toolbar_visible?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful, false if unsuccessful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of a native toolbar.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:10 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

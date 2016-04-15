@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::Behavior
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::Behavior";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Behavior</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::Behavior
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></li>
+          
+            <li class="next">Sketchup::Behavior</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Behavior class is used to control the “behavior” of components, which
+roughly correlates to the series of options that you see in the Components
+dialog under the “edit” tab, such as whether it casts shadows, glues to
+walls, etc.</p>
+
+<p>A Behavior object is accessed from a ComponentDefinition object, not
+created with a Behavior.new call.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Grab the Behavior object from the first component definition.
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#always_face_camera%3D-instance_method" title="#always_face_camera= (instance method)">#<strong>always_face_camera=</strong>(setting)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The always_face_camera= method is used to set the always_face_camera
+behavior for a component.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#always_face_camera%3F-instance_method" title="#always_face_camera? (instance method)">#<strong>always_face_camera?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The always_face_camera? method is used to retrieve the  always_face_camera
+behavior for a component.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cuts_opening%3D-instance_method" title="#cuts_opening= (instance method)">#<strong>cuts_opening=</strong>(setting)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The cuts_opening= method is used to set the cut opening behavior for a
+component.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cuts_opening%3F-instance_method" title="#cuts_opening? (instance method)">#<strong>cuts_opening?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The cuts_opening? method is used to get the status of a component&#39;s cut
+opening behavior.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is2d%3D-instance_method" title="#is2d= (instance method)">#<strong>is2d=</strong>(setting)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The is2d= method is used to set the 2D behavior for a component: whether it
+can be glued or aligned to a face.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is2d%3F-instance_method" title="#is2d? (instance method)">#<strong>is2d?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The is2d? method is used to get the 2D behavior for a component: whether it
+can be glued or aligned to a face.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#no_scale_mask%3D-instance_method" title="#no_scale_mask= (instance method)">#<strong>no_scale_mask=</strong>(scale_mask)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets an integer that is really a bit-by-bit description of which scale tool
+handles are hidden on a given component.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#no_scale_mask%3F-instance_method" title="#no_scale_mask? (instance method)">#<strong>no_scale_mask?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The no_scale_mask? method returns an integer that is a bit-by-bit
+description of which scale tool handles are hidden when the user selects
+this single component with the scale tool.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shadows_face_sun%3D-instance_method" title="#shadows_face_sun= (instance method)">#<strong>shadows_face_sun=</strong>(status)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The shadows_face_sun= method is used to identify whether the
+component&#39;s shadow will be cast from the component&#39;s current
+position as though the component were facing the sun.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#shadows_face_sun%3F-instance_method" title="#shadows_face_sun? (instance method)">#<strong>shadows_face_sun?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The shadows_face_sun? method is used to determine whether the
+component&#39;s shadow is being cast from the component&#39;s current
+position (as though the component were facing the sun).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#snapto-instance_method" title="#snapto (instance method)">#<strong>snapto</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The snapto method is used to verify the status of a component&#39;s “snap
+to” behavior.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#snapto%3D-instance_method" title="#snapto= (instance method)">#<strong>snapto=</strong>(snapto)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The snapto= method sets a component&#39;s “snap to” behavior.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Entity.html#add_observer-instance_method" title="Sketchup::Entity#add_observer (method)">#add_observer</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionaries-instance_method" title="Sketchup::Entity#attribute_dictionaries (method)">#attribute_dictionaries</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionary-instance_method" title="Sketchup::Entity#attribute_dictionary (method)">#attribute_dictionary</a></span>, <span class='object_link'><a href="Entity.html#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span>, <span class='object_link'><a href="Entity.html#deleted%3F-instance_method" title="Sketchup::Entity#deleted? (method)">#deleted?</a></span>, <span class='object_link'><a href="Entity.html#entityID-instance_method" title="Sketchup::Entity#entityID (method)">#entityID</a></span>, <span class='object_link'><a href="Entity.html#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span>, <span class='object_link'><a href="Entity.html#inspect-instance_method" title="Sketchup::Entity#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Entity.html#model-instance_method" title="Sketchup::Entity#model (method)">#model</a></span>, <span class='object_link'><a href="Entity.html#parent-instance_method" title="Sketchup::Entity#parent (method)">#parent</a></span>, <span class='object_link'><a href="Entity.html#remove_observer-instance_method" title="Sketchup::Entity#remove_observer (method)">#remove_observer</a></span>, <span class='object_link'><a href="Entity.html#set_attribute-instance_method" title="Sketchup::Entity#set_attribute (method)">#set_attribute</a></span>, <span class='object_link'><a href="Entity.html#to_s-instance_method" title="Sketchup::Entity#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Entity.html#typename-instance_method" title="Sketchup::Entity#typename (method)">#typename</a></span>, <span class='object_link'><a href="Entity.html#valid%3F-instance_method" title="Sketchup::Entity#valid? (method)">#valid?</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="always_face_camera=-instance_method">
+  
+    #<strong>always_face_camera=</strong>(setting)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The always_face_camera= method is used to set the always_face_camera
+behavior for a component.</p>
+
+<p>If the always_face_camera behavior is true, a component will always try to
+orient itself so that the Y axis of the component is facing the camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera'>always_face_camera</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - the status of the always_face_camera behavior.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>setting</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Sets the always_face_camera behavior to true or false.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - the status of the always_face_camera behavior.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="always_face_camera?-instance_method">
+  
+    #<strong>always_face_camera?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The always_face_camera? method is used to retrieve the  always_face_camera
+behavior for a component.</p>
+
+<p>If the always_face_camera behavior is true, then a component will always
+try to orient itself so that the -Y axis of the component is facing the
+camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='comment'># Returns a DefinitionList
+</span><span class='id identifier rubyid_definitions'>definitions</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bed.skp</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components/Components Sampler/</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='kw'>begin</span>
+  <span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_path'>path</span>
+<span class='kw'>rescue</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='gvar'>$!</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera?'>always_face_camera?</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_b'>b</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Always Face Camera is equal to false</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera'>always_face_camera</span> <span class='op'>=</span> <span class='kw'>true</span>
+<span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera?'>always_face_camera?</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_b'>b</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>behavior - true if the component is set to always face the camera, false if
+the component is not set to always face camera.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cuts_opening=-instance_method">
+  
+    #<strong>cuts_opening=</strong>(setting)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The cuts_opening= method is used to set the cut opening behavior for a
+component.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_cuts_opening'>cuts_opening</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='comment'># if status is true, print the status
+</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_status'>status</span>
+<span class='kw'>else</span>
+  <span class='comment'># code to respond cuts_opening being false
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - the status of the cuts_opening behavior (either true or
+false)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>setting</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Sets the cuts_opening behavior to true or false.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - the status of the cuts_opening behavior (either true or false)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cuts_opening?-instance_method">
+  
+    #<strong>cuts_opening?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The cuts_opening? method is used to get the status of a component&#39;s cut
+opening behavior.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_cuts_opening?'>cuts_opening?</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='comment'># if status is true, do something
+</span><span class='kw'>else</span>
+  <span class='comment'># if status is false, do something else
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - the status of the cuts_opening behavior (either true or false)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is2d=-instance_method">
+  
+    #<strong>is2d=</strong>(setting)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The is2d= method is used to set the 2D behavior for a component: whether it
+can be glued or aligned to a face.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_is2d'>is2d</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='comment'># if status is true, print the status
+</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_status'>status</span>
+<span class='kw'>else</span>
+  <span class='comment'># code to respond is2d behavior being false
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - the new setting</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>setting</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Sets the 2D behavior to true or false.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - the new setting</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is2d?-instance_method">
+  
+    #<strong>is2d?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The is2d? method is used to get the 2D behavior for a component: whether it
+can be glued or aligned to a face.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_is2d?'>is2d?</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='comment'># if status is true, do something
+</span><span class='kw'>else</span>
+  <span class='comment'># if status is false, do something else
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - the status of the 2D behavior (either true or false)</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="no_scale_mask=-instance_method">
+  
+    #<strong>no_scale_mask=</strong>(scale_mask)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets an integer that is really a bit-by-bit description of which scale tool
+handles are hidden on a given component. This is useful for creating
+definitions that can only be scaled in particular ways. If a bit contains a
+a 1, then a certain handle set will be hidden when the user selects the
+component and activates the Scale tool. Here is the map of which bits
+control which handles.</p>
+<ul><li>
+<p>Bit0: disable scale along red (X),</p>
+</li><li>
+<p>Bit1: disable scale along green (Y),</p>
+</li><li>
+<p>Bit2: disable scale along blue (Z),</p>
+</li><li>
+<p>Bit3: disable scale in red/blue plane (X+Z),</p>
+</li><li>
+<p>Bit4: disable scale in green/blue plane (Y+Z),</p>
+</li><li>
+<p>Bit5: disable scale in red/green plane (X+Y),</p>
+</li><li>
+<p>Bit6: disable scale uniform (from corners) (XYZ).</p>
+</li></ul>
+
+<p>Note that for 2-dimensional components (such as face-me components), not
+all of the handles in the list above are even used. Also, if the component
+you are modifying is already selected with the scale tool, then you or your
+user must deactivate and reactivate the scale tool for your new behavior to
+take effect.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Disable the green and red-axes handles by setting bits 1 and 2 to 1.
+</span><span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_no_scale_mask'>no_scale_mask</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='int'>1</span> <span class='op'>&lt;&lt;</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='int'>1</span> <span class='op'>&lt;&lt;</span> <span class='int'>2</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns behavior - the Behavior object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>scale_mask</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An integer describing which scale tool handles are hidden.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>behavior - the Behavior object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="no_scale_mask?-instance_method">
+  
+    #<strong>no_scale_mask?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The no_scale_mask? method returns an integer that is a bit-by-bit
+description of which scale tool handles are hidden when the user selects
+this single component with the scale tool. See the no_scale_mask= method
+for details on the bit encodings used.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_no_scale_mask'>no_scale_mask</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_no_scale_mask?'>no_scale_mask?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>scale_mask - an integer describing which scale tool handles are hidden.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shadows_face_sun=-instance_method">
+  
+    #<strong>shadows_face_sun=</strong>(status)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The shadows_face_sun= method is used to identify whether the
+component&#39;s shadow will be cast from the component&#39;s current
+position as though the component were facing the sun. See the Component
+entity within the SketchUp User&#39;s guide for more information on this
+feature.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_shadows_face_sun'>shadows_face_sun</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns behavior - the Behavior object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>status</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if the component&#39;s is to be cast from the component&#39;s current
+position as though the component were facing the sun. False to cause the
+shadow to be cast from the component&#39;s current position.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>behavior - the Behavior object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="shadows_face_sun?-instance_method">
+  
+    #<strong>shadows_face_sun?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The shadows_face_sun? method is used to determine whether the
+component&#39;s shadow is being cast from the component&#39;s current
+position (as though the component were facing the sun). See the Component
+entity within the SketchUp User&#39;s guide for more information on this
+feature.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='comment'># Returns a DefinitionList
+</span><span class='id identifier rubyid_definitions'>definitions</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bed.skp</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components/Components Sampler/</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>begin</span>
+  <span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_path'>path</span>
+<span class='kw'>rescue</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='gvar'>$!</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if the component&#39;s is to be cast from the component&#39;s
+current position as though the component were facing the sun. False to
+cause the shadow to be cast from the component&#39;s current position.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="snapto-instance_method">
+  
+    #<strong>snapto</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The snapto method is used to verify the status of a component&#39;s “snap
+to” behavior.</p>
+
+<p>Returns a constant indicating the snapping behavior of the component
+described by behavior. Snapping behavior is how the x-y plane of a
+component instance will be snapped against a face. Possible values are:</p>
+<ul><li>
+<p><code>SnapTo_Arbitrary</code> =&gt; Snap to any aribrary face,</p>
+</li><li>
+<p><code>SnapTo_Horizontal</code> =&gt; Snap to horizontal face like floors,</p>
+</li><li>
+<p><code>SnapTo_Vertical</code> =&gt; Snap to vertical face like walls,</p>
+</li><li>
+<p><code>SnapTo_Sloped</code> =&gt; Snap to sloped face like sloping roofs.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_snapto'>snapto</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='comment'># if status is true, do something
+</span><span class='kw'>else</span>
+  <span class='comment'># if status is false, do something else
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - the status of the snapto behavior (either true or false)</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="snapto=-instance_method">
+  
+    #<strong>snapto=</strong>(snapto)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The snapto= method sets a component&#39;s “snap to” behavior.</p>
+
+<p>Snapping behavior is how the x-y plane of a component instance will be
+snapped against a face. Possible constant values are:</p>
+<ul><li>
+<p><code>SnapTo_Arbitrary</code> =&gt; Snap to any aribrary face,</p>
+</li><li>
+<p><code>SnapTo_Horizontal</code> =&gt; Snap to horizontal face like floors,</p>
+</li><li>
+<p><code>SnapTo_Vertical</code> =&gt; Snap to vertical face like walls,</p>
+</li><li>
+<p><code>SnapTo_Sloped</code> =&gt; Snap to sloped face like sloping roofs.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
+<span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_snapto'>snapto</span> <span class='op'>=</span> <span class='const'>SnapTo_Horizontal</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns behavior - the Behavior object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>snapto</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A numeric constant identifying one of the snapto types.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>behavior - the Behavior object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:21 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

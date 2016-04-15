@@ -1,0 +1,4345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::Tool
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::Tool";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Tool</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::Tool
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::Tool</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Tool is the interface that you implement to create a SketchUp tool. See the
+file Plugins/Examples/linetool.rb (in your SketchUp install directory) for
+an example of how to create a custom tool in Ruby.</p>
+
+<p>To create a new tool in Ruby, you must define a new class that implements
+the methods for the events that you want to respond to. You do not have to
+implement methods for every possible event that a Tool can respond to.</p>
+
+<p>Once you have defined a tool class, you select that tool by creating an
+instance of it and passing it to <span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">Model#select_tool</a></span>. For
+example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>MyTool</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Your tool has been activated.</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_my_tool'>my_tool</span> <span class='op'>=</span> <span class='const'>MyTool</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_select_tool'>select_tool</span><span class='lparen'>(</span><span class='id identifier rubyid_my_tool'>my_tool</span><span class='rparen'>)</span>
+</code></pre>
+
+<p>The following table contains several constants you can use when check for
+certain key presses inside the keyboard handling callbacks:</p>
+<ul><li>
+<p><code>CONSTRAIN_MODIFIER_KEY</code> = Shift Key</p>
+</li><li>
+<p><code>CONSTRAIN_MODIFIER_MASK</code> = Shift Key</p>
+</li><li>
+<p><code>COPY_MODIFIER_KEY</code> = Menu on Mac, Ctrl on PC</p>
+</li><li>
+<p><code>COPY_MODIFIER_MASK</code> = Alt on Mac, Ctrl on PC</p>
+</li><li>
+<p><code>ALT_MODIFIER_KEY</code> = Command on Mac, Menu on PC</p>
+</li><li>
+<p><code>ALT_MODIFIER_MASK</code> = Command on Mac, Alt on PC</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#activate-instance_method" title="#activate (instance method)">#<strong>activate</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The activate method is called by SketchUp when the tool is selected.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deactivate-instance_method" title="#deactivate (instance method)">#<strong>deactivate</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The deactivate method is called when the tool is deactivated because a
+different tool was selected.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#draw-instance_method" title="#draw (instance method)">#<strong>draw</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The draw method is called by SketchUp whenever the view is refreshed to
+allow the tool to do its own drawing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enableVCB%3F-instance_method" title="#enableVCB? (instance method)">#<strong>enableVCB?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The enableVCB? method is used to tell SketchUp whether to allow the user to
+enter text into the VCB (value control box, aka the “measurements” panel).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getExtents-instance_method" title="#getExtents (instance method)">#<strong>getExtents</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In order to accurately draw things, SketchUp needs to know the extents of
+what it is drawing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getInstructorContentDirectory-instance_method" title="#getInstructorContentDirectory (instance method)">#<strong>getInstructorContentDirectory</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The getInstructorContentDirectory method is used to tell SketchUp the
+directory containing your Tool&#39;s instructor content.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getMenu-instance_method" title="#getMenu (instance method)">#<strong>getMenu</strong>(menu, flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The getMenu method is called by SketchUp to let the tool provide its own
+context menu.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onCancel-instance_method" title="#reason (instance method)">#<strong>reason</strong>(reason, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onCancel method is called by SketchUp to cancel the current operation
+of the tool.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onKeyDown-instance_method" title="#onKeyDown (instance method)">#<strong>onKeyDown</strong>(key, repeat, flags, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onKeyDown method is called by SketchUp when the user presses a key on
+the keyboard.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onKeyUp-instance_method" title="#onKeyUp (instance method)">#<strong>onKeyUp</strong>(key, repeat, flags, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onKeyUp method is called by SketchUp when the user releases a key on
+the keyboard.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onLButtonDoubleClick-instance_method" title="#onLButtonDoubleClick (instance method)">#<strong>onLButtonDoubleClick</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onLButtonDoubleClick is called by SketchUp when the user double clicks
+with the left mouse button.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onLButtonDown-instance_method" title="#onLButtonDown (instance method)">#<strong>onLButtonDown</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onLButtonDown method is called by SketchUp when the left mouse button
+is pressed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onLButtonUp-instance_method" title="#onLButtonUp (instance method)">#<strong>onLButtonUp</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onLButtonUp method is called by SketchUp when the left mouse button is
+released.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMButtonDoubleClick-instance_method" title="#onMButtonDoubleClick (instance method)">#<strong>onMButtonDoubleClick</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NOTE: Though this method has been documented in the Ruby API for many
+years, it has never worked properly.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMButtonDown-instance_method" title="#onMButtonDown (instance method)">#<strong>onMButtonDown</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onMButtonDown method is called by SketchUp when the middle mouse button
+(on a three button mouse) is down.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMButtonUp-instance_method" title="#onMButtonUp (instance method)">#<strong>onMButtonUp</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onMButtonUp method is called by SketchUp when the middle mouse button
+(on a three button mouse) is released.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMouseEnter-instance_method" title="#onMouseEnter (instance method)">#<strong>onMouseEnter</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onMouseEnter method is called by SketchUp when the mouse enters the
+View object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMouseLeave-instance_method" title="#onMouseLeave (instance method)">#<strong>onMouseLeave</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onMouseLeave method is called by SketchUp when the mouse leaves the
+View object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMouseMove-instance_method" title="#onMouseMove (instance method)">#<strong>onMouseMove</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onMouseMove method is called by SketchUp whenever the mouse is moved.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onRButtonDoubleClick-instance_method" title="#onRButtonDoubleClock (instance method)">#<strong>onRButtonDoubleClock</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onRButtonDoubleClick is called by SketchUp when the user double clicks
+with the right mouse button.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onRButtonDown-instance_method" title="#onRButtonDown (instance method)">#<strong>onRButtonDown</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onRButtonDown method is called by SketchUp when the user presses the
+right mouse button.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onRButtonUp-instance_method" title="#onRButtonUp (instance method)">#<strong>onRButtonUp</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onRButtonUp method is called by SketchUp when the user releases the
+right mouse button.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onReturn-instance_method" title="#onReturn (instance method)">#<strong>onReturn</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onReturn method is called by SketchUp when the user hit the Return key
+to complete an operation in the tool.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onSetCursor-instance_method" title="#onSetCursor (instance method)">#<strong>onSetCursor</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onSetCursor method is called by SketchUp when the tool wants to set the
+cursor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onUserText-instance_method" title="#onUserText (instance method)">#<strong>onUserText</strong>(text, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The onUserText method is called by SketchUp when the user has typed text
+into the VCB and hit return.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#resume-instance_method" title="#resume (instance method)">#<strong>resume</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The resume method is called by SketchUp when the tool becomes active again
+after being suspended.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#suspend-instance_method" title="#suspend (instance method)">#<strong>suspend</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The suspend method is called by SketchUp when the tool temporarily becomes
+inactive because another tool has been activated.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="activate-instance_method">
+  
+    #<strong>activate</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The activate method is called by SketchUp when the tool is selected. It is
+a good place to put most of your initialization, such as instance variables
+to track the state of the tool.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Your tool has been activated.</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deactivate-instance_method">
+  
+    #<strong>deactivate</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The deactivate method is called when the tool is deactivated because a
+different tool was selected.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_deactivate'>deactivate</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your tool has been deactivated in view: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="draw-instance_method">
+  
+    #<strong>draw</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The draw method is called by SketchUp whenever the view is refreshed to
+allow the tool to do its own drawing. If the tool has some temporary
+graphics that it wants displayed while it is active, it should implement
+this method and draw to the View.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your tool can draw into view: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enableVCB?-instance_method">
+  
+    #<strong>enableVCB?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The enableVCB? method is used to tell SketchUp whether to allow the user to
+enter text into the VCB (value control box, aka the “measurements” panel).
+If you do not implement this method, then the vcb is disabled by default.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># For this tool, allow vcb text entry while the tool is active.
+</span><span class='kw'>def</span> <span class='id identifier rubyid_enableVCB?'>enableVCB?</span>
+  <span class='kw'>return</span> <span class='kw'>true</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>enable - true if you want the VCB enabled</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getExtents-instance_method">
+  
+    #<strong>getExtents</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>In order to accurately draw things, SketchUp needs to know the extents of
+what it is drawing. If the tool is doing its own drawing, it may need to
+implement this method to tell SketchUp the extents of what it will be
+drawing. If you don&#39;t implement this method, you may find that part of
+what the tool is drawing gets clipped to the extents of the rest of the
+model.</p>
+
+<p>This must return a BoundingBox. In a typical implementation, you will
+create a new BoundingBox, add points to set the extents of the drawing that
+the tool will do and then return it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_getExtents'>getExtents</span>
+  <span class='id identifier rubyid_bb'>bb</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_bb'>bb</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>BoundingBox - a BoundingBox object</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getInstructorContentDirectory-instance_method">
+  
+    #<strong>getInstructorContentDirectory</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The getInstructorContentDirectory method is used to tell SketchUp the
+directory containing your Tool&#39;s instructor content. To use this,
+create a custom instructor directory, put an index.html file inside of it,
+and then return that path via this method. If the SketchUp user has the
+Instructor window open when they activate your tool, they will see your
+html file.</p>
+
+<p>NOTE: Prior to SketchUp 2014 this method would assume the path was relative
+to the SketchUp resource folder. From 2014 and onwards you can specify the
+absolute path to an HTML file or the absolute path to a directory
+containing an index.html file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>def getInstructorContentDirectory
+  extension_path = Sketchup.extensions[&#39;MyExtension].extension_path
+  instructor_path = File.join(extension_path, &#39;MyExtension&#39;, &#39;instructor&#39;)
+  return instructor_path
+end</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>directory - the string directory where the Instructor content exists.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getMenu-instance_method">
+  
+    #<strong>getMenu</strong>(menu, flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The getMenu method is called by SketchUp to let the tool provide its own
+context menu. Most tools will not want to implement this method and,
+instead, use the normal context menu found on all entities.</p>
+
+<p>If you do implement this method, the argument is a Menu. You should use the
+add_item method to build the context menu.</p>
+
+<p>Your tool will use a standard context menu by default if you do not
+implement this method. Implement this method if you want a context-click to
+display something other than this default context menu.</p>
+
+<p>In SketchUp 2015 the flags, x, y and view parameters were added. They are
+needed if you need to pick the entities under the mouse position. The new
+parameters are optional, but if you need to use one you must include them
+all.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>if</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='op'>&lt;</span> <span class='int'>15</span>
+  <span class='comment'># Compatible with SketchUp 2014 and older:
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_getMenu'>getMenu</span><span class='lparen'>(</span><span class='id identifier rubyid_menu'>menu</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Say Hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+      <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>else</span>
+  <span class='comment'># Only works with SketchUp 2015 and newer:
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_getMenu'>getMenu</span><span class='lparen'>(</span><span class='id identifier rubyid_menu'>menu</span><span class='comma'>,</span> <span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_best_picked'>best_picked</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Erase </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_typename'>typename</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+        <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_erase!'>erase!</span>
+      <span class='rbrace'>}</span>
+   <span class='kw'>end</span>
+ <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>menu</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Menu object.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time. Added in SU2015.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred. Added in SU2015.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred. Added in SU2015.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked. Added in SU2015.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onCancel-instance_method">
+  
+    #<strong>reason</strong>(reason, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onCancel method is called by SketchUp to cancel the current operation
+of the tool. The typical response will be to reset the tool to its initial
+state.</p>
+
+<p>The reason identifies the action that triggered the call. The reason can be
+one of the following values:</p>
+<ul><li>
+<p><code>0</code>: the user canceled the current operation by hitting the
+escape key.</p>
+</li><li>
+<p><code>1</code>: the user re-selected the same tool from the toolbar or
+menu.</p>
+</li><li>
+<p><code>2</code>: the user did an undo while the tool was active.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onCancel'>onCancel</span><span class='lparen'>(</span><span class='id identifier rubyid_reason'>reason</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyTool was canceled for reason #</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_reason'>reason</span><span class='embexpr_end'>}</span><span class='tstring_content'> in view: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>reason</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A reason value (see comments).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onKeyDown-instance_method">
+  
+    #<strong>onKeyDown</strong>(key, repeat, flags, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onKeyDown method is called by SketchUp when the user presses a key on
+the keyboard. If you want to get input from the VCB, you should implement
+onUserText rather than this method.</p>
+
+<p>This method is can be used for special keys such as the Shift key, Ctrl
+key, and so on, or for just determining which key a user pressed. This
+method is actually called for all keys that are pressed.</p>
+
+<p>There are several “virtual keys” defined as constants you can use.  Their
+use is cross platform. They are:</p>
+<ul><li>
+<p><code>VK_ALT</code></p>
+</li><li>
+<p><code>VK_COMMAND</code></p>
+</li><li>
+<p><code>VK_CONTROL</code></p>
+</li><li>
+<p><code>VK_DELETE</code></p>
+</li><li>
+<p><code>VK_DOWN</code></p>
+</li><li>
+<p><code>VK_END</code></p>
+</li><li>
+<p><code>VK_HOME</code></p>
+</li><li>
+<p><code>VK_INSERT</code></p>
+</li><li>
+<p><code>VK_LEFT</code></p>
+</li><li>
+<p><code>VK_MENU</code></p>
+</li><li>
+<p><code>VK_NEXT</code></p>
+</li><li>
+<p><code>VK_PRIOR</code></p>
+</li><li>
+<p><code>VK_RIGHT</code></p>
+</li><li>
+<p><code>VK_SHIFT</code></p>
+</li><li>
+<p><code>VK_SPACE</code></p>
+</li><li>
+<p><code>VK_UP</code></p>
+</li></ul>
+
+<p>V6: There is a bug on Windows where the typematic effect does not work.
+Typematic effects work fine on a Mac.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onKeyDown'>onKeyDown</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_repeat'>repeat</span><span class='comma'>,</span> <span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onKeyDown: key = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>        repeat = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_repeat'>repeat</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>         flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The key that was pressed.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>repeat</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A value of 1 for a single press of a key.  A value of 2 if the user has
+pressed a key and is holding it down.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys at the time of the
+onKeyDown.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onKeyUp-instance_method">
+  
+    #<strong>onKeyUp</strong>(key, repeat, flags, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onKeyUp method is called by SketchUp when the user releases a key on
+the keyboard.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onKeyUp'>onKeyUp</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_repeat'>repeat</span><span class='comma'>,</span> <span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onKeyUp: key = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>      repeat = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_repeat'>repeat</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>       flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>        view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The key that was pressed.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>repeat</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A value of 1 for a single press of a key.  A value of 2 if the user has
+pressed a key and is holding it down.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys at the time of the
+onKeyUp.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onLButtonDoubleClick-instance_method">
+  
+    #<strong>onLButtonDoubleClick</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onLButtonDoubleClick is called by SketchUp when the user double clicks
+with the left mouse button.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onLButtonDoubleClick'>onLButtonDoubleClick</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLButtonDoubleClick: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                       view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onLButtonDown-instance_method">
+  
+    #<strong>onLButtonDown</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onLButtonDown method is called by SketchUp when the left mouse button
+is pressed. Most tools will implement this method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onLButtonDown'>onLButtonDown</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLButtonDown: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onLButtonUp-instance_method">
+  
+    #<strong>onLButtonUp</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onLButtonUp method is called by SketchUp when the left mouse button is
+released.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onLButtonUp'>onLButtonUp</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLButtonUp: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>              view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>Undefined.</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>Undefined.</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMButtonDoubleClick-instance_method">
+  
+    #<strong>onMButtonDoubleClick</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NOTE: Though this method has been documented in the Ruby API for many
+years, it has never worked properly. We are leaving this documentation in
+place for now in the hopes of fixing the implementation, but you won&#39;t
+have any luck trying to use it in SU7 and earlier.</p>
+
+<p>The onMButtonDoubleClick method is called by SketchUp when the middle mouse
+button (on a three button mouse) is double-clicked.</p>
+
+<p>Only implement this method if you want SketchUp to react to a middle mouse
+button being double-clicked.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMButtonDoubleClick'>onMButtonDoubleClick</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMButtonDoubleClick: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                       view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMButtonDown-instance_method">
+  
+    #<strong>onMButtonDown</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onMButtonDown method is called by SketchUp when the middle mouse button
+(on a three button mouse) is down.</p>
+
+<p>The Orbit tool is activated by default when the middle mouse button is
+down. Implement this method if you want a middle mouse button to do
+something other than invoke the Orbit tool.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMButtonDown'>onMButtonDown</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMButtonDown: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                    x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                    y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMButtonUp-instance_method">
+  
+    #<strong>onMButtonUp</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onMButtonUp method is called by SketchUp when the middle mouse button
+(on a three button mouse) is released.</p>
+
+<p>SketchUp returns to the previous tool from the Orbit tool when the middle
+mouse button is released. Implement this method if you want a middle mouse
+button to do something other than return to the previous tool when in the
+Orbit tool.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMButtonUp'>onMButtonUp</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMButtonUp: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>               view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMouseEnter-instance_method">
+  
+    #<strong>onMouseEnter</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onMouseEnter method is called by SketchUp when the mouse enters the
+View object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMouseEnter'>onMouseEnter</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseEnter: view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMouseLeave-instance_method">
+  
+    #<strong>onMouseLeave</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onMouseLeave method is called by SketchUp when the mouse leaves the
+View object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMouseLeave'>onMouseLeave</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseLeave: view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMouseMove-instance_method">
+  
+    #<strong>onMouseMove</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onMouseMove method is called by SketchUp whenever the mouse is moved.
+You will often want to implement this method.</p>
+
+<p>Try to make this method as efficient as possible because this method is
+called often.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMouseMove'>onMouseMove</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseMove: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>               view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onRButtonDoubleClick-instance_method">
+  
+    #<strong>onRButtonDoubleClock</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onRButtonDoubleClick is called by SketchUp when the user double clicks
+with the right mouse button.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onRButtonDoubleClick'>onRButtonDoubleClick</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onRButtonDoubleClick: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                       view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onRButtonDown-instance_method">
+  
+    #<strong>onRButtonDown</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onRButtonDown method is called by SketchUp when the user presses the
+right mouse button. Implement this method, along with the tool.getMenu
+method, when you want your tool to do something other than display the
+default context menu when the right mouse button is clicked.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onRButtonDown'>onRButtonDown</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onRButtonDown: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onRButtonUp-instance_method">
+  
+    #<strong>onRButtonUp</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onRButtonUp method is called by SketchUp when the user releases the
+right mouse button.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onRButtonUp'>onRButtonUp</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onRButtonUp: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>              view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse
+buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onReturn-instance_method">
+  
+    #<strong>onReturn</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onReturn method is called by SketchUp when the user hit the Return key
+to complete an operation in the tool. This method will rarely need to be
+implemented.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onMouseLeave'>onMouseLeave</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseLeave: view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onSetCursor-instance_method">
+  
+    #<strong>onSetCursor</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onSetCursor method is called by SketchUp when the tool wants to set the
+cursor.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onSetCursor'>onSetCursor</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSetCursor: view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># You would set your cursor here. See UI.set_cursor method.
+</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'>set_cursor</span><span class='lparen'>(</span><span class='ivar'>@cursor_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onUserText-instance_method">
+  
+    #<strong>onUserText</strong>(text, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The onUserText method is called by SketchUp when the user has typed text
+into the VCB and hit return.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onUserText'>onUserText</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSetCursor: text = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_text'>text</span><span class='embexpr_end'>}</span><span class='tstring_content'>, view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text string that was typed into the VCB.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="resume-instance_method">
+  
+    #<strong>resume</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The resume method is called by SketchUp when the tool becomes active again
+after being suspended.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>resume: view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="suspend-instance_method">
+  
+    #<strong>suspend</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The suspend method is called by SketchUp when the tool temporarily becomes
+inactive because another tool has been activated. This typically happens
+when a viewing tool is activated, such as when orbit is active due to the
+middle mouse button.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_suspend'>suspend</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>suspend: view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:15 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

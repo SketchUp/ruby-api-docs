@@ -1,0 +1,3258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::Camera
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::Camera";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Camera</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::Camera
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::Camera</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Camera class contains methods for creating and manipulating a camera.
+The camera in SketchUp is the “point of view” from which you look at the
+model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Create a camera from scratch with an &quot;eye&quot; position in
+</span><span class='comment'># x, y, z coordinates, a &quot;target&quot; position that
+</span><span class='comment'># defines what to look at, and an &quot;up&quot; vector.
+</span><span class='id identifier rubyid_eye'>eye</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>1000</span><span class='comma'>,</span><span class='int'>1000</span><span class='comma'>,</span><span class='int'>1000</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_target'>target</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_up'>up</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_my_camera'>my_camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_eye'>eye</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_up'>up</span>
+
+<span class='comment'># Get a handle to the current view and change its camera.
+</span><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='id identifier rubyid_my_camera'>my_camera</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#aspect_ratio-instance_method" title="#aspect_ratio (instance method)">#<strong>aspect_ratio</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The aspect_ratio method is used to retrieve the aspect ratio of the Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#aspect_ratio%3D-instance_method" title="#aspect_ratio= (instance method)">#<strong>aspect_ratio=</strong>(ratio)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The aspect_ratio= method is used to set the aspect ratio for a Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#center_2d-instance_method" title="#center_2d (instance method)">#<strong>center_2d</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The center_2d method returns a point with the x and y offset of the camera
+when it&#39;s in 2d mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#description-instance_method" title="#description (instance method)">#<strong>description</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The description method is used to retrieve the description for a Camera
+object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#description%3D-instance_method" title="#description= (instance method)">#<strong>description=</strong>(description)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The description= method is used to set the description for the Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#direction-instance_method" title="#direction (instance method)">#<strong>direction</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The direction method is used to retrieve a Vector3d object in the direction
+that the Camera is pointing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#eye-instance_method" title="#eye (instance method)">#<strong>eye</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The eye method is used to retrieve the eye Point3d object for the Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#focal_length-instance_method" title="#focal_length (instance method)">#<strong>focal_length</strong>(length)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The focal_length method is used to get the focal length in millimeters of
+perspective Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#focal_length%3D-instance_method" title="#focal_length= (instance method)">#<strong>focal_length=</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The focal_length= method allows you to sent the focal length (in
+millimeters) of a perspective camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fov-instance_method" title="#fov (instance method)">#<strong>fov</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The fov method retrieves the field of view of the camera (in degrees).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fov%3D-instance_method" title="#fov= (instance method)">#<strong>fov=</strong>(fov)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The fov= method sets the field of view, in millimeters, for a Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fov_is_height%3F-instance_method" title="#fov_is_height? (instance method)">#<strong>fov_is_height?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The fov_is_height? method indicates whether the field of view is horizontal
+or vertical.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#height-instance_method" title="#height (instance method)">#<strong>height</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The height method retrieves the height of a Camera in inches.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#height%3D-instance_method" title="#height= (instance method)">#<strong>height=</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The height= method is used to set the height for the Camera in inches.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#image_width-instance_method" title="#image_width (instance method)">#<strong>image_width</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The image_width method retrieves the size of the image on the image plane
+of the Camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#image_width%3D-instance_method" title="#image_width= (instance method)">#<strong>image_width=</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The image_width= method is used to set the size of the image on the “film”
+for a perspective camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(eye, target, up, perspective = true, fov = 30.0)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a new camera with eye (where the camera is) and targets (where the
+camera is looking) of type Point3d, up direction of type Vector3d, optional
+perspective flag of value true or false, and optional field-of-view value
+in degrees of type Float.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_2d%3F-instance_method" title="#is_2d? (instance method)">#<strong>is_2d?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The is_2d? method indicates if the camera is in 2d mode.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#perspective%3D-instance_method" title="#perspective (instance method)">#<strong>perspective</strong>(perspective)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The perspective= method is used to set whether or not this is a perspective
+camera or an orthographic camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#perspective%3F-instance_method" title="#perspective? (instance method)">#<strong>perspective?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The perspective? method is used to determine whether a camera is a
+perspective or orthographic camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scale_2d-instance_method" title="#scale_2d (instance method)">#<strong>scale_2d</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The scale_2d method returns a float indicating the scaling factor of 2d
+cameras.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set-instance_method" title="#set (instance method)">#<strong>set</strong>(eye, target, up)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set method sets the camera orientation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#target-instance_method" title="#target (instance method)">#<strong>target</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The target method retrieves Point3d that the camera is pointing at.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#up-instance_method" title="#up (instance method)">#<strong>up</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The up method is used to retrieve the up vector for the camera.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#xaxis-instance_method" title="#xaxis (instance method)">#<strong>xaxis</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The xaxis method is used to retrieve the x axis of the camera coordinate
+system defined by the camera&#39;s direction and up vector.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#yaxis-instance_method" title="#yaxis (instance method)">#<strong>yaxis</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The yaxis method retrieves the y axis of the camera coordinate system
+defined by the camera&#39;s direction and up vector.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#zaxis-instance_method" title="#zaxis (instance method)">#<strong>zaxis</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The zaxis method retrieves the z axis of the camera coordinate system
+defined by the camera&#39;s direction and up vector.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(eye, target, up, perspective = true, fov = 30.0)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new camera with eye (where the camera is) and targets (where the
+camera is looking) of type Point3d, up direction of type Vector3d, optional
+perspective flag of value true or false, and optional field-of-view value
+in degrees of type Float.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_camera'>camera</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_camera'>camera</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns camera - a new Camera object if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>eye</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>See <span class='object_link'><a href="#eye-instance_method" title="Sketchup::Camera#eye (method)">#eye</a></span>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>See <span class='object_link'><a href="#target-instance_method" title="Sketchup::Camera#target (method)">#target</a></span>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>up</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>See <span class='object_link'><a href="#up-instance_method" title="Sketchup::Camera#up (method)">#up</a></span>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>perspective</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>see <span class='object_link'><a href="#perspective%3F-instance_method" title="Sketchup::Camera#perspective? (method)">#perspective?</a></span>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>fov</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>30.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>see <span class='object_link'><a href="#fov-instance_method" title="Sketchup::Camera#fov (method)">#fov</a></span>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="aspect_ratio-instance_method">
+  
+    #<strong>aspect_ratio</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The aspect_ratio method is used to retrieve the aspect ratio of the Camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_ar'>ar</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_aspect_ratio'>aspect_ratio</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_ar'>ar</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_ar'>ar</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>aspectratio - an aspect ratio, such as 1.85, if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="aspect_ratio=-instance_method">
+  
+    #<strong>aspect_ratio=</strong>(ratio)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The aspect_ratio= method is used to set the aspect ratio for a Camera.
+Changing this value will cause SketchUp to show gray bars over the screen
+to show the resulting view.</p>
+
+<p>If you set the value to 0.0, then the aspect ratio of the Camera will match
+the aspect ratio of its View.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_ar'>ar</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_aspect_ratio'>aspect_ratio</span> <span class='op'>=</span> <span class='float'>1.85</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_ar'>ar</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_ar'>ar</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns aspectratio - an aspect ratio, such as 1.85, if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ratio</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>aspectratio - an aspect ratio, such as 1.85, if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="center_2d-instance_method">
+  
+    #<strong>center_2d</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The center_2d method returns a point with the x and y offset of the camera
+when it&#39;s in 2d mode. When the camera is in two-point perspective and
+the user pans around, the x and y values will change. These values are in
+normalized device coordinates, so for instance, the range [-1.0, 1.0] spans
+the full width or height of the screen.</p>
+
+<p>The z value is unused and it is always zero.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_center_2d'>center_2d</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Point3d</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2015</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="description-instance_method">
+  
+    #<strong>description</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The description method is used to retrieve the description for a Camera
+object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_description'>description</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_description'>description</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>description - a string description for the camera if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="description=-instance_method">
+  
+    #<strong>description=</strong>(description)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The description= method is used to set the description for the Camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>35 mm Camera</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns description - a string description for the camera if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>description</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>description - a string description for the camera if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="direction-instance_method">
+  
+    #<strong>direction</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The direction method is used to retrieve a Vector3d object in the direction
+that the Camera is pointing.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Returns 0,0,-1 which indicates it is pointed down the Z axis
+</span><span class='id identifier rubyid_direction'>direction</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_direction'>direction</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_direction'>direction</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_direction'>direction</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>direction - a Vector3d object pointing in the direction that the Camera is
+pointing if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="eye-instance_method">
+  
+    #<strong>eye</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The eye method is used to retrieve the eye Point3d object for the Camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Returns 0,0,1 which indicates it is right in line with the Z axis.
+</span><span class='id identifier rubyid_eye'>eye</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_eye'>eye</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_eye'>eye</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_eye'>eye</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>eye - a Point3d object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="focal_length-instance_method">
+  
+    #<strong>focal_length</strong>(length)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The focal_length method is used to get the focal length in millimeters of
+perspective Camera.</p>
+
+<p>This value is computed based on the field of view (see the fov method) and
+the image width (see image_width).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_focal_length'>focal_length</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_l'>l</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The focal length for the camera if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="focal_length=-instance_method">
+  
+    #<strong>focal_length=</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The focal_length= method allows you to sent the focal length (in
+millimeters) of a perspective camera. It must be between 1 and 3000,
+inclusive. This is an alternate way of setting the field of view.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_focal_length'>focal_length</span><span class='op'>=</span><span class='int'>120</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_l'>l</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_l'>l</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns length - the new focal length for the camera if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>length - the new focal length for the camera if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fov-instance_method">
+  
+    #<strong>fov</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The fov method retrieves the field of view of the camera (in degrees).</p>
+
+<p>This is only applicable to perspective cameras.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_fov'>fov</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_fov'>fov</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_fov'>fov</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_fov'>fov</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>fov - field of view, in degrees, if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fov=-instance_method">
+  
+    #<strong>fov=</strong>(fov)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The fov= method sets the field of view, in millimeters, for a Camera. It
+must be between 1 and 120, inclusive.</p>
+
+<p>This is only valid on a perspective camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_fov'>fov</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_fov'>fov</span> <span class='op'>=</span> <span class='float'>56.78</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_fov'>fov</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_fov'>fov</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns fov - the new field of view if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>fov</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A field of view in millimeters.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>fov - the new field of view if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fov_is_height?-instance_method">
+  
+    #<strong>fov_is_height?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The fov_is_height? method indicates whether the field of view is horizontal
+or vertical.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_fov_is_height?'>fov_is_height?</span>
+  <span class='id identifier rubyid_fov_vertical'>fov_vertical</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_fov'>fov</span>
+  <span class='comment'># Compute the horizontal FOV.
+</span><span class='kw'>else</span>
+  <span class='id identifier rubyid_fov_horizontal'>fov_horizontal</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_fov'>fov</span>
+  <span class='comment'># Compute the vertical FOV.
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>bool - true if vertical, false otherwise</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2015</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="height-instance_method">
+  
+    #<strong>height</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The height method retrieves the height of a Camera in inches.</p>
+
+<p>This is only valid if it is not a perspective camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_perspective'>perspective</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='id identifier rubyid_h'>h</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_h'>h</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>height - height in current units if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="height=-instance_method">
+  
+    #<strong>height=</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The height= method is used to set the height for the Camera in inches.</p>
+
+<p>This is only valid if it is not a perspective camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_perspective'>perspective</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='id identifier rubyid_h'>h</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='int'>20</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_h'>h</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns height - height in current units if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>height - height in current units if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="image_width-instance_method">
+  
+    #<strong>image_width</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The image_width method retrieves the size of the image on the image plane
+of the Camera.</p>
+
+<p>By default, this value is not set. If it is set, it is used in the
+calculation of the focal length from the field of view. Unlike most length
+values in SketchUp, the image_width and focal_length values are specified
+in millimeters rather than in inches.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_w'>w</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_image_width'>image_width</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_w'>w</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_w'>w</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>width - the width of the camera if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="image_width=-instance_method">
+  
+    #<strong>image_width=</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The image_width= method is used to set the size of the image on the “film”
+for a perspective camera.</p>
+
+<p>The value is given in millimeters. It is used in the conversions between
+field of view and focal length.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_w'>w</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_image_width'>image_width</span><span class='op'>=</span><span class='float'>1.0</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_w'>w</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_w'>w</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns width - the width of the camera if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>width - the width of the camera if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_2d?-instance_method">
+  
+    #<strong>is_2d?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The is_2d? method indicates if the camera is in 2d mode. 2 point
+perspective mode and PhotoMatch mode are 2d cameras.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_is_2d?'>is_2d?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Boolean - true if camera is in 2d mode, false otherwise</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2015</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="perspective=-instance_method">
+  
+    #<strong>perspective</strong>(perspective)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The perspective= method is used to set whether or not this is a perspective
+camera or an orthographic camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_perspective'>perspective</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Perspective</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Orthographic</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if perspective, false if orthographic</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>perspective</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true for perspective, false for orthographic</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if perspective, false if orthographic</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="perspective?-instance_method">
+  
+    #<strong>perspective?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The perspective? method is used to determine whether a camera is a
+perspective or orthographic camera.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_perspective?'>perspective?</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Perspective</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Orthographic</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if perspective, false if orthographic</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scale_2d-instance_method">
+  
+    #<strong>scale_2d</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The scale_2d method returns a float indicating the scaling factor of 2d
+cameras.</p>
+
+<p>When the camera is in two-point perspective and the user uses the zoom
+tools, this value will change. Zooming out will produce a value greater
+than 1.0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_scale_2d'>scale_2d</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>float</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2015</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set-instance_method">
+  
+    #<strong>set</strong>(eye, target, up)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set method sets the camera orientation. You have to set the camera eye,
+target and up parameters at the same time to make sure that you have a
+valid camera definition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_eye'>eye</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_eye'>eye</span>
+<span class='id identifier rubyid_target'>target</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span>
+<span class='id identifier rubyid_up'>up</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_up'>up</span>
+<span class='comment'># We just set it to exactly what it was pointing at in the first place
+</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span> <span class='id identifier rubyid_eye'>eye</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_up'>up</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_camera'>camera</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns camera - the modified camera</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>eye</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>See Camera.eye.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>See Camera.target.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>up</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>See Camera.up.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>camera - the modified camera</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="target-instance_method">
+  
+    #<strong>target</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The target method retrieves Point3d that the camera is pointing at.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>camera = Sketchup::Camera.new
+# Target point is 0,0,0
+t = camera.target
+if (t)
+  UI.messagebox t.to_s
+else
+  UI.messagebox &quot;Failure&quot;.
+end</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>target - a Point3d object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="up-instance_method">
+  
+    #<strong>up</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The up method is used to retrieve the up vector for the camera. This is the
+direction that the top of the camera is facing.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># 0.0, 1.0, 0.0
+</span><span class='id identifier rubyid_up'>up</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_up'>up</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_up'>up</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_up'>up</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>up - a Vector3d object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="xaxis-instance_method">
+  
+    #<strong>xaxis</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The xaxis method is used to retrieve the x axis of the camera coordinate
+system defined by the camera&#39;s direction and up vector.</p>
+
+<p>This value is computed from the cross product between the camera direction
+and the up vector.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># 1.0, 0.0, 0.0
+</span><span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_xaxis'>xaxis</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>vector - a Vector3d object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="yaxis-instance_method">
+  
+    #<strong>yaxis</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The yaxis method retrieves the y axis of the camera coordinate system
+defined by the camera&#39;s direction and up vector.</p>
+
+<p>This value is computed to be perpendicular the camera x and z axes. It is
+equivalent to the up direction, but is computed to make sure that it is
+perpendicular to the direction.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># 0.0, 1.0, 0.0
+</span><span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_yaxis'>yaxis</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>vector - a Vector3d object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="zaxis-instance_method">
+  
+    #<strong>zaxis</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The zaxis method retrieves the z axis of the camera coordinate system
+defined by the camera&#39;s direction and up vector.</p>
+
+<p>This value is computed. It is the same as Camera.direction</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Camera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># 0.0, 1.0, 0.0
+</span><span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_zaxis'>zaxis</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>vector - a Vector3d object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:15 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

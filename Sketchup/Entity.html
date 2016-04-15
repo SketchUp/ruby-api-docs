@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::Entity
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::Entity";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (E)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Entity</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::Entity
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::Entity</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>This is the base class for all SketchUp entities. Entities are basically
+anything that can be contained in a model, including Drawingelements such
+as Edges, SectionPlanes, Groups, etc. and entities that relate to those
+Drawingelements, such as Loops, Layers, etc.</p>
+
+<p>Keep in mind that the methods below are available on all subclasses. For
+example, an Edge&#39;s parent class is Drawingelement, and a
+Drawingelement&#39;s parent class is Entity. Therefore an Edge has all of
+the methods defined in Drawingelement and Entity.</p>
+
+<p>The Object.is_a? method is the common way of determining what sort of
+Entity you&#39;re dealing with.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Count how many faces are in the current selection.
+</span><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+<span class='id identifier rubyid_face_count'>face_count</span> <span class='op'>=</span> <span class='int'>0</span>
+
+<span class='comment'># Look at all of the entities in the selection.
+</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Face</span>
+    <span class='id identifier rubyid_face_count'>face_count</span> <span class='op'>=</span> <span class='id identifier rubyid_face_count'>face_count</span> <span class='op'>+</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+<span class='rbrace'>}</span>
+
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>There are </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_face_count'>face_count</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> faces selected.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="AttributeDictionaries.html" title="Sketchup::AttributeDictionaries (class)">AttributeDictionaries</a></span>, <span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">AttributeDictionary</a></span>, <span class='object_link'><a href="Axes.html" title="Sketchup::Axes (class)">Axes</a></span>, <span class='object_link'><a href="Behavior.html" title="Sketchup::Behavior (class)">Behavior</a></span>, <span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Curve</a></span>, <span class='object_link'><a href="DefinitionList.html" title="Sketchup::DefinitionList (class)">DefinitionList</a></span>, <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>, <span class='object_link'><a href="EdgeUse.html" title="Sketchup::EdgeUse (class)">EdgeUse</a></span>, <span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Layer</a></span>, <span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Layers</a></span>, <span class='object_link'><a href="Loop.html" title="Sketchup::Loop (class)">Loop</a></span>, <span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Material</a></span>, <span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Materials</a></span>, <span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Page</a></span>, <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span>, <span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">RenderingOptions</a></span>, <span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span>, <span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Style</a></span>, <span class='object_link'><a href="Styles.html" title="Sketchup::Styles (class)">Styles</a></span>, <span class='object_link'><a href="Texture.html" title="Sketchup::Texture (class)">Texture</a></span>, <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span></p>
+</div>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_observer method is used to add an observer to the current object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attribute_dictionaries-instance_method" title="#attribute_dictionaries (instance method)">#<strong>attribute_dictionaries</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The attribute_dictionaries method is used to retrieve the
+AttributeDictionaries collection attached to the entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#attribute_dictionary-instance_method" title="#attribute_dictionary (instance method)">#<strong>attribute_dictionary</strong>(name, create)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The attribute_dictionary method is used to retrieve an attribute dictionary
+with a given name that is attached to an Entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_attribute-instance_method" title="#delete_attribute (instance method)">#<strong>delete_attribute</strong>(dictionary_name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The delete_attribute method is used to delete an attribute from an entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deleted%3F-instance_method" title="#deleted? (instance method)">#<strong>deleted?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The deleted? method is used to determine if your entity is still valid (not
+deleted by another script, for example.).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#entityID-instance_method" title="#entityID (instance method)">#<strong>entityID</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The entityID method is used to retrieve a unique ID assigned to an entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_attribute-instance_method" title="#get_attribute (instance method)">#<strong>get_attribute</strong>(dict_name, key, default_value = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_attribute method is used to retrieve the value of an attribute in
+the entity&#39;s attribute dictionary.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The to_s method is used to retrieve the string representation of the
+entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#model-instance_method" title="#model (instance method)">#<strong>model</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The model method is used to retrieve the model for the entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parent-instance_method" title="#parent (instance method)">#<strong>parent</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The parent method is used to retrieve the parent of the entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The remove_observer method is used to remove an observer from the current
+object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_attribute-instance_method" title="#set_attribute (instance method)">#<strong>set_attribute</strong>(dict_name, key, value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set attribute is used to set the value of an attribute in an attribute
+dictionary with the given name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The to_s method is used to retrieve the string representation of the
+entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#typename-instance_method" title="#typename (instance method)">#<strong>typename</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The typename method retrieves the type of the entity, which will be a
+string such as “Face”, “Edge”, or “Group”.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#valid%3F-instance_method" title="#valid? (instance method)">#<strong>valid?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The valid? method is used to determine if your entity is still valid (not
+deleted by another script, for example.).</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_observer-instance_method">
+  
+    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_observer method is used to add an observer to the current object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span>
+  <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span> <span class='id identifier rubyid_observer'>observer</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>observer</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An observer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attribute_dictionaries-instance_method">
+  
+    #<strong>attribute_dictionaries</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The attribute_dictionaries method is used to retrieve the
+AttributeDictionaries collection attached to the entity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'>set_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>115</span>
+<span class='id identifier rubyid_attrdicts'>attrdicts</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_attribute_dictionaries'>attribute_dictionaries</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>attributedictionaries - the AttributeDictionaries object associated with
+the entity, or nil if there are no attribute_dictionary objects associated
+with the model. Care must be taken if nil is returned, for example:
+invoking attribute_dictionaries.length will throw a NoMethodError
+exception, not return 0.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="attribute_dictionary-instance_method">
+  
+    #<strong>attribute_dictionary</strong>(name, create)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The attribute_dictionary method is used to retrieve an attribute dictionary
+with a given name that is attached to an Entity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'>set_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>115</span>
+<span class='id identifier rubyid_attrdict'>attrdict</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_attribute_dictionary'>attribute_dictionary</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns attributedictionary - an AttributeDictionary object if successful,
+or nil if there is no attribute dictionary</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the attribute dictionary.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>create</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>boolean, if set to true then the attribute dictionary will be created if it
+does not exist.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>attributedictionary - an AttributeDictionary object if successful, or nil
+if there is no attribute dictionary</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_attribute-instance_method">
+  
+    #<strong>delete_attribute</strong>(dictionary_name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The delete_attribute method is used to delete an attribute from an entity.</p>
+
+<p>If only the dictionary_name is given, then it deletes the entire
+AttributeDictionary. Otherwise, delete_attribute deletes the attribute with
+the given key from the given dictionary.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'>set_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>115</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_delete_attribute'>delete_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns nil</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>dictionary_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of an attribute dictionary.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An attribute key.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deleted?-instance_method">
+  
+    #<strong>deleted?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The deleted? method is used to determine if your entity is still valid (not
+deleted by another script, for example.)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+<span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_deleted?'>deleted?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if deleted, false if not deleted</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="entityID-instance_method">
+  
+    #<strong>entityID</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The entityID method is used to retrieve a unique ID assigned to an entity.</p>
+
+<p>The entityID is not persistent between sessions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+<span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_entityID'>entityID</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>id - the id for the Entity object</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_attribute-instance_method">
+  
+    #<strong>get_attribute</strong>(dict_name, key, default_value = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_attribute method is used to retrieve the value of an attribute in
+the entity&#39;s attribute dictionary.</p>
+
+<p>If the third parameter, default_value, is not passed and there is no
+attribute that matches the given name, it returns nil.</p>
+
+<p>If default_value is provided and there is no matching attribute it returns
+the given value. It does not create an attribute with that name though.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'>set_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>115</span>
+<span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_get_attribute'>get_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictoinary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns value - the retrieved value</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>dict_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of an attribute dictionary.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An attribute key.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>default_value</span>
+      
+      
+        <span class='type'>(<tt>optional</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A default value to return if no attribute is found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>value - the retrieved value</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The to_s method is used to retrieve the string representation of the
+entity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_st'>st</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string - the string representation of the entity if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="model-instance_method">
+  
+    #<strong>model</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The model method is used to retrieve the model for the entity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_m'>m</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>model - the model that contains the Entity object</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parent-instance_method">
+  
+    #<strong>parent</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The parent method is used to retrieve the parent of the entity.</p>
+
+<p>The parent will be a ComponentDefinition, a Group, or a Model, whatever the
+entity is contained within.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>entity - a Entity object representing the parent of this entity</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_observer-instance_method">
+  
+    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The remove_observer method is used to remove an observer from the current
+object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span>
+  <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_remove_observer'>remove_observer</span> <span class='id identifier rubyid_observer'>observer</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>observer</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An observer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_attribute-instance_method">
+  
+    #<strong>set_attribute</strong>(dict_name, key, value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set attribute is used to set the value of an attribute in an attribute
+dictionary with the given name.</p>
+
+<p>This method will create a new AttributeDictionary if none exists.</p>
+
+<p>Note, a bug prior to SketchUp 2015 would corrupt the model if the key is an
+empty string. This also includes values that will evaluate to empty
+strings, such as nil.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'>set_attribute</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testdictionary</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>115</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns value - the newly set value if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>dict_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of an attribute dictionary.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An attribute key.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The value for the attribute.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>value - the newly set value if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The to_s method is used to retrieve the string representation of the
+entity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_st'>st</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string - the string representation of the entity if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="typename-instance_method">
+  
+    #<strong>typename</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The typename method retrieves the type of the entity, which will be a
+string such as “Face”, “Edge”, or “Group”.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+
+<span class='comment'># I just happen to know that the second and third entities in the
+</span><span class='comment'># entities objects are edges.
+</span><span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_typename'>typename</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>type - the type of the entity</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="valid?-instance_method">
+  
+    #<strong>valid?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The valid? method is used to determine if your entity is still valid (not
+deleted by another script, for example.)</p>
+
+<p>This method is functionally identical to the deleted? method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+
+<span class='comment'># Add the face to the entities in the model
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
+<span class='id identifier rubyid_entity1'>entity1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_entity1'>entity1</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if deleted, false if not deleted</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:10 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::Curve
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::Curve";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Curve</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::Curve
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></li>
+          
+            <li class="next">Sketchup::Curve</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Curve class is used by SketchUp to unite a series of Edge objects into
+one conceptual entity. Since SketchUp is a surface modeler, all circles,
+arcs, and arbitrary curves are really just edges that are bound together in
+sequence.</p>
+
+<p>There is a subclass of Curve called ArcCurve, which is any curve that makes
+up part of a circle. You can think of ArcCurves as entities that were
+created with SketchUp&#39;s Arc or Circle drawing tools and Curves as
+entities that were created with the Freehand drawing tool.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="ArcCurve.html" title="Sketchup::ArcCurve (class)">ArcCurve</a></span></p>
+</div>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_edges-instance_method" title="#count_edges (instance method)">#<strong>count_edges</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The count_edges method is used to retrieve the number of Edge objects that
+make up the Curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_edge-instance_method" title="#each_edge (instance method)">#<strong>each_edge</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The each_edge method is used to iterate through all of the Edge objects in
+the curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#edges-instance_method" title="#edges (instance method)">#<strong>edges</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The edges method is used to retrieve an array of Edge objects that make up
+the Curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#first_edge-instance_method" title="#first_edge (instance method)">#<strong>first_edge</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The first_edge method is used to retrieve the first edge of the curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_polygon%3F-instance_method" title="#is_polygon? (instance method)">#<strong>is_polygon?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#last_edge-instance_method" title="#last_edge (instance method)">#<strong>last_edge</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The last_edge method is used to retrieve the last edge of the curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The length method retrieves the length of the curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#move_vertices-instance_method" title="#move_vertices (instance method)">#<strong>move_vertices</strong>(point_array)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The vertices method retrieves a collection of all vertices in a curve.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#vertices-instance_method" title="#vertices (instance method)">#<strong>vertices</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The vertices method retrieves a collection of all vertices in a curve.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Entity.html#add_observer-instance_method" title="Sketchup::Entity#add_observer (method)">#add_observer</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionaries-instance_method" title="Sketchup::Entity#attribute_dictionaries (method)">#attribute_dictionaries</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionary-instance_method" title="Sketchup::Entity#attribute_dictionary (method)">#attribute_dictionary</a></span>, <span class='object_link'><a href="Entity.html#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span>, <span class='object_link'><a href="Entity.html#deleted%3F-instance_method" title="Sketchup::Entity#deleted? (method)">#deleted?</a></span>, <span class='object_link'><a href="Entity.html#entityID-instance_method" title="Sketchup::Entity#entityID (method)">#entityID</a></span>, <span class='object_link'><a href="Entity.html#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span>, <span class='object_link'><a href="Entity.html#inspect-instance_method" title="Sketchup::Entity#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Entity.html#model-instance_method" title="Sketchup::Entity#model (method)">#model</a></span>, <span class='object_link'><a href="Entity.html#parent-instance_method" title="Sketchup::Entity#parent (method)">#parent</a></span>, <span class='object_link'><a href="Entity.html#remove_observer-instance_method" title="Sketchup::Entity#remove_observer (method)">#remove_observer</a></span>, <span class='object_link'><a href="Entity.html#set_attribute-instance_method" title="Sketchup::Entity#set_attribute (method)">#set_attribute</a></span>, <span class='object_link'><a href="Entity.html#to_s-instance_method" title="Sketchup::Entity#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Entity.html#typename-instance_method" title="Sketchup::Entity#typename (method)">#typename</a></span>, <span class='object_link'><a href="Entity.html#valid%3F-instance_method" title="Sketchup::Entity#valid? (method)">#valid?</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="count_edges-instance_method">
+  
+    #<strong>count_edges</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The count_edges method is used to retrieve the number of Edge objects that
+make up the Curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_count_edges'>count_edges</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>num_edges - the number of edges in the curve</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_edge-instance_method">
+  
+    #<strong>each_edge</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The each_edge method is used to iterate through all of the Edge objects in
+the curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_each_edge'>each_edge</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_e'>e</span><span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>edge - a variable that will hold each Edge object as they are found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="edges-instance_method">
+  
+    #<strong>edges</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The edges method is used to retrieve an array of Edge objects that make up
+the Curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_edges'>edges</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>edges - an array of Edge objects if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="first_edge-instance_method">
+  
+    #<strong>first_edge</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The first_edge method is used to retrieve the first edge of the curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_firstedge'>firstedge</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_first_edge'>first_edge</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>edge - the first Edge object in the curve if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_polygon?-instance_method">
+  
+    #<strong>is_polygon?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Create a polygon and check its edge
+</span><span class='id identifier rubyid_ents'>ents</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_ents'>ents</span><span class='period'>.</span><span class='id identifier rubyid_add_ngon'>add_ngon</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>6</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='kw'>nil</span>
+<span class='id identifier rubyid_ents'>ents</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span> <span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span> <span class='kw'>if</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Edge</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_is_poly'>is_poly</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_is_polygon?'>is_polygon?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>True if this edge was originally created by the polygon tool, otherwise
+false.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.1 (M1)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="last_edge-instance_method">
+  
+    #<strong>last_edge</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The last_edge method is used to retrieve the last edge of the curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_lastedge'>lastedge</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_last_edge'>last_edge</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>edge - the last Edge object in the curve if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="length-instance_method">
+  
+    #<strong>length</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The length method retrieves the length of the curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>length - the length of the curve in current units if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="move_vertices-instance_method">
+  
+    #<strong>move_vertices</strong>(point_array)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The vertices method retrieves a collection of all vertices in a curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Need example ruby code here.</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns success - true or false</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point_array</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Array of Point3d objects to move each vertex to match.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>success - true or false</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="vertices-instance_method">
+  
+    #<strong>vertices</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The vertices method retrieves a collection of all vertices in a curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_centerpoint'>centerpoint</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Create a circle perpendicular to the normal or Z axis
+</span><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_normalize!'>normalize!</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span> <span class='id identifier rubyid_centerpoint'>centerpoint</span><span class='comma'>,</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='comma'>,</span> <span class='int'>10</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>7</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_curve'>curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_vertices'>vertices</span> <span class='op'>=</span> <span class='id identifier rubyid_curve'>curve</span><span class='period'>.</span><span class='id identifier rubyid_vertices'>vertices</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>vertices - a collection of the vertices</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:13 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

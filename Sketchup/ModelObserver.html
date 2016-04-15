@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::ModelObserver
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::ModelObserver";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (M)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">ModelObserver</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::ModelObserver
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::ModelObserver</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>This observer interface is implemented to react to model events. To
+implement this observer, create a Ruby class of this type, override the
+desired methods, and add an instance of the observer to the model.</p>
+
+<p>Note that the observers related to transactions (aka undoable operations)
+are primarily for reporting and debugging. Performing any edit operations
+of your own (such as modifying the model) inside the observer callback
+should be avoided, as it could cause crashes or model corruption. The most
+common use for these callbacks is to help debug problems where your Ruby
+script&#39;s <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and
+<span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> calls are somehow conflicting with
+SketchUp&#39;s native undo operations. You can set up an observer set to
+watch precisely what is going on.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># This is an example of an observer that watches the
+</span><span class='comment'># component placement event.
+</span><span class='kw'>class</span> <span class='const'>MyModelObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ModelObserver</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onPlaceComponent'>onPlaceComponent</span><span class='lparen'>(</span><span class='id identifier rubyid_instance'>instance</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onPlaceComponent: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_instance'>instance</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='comment'># Attach the observer.
+</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyModelObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onActivePathChanged-instance_method" title="#onActivePathChanged (instance method)">#<strong>onActivePathChanged</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onActivePathChanged-instance_method" title="Sketchup::ModelObserver#onActivePathChanged (method)">#onActivePathChanged</a></span> method is invoked when the user opens or closes
+a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> or <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> for editing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onAfterComponentSaveAs-instance_method" title="#onAfterComponentSaveAs (instance method)">#<strong>onAfterComponentSaveAs</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> method is invoked when the user
+context-clicks &gt; Save As on a component instance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onBeforeComponentSaveAs-instance_method" title="#onBeforeComponentSaveAs (instance method)">#<strong>onBeforeComponentSaveAs</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> method is invoked when the user
+context-clicks &gt; Save As on a component instance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onDeleteModel-instance_method" title="#onDeleteModel (instance method)">#<strong>onDeleteModel</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onDeleteModel-instance_method" title="Sketchup::ModelObserver#onDeleteModel (method)">#onDeleteModel</a></span> method is invoked when a model is deleted.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onEraseAll-instance_method" title="#onEraseAll (instance method)">#<strong>onEraseAll</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onEraseAll-instance_method" title="Sketchup::ModelObserver#onEraseAll (method)">#onEraseAll</a></span> method is invoked when everything in a model is erased.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onExplode-instance_method" title="#onExplode (instance method)">#<strong>onExplode</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this
+model is exploded.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onPlaceComponent-instance_method" title="#onPlaceComponent (instance method)">#<strong>onPlaceComponent</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onPlaceComponent-instance_method" title="Sketchup::ModelObserver#onPlaceComponent (method)">#onPlaceComponent</a></span> method is invoked when a component is “placed” into
+the model, meaning it is dragged from the Component Browser.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onPostSaveModel-instance_method" title="#onPostSaveModel (instance method)">#<strong>onPostSaveModel</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onPostSaveModel-instance_method" title="Sketchup::ModelObserver#onPostSaveModel (method)">#onPostSaveModel</a></span> method is invoked after a model has been saved to
+disk.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onPreSaveModel-instance_method" title="#onPreSaveModel (instance method)">#<strong>onPreSaveModel</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onPreSaveModel-instance_method" title="Sketchup::ModelObserver#onPreSaveModel (method)">#onPreSaveModel</a></span> method is invoked before a model is saved to disk.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onSaveModel-instance_method" title="#onSaveModel (instance method)">#<strong>onSaveModel</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onSaveModel-instance_method" title="Sketchup::ModelObserver#onSaveModel (method)">#onSaveModel</a></span> method is invoked after a model has been saved to disk.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onTransactionAbort-instance_method" title="#onTransactionAbort (instance method)">#<strong>onTransactionAbort</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onTransactionAbort-instance_method" title="Sketchup::ModelObserver#onTransactionAbort (method)">#onTransactionAbort</a></span> method is invoked when a transaction is aborted.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onTransactionCommit-instance_method" title="#onTransactionCommit (instance method)">#<strong>onTransactionCommit</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is
+completed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onTransactionEmpty-instance_method" title="#onTransactionEmpty (instance method)">#<strong>onTransactionEmpty</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an
+undoable operation) starts and then is committed without anything being
+altered in between.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onTransactionRedo-instance_method" title="#onTransactionRedo (instance method)">#<strong>onTransactionRedo</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a
+transaction (aka undo operation.) You can programmatically fire a redo by
+calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onTransactionStart-instance_method" title="#onTransactionStart (instance method)">#<strong>onTransactionStart</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an
+undoable operation) starts.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onTransactionUndo-instance_method" title="#onTransactionUndo (instance method)">#<strong>onTransactionUndo</strong>(model)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a
+transaction (aka undo operation.) You can programmatically fire an undo by
+calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="onActivePathChanged-instance_method">
+  
+    #<strong>onActivePathChanged</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onActivePathChanged-instance_method" title="Sketchup::ModelObserver#onActivePathChanged (method)">#onActivePathChanged</a></span> method is invoked when the user opens or closes
+a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> or <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> for editing.</p>
+
+<p>When the user opens an instance for editing the positions and
+transformations of the entities in the opened instance will be relative to
+global world coordinates instead of the local coordinates relative to their
+parent.</p>
+
+<p>See <span class='object_link'><a href="Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Sketchup::Model#active_path</a></span> and <span class='object_link'><a href="Model.html#edit_transform-instance_method" title="Sketchup::Model#edit_transform (method)">Sketchup::Model#edit_transform</a></span> for
+methods that report the current edit origin vs. the global origin, etc.</p>
+
+<p>By using this observer callback, you can keep track of the various nested
+transformations as your users double click to drill into and out of
+component edits.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># As the user double clicks into component edits, show the &quot;path&quot; along
+</span><span class='comment'># the model hierarchy they have followed to get here.
+</span><span class='kw'>def</span> <span class='id identifier rubyid_onActivePathChanged'>onActivePathChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onActivePathChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Sketchup::Model#active_path</a></span></li>
+    
+      <li><span class='object_link'><a href="Model.html#edit_transform-instance_method" title="Sketchup::Model#edit_transform (method)">Sketchup::Model#edit_transform</a></span></li>
+    
+  </ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onAfterComponentSaveAs-instance_method">
+  
+    #<strong>onAfterComponentSaveAs</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> method is invoked when the user
+context-clicks &gt; Save As on a component instance. It is called just
+after the component is written to disk, so you can restore the component to
+some state before returning control to the user.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onAfterComponentSaveAs'>onAfterComponentSaveAs</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onAfterComponentSaveAs: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onBeforeComponentSaveAs-instance_method">
+  
+    #<strong>onBeforeComponentSaveAs</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> method is invoked when the user
+context-clicks &gt; Save As on a component instance. It is called just
+before the component is written to disk, so you can make changes within the
+handler and it will make it into the save.</p>
+
+<p>For example, you may decide that you want to add some attribute to every
+component that is saved out, but you do not want that attribute sticking
+around inside the current model. Within <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> you
+could add the attribute, and within <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> you could
+delete that attribute.</p>
+
+<p>The callback is not sent the component that is to be saved, but the
+model&#39;s selection will contain it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onBeforeComponentSaveAs'>onBeforeComponentSaveAs</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onBeforeComponentSaveAs: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onDeleteModel-instance_method">
+  
+    #<strong>onDeleteModel</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onDeleteModel-instance_method" title="Sketchup::ModelObserver#onDeleteModel (method)">#onDeleteModel</a></span> method is invoked when a model is deleted.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onDeleteModel'>onDeleteModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onDeleteModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onEraseAll-instance_method">
+  
+    #<strong>onEraseAll</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onEraseAll-instance_method" title="Sketchup::ModelObserver#onEraseAll (method)">#onEraseAll</a></span> method is invoked when everything in a model is erased.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onEraseAll'>onEraseAll</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onEraseAll: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onExplode-instance_method">
+  
+    #<strong>onExplode</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this
+model is exploded. This is an easier way to watch explode events vs.
+attaching an InstanceObserver to every instance in the model.</p>
+
+<p>Since the callback does not return what was exploded, one solution is to
+place a selection observer that keeps track of which entities whose
+explosion you are interested in are in the selection. Since SketchUp&#39;s
+user interface only provides a means of exploding the selection, this
+method is a reliable way to know what was just exploded.</p>
+
+<p>Another method would be to watch
+ComponentDefinition.count_instances to determine what just
+changed, as any components that were exploded will now be less an instance.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onExplode'>onExplode</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onExplode: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onPlaceComponent-instance_method">
+  
+    #<strong>onPlaceComponent</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onPlaceComponent-instance_method" title="Sketchup::ModelObserver#onPlaceComponent (method)">#onPlaceComponent</a></span> method is invoked when a component is “placed” into
+the model, meaning it is dragged from the Component Browser.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onPlaceComponent'>onPlaceComponent</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onPlaceComponent: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onPostSaveModel-instance_method">
+  
+    #<strong>onPostSaveModel</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onPostSaveModel-instance_method" title="Sketchup::ModelObserver#onPostSaveModel (method)">#onPostSaveModel</a></span> method is invoked after a model has been saved to
+disk.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onPostSaveModel'>onPostSaveModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onPostSaveModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onPreSaveModel-instance_method">
+  
+    #<strong>onPreSaveModel</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onPreSaveModel-instance_method" title="Sketchup::ModelObserver#onPreSaveModel (method)">#onPreSaveModel</a></span> method is invoked before a model is saved to disk.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onPreSaveModel'>onPreSaveModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onPreSaveModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onSaveModel-instance_method">
+  
+    #<strong>onSaveModel</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onSaveModel-instance_method" title="Sketchup::ModelObserver#onSaveModel (method)">#onSaveModel</a></span> method is invoked after a model has been saved to disk.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onSaveModel'>onSaveModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSaveModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onTransactionAbort-instance_method">
+  
+    #<strong>onTransactionAbort</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onTransactionAbort-instance_method" title="Sketchup::ModelObserver#onTransactionAbort (method)">#onTransactionAbort</a></span> method is invoked when a transaction is aborted.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionAbort'>onTransactionAbort</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionAbort: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Model.html#abort_operation-instance_method" title="Sketchup::Model#abort_operation (method)">Sketchup::Model#abort_operation</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onTransactionCommit-instance_method">
+  
+    #<strong>onTransactionCommit</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is
+completed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionCommit'>onTransactionCommit</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionCommit: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onTransactionEmpty-instance_method">
+  
+    #<strong>onTransactionEmpty</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an
+undoable operation) starts and then is committed without anything being
+altered in between.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionEmpty'>onTransactionEmpty</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionEmpty: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onTransactionRedo-instance_method">
+  
+    #<strong>onTransactionRedo</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a
+transaction (aka undo operation.) You can programmatically fire a redo by
+calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionRedo'>onTransactionRedo</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionRedo: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onTransactionStart-instance_method">
+  
+    #<strong>onTransactionStart</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an
+undoable operation) starts.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionStart'>onTransactionStart</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionStart: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onTransactionUndo-instance_method">
+  
+    #<strong>onTransactionUndo</strong>(model)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a
+transaction (aka undo operation.) You can programmatically fire an undo by
+calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionUndo'>onTransactionUndo</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionUndo: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:22 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::Color
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::Color";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Color</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::Color
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::Color</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Color class is used to create and manipulate colors within SketchUp
+models.</p>
+
+<p>For methods that accept a Color object, such as the face.material method,
+you can pass in an actual Color object, or an object that can be converted
+to a Color. For example:</p>
+
+<p>SketchUp ships with several built in colors in the Materials Browser. These
+colors are listed in the following table.</p>
+
+<p><table>
+<tr><td>Name</td><td>RGB Values</td><td>Swatch</td></tr>
+<tr><td>AliceBlue</td><td>240,248,255</td>
+<td style="background-color:rgb(240,248,255)">&nbsp;</td></tr>
+<tr><td>AntiqueWhite</td><td>250,235,215</td>
+<td style="background-color:rgb(250,235,215)">&nbsp;</td></tr>
+<tr><td>Aqua</td><td>0,255,255</td>
+<td style="background-color:rgb(0,255,255)">&nbsp;</td></tr>
+<tr><td>Aquamarine</td><td>127,255,212</td>
+<td style="background-color:rgb(127,255,212)">&nbsp;</td></tr>
+<tr><td>Azure</td><td>240,255,255</td>
+<td style="background-color:rgb(240,255,255)">&nbsp;</td></tr>
+<tr><td>Beige</td><td>245,245,220</td>
+<td style="background-color:rgb(245,245,220)">&nbsp;</td></tr>
+<tr><td>Bisque</td><td>255,228,196</td>
+<td style="background-color:rgb(255,228,196)">&nbsp;</td></tr>
+<tr><td>Black</td><td>0,0,0</td>
+<td style="background-color:rgb(0,0,0)">&nbsp;</td></tr>
+<tr><td>BlanchedAlmond</td><td>255,235,205</td>
+<td style="background-color:rgb(255,235,205)">&nbsp;</td></tr>
+<tr><td>Blue</td><td>0,0,255</td>
+<td style="background-color:rgb(0,0,255)">&nbsp;</td></tr>
+<tr><td>BlueViolet</td><td>138,43,226</td>
+<td style="background-color:rgb(138,43,226)">&nbsp;</td></tr>
+<tr><td>Brown</td><td>165,42,42</td>
+<td style="background-color:rgb(165,42,42)">&nbsp;</td></tr>
+<tr><td>BurlyWood</td><td>222,184,135</td>
+<td style="background-color:rgb(222,184,135)">&nbsp;</td></tr>
+<tr><td>CadetBlue</td><td>95,158,160</td>
+<td style="background-color:rgb(95,158,160)">&nbsp;</td></tr>
+<tr><td>Chartreuse</td><td>127,255,0</td>
+<td style="background-color:rgb(127,255,0)">&nbsp;</td></tr>
+<tr><td>Chocolate</td><td>210,105,30</td>
+<td style="background-color:rgb(210,105,30)">&nbsp;</td></tr>
+<tr><td>Coral</td><td>255,127,80</td>
+<td style="background-color:rgb(255,127,80)">&nbsp;</td></tr>
+<tr><td>CornflowerBlue</td><td>100,149,237</td>
+<td style="background-color:rgb(100,149,237)">&nbsp;</td></tr>
+<tr><td>Cornsilk</td><td>255,248,220</td>
+<td style="background-color:rgb(255,248,220)">&nbsp;</td></tr>
+<tr><td>Crimson</td><td>220,20,60</td>
+<td style="background-color:rgb(220,20,60)">&nbsp;</td></tr>
+<tr><td>Cyan</td><td>0,255,255</td>
+<td style="background-color:rgb(0,255,255)">&nbsp;</td></tr>
+<tr><td>DarkBlue</td><td>0,0,139</td>
+<td style="background-color:rgb(0,0,139)">&nbsp;</td></tr>
+<tr><td>DarkCyan</td><td>0,139,139</td>
+<td style="background-color:rgb(0,139,139)">&nbsp;</td></tr>
+<tr><td>DarkGoldenrod</td><td>184,134,11</td>
+<td style="background-color:rgb(184,134,11)">&nbsp;</td></tr>
+<tr><td>DarkGray</td><td>169,169,169</td>
+<td style="background-color:rgb(169,169,169)">&nbsp;</td></tr>
+<tr><td>DarkGreen</td><td>0,100,0</td>
+<td style="background-color:rgb(0,100,0)">&nbsp;</td></tr>
+<tr><td>DarkKhaki</td><td>189,183,107</td>
+<td style="background-color:rgb(189,183,107)">&nbsp;</td></tr>
+<tr><td>DarkMagenta</td><td>139,0,139</td>
+<td style="background-color:rgb(139,0,139)">&nbsp;</td></tr>
+<tr><td>DarkOliveGreen</td><td>85,107,47</td>
+<td style="background-color:rgb(85,107,47)">&nbsp;</td></tr>
+<tr><td>DarkOrange</td><td>255,140,0</td>
+<td style="background-color:rgb(255,140,0)">&nbsp;</td></tr>
+<tr><td>DarkOrchid</td><td>153,50,204</td>
+<td style="background-color:rgb(153,50,204)">&nbsp;</td></tr>
+<tr><td>DarkRed</td><td>139,0,0</td>
+<td style="background-color:rgb(139,0,0)">&nbsp;</td></tr>
+<tr><td>DarkSalmon</td><td>233,150,122</td>
+<td style="background-color:rgb(233,150,122)">&nbsp;</td></tr>
+<tr><td>DarkSeaGreen</td><td>143,188,143</td>
+<td style="background-color:rgb(143,188,143)">&nbsp;</td></tr>
+<tr><td>DarkSlateBlue</td><td>72,61,139</td>
+<td style="background-color:rgb(72,61,139)">&nbsp;</td></tr>
+<tr><td>DarkSlateGray</td><td>47,79,79</td>
+<td style="background-color:rgb(47,79,79)">&nbsp;</td></tr>
+<tr><td>DarkTurquoise</td><td>0,206,209</td>
+<td style="background-color:rgb(0,206,209)">&nbsp;</td></tr>
+<tr><td>DarkViolet</td><td>148,0,211</td>
+<td style="background-color:rgb(148,0,211)">&nbsp;</td></tr>
+<tr><td>DeepPink</td><td>255,20,147</td>
+<td style="background-color:rgb(255,20,147)">&nbsp;</td></tr>
+<tr><td>DeepSkyBlue</td><td>0,191,255</td>
+<td style="background-color:rgb(0,191,255)">&nbsp;</td></tr>
+<tr><td>DimGray</td><td>105,105,105</td>
+<td style="background-color:rgb(105,105,105)">&nbsp;</td></tr>
+<tr><td>DodgerBlue</td><td>30,144,255</td>
+<td style="background-color:rgb(30,144,255)">&nbsp;</td></tr>
+<tr><td>FireBrick</td><td>178,34,34</td>
+<td style="background-color:rgb(178,34,34)">&nbsp;</td></tr>
+<tr><td>FloralWhite</td><td>255,250,240</td>
+<td style="background-color:rgb(255,250,240)">&nbsp;</td></tr>
+<tr><td>ForestGreen</td><td>34,139,34</td>
+<td style="background-color:rgb(34,139,34)">&nbsp;</td></tr>
+<tr><td>Fuchsia</td><td>255,0,255</td>
+<td style="background-color:rgb(255,0,255)">&nbsp;</td></tr>
+<tr><td>Gainsboro</td><td>220,220,220,</td>
+<td style="background-color:rgb(220,220,220,)">&nbsp;</td></tr>
+<tr><td>GhostWhite</td><td>248,248,255</td>
+<td style="background-color:rgb(248,248,255)">&nbsp;</td></tr>
+<tr><td>Gold</td><td>255,215,0</td>
+<td style="background-color:rgb(255,215,0)">&nbsp;</td></tr>
+<tr><td>Goldenrod</td><td>218,165,32</td>
+<td style="background-color:rgb(218,165,32)">&nbsp;</td></tr>
+<tr><td>Gray</td><td>128,128,128</td>
+<td style="background-color:rgb(128,128,128)">&nbsp;</td></tr>
+<tr><td>Green</td><td>0,128,0</td>
+<td style="background-color:rgb(0,128,0)">&nbsp;</td></tr>
+<tr><td>GreenYellow</td><td>173,255,47</td>
+<td style="background-color:rgb(173,255,47)">&nbsp;</td></tr>
+<tr><td>Honeydew</td><td>240,255,240</td>
+<td style="background-color:rgb(240,255,240)">&nbsp;</td></tr>
+<tr><td>HotPink</td><td>255,105,180</td>
+<td style="background-color:rgb(255,105,180)">&nbsp;</td></tr>
+<tr><td>IndianRed</td><td>205,92,92</td>
+<td style="background-color:rgb(205,92,92)">&nbsp;</td></tr>
+<tr><td>Indigo</td><td>75,0,130</td>
+<td style="background-color:rgb(75,0,130)">&nbsp;</td></tr>
+<tr><td>Ivory</td><td>255,255,240</td>
+<td style="background-color:rgb(255,255,240)">&nbsp;</td></tr>
+<tr><td>Khaki</td><td>240,230,140</td>
+<td style="background-color:rgb(240,230,140)">&nbsp;</td></tr>
+<tr><td>Lavender</td><td>230,230,250</td>
+<td style="background-color:rgb(230,230,250)">&nbsp;</td></tr>
+<tr><td>LavenderBlush</td><td>255,240,245</td>
+<td style="background-color:rgb(255,240,245)">&nbsp;</td></tr>
+<tr><td>LawnGreen</td><td>124,252,0</td>
+<td style="background-color:rgb(124,252,0)">&nbsp;</td></tr>
+<tr><td>LemonChiffon</td><td>255,250,205</td>
+<td style="background-color:rgb(255,250,205)">&nbsp;</td></tr>
+<tr><td>LightBlue</td><td>173,216,230</td>
+<td style="background-color:rgb(173,216,230)">&nbsp;</td></tr>
+<tr><td>LightCoral</td><td>240,128,128</td>
+<td style="background-color:rgb(240,128,128)">&nbsp;</td></tr>
+<tr><td>LightCyan</td><td>224,255,255</td>
+<td style="background-color:rgb(224,255,255)">&nbsp;</td></tr>
+<tr><td>LightGoldenrodYellow</td><td>250,250,210</td>
+<td style="background-color:rgb(250,250,210)">&nbsp;</td></tr>
+<tr><td>LightGreen</td><td>144,238,144</td>
+<td style="background-color:rgb(144,238,144)">&nbsp;</td></tr>
+<tr><td>LightGrey</td><td>211,211,211</td>
+<td style="background-color:rgb(211,211,211)">&nbsp;</td></tr>
+<tr><td>LightPink</td><td>255,182,193</td>
+<td style="background-color:rgb(255,182,193)">&nbsp;</td></tr>
+<tr><td>LightSalmon</td><td>255,160,122</td>
+<td style="background-color:rgb(255,160,122)">&nbsp;</td></tr>
+<tr><td>LightSeaGreen</td><td>32,178,170</td>
+<td style="background-color:rgb(32,178,170)">&nbsp;</td></tr>
+<tr><td>LightSkyBlue</td><td>135,206,250</td>
+<td style="background-color:rgb(135,206,250)">&nbsp;</td></tr>
+<tr><td>LightSlateGray</td><td>119,136,153</td>
+<td style="background-color:rgb(119,136,153)">&nbsp;</td></tr>
+<tr><td>LightSteelBlue</td><td>176,196,222</td>
+<td style="background-color:rgb(176,196,222)">&nbsp;</td></tr>
+<tr><td>LightYellow</td><td>255,255,224</td>
+<td style="background-color:rgb(255,255,224)">&nbsp;</td></tr>
+<tr><td>Lime</td><td>0,255,0</td>
+<td style="background-color:rgb(0,255,0)">&nbsp;</td></tr>
+<tr><td>LimeGreen</td><td>50,205,50</td>
+<td style="background-color:rgb(50,205,50)">&nbsp;</td></tr>
+<tr><td>Linen</td><td>250,240,230</td>
+<td style="background-color:rgb(250,240,230)">&nbsp;</td></tr>
+<tr><td>Magenta</td><td>255,0,255</td>
+<td style="background-color:rgb(255,0,255)">&nbsp;</td></tr>
+<tr><td>Maroon</td><td>128,0,0</td>
+<td style="background-color:rgb(128,0,0)">&nbsp;</td></tr>
+<tr><td>MediumAquamarine</td><td>102,205,170</td>
+<td style="background-color:rgb(102,205,170)">&nbsp;</td></tr>
+<tr><td>MediumBlue</td><td>0,0,205</td>
+<td style="background-color:rgb(0,0,205)">&nbsp;</td></tr>
+<tr><td>MediumOrchid</td><td>186,85,211</td>
+<td style="background-color:rgb(186,85,211)">&nbsp;</td></tr>
+<tr><td>MediumPurple</td><td>147,112,219</td>
+<td style="background-color:rgb(147,112,219)">&nbsp;</td></tr>
+<tr><td>MediumSeaGreen</td><td>60,179,113</td>
+<td style="background-color:rgb(60,179,113)">&nbsp;</td></tr>
+<tr><td>MediumSlateBlue</td><td>123,104,238</td>
+<td style="background-color:rgb(123,104,238)">&nbsp;</td></tr>
+<tr><td>MediumSpringGreen</td><td>0,250,154</td>
+<td style="background-color:rgb(0,250,154)">&nbsp;</td></tr>
+<tr><td>MediumTurquoise</td><td>72,209,204</td>
+<td style="background-color:rgb(72,209,204)">&nbsp;</td></tr>
+<tr><td>MediumVioletRed</td><td>199,21,133</td>
+<td style="background-color:rgb(199,21,133)">&nbsp;</td></tr>
+<tr><td>MidnightBlue</td><td>25,25,112</td>
+<td style="background-color:rgb(25,25,112)">&nbsp;</td></tr>
+<tr><td>MintCream</td><td>245,255,250</td>
+<td style="background-color:rgb(245,255,250)">&nbsp;</td></tr>
+<tr><td>MistyRose</td><td>255,228,225</td>
+<td style="background-color:rgb(255,228,225)">&nbsp;</td></tr>
+<tr><td>Moccasin</td><td>255,228,181</td>
+<td style="background-color:rgb(255,228,181)">&nbsp;</td></tr>
+<tr><td>NavajoWhite</td><td>255,222,173</td>
+<td style="background-color:rgb(255,222,173)">&nbsp;</td></tr>
+<tr><td>Navy</td><td>0,0,128</td>
+<td style="background-color:rgb(0,0,128)">&nbsp;</td></tr>
+<tr><td>OldLace</td><td>253,245,230</td>
+<td style="background-color:rgb(253,245,230)">&nbsp;</td></tr>
+<tr><td>Olive</td><td>128,128,0</td>
+<td style="background-color:rgb(128,128,0)">&nbsp;</td></tr>
+<tr><td>OliveDrab</td><td>107,142,35</td>
+<td style="background-color:rgb(107,142,35)">&nbsp;</td></tr>
+<tr><td>Orange</td><td>255,165,0</td>
+<td style="background-color:rgb(255,165,0)">&nbsp;</td></tr>
+<tr><td>OrangeRed</td><td>255,69,0</td>
+<td style="background-color:rgb(255,69,0)">&nbsp;</td></tr>
+<tr><td>Orchid</td><td>218,112,214</td>
+<td style="background-color:rgb(218,112,214)">&nbsp;</td></tr>
+<tr><td>PaleGoldenrod</td><td>238,232,170</td>
+<td style="background-color:rgb(238,232,170)">&nbsp;</td></tr>
+<tr><td>PaleGreen</td><td>152,251,152</td>
+<td style="background-color:rgb(152,251,152)">&nbsp;</td></tr>
+<tr><td>PaleTurquoise</td><td>175,238,238</td>
+<td style="background-color:rgb(175,238,238)">&nbsp;</td></tr>
+<tr><td>PaleVioletRed</td><td>219,112,147</td>
+<td style="background-color:rgb(219,112,147)">&nbsp;</td></tr>
+<tr><td>PapayaWhip</td><td>255,239,213</td>
+<td style="background-color:rgb(255,239,213)">&nbsp;</td></tr>
+<tr><td>PeachPuff</td><td>255,218,185</td>
+<td style="background-color:rgb(255,218,185)">&nbsp;</td></tr>
+<tr><td>Peru</td><td>205,133,63</td>
+<td style="background-color:rgb(205,133,63)">&nbsp;</td></tr>
+<tr><td>Pink</td><td>255,192,203</td>
+<td style="background-color:rgb(255,192,203)">&nbsp;</td></tr>
+<tr><td>Plum</td><td>221,160,221</td>
+<td style="background-color:rgb(221,160,221)">&nbsp;</td></tr>
+<tr><td>PowderBlue</td><td>176,224,230</td>
+<td style="background-color:rgb(176,224,230)">&nbsp;</td></tr>
+<tr><td>Purple</td><td>128,0,128</td>
+<td style="background-color:rgb(128,0,128)">&nbsp;</td></tr>
+<tr><td>Red</td><td>255,0,0</td>
+<td style="background-color:rgb(255,0,0)">&nbsp;</td></tr>
+<tr><td>RosyBrown</td><td>188,143,143</td>
+<td style="background-color:rgb(188,143,143)">&nbsp;</td></tr>
+<tr><td>RoyalBlue</td><td>65,105,225</td>
+<td style="background-color:rgb(65,105,225)">&nbsp;</td></tr>
+<tr><td>SaddleBrown</td><td>139,69,19</td>
+<td style="background-color:rgb(139,69,19)">&nbsp;</td></tr>
+<tr><td>Salmon</td><td>250,128,114</td>
+<td style="background-color:rgb(250,128,114)">&nbsp;</td></tr>
+<tr><td>SandyBrown</td><td>244,164,96</td>
+<td style="background-color:rgb(244,164,96)">&nbsp;</td></tr>
+<tr><td>SeaGreen</td><td>46,139,87</td>
+<td style="background-color:rgb(46,139,87)">&nbsp;</td></tr>
+<tr><td>Seashell</td><td>255,245,238</td>
+<td style="background-color:rgb(255,245,238)">&nbsp;</td></tr>
+<tr><td>Sienna</td><td>160,82,45</td>
+<td style="background-color:rgb(160,82,45)">&nbsp;</td></tr>
+<tr><td>Silver</td><td>192,192,192</td>
+<td style="background-color:rgb(192,192,192)">&nbsp;</td></tr>
+<tr><td>SkyBlue</td><td>135,206,235</td>
+<td style="background-color:rgb(135,206,235)">&nbsp;</td></tr>
+<tr><td>SlateBlue</td><td>106,90,205</td>
+<td style="background-color:rgb(106,90,205)">&nbsp;</td></tr>
+<tr><td>SlateGray</td><td>112,128,144</td>
+<td style="background-color:rgb(112,128,144)">&nbsp;</td></tr>
+<tr><td>Snow</td><td>255,250,250</td>
+<td style="background-color:rgb(255,250,250)">&nbsp;</td></tr>
+<tr><td>SpringGreen</td><td>0,255,127</td>
+<td style="background-color:rgb(0,255,127)">&nbsp;</td></tr>
+<tr><td>SteelBlue</td><td>70,130,180</td>
+<td style="background-color:rgb(70,130,180)">&nbsp;</td></tr>
+<tr><td>Tan</td><td>210,180,140</td>
+<td style="background-color:rgb(210,180,140)">&nbsp;</td></tr>
+<tr><td>Teal</td><td>0,128,128</td>
+<td style="background-color:rgb(0,128,128)">&nbsp;</td></tr>
+<tr><td>Thistle</td><td>216,191,216</td>
+<td style="background-color:rgb(216,191,216)">&nbsp;</td></tr>
+<tr><td>Tomato</td><td>255,99,71</td>
+<td style="background-color:rgb(255,99,71)">&nbsp;</td></tr>
+<tr><td>Turquoise</td><td>64,224,208</td>
+<td style="background-color:rgb(64,224,208)">&nbsp;</td></tr>
+<tr><td>Violet</td><td>238,130,238</td>
+<td style="background-color:rgb(238,130,238)">&nbsp;</td></tr>
+<tr><td>Wheat</td><td>245,222,179</td>
+<td style="background-color:rgb(245,222,179)">&nbsp;</td></tr>
+<tr><td>White</td><td>255,255,255</td>
+<td style="background-color:rgb(255,255,255)">&nbsp;</td></tr>
+<tr><td>WhiteSmoke</td><td>245,245,245</td>
+<td style="background-color:rgb(245,245,245)">&nbsp;</td></tr>
+<tr><td>Yellow</td><td>255,255,0</td>
+<td style="background-color:rgb(255,255,0)">&nbsp;</td></tr>
+<tr><td>YellowGreen</td><td>154,205,50</td>
+<td style="background-color:rgb(154,205,50)">&nbsp;</td></tr>
+</table></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='int'>255</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='int'>0xff</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>red</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#ff0000</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#names-class_method" title="names (class method)">.<strong>names</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The names method is used to retrieve an array of all color names recognized
+by SketchUp.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alpha-instance_method" title="#alpha (instance method)">#<strong>alpha</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The alpha method is used to retrieve the opacity of the color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#alpha%3D-instance_method" title="#alpha= (instance method)">#<strong>alpha=</strong>(alpha)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The alpha= method is used to set the opacity of the color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#blend-instance_method" title="#blend (instance method)">#<strong>blend</strong>(color2, weight)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The blend method is used to blend two colors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#blue-instance_method" title="#blue (instance method)">#<strong>blue</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The blue method is used to retrieve the blue value of a color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#blue%3D-instance_method" title="#blue= (instance method)">#<strong>blue=</strong>(blue)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The blue= method is used to set the blue value of a color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#green-instance_method" title="#green (instance method)">#<strong>green</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The green method is used to retrieve the green value of a color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#green%3D-instance_method" title="#green= (instance method)">#<strong>green=</strong>(green)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The green= method is used to set the green component of a RGB Color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The new method is used to create a new Color object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#red-instance_method" title="#red (instance method)">#<strong>red</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The red method is used to retrieve the red component of a RGB Color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#red%3D-instance_method" title="#red= (instance method)">#<strong>red=</strong>(red)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The red= method is used to set the red component of a RGB Color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_a-instance_method" title="#to_a (instance method)">#<strong>to_a</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The to_a method is used to convert a Color object to an Array object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_i-instance_method" title="#to_i (instance method)">#<strong>to_i</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The to_i method is used to convert a Color object to an 32 bit integer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a string representation of a Color object, in the form of
+“Color(255, 255, 255, 255)”.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    
+      <span class="overload">#<strong>initialize</strong>(red, green, blue)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The new method is used to create a new Color object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color_from_name'>color_from_name</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>OldLace</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_color_from_rgb'>color_from_rgb</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>128</span><span class='comma'>,</span> <span class='int'>255</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_color_from_rgba'>color_from_rgba</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>128</span><span class='comma'>,</span> <span class='int'>255</span><span class='comma'>,</span> <span class='int'>128</span><span class='rparen'>)</span>
+
+<span class='comment'># You can then assign colors to the material of DrawingElements.
+</span><span class='comment'># Note that this creates a new Material object, and the alpha value
+</span><span class='comment'># of the color does NOT get applied to the new Material. You must
+</span><span class='comment'># manually set the alpha to get transparent materials.
+</span><span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='id identifier rubyid_color_from_rgba'>color_from_rgba</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span><span class='period'>.</span><span class='id identifier rubyid_alpha'>alpha</span> <span class='op'>=</span> <span class='float'>0.5</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(red, green, blue)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>red</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A red value between 0 and 255.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>green</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A green value between 0 and 255.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>blue</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A blue value between 0 and 255.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A string name of a color that currently exists in SketchUp. See the table
+at the start of this class description for more info.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="names-class_method">
+  
+    .<strong>names</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The names method is used to retrieve an array of all color names recognized
+by SketchUp.</p>
+
+<p>In general, whenever a method wants a color, you can pass in a String with
+one of these names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_array'>array</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_names'>names</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>names - an array of all SketchUp color names if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="alpha-instance_method">
+  
+    #<strong>alpha</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The alpha method is used to retrieve the opacity of the color. A value of 0
+is transparent, 255 is opaque.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>OldLace</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_alpha'>alpha</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_alpha'>alpha</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>alpha - the opacity of the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="alpha=-instance_method">
+  
+    #<strong>alpha=</strong>(alpha)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The alpha= method is used to set the opacity of the color. A value of 0 is
+transparent, 255 is opaque.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_alpha'>alpha</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_alpha'>alpha</span> <span class='op'>=</span> <span class='int'>255</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns alpha - the newly set opacity value if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>alpha</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The new opacity value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>alpha - the newly set opacity value if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="blend-instance_method">
+  
+    #<strong>blend</strong>(color2, weight)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The blend method is used to blend two colors.</p>
+
+<p>The blended color will be the result of taking (1 - weight) * color1 +
+weight * color2. If weight = 0, you will get color2. If weight = 1 you will
+get color1.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color1'>color1</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>OldLace</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_color2'>color2</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_color3'>color3</span> <span class='op'>=</span> <span class='id identifier rubyid_color1'>color1</span><span class='period'>.</span><span class='id identifier rubyid_blend'>blend</span> <span class='id identifier rubyid_color2'>color2</span><span class='comma'>,</span> <span class='float'>0.5</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns color3 - the newly blended Color object if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>color2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The second color to be blended (with this color).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>weight</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Float between 0.0 and 1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>color3 - the newly blended Color object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="blue-instance_method">
+  
+    #<strong>blue</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The blue method is used to retrieve the blue value of a color. Colors are
+comprised of red, green, and blue values.</p>
+
+<p>Value range is 0 to 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_setting'>setting</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_blue'>blue</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>blue - the blue value for the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="blue=-instance_method">
+  
+    #<strong>blue=</strong>(blue)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The blue= method is used to set the blue value of a color. Colors are
+comprised of red, green, and blue values.</p>
+
+<p>Value range is 0 to 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_setting'>setting</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_blue'>blue</span> <span class='op'>=</span> <span class='int'>200</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_setting'>setting</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_setting'>setting</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns blue - the new blue value for the color if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>blue</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The blue value for the color.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>blue - the new blue value for the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="green-instance_method">
+  
+    #<strong>green</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The green method is used to retrieve the green value of a color. Colors are
+comprised of red, green, and blue values.</p>
+
+<p>Value range is 0 to 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_setting'>setting</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_green'>green</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_setting'>setting</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_setting'>setting</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>green - the green value for the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="green=-instance_method">
+  
+    #<strong>green=</strong>(green)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The green= method is used to set the green component of a RGB Color.</p>
+
+<p>Value range is 0 to 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_setting'>setting</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_green'>green</span> <span class='op'>=</span> <span class='int'>200</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_setting'>setting</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_setting'>setting</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns green - the new green value for the color if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>green</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The green value for the color.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>green - the new green value for the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="red-instance_method">
+  
+    #<strong>red</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The red method is used to retrieve the red component of a RGB Color.</p>
+
+<p>Value range is 0 to 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_setting'>setting</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_red'>red</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_setting'>setting</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_setting'>setting</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>red - the red value for the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="red=-instance_method">
+  
+    #<strong>red=</strong>(red)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The red= method is used to set the red component of a RGB Color.</p>
+
+<p>Value range is 0 to 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_setting'>setting</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_red'>red</span><span class='op'>=</span><span class='int'>200</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns red - the new red value for the color if successful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>red</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The red value for the color.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>red - the new red value for the color if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_a-instance_method">
+  
+    #<strong>to_a</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The to_a method is used to convert a Color object to an Array object. The
+returned array will contain 4 integer values (RGBA) between 0 and 255.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_color_array'>color_array</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_color_array'>color_array</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_color_array'>color_array</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>array - an Array object if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_i-instance_method">
+  
+    #<strong>to_i</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The to_i method is used to convert a Color object to an 32 bit integer.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AliceBlue</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_integer'>integer</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>integer - a 32 bit integer if successful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a string representation of a Color object, in the form of
+“Color(255, 255, 255, 255)”.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>OldLace</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_color'>color</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string - a String name for the Color.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:14 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Length
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Length";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (L)</a> &raquo;
+    
+    
+    <span class="title">Length</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Length
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Float</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Float</li>
+          
+            <li class="next">Length</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2015, Length used to be derived from Float. This is no
+longer the case.</p>
+</div>
+  </div>
+
+
+<p>Because length units are used so often in SketchUp, a special class has
+been added to make it easier to work with length values. You can use a
+Length object any place that you would use a Float.</p>
+
+<p>Internally, all lengths in SketchUp are stored in inches. The Length class
+stores values in inches as well. A number of methods have been added to the
+Ruby Numeric class to do units conversions.</p>
+
+<p>Constants: Length Format:</p>
+<ul><li>
+<p>Length::Decimal</p>
+</li><li>
+<p>Length::Architectural</p>
+</li><li>
+<p>Length::Engineering</p>
+</li><li>
+<p>Length::Fractional</p>
+</li></ul>
+
+<p>Length Unit:</p>
+<ul><li>
+<p>Length::Inches</p>
+</li><li>
+<p>Length::Feet</p>
+</li><li>
+<p>Length::Millimeter</p>
+</li><li>
+<p>Length::Centimeter</p>
+</li><li>
+<p>Length::Meter</p>
+</li></ul>
+
+<p>The setting for the Length format and Length unit can be retrieved from the
+model options by querying the “UnitsOptions” OptionsProvider for
+“LengthFormat” and “LengthUnit” respectively.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C-instance_method" title="#&lt; (instance method)">#<strong>&lt;</strong>(length2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The &lt; method is used to see if one length is less than another length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D-instance_method" title="#&lt;= (instance method)">#<strong>&lt;=</strong>(length2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The &lt;= method is used to see if one length is less than or equal to
+another length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D%3E-instance_method" title="#&lt;=&gt; (instance method)">#<strong>&lt;=&gt;</strong>(length2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The  method is used to see if one length is less than equal or greater than
+another length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3D%3D-instance_method" title="#== (instance method)">#<strong>==</strong>(length2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The == method is used to see if one length is equal to another length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E-instance_method" title="#&gt; (instance method)">#<strong>&gt;</strong>(length2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The &gt; method is used to see if one length is greater than another
+length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3E%3D-instance_method" title="#&gt;= (instance method)">#<strong>&gt;=</strong>(length2)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The &gt;= method is used to see if one length is greater than or equal to
+another length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">#<strong>inspect</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The inspect method is used to retrieve an unformatted string for the
+length, which is the length in inches, regardless of the user&#39;s model
+unit settings.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_f-instance_method" title="#to_f (instance method)">#<strong>to_f</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The to_f method is used to convert a length to a normal float.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Format a length as a String using the current units formatting settings for
+the model.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="<-instance_method">
+  
+    #<strong>&lt;</strong>(length2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The &lt; method is used to see if one length is less than another length.</p>
+
+<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1
+&lt; l2 should return false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_length2'>length2</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_length1'>length1</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_length2'>length2</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is less than length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is not less than length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if length1 is &lt; length2; false if length1 is not
+&lt; length2</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A length value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if length1 is &lt; length2; false if length1 is not &lt;
+length2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<=-instance_method">
+  
+    #<strong>&lt;=</strong>(length2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The &lt;= method is used to see if one length is less than or equal to
+another length.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_length2'>length2</span> <span class='op'>=</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_length1'>length1</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_length2'>length2</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is less than or equal length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is greater than length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if length1 is &lt;= length2; false if length1 is not
+&lt;= length2</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A length value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if length1 is &lt;= length2; false if length1 is not &lt;=
+length2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="<=>-instance_method">
+  
+    #<strong>&lt;=&gt;</strong>(length2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The &lt;=&gt; method is used to see if one length is less than equal or
+greater than another length. Because we change == for Length to do a test
+based on a tolerance, we also need to change &lt;=&gt; to also take
+tolerance into account.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>20</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_length2'>length2</span> <span class='op'>=</span> <span class='int'>30</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_length1'>length1</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_length2'>length2</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - the result of the comparison</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A length value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - the result of the comparison</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="==-instance_method">
+  
+    #<strong>==</strong>(length2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The == method is used to see if one length is equal to another length.</p>
+
+<p>The equality comparison on Length values uses the default tolerance that
+SketchUp uses for comparing lengths.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>20</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_length2'>length2</span> <span class='op'>=</span> <span class='int'>30</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_is_equal'>is_equal</span> <span class='op'>=</span> <span class='id identifier rubyid_length1'>length1</span> <span class='op'>==</span> <span class='id identifier rubyid_length2'>length2</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if length1 is == length2; false if length1 is not ==
+length2</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A length value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if length1 is == length2; false if length1 is not == length2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">-instance_method">
+  
+    #<strong>&gt;</strong>(length2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The &gt; method is used to see if one length is greater than another
+length.</p>
+
+<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1
+&gt; l2 should return false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_length2'>length2</span> <span class='op'>=</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_length1'>length1</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_length2'>length2</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is greater than length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is not greater than length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if length1 is &gt; length2; false if length1 is not
+&gt; length2</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A length value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if length1 is &gt; length2; false if length1 is not &gt;
+length2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id=">=-instance_method">
+  
+    #<strong>&gt;=</strong>(length2)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The &gt;= method is used to see if one length is greater than or equal to
+another length.</p>
+
+<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1
+&gt;= l2 should return true. Also L1 &lt;= l2 would return true.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_length2'>length2</span> <span class='op'>=</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_length1'>length1</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_length2'>length2</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is greater than or equal length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>length1 is less than length2</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if length1 is &gt;= length2; false if length1 is not
+&gt;= length2</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>length2</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A length value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if length1 is &gt;= length2; false if length1 is not &gt;=
+length2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inspect-instance_method">
+  
+    #<strong>inspect</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The inspect method is used to retrieve an unformatted string for the
+length, which is the length in inches, regardless of the user&#39;s model
+unit settings. See Length.to_s for a way automatically format your Length
+to the user&#39;s model units.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='int'>55</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>length - an unformatted length string</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_f-instance_method">
+  
+    #<strong>to_f</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The to_f method is used to convert a length to a normal float.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='int'>45</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_f'>f</span> <span class='op'>=</span> <span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>value - the float length value</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Format a length as a String using the current units formatting settings for
+the model. (So if the user&#39;s model is set to feet, this method will
+return a nicely formatted length in feet.)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='int'>55</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
+<span class='id identifier rubyid_str'>str</span> <span class='op'>=</span> <span class='id identifier rubyid_length'>length</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>value - the float length value</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:10 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

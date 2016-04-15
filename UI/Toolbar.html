@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: UI::Toolbar
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "UI::Toolbar";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span>
+     &raquo; 
+    <span class="title">Toolbar</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: UI::Toolbar
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">UI::Toolbar</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd>Enumerable</dd>
+  </dl>
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Toolbar class contains methods to create and manipulate SketchUp
+toolbars in Ruby. Toolbars are collections of buttons that you can use to
+activate custom Tools or ruby scripts.</p>
+
+<p>Also see the Command object for details on creating “commands” which can be
+called from your toolbars.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This toolbar icon simply displays Hello World on the screen
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test Toolbars</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Testing the toolbars class</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new-class_method" title="new (class method)">.<strong>new</strong>(toolbarname)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The new method creates a new Toolbar object.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_item-instance_method" title="#add_item (instance method)">#<strong>add_item</strong>(command)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_item method is used to add an item to the toolbar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_separator-instance_method" title="#add_separator (instance method)">#<strong>add_separator</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_separator method is used to add a line separator to the toolbar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#count-instance_method" title="UI::Toolbar#count (method)">#count</a></span> method is inherited from the <code>Enumerable</code> mix-in
+module.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|key, value| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The each method is used to iterate through all of the commands attached to
+a toolbar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_last_state-instance_method" title="#get_last_state (instance method)">#<strong>get_last_state</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_last_state method is used to determine if the toolbar was hidden or
+visible in the previous session of SketchUp.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hide-instance_method" title="#hide (instance method)">#<strong>hide</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The hide method is used to hide the toolbar on the user interface.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#length-instance_method" title="UI::Toolbar#length (method)">#length</a></span> method returns the number of items in the toolbar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The name method returns the name of the toolbar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#restore-instance_method" title="#restore (instance method)">#<strong>restore</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The restore method is used to reposition the toolbar to its previous
+location and show if not hidden.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show-instance_method" title="#show (instance method)">#<strong>show</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The show method is used to display the toolbar in the user interface.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size-instance_method" title="#size (instance method)">#<strong>size</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#length-instance_method" title="UI::Toolbar#length (method)">#length</a></span> method returns the number of items in the toolbar.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#visible%3F-instance_method" title="#visible? (instance method)">#<strong>visible?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The visible? method is used to find out if a toolbar is currently visible.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new-class_method">
+  
+    .<strong>new</strong>(toolbarname)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The new method creates a new Toolbar object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns toolbar - the newly created toolbar object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>toolbarname</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name for the new toolbar.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>toolbar - the newly created toolbar object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_item-instance_method">
+  
+    #<strong>add_item</strong>(command)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_item method is used to add an item to the toolbar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_command'>command</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns toolbar - the toolbar where the command was just added</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>command</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Command object representing the command to add to the toolbar.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>toolbar - the toolbar where the command was just added</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_separator-instance_method">
+  
+    #<strong>add_separator</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_separator method is used to add a line separator to the toolbar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_separator'>add_separator</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns toolbar - the toolbar where the line separator was just added</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>toolbar - the toolbar where the line separator was just added</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="count-instance_method">
+  
+    #<strong>count</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#count-instance_method" title="UI::Toolbar#count (method)">#count</a></span> method is inherited from the <code>Enumerable</code> mix-in
+module.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>integer</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
+  
+    #<strong>each</strong> {|key, value| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The each method is used to iterate through all of the commands attached to
+a toolbar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This command displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_separator'>add_separator</span>
+<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test 2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World 2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span> <span class='id identifier rubyid_item'>item</span> <span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_item'>item</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Variables that will hold each key and value as they are found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_last_state-instance_method">
+  
+    #<strong>get_last_state</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_last_state method is used to determine if the toolbar was hidden or
+visible in the previous session of SketchUp.</p>
+
+<p>Valid states are 1 for visible, 0 for hidden, -1 for before never shown.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_state'>state</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_get_last_state'>get_last_state</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>state - the last state of the toolbar (see comments)</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hide-instance_method">
+  
+    #<strong>hide</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The hide method is used to hide the toolbar on the user interface.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This toolbar icon simply displays Hello World on the screen
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test Toolbars</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Testing the toolbars class</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Toolbar Showing</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_hide'>hide</span>
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Toolbar Hidden</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="length-instance_method">
+  
+    #<strong>length</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#length-instance_method" title="UI::Toolbar#length (method)">#length</a></span> method returns the number of items in the toolbar.</p>
+
+<p>The <span class='object_link'><a href="#size-instance_method" title="UI::Toolbar#size (method)">#size</a></span> method is an alias of <span class='object_link'><a href="#length-instance_method" title="UI::Toolbar#length (method)">#length</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>integer</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  
+    #<strong>name</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The name method returns the name of the toolbar.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This command displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_separator'>add_separator</span>
+<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test 2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World 2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>string - the name of the toolbar.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="restore-instance_method">
+  
+    #<strong>restore</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The restore method is used to reposition the toolbar to its previous
+location and show if not hidden.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_restore'>restore</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show-instance_method">
+  
+    #<strong>show</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The show method is used to display the toolbar in the user interface.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This toolbar icon simply displays Hello World on the screen
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test Toolbars</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Testing the toolbars class</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size-instance_method">
+  
+    #<strong>size</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#length-instance_method" title="UI::Toolbar#length (method)">#length</a></span> method returns the number of items in the toolbar.</p>
+
+<p>The <span class='object_link'><a href="#size-instance_method" title="UI::Toolbar#size (method)">#size</a></span> method is an alias of <span class='object_link'><a href="#length-instance_method" title="UI::Toolbar#length (method)">#length</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>integer</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="visible?-instance_method">
+  
+    #<strong>visible?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The visible? method is used to find out if a toolbar is currently visible.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_visible'>visible</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if visible</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:16 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

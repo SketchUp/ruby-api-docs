@@ -1,0 +1,7075 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Sketchup
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (S)</a> &raquo;
+    
+    
+    <span class="title">Sketchup</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="class_list.html"></iframe>
+
+      <div id="content"><h1>Module: Sketchup
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The Sketchup module contains a number of important utility methods for use
+in your Ruby scripts. Many of the classes in the API are implemented
+beneath this module. You can think of the Sketchup module as the “root” of
+the application tree. Most ruby calls start from the currently active
+model, and this is accessed via the Sketchup.active_model method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Grab a handle to the currently active model (aka the one the user is
+</span><span class='comment'># looking at in SketchUp.)
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+
+<span class='comment'># Grab other handles to commonly used collections inside the model.
+</span><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+<span class='id identifier rubyid_materials'>materials</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_materials'>materials</span>
+<span class='id identifier rubyid_component_definitions'>component_definitions</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span>
+<span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+
+<span class='comment'># Now that we have our handles, we can start pulling objects and making
+</span><span class='comment'># method calls that are useful.
+</span><span class='id identifier rubyid_first_entity'>first_entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>First thing in your model is a </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_first_entity'>first_entity</span><span class='period'>.</span><span class='id identifier rubyid_typename'>typename</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_number_materials'>number_materials</span> <span class='op'>=</span> <span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your model has </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_number_materials'>number_materials</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> materials.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_new_edge'>new_edge</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>500</span><span class='comma'>,</span><span class='int'>500</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Sketchup/Licensing.html" title="Sketchup::Licensing (module)">Licensing</a></span>, <span class='object_link'><a href="Sketchup/RegionalSettings.html" title="Sketchup::RegionalSettings (module)">RegionalSettings</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Sketchup/Animation.html" title="Sketchup::Animation (class)">Animation</a></span>, <span class='object_link'><a href="Sketchup/AppObserver.html" title="Sketchup::AppObserver (class)">AppObserver</a></span>, <span class='object_link'><a href="Sketchup/ArcCurve.html" title="Sketchup::ArcCurve (class)">ArcCurve</a></span>, <span class='object_link'><a href="Sketchup/AttributeDictionaries.html" title="Sketchup::AttributeDictionaries (class)">AttributeDictionaries</a></span>, <span class='object_link'><a href="Sketchup/AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">AttributeDictionary</a></span>, <span class='object_link'><a href="Sketchup/Axes.html" title="Sketchup::Axes (class)">Axes</a></span>, <span class='object_link'><a href="Sketchup/Behavior.html" title="Sketchup::Behavior (class)">Behavior</a></span>, <span class='object_link'><a href="Sketchup/Camera.html" title="Sketchup::Camera (class)">Camera</a></span>, <span class='object_link'><a href="Sketchup/ClassificationSchema.html" title="Sketchup::ClassificationSchema (class)">ClassificationSchema</a></span>, <span class='object_link'><a href="Sketchup/Classifications.html" title="Sketchup::Classifications (class)">Classifications</a></span>, <span class='object_link'><a href="Sketchup/Color.html" title="Sketchup::Color (class)">Color</a></span>, <span class='object_link'><a href="Sketchup/ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span>, <span class='object_link'><a href="Sketchup/ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>, <span class='object_link'><a href="Sketchup/Console.html" title="Sketchup::Console (class)">Console</a></span>, <span class='object_link'><a href="Sketchup/ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, <span class='object_link'><a href="Sketchup/ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="Sketchup/Curve.html" title="Sketchup::Curve (class)">Curve</a></span>, <span class='object_link'><a href="Sketchup/DefinitionList.html" title="Sketchup::DefinitionList (class)">DefinitionList</a></span>, <span class='object_link'><a href="Sketchup/DefinitionObserver.html" title="Sketchup::DefinitionObserver (class)">DefinitionObserver</a></span>, <span class='object_link'><a href="Sketchup/DefinitionsObserver.html" title="Sketchup::DefinitionsObserver (class)">DefinitionsObserver</a></span>, <span class='object_link'><a href="Sketchup/Dimension.html" title="Sketchup::Dimension (class)">Dimension</a></span>, <span class='object_link'><a href="Sketchup/DimensionLinear.html" title="Sketchup::DimensionLinear (class)">DimensionLinear</a></span>, <span class='object_link'><a href="Sketchup/DimensionObserver.html" title="Sketchup::DimensionObserver (class)">DimensionObserver</a></span>, <span class='object_link'><a href="Sketchup/DimensionRadial.html" title="Sketchup::DimensionRadial (class)">DimensionRadial</a></span>, <span class='object_link'><a href="Sketchup/Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>, <span class='object_link'><a href="Sketchup/Edge.html" title="Sketchup::Edge (class)">Edge</a></span>, <span class='object_link'><a href="Sketchup/EdgeUse.html" title="Sketchup::EdgeUse (class)">EdgeUse</a></span>, <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Entities</a></span>, <span class='object_link'><a href="Sketchup/EntitiesObserver.html" title="Sketchup::EntitiesObserver (class)">EntitiesObserver</a></span>, <span class='object_link'><a href="Sketchup/Entity.html" title="Sketchup::Entity (class)">Entity</a></span>, <span class='object_link'><a href="Sketchup/EntityObserver.html" title="Sketchup::EntityObserver (class)">EntityObserver</a></span>, <span class='object_link'><a href="Sketchup/ExtensionsManager.html" title="Sketchup::ExtensionsManager (class)">ExtensionsManager</a></span>, <span class='object_link'><a href="Sketchup/Face.html" title="Sketchup::Face (class)">Face</a></span>, <span class='object_link'><a href="Sketchup/Group.html" title="Sketchup::Group (class)">Group</a></span>, <span class='object_link'><a href="Sketchup/Image.html" title="Sketchup::Image (class)">Image</a></span>, <span class='object_link'><a href="Sketchup/Importer.html" title="Sketchup::Importer (class)">Importer</a></span>, <span class='object_link'><a href="Sketchup/InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span>, <span class='object_link'><a href="Sketchup/InstanceObserver.html" title="Sketchup::InstanceObserver (class)">InstanceObserver</a></span>, <span class='object_link'><a href="Sketchup/Layer.html" title="Sketchup::Layer (class)">Layer</a></span>, <span class='object_link'><a href="Sketchup/Layers.html" title="Sketchup::Layers (class)">Layers</a></span>, <span class='object_link'><a href="Sketchup/LayersObserver.html" title="Sketchup::LayersObserver (class)">LayersObserver</a></span>, <span class='object_link'><a href="Sketchup/Loop.html" title="Sketchup::Loop (class)">Loop</a></span>, <span class='object_link'><a href="Sketchup/Material.html" title="Sketchup::Material (class)">Material</a></span>, <span class='object_link'><a href="Sketchup/Materials.html" title="Sketchup::Materials (class)">Materials</a></span>, <span class='object_link'><a href="Sketchup/MaterialsObserver.html" title="Sketchup::MaterialsObserver (class)">MaterialsObserver</a></span>, <span class='object_link'><a href="Sketchup/Menu.html" title="Sketchup::Menu (class)">Menu</a></span>, <span class='object_link'><a href="Sketchup/Model.html" title="Sketchup::Model (class)">Model</a></span>, <span class='object_link'><a href="Sketchup/ModelObserver.html" title="Sketchup::ModelObserver (class)">ModelObserver</a></span>, <span class='object_link'><a href="Sketchup/OptionsManager.html" title="Sketchup::OptionsManager (class)">OptionsManager</a></span>, <span class='object_link'><a href="Sketchup/OptionsProvider.html" title="Sketchup::OptionsProvider (class)">OptionsProvider</a></span>, <span class='object_link'><a href="Sketchup/OptionsProviderObserver.html" title="Sketchup::OptionsProviderObserver (class)">OptionsProviderObserver</a></span>, <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Page</a></span>, <span class='object_link'><a href="Sketchup/Pages.html" title="Sketchup::Pages (class)">Pages</a></span>, <span class='object_link'><a href="Sketchup/PagesObserver.html" title="Sketchup::PagesObserver (class)">PagesObserver</a></span>, <span class='object_link'><a href="Sketchup/PickHelper.html" title="Sketchup::PickHelper (class)">PickHelper</a></span>, <span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">RenderingOptions</a></span>, <span class='object_link'><a href="Sketchup/RenderingOptionsObserver.html" title="Sketchup::RenderingOptionsObserver (class)">RenderingOptionsObserver</a></span>, <span class='object_link'><a href="Sketchup/SectionPlane.html" title="Sketchup::SectionPlane (class)">SectionPlane</a></span>, <span class='object_link'><a href="Sketchup/Selection.html" title="Sketchup::Selection (class)">Selection</a></span>, <span class='object_link'><a href="Sketchup/SelectionObserver.html" title="Sketchup::SelectionObserver (class)">SelectionObserver</a></span>, <span class='object_link'><a href="Sketchup/Set.html" title="Sketchup::Set (class)">Set</a></span>, <span class='object_link'><a href="Sketchup/ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span>, <span class='object_link'><a href="Sketchup/ShadowInfoObserver.html" title="Sketchup::ShadowInfoObserver (class)">ShadowInfoObserver</a></span>, <span class='object_link'><a href="Sketchup/Style.html" title="Sketchup::Style (class)">Style</a></span>, <span class='object_link'><a href="Sketchup/Styles.html" title="Sketchup::Styles (class)">Styles</a></span>, <span class='object_link'><a href="Sketchup/Text.html" title="Sketchup::Text (class)">Text</a></span>, <span class='object_link'><a href="Sketchup/Texture.html" title="Sketchup::Texture (class)">Texture</a></span>, <span class='object_link'><a href="Sketchup/TextureWriter.html" title="Sketchup::TextureWriter (class)">TextureWriter</a></span>, <span class='object_link'><a href="Sketchup/Tool.html" title="Sketchup::Tool (class)">Tool</a></span>, <span class='object_link'><a href="Sketchup/Tools.html" title="Sketchup::Tools (class)">Tools</a></span>, <span class='object_link'><a href="Sketchup/ToolsObserver.html" title="Sketchup::ToolsObserver (class)">ToolsObserver</a></span>, <span class='object_link'><a href="Sketchup/UVHelper.html" title="Sketchup::UVHelper (class)">UVHelper</a></span>, <span class='object_link'><a href="Sketchup/Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="Sketchup/View.html" title="Sketchup::View (class)">View</a></span>, <span class='object_link'><a href="Sketchup/ViewObserver.html" title="Sketchup::ViewObserver (class)">ViewObserver</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#active_model-class_method" title="active_model (class method)">.<strong>active_model</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The active_model method returns the currently active SketchUp model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_observer-class_method" title="add_observer (class method)">.<strong>add_observer</strong>(observer)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The add_observer method is used to add an observer to the current object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#app_name-class_method" title="app_name (class method)">.<strong>app_name</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The app_name method is used to retrieve the current application name.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#break_edges%3D-class_method" title="break_edges (class method)">.<strong>break_edges</strong>(enabled)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The break_edges= method can be used to disable or enable the break edges
+feature.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#break_edges%3F-class_method" title="break_edges? (class method)">.<strong>break_edges?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The break_edges? method indicates whether the break edges feature is
+currently turned on.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_texture_writer-class_method" title="create_texture_writer (class method)">.<strong>create_texture_writer</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The create_texture_writer method is used to create a TextureWriter object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#debug_mode%3D-class_method" title="debug_mode (class method)">.<strong>debug_mode</strong>(enabled)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The debug_mode= method lets you controls whether SketchUp will output
+warnings to the console when it detects incorrect usage of the API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#debug_mode%3F-class_method" title="debug_mode? (class method)">.<strong>debug_mode?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The debug_mode? controls whether SketchUp will output warnings to the
+console when it detects incorrect usage of the API.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#display_name_from_action-class_method" title="display_name_from_action (class method)">.<strong>display_name_from_action</strong>(action_name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The display_name_from_action method is used to gets a user-friendly name
+from an action string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extensions-class_method" title="extensions (class method)">.<strong>extensions</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the ExtensionsManager where you can find all registered
+SketchupExtension objects.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#file_new-class_method" title="file_new (class method)">.<strong>file_new</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The file_new method is used to create a new file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_support_file-class_method" title="find_support_file (class method)">.<strong>find_support_file</strong>(filename, directory = &#39;&#39;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The find_support_files method is used to retrieve the relative path and
+name of a file within the SketchUp installation directory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_support_files-class_method" title="find_support_files (class method)">.<strong>find_support_files</strong>(filename, directory)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The find_support_files method is used to retrieve the path and name of all
+matching files within the SketchUp installation directory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fix_shadow_strings%3D-class_method" title="fix_shadow_strings (class method)">.<strong>fix_shadow_strings</strong>(enabled)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The fix_shadow_strings= method lets you control whether shadow rendering
+attempts to fix an artifact commonly referred to as “strings”.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fix_shadow_strings%3F-class_method" title="fix_shadow_strings? (class method)">.<strong>fix_shadow_strings?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The fix_shadow_strings? method indicates whether the a fix for a shadow
+rendering artifact commonly referred to as “strings” is enabled.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_angle-class_method" title="format_angle (class method)">.<strong>format_angle</strong>(number)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The format_angle method takes a number as an angle in radians and formats
+it into degrees.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_area-class_method" title="format_area (class method)">.<strong>format_area</strong>(number)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The format_area method formats a number as an area using the current units
+settings.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_degrees-class_method" title="format_degrees (class method)">.<strong>format_degrees</strong>(number)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The format_degrees method formats a number as an angle given in degrees.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_length-class_method" title="format_length (class method)">.<strong>format_length</strong>(number)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The format_length method formats a number as a length using the current
+units settings.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_datfile_info-class_method" title="get_datfile (class method)">.<strong>get_datfile</strong>(key, default_value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_datfile_info method is used to retrieve the value for the given key
+from Sketchup.dat.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_i18n_datfile_info-class_method" title="geT_i18ndatfile_info (class method)">.<strong>geT_i18ndatfile_info</strong>(key, default_value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_i18ndatfile_info method is used to retrieve the value for the given
+key from the internationalization file that SketchUp uses to work in
+multiple languages.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_locale-class_method" title="get_locale (class method)">.<strong>get_locale</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The os_language method returns the language code for the language SketchUp
+is running in.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_resource_path-class_method" title="get_resource_path (class method)">.<strong>get_resource_path</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_resource_path is used to retrieve the directory where “resource”
+files are stored by SketchUp.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_shortcuts-class_method" title="get_shortcuts (class method)">.<strong>get_shortcuts</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The get_shortcuts method retrieves an array of all keyboard shortcuts
+currently registered with SketchUp.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#install_from_archive-class_method" title="install_from_archive (class method)">.<strong>install_from_archive</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Installs the contents of a ZIP archive file into SketchUp&#39;s Plugins
+folder.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_64bit%3F-class_method" title="is_64bit? (class method)">.<strong>is_64bit?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This methods indicates whether the host SketchUp application is 64bit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_online-class_method" title="is_online (class method)">.<strong>is_online</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The is_online method is used to verify a connection to the Internet.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_pro%3F-class_method" title="is_pro? (class method)">.<strong>is_pro?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns a boolean flag indicating whether the application is SketchUp Pro.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is_valid_filename%3F-class_method" title="is_valid_filename? (class method)">.<strong>is_valid_filename?</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The is_valid_filename? method is used to determine whether a filename
+contains illegal characters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#load-class_method" title="load (class method)">.<strong>load</strong>(path)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The load method is used to include encrypted and nonencrypted ruby files.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#open_file-class_method" title="open_file (class method)">.<strong>open_file</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The open_file method is used to open a file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#os_language-class_method" title="os_language (class method)">.<strong>os_language</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The os_language method returns the language code for the language SketchUp
+is running in.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse_length-class_method" title="parse_length (class method)">.<strong>parse_length</strong>(string)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The parse_length method parses a string as a length.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#platform-class_method" title="platform (class method)">.<strong>platform</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This methods returns a symbol indicating the current platform.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plugins_disabled%3D-class_method" title="plugins_disabled (class method)">.<strong>plugins_disabled</strong>(enabled)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The plugins_disabled= method lets you control whether SketchUp will load
+Ruby scripts from the plugins directory at startup time.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plugins_disabled%3F-class_method" title="plugins_disabled? (class method)">.<strong>plugins_disabled?</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The plugins_disabled? method indicates whether Ruby scripts in the plugins
+directory will be loaded at startup time.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#quit-class_method" title="quit (class method)">.<strong>quit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The quit method is used to terminate the application.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_default-class_method" title="read_default (class method)">.<strong>read_default</strong>(section, variable, default = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The read_default method is used to retrieve the string associated with a
+value within the specified sub-section section of a .INI file or registry
+(within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_extension-class_method" title="register_extension (class method)">.<strong>register_extension</strong>(extension, load_on_start)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The register_extension method is used to register an extension with
+SketchUp&#39;s extension manager (in SketchUp preferences).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_importer-class_method" title="register_importer (class method)">.<strong>register_importer</strong>(importer)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The register_importer method is used to register an importer with SketchUp.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_observer-class_method" title="remove_observer (class method)">.<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The remove_observer method is used to remove an observer from the current
+object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#require-class_method" title="require (class method)">.<strong>require</strong>(path)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The require method is used to include encrypted and nonencrypted ruby
+files.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save_thumbnail-class_method" title="save_thumbnail (class method)">.<strong>save_thumbnail</strong>(skp_filename, img_filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The save_thumbnail method is used to generate a thumbnail for any SKP file
+- not necessarily the loaded model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#send_action-class_method" title="send_action (class method)">.<strong>send_action</strong>(action)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The send_action method sends a message to the message queue to perform some
+action asynchronously.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_status_text-class_method" title="set_status_text (class method)">.<strong>set_status_text</strong>(status_text = &#39;&#39;, position = SB_PROMPT)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The set_status_text method is used to set the text appearing on the status
+bar within the drawing window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#status_text%3D-class_method" title="status_text= (class method)">.<strong>status_text=</strong>(status_text)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The status_text= method is used to set the text appearing on the status bar
+within the drawing window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#temp_dir-class_method" title="temp_dir (class method)">.<strong>temp_dir</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The temp_dir method is used to retrieve the OS temporary directory for the
+current user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#template-class_method" title="template (class method)">.<strong>template</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The template method is used to get the file name of the current template.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#template%3D-class_method" title="template= (class method)">.<strong>template=</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The template= method is used to set the file name of the current template.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#template_dir-class_method" title="template_dir (class method)">.<strong>template_dir</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The template_dir is used to retrieve the directory where templates are
+stored by the SketchUp install.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#undo-class_method" title="undo (class method)">.<strong>undo</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The undo method is used undo the last transaction on the undo stack.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#vcb_label%3D-class_method" title="vcb_label (class method)">.<strong>vcb_label</strong>(label_text)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The vcb_label= method is used to set the label that appears on the vcb, or
+the “value control box”, which is another word for the “measurements” text
+entry box that appears at the bottom on the SketchUp window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#vcb_value%3D-class_method" title="vcb_value= (class method)">.<strong>vcb_value=</strong>(value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The vcb_value= method is used to set the value that appears on the vcb, or
+the “value control box”, which is another word for the “measurements” text
+entry box that appears at the bottom on the SketchUp window.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#version-class_method" title="version (class method)">.<strong>version</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the current version of sketchup in decimal form.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#version_number-class_method" title="version_number (class method)">.<strong>version_number</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the current version of sketchup as a whole number for comparisons.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_default-class_method" title="write_default (class method)">.<strong>write_default</strong>(section, key, value)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The write_default method is used to set the string associated with a
+variable within the specified sub-section of a .plist file on the Mac or
+the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp
+[Version] section).</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="active_model-class_method">
+  
+    .<strong>active_model</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The active_model method returns the currently active SketchUp model. On the
+PC, this is the only model that one can have access to via the API, but
+Macintosh versions of SketchUp can have multiple models open at once, in
+which case the method will return the model that the user currently has
+focused.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span> <span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>else</span>
+  <span class='comment'># code acting on the model
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>model - active model object if successful, false if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_observer-class_method">
+  
+    .<strong>add_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The add_observer method is used to add an observer to the current object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>observer</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An observer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="app_name-class_method">
+  
+    .<strong>app_name</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The app_name method is used to retrieve the current application name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_app_name'>app_name</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>name - the name of the application, either “SketchUp Pro” or “SketchUp”.
+Note: For versions earlier than SketchUp8 M4 (Mac 8.0.15157 and Windows
+8.0.15158) this function will return “Google SketchUp Pro” or “Google
+SketchUp”.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="break_edges=-class_method">
+  
+    .<strong>break_edges</strong>(enabled)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The break_edges= method can be used to disable or enable the break edges
+feature. Break edges is the SketchUp 7 feature that automatically splits
+edges that the user draws which cross over one another.</p>
+
+<p>This feature is always on by default and cannot be disabled by the user via
+the user interface, but you can call this method to disable it. Be cautious
+in doing so, however, as the resulting model could then be altered when the
+user later draws lines into it with the break edges feature reactivated.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_break_edges?'>break_edges?</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns setting - true if break edges was turned on.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>enabled</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If true, break edges will be turned on. If false, it will be deactivated.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>setting - true if break edges was turned on.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="break_edges?-class_method">
+  
+    .<strong>break_edges?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The break_edges? method indicates whether the break edges feature is
+currently turned on. Break edges is the SketchUp 7 feature that
+automatically splits edges that the user draws which cross over one
+another. This feature is always on by default and cannot be disabled by the
+user via the user interface.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_break_edges?'>break_edges?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>break_edges - true if the feature is on.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_texture_writer-class_method">
+  
+    .<strong>create_texture_writer</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The create_texture_writer method is used to create a TextureWriter object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_texturewriter'>texturewriter</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_create_texture_writer'>create_texture_writer</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>texturewriter - a texturewriter object if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="debug_mode=-class_method">
+  
+    .<strong>debug_mode</strong>(enabled)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The debug_mode= method lets you controls whether SketchUp will output
+warnings to the console when it detects incorrect usage of the API. The
+setting takes effect right away, no need to restart SketchUp.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_debug_mode'>debug_mode</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns setting - true if debug mode is enabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>enabled</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If true, SketchUp will produce debug warnings.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>setting - true if debug mode is enabled.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2016</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="debug_mode?-class_method">
+  
+    .<strong>debug_mode?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The debug_mode? controls whether SketchUp will output warnings to the
+console when it detects incorrect usage of the API.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_debug_mode'>debug_mode</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_debug_mode?'>debug_mode?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>debug_mode - true if debug mode is enabled</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2016</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="display_name_from_action-class_method">
+  
+    .<strong>display_name_from_action</strong>(action_name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method has been non-functional on Mac since SketchUp 8.</p>
+</div>
+  </div>
+
+
+<p>The display_name_from_action method is used to gets a user-friendly name
+from an action string. See Sketchup.send_action for a list of valid action
+strings.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_display_name_from_action'>display_name_from_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>viewRight:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns friendly_name = a friendly name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>action_name</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An action string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>friendly_name = a friendly name.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="extensions-class_method">
+  
+    .<strong>extensions</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the ExtensionsManager where you can find all registered
+SketchupExtension objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_extensions'>extensions</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_extensions'>extensions</span>
+<span class='kw'>for</span> <span class='id identifier rubyid_extension'>extension</span> <span class='kw'>in</span> <span class='id identifier rubyid_extensions'>extensions</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The next extension is named: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span>
+      <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> and its loaded? state is: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_loaded?'>loaded?</span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>extensionsmanager - an ExtensionsManager object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="file_new-class_method">
+  
+    .<strong>file_new</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The file_new method is used to create a new file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_new_sketchup'>new_sketchup</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_file_new'>file_new</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Sketchup - a Sketchup object if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_support_file-class_method">
+  
+    .<strong>find_support_file</strong>(filename, directory = &#39;&#39;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The find_support_files method is used to retrieve the relative path and
+name of a file within the SketchUp installation directory.</p>
+
+<p>Forward slashes must be used to delimit between directory names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_help_file'>help_file</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>help.html</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_help_file'>help_file</span><span class='rparen'>)</span>
+  <span class='comment'># Print out the help_file full path
+</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_help_file'>help_file</span>
+
+  <span class='comment'># Open the help_file in a web browser
+</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file://</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_help_file'>help_file</span>
+<span class='kw'>else</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns path - the entire path if successful. If unsuccessful, the method
+returns false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Name of the filename you want to find.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>directory</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>directory relative to the SketchUp installation directory.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>path - the entire path if successful. If unsuccessful, the method returns
+false.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find_support_files-class_method">
+  
+    .<strong>find_support_files</strong>(filename, directory)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The find_support_files method is used to retrieve the path and name of all
+matching files within the SketchUp installation directory.</p>
+
+<p>Forward slashes must be used to delimit between directory names.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_files'>find_support_files</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Plugins</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Array - an array of files. If unsuccessful, the method returns false.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Extension of the files to be found.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>directory</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>directory relative to the SketchUp installation directory. Without this the
+result will be empty.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>array - an array of files. If unsuccessful, the method returns false.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fix_shadow_strings=-class_method">
+  
+    .<strong>fix_shadow_strings</strong>(enabled)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The fix_shadow_strings= method lets you control whether shadow rendering
+attempts to fix an artifact commonly referred to as “strings”.  The fix is
+actually very model dependent and not controllable from the UI, so this
+method can be used to control it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_fix_shadow_strings'>fix_shadow_strings</span><span class='op'>=</span><span class='kw'>true</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns setting - true if shadow strings fix was turned on.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>enabled</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If true, shadow strings fix will be turned on. If false, it will be
+deactivated.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>setting - true if shadow strings fix was turned on.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fix_shadow_strings?-class_method">
+  
+    .<strong>fix_shadow_strings?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The fix_shadow_strings? method indicates whether the a fix for a shadow
+rendering artifact commonly referred to as “strings” is enabled.  The fix
+is actually very model dependent and not controllable from the UI, so this
+method can be used to test it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_fix_shadow_strings?'>fix_shadow_strings?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>fix_shadow_strings - true if the feature is on.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="format_angle-class_method">
+  
+    .<strong>format_angle</strong>(number)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The format_angle method takes a number as an angle in radians and formats
+it into degrees. For example, format_angle(Math::PI) will return 180.0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_degrees'>degrees</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_angle'>format_angle</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns degrees - an angle in degrees if successful, false if unsuccessful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number to be formatted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>degrees - an angle in degrees if successful, false if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="format_area-class_method">
+  
+    .<strong>format_area</strong>(number)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The format_area method formats a number as an area using the current units
+settings.</p>
+
+<p>The default unit setting is inches. For example, 10 becomes 10 inches
+squared.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_area'>area</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_area'>format_area</span> <span class='id identifier rubyid_number'>number</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns area - an area if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number to be formatted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>area - an area if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="format_degrees-class_method">
+  
+    .<strong>format_degrees</strong>(number)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The format_degrees method formats a number as an angle given in degrees.
+For example, 10 becomes 10.0. This is the equivalent to a to_f call.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_degrees'>degrees</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_degrees'>format_degrees</span> <span class='id identifier rubyid_number'>number</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns degrees - degrees if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number to be formatted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>degrees - degrees if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="format_length-class_method">
+  
+    .<strong>format_length</strong>(number)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The format_length method formats a number as a length using the current
+units settings.</p>
+
+<p>The default unit setting is inches. For example, 10 becomes 10“.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_length'>format_length</span> <span class='int'>10</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_length'>length</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns length - length if successful, false if unsuccessful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number to be formatted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>length - length if successful, false if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_datfile_info-class_method">
+  
+    .<strong>get_datfile</strong>(key, default_value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_datfile_info method is used to retrieve the value for the given key
+from Sketchup.dat.</p>
+
+<p>If the key is not found, default_value is returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_datfile_info'>get_datfile_info</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_default_value'>default_value</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns value - a string value if successful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The key whose value you want to retrieve.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>default_value</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The default value you want returned if key is not available.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>value - a string value if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_i18n_datfile_info-class_method">
+  
+    .<strong>geT_i18ndatfile_info</strong>(key, default_value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_i18ndatfile_info method is used to retrieve the value for the given
+key from the internationalization file that SketchUp uses to work in
+multiple languages.</p>
+
+<p>If the key is not found, default_value is returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_i18ndatfile_info'>get_i18ndatfile_info</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_default_value'>default_value</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns value - a string value if successful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The key whose value you want to retrieve.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>default_value</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The default value you want returned if key is not available.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>value - a string value if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_locale-class_method">
+  
+    .<strong>get_locale</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The os_language method returns the language code for the language SketchUp
+is running in. This is an alias for the get_locale method.</p>
+
+<p>Valid return values are: en-US, fr, it, de, es, ja, ko, zh-CN, zh-TW,
+pt-BR, nl, ru. If the OS language does not have corresponding folder and
+files in the SketchUp Resources folder, the returned language is, by
+default, en-US.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_os_language'>os_language</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>language - a code representing the language SketchUp is displaying.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_resource_path-class_method">
+  
+    .<strong>get_resource_path</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_resource_path is used to retrieve the directory where “resource”
+files are stored by SketchUp. Resource files include things like language
+localization files.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_directory'>directory</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_resource_path'>get_resource_path</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Styles.strings</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns path - the directory path to the resources folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The filename of a resource file in the resource directory hierarchy.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>path - the directory path to the resources folder.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_shortcuts-class_method">
+  
+    .<strong>get_shortcuts</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The get_shortcuts method retrieves an array of all keyboard shortcuts
+currently registered with SketchUp. Each shortcut is returned as a string
+with the shortcut and the command separated by a tab, similar to
+“Ctrl+AtEdit/Select All”</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_shortcuts'>shortcuts</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_shortcuts'>get_shortcuts</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>shortcuts - an array of shortcut strings.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="install_from_archive-class_method">
+  
+    .<strong>install_from_archive</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Installs the contents of a ZIP archive file into SketchUp&#39;s Plugins
+folder. If the ZIP contains subfolders, these will be preserved. This
+allows for a Ruby API plugin or Extension developer to distribute their
+plugin as a single file regardless of how many asset files must be
+included.</p>
+
+<p>The user will be shown a warning message that they must agree to before the
+install proceeds. If they do not agree, an Interrupt error will be raised.
+If the user does agree but there is a problem with the unzip process, an
+Exception will be raised. You can capture these states via a begin/rescue.
+See the example below.</p>
+
+<p>If the install is successful, any Ruby files that have been added to the
+Plugins folder will immediately be executed, saving the user a restart.</p>
+
+<p>To create an archive file, use your favorite tool (7zip, Winzip, etc.) to
+zip up any files and folders in your plugins directory. If the archive
+contains a SketchupExtension that you would like users to be able to
+install from the Preferences &gt; Extensions panel, rename your file to
+have a .rbz file extension.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c:/temp/SomePluginPackage.zip</span><span class='tstring_end'>&#39;</span></span>
+<span class='kw'>begin</span>
+  <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_install_from_archive'>install_from_archive</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+<span class='kw'>rescue</span> <span class='const'>Interrupt</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User said &#39;no&#39;: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_error'>error</span>
+<span class='kw'>rescue</span> <span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error during unzip: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_error'>error</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns extensionsmanager - an ExtensionsManager object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path to the RBZ or ZIP file to install.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>extensionsmanager - an ExtensionsManager object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_64bit?-class_method">
+  
+    .<strong>is_64bit?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This methods indicates whether the host SketchUp application is 64bit.
+Useful for extensions that ship with binaries and need to determine which
+versions to load.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># For backward compatibility, check for the existence of the method
+</span><span class='comment'># and load 32bit binaries for SketchUp versions that do not have this
+</span><span class='comment'># method.
+</span><span class='kw'>if</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:is_64bit?</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_64bit?'>is_64bit?</span>
+  <span class='comment'># Load 64bit binaries.
+</span><span class='kw'>else</span>
+  <span class='comment'># Load 32bit binaries.
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>Boolean - True if SketchUp is 64bit.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2015</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_online-class_method">
+  
+    .<strong>is_online</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The is_online method is used to verify a connection to the Internet. This
+method can take some time to execute, so be careful not to call it more
+often than you need.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_online'>is_online</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_pro?-class_method">
+  
+    .<strong>is_pro?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a boolean flag indicating whether the application is SketchUp Pro.
+Note that after the free trial period, SketchUp Pro will revert to regular
+SketchUp and this method will return false until the user registers the
+product.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>if</span> <span class='lparen'>(</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_pro?'>is_pro?</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You are running SU Pro.</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>is_pro - true if the user is using SketchUp Pro</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is_valid_filename?-class_method">
+  
+    .<strong>is_valid_filename?</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The is_valid_filename? method is used to determine whether a filename
+contains illegal characters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_valid_filename?'>is_valid_filename?</span> <span class='id identifier rubyid_filename'>filename</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if filename is valid, false if filename is invalid
+(contains illegal characters).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A filename string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if filename is valid, false if filename is invalid (contains
+illegal characters).</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="load-class_method">
+  
+    .<strong>load</strong>(path)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The load method is used to include encrypted and nonencrypted ruby files.</p>
+
+<p>You do not need to include the file extension on the path. This method will
+look for .rb first (unencrypted) and then .rbe (encrypted) and finally .rbs
+(the deprecated scrambled format) files. See the “Distributing your Plugin”
+article for details.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_sfile'>sfile</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application_loader</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># file extension not required
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_sfile'>sfile</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - True if the file is included. False if the file is not
+included.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path, including the filename, to the file you want to require.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - True if the file is included. False if the file is not included.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="open_file-class_method">
+  
+    .<strong>open_file</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The open_file method is used to open a file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_open_file'>open_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\model.skp</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - true if opening the file succeeded, false otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path and filename to open.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - true if opening the file succeeded, false otherwise.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="os_language-class_method">
+  
+    .<strong>os_language</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The os_language method returns the language code for the language SketchUp
+is running in. This is an alias for the get_locale method.</p>
+
+<p>Valid return values are: en-US, fr, it, de, es, ja, ko, zh-CN, zh-TW,
+pt-BR, nl, ru. If the OS language does not have corresponding folder and
+files in the SketchUp Resources folder, the returned language is, by
+default, en-US.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_os_language'>os_language</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>language - a code representing the language SketchUp is displaying.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parse_length-class_method">
+  
+    .<strong>parse_length</strong>(string)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The parse_length method parses a string as a length.</p>
+
+<p>For example, “200” becomes 200.0.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_float'>float</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_parse_length'>parse_length</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># Returns 24 (representing inches)
+</span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_float'>float</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span> <span class='comment'># Convert to a Length type if needed.</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns float - the numerical representation of the string if successful,
+or nil if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>string</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The string to be parsed as a number.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>float - the numerical representation of the string if successful, or nil if
+unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="platform-class_method">
+  
+    .<strong>platform</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This methods returns a symbol indicating the current platform.</p>
+
+<p>It should be used over RUBY_PLATFORM as this returns a different value for
+Windows since SketchUp 2014.</p>
+
+<p>Older SketchUp versions still need to check
+<code>RUBY_PLATFORM.include?(&#39;mswin&#39;)</code> or
+<code>RUBY_PLATFORM.include?(&#39;darwin&#39;)</code>.</p>
+
+<p>Possible return values:</p>
+<ul><li>
+<p>:platform_win</p>
+</li><li>
+<p>:platform_osx</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>module</span> <span class='const'>MyExtension</span>
+  <span class='const'>IS_WIN</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='symbol'>:platform_win</span>
+  <span class='const'>IS_OSX</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='symbol'>:platform_osx</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>symbol - Current OS platform.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="plugins_disabled=-class_method">
+  
+    .<strong>plugins_disabled</strong>(enabled)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The plugins_disabled= method lets you control whether SketchUp will load
+Ruby scripts from the plugins directory at startup time. This is primarily
+a trouble-shooting method. If you are having strange behavior in SketchUp
+that you suspect is from a bad script, you can type
+Sketchup.plugins_disabled=true into the Ruby console and restart SketchUp
+to see if the problem is fixed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Type this in the Ruby console then restart SketchUp.
+</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled'>plugins_disabled</span><span class='op'>=</span><span class='kw'>true</span>
+
+<span class='comment'># To reactivate plugins, type this into the Ruby console and restart.
+</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled'>plugins_disabled</span><span class='op'>=</span><span class='kw'>false</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns setting - true if plugins were disabled.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>enabled</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If true, the plugins directory will not load.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>setting - true if plugins were disabled.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="plugins_disabled?-class_method">
+  
+    .<strong>plugins_disabled?</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The plugins_disabled? method indicates whether Ruby scripts in the plugins
+directory will be loaded at startup time.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_is_disabled'>is_disabled</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled?'>plugins_disabled?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>plugins_disabled - true if the plugins are disabled.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 8.0 M2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="quit-class_method">
+  
+    .<strong>quit</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The quit method is used to terminate the application. This will pop-up the
+usual model save prompts if there are unsaved models open. User can cancel
+the model save, in which case the application will not terminate.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_quit'>quit</span>
+<span class='comment'># Do not expect code to execute reliably after this point.</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_default-class_method">
+  
+    .<strong>read_default</strong>(section, variable, default = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The read_default method is used to retrieve the string associated with a
+value within the specified sub-section section of a .INI file or registry
+(within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_read_default'>read_default</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+<span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>variable</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>default</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - nil if unsuccessful, the value of the default if
+successful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>section</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A section in an .INI or registry.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>variable</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A variable within the section.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>default</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A default value if the value is not found.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - nil if unsuccessful, the value of the default if successful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_extension-class_method">
+  
+    .<strong>register_extension</strong>(extension, load_on_start)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>It is recommended to set <code>load_on_start</code> to true unless you have
+a very good reason not to.</p>
+</div>
+  </div>
+
+
+<p>The register_extension method is used to register an extension with
+SketchUp&#39;s extension manager (in SketchUp preferences).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span> <span class='op'>=</span> <span class='const'>SketchupExtension</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Utilities Tools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Utilities/utilitiesTools.rb</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Adds Tools-&gt;Utilities to the </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SketchUp inteface. The Utilities submenu contains two tools: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Create Face and Query Tool.</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_register_extension'>register_extension</span> <span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span><span class='comma'>,</span> <span class='kw'>false</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if extension registered properly</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>extension</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A SketchupExtension object.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>load_on_start</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Passing true into this will load the extension immediately and set it so
+that it will load automatically whenever SketchUp restarts.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if extension registered properly</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_importer-class_method">
+  
+    .<strong>register_importer</strong>(importer)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The register_importer method is used to register an importer with SketchUp.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_register_importer'>register_importer</span> <span class='id identifier rubyid_importer'>importer</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>importer</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An Importer object representing the importer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_observer-class_method">
+  
+    .<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The remove_observer method is used to remove an observer from the current
+object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_remove_observer'>remove_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>observer</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An observer.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="require-class_method">
+  
+    .<strong>require</strong>(path)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The require method is used to include encrypted and nonencrypted ruby
+files. This is an alias of the Sketchup.load method.</p>
+
+<p>You do not need to include the file extension on the path. This method will
+look for .rb first (unencrypted) and then .rbe (encrypted) and finally .rbs
+(the deprecated scrambled format) files.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_sfile'>sfile</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application_loader</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># file extension not required
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='id identifier rubyid_sfile'>sfile</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - True if the file is included. False if the file is not
+included.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The path, including the filename, to the file you want to require.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - True if the file is included. False if the file is not included.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save_thumbnail-class_method">
+  
+    .<strong>save_thumbnail</strong>(skp_filename, img_filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The save_thumbnail method is used to generate a thumbnail for any SKP file
+- not necessarily the loaded model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_save_thumbnail'>save_thumbnail</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>skp_filename</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>image_filename</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>skp_filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the SketchUp file whose model you want represented in the
+thumbnail.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>img_filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the file where the thumbnail will be saved.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="send_action-class_method">
+  
+    .<strong>send_action</strong>(action)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The send_action method sends a message to the message queue to perform some
+action asynchronously.</p>
+
+<p>Valid actions are:</p>
+
+<pre class="code"><code class="">- showRubyPanel:
+- viewBack:
+- viewBottom:
+- viewFront:
+- viewIso:
+- viewLeft:
+- viewRight:
+- viewTop:
+- viewPerspective:
+- viewShowAxes:
+- viewShowHidden:
+- viewZoomExtents:
+- viewZoomToSelection:
+- viewUndo:
+- selectOrbitTool:
+- selectPositionCameraTool:
+- selectDollyTool:
+- selectTurnTool:
+- selectWalkTool:
+- selectZoomTool:
+- selectFieldOfViewTool:
+- selectZoomWindowTool:
+- pageAdd:
+- pageDelete:
+- pageUpdate:
+- pageNext:
+- pagePrevious:
+- renderWireframe:
+- renderHiddenLine:
+- renderMonochrome:
+- renderShaded:
+- renderTextures:
+- selectArcTool:
+- selectArc3PointTool:
+- selectArc3PointPieTool:
+- selectAxisTool:
+- selectCircleTool:
+- selectEraseTool:
+- selectFreehandTool:
+- selectLineTool:
+- selectMeasureTool:
+- selectMoveTool:
+- selectOffsetTool:
+- selectPaintTool:
+- selectPolygonTool:
+- selectProtractorTool:
+- selectPushPullTool:
+- selectRectangleTool:
+- selectRectangle3PointTool:
+- selectRotateTool:
+- selectScaleTool:
+- selectSectionPlaneTool:
+- selectTextTool:
+- selectDimensionTool:
+- selectExtrudeTool:
+- selectSelectionTool:
+- editUndo:
+- editRedo:
+- editHide:
+- editUnhide:
+- fixNonPlanarFaces:</code></pre>
+
+<p>Added in SketchUp 8.0+:</p>
+
+<pre class="code"><code class="">- addBuilding:
+- getPhotoTexture:
+- selectImageIglooTool:
+- selectNorthTool:</code></pre>
+
+<p>Removed in SketchUp 2013+:</p>
+
+<pre class="code"><code class="">- addBuilding:</code></pre>
+
+<p>On the PC only, you can also send these numeric values. (Note that these
+are officially “unsupported” and are not guaranteed to work in current or
+future versions of the API.)</p>
+
+<pre class="code"><code class="">- 10501: set view to Top
+- 10502: set view to Front
+- 10503: set view to Rear
+- 10504: set view to Left
+- 10505: set view to Right
+- 10506: set view to Bottom
+- 10507: set view to Axonometric
+- 10510: set render mode to Wire
+- 10511: set render mode to Hidden lines removal
+- 10512: set render mode to Surfaces Shading
+- 10513: set render mode to Transparency
+- 10519: set camera to ortho (removes perspective)
+- 10520: walk tool
+- 10521: display the System Preferences dialog box (Files tab)
+- 10522: removes axes display
+- 10523: pan tool
+- 10525: set the interactive eye height feature
+- 10526: zoom window
+- 10527: zoom extents
+- 10529: zoom out 2
+- 10531: toggle the Standard toolbar
+- 10532: toggle the Camera toolbar
+- 10533: display the Shadows Settings dialog box
+- 10537: toggle the Views toolbar
+- 10538: display the System Preferences dialog box (Display tab)
+- 10545: toggle Color ByLayer
+- 10546: toggle Shadows toolbar
+- 10551: toogle Large icons
+- 10576: toggle Render Mode toolbar
+- 10596: set Render Mode to No Transparency (Preferences)
+- 10597: set Render Mode to Wire (Preferences)
+- 10598: set Render Mode to Transparency (Preferences)
+- 10599: set Render Mode to Surfaces Shading (Preferences)
+- 10600: set Render Mode to Texture (Preferences)
+- 10601: set Render Mode to No Texture (Preferences)
+- 10602: toggle Shadows
+- 10603: toggle Profiles
+- 10604: toggle Extension Lines
+- 10605: toggle Jitter edges
+- 21019: hide Status bar and VCB
+- 21020: show Status bar and VCB
+- 21022: hide Status bar and VCB
+- 21023: place 3d text box
+- 21024: select the Measure tool
+- 21031: select the Freehand Draw tool
+- 21041: select the PushPull tool
+- 21048: select the Move tool
+- 21052: hide selected objects
+- 21056: create face with selected edges closed loop
+- 21057: select the Protractor tool
+- 21060: display Components Window
+- 21061: toggle Draw toolbar
+- 21063: toggle Model Bounding Box display
+- 21065: select the Arc tool
+- 21067: creat a new Page
+- 21069: select the Arc 3 Point tool
+- 21070: select the Arc 3 Point Pie tool
+- 21074: show the Materials Browser Window
+- 21076: display the Preferences dialog box (Text activated)
+- 21077: display the Tip of the day Window
+- 21078: select the Paint Bucket tool
+- 21080: display the Page Manager Window
+- 21082: display the Macros Dialog Box
+- 21086: display the Components Browser Window
+- 21094: select the Rectangle tool
+- 21095: select the Polygon tool
+- 21096: select the Circle tool
+- 21098: open the Open Window
+- 21100: select the Offset tool
+- 21101: slect all objects
+- 21112: open the Import Window
+- 21124: launch the validity check tool
+- 21126: select the Axes tool
+- 21029: select the Rotate tool
+- 21032: toggle Layer toolbar
+- 21036: display the Save as Window
+- 21046: spin the model a full 360&amp;deg; and display report
+- 21047: fast Pick Time report
+- 21049: open the Export model Window
+- 21169: select the Position Camera tool
+- 21170: display the Preferences, Tour Guide activated
+- 21180: create a new Page just right of selected page
+- 21200: display the Insert Image Window
+- 21233: display Area of selected face
+- 21234: display Area of all faces with selected material
+- 21236: select the Scale tool
+- 21237: display the Export 2D Graphics Window
+- 21245: display a Polygon Offset Factors dialog box
+- 21276: reverse selected face(s)
+- 21287: select the Divide feature
+- 21337: select the Section Plane Placement tool
+- 21354: open the Layer Window
+- 21386: open the Export Animation Window
+- 21405: select the Text tool
+- 21406: display Fog dialog box
+- 21410: select the Dim tool
+- 21433: toggle Edit toolbar
+- 21442: select the FollowMe tool
+- 21448: select the Axes tool
+- 21453: select all objects
+- 21460: display Licence
+- 21462: display Authorization dialog box
+- 21463: display un-authorizing message
+- 21464: display Open Licence files (Network) Window
+- 21466: display Quick reference Card in Adobe Reader
+- 21467: display Licences in use dialog box
+- 21469: zoom extents to selected objects
+- 21476: perform a non-planar check on selected objects
+- 21477: list accelerators in window
+- 21485: erase selected objects
+- 21487: display Edit current material dialog box
+- 21485: erase all new created pages
+- 21488: display Entity Info Window
+- 21490: display Soften Edges Window
+- 21491: display Profiles
+- 21492: display Extended Edges
+- 21493: display Jitter Lines
+- 21494: select Field of view tool
+- 21513: display the outliner
+- 21520: override Tile Rendering Size dialog box
+- 21525: select the FollowMe tool
+- 21542: display the Insert Image Window
+- 21560 and up: causes a runtime Error</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_send_action'>send_action</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>selectArcTool:</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - true if successful, false if unsuccessful</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>action</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The action to be performed.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - true if successful, false if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0 (changes in SketchUp 8.0/2013)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_status_text-class_method">
+  
+    .<strong>set_status_text</strong>(status_text = &#39;&#39;, position = SB_PROMPT)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The set_status_text method is used to set the text appearing on the status
+bar within the drawing window.</p>
+
+<p>If no arguments are passed, the status bar content is cleared. Valid
+positions are:</p>
+<ul><li>
+<p><code>SB_PROMPT</code> - the text will appear at the left-side of the
+status bar</p>
+</li><li>
+<p><code>SB_VCB_LABEL</code> - the text will appear in place of the VCB label</p>
+</li><li>
+<p><code>SB_VCB_VALUE</code> - the text will appear in the VCB</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_set_status_text'>set_status_text</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>SB_VCB_VALUE</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
+  <span class='comment'>#code to do something if set_status_text is successful
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>status</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>text   the status text that will appear.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>position</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>SB_PROMPT</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the position where the text will appear.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="status_text=-class_method">
+  
+    .<strong>status_text=</strong>(status_text)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The status_text= method is used to set the text appearing on the status bar
+within the drawing window.</p>
+
+<p>This is the same as calling set_status_text with a 2nd parameter of
+SB_PROMPT.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_status_text'>status_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>status_text</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The status text that will appear.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="temp_dir-class_method">
+  
+    .<strong>temp_dir</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The temp_dir method is used to retrieve the OS temporary directory for the
+current user. You can use this directory to write temporary files that are
+not required to persist between SketchUp sessions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_temp_dir'>temp_dir</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'>temp_dir</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>String containing the full temporary directory path</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="template-class_method">
+  
+    .<strong>template</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The template method is used to get the file name of the current template.
+Templates are the .skp files that are loaded when the user select File &gt;
+New.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>name - the current template</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="template=-class_method">
+  
+    .<strong>template=</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The template= method is used to set the file name of the current template.
+Templates are the .skp files that are loaded when the user select File &gt;
+New.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span><span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filename</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the template to set.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>status - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="template_dir-class_method">
+  
+    .<strong>template_dir</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The template_dir is used to retrieve the directory where templates are
+stored by the SketchUp install. Templates are the .skp files that are
+loaded when the user select File &gt; New.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_directory'>directory</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_template_dir'>template_dir</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>String containing the full template directory path</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="undo-class_method">
+  
+    .<strong>undo</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The undo method is used undo the last transaction on the undo stack.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_undo'>undo</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>nil</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="vcb_label=-class_method">
+  
+    .<strong>vcb_label</strong>(label_text)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The vcb_label= method is used to set the label that appears on the vcb, or
+the “value control box”, which is another word for the “measurements” text
+entry box that appears at the bottom on the SketchUp window.</p>
+
+<p>This is the same as calling set_status_text with a 2nd parameter of
+SB_VCB_LABEL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_vcb_label'>vcb_label</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>label_text</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The label text that will appear.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="vcb_value=-class_method">
+  
+    .<strong>vcb_value=</strong>(value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The vcb_value= method is used to set the value that appears on the vcb, or
+the “value control box”, which is another word for the “measurements” text
+entry box that appears at the bottom on the SketchUp window.</p>
+
+<p>This is the same as calling set_status_text with a 2nd parameter of
+SB_VCB_VALUE.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_vcb_value'>vcb_value</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - true if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text that will appear as the vcb&#39;s value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - true if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="version-class_method">
+  
+    .<strong>version</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the current version of sketchup in decimal form.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>
+<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_version'>version</span><span class='rparen'>)</span>
+  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_version'>version</span>
+<span class='kw'>else</span>
+  <span class='kw'>return</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>version - the decimal form of the version</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="version_number-class_method">
+  
+    .<strong>version_number</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the current version of sketchup as a whole number for comparisons. The
+number returned has the major, minor, and build values packed into an
+integer value as follows:</p>
+<ul><li>
+<p>Major version = X</p>
+</li><li>
+<p>Minor version = Y</p>
+</li><li>
+<p>Build number = Z</p>
+</li></ul>
+
+<p>SketchUp 6.0 - SketchUp 2015</p>
+<ul><li>
+<p>XXYYYZZZ</p>
+</li></ul>
+
+<p>SketchUp 2016+</p>
+<ul><li>
+<p>XXYZZZZZZZ</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>if</span> <span class='lparen'>(</span><span class='int'>15003000</span><span class='op'>...</span><span class='int'>15004000</span><span class='rparen'>)</span> <span class='op'>===</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version_number'>version_number</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SketchUp 15.3</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+<span class='kw'>if</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version_number'>version_number</span> <span class='op'>&gt;=</span> <span class='int'>1600000000</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New format</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns version - the whole number form of the version</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>version - the whole number form of the version</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_default-class_method">
+  
+    .<strong>write_default</strong>(section, key, value)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The write_default method is used to set the string associated with a
+variable within the specified sub-section of a .plist file on the Mac or
+the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp</p>
+<dl class="rdoc-list label-list"><dt>Version
+<dd>
+<p>section).</p>
+</dd></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_write_default'>write_default</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my_value</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns result - True if successful, false if unsuccessful.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>section</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A section in a .plist file (Mac) or the registry (Windows).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A key within the section.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>value</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The value to store.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>result - True if successful, false if unsuccessful.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:09 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

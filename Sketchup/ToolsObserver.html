@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::ToolsObserver
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::ToolsObserver";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+</head>
+<body>
+
+  <div id="su-header">
+    <h1>
+      <a href="http://extensions.sketchup.com/developer_center">
+        <b>SketchUp</b> Developer Center
+      </a>
+    </h1>
+  </div>
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">ToolsObserver</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::ToolsObserver
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::ToolsObserver</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>This observer interface is implemented to react to tool events. To
+implement this observer, create a Ruby class of this type, override the
+desired methods, and add an instance of the observer to the
+<span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span> object.</p>
+
+<p>Some of the code below mentions <code>tool_names</code> and
+<code>tool_ids</code>. Here is a list of the common tool IDs and names:</p>
+<ul><li>
+<p><code>21013</code> = 3DTextTool</p>
+</li><li>
+<p><code>21065</code> = ArcTool</p>
+</li><li>
+<p><code>10523</code> = CameraDollyTool</p>
+</li><li>
+<p><code>10508</code> = CameraOrbitTool</p>
+</li><li>
+<p><code>10525</code> = CameraPanTool</p>
+</li><li>
+<p><code>21169</code> = PositionCameraTool</p>
+</li><li>
+<p><code>10520</code> = CameraWalkTool</p>
+</li><li>
+<p><code>10509</code> = CameraZoomTool</p>
+</li><li>
+<p><code>10526</code> = CameraZoomWindowTool</p>
+</li><li>
+<p><code>21096</code> = CircleTool</p>
+</li><li>
+<p><code>21013</code> = ComponentTool</p>
+</li><li>
+<p><code>21126</code> = ComponentCSTool</p>
+</li><li>
+<p><code>21410</code> = DimensionTool</p>
+</li><li>
+<p><code>21019</code> = EraseTool</p>
+</li><li>
+<p><code>21031</code> = FreehandTool</p>
+</li><li>
+<p><code>21525</code> = ExtrudeTool</p>
+</li><li>
+<p><code>21126</code> = SketchCSTool</p>
+</li><li>
+<p><code>21048</code> = MoveTool</p>
+</li><li>
+<p><code>21024</code> = MeasureTool</p>
+</li><li>
+<p><code>21100</code> = OffsetTool</p>
+</li><li>
+<p><code>21074</code> = PaintTool</p>
+</li><li>
+<p><code>21013</code> = PasteTool</p>
+</li><li>
+<p><code>21095</code> = PolyTool</p>
+</li><li>
+<p><code>21515</code> = PositionTextureTool</p>
+</li><li>
+<p><code>21041</code> = PushPullTool</p>
+</li><li>
+<p><code>21057</code> = ProtractorTool</p>
+</li><li>
+<p><code>21094</code> = RectangleTool</p>
+</li><li>
+<p><code>21129</code> = RotateTool</p>
+</li><li>
+<p><code>21236</code> = ScaleTool</p>
+</li><li>
+<p><code>21022</code> = SelectionTool</p>
+</li><li>
+<p><code>21337</code> = SectionPlaneTool</p>
+</li><li>
+<p><code>21020</code> = SketchTool</p>
+</li><li>
+<p><code>21405</code> = TextTool</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># This is an example of an observer that watches tool interactions.
+</span><span class='kw'>class</span> <span class='const'>MyToolsObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ToolsObserver</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onActiveToolChanged'>onActiveToolChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_tools'>tools</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_name'>tool_name</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_id'>tool_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onActiveToolChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tool_name'>tool_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='comment'># Attach the observer.
+</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_tools'>tools</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyToolsObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onActiveToolChanged-instance_method" title="#onActiveToolChanged (instance method)">#<strong>onActiveToolChanged</strong>(tools, tool_name, tool_id)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Once you subclass <span class='object_link'><a href="" title="Sketchup::ToolsObserver (class)">ToolsObserver</a></span> with your unique class, you can
+override the <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> method to receive tool change
+notifications.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onToolStateChanged-instance_method" title="#onActiveToolChanged (instance method)">#<strong>onActiveToolChanged</strong>(tools, tool_name, tool_id, tool_state)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an
+action with a tool.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="onActiveToolChanged-instance_method">
+  
+    #<strong>onActiveToolChanged</strong>(tools, tool_name, tool_id)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp 6 and SketchUp 7.0, tool names on the Mac have some of their
+first characters truncated. For instance, on Windows, a tool is
+<tt>“CameraOrbit”</tt>. On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore,
+use the <code>tool_id</code> to keep track of which tool you need to watch
+for, or use logic that corrects for the error. There is an example method
+of one way to do this shown below. (This example is not a comprehensive
+list of the tool names.)</p>
+</div>
+  </div>
+
+
+<p>Once you subclass <span class='object_link'><a href="" title="Sketchup::ToolsObserver (class)">Sketchup::ToolsObserver</a></span> with your unique class, you can
+override the <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> method to receive tool change
+notifications.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onActiveToolChanged'>onActiveToolChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_tools'>tools</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_name'>tool_name</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_id'>tool_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='id identifier rubyid_fix_mac_tool_name'>fix_mac_tool_name</span><span class='lparen'>(</span><span class='id identifier rubyid_tool_name'>tool_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onActiveToolChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tool_name'>tool_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+
+<span class='comment'># Returns the &quot;correct&quot; tool name to account for mac API differences.
+</span><span class='comment'>#
+</span><span class='comment'>#   Args:
+</span><span class='comment'>#     tool_name     The tool name to fix
+</span><span class='comment'>#
+</span><span class='comment'>#   Returns
+</span><span class='comment'>#     string   corrected tool name
+</span><span class='kw'>def</span> <span class='id identifier rubyid_fix_mac_tool_name'>fix_mac_tool_name</span><span class='lparen'>(</span><span class='id identifier rubyid_tool_name'>tool_name</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>eTool</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ScaleTool</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ool</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MoveTool</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onentCSTool</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ComponentCSTool</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PullTool</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PushPullTool</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_tool_name'>tool_name</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>tools</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Sketchup::Tools</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Tools object.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tool_name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the tool.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tool_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the tool. This is a predefined number unique to a given tool. For
+example, the Materials Browser is tool_id 21074.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onToolStateChanged-instance_method">
+  
+    #<strong>onActiveToolChanged</strong>(tools, tool_name, tool_id, tool_state)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp 6 and SketchUp 7, tool names on the Mac have their first few
+characters truncated. For instance, on Windows, a tool is <tt>“CameraOrbit”.</tt>
+On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore, use the tool_id to
+keep track of which tool you need to watch for, or use logic that corrects
+for the error. This bug was fixed in SketchUp 8.0.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an
+action with a tool. The actual state that is returned is an internal number
+that varies tool to tool. If you want to watch existing tools for every
+interaction, you will need to experiment with the tool state to determine
+which states you care about. There is little consistency tool to tool.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onToolStateChanged'>onToolStateChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_tools'>tools</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_name'>tool_name</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_id'>tool_id</span><span class='comma'>,</span> <span class='id identifier rubyid_tool_state'>tool_state</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onToolStateChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tool_name'>tool_name</span><span class='embexpr_end'>}</span><span class='tstring_content'>:</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_tool_state'>tool_state</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>tools</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Sketchup::Tools</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Tools object.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tool_name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the tool.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tool_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID of the tool. This is a predefined number unique to a given tool. For
+example, the Materials Browser is tool_id 21074.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>tool_state</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number identifying the state the tool just entered.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Apr 12 20:17:22 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
