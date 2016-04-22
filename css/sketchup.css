@@ -65,7 +65,7 @@ a:hover, a:focus,
 
 h2 small a {
   box-sizing: border-box;
-  height: 27px;
+  height: 28px;
 }
 
 #api-documentation-header {
@@ -82,4 +82,11 @@ h2 small a {
   display: flex;
   display: -webkit-flex;
   display: -ms-flexbox;
+}
+
+/* The YARD JS doesn't size these elements unless we use the traditional
+ * content-box type of sizing.
+ */
+.box_info * {
+  box-sizing: content-box;
 }
