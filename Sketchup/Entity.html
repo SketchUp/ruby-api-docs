@@ -465,6 +465,31 @@ entity.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#persistent_id-instance_method" title="#persistent_id (instance method)">#<strong>persistent_id</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span> method is used to retrieve a unique persistent id
+assigned to an entity.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
     
 
@@ -1625,6 +1650,88 @@ entity is contained within.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="persistent_id-instance_method">
+  
+    #<strong>persistent_id</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span> method is used to retrieve a unique persistent id
+assigned to an entity.</p>
+
+<p>The persistent id persistent between sessions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>model = Sketchup.active_model
+entities = model.active_entities
+pts = [
+  Geom::Point3d.new(0, 0, 0)
+  Geom::Point3d.new(9, 0, 0)
+  Geom::Point3d.new(9, 9, 0)
+  Geom::Point3d.new(0, 9, 0)
+]
+
+# Add the face to the entities in the model
+group = entities.add_group
+face = group.entities.add_face(pts)
+pid = face.persistent_id
+# Exploding the group will preserve the pid.
+pid == face.persistent_id # Should return true</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id for the <span class='object_link'><a href="" title="Sketchup::Entity (class)">Sketchup::Entity</a></span> object</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2017</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="remove_observer-instance_method">
   
     #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
@@ -2138,7 +2245,7 @@ deleted by another script, for example.)</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:16 2016 by
+  Generated on Wed Nov  2 13:10:51 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

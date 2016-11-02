@@ -395,7 +395,7 @@ of the view.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw2d-instance_method" title="#draw2d (instance method)">#<strong>draw2d</strong>(openglenum, points)  &#x21d2; Object </a>
+      <a href="#draw2d-instance_method" title="#draw2d (instance method)">#<strong>draw2d</strong>(openglenum, points)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -410,7 +410,7 @@ of the view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The draw2d method is used to draw in screen space (using 2D screen
+<p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen
 coordinates) instead of 3D space.</p>
 </div></span>
   
@@ -2014,7 +2014,7 @@ such as GL_LINES.</p>
       <div class="method_details ">
   <h3 class="signature " id="draw2d-instance_method">
   
-    #<strong>draw2d</strong>(openglenum, points)  &#x21d2; <tt>Object</tt> 
+    #<strong>draw2d</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
   
 
   
@@ -2023,14 +2023,15 @@ such as GL_LINES.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The draw2d method is used to draw in screen space (using 2D screen
+<p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen
 coordinates) instead of 3D space.</p>
 
-<p>The second parameter is an Array of Point3d objects (or several individual
-Point3d objects). These Point3d objects are in screen space, not 3D space.
-The X value corresponds to the number of pixels from the left edge of the
-drawing area. The Y value corresponds to the number of pixels down from the
-top of the drawing area. The Z value is not used.</p>
+<p>The second parameter is an <span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span> of <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects (or several
+individual <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects). These <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects are in
+screen space, not 3D space. The X value corresponds to the number of pixels
+from the left edge of the drawing area. The Y value corresponds to the
+number of pixels down from the top of the drawing area. The Z value is not
+used.</p>
 
 
   </div>
@@ -2041,14 +2042,20 @@ top of the drawing area. The Z value is not used.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw2d'>draw2d</span> <span class='id identifier rubyid_openglenum'>openglenum</span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>8</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>8</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw2d'>draw2d</span><span class='lparen'>(</span><span class='const'>GL_LINE_STRIP</span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns view - returns the View object.</p>
+<p>Returns the View object.</p>
 
 
   </div>
@@ -2062,13 +2069,13 @@ top of the drawing area. The Z value is not used.</p>
         <span class='name'>openglenum</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>An OpenGL enumerator (unsigned integer). See comments in the draw method
+<p>An OpenGL enumerator (unsigned integer). See comments in the <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> method
 for a list of constants.</p>
 </div>
       
@@ -2079,14 +2086,9 @@ for a list of constants.</p>
         <span class='name'>points</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>An array of point3d objects.</p>
-</div>
       
     </li>
   
@@ -2098,13 +2100,13 @@ for a list of constants.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>view - returns the View object.</p>
+<p>returns the View object.</p>
 </div>
       
     </li>
@@ -2113,6 +2115,15 @@ for a list of constants.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span></li>
+    
+      <li><span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -5764,7 +5775,7 @@ model, as if the user has selected the zoom extents command from the menu.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:18 2016 by
+  Generated on Wed Nov  2 13:10:54 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

@@ -159,7 +159,7 @@ from a SketchUp Ruby script.</p>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="UI/Command.html" title="UI::Command (class)">Command</a></span>, <span class='object_link'><a href="UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span>, <span class='object_link'><a href="UI/WebDialog.html" title="UI::WebDialog (class)">WebDialog</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="UI/ActionCallbackContext.html" title="UI::ActionCallbackContext (class)">ActionCallbackContext</a></span>, <span class='object_link'><a href="UI/Command.html" title="UI::Command (class)">Command</a></span>, <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">HtmlDialog</a></span>, <span class='object_link'><a href="UI/Notification.html" title="UI::Notification (class)">Notification</a></span>, <span class='object_link'><a href="UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span>, <span class='object_link'><a href="UI/WebDialog.html" title="UI::WebDialog (class)">WebDialog</a></span>
     
   
 </p>
@@ -524,6 +524,30 @@ the Outliner.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#scale_factor-class_method" title="scale_factor (class method)">.<strong>scale_factor</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the scaling factor SketchUp uses on high DPI monitors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#select_directory-class_method" title="select_directory (class method)">.<strong>select_directory</strong>(options)  &#x21d2; Object </a>
     
 
@@ -591,6 +615,31 @@ given cursor id.</p>
     <span class="summary_desc"><div class='inline'>
 <p>The set_toolbar_visible method is used to set whether a given toolbar is
 visible.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#show_extension_manager-class_method" title="show_extension_manager (class method)">.<strong>show_extension_manager</strong>  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <code>show_extension_manager</code> method is used to display the
+Extension Manager dialog.</p>
 </div></span>
   
 </li>
@@ -1484,7 +1533,7 @@ the user to choose from.</p>
 </li><li>
 <p><code>MB_OKCANCEL</code> - Contains OK and Cancel buttons.</p>
 </li><li>
-<p><code>MB_ABORTRETRYCANCEL</code> - Contains Abort, Retry, and Cancel
+<p><code>MB_ABORTRETRYIGNORE</code> - Contains Abort, Retry, and Ignore
 buttons.</p>
 </li><li>
 <p><code>MB_YESNOCANCEL</code> - Contains Yes, No, and Cancel buttons.</p>
@@ -2318,6 +2367,85 @@ was canceled.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="scale_factor-class_method">
+  
+    .<strong>scale_factor</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>SU2017M0 will automatically scale up line width and text size, but will not
+scale up the points provided to <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span>.</p>
+</div>
+  </div>
+
+
+<p>Returns the scaling factor SketchUp uses on high DPI monitors. Useful for
+things like <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code># Scale a set of points representing 2d screen points to account for high
+# DPI monitors.
+points2d = [
+  Geom::Point3d.new(0, 0, 0),
+  Geom::Point3d.new(8, 0, 0),
+  Geom::Point3d.new(8, 4, 0),
+  Geom::Point3d.new(0, 4, 0)
+]
+tr = Geom::Transformation.scaling(UI.scale_factor)
+points2d.each { |point| point.transform!(tr)</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2017M0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="select_directory-class_method">
   
     .<strong>select_directory</strong>(options)  &#x21d2; <tt>Object</tt> 
@@ -2666,6 +2794,67 @@ cross-platform script.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="show_extension_manager-class_method">
+  
+    .<strong>show_extension_manager</strong>  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <code>show_extension_manager</code> method is used to display the
+Extension Manager dialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_extension_manager'>show_extension_manager</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2017</p>
 </div>
       
     </li>
@@ -3504,7 +3693,7 @@ cross-platform script.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:16 2016 by
+  Generated on Wed Nov  2 13:10:51 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

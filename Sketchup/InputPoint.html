@@ -441,6 +441,31 @@ position from a face.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#instance_path-instance_method" title="#instance_path (instance method)">#<strong>instance_path</strong>  &#x21d2; Sketchup::InstancePath<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#instance_path-instance_method" title="Sketchup::InputPoint#instance_path (method)">#instance_path</a></span> method retrieves the instance path for the picked
+point.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#pick-instance_method" title="#pick (instance method)">#<strong>pick</strong>(view, x, y, inputpoint)  &#x21d2; Object </a>
     
 
@@ -1458,6 +1483,77 @@ position from a face.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="instance_path-instance_method">
+  
+    #<strong>instance_path</strong>  &#x21d2; <tt><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">Sketchup::InstancePath</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#instance_path-instance_method" title="Sketchup::InputPoint#instance_path (method)">#instance_path</a></span> method retrieves the instance path for the picked
+point.</p>
+
+<p>The returned instance_path is a copy of what the input point is holding on
+to at the moment you access it. Your copy will not update if you make new
+picks with the input point.</p>
+
+<p>If there has been no valid pick it will return `nil`.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
+<span class='id identifier rubyid_ip'>ip</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_instance_path'>instance_path</span> <span class='op'>=</span> <span class='id identifier rubyid_ip'>ip</span><span class='period'>.</span><span class='id identifier rubyid_instance_path'>instance_path</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">Sketchup::InstancePath</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2017</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="pick-instance_method">
   
     #<strong>pick</strong>(view, x, y, inputpoint)  &#x21d2; <tt>Object</tt> 
@@ -2000,7 +2096,7 @@ InputPoint does not select any vertices this method returns nil.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:25 2016 by
+  Generated on Wed Nov  2 13:11:03 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

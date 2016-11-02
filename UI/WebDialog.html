@@ -109,7 +109,7 @@
 
       <div id="content"><h1>Class: UI::WebDialog
   
-  
+  <span class="deprecated note title">Deprecated</span>
   
 </h1>
 <div class="box_info">
@@ -143,11 +143,12 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>Please use <span class='object_link'><a href="HtmlDialog.html" title="UI::HtmlDialog (class)">HtmlDialog</a></span> that was introduced in SketchUp 2017.</p>
+</div></div>
+
 <p>The Ruby WebDialog class allows you to create and interact with DHTML
-dialog boxes from Ruby. This is the best way to generate complex, embedded
-UIs inside SketchUp, but it does generally require HTML and Javascript
-expertise.</p>
+dialog boxes from Ruby.</p>
 
 <p>If your goal is to simply display a website to your users, consider using
 UI.getURL, which will show them a web page in their default browser rather
@@ -155,6 +156,18 @@ than inside a dialog in SketchUp.</p>
 
 <p>See this blog post for a detailed, step-by-step example: <a
 href="http://sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html">sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html</a></p>
+
+<p>Under Windows the IE render mode is different in webdialogs than from what
+you see in the normal browser. It will by default pick an older render mode
+and different versions of SketchUp will use different modes. In order to
+reliably control the render mode of your webdialogs under Windows you need
+to insert a special META compatibility tag:</p>
+
+<pre class="code ruby"><code class="ruby">// To always force the latest version available:
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;
+
+// To lock to a specific IE version:
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=8&quot;/&gt;</code></pre>
 
 <p>Starting with SketchUp 2013, you can embed a special HTML link in your
 dialog that will launch Extension Warehouse and show a specified
@@ -1032,6 +1045,10 @@ and save the image to the given file path.</p>
 
 <p>Default width is 250. Default height is 250. Default left is 0. Default top
 is 0. WebDialogs are resizable by default.</p>
+
+<p>Since SU2017 the position and size of the dialog is DPI aware - it will
+scale to the DPI of the monitor automatically. Specify units as they would
+be on a traditional low-DPI monitor.</p>
 
 <p>Note that the browser which is embedded inside the dialog depends on the
 user&#39;s OS. On Mac, Safari is embedded, while on the PC whatever version
@@ -2865,7 +2882,7 @@ method.</p>
 <p>The screen_scale_factor method returns the ratio of screen pixels to
 logical window units (called &#39;points&#39; on Mac) for the screen this
 WebDialog is currently in. On a retina screen Mac, this ratio will be
-greater than 1.0.</p>
+greater than 1.0. On Windows this always return 1.0.</p>
 
 
   </div>
@@ -4128,7 +4145,7 @@ images this specifies the compression algorithm: &lt;4 (best speed), 4-8
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:25 2016 by
+  Generated on Wed Nov  2 13:11:02 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

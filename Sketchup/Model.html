@@ -866,6 +866,30 @@ entities in the model.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#find_entity_by_persistent_id-instance_method" title="#find_entity_by_persistent_id (instance method)">#<strong>find_entity_by_persistent_id</strong>(ids_or_array)  &#x21d2; Array&lt;Sketchup::Entity, nil&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Finds and returns entities by their persistent id.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#georeferenced%3F-instance_method" title="#georeferenced? (instance method)">#<strong>georeferenced?</strong>  &#x21d2; Boolean </a>
     
 
@@ -1007,6 +1031,31 @@ string, for the Model.</p>
     <span class="summary_desc"><div class='inline'>
 <p>The import method is used to load a file by recognizing the file extension
 and calling appropriate importer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#instance_path_from_pid_path-instance_method" title="#instance_path_from_pid_path (instance method)">#<strong>instance_path_from_pid_path</strong>(pid_path)  &#x21d2; Sketchup::InstancePath </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#instance_path_from_pid_path-instance_method" title="Sketchup::Model#instance_path_from_pid_path (method)">#instance_path_from_pid_path</a></span> method returns a instance path given a
+string with persistent ids representing the path to the entity.</p>
 </div></span>
   
 </li>
@@ -4018,6 +4067,119 @@ and nil otherwise. Single Entity or nil when called with a single id.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="find_entity_by_persistent_id-instance_method">
+  
+    #<strong>find_entity_by_persistent_id</strong>(ids_or_array)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Finds and returns entities by their persistent id.</p>
+
+<p>When given an array of IDs, an array is returned with a 1:1 mapping to the
+input arguments. This array may contain `nil` values if some ids were not
+found.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+
+<span class='comment'># Look up by persistent_id.
+</span><span class='id identifier rubyid_pid'>pid</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span><span class='int'>9</span><span class='comma'>,</span><span class='int'>9</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_persistent_id'>persistent_id</span>
+<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_find_entity_by_persistent_id'>find_entity_by_persistent_id</span><span class='lparen'>(</span><span class='id identifier rubyid_pid'>pid</span><span class='rparen'>)</span>
+
+<span class='comment'># Look up multiple.
+</span><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_find_entity_by_persistent_id'>find_entity_by_persistent_id</span><span class='lparen'>(</span><span class='id identifier rubyid_id1'>id1</span><span class='comma'>,</span> <span class='id identifier rubyid_id2'>id2</span><span class='comma'>,</span> <span class='id identifier rubyid_id3'>id3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_find_entity_by_persistent_id'>find_entity_by_persistent_id</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_id1'>id1</span><span class='comma'>,</span> <span class='id identifier rubyid_id2'>id2</span><span class='comma'>,</span> <span class='id identifier rubyid_id3'>id3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil
+otherwise.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>Array</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>ids_or_array Pass either a series of ids or a single array containing
+persistent ids.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil
+otherwise.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2017</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="georeferenced?-instance_method">
   
     #<strong>georeferenced?</strong>  &#x21d2; <tt>Boolean</tt> 
@@ -4558,6 +4720,125 @@ a summary window.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="instance_path_from_pid_path-instance_method">
+  
+    #<strong>instance_path_from_pid_path</strong>(pid_path)  &#x21d2; <tt><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">Sketchup::InstancePath</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#instance_path_from_pid_path-instance_method" title="Sketchup::Model#instance_path_from_pid_path (method)">#instance_path_from_pid_path</a></span> method returns a instance path given a
+string with persistent ids representing the path to the entity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span> <span class='int'>0</span><span class='comma'>,</span>  <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span>  <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+<span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_pid_path'>pid_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_persistent_id'>persistent_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_persistent_id'>persistent_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># pid_path will look something like this: &quot;658.723&quot;
+</span><span class='id identifier rubyid_instance_path'>instance_path</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_instance_path_from_pid_path'>instance_path_from_pid_path</span><span class='lparen'>(</span><span class='id identifier rubyid_pid_path'>pid_path</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>pid_path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a string with persistent ids delimited by period.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">Sketchup::InstancePath</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if a valid instance path cannot be created from the given input path
+string.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="InstancePath.html#persistent_id_path-instance_method" title="Sketchup::InstancePath#persistent_id_path (method)">InstancePath#persistent_id_path</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2017</p>
 </div>
       
     </li>
@@ -7766,7 +8047,7 @@ the model before you perform operations on it.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:21 2016 by
+  Generated on Wed Nov  2 13:10:56 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

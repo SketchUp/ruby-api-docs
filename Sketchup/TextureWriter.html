@@ -156,6 +156,26 @@ application. These methods are usually invoked in this order:</p>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># This code snippet sets up a texture writer and some variables that are
+</span><span class='comment'># used in the following texture writer examples.
+</span><span class='comment'># Assumptions:
+</span><span class='comment'># 1) The active model contains at least one entity at the root level of the
+</span><span class='comment'>#    following types: component instance, group, or image.
+</span><span class='comment'># 2) The active model contains at least one face at the root level.
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_faces'>faces</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_grep'>grep</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Face</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_texturable_entities'>texturable_entities</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_ent'>ent</span><span class='op'>|</span>
+    <span class='lparen'>(</span><span class='id identifier rubyid_ent'>ent</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ComponentInstance</span><span class='rparen'>)</span> <span class='op'>||</span>
+     <span class='id identifier rubyid_ent'>ent</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Group</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_ent'>ent</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Image</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_tw'>tw</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_create_texture_writer'>create_texture_writer</span></code></pre>
+    
+  </div>
+
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -191,7 +211,7 @@ application. These methods are usually invoked in this order:</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Object </a>
+      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Integer </a>
     
 
     
@@ -206,8 +226,8 @@ application. These methods are usually invoked in this order:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The length method is used to determine the number of textures loaded into
-the texture writer.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::TextureWriter#length (method)">#length</a></span> method is used to determine the number of textures loaded
+into the texture writer.</p>
 </div></span>
   
 </li>
@@ -216,7 +236,7 @@ the texture writer.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#filename-instance_method" title="#filename (instance method)">#<strong>filename</strong>(handle)  &#x21d2; Object </a>
+      <a href="#filename-instance_method" title="#filename (instance method)">#<strong>filename</strong>(handle)  &#x21d2; String </a>
     
 
     
@@ -266,7 +286,7 @@ texture in the texture writer.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Object </a>
+      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Integer </a>
     
 
     
@@ -281,8 +301,8 @@ texture in the texture writer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The length method is used to determine the number of textures loaded into
-the texture writer.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::TextureWriter#length (method)">#length</a></span> method is used to determine the number of textures loaded
+into the texture writer.</p>
 </div></span>
   
 </li>
@@ -316,7 +336,7 @@ writer for writing out to a file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#write-instance_method" title="#write (instance method)">#<strong>write</strong>(entity, filename, side)  &#x21d2; Object </a>
+      <a href="#write-instance_method" title="#write (instance method)">#<strong>write</strong>(*argv, self)  &#x21d2; Object </a>
     
 
     
@@ -341,7 +361,7 @@ texture writer, to a file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#write_all-instance_method" title="#write_all (instance method)">#<strong>write_all</strong>(dirname, filename_format)  &#x21d2; Object </a>
+      <a href="#write_all-instance_method" title="#write_all (instance method)">#<strong>write_all</strong>(dirname, filename_format)  &#x21d2; Integer </a>
     
 
     
@@ -375,7 +395,7 @@ texture writer to files.</p>
       <div class="method_details first">
   <h3 class="signature first" id="count-instance_method">
   
-    #<strong>count</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>count</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -384,8 +404,10 @@ texture writer to files.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The length method is used to determine the number of textures loaded into
-the texture writer. This is an alias of the count method.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::TextureWriter#length (method)">#length</a></span> method is used to determine the number of textures loaded
+into the texture writer.</p>
+
+<p>The <span class='object_link'><a href="#count-instance_method" title="Sketchup::TextureWriter#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::TextureWriter#length (method)">#length</a></span>.</p>
 
 
   </div>
@@ -396,7 +418,11 @@ the texture writer. This is an alias of the count method.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_texturewriter'>texturewriter</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+<span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A new entity was successfully loaded into the writer.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -406,11 +432,11 @@ the texture writer. This is an alias of the count method.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>length - the number of textures loaded in the texture writer</p>
 </div>
@@ -441,7 +467,7 @@ the texture writer. This is an alias of the count method.</p>
       <div class="method_details ">
   <h3 class="signature " id="filename-instance_method">
   
-    #<strong>filename</strong>(handle)  &#x21d2; <tt>Object</tt> 
+    #<strong>filename</strong>(handle)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -462,14 +488,20 @@ particular texture.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_filename'>filename</span> <span class='int'>1</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_filename'>filename</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filename = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_filename'>filename</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns filename - the filename of the texture on the file system</p>
+<p>Returns filename - the filename of the texture on the file system. Textures
+can be generated without filenames, so if the texture doesn&#39;t have a
+name write_all will save the texture to an image file named “i.png”. Where
+i is the first integer greater than zero which was not already used for a
+png file name.</p>
 
 
   </div>
@@ -483,7 +515,7 @@ particular texture.</p>
         <span class='name'>handle</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -502,13 +534,17 @@ particular texture.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>filename - the filename of the texture on the file system</p>
+<p>filename - the filename of the texture on the file system. Textures can be
+generated without filenames, so if the texture doesn&#39;t have a name
+write_all will save the texture to an image file named “i.png”. Where i is
+the first integer greater than zero which was not already used for a png
+file name.</p>
 </div>
       
     </li>
@@ -541,9 +577,9 @@ particular texture.</p>
   <h3 class="signature " id="handle-instance_method">
   
     
-      <span class="overload">#<strong>handle</strong>(entity)  &#x21d2; <tt>Object</tt> </span>
+      <span class="overload">#<strong>handle</strong>(entity)  &#x21d2; <tt>Integer</tt> </span>
     
-      <span class="overload">#<strong>handle</strong>(face, side)  &#x21d2; <tt>Object</tt> </span>
+      <span class="overload">#<strong>handle</strong>(face, side)  &#x21d2; <tt>Integer</tt> </span>
     
   
 
@@ -565,7 +601,13 @@ texture in the texture writer.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_handle'>handle</span> <span class='id identifier rubyid_myface'>myface</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_handle'>handle</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_handle'>handle</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_load_front_face'>load_front_face</span> <span class='op'>=</span> <span class='kw'>true</span>
+<span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_load_front_face'>load_front_face</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_handle'>handle</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_handle'>handle</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='id identifier rubyid_load_front_face'>load_front_face</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -574,7 +616,7 @@ texture in the texture writer.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>handle</strong>(entity)  &#x21d2; <tt>Object</tt> </span>
+        <span class="signature">#<strong>handle</strong>(entity)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -592,7 +634,7 @@ texture in the texture writer.</p>
         <span class='name'>entity</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
       
       
       
@@ -611,11 +653,11 @@ texture in the texture writer.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>handle - the index for the entity in the texture writer.</p>
 </div>
@@ -629,7 +671,7 @@ texture in the texture writer.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>handle</strong>(face, side)  &#x21d2; <tt>Object</tt> </span>
+        <span class="signature">#<strong>handle</strong>(face, side)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -647,7 +689,7 @@ texture in the texture writer.</p>
         <span class='name'>face</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>)</span>
       
       
       
@@ -663,14 +705,13 @@ texture in the texture writer.</p>
         <span class='name'>side</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>If the entity is a face, the side represents the side whose handle you are
-retrieving (true if front, false if back.)</p>
+<p>Specifies one of the sides of the face (true if front, false if back.)</p>
 </div>
       
     </li>
@@ -683,11 +724,11 @@ retrieving (true if front, false if back.)</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>handle - the index for the entity in the texture writer.</p>
 </div>
@@ -724,7 +765,7 @@ retrieving (true if front, false if back.)</p>
       <div class="method_details ">
   <h3 class="signature " id="length-instance_method">
   
-    #<strong>length</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>length</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -733,8 +774,10 @@ retrieving (true if front, false if back.)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The length method is used to determine the number of textures loaded into
-the texture writer. This is an alias of the count method.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::TextureWriter#length (method)">#length</a></span> method is used to determine the number of textures loaded
+into the texture writer.</p>
+
+<p>The <span class='object_link'><a href="#count-instance_method" title="Sketchup::TextureWriter#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::TextureWriter#length (method)">#length</a></span>.</p>
 
 
   </div>
@@ -745,7 +788,11 @@ the texture writer. This is an alias of the count method.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_texturewriter'>texturewriter</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+<span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_length'>length</span> <span class='op'>&lt;</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A new entity was successfully loaded into the writer.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -755,11 +802,11 @@ the texture writer. This is an alias of the count method.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>length - the number of textures loaded in the texture writer</p>
 </div>
@@ -791,9 +838,9 @@ the texture writer. This is an alias of the count method.</p>
   <h3 class="signature " id="load-instance_method">
   
     
-      <span class="overload">#<strong>load</strong>(entity)  &#x21d2; <tt>Object</tt> </span>
+      <span class="overload">#<strong>load</strong>(entity)  &#x21d2; <tt>Integer</tt> </span>
     
-      <span class="overload">#<strong>load</strong>(face, side)  &#x21d2; <tt>Object</tt> </span>
+      <span class="overload">#<strong>load</strong>(face, side)  &#x21d2; <tt>Integer</tt> </span>
     
   
 
@@ -825,7 +872,10 @@ writer for writing out to a file.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_myface'>myface</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -834,7 +884,7 @@ writer for writing out to a file.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>load</strong>(entity)  &#x21d2; <tt>Object</tt> </span>
+        <span class="signature">#<strong>load</strong>(entity)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -852,7 +902,7 @@ writer for writing out to a file.</p>
         <span class='name'>entity</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
       
       
       
@@ -871,11 +921,11 @@ writer for writing out to a file.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>handle - the index or handle of the entity that was loaded</p>
 </div>
@@ -889,7 +939,7 @@ writer for writing out to a file.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>load</strong>(face, side)  &#x21d2; <tt>Object</tt> </span>
+        <span class="signature">#<strong>load</strong>(face, side)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -907,7 +957,7 @@ writer for writing out to a file.</p>
         <span class='name'>face</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>)</span>
       
       
       
@@ -923,14 +973,14 @@ writer for writing out to a file.</p>
         <span class='name'>side</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>If the entity is a face, the side is used to indicate the side of the face
-being loaded (true if front, false if back).</p>
+<p>A boolean used to indicate the side of the face being loaded (true if
+front, false if back).</p>
 </div>
       
     </li>
@@ -943,11 +993,11 @@ being loaded (true if front, false if back).</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>handle - the index or handle of the entity that was loaded</p>
 </div>
@@ -984,7 +1034,11 @@ being loaded (true if front, false if back).</p>
       <div class="method_details ">
   <h3 class="signature " id="write-instance_method">
   
-    #<strong>write</strong>(entity, filename, side)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>write</strong>(entity, filename)  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>write</strong>(entity, side, filename)  &#x21d2; <tt>Integer</tt> </span>
+    
   
 
   
@@ -993,14 +1047,21 @@ being loaded (true if front, false if back).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If you are passing a face in as the entity argument when writing a texture
+you will have to specify the boolean argument, side. The argument side
+controls the side of the face from which the texture will be sampled before
+writing it.</p>
+</div>
+  </div>
+
+
 <p>The write method is used to write an individual textures, within the
-texture writer, to a file.</p>
-
-<p>Note: If you are passing a face in as the entity argument when writing a</p>
-
-<pre class="code"><code class="">texture you will have to specify the third boolean argument, side.
-The argument side controls the side of the face the texture
-will be sampled from before writing it.</code></pre>
+texture writer, to a file. An entity&#39;s texture must have been loaded
+into the texture writer before this method can be used to write it&#39;s
+texture.</p>
 
 <p>This method will return one of the following status messages. (These are
 constants that are defined by the API.)</p>
@@ -1018,14 +1079,32 @@ constants that are defined by the API.)</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_return_val'>return_val</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_ent'>ent</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\textures\\A.jpg</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>if</span> <span class='id identifier rubyid_return_val'>return_val</span> <span class='op'>==</span> <span class='const'>FILE_WRITE_OK</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>File successfully written.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_texturable_entities'>texturable_entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\textures\\A.jpg</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='const'>FILE_WRITE_OK</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>JPEG file successfully written.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\textures\\Face.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='const'>FILE_WRITE_OK</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PNG file successfully written.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\textures\\Face.bmp</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='const'>FILE_WRITE_OK</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BMP file successfully written.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\textures\\Face.tif</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>==</span> <span class='const'>FILE_WRITE_OK</span>
+  <span class='id identifier rubyid_puts'>puts</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TIFF file successfully written.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>write</strong>(entity, filename)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 <p>Returns status - one of three status messages (see comments.)</p>
@@ -1042,13 +1121,13 @@ constants that are defined by the API.)</p>
         <span class='name'>entity</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A face, image, component instance, group, or layer to write.</p>
+<p>An image, component instance, group, or layer to write.</p>
 </div>
       
     </li>
@@ -1058,30 +1137,13 @@ constants that are defined by the API.)</p>
         <span class='name'>filename</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
 <p>The name of the file to contain the texture.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>side</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>If the entity is a face, the side is used to indicate the side of the face
-being written (true if front, false if back.)</p>
 </div>
       
     </li>
@@ -1094,11 +1156,11 @@ being written (true if front, false if back.)</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>status - one of three status messages (see comments.)</p>
 </div>
@@ -1108,6 +1170,97 @@ being written (true if front, false if back.)</p>
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>write</strong>(entity, side, filename)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns status - one of three status messages (see comments.)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entity</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A face to write.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>side</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A boolean used to indicate the side of the face being written (true if
+front, false if back).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the file to contain the texture.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>status - one of three status messages (see comments.)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -1132,7 +1285,7 @@ being written (true if front, false if back.)</p>
       <div class="method_details ">
   <h3 class="signature " id="write_all-instance_method">
   
-    #<strong>write_all</strong>(dirname, filename_format)  &#x21d2; <tt>Object</tt> 
+    #<strong>write_all</strong>(dirname, filename_format)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1157,7 +1310,11 @@ texture writer to files. It will return one of three status numbers:</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_return_val'>return_val</span> <span class='op'>=</span> <span class='id identifier rubyid_tw'>tw</span><span class='period'>.</span><span class='id identifier rubyid_write_all'>write_all</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\textures\\</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code>tw.load(texturable_entities[0]
+tw.load(faces[0], false)
+if tw.write_all(&quot;C:\\textures\\&quot;, true) == FILE_WRITE_OK
+  puts(&quot;Texture files were successfully written.&quot;)
+end</code></pre>
     
   </div>
 
@@ -1178,7 +1335,7 @@ texture writer to files. It will return one of three status numbers:</p>
         <span class='name'>dirname</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -1194,7 +1351,7 @@ texture writer to files. It will return one of three status numbers:</p>
         <span class='name'>filename_format</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
@@ -1213,11 +1370,11 @@ texture writer to files. It will return one of three status numbers:</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>status - one of three status messages (see comments.)</p>
 </div>
@@ -1253,7 +1410,7 @@ texture writer to files. It will return one of three status numbers:</p>
 </div>
 
       <div id="footer">
-  Generated on Thu May 19 12:07:26 2016 by
+  Generated on Wed Nov  2 13:11:06 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 
