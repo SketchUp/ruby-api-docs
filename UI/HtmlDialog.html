@@ -145,7 +145,7 @@
   <div class="discussion">
     
 <p>The Ruby HtmlDialog class allows you to create and interact with HTML
-dialog boxes from Ruby This is the best way to generate complex, embedded
+dialog boxes from Ruby. This is the best way to generate complex, embedded
 UIs inside SketchUp, but it does generally require HTML and JavaScript
 expertise.</p>
 
@@ -209,7 +209,7 @@ rather than inside a dialog in SketchUp.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_action_callback-instance_method" title="#add_action_callback (instance method)">#<strong>add_action_callback</strong>(callback_name)  &#x21d2; Boolean </a>
+      <a href="#add_action_callback-instance_method" title="#add_action_callback (instance method)">#<strong>add_action_callback</strong>(callback_name) {|action_context, ...| ... } &#x21d2; Boolean </a>
     
 
     
@@ -627,21 +627,19 @@ still return <code>true</code>.</p>
     
 <p>The new method is used to create a new HtmlDialog.</p>
 
-<p>Default width is 250. Default height is 250. Default left is 0. Default top
-is 0. HtmlDialog are resizable by default.</p>
-
 <p>The <code>properties</code> hash accepts an optional key <code>style</code>
 where the value is one of:</p>
-<ul><li>
-<p><code>UI::HtmlDialog::STYLE_DIALOG</code> - HtmlDialog stays at the top of
-SketchUp (default).</p>
-</li><li>
-<p><code>UI::HtmlDialog::STYLE_WINDOW</code> - HtmlDialog can go behind
-SketchUp and doesn&#39;t disappear when SketchUp looses focus.</p>
-</li><li>
-<p><code>UI::HtmlDialog::STYLE_UTILITY</code> - HtmlDialog is shown with small
-titlebar and stays on top of SketchUp.</p>
-</li></ul>
+<dl class="rdoc-list label-list"><dt><code>UI::HtmlDialog::STYLE_DIALOG</code>
+<dd>
+<p>HtmlDialog stays at the top of SketchUp.</p>
+</dd><dt><code>UI::HtmlDialog::STYLE_WINDOW</code>
+<dd>
+<p>HtmlDialog can go behind SketchUp and doesn&#39;t disappear when SketchUp
+looses focus.</p>
+</dd><dt><code>UI::HtmlDialog::STYLE_UTILITY</code>
+<dd>
+<p>HtmlDialog is shown with small titlebar and stays on top of SketchUp.</p>
+</dd></dl>
 
 
   </div>
@@ -676,8 +674,6 @@ titlebar and stays on top of SketchUp.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns The newly created HtmlDialog object.</p>
-
 
   </div>
 </div>
@@ -702,6 +698,162 @@ titlebar and stays on top of SketchUp.</p>
     </li>
   
 </ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>properties</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:dialog_title</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:preferences_key</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:scrollable</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:resizable</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>true</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:width</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>250</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:height</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>250</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:left</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:top</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:min_width</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:min_height</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_width</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>-1</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_height</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>-1</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:style</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>UI::HtmlDialog::STYLE_DIALOG</tt>
+            
+          </span>
+          
+        </li>
+      
+    </ul>
+  
 
 
 </div>
@@ -736,7 +888,7 @@ titlebar and stays on top of SketchUp.</p>
       <div class="method_details first">
   <h3 class="signature first" id="add_action_callback-instance_method">
   
-    #<strong>add_action_callback</strong>(callback_name)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>add_action_callback</strong>(callback_name) {|action_context, ...| ... } &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -752,11 +904,12 @@ your html dialog can call to perform some function.</p>
 method from your html dialog. Your JavaScript in the html dialog will
 invoke the callback with the same number of arguments.</p>
 
-<p>The call is asynchronous. Javascript call might return before ruby callback
-even called. Use onCompleted callback to get notified for completion.</p>
+<p>The call is asynchronous. JavaScript call might return before Ruby callback
+even called. Use <code>onCompleted</code> callback to get notified for
+completion.</p>
 
 <p>Basic types such as booleans, numbers, strings, arrays and hashes are
-automatically converted between Ruby and Javascript.</p>
+automatically converted between Ruby and JavaScript.</p>
 
 
   </div>
@@ -771,8 +924,8 @@ automatically converted between Ruby and Javascript.</p>
 <p>Ruby Code</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_add_action_callback'>add_action_callback</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>say</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_action_context'>action_context</span><span class='comma'>,</span> <span class='id identifier rubyid_param1'>param1</span><span class='comma'>,</span> <span class='id identifier rubyid_param2'>param2</span><span class='op'>|</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Javascript said </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_param1'>param1</span><span class='embexpr_end'>}</span><span class='tstring_content'> and </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_param2'>param2</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_add_action_callback'>add_action_callback</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>say</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_action_context'>action_context</span><span class='comma'>,</span> <span class='id identifier rubyid_param1'>param1</span><span class='comma'>,</span> <span class='id identifier rubyid_param2'>param2</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>JavaScript said </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_param1'>param1</span><span class='embexpr_end'>}</span><span class='tstring_content'> and </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_param2'>param2</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='rbrace'>}</span></code></pre>
     
       
@@ -780,9 +933,16 @@ automatically converted between Ruby and Javascript.</p>
 <p>JavaScript</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_sketchup'>sketchup</span><span class='period'>.</span><span class='id identifier rubyid_say'>say</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>42</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+      <pre class="example code"><code><span class='id identifier rubyid_sketchup'>sketchup</span><span class='period'>.</span><span class='id identifier rubyid_say'>say</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>42</span><span class='rparen'>)</span><span class='semicolon'>;</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>JavaScript with callback</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_sketchup'>sketchup</span><span class='period'>.</span><span class='id identifier rubyid_say'>say</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>42</span><span class='comma'>,</span> <span class='lbrace'>{</span>
   <span class='label'>onCompleted:</span> <span class='id identifier rubyid_function'>function</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-    <span class='id identifier rubyid_console'>console</span><span class='period'>.</span><span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ruby side done.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span>
+    <span class='id identifier rubyid_console'>console</span><span class='period'>.</span><span class='id identifier rubyid_log'>log</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Ruby side done.</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='semicolon'>;</span>
   <span class='rbrace'>}</span>
 <span class='rbrace'>}</span><span class='rparen'>)</span><span class='semicolon'>;</span></code></pre>
     
@@ -818,6 +978,55 @@ automatically converted between Ruby and Javascript.</p>
   
 </ul>
 
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>action_context</tt>, <tt>...</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='name'>action_context</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>action_context  Currently unused.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>...</span>
+      
+      
+        <span class='type'>(<tt>Object</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The parameters sent from JavaScript.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1164,6 +1373,24 @@ false the close will be canceled.</p>
     
   </div>
 
+<p class="tag_title">Yield Returns:</p>
+<ul class="yieldreturn">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Return a boolean to indicate if the dialogs should close.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1904,7 +2131,7 @@ still return <code>true</code>.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  2 13:11:03 2016 by
+  Generated on Tue Nov 29 14:42:59 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

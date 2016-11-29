@@ -371,7 +371,7 @@ of the view.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw-instance_method" title="#draw (instance method)">#<strong>draw</strong>(mode, pts)  &#x21d2; Object </a>
+      <a href="#draw-instance_method" title="#draw (instance method)">#<strong>draw</strong>(mode, points)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -386,7 +386,7 @@ of the view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The draw method is used to do basic drawing.</p>
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> method is used to do basic drawing.</p>
 </div></span>
   
 </li>
@@ -517,7 +517,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw_text-instance_method" title="#draw_text (instance method)">#<strong>draw_text</strong>(point, text, options)  &#x21d2; Object </a>
+      <a href="#draw_text-instance_method" title="#draw_text (instance method)">#<strong>draw_text</strong>(point, text, options = {})  &#x21d2; Sketchup::View </a>
     
 
     
@@ -1855,7 +1855,7 @@ coordinate you want to retrieve.</p>
       <div class="method_details ">
   <h3 class="signature " id="draw-instance_method">
   
-    #<strong>draw</strong>(mode, pts)  &#x21d2; <tt>Object</tt> 
+    #<strong>draw</strong>(mode, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
   
 
   
@@ -1864,51 +1864,70 @@ coordinate you want to retrieve.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The draw method is used to do basic drawing. This method can only be called
-from within the draw method of a tool that you implement in Ruby.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If you draw outside the model bounds you need to implement
+<span class='object_link'><a href="Tool.html#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">Tool#getExtents</a></span> which return a bounding box large enough to include the
+points you draw. Otherwise your drawing will be clipped.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> method is used to do basic drawing. This method can only be
+called from within the <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> method of a tool that you implement in
+Ruby.</p>
 
 <p>The following constants are all OpenGL terms and have been externalized to
 Ruby. Here is a summary of their meanings:</p>
-
-<p>GL_POINTS: Treats each vertex as a single point. Vertex n defines point n.
-N points are drawn.</p>
-
-<p>GL_LINES: Treats each pair of vertices as an independent line segment.
-Vertices 2n-1 and 2n define line n. N/2 lines are drawn.</p>
-
-<p>GL_LINE_STRIP: Draws a connected group of line segments from the first
-vertex to the last. Vertices n and n+1 define line n. N-1 lines are drawn.</p>
-
-<p>GL_LINE_LOOP: Draws a connected group of line segments from the first
-vertex to the last, then back to the first. Vertices n and n+1 define line
-n. The last line, however, is defined by vertices N and 1. N lines are
-drawn.</p>
-
-<p>GL_TRIANGLES: Treats each triplet of vertices as an independent triangle.
-Vertices 3n-2, 3n-1, and 3n define triangle n. N/3 triangles are drawn.</p>
-
-<p>GL_TRIANGLE_STRIP: Draws a connected group of triangles. One triangle is
-defined for each vertex presented after the first two vertices. For odd n,
-vertices n, n+1, and n+2 define triangle n. For even n, vertices n+1, n,
-and n+2 define triangle n. N-2 triangles are drawn.</p>
-
-<p>GL_TRIANGLE_FAN: Draws a connected group of triangles. One triangle is
-defined for each vertex presented after the first two vertices. Vertices 1,
-n+1, and n+2 define triangle n. N-2 triangles are drawn.</p>
-
-<p>GL_QUADS: Treats each group of four vertices as an independent
-quadrilateral. Vertices 4n-3, 4n-2, 4n-1, and 4n define quadrilateral n.
-N/4 quadrilaterals are drawn.</p>
-
-<p>GL_QUAD_STRIP: Draws a connected group of quadrilaterals. One quadrilateral
-is defined for each pair of vertices presented after the first pair.
-Vertices 2n-1, 2n, 2n+2, and 2n+1 define quadrilateral n. N/2-1
-quadrilaterals are drawn. Note that the order in which vertices are used to
-construct a quadrilateral from strip data is different from that used with
-independent data.</p>
-
-<p>GL_POLYGON: Draws a single, convex polygon. Vertices 1 through N define
-this polygon.</p>
+<dl class="rdoc-list label-list"><dt>GL_POINTS
+<dd>
+<p>Treats each vertex as a single point. Vertex n defines point n. N points
+are drawn.</p>
+</dd><dt>GL_LINES
+<dd>
+<p>Treats each pair of vertices as an independent line segment. Vertices 2n-1
+and 2n define line n. N/2 lines are drawn.</p>
+</dd><dt>GL_LINE_STRIP
+<dd>
+<p>Draws a connected group of line segments from the first vertex to the last.
+Vertices n and n+1 define line n. N-1 lines are drawn.</p>
+</dd><dt>GL_LINE_LOOP
+<dd>
+<p>Draws a connected group of line segments from the first vertex to the last,
+then back to the first. Vertices n and n+1 define line n. The last line,
+however, is defined by vertices N and 1. N lines are drawn.</p>
+</dd><dt>GL_TRIANGLES
+<dd>
+<p>Treats each triplet of vertices as an independent triangle. Vertices 3n-2,
+3n-1, and 3n define triangle n. N/3 triangles are drawn.</p>
+</dd><dt>GL_TRIANGLE_STRIP
+<dd>
+<p>Draws a connected group of triangles. One triangle is defined for each
+vertex presented after the first two vertices. For odd n, vertices n, n+1,
+and n+2 define triangle n. For even n, vertices n+1, n, and n+2 define
+triangle n. N-2 triangles are drawn.</p>
+</dd><dt>GL_TRIANGLE_FAN
+<dd>
+<p>Draws a connected group of triangles. One triangle is defined for each
+vertex presented after the first two vertices. Vertices 1, n+1, and n+2
+define triangle n. N-2 triangles are drawn.</p>
+</dd><dt>GL_QUADS
+<dd>
+<p>Treats each group of four vertices as an independent quadrilateral.
+Vertices 4n-3, 4n-2, 4n-1, and 4n define quadrilateral n. N/4
+quadrilaterals are drawn.</p>
+</dd><dt>GL_QUAD_STRIP
+<dd>
+<p>Draws a connected group of quadrilaterals. One quadrilateral is defined for
+each pair of vertices presented after the first pair. Vertices 2n-1, 2n,
+2n+2, and 2n+1 define quadrilateral n. N/2-1 quadrilaterals are drawn. Note
+that the order in which vertices are used to construct a quadrilateral from
+strip data is different from that used with independent data.</p>
+</dd><dt>GL_POLYGON
+<dd>
+<p>Draws a single, convex polygon. Vertices 1 through N define this polygon.</p>
+</dd></dl>
 
 
   </div>
@@ -1919,15 +1938,19 @@ this polygon.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span> <span class='const'>GL_LINES</span><span class='comma'>,</span> <span class='id identifier rubyid_pts'>pts</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'>GL_LINE_LOOP</span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns view - a View object</p>
-
 
   </div>
 </div>
@@ -1940,31 +1963,26 @@ this polygon.</p>
         <span class='name'>mode</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
 <p>The item you are going to draw, one of the constants from the comments,
-such as GL_LINES.</p>
+such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
   
     <li>
       
-        <span class='name'>pts</span>
+        <span class='name'>points</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>An array of Point3d objects.</p>
-</div>
       
     </li>
   
@@ -1976,14 +1994,9 @@ such as GL_LINES.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>view - a View object</p>
-</div>
       
     </li>
   
@@ -1991,6 +2004,13 @@ such as GL_LINES.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Tool.html#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">Tool#getExtents</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2817,7 +2837,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
       <div class="method_details ">
   <h3 class="signature " id="draw_text-instance_method">
   
-    #<strong>draw_text</strong>(point, text, options)  &#x21d2; <tt>Object</tt> 
+    #<strong>draw_text</strong>(point, text, options = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
   
 
   
@@ -2826,32 +2846,17 @@ segments from pt1 to pt2 to pt3, and so on.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is used to draw text on the screen and is usually invoked
-within the draw method of a tool.</p>
-
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
 <p>Under Windows the font name must be less than 32 characters - due to system
 limitations.</p>
+</div>
+  </div>
 
-<p>Options: (SketchUp 2016)</p>
-<ul><li>
-<p>:font              String  The name of the font to use. If it does not</p>
 
-<pre class="code"><code class="">exist on the system, a default font will be used
-instead.</code></pre>
-</li><li>
-<p>:size              Integer The size of the font in points</p>
-</li><li>
-<p>:bold              Boolean Controls the Bold property of the font.</p>
-</li><li>
-<p>:italic            Boolean Controls the Italic property of the font.</p>
-</li><li>
-<p>:color             Color   The color to draw the text with.</p>
-</li><li>
-<p>:align             Integer The text alignment, one of the following</p>
-
-<pre class="code"><code class="">constants TextAlignLeft, TextAlignCenter or
-TextAlignRight.</code></pre>
-</li></ul>
+<p>This method is used to draw text on the screen and is usually invoked
+within the draw method of a tool.</p>
 
 
   </div>
@@ -2888,8 +2893,6 @@ TextAlignRight.</code></pre>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns View              Returns the view object.</p>
-
 
   </div>
 </div>
@@ -2902,14 +2905,13 @@ TextAlignRight.</code></pre>
         <span class='name'>point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>Point3d           A Point3d object representing a 2D coordinate in view
-space.</p>
+<p>A Point3d object representing a 2D coordinate in view space.</p>
 </div>
       
     </li>
@@ -2919,13 +2921,13 @@ space.</p>
         <span class='name'>text</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>String            The text string to draw.</p>
+<p>The text string to draw.</p>
 </div>
       
     </li>
@@ -2935,19 +2937,115 @@ space.</p>
         <span class='name'>options</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Hash</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>Hash (optional)   The text can be customized by providing a hash or named
-arguments of options. Available from SketchUp 2016.</p>
+<p>The text can be customized by providing a hash or named arguments of
+options. Available from SketchUp 2016.</p>
 </div>
       
     </li>
   
 </ul>
+
+  
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:font</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The name of the font to use. If it does not exist on the system, a default
+font will be used instead.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The size of the font in points</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:bold</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Controls the Bold property of the font.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:italic</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Controls the Italic property of the font.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:color</span>
+          <span class="type">(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The color to draw the text with.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:align</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The text alignment, one of the following constants
+<code>TextAlignLeft</code>, <code>TextAlignCenter</code> or
+<code>TextAlignRight</code>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2955,14 +3053,9 @@ arguments of options. Available from SketchUp 2016.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>View              Returns the view object.</p>
-</div>
       
     </li>
   
@@ -5775,7 +5868,7 @@ model, as if the user has selected the zoom extents command from the menu.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  2 13:10:54 2016 by
+  Generated on Tue Nov 29 14:42:50 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

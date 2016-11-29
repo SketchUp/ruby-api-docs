@@ -286,7 +286,7 @@ different tool was selected.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The draw method is called by SketchUp whenever the view is refreshed to
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::Tool#draw (method)">#draw</a></span> method is called by SketchUp whenever the view is refreshed to
 allow the tool to do its own drawing.</p>
 </div></span>
   
@@ -1083,10 +1083,20 @@ different tool was selected.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The draw method is called by SketchUp whenever the view is refreshed to
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If you draw outside the model bounds you need to implement
+<span class='object_link'><a href="#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">#getExtents</a></span> which return a bounding box large enough to include the
+points you draw. Otherwise your drawing will be clipped.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::Tool#draw (method)">#draw</a></span> method is called by SketchUp whenever the view is refreshed to
 allow the tool to do its own drawing. If the tool has some temporary
 graphics that it wants displayed while it is active, it should implement
-this method and draw to the View.</p>
+this method and draw to the <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span>.</p>
 
 
   </div>
@@ -1098,7 +1108,20 @@ this method and draw to the View.</p>
     
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your tool can draw into view: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># Draw a square.
+</span>  <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span>
+  <span class='comment'># Fill
+</span>  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>128</span><span class='comma'>,</span> <span class='int'>128</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'>GL_QUADS</span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
+  <span class='comment'># Outline
+</span>  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_line_stipple'>line_stipple</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># Solid line
+</span>  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Color</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>64</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'>GL_LINE_LOOP</span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1120,7 +1143,7 @@ this method and draw to the View.</p>
         <span class='name'>view</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
       
@@ -1154,6 +1177,15 @@ this method and draw to the View.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">#getExtents</a></span></li>
+    
+      <li><span class='object_link'><a href="View.html#draw-instance_method" title="Sketchup::View#draw (method)">View#draw</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -4362,7 +4394,7 @@ middle mouse button.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  2 13:10:59 2016 by
+  Generated on Tue Nov 29 14:42:55 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

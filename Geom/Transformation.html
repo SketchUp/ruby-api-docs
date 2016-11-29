@@ -146,8 +146,9 @@
     
 <p>Transformations are a standard construct in the 3D world for representing
 the position, rotation, and sizing of a given entity. In the SketchUp
-world, Components and Groups have a .transformation method that reports
-their current state and various methods (.move!, transformation=, etc.)
+world, <span class='object_link'><a href="../Sketchup/ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span> and <span class='object_link'><a href="../Sketchup/Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span> have a
+<code>.transformation</code> method that reports their current state and
+various methods (<code>.move!</code>, <code>transformation=</code>, etc.)
 that allow them to be manipulated.</p>
 
 <p>Use of the transformation class requires a knowledge of geometrical
@@ -194,7 +195,7 @@ Internet.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#axes-class_method" title="axes (class method)">.<strong>axes</strong>(origin, xaxis, yaxis, zaxis)  &#x21d2; Object </a>
+      <a href="#axes-class_method" title="axes (class method)">.<strong>axes</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -209,7 +210,7 @@ Internet.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The axes method creates a Transformation that goes from world coordinates
+<p>The axes method creates a transformation that goes from world coordinates
 to an arbitrary coordinate system defined by an origin and three axis
 vectors.</p>
 </div></span>
@@ -220,7 +221,7 @@ vectors.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#interpolate-class_method" title="interpolate (class method)">.<strong>interpolate</strong>(transform1, transform2, paramter)  &#x21d2; Object </a>
+      <a href="#interpolate-class_method" title="interpolate (class method)">.<strong>interpolate</strong>(transform1, transform2, weight)  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -245,7 +246,7 @@ result of interpolating between two other transformations.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#rotation-class_method" title="rotation (class method)">.<strong>rotation</strong>(point, vector, angle)  &#x21d2; Object </a>
+      <a href="#rotation-class_method" title="rotation (class method)">.<strong>rotation</strong>(point, vector, angle)  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -260,7 +261,7 @@ result of interpolating between two other transformations.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The rotation method is used to create a Transformation that does rotation
+<p>The rotation method is used to create a transformation that does rotation
 about an axis.</p>
 </div></span>
   
@@ -285,7 +286,7 @@ about an axis.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The scaling method is used to create a Transformation that does scaling.</p>
+<p>The scaling method is used to create a transformation that does scaling.</p>
 </div></span>
   
 </li>
@@ -294,7 +295,7 @@ about an axis.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#translation-class_method" title="translation (class method)">.<strong>translation</strong>(vector)  &#x21d2; Object </a>
+      <a href="#translation-class_method" title="translation (class method)">.<strong>translation</strong>(arg)  &#x21d2; Object </a>
     
 
     
@@ -328,7 +329,7 @@ translation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%2A-instance_method" title="#* (instance method)">#<strong>*</strong>(point1)  &#x21d2; Object </a>
+      <a href="#%2A-instance_method" title="#* (instance method)">#<strong>*</strong>(arg)  &#x21d2; Object </a>
     
 
     
@@ -343,7 +344,7 @@ translation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The * method is used to do matrix multiplication using the Transform.</p>
+<p>The <span class='object_link'><a href="#%2A-instance_method" title="Geom::Transformation#* (method)">#*</a></span> method is used to do matrix multiplication using the transform.</p>
 </div></span>
   
 </li>
@@ -352,7 +353,7 @@ translation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#clone-instance_method" title="#clone (instance method)">#<strong>clone</strong>  &#x21d2; Object </a>
+      <a href="#clone-instance_method" title="#clone (instance method)">#<strong>clone</strong>  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -367,7 +368,7 @@ translation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The clone method is used to create a copy of a transformation.</p>
+<p>The <span class='object_link'><a href="#clone-instance_method" title="Geom::Transformation#clone (method)">#clone</a></span> method is used to create a copy of a transformation.</p>
 </div></span>
   
 </li>
@@ -376,7 +377,7 @@ translation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#identity%3F-instance_method" title="#identity? (instance method)">#<strong>identity?</strong>  &#x21d2; Object </a>
+      <a href="#identity%3F-instance_method" title="#identity? (instance method)">#<strong>identity?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -391,8 +392,8 @@ translation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The identity? method is used to determine if a transformation is the
-identity transform.</p>
+<p>The <span class='object_link'><a href="#identity%3F-instance_method" title="Geom::Transformation#identity? (method)">#identity?</a></span> method is used to determine if a transformation is the
+<span class='object_link'><a href="../top-level-namespace.html#IDENTITY-constant" title="IDENTITY (constant)">IDENTITY</a></span> transform.</p>
 </div></span>
   
 </li>
@@ -427,7 +428,7 @@ identity transform.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#inverse-instance_method" title="#inverse (instance method)">#<strong>inverse</strong>  &#x21d2; Object </a>
+      <a href="#inverse-instance_method" title="#inverse (instance method)">#<strong>inverse</strong>  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -442,7 +443,7 @@ identity transform.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The inverse method is used to retrieve the inverse of a transformation.</p>
+<p>The <span class='object_link'><a href="#inverse-instance_method" title="Geom::Transformation#inverse (method)">#inverse</a></span> method is used to retrieve the inverse of a transformation.</p>
 </div></span>
   
 </li>
@@ -451,7 +452,7 @@ identity transform.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#invert%21-instance_method" title="#invert! (instance method)">#<strong>invert!</strong>  &#x21d2; Object </a>
+      <a href="#invert%21-instance_method" title="#invert! (instance method)">#<strong>invert!</strong>  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -466,7 +467,7 @@ identity transform.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The invert! method sets the transformation to its inverse.</p>
+<p>The <span class='object_link'><a href="#invert%21-instance_method" title="Geom::Transformation#invert! (method)">#invert!</a></span> method sets the transformation to its inverse.</p>
 </div></span>
   
 </li>
@@ -475,7 +476,7 @@ identity transform.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#origin-instance_method" title="#origin (instance method)">#<strong>origin</strong>  &#x21d2; Object </a>
+      <a href="#origin-instance_method" title="#origin (instance method)">#<strong>origin</strong>  &#x21d2; Geom::Point3d </a>
     
 
     
@@ -490,7 +491,7 @@ identity transform.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The origin method retrieves the origin of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#origin-instance_method" title="Geom::Transformation#origin (method)">#origin</a></span> method retrieves the origin of a rigid transformation.</p>
 </div></span>
   
 </li>
@@ -499,7 +500,7 @@ identity transform.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set%21-instance_method" title="#set! (instance method)">#<strong>set!</strong>(transform2)  &#x21d2; Object </a>
+      <a href="#set%21-instance_method" title="#set! (instance method)">#<strong>set!</strong>(arg)  &#x21d2; Object </a>
     
 
     
@@ -514,7 +515,7 @@ identity transform.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set! method is used to set this transformation to match another one.</p>
+<p>The <span class='object_link'><a href="#set%21-instance_method" title="Geom::Transformation#set! (method)">#set!</a></span> method is used to set this transformation to match another one.</p>
 </div></span>
   
 </li>
@@ -523,7 +524,7 @@ identity transform.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_a-instance_method" title="#to_a (instance method)">#<strong>to_a</strong>  &#x21d2; Object </a>
+      <a href="#to_a-instance_method" title="#to_a (instance method)">#<strong>to_a</strong>  &#x21d2; Array&lt;Float&gt; </a>
     
 
     
@@ -538,8 +539,8 @@ identity transform.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_a method retrieves a 16 element array which contains the values that
-define the Transformation.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Transformation#to_a (method)">#to_a</a></span> method retrieves a 16 element array which contains the values
+that define the transformation.</p>
 </div></span>
   
 </li>
@@ -548,7 +549,7 @@ define the Transformation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#xaxis-instance_method" title="#xaxis (instance method)">#<strong>xaxis</strong>  &#x21d2; Object </a>
+      <a href="#xaxis-instance_method" title="#xaxis (instance method)">#<strong>xaxis</strong>  &#x21d2; Geom::Vector3d </a>
     
 
     
@@ -563,7 +564,7 @@ define the Transformation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The xaxis method retrieves the x axis of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#xaxis-instance_method" title="Geom::Transformation#xaxis (method)">#xaxis</a></span> method retrieves the x axis of a rigid transformation.</p>
 </div></span>
   
 </li>
@@ -572,7 +573,7 @@ define the Transformation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#yaxis-instance_method" title="#yaxis (instance method)">#<strong>yaxis</strong>  &#x21d2; Object </a>
+      <a href="#yaxis-instance_method" title="#yaxis (instance method)">#<strong>yaxis</strong>  &#x21d2; Geom::Vector3d </a>
     
 
     
@@ -587,7 +588,7 @@ define the Transformation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The yaxis method retrieves the y axis of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#yaxis-instance_method" title="Geom::Transformation#yaxis (method)">#yaxis</a></span> method retrieves the y axis of a rigid transformation.</p>
 </div></span>
   
 </li>
@@ -596,7 +597,7 @@ define the Transformation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#zaxis-instance_method" title="#zaxis (instance method)">#<strong>zaxis</strong>  &#x21d2; Object </a>
+      <a href="#zaxis-instance_method" title="#zaxis (instance method)">#<strong>zaxis</strong>  &#x21d2; Geom::Vector3d </a>
     
 
     
@@ -611,7 +612,7 @@ define the Transformation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The zaxis method retrieves the z axis of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#zaxis-instance_method" title="Geom::Transformation#zaxis (method)">#zaxis</a></span> method retrieves the z axis of a rigid transformation.</p>
 </div></span>
   
 </li>
@@ -669,13 +670,8 @@ specific kinds of Transformations.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span>
-<span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -1109,7 +1105,11 @@ line defined by pt and axis.</p>
       <div class="method_details first">
   <h3 class="signature first" id="axes-class_method">
   
-    .<strong>axes</strong>(origin, xaxis, yaxis, zaxis)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">.<strong>axes</strong>(origin, xaxis, yaxis, zaxis)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">.<strong>axes</strong>(origin, xaxis, yaxis)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
   
 
   
@@ -1118,7 +1118,7 @@ line defined by pt and axis.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The axes method creates a Transformation that goes from world coordinates
+<p>The axes method creates a transformation that goes from world coordinates
 to an arbitrary coordinate system defined by an origin and three axis
 vectors.</p>
 
@@ -1131,15 +1131,100 @@ vectors.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_axes'>axes</span> <span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span> <span class='id identifier rubyid_xaxis'>xaxis</span><span class='comma'>,</span> <span class='id identifier rubyid_yaxis'>yaxis</span><span class='comma'>,</span> <span class='id identifier rubyid_zaxis'>zaxis</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_t'>t</span></code></pre>
+      <pre class="example code"><code><span class='comment'># Creates a transformation that &quot;flips&quot; the axes from XYZ to XZY. Something
+</span><span class='comment'># one often need for importers/exporters when dealing with applications
+</span><span class='comment'># that threat Y as &quot;up&quot;.
+</span><span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_axes'>axes</span><span class='lparen'>(</span><span class='const'>ORIGIN</span><span class='comma'>,</span> <span class='const'>X_AXIS</span><span class='comma'>,</span> <span class='const'>Z_AXIS</span><span class='comma'>,</span> <span class='const'>Y_AXIS</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>axes</strong>(origin, xaxis, yaxis, zaxis)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns transformation - a new Transformation object</p>
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>origin</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xaxis</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>yaxis</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>zaxis</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>axes</strong>(origin, xaxis, yaxis)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>When the Z axis is omitted and arbitrary axis is computed from the X and Y
+axes.</p>
 
 
   </div>
@@ -1153,14 +1238,9 @@ vectors.</p>
         <span class='name'>origin</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Point3d object.</p>
-</div>
       
     </li>
   
@@ -1169,14 +1249,9 @@ vectors.</p>
         <span class='name'>xaxis</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
       
     </li>
   
@@ -1185,30 +1260,9 @@ vectors.</p>
         <span class='name'>yaxis</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>zaxis</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
       
     </li>
   
@@ -1220,21 +1274,37 @@ vectors.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation - a new Transformation object</p>
-</div>
       
     </li>
   
 </ul>
 
 </div>
+      </li>
+    
+  </ul>
 
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if any of the vectors are zero length.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1258,7 +1328,7 @@ vectors.</p>
       <div class="method_details ">
   <h3 class="signature " id="interpolate-class_method">
   
-    .<strong>interpolate</strong>(transform1, transform2, paramter)  &#x21d2; <tt>Object</tt> 
+    .<strong>interpolate</strong>(transform1, transform2, weight)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   
@@ -1270,8 +1340,8 @@ vectors.</p>
 <p>The interpolate method is used to create a new transformation that is the
 result of interpolating between two other transformations.</p>
 
-<p>Parameter is a percent (between 0 and 1) that identifies whether to favor
-transformation1 or transformation2.</p>
+<p>Parameter is a weight (between 0.0 and 1.0) that identifies whether to
+favor transformation1 or transformation2.</p>
 
 
   </div>
@@ -1282,23 +1352,21 @@ transformation1 or transformation2.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_origin'>origin</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
-<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t1'>t1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_t2'>t2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_axes'>axes</span> <span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_z'>z</span>
-<span class='id identifier rubyid_t3'>t3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_interpolate'>interpolate</span> <span class='id identifier rubyid_t1'>t1</span><span class='comma'>,</span> <span class='id identifier rubyid_t2'>t2</span><span class='comma'>,</span> <span class='int'>25</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_t3'>t3</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_origin'>origin</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_t1'>t1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_t2'>t2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_axes'>axes</span><span class='lparen'>(</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_z'>z</span><span class='rparen'>)</span>
+<span class='comment'># This produce a transformation that is a mix of 75% t1 and 25% t2.
+</span><span class='id identifier rubyid_t3'>t3</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_interpolate'>interpolate</span><span class='lparen'>(</span><span class='id identifier rubyid_t1'>t1</span><span class='comma'>,</span> <span class='id identifier rubyid_t2'>t2</span><span class='comma'>,</span> <span class='float'>0.25</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns transformation3 - the new Transformation object</p>
-
 
   </div>
 </div>
@@ -1311,14 +1379,9 @@ transformation1 or transformation2.</p>
         <span class='name'>transform1</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Transformation object.</p>
-</div>
       
     </li>
   
@@ -1327,29 +1390,24 @@ transformation1 or transformation2.</p>
         <span class='name'>transform2</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Transformation object.</p>
-</div>
       
     </li>
   
     <li>
       
-        <span class='name'>parameter</span>
+        <span class='name'>weight</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A value between 0 and 1 (see comments).</p>
+<p>A value between 0.0 and 1.0 (see comments).</p>
 </div>
       
     </li>
@@ -1362,14 +1420,9 @@ transformation1 or transformation2.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation3 - the new Transformation object</p>
-</div>
       
     </li>
   
@@ -1400,7 +1453,7 @@ transformation1 or transformation2.</p>
       <div class="method_details ">
   <h3 class="signature " id="rotation-class_method">
   
-    .<strong>rotation</strong>(point, vector, angle)  &#x21d2; <tt>Object</tt> 
+    .<strong>rotation</strong>(point, vector, angle)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   
@@ -1409,7 +1462,7 @@ transformation1 or transformation2.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The rotation method is used to create a Transformation that does rotation
+<p>The rotation method is used to create a transformation that does rotation
 about an axis.</p>
 
 <p>The axis is defined by a point and a vector. The angle is given in radians.</p>
@@ -1423,15 +1476,16 @@ about an axis.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_rotation'>rotation</span> <span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_vector'>vector</span><span class='comma'>,</span> <span class='id identifier rubyid_angle'>angle</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_angle'>angle</span> <span class='op'>=</span> <span class='int'>45</span><span class='period'>.</span><span class='id identifier rubyid_degrees'>degrees</span> <span class='comment'># Return 45 degrees in radians.
+</span><span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_rotation'>rotation</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_vector'>vector</span><span class='comma'>,</span> <span class='id identifier rubyid_angle'>angle</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns transformation - a new Transformation object</p>
-
 
   </div>
 </div>
@@ -1444,14 +1498,9 @@ about an axis.</p>
         <span class='name'>point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Point3d object.</p>
-</div>
       
     </li>
   
@@ -1460,14 +1509,9 @@ about an axis.</p>
         <span class='name'>vector</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
       
     </li>
   
@@ -1476,14 +1520,13 @@ about an axis.</p>
         <span class='name'>angle</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value, expressed in radians, that specifies the angle to rotate
-about the axis set by the second parameter.</p>
+<p>The angle in radians.</p>
 </div>
       
     </li>
@@ -1496,14 +1539,9 @@ about the axis set by the second parameter.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation - a new Transformation object</p>
-</div>
       
     </li>
   
@@ -1551,7 +1589,7 @@ about the axis set by the second parameter.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The scaling method is used to create a Transformation that does scaling.</p>
+<p>The scaling method is used to create a transformation that does scaling.</p>
 
 
   </div>
@@ -1562,8 +1600,9 @@ about the axis set by the second parameter.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_scaling'>scaling</span> <span class='int'>10</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_t'>t</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_scale'>scale</span> <span class='op'>=</span> <span class='int'>10</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_scaling'>scaling</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_scale'>scale</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -1576,6 +1615,16 @@ about the axis set by the second parameter.</p>
         <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This might yield an unexpected transformation. It sets the 16th value to
+the scaling factor. Something not all extensions reading the transformation
+expects. Consider using <tt>scaling(xscale, yscale, zscale)</tt> instead.</p>
+</div>
+  </div>
+
+
 <p>With one argument, it does a uniform scale about the origin.</p>
 
 
@@ -1590,13 +1639,13 @@ about the axis set by the second parameter.</p>
         <span class='name'>scale</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A single numeric value used to set a global scale factor for the transform.</p>
+<p>The global scale factor for the transform.</p>
 </div>
       
     </li>
@@ -1640,14 +1689,13 @@ about the axis set by the second parameter.</p>
         <span class='name'>xscale</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value specifying the scale factor in the x direction for the
-transform.</p>
+<p>The scale factor in the x direction for the transform.</p>
 </div>
       
     </li>
@@ -1657,14 +1705,13 @@ transform.</p>
         <span class='name'>yscale</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value specifying the scale factor in the y direction for the
-transform.</p>
+<p>The scale factor in the y direction for the transform.</p>
 </div>
       
     </li>
@@ -1674,14 +1721,13 @@ transform.</p>
         <span class='name'>zscale</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value specifying the scale factor in the z direction for the
-transform.</p>
+<p>The scale factor in the z direction for the transform.</p>
 </div>
       
     </li>
@@ -1725,14 +1771,9 @@ transform.</p>
         <span class='name'>point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Point3d object.</p>
-</div>
       
     </li>
   
@@ -1741,13 +1782,13 @@ transform.</p>
         <span class='name'>scale</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A single numeric value used to set a global scale factor for the transform.</p>
+<p>The global scale factor for the transform.</p>
 </div>
       
     </li>
@@ -1791,14 +1832,9 @@ transform.</p>
         <span class='name'>point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Point3d object.</p>
-</div>
       
     </li>
   
@@ -1807,14 +1843,13 @@ transform.</p>
         <span class='name'>xscale</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value specifying the scale factor in the x direction for the
-transform.</p>
+<p>The scale factor in the x direction for the transform.</p>
 </div>
       
     </li>
@@ -1824,14 +1859,13 @@ transform.</p>
         <span class='name'>yscale</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value specifying the scale factor in the y direction for the
-transform.</p>
+<p>The scale factor in the y direction for the transform.</p>
 </div>
       
     </li>
@@ -1841,14 +1875,13 @@ transform.</p>
         <span class='name'>zscale</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A numeric value specifying the scale factor in the z direction for the
-transform.</p>
+<p>The scale factor in the z direction for the transform.</p>
 </div>
       
     </li>
@@ -1897,7 +1930,11 @@ transform.</p>
       <div class="method_details ">
   <h3 class="signature " id="translation-class_method">
   
-    .<strong>translation</strong>(vector)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">.<strong>translation</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">.<strong>translation</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
   
 
   
@@ -1918,17 +1955,20 @@ translation.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_translation'>translation</span> <span class='id identifier rubyid_vector'>vector</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_t'>t</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Vector3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_translation'>translation</span><span class='lparen'>(</span><span class='id identifier rubyid_vector'>vector</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>translation</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns transformation - a new Transformation object</p>
-
 
   </div>
 </div>
@@ -1941,14 +1981,9 @@ translation.</p>
         <span class='name'>vector</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
       
     </li>
   
@@ -1960,20 +1995,61 @@ translation.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation - a new Transformation object</p>
-</div>
       
     </li>
   
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>translation</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2004,7 +2080,19 @@ translation.</p>
       <div class="method_details first">
   <h3 class="signature first" id="*-instance_method">
   
-    #<strong>*</strong>(point1)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt> </span>
+    
   
 
   
@@ -2013,7 +2101,7 @@ translation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The * method is used to do matrix multiplication using the Transform.</p>
+<p>The <span class='object_link'><a href="#%2A-instance_method" title="Geom::Transformation#* (method)">#*</a></span> method is used to do matrix multiplication using the transform.</p>
 
 
   </div>
@@ -2024,19 +2112,23 @@ translation.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>2</span><span class='comma'>,</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>2</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span> <span class='op'>*</span> <span class='id identifier rubyid_point2'>point2</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_point3'>point3</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='comment'># Returns Point3d(12, 22, 32)
+</span><span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span> <span class='op'>*</span> <span class='id identifier rubyid_point2'>point2</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns transformation - a new Transformation object.</p>
-
 
   </div>
 </div>
@@ -2046,17 +2138,12 @@ translation.</p>
   
     <li>
       
-        <span class='name'>point1</span>
+        <span class='name'>point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Point3d, Vector3d, or Transformation object.</p>
-</div>
       
     </li>
   
@@ -2068,13 +2155,187 @@ translation.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
-        
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>vector</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transformation</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns transformed plane</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plane</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
         <div class='inline'>
-<p>transformation - a new Transformation object.</p>
+<p>transformed plane</p>
 </div>
       
     </li>
@@ -2082,6 +2343,59 @@ translation.</p>
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns transformed plane</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>plane</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float, Float, Float&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>transformed plane</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2106,7 +2420,7 @@ translation.</p>
       <div class="method_details ">
   <h3 class="signature " id="clone-instance_method">
   
-    #<strong>clone</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>clone</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   
@@ -2115,7 +2429,7 @@ translation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The clone method is used to create a copy of a transformation.</p>
+<p>The <span class='object_link'><a href="#clone-instance_method" title="Geom::Transformation#clone (method)">#clone</a></span> method is used to create a copy of a transformation.</p>
 
 
   </div>
@@ -2126,10 +2440,9 @@ translation.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_t2'>t2</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_t2'>t2</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr1'>tr1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr2'>tr2</span> <span class='op'>=</span> <span class='id identifier rubyid_tr1'>tr1</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span></code></pre>
     
   </div>
 
@@ -2139,14 +2452,9 @@ translation.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation2 - a new Transformation object (clone of transformation1)</p>
-</div>
       
     </li>
   
@@ -2174,7 +2482,7 @@ translation.</p>
       <div class="method_details ">
   <h3 class="signature " id="identity?-instance_method">
   
-    #<strong>identity?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>identity?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2183,8 +2491,18 @@ translation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The identity? method is used to determine if a transformation is the
-identity transform.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This only looks at the flag to see if the transform has not been modified.
+If the transform has been changed, this will return false even if it is
+really the identity.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#identity%3F-instance_method" title="Geom::Transformation#identity? (method)">#identity?</a></span> method is used to determine if a transformation is the
+<span class='object_link'><a href="../top-level-namespace.html#IDENTITY-constant" title="IDENTITY (constant)">IDENTITY</a></span> transform.</p>
 
 
   </div>
@@ -2195,10 +2513,24 @@ identity transform.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_status'>status</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='comment'># Returns false.
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>ORIGIN</span><span class='rparen'>)</span>
+<span class='comment'># Returns false.
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='comment'># Returns true.
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='comment'># Returns true.
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>IDENTITY</span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span></code></pre>
     
   </div>
 
@@ -2208,14 +2540,13 @@ identity transform.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if the transformation is the identity transform, false if it
-is not the identity transform.</p>
+<p><code>true</code> if the transformation is the identity</p>
 </div>
       
     </li>
@@ -2253,7 +2584,7 @@ is not the identity transform.</p>
       <div class="method_details ">
   <h3 class="signature " id="inverse-instance_method">
   
-    #<strong>inverse</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>inverse</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   
@@ -2262,7 +2593,7 @@ is not the identity transform.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The inverse method is used to retrieve the inverse of a transformation.</p>
+<p>The <span class='object_link'><a href="#inverse-instance_method" title="Geom::Transformation#inverse (method)">#inverse</a></span> method is used to retrieve the inverse of a transformation.</p>
 
 
   </div>
@@ -2273,7 +2604,9 @@ is not the identity transform.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_transformation2'>transformation2</span> <span class='op'>=</span> <span class='id identifier rubyid_transformation1'>transformation1</span><span class='period'>.</span><span class='id identifier rubyid_inverse'>inverse</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr1'>tr1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr2'>tr2</span> <span class='op'>=</span> <span class='id identifier rubyid_tr1'>tr1</span><span class='period'>.</span><span class='id identifier rubyid_inverse'>inverse</span></code></pre>
     
   </div>
 
@@ -2283,14 +2616,9 @@ is not the identity transform.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation2 - the Transformation object at its inverse.</p>
-</div>
       
     </li>
   
@@ -2318,7 +2646,7 @@ is not the identity transform.</p>
       <div class="method_details ">
   <h3 class="signature " id="invert!-instance_method">
   
-    #<strong>invert!</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>invert!</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   
@@ -2327,7 +2655,7 @@ is not the identity transform.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The invert! method sets the transformation to its inverse.</p>
+<p>The <span class='object_link'><a href="#invert%21-instance_method" title="Geom::Transformation#invert! (method)">#invert!</a></span> method sets the transformation to its inverse.</p>
 
 
   </div>
@@ -2338,10 +2666,9 @@ is not the identity transform.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_t2'>t2</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_invert!'>invert!</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_t2'>t2</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_invert!'>invert!</span></code></pre>
     
   </div>
 
@@ -2351,14 +2678,9 @@ is not the identity transform.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation - the Transformation object at its inverse.</p>
-</div>
       
     </li>
   
@@ -2386,7 +2708,7 @@ is not the identity transform.</p>
       <div class="method_details ">
   <h3 class="signature " id="origin-instance_method">
   
-    #<strong>origin</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>origin</strong>  &#x21d2; <tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> 
   
 
   
@@ -2395,7 +2717,7 @@ is not the identity transform.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The origin method retrieves the origin of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#origin-instance_method" title="Geom::Transformation#origin (method)">#origin</a></span> method retrieves the origin of a rigid transformation.</p>
 
 
   </div>
@@ -2406,10 +2728,9 @@ is not the identity transform.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_point2'>point2</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span></code></pre>
     
   </div>
 
@@ -2419,13 +2740,13 @@ is not the identity transform.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>point - a Point3d object representing the origin of the transformation.</p>
+<p>the origin of the transformation.</p>
 </div>
       
     </li>
@@ -2454,7 +2775,17 @@ is not the identity transform.</p>
       <div class="method_details ">
   <h3 class="signature " id="set!-instance_method">
   
-    #<strong>set!</strong>(transform2)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>set!</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">#<strong>set!</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">#<strong>set!</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">#<strong>set!</strong>(matrix)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
+      <span class="overload">#<strong>set!</strong>(scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+    
   
 
   
@@ -2463,9 +2794,9 @@ is not the identity transform.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set! method is used to set this transformation to match another one.</p>
+<p>The <span class='object_link'><a href="#set%21-instance_method" title="Geom::Transformation#set! (method)">#set!</a></span> method is used to set this transformation to match another one.</p>
 
-<p>The argument is anything that can be converted into a Transformation.</p>
+<p>The argument is anything that can be converted into a transformation.</p>
 
 
   </div>
@@ -2476,15 +2807,22 @@ is not the identity transform.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_transformation1'>transformation1</span> <span class='op'>=</span> <span class='id identifier rubyid_transformation1'>transformation1</span><span class='period'>.</span><span class='id identifier rubyid_set!'>set!</span> <span class='id identifier rubyid_transformation2'>transformation2</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr1'>tr1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>60</span><span class='comma'>,</span> <span class='int'>40</span><span class='comma'>,</span> <span class='int'>70</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr1'>tr1</span><span class='period'>.</span><span class='id identifier rubyid_set!'>set!</span><span class='lparen'>(</span><span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set!</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns transformation1 - a Transformation object matching transform2</p>
-
 
   </div>
 </div>
@@ -2494,16 +2832,145 @@ is not the identity transform.</p>
   
     <li>
       
-        <span class='name'>transform2</span>
+        <span class='name'>transformation</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set!</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set!</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>vector</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set!</strong>(matrix)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>matrix</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float&gt;</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A Transformation object to match.</p>
+<p>Array of 16 floats.</p>
 </div>
       
     </li>
@@ -2516,20 +2983,61 @@ is not the identity transform.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>transformation1 - a Transformation object matching transform2</p>
-</div>
       
     </li>
   
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set!</strong>(scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>scale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2554,7 +3062,7 @@ is not the identity transform.</p>
       <div class="method_details ">
   <h3 class="signature " id="to_a-instance_method">
   
-    #<strong>to_a</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_a</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float&gt;</tt> 
   
 
   
@@ -2563,8 +3071,8 @@ is not the identity transform.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_a method retrieves a 16 element array which contains the values that
-define the Transformation.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Transformation#to_a (method)">#to_a</a></span> method retrieves a 16 element array which contains the values
+that define the transformation.</p>
 
 
   </div>
@@ -2575,10 +3083,10 @@ define the Transformation.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_a'>a</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='comment'># This splits the 16 items into a string of 4x4 elements for easier reading.
+</span><span class='id identifier rubyid_str4x4'>str4x4</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_each_slice'>each_slice</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_inject'>inject</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span> <span class='id identifier rubyid_row'>row</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_str'>str</span><span class='embexpr_end'>}</span><span class='tstring_content'>\r\n</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_row'>row</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -2588,15 +3096,9 @@ define the Transformation.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float&gt;</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>array - an Array element containing the values that define the
-transformation</p>
-</div>
       
     </li>
   
@@ -2624,7 +3126,7 @@ transformation</p>
       <div class="method_details ">
   <h3 class="signature " id="xaxis-instance_method">
   
-    #<strong>xaxis</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>xaxis</strong>  &#x21d2; <tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> 
   
 
   
@@ -2633,7 +3135,7 @@ transformation</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The xaxis method retrieves the x axis of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#xaxis-instance_method" title="Geom::Transformation#xaxis (method)">#xaxis</a></span> method retrieves the x axis of a rigid transformation.</p>
 
 
   </div>
@@ -2644,10 +3146,9 @@ transformation</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_xaxis'>xaxis</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_x'>x</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_xaxis'>xaxis</span></code></pre>
     
   </div>
 
@@ -2657,14 +3158,9 @@ transformation</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>point - a Point3d object containing the xaxis value.</p>
-</div>
       
     </li>
   
@@ -2692,7 +3188,7 @@ transformation</p>
       <div class="method_details ">
   <h3 class="signature " id="yaxis-instance_method">
   
-    #<strong>yaxis</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>yaxis</strong>  &#x21d2; <tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> 
   
 
   
@@ -2701,7 +3197,7 @@ transformation</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The yaxis method retrieves the y axis of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#yaxis-instance_method" title="Geom::Transformation#yaxis (method)">#yaxis</a></span> method retrieves the y axis of a rigid transformation.</p>
 
 
   </div>
@@ -2712,10 +3208,9 @@ transformation</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_yaxis'>yaxis</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_y'>y</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_yaxis'>yaxis</span></code></pre>
     
   </div>
 
@@ -2725,14 +3220,9 @@ transformation</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>point - a Point3d object containing the yaxis value.</p>
-</div>
       
     </li>
   
@@ -2760,7 +3250,7 @@ transformation</p>
       <div class="method_details ">
   <h3 class="signature " id="zaxis-instance_method">
   
-    #<strong>zaxis</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>zaxis</strong>  &#x21d2; <tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> 
   
 
   
@@ -2769,7 +3259,7 @@ transformation</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The zaxis method retrieves the z axis of a rigid transformation.</p>
+<p>The <span class='object_link'><a href="#zaxis-instance_method" title="Geom::Transformation#zaxis (method)">#zaxis</a></span> method retrieves the z axis of a rigid transformation.</p>
 
 
   </div>
@@ -2780,10 +3270,9 @@ transformation</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>10</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>30</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_point'>point</span>
-<span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='id identifier rubyid_t'>t</span><span class='period'>.</span><span class='id identifier rubyid_zaxis'>zaxis</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_z'>z</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Transformation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_zaxis'>zaxis</span></code></pre>
     
   </div>
 
@@ -2793,14 +3282,9 @@ transformation</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>point - a Point3d object containing the zaxis value.</p>
-</div>
       
     </li>
   
@@ -2830,7 +3314,7 @@ transformation</p>
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  2 13:11:06 2016 by
+  Generated on Tue Nov 29 14:43:02 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

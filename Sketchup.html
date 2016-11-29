@@ -1275,7 +1275,7 @@ files.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#send_action-class_method" title="send_action (class method)">.<strong>send_action</strong>(action)  &#x21d2; Object </a>
+      <a href="#send_action-class_method" title="send_action (class method)">.<strong>send_action</strong>(action)  &#x21d2; boolean </a>
     
 
     
@@ -5731,7 +5731,7 @@ thumbnail.</p>
       <div class="method_details ">
   <h3 class="signature " id="send_action-class_method">
   
-    .<strong>send_action</strong>(action)  &#x21d2; <tt>Object</tt> 
+    .<strong>send_action</strong>(action)  &#x21d2; <tt>boolean</tt> 
   
 
   
@@ -5744,207 +5744,401 @@ thumbnail.</p>
 action asynchronously.</p>
 
 <p>Valid actions are:</p>
-
-<pre class="code"><code class="">- showRubyPanel:
-- viewBack:
-- viewBottom:
-- viewFront:
-- viewIso:
-- viewLeft:
-- viewRight:
-- viewTop:
-- viewPerspective:
-- viewShowAxes:
-- viewShowHidden:
-- viewZoomExtents:
-- viewZoomToSelection:
-- viewUndo:
-- selectOrbitTool:
-- selectPositionCameraTool:
-- selectDollyTool:
-- selectTurnTool:
-- selectWalkTool:
-- selectZoomTool:
-- selectFieldOfViewTool:
-- selectZoomWindowTool:
-- pageAdd:
-- pageDelete:
-- pageUpdate:
-- pageNext:
-- pagePrevious:
-- renderWireframe:
-- renderHiddenLine:
-- renderMonochrome:
-- renderShaded:
-- renderTextures:
-- selectArcTool:
-- selectArc3PointTool:
-- selectArc3PointPieTool:
-- selectAxisTool:
-- selectCircleTool:
-- selectEraseTool:
-- selectFreehandTool:
-- selectLineTool:
-- selectMeasureTool:
-- selectMoveTool:
-- selectOffsetTool:
-- selectPaintTool:
-- selectPolygonTool:
-- selectProtractorTool:
-- selectPushPullTool:
-- selectRectangleTool:
-- selectRectangle3PointTool:
-- selectRotateTool:
-- selectScaleTool:
-- selectSectionPlaneTool:
-- selectTextTool:
-- selectDimensionTool:
-- selectExtrudeTool:
-- selectSelectionTool:
-- editUndo:
-- editRedo:
-- editHide:
-- editUnhide:
-- fixNonPlanarFaces:</code></pre>
+<ul><li>
+<p>showRubyPanel:</p>
+</li><li>
+<p>viewBack:</p>
+</li><li>
+<p>viewBottom:</p>
+</li><li>
+<p>viewFront:</p>
+</li><li>
+<p>viewIso:</p>
+</li><li>
+<p>viewLeft:</p>
+</li><li>
+<p>viewRight:</p>
+</li><li>
+<p>viewTop:</p>
+</li><li>
+<p>viewPerspective:</p>
+</li><li>
+<p>viewShowAxes:</p>
+</li><li>
+<p>viewShowHidden:</p>
+</li><li>
+<p>viewZoomExtents:</p>
+</li><li>
+<p>viewZoomToSelection:</p>
+</li><li>
+<p>viewUndo:</p>
+</li><li>
+<p>selectOrbitTool:</p>
+</li><li>
+<p>selectPositionCameraTool:</p>
+</li><li>
+<p>selectDollyTool:</p>
+</li><li>
+<p>selectTurnTool:</p>
+</li><li>
+<p>selectWalkTool:</p>
+</li><li>
+<p>selectZoomTool:</p>
+</li><li>
+<p>selectFieldOfViewTool:</p>
+</li><li>
+<p>selectZoomWindowTool:</p>
+</li><li>
+<p>pageAdd:</p>
+</li><li>
+<p>pageDelete:</p>
+</li><li>
+<p>pageUpdate:</p>
+</li><li>
+<p>pageNext:</p>
+</li><li>
+<p>pagePrevious:</p>
+</li><li>
+<p>renderWireframe:</p>
+</li><li>
+<p>renderHiddenLine:</p>
+</li><li>
+<p>renderMonochrome:</p>
+</li><li>
+<p>renderShaded:</p>
+</li><li>
+<p>renderTextures:</p>
+</li><li>
+<p>selectArcTool:</p>
+</li><li>
+<p>selectArc3PointTool:</p>
+</li><li>
+<p>selectArc3PointPieTool:</p>
+</li><li>
+<p>selectAxisTool:</p>
+</li><li>
+<p>selectCircleTool:</p>
+</li><li>
+<p>selectEraseTool:</p>
+</li><li>
+<p>selectFreehandTool:</p>
+</li><li>
+<p>selectLineTool:</p>
+</li><li>
+<p>selectMeasureTool:</p>
+</li><li>
+<p>selectMoveTool:</p>
+</li><li>
+<p>selectOffsetTool:</p>
+</li><li>
+<p>selectPaintTool:</p>
+</li><li>
+<p>selectPolygonTool:</p>
+</li><li>
+<p>selectProtractorTool:</p>
+</li><li>
+<p>selectPushPullTool:</p>
+</li><li>
+<p>selectRectangleTool:</p>
+</li><li>
+<p>selectRectangle3PointTool:</p>
+</li><li>
+<p>selectRotateTool:</p>
+</li><li>
+<p>selectScaleTool:</p>
+</li><li>
+<p>selectSectionPlaneTool:</p>
+</li><li>
+<p>selectTextTool:</p>
+</li><li>
+<p>selectDimensionTool:</p>
+</li><li>
+<p>selectExtrudeTool:</p>
+</li><li>
+<p>selectSelectionTool:</p>
+</li><li>
+<p>editUndo:</p>
+</li><li>
+<p>editRedo:</p>
+</li><li>
+<p>editHide:</p>
+</li><li>
+<p>editUnhide:</p>
+</li><li>
+<p>fixNonPlanarFaces:</p>
+</li></ul>
 
 <p>Added in SketchUp 8.0+:</p>
+<ul><li>
+<p>addBuilding:</p>
+</li><li>
+<p>getPhotoTexture:</p>
+</li><li>
+<p>selectImageIglooTool:</p>
+</li><li>
+<p>selectNorthTool:</p>
+</li></ul>
 
-<pre class="code"><code class="">- addBuilding:
-- getPhotoTexture:
-- selectImageIglooTool:
-- selectNorthTool:</code></pre>
+<p>Added in SketchUp 2013+:</p>
+<ul><li>
+<p>showExtensionStore:</p>
+</li></ul>
 
 <p>Removed in SketchUp 2013+:</p>
-
-<pre class="code"><code class="">- addBuilding:</code></pre>
+<ul><li>
+<p>addBuilding:</p>
+</li></ul>
 
 <p>On the PC only, you can also send these numeric values. (Note that these
 are officially “unsupported” and are not guaranteed to work in current or
 future versions of the API.)</p>
-
-<pre class="code"><code class="">- 10501: set view to Top
-- 10502: set view to Front
-- 10503: set view to Rear
-- 10504: set view to Left
-- 10505: set view to Right
-- 10506: set view to Bottom
-- 10507: set view to Axonometric
-- 10510: set render mode to Wire
-- 10511: set render mode to Hidden lines removal
-- 10512: set render mode to Surfaces Shading
-- 10513: set render mode to Transparency
-- 10519: set camera to ortho (removes perspective)
-- 10520: walk tool
-- 10521: display the System Preferences dialog box (Files tab)
-- 10522: removes axes display
-- 10523: pan tool
-- 10525: set the interactive eye height feature
-- 10526: zoom window
-- 10527: zoom extents
-- 10529: zoom out 2
-- 10531: toggle the Standard toolbar
-- 10532: toggle the Camera toolbar
-- 10533: display the Shadows Settings dialog box
-- 10537: toggle the Views toolbar
-- 10538: display the System Preferences dialog box (Display tab)
-- 10545: toggle Color ByLayer
-- 10546: toggle Shadows toolbar
-- 10551: toogle Large icons
-- 10576: toggle Render Mode toolbar
-- 10596: set Render Mode to No Transparency (Preferences)
-- 10597: set Render Mode to Wire (Preferences)
-- 10598: set Render Mode to Transparency (Preferences)
-- 10599: set Render Mode to Surfaces Shading (Preferences)
-- 10600: set Render Mode to Texture (Preferences)
-- 10601: set Render Mode to No Texture (Preferences)
-- 10602: toggle Shadows
-- 10603: toggle Profiles
-- 10604: toggle Extension Lines
-- 10605: toggle Jitter edges
-- 21019: hide Status bar and VCB
-- 21020: show Status bar and VCB
-- 21022: hide Status bar and VCB
-- 21023: place 3d text box
-- 21024: select the Measure tool
-- 21031: select the Freehand Draw tool
-- 21041: select the PushPull tool
-- 21048: select the Move tool
-- 21052: hide selected objects
-- 21056: create face with selected edges closed loop
-- 21057: select the Protractor tool
-- 21060: display Components Window
-- 21061: toggle Draw toolbar
-- 21063: toggle Model Bounding Box display
-- 21065: select the Arc tool
-- 21067: creat a new Page
-- 21069: select the Arc 3 Point tool
-- 21070: select the Arc 3 Point Pie tool
-- 21074: show the Materials Browser Window
-- 21076: display the Preferences dialog box (Text activated)
-- 21077: display the Tip of the day Window
-- 21078: select the Paint Bucket tool
-- 21080: display the Page Manager Window
-- 21082: display the Macros Dialog Box
-- 21086: display the Components Browser Window
-- 21094: select the Rectangle tool
-- 21095: select the Polygon tool
-- 21096: select the Circle tool
-- 21098: open the Open Window
-- 21100: select the Offset tool
-- 21101: slect all objects
-- 21112: open the Import Window
-- 21124: launch the validity check tool
-- 21126: select the Axes tool
-- 21029: select the Rotate tool
-- 21032: toggle Layer toolbar
-- 21036: display the Save as Window
-- 21046: spin the model a full 360&amp;deg; and display report
-- 21047: fast Pick Time report
-- 21049: open the Export model Window
-- 21169: select the Position Camera tool
-- 21170: display the Preferences, Tour Guide activated
-- 21180: create a new Page just right of selected page
-- 21200: display the Insert Image Window
-- 21233: display Area of selected face
-- 21234: display Area of all faces with selected material
-- 21236: select the Scale tool
-- 21237: display the Export 2D Graphics Window
-- 21245: display a Polygon Offset Factors dialog box
-- 21276: reverse selected face(s)
-- 21287: select the Divide feature
-- 21337: select the Section Plane Placement tool
-- 21354: open the Layer Window
-- 21386: open the Export Animation Window
-- 21405: select the Text tool
-- 21406: display Fog dialog box
-- 21410: select the Dim tool
-- 21433: toggle Edit toolbar
-- 21442: select the FollowMe tool
-- 21448: select the Axes tool
-- 21453: select all objects
-- 21460: display Licence
-- 21462: display Authorization dialog box
-- 21463: display un-authorizing message
-- 21464: display Open Licence files (Network) Window
-- 21466: display Quick reference Card in Adobe Reader
-- 21467: display Licences in use dialog box
-- 21469: zoom extents to selected objects
-- 21476: perform a non-planar check on selected objects
-- 21477: list accelerators in window
-- 21485: erase selected objects
-- 21487: display Edit current material dialog box
-- 21485: erase all new created pages
-- 21488: display Entity Info Window
-- 21490: display Soften Edges Window
-- 21491: display Profiles
-- 21492: display Extended Edges
-- 21493: display Jitter Lines
-- 21494: select Field of view tool
-- 21513: display the outliner
-- 21520: override Tile Rendering Size dialog box
-- 21525: select the FollowMe tool
-- 21542: display the Insert Image Window
-- 21560 and up: causes a runtime Error</code></pre>
+<ul><li>
+<p>10501: set view to Top</p>
+</li><li>
+<p>10502: set view to Front</p>
+</li><li>
+<p>10503: set view to Rear</p>
+</li><li>
+<p>10504: set view to Left</p>
+</li><li>
+<p>10505: set view to Right</p>
+</li><li>
+<p>10506: set view to Bottom</p>
+</li><li>
+<p>10507: set view to Axonometric</p>
+</li><li>
+<p>10510: set render mode to Wire</p>
+</li><li>
+<p>10511: set render mode to Hidden lines removal</p>
+</li><li>
+<p>10512: set render mode to Surfaces Shading</p>
+</li><li>
+<p>10513: set render mode to Transparency</p>
+</li><li>
+<p>10519: set camera to ortho (removes perspective)</p>
+</li><li>
+<p>10520: walk tool</p>
+</li><li>
+<p>10521: display the System Preferences dialog box (Files tab)</p>
+</li><li>
+<p>10522: removes axes display</p>
+</li><li>
+<p>10523: pan tool</p>
+</li><li>
+<p>10525: set the interactive eye height feature</p>
+</li><li>
+<p>10526: zoom window</p>
+</li><li>
+<p>10527: zoom extents</p>
+</li><li>
+<p>10529: zoom out 2</p>
+</li><li>
+<p>10531: toggle the Standard toolbar</p>
+</li><li>
+<p>10532: toggle the Camera toolbar</p>
+</li><li>
+<p>10533: display the Shadows Settings dialog box</p>
+</li><li>
+<p>10537: toggle the Views toolbar</p>
+</li><li>
+<p>10538: display the System Preferences dialog box (Display tab)</p>
+</li><li>
+<p>10545: toggle Color ByLayer</p>
+</li><li>
+<p>10546: toggle Shadows toolbar</p>
+</li><li>
+<p>10551: toogle Large icons</p>
+</li><li>
+<p>10576: toggle Render Mode toolbar</p>
+</li><li>
+<p>10596: set Render Mode to No Transparency (Preferences)</p>
+</li><li>
+<p>10597: set Render Mode to Wire (Preferences)</p>
+</li><li>
+<p>10598: set Render Mode to Transparency (Preferences)</p>
+</li><li>
+<p>10599: set Render Mode to Surfaces Shading (Preferences)</p>
+</li><li>
+<p>10600: set Render Mode to Texture (Preferences)</p>
+</li><li>
+<p>10601: set Render Mode to No Texture (Preferences)</p>
+</li><li>
+<p>10602: toggle Shadows</p>
+</li><li>
+<p>10603: toggle Profiles</p>
+</li><li>
+<p>10604: toggle Extension Lines</p>
+</li><li>
+<p>10605: toggle Jitter edges</p>
+</li><li>
+<p>21019: hide Status bar and VCB</p>
+</li><li>
+<p>21020: show Status bar and VCB</p>
+</li><li>
+<p>21022: hide Status bar and VCB</p>
+</li><li>
+<p>21023: place 3d text box</p>
+</li><li>
+<p>21024: select the Measure tool</p>
+</li><li>
+<p>21031: select the Freehand Draw tool</p>
+</li><li>
+<p>21041: select the PushPull tool</p>
+</li><li>
+<p>21048: select the Move tool</p>
+</li><li>
+<p>21052: hide selected objects</p>
+</li><li>
+<p>21056: create face with selected edges closed loop</p>
+</li><li>
+<p>21057: select the Protractor tool</p>
+</li><li>
+<p>21060: display Components Window</p>
+</li><li>
+<p>21061: toggle Draw toolbar</p>
+</li><li>
+<p>21063: toggle Model Bounding Box display</p>
+</li><li>
+<p>21065: select the Arc tool</p>
+</li><li>
+<p>21067: creat a new Page</p>
+</li><li>
+<p>21069: select the Arc 3 Point tool</p>
+</li><li>
+<p>21070: select the Arc 3 Point Pie tool</p>
+</li><li>
+<p>21074: show the Materials Browser Window</p>
+</li><li>
+<p>21076: display the Preferences dialog box (Text activated)</p>
+</li><li>
+<p>21077: display the Tip of the day Window</p>
+</li><li>
+<p>21078: select the Paint Bucket tool</p>
+</li><li>
+<p>21080: display the Page Manager Window</p>
+</li><li>
+<p>21082: display the Macros Dialog Box</p>
+</li><li>
+<p>21086: display the Components Browser Window</p>
+</li><li>
+<p>21094: select the Rectangle tool</p>
+</li><li>
+<p>21095: select the Polygon tool</p>
+</li><li>
+<p>21096: select the Circle tool</p>
+</li><li>
+<p>21098: open the Open Window</p>
+</li><li>
+<p>21100: select the Offset tool</p>
+</li><li>
+<p>21101: slect all objects</p>
+</li><li>
+<p>21112: open the Import Window</p>
+</li><li>
+<p>21124: launch the validity check tool</p>
+</li><li>
+<p>21126: select the Axes tool</p>
+</li><li>
+<p>21029: select the Rotate tool</p>
+</li><li>
+<p>21032: toggle Layer toolbar</p>
+</li><li>
+<p>21036: display the Save as Window</p>
+</li><li>
+<p>21046: spin the model a full 360&amp;deg; and display report</p>
+</li><li>
+<p>21047: fast Pick Time report</p>
+</li><li>
+<p>21049: open the Export model Window</p>
+</li><li>
+<p>21169: select the Position Camera tool</p>
+</li><li>
+<p>21170: display the Preferences, Tour Guide activated</p>
+</li><li>
+<p>21180: create a new Page just right of selected page</p>
+</li><li>
+<p>21200: display the Insert Image Window</p>
+</li><li>
+<p>21233: display Area of selected face</p>
+</li><li>
+<p>21234: display Area of all faces with selected material</p>
+</li><li>
+<p>21236: select the Scale tool</p>
+</li><li>
+<p>21237: display the Export 2D Graphics Window</p>
+</li><li>
+<p>21245: display a Polygon Offset Factors dialog box</p>
+</li><li>
+<p>21276: reverse selected face(s)</p>
+</li><li>
+<p>21287: select the Divide feature</p>
+</li><li>
+<p>21337: select the Section Plane Placement tool</p>
+</li><li>
+<p>21354: open the Layer Window</p>
+</li><li>
+<p>21386: open the Export Animation Window</p>
+</li><li>
+<p>21405: select the Text tool</p>
+</li><li>
+<p>21406: display Fog dialog box</p>
+</li><li>
+<p>21410: select the Dim tool</p>
+</li><li>
+<p>21433: toggle Edit toolbar</p>
+</li><li>
+<p>21442: select the FollowMe tool</p>
+</li><li>
+<p>21448: select the Axes tool</p>
+</li><li>
+<p>21453: select all objects</p>
+</li><li>
+<p>21460: display Licence</p>
+</li><li>
+<p>21462: display Authorization dialog box</p>
+</li><li>
+<p>21463: display un-authorizing message</p>
+</li><li>
+<p>21464: display Open Licence files (Network) Window</p>
+</li><li>
+<p>21466: display Quick reference Card in Adobe Reader</p>
+</li><li>
+<p>21467: display Licences in use dialog box</p>
+</li><li>
+<p>21469: zoom extents to selected objects</p>
+</li><li>
+<p>21476: perform a non-planar check on selected objects</p>
+</li><li>
+<p>21477: list accelerators in window</p>
+</li><li>
+<p>21485: erase selected objects</p>
+</li><li>
+<p>21487: display Edit current material dialog box</p>
+</li><li>
+<p>21485: erase all new created pages</p>
+</li><li>
+<p>21488: display Entity Info Window</p>
+</li><li>
+<p>21490: display Soften Edges Window</p>
+</li><li>
+<p>21491: display Profiles</p>
+</li><li>
+<p>21492: display Extended Edges</p>
+</li><li>
+<p>21493: display Jitter Lines</p>
+</li><li>
+<p>21494: select Field of view tool</p>
+</li><li>
+<p>21513: display the outliner</p>
+</li><li>
+<p>21520: override Tile Rendering Size dialog box</p>
+</li><li>
+<p>21525: select the FollowMe tool</p>
+</li><li>
+<p>21542: display the Insert Image Window</p>
+</li><li>
+<p>21560 and up: causes a runtime Error</p>
+</li></ul>
 
 
   </div>
@@ -5962,7 +6156,7 @@ future versions of the API.)</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns result - true if successful, false if unsuccessful</p>
+<p>Returns <code>true</code> if successful, <code>false</code> if unsuccessful</p>
 
 
   </div>
@@ -5976,7 +6170,7 @@ future versions of the API.)</p>
         <span class='name'>action</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt>Integer</tt>)</span>
       
       
       
@@ -5995,13 +6189,13 @@ future versions of the API.)</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - true if successful, false if unsuccessful</p>
+<p><code>true</code> if successful, <code>false</code> if unsuccessful</p>
 </div>
       
     </li>
@@ -6020,7 +6214,7 @@ future versions of the API.)</p>
       
         
         <div class='inline'>
-<p>SketchUp 6.0 (changes in SketchUp 8.0/2013)</p>
+<p>SketchUp 6.0</p>
 </div>
       
     </li>
@@ -7138,7 +7332,7 @@ the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp
 </div>
 
       <div id="footer">
-  Generated on Wed Nov  2 13:10:50 2016 by
+  Generated on Tue Nov 29 14:42:46 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 
