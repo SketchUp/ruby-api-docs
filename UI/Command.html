@@ -351,7 +351,7 @@ command&#39;s large icon.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_validation_proc-instance_method" title="#set_validation_proc (instance method)">#<strong>set_validation_proc</strong>(title) { ... } &#x21d2; Object </a>
+      <a href="#set_validation_proc-instance_method" title="#set_validation_proc (instance method)">#<strong>set_validation_proc</strong> { ... } &#x21d2; UI::Command </a>
     
 
     
@@ -366,8 +366,8 @@ command&#39;s large icon.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_validation_proc method allows you to change whether the command is
-enabled, checked, etc.</p>
+<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="UI::Command#set_validation_proc (method)">#set_validation_proc</a></span> method allows you to change whether the command
+is enabled, checked, etc.</p>
 </div></span>
   
 </li>
@@ -1021,7 +1021,7 @@ only one vector image for both variants.</p>
       <div class="method_details ">
   <h3 class="signature " id="set_validation_proc-instance_method">
   
-    #<strong>set_validation_proc</strong>(title) { ... } &#x21d2; <tt>Object</tt> 
+    #<strong>set_validation_proc</strong> { ... } &#x21d2; <tt><span class='object_link'><a href="" title="UI::Command (class)">UI::Command</a></span></tt> 
   
 
   
@@ -1030,12 +1030,9 @@ only one vector image for both variants.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_validation_proc method allows you to change whether the command is
-enabled, checked, etc. based on the user state. For example, you might want
-your command to be disabled unless the user has a current selection.</p>
-
-<p>Your procedure should return either MF_ENABLED, MF_DISABLED, MF_CHECKED,
-MF_UNCHECKED, or MF_GRAYED.</p>
+<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="UI::Command#set_validation_proc (method)">#set_validation_proc</a></span> method allows you to change whether the command
+is enabled, checked, etc. based on the user state. For example, you might
+want your command to be disabled unless the user has a current selection.</p>
 
 
   </div>
@@ -1058,35 +1055,18 @@ MF_UNCHECKED, or MF_GRAYED.</p>
     <span class='const'>MF_ENABLED</span>
   <span class='kw'>end</span>
 <span class='rbrace'>}</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_menu'>menu</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span></code></pre>
+<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_menu'>menu</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns command - a Command object</p>
-
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>title.</span>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Yields:</p>
 <ul class="yield">
   
@@ -1097,6 +1077,30 @@ MF_UNCHECKED, or MF_GRAYED.</p>
       
       
       
+        
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Returns:</p>
+<ul class="yieldreturn">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>MF_ENABLED</code>, <code>MF_DISABLED</code>, <code>MF_CHECKED</code>,
+<code>MF_UNCHECKED</code>, or <code>MF_GRAYED</code></p>
+</div>
+      
     </li>
   
 </ul>
@@ -1106,14 +1110,9 @@ MF_UNCHECKED, or MF_GRAYED.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="UI::Command (class)">UI::Command</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>command - a Command object</p>
-</div>
       
     </li>
   
@@ -1687,7 +1686,7 @@ user hovers their cursor over the icon.</p>
 </div>
 
       <div id="footer">
-  Generated on Tue Nov 29 14:42:56 2016 by
+  Generated on Wed Dec 14 11:31:06 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 

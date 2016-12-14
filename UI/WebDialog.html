@@ -401,7 +401,7 @@ element_id, from the web dialog&#39;s DOM.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(dialog_title, scrollable, pref_key, width, height, left, top, resizable)  &#x21d2; Object </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -418,7 +418,7 @@ element_id, from the web dialog&#39;s DOM.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The new method is used to create a new webdialog.</p>
+<p>The <code>new</code> method is used to create a new webdialog.</p>
 </div></span>
   
 </li>
@@ -753,7 +753,7 @@ webdialog.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_file-instance_method" title="#set_file (instance method)">#<strong>set_file</strong>(filename, path)  &#x21d2; Object </a>
+      <a href="#set_file-instance_method" title="#set_file (instance method)">#<strong>set_file</strong>(filename, path = nil)  &#x21d2; nil </a>
     
 
     
@@ -768,8 +768,8 @@ webdialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_file method is used to identify a local HTML file to display in the
-webdialog.</p>
+<p>The #<span class='object_link'><a href="#set_file-instance_method" title="UI::WebDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in
+the webdialog.</p>
 </div></span>
   
 </li>
@@ -1032,7 +1032,11 @@ and save the image to the given file path.</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(dialog_title, scrollable, pref_key, width, height, left, top, resizable)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>initialize</strong>(dialog_title = &quot;&quot;, scrollable = true, pref_key = nil, width = 250, height = 250, left = 0, top = 0, resizable = true)  &#x21d2; <tt><span class='object_link'><a href="" title="UI::WebDialog (class)">UI::WebDialog</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(properties)  &#x21d2; <tt><span class='object_link'><a href="" title="UI::WebDialog (class)">UI::WebDialog</a></span></tt> </span>
+    
   
 
   
@@ -1041,10 +1045,7 @@ and save the image to the given file path.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The new method is used to create a new webdialog.</p>
-
-<p>Default width is 250. Default height is 250. Default left is 0. Default top
-is 0. WebDialogs are resizable by default.</p>
+<p>The <code>new</code> method is used to create a new webdialog.</p>
 
 <p>Since SU2017 the position and size of the dialog is DPI aware - it will
 scale to the DPI of the monitor automatically. Specify units as they would
@@ -1070,11 +1071,15 @@ of Internet Explorer is installed will be embedded.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(dialog_title = &quot;&quot;, scrollable = true, pref_key = nil, width = 250, height = 250, left = 0, top = 0, resizable = true)  &#x21d2; <tt><span class='object_link'><a href="" title="UI::WebDialog (class)">UI::WebDialog</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns dialog - the newly created WebDialog object.</p>
-
 
   </div>
 </div>
@@ -1087,8 +1092,10 @@ of Internet Explorer is installed will be embedded.</p>
         <span class='name'>dialog_title</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
       
       
         &mdash;
@@ -1103,8 +1110,10 @@ of Internet Explorer is installed will be embedded.</p>
         <span class='name'>scrollable</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
       
       
         &mdash;
@@ -1120,8 +1129,10 @@ scrollbars.</p>
         <span class='name'>pref_key</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>, <tt>nil</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
       
       
         &mdash;
@@ -1138,8 +1149,10 @@ stored.</p>
         <span class='name'>width</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>250</tt>)</em>
       
       
         &mdash;
@@ -1154,8 +1167,10 @@ stored.</p>
         <span class='name'>height</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>250</tt>)</em>
       
       
         &mdash;
@@ -1170,8 +1185,10 @@ stored.</p>
         <span class='name'>left</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>0</tt>)</em>
       
       
         &mdash;
@@ -1186,8 +1203,10 @@ stored.</p>
         <span class='name'>top</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>0</tt>)</em>
       
       
         &mdash;
@@ -1202,8 +1221,10 @@ stored.</p>
         <span class='name'>resizable</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
       
       
         &mdash;
@@ -1217,6 +1238,228 @@ stored.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(properties)  &#x21d2; <tt><span class='object_link'><a href="" title="UI::WebDialog (class)">UI::WebDialog</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>properties</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A hash containing the initial properties of the newly created dialog.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>properties</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:dialog_title</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:preferences_key</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:scrollable</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:resizable</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>true</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:width</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>250</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:height</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>250</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:left</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:top</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:min_width</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:min_height</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>0</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_width</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>-1</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:max_height</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>-1</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:full_security</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+        </li>
+      
+        <li>
+          <span class="name">:mac_only_use_nswindow</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 7.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -3037,7 +3280,7 @@ webdialog.</p>
       <div class="method_details ">
   <h3 class="signature " id="set_file-instance_method">
   
-    #<strong>set_file</strong>(filename, path)  &#x21d2; <tt>Object</tt> 
+    #<strong>set_file</strong>(filename, path = nil)  &#x21d2; <tt>nil</tt> 
   
 
   
@@ -3046,8 +3289,8 @@ webdialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_file method is used to identify a local HTML file to display in the
-webdialog.</p>
+<p>The #<span class='object_link'><a href="#set_file-instance_method" title="UI::WebDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in
+the webdialog.</p>
 
 
   </div>
@@ -3058,15 +3301,14 @@ webdialog.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_file'>set_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:\\mypage.html</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mypage.html</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_file'>set_file</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns nil</p>
-
 
   </div>
 </div>
@@ -3079,7 +3321,7 @@ webdialog.</p>
         <span class='name'>filename</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -3095,8 +3337,10 @@ webdialog.</p>
         <span class='name'>path</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
       
       
         &mdash;
@@ -3114,14 +3358,9 @@ webdialog.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
@@ -4145,7 +4384,7 @@ images this specifies the compression algorithm: &lt;4 (best speed), 4-8
 </div>
 
       <div id="footer">
-  Generated on Tue Nov 29 14:42:58 2016 by
+  Generated on Wed Dec 14 11:31:08 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 
