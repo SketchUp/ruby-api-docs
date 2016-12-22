@@ -196,7 +196,9 @@ a collection of Entity objects).</p>
 
   
     <h2>
-      Instance Method Summary
+      <a name="instance_method_summary">
+        Instance Method Summary
+      </a>
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
@@ -522,7 +524,7 @@ entities array.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_faces_from_mesh-instance_method" title="#add_faces_from_mesh (instance method)">#<strong>add_faces_from_mesh</strong>(polymesh, smooth_flags = AUTO_SOFTEN|SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Object </a>
+      <a href="#add_faces_from_mesh-instance_method" title="#add_faces_from_mesh (instance method)">#<strong>add_faces_from_mesh</strong>(polymesh, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Integer </a>
     
 
     
@@ -537,7 +539,7 @@ entities array.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_faces_from_mesh method is used to add Face objects to the
+<p>The <span class='object_link'><a href="#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">#add_faces_from_mesh</a></span> method is used to add Face objects to the
 collection of entities from a PolygonMesh.</p>
 </div></span>
   
@@ -863,7 +865,7 @@ model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fill_from_mesh-instance_method" title="#fill_from_mesh (instance method)">#<strong>fill_from_mesh</strong>(polymesh, weld_vertices, smooth_flags = AUTO_SOFTEN|SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Object </a>
+      <a href="#fill_from_mesh-instance_method" title="#fill_from_mesh (instance method)">#<strong>fill_from_mesh</strong>(polymesh, weld_vertices = true, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Boolean </a>
     
 
     
@@ -878,8 +880,8 @@ model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The fill_from_mesh method is used to add faces and edges to the collection
-of entities from a PolygonMesh.</p>
+<p>The <span class='object_link'><a href="#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">#fill_from_mesh</a></span> method is used to add faces and edges to the
+collection of entities from a <span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span>.</p>
 </div></span>
   
 </li>
@@ -1087,6 +1089,7 @@ sub-entities all at once.</p>
       
     </ul>
   
+
 
 
   
@@ -2835,7 +2838,7 @@ a closed Curve.</p>
       <div class="method_details ">
   <h3 class="signature " id="add_faces_from_mesh-instance_method">
   
-    #<strong>add_faces_from_mesh</strong>(polymesh, smooth_flags = AUTO_SOFTEN|SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_faces_from_mesh</strong>(polymesh, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -2844,22 +2847,30 @@ a closed Curve.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_faces_from_mesh method is used to add Face objects to the
+<p>The <span class='object_link'><a href="#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">#add_faces_from_mesh</a></span> method is used to add Face objects to the
 collection of entities from a PolygonMesh.</p>
 
-<p>The 2nd through 4th parameters are optional. The smooth_flags parameter can
-contain any of the following values if passed. The constants were added in
-SketchUp 2014. For previous versions, numeric values have to be specified
-instead of the Ruby constants.</p>
+<p>The <code>smooth_flags</code> parameter can contain any of the following
+values if passed. The constants were added in SketchUp 2014. For previous
+versions, numeric values have to be specified instead of the Ruby
+constants.</p>
+<ul><li>
+<p>0: <span class='object_link'><a href="../Geom/PolygonMesh.html#NO_SMOOTH_OR_HIDE-constant" title="Geom::PolygonMesh::NO_SMOOTH_OR_HIDE (constant)">Geom::PolygonMesh::NO_SMOOTH_OR_HIDE</a></span></p>
+</li><li>
+<p>1: <span class='object_link'><a href="../Geom/PolygonMesh.html#HIDE_BASED_ON_INDEX-constant" title="Geom::PolygonMesh::HIDE_BASED_ON_INDEX (constant)">Geom::PolygonMesh::HIDE_BASED_ON_INDEX</a></span> (Negative point index will hide
+the edge.)</p>
+</li><li>
+<p>2: <span class='object_link'><a href="../Geom/PolygonMesh.html#SOFTEN_BASED_ON_INDEX-constant" title="Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX (constant)">Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX</a></span> (Negative point index will
+soften the edge.)</p>
+</li><li>
+<p>4: <span class='object_link'><a href="../Geom/PolygonMesh.html#AUTO_SOFTEN-constant" title="Geom::PolygonMesh::AUTO_SOFTEN (constant)">Geom::PolygonMesh::AUTO_SOFTEN</a></span> (Interior edges are softened.)</p>
+</li><li>
+<p>8: <span class='object_link'><a href="../Geom/PolygonMesh.html#SMOOTH_SOFT_EDGES-constant" title="Geom::PolygonMesh::SMOOTH_SOFT_EDGES (constant)">Geom::PolygonMesh::SMOOTH_SOFT_EDGES</a></span> (All soft edges will also be
+smooth.)</p>
+</li></ul>
 
-<pre class="code"><code class="">- 0: Geom::PolygonMesh::NO_SMOOTH_OR_HIDE
-- 1: Geom::PolygonMesh::HIDE_BASED_ON_INDEX (Negative point index will hide the edge.)
-- 2: Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX (Negative point index will soften the edge.)
-- 4: Geom::PolygonMesh::AUTO_SOFTEN (Interior edges are softened.)
-- 8: Geom::PolygonMesh::SMOOTH_SOFT_EDGES (All soft edges will also be smooth.)</code></pre>
-
-<p>The 3rd and 4th parameters will accept a Material object or a string name
-of a material currently in the model.</p>
+<p>The 3rd and 4th parameters will accept a Sketchup::Entities.sketchupsketchup::Material object or a
+string nam of a material currently in the model.</p>
 
 
   </div>
@@ -2877,8 +2888,8 @@ of a material currently in the model.</p>
 </span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='lbracket'>[</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># 4
 </span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># 5
 </span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># 6
-</span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span><span class='op'>-</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='comma'>,</span><span class='int'>4</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>5</span><span class='comma'>,</span><span class='int'>6</span><span class='comma'>,</span><span class='op'>-</span><span class='int'>3</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>4</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span><span class='int'>6</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>3</span><span class='rparen'>)</span>
 
 <span class='comment'># Create a new group that we will populate with the mesh.
 </span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
@@ -2891,7 +2902,7 @@ of a material currently in the model.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns faces - an array of Face objects if successful</p>
+<p>Returns Number of faces created</p>
 
 
   </div>
@@ -2905,14 +2916,9 @@ of a material currently in the model.</p>
         <span class='name'>polygonmesh</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Polygon mesh object.</p>
-</div>
       
     </li>
   
@@ -2921,15 +2927,15 @@ of a material currently in the model.</p>
         <span class='name'>smooth_flags</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>AUTO_SOFTEN|SMOOTH_SOFT_EDGES</tt>)</em>
+        <em class="default">(defaults to: <tt>Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>An integer containing flags for soften and smooth settings.</p>
+<p>flags for softening and smoothing of edges.</p>
 </div>
       
     </li>
@@ -2939,7 +2945,7 @@ of a material currently in the model.</p>
         <span class='name'>f_material</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Sketchup::Material</a></span></tt>, <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -2947,7 +2953,7 @@ of a material currently in the model.</p>
       
         &mdash;
         <div class='inline'>
-<p>Material object to paint front faces with.</p>
+<p>material to paint front faces with.</p>
 </div>
       
     </li>
@@ -2957,7 +2963,7 @@ of a material currently in the model.</p>
         <span class='name'>b_material</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Sketchup::Material</a></span></tt>, <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -2965,7 +2971,7 @@ of a material currently in the model.</p>
       
         &mdash;
         <div class='inline'>
-<p>Material object to paint back faces with.</p>
+<p>material to paint back faces with.</p>
 </div>
       
     </li>
@@ -2978,13 +2984,13 @@ of a material currently in the model.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>faces - an array of Face objects if successful</p>
+<p>Number of faces created</p>
 </div>
       
     </li>
@@ -4485,7 +4491,7 @@ model.</p>
       <div class="method_details ">
   <h3 class="signature " id="fill_from_mesh-instance_method">
   
-    #<strong>fill_from_mesh</strong>(polymesh, weld_vertices, smooth_flags = AUTO_SOFTEN|SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Object</tt> 
+    #<strong>fill_from_mesh</strong>(polymesh, weld_vertices = true, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -4494,24 +4500,33 @@ model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The fill_from_mesh method is used to add faces and edges to the collection
-of entities from a PolygonMesh. It requires that the entities collection to
-be filled is empty. It has higher performance than add_faces_from_mesh, but
-does less error checking as it builds the geometry.</p>
+<p>The <span class='object_link'><a href="#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">#fill_from_mesh</a></span> method is used to add faces and edges to the
+collection of entities from a <span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span>. It requires that the
+entities collection to be filled is empty. It has higher performance than
+<span class='object_link'><a href="#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">#add_faces_from_mesh</a></span>, but does less error checking as it builds the
+geometry.</p>
 
-<p>The 2nd through 5th parameters are optional. The smooth_flags parameter can
-contain any of the following values if passed. The constants were added in
-SketchUp 2014. For previous versions, numeric values have to be specified
-instead of the Ruby constants.</p>
+<p>The <code>smooth_flags</code> parameter can contain any of the following
+values if passed. The constants were added in SketchUp 2014. For previous
+versions, numeric values have to be specified instead of the Ruby
+constants:</p>
+<ul><li>
+<p>0: <span class='object_link'><a href="../Geom/PolygonMesh.html#NO_SMOOTH_OR_HIDE-constant" title="Geom::PolygonMesh::NO_SMOOTH_OR_HIDE (constant)">Geom::PolygonMesh::NO_SMOOTH_OR_HIDE</a></span></p>
+</li><li>
+<p>1: <span class='object_link'><a href="../Geom/PolygonMesh.html#HIDE_BASED_ON_INDEX-constant" title="Geom::PolygonMesh::HIDE_BASED_ON_INDEX (constant)">Geom::PolygonMesh::HIDE_BASED_ON_INDEX</a></span> (Negative point index will hide
+the edge.)</p>
+</li><li>
+<p>2: <span class='object_link'><a href="../Geom/PolygonMesh.html#SOFTEN_BASED_ON_INDEX-constant" title="Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX (constant)">Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX</a></span> (Negative point index will
+soften the edge.)</p>
+</li><li>
+<p>4: <span class='object_link'><a href="../Geom/PolygonMesh.html#AUTO_SOFTEN-constant" title="Geom::PolygonMesh::AUTO_SOFTEN (constant)">Geom::PolygonMesh::AUTO_SOFTEN</a></span> (Interior edges are softened.)</p>
+</li><li>
+<p>8: <span class='object_link'><a href="../Geom/PolygonMesh.html#SMOOTH_SOFT_EDGES-constant" title="Geom::PolygonMesh::SMOOTH_SOFT_EDGES (constant)">Geom::PolygonMesh::SMOOTH_SOFT_EDGES</a></span> (All soft edges will also be
+smooth.)</p>
+</li></ul>
 
-<pre class="code"><code class="">- 0: Geom::PolygonMesh::NO_SMOOTH_OR_HIDE
-- 1: Geom::PolygonMesh::HIDE_BASED_ON_INDEX (Negative point index will hide the edge.)
-- 2: Geom::PolygonMesh::SOFTEN_BASED_ON_INDEX (Negative point index will soften the edge.)
-- 4: Geom::PolygonMesh::AUTO_SOFTEN (Interior edges are softened.)
-- 8: Geom::PolygonMesh::SMOOTH_SOFT_EDGES (All soft edges will also be smooth.)</code></pre>
-
-<p>The 4rd and 5th parameters will accept a Material object or a string name
-of a material currently in the model.</p>
+<p>The 4rd and 5th parameters will accept a <span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Material</a></span> object or a
+string name of a material currently in the model.</p>
 
 
   </div>
@@ -4529,8 +4544,8 @@ of a material currently in the model.</p>
 </span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='lbracket'>[</span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># 4
 </span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># 5
 </span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># 6
-</span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span><span class='op'>-</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>3</span><span class='comma'>,</span><span class='int'>4</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span><span class='int'>5</span><span class='comma'>,</span><span class='int'>6</span><span class='comma'>,</span><span class='op'>-</span><span class='int'>3</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>4</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_pm'>pm</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>3</span><span class='rparen'>)</span>
 
 <span class='comment'># Create a new group that we will populate with the mesh.
 </span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
@@ -4543,8 +4558,6 @@ of a material currently in the model.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if successful</p>
-
 
   </div>
 </div>
@@ -4557,14 +4570,9 @@ of a material currently in the model.</p>
         <span class='name'>polygonmesh</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Polygon mesh object.</p>
-</div>
       
     </li>
   
@@ -4573,14 +4581,16 @@ of a material currently in the model.</p>
         <span class='name'>weld_vertices</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>Boolean. This argument has no effect and is kept for compatibility reasons.
-Points are always merged.</p>
+<p>This argument has no effect and is kept for compatibility reasons. Points
+are always merged.</p>
 </div>
       
     </li>
@@ -4590,15 +4600,15 @@ Points are always merged.</p>
         <span class='name'>smooth_flags</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>AUTO_SOFTEN|SMOOTH_SOFT_EDGES</tt>)</em>
+        <em class="default">(defaults to: <tt>Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>An integer containing flags for soften and smooth settings.</p>
+<p>flags for softening and smoothing of edges.</p>
 </div>
       
     </li>
@@ -4608,7 +4618,7 @@ Points are always merged.</p>
         <span class='name'>f_material</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Sketchup::Material</a></span></tt>, <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -4616,7 +4626,7 @@ Points are always merged.</p>
       
         &mdash;
         <div class='inline'>
-<p>Material object to paint front faces with.</p>
+<p>material to paint front faces with.</p>
 </div>
       
     </li>
@@ -4626,7 +4636,7 @@ Points are always merged.</p>
         <span class='name'>b_material</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Sketchup::Material</a></span></tt>, <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
         <em class="default">(defaults to: <tt>nil</tt>)</em>
@@ -4634,7 +4644,7 @@ Points are always merged.</p>
       
         &mdash;
         <div class='inline'>
-<p>Material object to paint back faces with.</p>
+<p>material to paint back faces with.</p>
 </div>
       
     </li>
@@ -4647,14 +4657,9 @@ Points are always merged.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if successful</p>
-</div>
       
     </li>
   

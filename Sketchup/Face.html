@@ -222,7 +222,9 @@
 
   
     <h2>
-      Instance Method Summary
+      <a name="instance_method_summary">
+        Instance Method Summary
+      </a>
       <small><a href="#" class="summary_toggle">collapse</a></small>
     </h2>
 
@@ -378,7 +380,7 @@ referenced Face.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#followme-instance_method" title="#follow_me (instance method)">#<strong>follow_me</strong>(edge)  &#x21d2; Object </a>
+      <a href="#followme-instance_method" title="#followme (instance method)">#<strong>followme</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -393,7 +395,7 @@ referenced Face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The followme method is used to create a shape by making the face follow
+<p>The <span class='object_link'><a href="#followme-instance_method" title="Sketchup::Face#followme (method)">#followme</a></span> method is used to create a shape by making the face follow
 along an array of edges.</p>
 </div></span>
   
@@ -553,7 +555,7 @@ of the face.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#mesh-instance_method" title="#mesh (instance method)">#<strong>mesh</strong>(flags = 0)  &#x21d2; Object </a>
+      <a href="#mesh-instance_method" title="#mesh (instance method)">#<strong>mesh</strong>(flags = 0)  &#x21d2; Geom::PolygonMesh </a>
     
 
     
@@ -772,6 +774,7 @@ bound the face.</p>
       
     </ul>
   
+
 
 
   
@@ -1467,7 +1470,11 @@ referenced Face.</p>
       <div class="method_details ">
   <h3 class="signature " id="followme-instance_method">
   
-    #<strong>follow_me</strong>(edge)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>followme</strong>(edges)  &#x21d2; <tt>Boolean</tt> </span>
+    
+      <span class="overload">#<strong>followme</strong>(edge)  &#x21d2; <tt>Boolean</tt> </span>
+    
   
 
   
@@ -1476,7 +1483,7 @@ referenced Face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The followme method is used to create a shape by making the face follow
+<p>The <span class='object_link'><a href="#followme-instance_method" title="Sketchup::Face#followme (method)">#followme</a></span> method is used to create a shape by making the face follow
 along an array of edges.</p>
 
 
@@ -1490,30 +1497,36 @@ along an array of edges.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
 <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='rparen'>)</span>
+
 <span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
-<span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
 
 <span class='comment'># Add the face to the entities in the model
-</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_pts'>pts</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span>
+<span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
 
 <span class='comment'># Add the line which we will &quot;follow&quot; to the entities in the model
-</span><span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_followme'>followme</span><span class='lparen'>(</span><span class='id identifier rubyid_line'>line</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_followme'>followme</span><span class='lparen'>(</span><span class='id identifier rubyid_edge'>edge</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>followme</strong>(edges)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if successful, false if unsuccessful</p>
-
 
   </div>
 </div>
@@ -1523,16 +1536,16 @@ along an array of edges.</p>
   
     <li>
       
-        <span class='name'>edge</span>
+        <span class='name'>edges</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>An Edge object or an array of edge objects to follow.</p>
+<p>An array of edge objects to follow.</p>
 </div>
       
     </li>
@@ -1545,20 +1558,66 @@ along an array of edges.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if successful, false if unsuccessful</p>
-</div>
       
     </li>
   
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>followme</strong>(edge)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>edge</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An edge to follow.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2205,7 +2264,7 @@ successful)</p>
       <div class="method_details ">
   <h3 class="signature " id="mesh-instance_method">
   
-    #<strong>mesh</strong>(flags = 0)  &#x21d2; <tt>Object</tt> 
+    #<strong>mesh</strong>(flags = 0)  &#x21d2; <tt><span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span></tt> 
   
 
   
@@ -2215,16 +2274,20 @@ successful)</p>
   <div class="discussion">
     
 <p>The mesh method creates a polygon mesh that represents the face. See the
-PolygonMesh class for more information.</p>
+<span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> class for more information.</p>
 
 <p>Valid flags are:</p>
+<ul><li>
+<p><code>0</code>: Include PolygonMeshPoints,</p>
+</li><li>
+<p><code>1</code>: Include PolygonMeshUVQFront,</p>
+</li><li>
+<p><code>2</code>: Include PolygonMeshUVQBack,</p>
+</li><li>
+<p><code>4</code>: Include PolygonMeshNormals.</p>
+</li></ul>
 
-<pre class="code"><code class="">- 0: Include PolygonMeshPoints,
-- 1: Include PolygonMeshUVQFront,
-- 2: Include PolygonMeshUVQBack,
-- 4: Include PolygonMeshNormals.</code></pre>
-
-<p>Add these numbers together to combine flags. A value of 7 will include all
+<p>Use bitwise OR to combine flags. A value of <code>7</code> will include all
 flags, for example.</p>
 
 
@@ -2248,15 +2311,19 @@ flags, for example.</p>
 
 <span class='comment'># Add the face to the entities in the model
 </span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_pts'>pts</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span><span class='lparen'>(</span><span class='int'>7</span><span class='rparen'>)</span></code></pre>
+
+<span class='id identifier rubyid_kPoints'>kPoints</span> <span class='op'>=</span> <span class='int'>0</span>
+<span class='id identifier rubyid_kUVQFront'>kUVQFront</span> <span class='op'>=</span> <span class='int'>1</span>
+<span class='id identifier rubyid_kUVQBack'>kUVQBack</span> <span class='op'>=</span> <span class='int'>2</span>
+<span class='id identifier rubyid_kNormals'>kNormals</span> <span class='op'>=</span> <span class='int'>4</span>
+<span class='id identifier rubyid_flags'>flags</span> <span class='op'>=</span> <span class='id identifier rubyid_kPoints'>kPoints</span> <span class='op'>|</span> <span class='id identifier rubyid_kUVQFront'>kUVQFront</span> <span class='op'>|</span> <span class='id identifier rubyid_kUVQBack'>kUVQBack</span> <span class='op'>|</span> <span class='id identifier rubyid_kNormals'>kNormals</span> <span class='comment'># equals to 7
+</span><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns mesh - a PolygonMesh object if successful</p>
-
 
   </div>
 </div>
@@ -2269,7 +2336,7 @@ flags, for example.</p>
         <span class='name'>flags</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
@@ -2277,7 +2344,7 @@ flags, for example.</p>
       
         &mdash;
         <div class='inline'>
-<p>One or more flags used to generate a mesh (see comments).</p>
+<p>One or more flags used to generate a mesh.</p>
 </div>
       
     </li>
@@ -2290,14 +2357,9 @@ flags, for example.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>mesh - a PolygonMesh object if successful</p>
-</div>
       
     </li>
   
