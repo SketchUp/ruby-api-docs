@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Sketchup::FrameChangeObserver
+  
+    &mdash; SketchUp Ruby API Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "Sketchup::FrameChangeObserver";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
+  <link rel='stylesheet' type='text/css'
+    href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
+  
+  <script>
+    // Every time this page is loaded, it sends this action to SketchUp, telling
+    // SketchUp that a new page has loaded that has example snippets that should
+    // be replaced with code editors. Nothing happens if the page is loaded in a
+    // regular browser outside of the SketchUp client.
+    $( document ).ready(function() {
+      if (typeof sketchup == 'object') { 
+         sketchup.page_loaded();
+      }
+    });
+  </script>
+  
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="http://developer.sketchup.com" title="Home">
+                <img src="http://developer.sketchup.com/sites/help.sketchup.com/files/SU_Developer-RedWhite.png" alt="Home">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="http://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="http://blog.sketchup.com/tags/developers">SketchUpdate Blog</a></li>
+                    <li class="leaf"><a href="http://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="http://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="http://www.sketchup.com/sites/developers.sketchup.com/files/core/trimble-logo-white.png"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="http://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="http://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">FrameChangeObserver</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="../class_list.html"></iframe>
+
+      <div id="content"><h1>Class: Sketchup::FrameChangeObserver
+  <span class="abstract note title">Abstract</span>
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::FrameChangeObserver</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>Implement the methods described in this class to create a frame change
+observer. You can not sub-class this class because it is not defined by the
+API.</p>
+</div>
+</div>
+
+<p>This observer interface is implemented to react to changes in camera
+position (a frame) between one scene page and another. This observer&#39;s
+callback method is called when the user manually makes a scene change, or
+the internal animation feature runs.</p>
+
+<p>This abstract observer is any object that implements a callback method
+<code>frameChange</code> with 3 arguments: <code>from_scene</code> (the
+scene that you transition from) <code>to_scene</code> (the scene that you
+transition toward) and a <code>percent_done</code> between <code>0.0</code>
+and <code>1.0</code> (that indicates the percentage of transition between
+the two scenes.)</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Basic Class Definition:
+</span><span class='kw'>class</span> <span class='const'>MyFrameChangeObserver</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_scene'>from_scene</span><span class='comma'>,</span> <span class='id identifier rubyid_to_scene'>to_scene</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
+   <span class='comment'># Actual code here.
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>The observer is attached using the
+<span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">Pages.add_frame_change_observer</a></span> class method, which returns an
+integer id that can be stored and later used to detach the observer.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Attach an observer to the global Pages object:
+</span><span class='ivar'>@id</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Pages</span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'>add_frame_change_observer</span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+</code></pre>
+
+<p>Later, detaching this observer is done by passing this <code>id</code>
+reference to the <span class='object_link'><a href="Pages.html#remove_frame_change_observer-class_method" title="Sketchup::Pages.remove_frame_change_observer (method)">Pages.remove_frame_change_observer</a></span> class
+method.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Basic Observer Detachment:
+</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Pages</span><span class='period'>.</span><span class='id identifier rubyid_remove_frame_change_observer'>remove_frame_change_observer</span><span class='lparen'>(</span><span class='ivar'>@id</span><span class='rparen'>)</span>
+</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyFrameChangeObserver</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_page'>from_page</span><span class='comma'>,</span> <span class='id identifier rubyid_to_page'>to_page</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>From page </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_page'>from_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_page'>to_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>*</span> <span class='int'>100</span><span class='embexpr_end'>}</span><span class='tstring_content'>%)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+<span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Pages</span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'>add_frame_change_observer</span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <a
+          id="instance_method_summary"
+          href="#instance_method_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#frameChange-instance_method" title="#frameChange (instance method)">#<strong>frameChange</strong>(from_page, to_page, percent_done)  &#x21d2; void </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This callback method is called during a slide show or creation of an
+animation after the camera has been set up, but before the frame is
+displayed.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="frameChange-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>frameChange</strong>(from_page, to_page, percent_done)  &#x21d2; <tt>void</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The <code>from_scene</code> argument into this callback does not appear to
+be populated on the PC. You can store a variable that keeps track of the
+<code>to_scene</code> and then use that on a subsequent Scene selection to
+determine the last Page that the user was on.</p>
+</div>
+  </div>
+
+<p class="note returns_void">This method returns an undefined value.</p>
+<p>This callback method is called during a slide show or creation of an
+animation after the camera has been set up, but before the frame is
+displayed. It gives you a chance to perform your own actions during the
+animation. The arguments for <code>frameChange</code> method are the scene
+page that you transition from (<code>from_scene</code>), the scene page
+that you transition to (to_scene), and a <code>percent_done</code> between
+<code>0.0</code> and <code>1.0</code> that tell you the percentage of the
+transition between the two scene pages.</p>
+
+<p>By watching for <tt>percent_done &gt;= 1.0</tt>, you can activate Ruby code that
+executes as soon as the user&#39;s camera has finished animating.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyFrameChangeObserver</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_page'>from_page</span><span class='comma'>,</span> <span class='id identifier rubyid_to_page'>to_page</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>From page </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_page'>from_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_page'>to_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>*</span> <span class='int'>100</span><span class='embexpr_end'>}</span><span class='tstring_content'>%)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+<span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Pages</span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'>add_frame_change_observer</span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>from_scene</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The previous scene page the view is transitioning from.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>to_scene</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The selected scene page the view is transitioning towards.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>percent_done</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The percentage of transition between the two scene pages.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
