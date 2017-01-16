@@ -308,7 +308,7 @@ the Entities object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_arc-instance_method" title="#add_arc (instance method)">#<strong>add_arc</strong>(center, xaxis, center, normal, radius, start_angle, end_angle, num_segments)  &#x21d2; Object </a>
+      <a href="#add_arc-instance_method" title="#add_arc (instance method)">#<strong>add_arc</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -356,7 +356,7 @@ the Entities object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_cline-instance_method" title="#add_cline (instance method)">#<strong>add_cline</strong>(start_point, end)  &#x21d2; Object </a>
+      <a href="#add_cline-instance_method" title="#add_cline (instance method)">#<strong>add_cline</strong>(start_point, end_point, stipple)  &#x21d2; Object </a>
     
 
     
@@ -526,7 +526,7 @@ entities array.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_faces_from_mesh-instance_method" title="#add_faces_from_mesh (instance method)">#<strong>add_faces_from_mesh</strong>(polymesh, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Integer </a>
+      <a href="#add_faces_from_mesh-instance_method" title="#add_faces_from_mesh (instance method)">#<strong>add_faces_from_mesh</strong>(polygon_mesh, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Integer </a>
     
 
     
@@ -867,7 +867,7 @@ model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fill_from_mesh-instance_method" title="#fill_from_mesh (instance method)">#<strong>fill_from_mesh</strong>(polymesh, weld_vertices = true, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Boolean </a>
+      <a href="#fill_from_mesh-instance_method" title="#fill_from_mesh (instance method)">#<strong>fill_from_mesh</strong>(polygon_mesh, weld_vertices = true, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; Boolean </a>
     
 
     
@@ -1625,7 +1625,11 @@ letters.</p>
   <h3 class="signature " id="add_arc-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_arc</strong>(center, xaxis, center, normal, radius, start_angle, end_angle, num_segments)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>add_arc</strong>(center, xaxis, normal, radius, start_angle, end_angle)  &#x21d2; <tt>Object</tt> </span>
+    
+      <span class="overload">#<strong>add_arc</strong>(center, xaxis, normal, radius, start_angle, end_angle, num_segments)  &#x21d2; <tt>Object</tt> </span>
+    
   
 
   
@@ -1657,7 +1661,148 @@ letters.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_arc</strong>(center, xaxis, normal, radius, start_angle, end_angle)  &#x21d2; <tt>Object</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns edges - an array of Edge objects that define the arc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>center</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object representing the center .</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xaxis</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Vector3d object representing xaxis for the arc.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>normal</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Vector3d object representing normal for the arc.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>radius</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The radius of the arc.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start_angle</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Start angle for the arc, in radians.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>end_angle</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>End angle for the arc, in radians.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>edges - an array of Edge objects that define the arc.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_arc</strong>(center, xaxis, normal, radius, start_angle, end_angle, num_segments)  &#x21d2; <tt>Object</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 <p>Returns edges - an array of Edge objects that define the arc.</p>
@@ -1770,7 +1915,7 @@ letters.</p>
         <span class='name'>num_segments</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'></span>
       
       
       
@@ -1803,6 +1948,9 @@ letters.</p>
 </ul>
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -1983,7 +2131,7 @@ letters.</p>
   <h3 class="signature " id="add_cline-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_cline</strong>(start_point, end)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_cline</strong>(start_point, end_point, stipple)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2005,14 +2153,9 @@ letters.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
 <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>20</span><span class='comma'>,</span><span class='int'>20</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_constline'>constline</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_cline'>add_cline</span> <span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span><span class='id identifier rubyid_point2'>point2</span>
-<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_constline'>constline</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_constline'>constline</span>
-<span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></code></pre>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>20</span><span class='comma'>,</span> <span class='int'>20</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cline'>cline</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_cline'>add_cline</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2046,7 +2189,7 @@ letters.</p>
   
     <li>
       
-        <span class='name'>end</span>
+        <span class='name'>end_point</span>
       
       
         <span class='type'></span>
@@ -2854,7 +2997,7 @@ a closed Curve.</p>
   <h3 class="signature " id="add_faces_from_mesh-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_faces_from_mesh</strong>(polymesh, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Integer</tt> 
+    #<strong>add_faces_from_mesh</strong>(polygon_mesh, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -2929,7 +3072,7 @@ string name of a material currently in the model.</p>
   
     <li>
       
-        <span class='name'>polygonmesh</span>
+        <span class='name'>polygon_mesh</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span></tt>)</span>
@@ -4521,7 +4664,7 @@ model.</p>
   <h3 class="signature " id="fill_from_mesh-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>fill_from_mesh</strong>(polymesh, weld_vertices = true, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>fill_from_mesh</strong>(polygon_mesh, weld_vertices = true, smooth_flags = Geom::PolygonMesh::AUTO_SOFTEN|Geom::PolygonMesh::SMOOTH_SOFT_EDGES, f_material = nil, b_material = nil)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -4597,7 +4740,7 @@ string name of a material currently in the model.</p>
   
     <li>
       
-        <span class='name'>polygonmesh</span>
+        <span class='name'>polygon_mesh</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span></tt>)</span>
