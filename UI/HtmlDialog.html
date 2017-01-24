@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -117,8 +117,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: UI::HtmlDialog
   
@@ -675,7 +673,7 @@ looses focus.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>HtmlDialog</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
 <span class='lbrace'>{</span>
   <span class='symbol'>:dialog_title</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Dialog Example</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
   <span class='symbol'>:preferences_key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>com.sample.plugin</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -689,7 +687,7 @@ looses focus.</p>
   <span class='symbol'>:min_height</span> <span class='op'>=&gt;</span> <span class='int'>50</span><span class='comma'>,</span>
   <span class='symbol'>:max_width</span> <span class='op'>=&gt;</span><span class='int'>1000</span><span class='comma'>,</span>
   <span class='symbol'>:max_height</span> <span class='op'>=&gt;</span> <span class='int'>1000</span><span class='comma'>,</span>
-  <span class='symbol'>:style</span> <span class='op'>=&gt;</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>HtmlDialog</span><span class='op'>::</span><span class='const'>STYLE_DIALOG</span>
+  <span class='symbol'>:style</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#STYLE_DIALOG-constant" title="UI::HtmlDialog::STYLE_DIALOG (constant)">STYLE_DIALOG</a></span></span>
 <span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
@@ -2112,7 +2110,7 @@ still return <code>true</code>.</p>
       <pre class="example code"><code><span class='kw'>if</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
   <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_bring_to_front'>bring_to_front</span>
 <span class='kw'>else</span>
-  <span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>HtmlDialog</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::HtmlDialog#initialize (method)">new</a></span></span>
   <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
 <span class='kw'>end</span></code></pre>

@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Sketchup::Set
   
   
@@ -178,7 +176,7 @@ make use of Ruby&#39;s Set class unless they need backward compatibility.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_my_set'>my_set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_my_set'>my_set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 <span class='id identifier rubyid_my_set'>my_set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_entity1'>entity1</span>
 <span class='id identifier rubyid_my_set'>my_set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_entity2'>entity2</span></code></pre>
     
@@ -186,8 +184,8 @@ make use of Ruby&#39;s Set class unless they need backward compatibility.</p>
       <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
 
   <span class='comment'># Shim for the Set class which was moved in SketchUp 2014
-</span>  <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='rparen'>)</span>
-    <span class='const'>Set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span>
+</span>  <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>Set</span><span class='rparen'>)</span>
+    <span class='const'>Set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>Set</span>
   <span class='kw'>end</span>
 
   <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_test_set_shim'>test_set_shim</span>
@@ -511,19 +509,19 @@ make use of Ruby&#39;s Set class unless they need backward compatibility.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_set'>set</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_set'>set</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set is empty</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set is empty</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -590,13 +588,13 @@ make use of Ruby&#39;s Set class unless they need backward compatibility.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_contains?'>contains?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -711,19 +709,19 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_set'>set</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_set'>set</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set is empty</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set is empty</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -823,10 +821,10 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
-<span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span> <span class='id identifier rubyid_item'>item</span> <span class='op'>|</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_item'>item</span> <span class='rbrace'>}</span></code></pre>
+<span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span> <span class='id identifier rubyid_item'>item</span> <span class='op'>|</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_item'>item</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -887,14 +885,14 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Set is Empty</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Set is Empty</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure: Set has an Item</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure: Set has an Item</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -970,13 +968,13 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_contains?'>contains?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1091,13 +1089,13 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Success: Contains Toolbar Object</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1197,14 +1195,14 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_length'>length</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_length'>length</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1271,14 +1269,14 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Toolbar</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../UI/Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../UI/Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span> <span class='id identifier rubyid_toolbar'>toolbar</span>
 <span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_length'>length</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_length'>length</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1345,11 +1343,11 @@ contain the object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_set'>set</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Set (class)">Set</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>World</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_my_array'>my_array</span> <span class='op'>=</span> <span class='id identifier rubyid_set'>set</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_my_array'>my_array</span></code></pre>
+<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_my_array'>my_array</span></code></pre>
     
   </div>
 

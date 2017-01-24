@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -117,8 +117,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: UI::WebDialog
   
@@ -469,7 +467,7 @@ allowed to resize the dialog to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#max_height%3D-instance_method" title="#max_height= (instance method)">#<strong>max_height=</strong>(height)  &#x21d2; Object </a>
+      <a href="#max_height=-instance_method" title="#max_height= (instance method)">#<strong>max_height=</strong>(height)  &#x21d2; Object </a>
     
 
     
@@ -519,7 +517,7 @@ allowed to resize the dialog to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#max_width%3D-instance_method" title="#max_width= (instance method)">#<strong>max_width=</strong>(width)  &#x21d2; Object </a>
+      <a href="#max_width=-instance_method" title="#max_width= (instance method)">#<strong>max_width=</strong>(width)  &#x21d2; Object </a>
     
 
     
@@ -569,7 +567,7 @@ allowed to resize the dialog to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#min_height%3D-instance_method" title="#min_height (instance method)">#<strong>min_height</strong>(height)  &#x21d2; Object </a>
+      <a href="#min_height=-instance_method" title="#min_height (instance method)">#<strong>min_height</strong>(height)  &#x21d2; Object </a>
     
 
     
@@ -619,7 +617,7 @@ allowed to resize the dialog to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#min_width%3D-instance_method" title="#min_width= (instance method)">#<strong>min_width=</strong>(width)  &#x21d2; Object </a>
+      <a href="#min_width=-instance_method" title="#min_width= (instance method)">#<strong>min_width=</strong>(width)  &#x21d2; Object </a>
     
 
     
@@ -644,7 +642,7 @@ allowed to resize the dialog to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#navigation_buttons_enabled%3D-instance_method" title="#navigation_buttons_enabled= (instance method)">#<strong>navigation_buttons_enabled=</strong>(nav_buttons)  &#x21d2; Object </a>
+      <a href="#navigation_buttons_enabled=-instance_method" title="#navigation_buttons_enabled= (instance method)">#<strong>navigation_buttons_enabled=</strong>(nav_buttons)  &#x21d2; Object </a>
     
 
     
@@ -1083,7 +1081,7 @@ of Internet Explorer is installed will be embedded.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_dlg'>dlg</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>WebDialog</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span>
+      <pre class="example code"><code><span class='id identifier rubyid_dlg'>dlg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::WebDialog (class)">WebDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ShowSketchupDotCom</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>739</span><span class='comma'>,</span> <span class='int'>641</span><span class='comma'>,</span> <span class='int'>150</span><span class='comma'>,</span> <span class='int'>150</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='semicolon'>;</span>
 <span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
@@ -1544,7 +1542,7 @@ to pull in a longer string from a hidden input field in the HTML.</p>
       
       <pre class="example code"><code><span class='comment'># In Ruby code...
 </span><span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_add_action_callback'>add_action_callback</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby_messagebox</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_dialog'>dialog</span><span class='comma'>,</span> <span class='id identifier rubyid_params'>params</span><span class='op'>|</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You called ruby_messagebox with: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You called ruby_messagebox with: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span>
 <span class='rbrace'>}</span>
 
 <span class='comment'># JavaScript inside the page loaded into the WebDialog:
@@ -3623,7 +3621,7 @@ dialog).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_on_close'>set_on_close</span><span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Closing the webDialog</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_on_close'>set_on_close</span><span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Closing the webDialog</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 

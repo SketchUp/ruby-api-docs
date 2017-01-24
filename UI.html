@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -117,8 +117,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="class_list.html"></iframe>
 
       <div id="content"><h1>Module: UI
   
@@ -904,9 +902,9 @@ example.</p>
     
       
       <pre class="example code"><code><span class='comment'># Right click on anything to see a Hello World item.
-</span><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_add_context_menu_handler'>add_context_menu_handler</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_context_menu'>context_menu</span><span class='op'>|</span>
+</span><span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_context_menu_handler'>add_context_menu_handler</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_context_menu'>context_menu</span><span class='op'>|</span>
   <span class='id identifier rubyid_context_menu'>context_menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></code></pre>
     
@@ -994,7 +992,7 @@ example.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span></code></pre>
     
   </div>
 
@@ -1066,13 +1064,13 @@ cursors. SVG format for Windows and PDF format for OS X.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_cursor_id'>cursor_id</span> <span class='op'>=</span> <span class='kw'>nil</span>
-<span class='id identifier rubyid_cursor_path'>cursor_path</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pointer.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cursor_path'>cursor_path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'><span class='object_link'><a href="Sketchup.html#find_support_file-class_method" title="Sketchup.find_support_file (method)">find_support_file</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pointer.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>if</span> <span class='id identifier rubyid_cursor_path'>cursor_path</span>
-  <span class='id identifier rubyid_cursor_id'>cursor_id</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_create_cursor'>create_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_path'>cursor_path</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_cursor_id'>cursor_id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_cursor'>create_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_path'>cursor_path</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_onSetCursor'>onSetCursor</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'>set_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_id'>cursor_id</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'><span class='object_link'><a href="#set_cursor-class_method" title="UI.set_cursor (method)">set_cursor</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_id'>cursor_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1217,7 +1215,7 @@ passing an optional param.</p>
       <pre class="example code"><code><span class='comment'># With three params, it shows all text boxes:
 </span><span class='id identifier rubyid_prompts'>prompts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Name?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Age?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gender</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_defaults'>defaults</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Male</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='id identifier rubyid_prompts'>prompts</span><span class='comma'>,</span> <span class='id identifier rubyid_defaults'>defaults</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tell me about yourself.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='id identifier rubyid_prompts'>prompts</span><span class='comma'>,</span> <span class='id identifier rubyid_defaults'>defaults</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tell me about yourself.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># With four params, it shows a drop down box for prompts that have
 </span><span class='comment'># pipe-delimited lists of options. In this case, the Gender prompt
@@ -1225,7 +1223,7 @@ passing an optional param.</p>
 </span><span class='id identifier rubyid_prompts'>prompts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Name?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>What is your Age?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gender</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_defaults'>defaults</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Male</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_list'>list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Male|Female</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='id identifier rubyid_prompts'>prompts</span><span class='comma'>,</span> <span class='id identifier rubyid_defaults'>defaults</span><span class='comma'>,</span> <span class='id identifier rubyid_list'>list</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tell me about yourself.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_input'>input</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='id identifier rubyid_prompts'>prompts</span><span class='comma'>,</span> <span class='id identifier rubyid_defaults'>defaults</span><span class='comma'>,</span> <span class='id identifier rubyid_list'>list</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tell me about yourself.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -1382,7 +1380,7 @@ window.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_inspectors'>inspectors</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inspector_names'>inspector_names</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_inspectors'>inspectors</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_inspector_names'>inspector_names</span></code></pre>
     
   </div>
 
@@ -1456,9 +1454,9 @@ For backward compatibility “Plugins” still works.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_tool_menu'>tool_menu</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_menu'>menu</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tools</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_tool_menu'>tool_menu</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'>menu</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tools</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_tool_menu'>tool_menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cheese Tool</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cheese activated.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cheese activated.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='rbrace'>}</span></code></pre>
     
   </div>
@@ -1601,9 +1599,9 @@ messagebox.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Do you like cheese?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'>MB_YESNO</span><span class='rparen'>)</span>
-<span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span> <span class='op'>==</span> <span class='const'>IDYES</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SketchUp likes cheese too!</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Do you like cheese?</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#MB_YESNO-constant" title="MB_YESNO (constant)">MB_YESNO</a></span></span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#IDYES-constant" title="IDYES (constant)">IDYES</a></span></span>
+  <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>SketchUp likes cheese too!</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1722,7 +1720,7 @@ Credits, and Units.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_mypages'>mypages</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_model_info_pages'>model_info_pages</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_mypages'>mypages</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_model_info_pages'>model_info_pages</span></code></pre>
     
   </div>
 
@@ -1798,9 +1796,9 @@ wildcard filter string has been changed.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open SKP File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>model.skp</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open Image File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Image Files|*.jpg;*.png;||</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open CAD File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DXF|*.dxf|DWG|*.dwg||</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open SKP File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>model.skp</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open Image File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Image Files|*.jpg;*.png;||</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_chosen_image'>chosen_image</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_openpanel'>openpanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Open CAD File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DXF|*.dxf|DWG|*.dwg||</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -1939,7 +1937,7 @@ was canceled.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2039,7 +2037,7 @@ include .wav and .mp3 files on the Mac and .wav files on the PC.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_play_sound'>play_sound</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/mediadiscussion.wav</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_play_sound'>play_sound</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/mediadiscussion.wav</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -2141,7 +2139,7 @@ preferences pages. These include windows like Extensions.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_prefs'>prefs</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_preferences_pages'>preferences_pages</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_prefs'>prefs</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_preferences_pages'>preferences_pages</span></code></pre>
     
   </div>
 
@@ -2211,7 +2209,7 @@ such as when model.start_operation has disabled UI updates.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_refresh_inspectors'>refresh_inspectors</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_refresh_inspectors'>refresh_inspectors</span></code></pre>
     
   </div>
 
@@ -2285,7 +2283,7 @@ type dropdown. The filter string would be shown in the file name field with
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_path_to_save_to'>path_to_save_to</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_savepanel'>savepanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Save Image File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:\\</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Shapes.jpg</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_path_to_save_to'>path_to_save_to</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_savepanel'>savepanel</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Save Image File</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:\\</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Shapes.jpg</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2519,19 +2517,19 @@ one or several directories from the file system.</p>
     
       
       <pre class="example code"><code><span class='comment'># Default title and folder:
-</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span>
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span>
 
 <span class='comment'># Custom dialog title:
-</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Select Image Directory</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Select Image Directory</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Force a start folder:
-</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>directory:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/images</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>directory:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/images</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Allow multiple items to the selected:
-</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>select_multiple:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span><span class='label'>select_multiple:</span> <span class='kw'>true</span><span class='rparen'>)</span>
 
 <span class='comment'># Custom dialog title and force a start folder:
-</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span>
+</span><span class='id identifier rubyid_chosen_folder'>chosen_folder</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_directory'>select_directory</span><span class='lparen'>(</span>
   <span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Select Image Directory</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
   <span class='label'>directory:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/images</span><span class='tstring_end'>&quot;</span></span>
 <span class='rparen'>)</span></code></pre>
@@ -2645,7 +2643,7 @@ to indicate SketchUp&#39;s state.</p>
     
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onSetCursor'>onSetCursor</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'>set_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_id'>cursor_id</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_set_cursor'>set_cursor</span><span class='lparen'>(</span><span class='id identifier rubyid_cursor_id'>cursor_id</span><span class='rparen'>)</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2748,7 +2746,7 @@ cross-platform script.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_set_toolbar_visible'>set_toolbar_visible</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_set_toolbar_visible'>set_toolbar_visible</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2864,7 +2862,7 @@ Extension Manager dialog.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_extension_manager'>show_extension_manager</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_show_extension_manager'>show_extension_manager</span></code></pre>
     
   </div>
 
@@ -2926,7 +2924,7 @@ name. You can get the list of valid inspectors with UI.inspector_names.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_inspector'>show_inspector</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_show_inspector'>show_inspector</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -3027,7 +3025,7 @@ UI.model_info_pages.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_model_info'>show_model_info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Credits</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_show_model_info'>show_model_info</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Credits</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3129,7 +3127,7 @@ dialog. You can get the list of valid dialogs with UI.preferences_pages.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_show_preferences'>show_preferences</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GraphicsCard</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_show_preferences'>show_preferences</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>GraphicsCard</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3237,7 +3235,7 @@ timer the timer will repeat until the window is closed.</p>
     
       
       <pre class="example code"><code><span class='comment'># Beep once after 10 seconds.
-</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_start_timer'>start_timer</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span> <span class='rbrace'>}</span></code></pre>
+</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_start_timer'>start_timer</span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_beep'><span class='object_link'><a href="#beep-class_method" title="UI.beep (method)">beep</a></span></span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -3374,8 +3372,8 @@ to repeat.</p>
     
       
       <pre class="example code"><code><span class='comment'># Stop timer before it triggers.
-</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_start_timer'>start_timer</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_beep'>beep</span> <span class='rbrace'>}</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_stop_timer'>stop_timer</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_start_timer'><span class='object_link'><a href="#start_timer-class_method" title="UI.start_timer (method)">start_timer</a></span></span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_beep'><span class='object_link'><a href="#beep-class_method" title="UI.beep (method)">beep</a></span></span> <span class='rbrace'>}</span>
+<span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_stop_timer'>stop_timer</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3475,7 +3473,7 @@ doesn&#39;t exist a new one will be created.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_toolbar'>toolbar</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_toolbar'>toolbar</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3576,7 +3574,7 @@ not include Ruby toolbars.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_toolbar_names'>toolbar_names</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_toolbar_names'>toolbar_names</span></code></pre>
     
   </div>
 
@@ -3645,7 +3643,7 @@ cross-platform script.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_toolbar_visible?'>toolbar_visible?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_toolbar_visible?'>toolbar_visible?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 

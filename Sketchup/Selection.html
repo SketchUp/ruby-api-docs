@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Sketchup::Selection
   
   
@@ -178,7 +176,7 @@ as the user selected the entities.</p>
     
       
       <pre class="example code"><code><span class='comment'># Get a handle to the selection set.
-</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span></code></pre>
     
   </div>
@@ -222,7 +220,7 @@ as the user selected the entities.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%5B%5D-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index)  &#x21d2; Object </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index)  &#x21d2; Object </a>
     
 
     
@@ -798,7 +796,7 @@ to manually grab each one.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
-<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
 <span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
@@ -812,9 +810,9 @@ to manually grab each one.</p>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
 <span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_entity'>entity</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_entity'>entity</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1017,7 +1015,7 @@ assumption about the currently selected state of a given entity.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
     
   </div>
@@ -1124,7 +1122,7 @@ to manually grab each one.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
-<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
 <span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_pts'>pts</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
@@ -1138,9 +1136,9 @@ to manually grab each one.</p>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
 <span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_entity'>entity</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_entity'>entity</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1229,7 +1227,7 @@ to manually grab each one.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ready to Clear</span><span class='tstring_end'>&quot;</span></span>
+<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ready to Clear</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span></code></pre>
     
   </div>
@@ -1421,7 +1419,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
     
   </div>
@@ -1498,7 +1496,7 @@ efficient than using [].</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -2008,7 +2006,7 @@ belong to a single curved surface.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>
@@ -2145,7 +2143,7 @@ belong to a single curved surface.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>
@@ -2327,7 +2325,7 @@ object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_object'>object</span><span class='period'>.</span><span class='id identifier rubyid_remove_observer'>remove_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
     
   </div>
@@ -2429,7 +2427,7 @@ returns it.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ready to remove item from selection set</span><span class='tstring_end'>&quot;</span></span>
+<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ready to remove item from selection set</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span></code></pre>
     
   </div>
@@ -2580,7 +2578,7 @@ selection does not contain a single object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>

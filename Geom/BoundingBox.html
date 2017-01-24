@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Geom::BoundingBox
   
   
@@ -189,7 +187,7 @@ BoundingBox.new.</p>
     
       
       <pre class="example code"><code><span class='comment'># You can get the bounding box on a model.
-</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_model_bb'>model_bb</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span>
 
 <span class='comment'># Or you can get the bounding box on any Drawingelement object.
@@ -197,7 +195,7 @@ BoundingBox.new.</p>
 <span class='id identifier rubyid_first_entity_bb'>first_entity_bb</span> <span class='op'>=</span> <span class='id identifier rubyid_first_entity'>first_entity</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span>
 
 <span class='comment'># Or you can create an empty bounding box of your own.
-</span><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
+</span><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span></code></pre>
     
   </div>
 
@@ -641,7 +639,7 @@ points).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
     
   </div>
 
@@ -706,10 +704,10 @@ BoundingBox.diagonal will return a size greater than zero.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span>
-<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>200</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>200</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='rparen'>)</span></code></pre>
     
   </div>
@@ -842,7 +840,7 @@ the bounding box.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a point Point3d(150, 300, -150).
 </span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_center'>center</span></code></pre>
@@ -914,7 +912,7 @@ at least two points or another bounding box.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
 <span class='comment'># This will return false.
@@ -989,7 +987,7 @@ Point3d or BoundingBox object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return false.
 </span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_contains?'>contains?</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>300</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>400</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -1117,7 +1115,7 @@ These are which index refers to which corner:</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return Point3d(100, 200, -400).
 </span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>
@@ -1224,7 +1222,7 @@ retrieve.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a Length of 500.0.
 </span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_depth'>depth</span></code></pre>
@@ -1296,7 +1294,7 @@ bounding box.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a point a Length of ~547.72.
 </span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_diagonal'>diagonal</span></code></pre>
@@ -1367,7 +1365,7 @@ method.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return false.
 </span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span></code></pre>
@@ -1447,7 +1445,7 @@ method.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a Length of 200.0.
 </span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span></code></pre>
@@ -1528,9 +1526,9 @@ of intersecting one bounding box with another.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox1'>boundingbox1</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox1'>boundingbox1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox1'>boundingbox1</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>300</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_boundingbox2'>boundingbox2</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_boundingbox2'>boundingbox2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox2'>boundingbox2</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>150</span><span class='comma'>,</span> <span class='int'>350</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>500</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># The returned boundingbox is a result of the intersection of the two.
 </span><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox1'>boundingbox1</span><span class='period'>.</span><span class='id identifier rubyid_intersect'>intersect</span><span class='lparen'>(</span><span class='id identifier rubyid_boundingbox2'>boundingbox2</span><span class='rparen'>)</span></code></pre>
@@ -1638,7 +1636,7 @@ receive a very large negative number.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>700</span><span class='comma'>,</span> <span class='int'>900</span><span class='comma'>,</span> <span class='int'>800</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a point Point3d(700, 900, 800).
 </span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span></code></pre>
@@ -1709,7 +1707,7 @@ in the bounding box.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>700</span><span class='comma'>,</span> <span class='int'>900</span><span class='comma'>,</span> <span class='int'>800</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a point Point3d(100, 200, -400).
 </span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span></code></pre>
@@ -1780,7 +1778,7 @@ points).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return true.
 </span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span></code></pre>
@@ -1861,7 +1859,7 @@ valid (empty)</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>BoundingBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a Length of 100.0.
 </span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_width'>width</span></code></pre>

@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -117,8 +117,6 @@
 </div>
         <div class="clear"></div>
       </div>
-
-      <iframe id="search_frame" src="../class_list.html"></iframe>
 
       <div id="content"><h1>Class: Sketchup::InputPoint
   
@@ -210,7 +208,7 @@ examples of using the InputPoint class.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%3D%3D-instance_method" title="#== (instance method)">#<strong>==</strong>(inputpoint2)  &#x21d2; Object </a>
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(inputpoint2)  &#x21d2; Object </a>
     
 
     
@@ -258,7 +256,7 @@ examples of using the InputPoint class.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#copy%21-instance_method" title="#copy! (instance method)">#<strong>copy!</strong>(inputpoint)  &#x21d2; Object </a>
+      <a href="#copy!-instance_method" title="#copy! (instance method)">#<strong>copy!</strong>(inputpoint)  &#x21d2; Object </a>
     
 
     
@@ -658,11 +656,11 @@ point.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>InputPoint</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+      <pre class="example code"><code><span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 
 <span class='comment'># Or you can construct it at an arbitrary location.
-</span><span class='id identifier rubyid_starting_point'>starting_point</span> <span class='op'>=</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'>Point3d</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_ip2'>ip2</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>InputPoint</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_starting_point'>starting_point</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_starting_point'>starting_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_ip2'>ip2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_starting_point'>starting_point</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -750,10 +748,10 @@ point.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
-<span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>InputPoint</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_ip2'>ip2</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
 <span class='comment'># Copy the contents of inputpoint2 into inputpoint1
 </span><span class='id identifier rubyid_ip1'>ip1</span><span class='period'>.</span><span class='id identifier rubyid_copy!'>copy!</span> <span class='id identifier rubyid_ip2'>ip2</span>
@@ -862,7 +860,7 @@ false.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -934,10 +932,10 @@ this input point.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
-<span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>InputPoint</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_ip2'>ip2</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
 <span class='comment'># Copy the contents of inputpoint2 into inputpoint1
 </span><span class='id identifier rubyid_ip'>ip</span> <span class='op'>=</span> <span class='id identifier rubyid_ip1'>ip1</span><span class='period'>.</span><span class='id identifier rubyid_copy!'>copy!</span> <span class='id identifier rubyid_ip2'>ip2</span></code></pre>
@@ -1054,7 +1052,7 @@ degrees_of_freedom will be 0.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1129,7 +1127,7 @@ nested component that is providing the position.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1203,7 +1201,7 @@ draw.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1287,7 +1285,7 @@ in the Plugins/examples directory.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1391,7 +1389,7 @@ its position from a point on an Edge.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1464,7 +1462,7 @@ position from a face.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1541,7 +1539,7 @@ picks with the input point.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip'>ip</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
@@ -1615,11 +1613,11 @@ the first point.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span>
-<span class='id identifier rubyid_inputpoint2'>inputpoint2</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>InputPoint</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_inputpoint2'>inputpoint2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_pick'>pick</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span>
 <span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_pick'>pick</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_inputpoint2'>inputpoint2</span></code></pre>
     
@@ -1770,7 +1768,7 @@ was before.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1841,7 +1839,7 @@ display for the input point.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1924,7 +1922,7 @@ selected entity.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -1997,7 +1995,7 @@ selected entity.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>
@@ -2079,7 +2077,7 @@ InputPoint does not select any vertices this method returns nil.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span><span class='id identifier rubyid_y'>y</span>

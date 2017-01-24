@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="class_list.html"></iframe>
-
       <div id="content"><h1>Module: Sketchup
   
   
@@ -158,7 +156,7 @@ model, and this is accessed via the Sketchup.active_model method.</p>
       
       <pre class="example code"><code><span class='comment'># Grab a handle to the currently active model (aka the one the user is
 </span><span class='comment'># looking at in SketchUp.)
-</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 
 <span class='comment'># Grab other handles to commonly used collections inside the model.
 </span><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
@@ -170,10 +168,10 @@ model, and this is accessed via the Sketchup.active_model method.</p>
 <span class='comment'># Now that we have our handles, we can start pulling objects and making
 </span><span class='comment'># method calls that are useful.
 </span><span class='id identifier rubyid_first_entity'>first_entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>First thing in your model is a </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_first_entity'>first_entity</span><span class='period'>.</span><span class='id identifier rubyid_typename'>typename</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>First thing in your model is a </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_first_entity'>first_entity</span><span class='period'>.</span><span class='id identifier rubyid_typename'>typename</span><span class='rparen'>)</span>
 
 <span class='id identifier rubyid_number_materials'>number_materials</span> <span class='op'>=</span> <span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
-<span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your model has </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_number_materials'>number_materials</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> materials.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your model has </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_number_materials'>number_materials</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> materials.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
 <span class='id identifier rubyid_new_edge'>new_edge</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>500</span><span class='comma'>,</span><span class='int'>500</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
@@ -302,7 +300,7 @@ model, and this is accessed via the Sketchup.active_model method.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#break_edges%3D-class_method" title="break_edges (class method)">.<strong>break_edges</strong>(enabled)  &#x21d2; Object </a>
+      <a href="#break_edges=-class_method" title="break_edges (class method)">.<strong>break_edges</strong>(enabled)  &#x21d2; Object </a>
     
 
     
@@ -376,7 +374,7 @@ currently turned on.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#debug_mode%3D-class_method" title="debug_mode (class method)">.<strong>debug_mode</strong>(enabled)  &#x21d2; Object </a>
+      <a href="#debug_mode=-class_method" title="debug_mode (class method)">.<strong>debug_mode</strong>(enabled)  &#x21d2; Object </a>
     
 
     
@@ -550,7 +548,7 @@ matching files within the SketchUp installation directory.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#fix_shadow_strings%3D-class_method" title="fix_shadow_strings (class method)">.<strong>fix_shadow_strings</strong>(enabled)  &#x21d2; Object </a>
+      <a href="#fix_shadow_strings=-class_method" title="fix_shadow_strings (class method)">.<strong>fix_shadow_strings</strong>(enabled)  &#x21d2; Object </a>
     
 
     
@@ -1068,7 +1066,7 @@ is running in.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#plugins_disabled%3D-class_method" title="plugins_disabled (class method)">.<strong>plugins_disabled</strong>(enabled)  &#x21d2; Object </a>
+      <a href="#plugins_disabled=-class_method" title="plugins_disabled (class method)">.<strong>plugins_disabled</strong>(enabled)  &#x21d2; Object </a>
     
 
     
@@ -1342,7 +1340,7 @@ bar within the drawing window.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#status_text%3D-class_method" title="status_text= (class method)">.<strong>status_text=</strong>(status_text)  &#x21d2; Object </a>
+      <a href="#status_text=-class_method" title="status_text= (class method)">.<strong>status_text=</strong>(status_text)  &#x21d2; Object </a>
     
 
     
@@ -1416,7 +1414,7 @@ current user.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#template%3D-class_method" title="template= (class method)">.<strong>template=</strong>(filename)  &#x21d2; Object </a>
+      <a href="#template=-class_method" title="template= (class method)">.<strong>template=</strong>(filename)  &#x21d2; Object </a>
     
 
     
@@ -1489,7 +1487,7 @@ stored by the SketchUp install.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#vcb_label%3D-class_method" title="vcb_label (class method)">.<strong>vcb_label</strong>(label_text)  &#x21d2; Object </a>
+      <a href="#vcb_label=-class_method" title="vcb_label (class method)">.<strong>vcb_label</strong>(label_text)  &#x21d2; Object </a>
     
 
     
@@ -1515,7 +1513,7 @@ entry box that appears at the bottom on the SketchUp window.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#vcb_value%3D-class_method" title="vcb_value= (class method)">.<strong>vcb_value=</strong>(value)  &#x21d2; Object </a>
+      <a href="#vcb_value=-class_method" title="vcb_value= (class method)">.<strong>vcb_value=</strong>(value)  &#x21d2; Object </a>
     
 
     
@@ -1651,9 +1649,9 @@ focused.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='op'>!</span> <span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
   <span class='comment'># code acting on the model
 </span><span class='kw'>end</span></code></pre>
@@ -1722,7 +1720,7 @@ focused.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
     
   </div>
 
@@ -1821,7 +1819,7 @@ focused.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_app_name'>app_name</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_app_name'>app_name</span></code></pre>
     
   </div>
 
@@ -1897,7 +1895,7 @@ user later draws lines into it with the break edges feature reactivated.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_break_edges?'>break_edges?</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_break_edges?'><span class='object_link'><a href="#break_edges%3F-class_method" title="Sketchup.break_edges? (method)">break_edges?</a></span></span></code></pre>
     
   </div>
 
@@ -2000,7 +1998,7 @@ user via the user interface.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_break_edges?'>break_edges?</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_break_edges?'>break_edges?</span></code></pre>
     
   </div>
 
@@ -2075,7 +2073,7 @@ user via the user interface.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_texturewriter'>texturewriter</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_create_texture_writer'>create_texture_writer</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_texturewriter'>texturewriter</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create_texture_writer'>create_texture_writer</span></code></pre>
     
   </div>
 
@@ -2143,7 +2141,7 @@ setting takes effect right away, no need to restart SketchUp.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_debug_mode'>debug_mode</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug_mode'>debug_mode</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
     
   </div>
 
@@ -2243,7 +2241,7 @@ console when it detects incorrect usage of the API.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_debug_mode'>debug_mode</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_debug_mode?'>debug_mode?</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_debug_mode'>debug_mode</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_debug_mode?'>debug_mode?</span></code></pre>
     
   </div>
 
@@ -2328,7 +2326,7 @@ strings.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_display_name_from_action'>display_name_from_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>viewRight:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_display_name_from_action'>display_name_from_action</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>viewRight:</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2428,9 +2426,9 @@ SketchupExtension objects.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_extensions'>extensions</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_extensions'>extensions</span>
+      <pre class="example code"><code><span class='id identifier rubyid_extensions'>extensions</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extensions'>extensions</span>
 <span class='kw'>for</span> <span class='id identifier rubyid_extension'>extension</span> <span class='kw'>in</span> <span class='id identifier rubyid_extensions'>extensions</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The next extension is named: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The next extension is named: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>+</span>
       <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> and its loaded? state is: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_extension'>extension</span><span class='period'>.</span><span class='id identifier rubyid_loaded?'>loaded?</span><span class='rparen'>)</span>
 <span class='kw'>end</span></code></pre>
     
@@ -2498,7 +2496,7 @@ SketchupExtension objects.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_new_sketchup'>new_sketchup</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_file_new'>file_new</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_new_sketchup'>new_sketchup</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_file_new'>file_new</span></code></pre>
     
   </div>
 
@@ -2567,15 +2565,15 @@ name of a file within the SketchUp installation directory.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_help_file'>help_file</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>help.html</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_help_file'>help_file</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'>find_support_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>help.html</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_help_file'>help_file</span><span class='rparen'>)</span>
   <span class='comment'># Print out the help_file full path
-</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_help_file'>help_file</span>
+</span>  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_help_file'>help_file</span>
 
   <span class='comment'># Open the help_file in a web browser
-</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_openURL'>openURL</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file://</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_help_file'>help_file</span>
+</span>  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_openURL'><span class='object_link'><a href="UI.html#openURL-class_method" title="UI.openURL (method)">openURL</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>file://</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_help_file'>help_file</span>
 <span class='kw'>else</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2698,7 +2696,7 @@ matching files within the SketchUp installation directory.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_find_support_files'>find_support_files</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Plugins</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_files'>files</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_files'>find_support_files</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rb</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Plugins</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2817,7 +2815,7 @@ method can be used to control it.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_fix_shadow_strings'>fix_shadow_strings</span><span class='op'>=</span><span class='kw'>true</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_fix_shadow_strings'>fix_shadow_strings</span><span class='op'>=</span><span class='kw'>true</span></code></pre>
     
   </div>
 
@@ -2920,7 +2918,7 @@ method can be used to test it.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_fix_shadow_strings?'>fix_shadow_strings?</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_is_on'>is_on</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_fix_shadow_strings?'>fix_shadow_strings?</span></code></pre>
     
   </div>
 
@@ -2996,7 +2994,7 @@ it into degrees. For example, format_angle(Math::PI) will return 180.0.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_degrees'>degrees</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_angle'>format_angle</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_degrees'>degrees</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_angle'>format_angle</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span></code></pre>
     
   </div>
 
@@ -3099,7 +3097,7 @@ squared.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_area'>area</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_area'>format_area</span> <span class='id identifier rubyid_number'>number</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_area'>area</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_area'>format_area</span> <span class='id identifier rubyid_number'>number</span></code></pre>
     
   </div>
 
@@ -3199,7 +3197,7 @@ For example, 10 becomes 10.0. This is the equivalent to a to_f call.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_degrees'>degrees</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_degrees'>format_degrees</span> <span class='id identifier rubyid_number'>number</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_degrees'>degrees</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_degrees'>format_degrees</span> <span class='id identifier rubyid_number'>number</span></code></pre>
     
   </div>
 
@@ -3301,9 +3299,9 @@ units settings.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_format_length'>format_length</span> <span class='int'>10</span>
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_length'>format_length</span> <span class='int'>10</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_length'>length</span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_length'>length</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -3406,7 +3404,7 @@ from Sketchup.dat.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_datfile_info'>get_datfile_info</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_default_value'>default_value</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_datfile_info'>get_datfile_info</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_default_value'>default_value</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3525,7 +3523,7 @@ multiple languages.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_i18ndatfile_info'>get_i18ndatfile_info</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_default_value'>default_value</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_value'>value</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_i18ndatfile_info'>get_i18ndatfile_info</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_default_value'>default_value</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3646,7 +3644,7 @@ default, en-US.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_os_language'>os_language</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_os_language'><span class='object_link'><a href="#os_language-class_method" title="Sketchup.os_language (method)">os_language</a></span></span></code></pre>
     
   </div>
 
@@ -3714,7 +3712,7 @@ localization files.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_directory'>directory</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_resource_path'>get_resource_path</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Styles.strings</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_directory'>directory</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_resource_path'>get_resource_path</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Styles.strings</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -3816,7 +3814,7 @@ with the shortcut and the command separated by a tab, similar to
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_shortcuts'>shortcuts</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_get_shortcuts'>get_shortcuts</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_shortcuts'>shortcuts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_get_shortcuts'>get_shortcuts</span></code></pre>
     
   </div>
 
@@ -3903,11 +3901,11 @@ have a .rbz file extension.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c:/temp/SomePluginPackage.zip</span><span class='tstring_end'>&#39;</span></span>
 <span class='kw'>begin</span>
-  <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_install_from_archive'>install_from_archive</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_install_from_archive'>install_from_archive</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
 <span class='kw'>rescue</span> <span class='const'>Interrupt</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User said &#39;no&#39;: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_error'>error</span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>User said &#39;no&#39;: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_error'>error</span>
 <span class='kw'>rescue</span> <span class='const'>Exception</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_error'>error</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error during unzip: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_error'>error</span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error during unzip: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_error'>error</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -4058,7 +4056,7 @@ versions to load.</p>
       <pre class="example code"><code><span class='comment'># For backward compatibility, check for the existence of the method
 </span><span class='comment'># and load 32bit binaries for SketchUp versions that do not have this
 </span><span class='comment'># method.
-</span><span class='kw'>if</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:is_64bit?</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_64bit?'>is_64bit?</span>
+</span><span class='kw'>if</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:is_64bit?</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_is_64bit?'>is_64bit?</span>
   <span class='comment'># Load 64bit binaries.
 </span><span class='kw'>else</span>
   <span class='comment'># Load 32bit binaries.
@@ -4139,7 +4137,7 @@ often than you need.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_online'>is_online</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_is_online'>is_online</span></code></pre>
     
   </div>
 
@@ -4208,8 +4206,8 @@ product.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>if</span> <span class='lparen'>(</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_pro?'>is_pro?</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You are running SU Pro.</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='kw'>if</span> <span class='lparen'>(</span><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_is_pro?'>is_pro?</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You are running SU Pro.</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -4286,7 +4284,7 @@ contains illegal characters.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_is_valid_filename?'>is_valid_filename?</span> <span class='id identifier rubyid_filename'>filename</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_is_valid_filename?'>is_valid_filename?</span> <span class='id identifier rubyid_filename'>filename</span></code></pre>
     
   </div>
 
@@ -4406,7 +4404,7 @@ article for details.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_sfile'>sfile</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application_loader</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># file extension not required
-</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_sfile'>sfile</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_sfile'>sfile</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -4506,7 +4504,7 @@ included.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_open_file'>open_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\model.skp</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_open_file'>open_file</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:\\model.skp</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -4611,7 +4609,7 @@ default, en-US.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_os_language'>os_language</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_os_language'>os_language</span></code></pre>
     
   </div>
 
@@ -4679,7 +4677,7 @@ default, en-US.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_float'>float</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_parse_length'>parse_length</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># Returns 24 (representing inches)
+      <pre class="example code"><code><span class='id identifier rubyid_float'>float</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_parse_length'>parse_length</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2&#39;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'># Returns 24 (representing inches)
 </span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_float'>float</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span> <span class='comment'># Convert to a Length type if needed.</span></code></pre>
     
   </div>
@@ -4796,8 +4794,8 @@ Windows since SketchUp 2014.</p>
     
       
       <pre class="example code"><code><span class='kw'>module</span> <span class='const'>MyExtension</span>
-  <span class='const'>IS_WIN</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='symbol'>:platform_win</span>
-  <span class='const'>IS_OSX</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='symbol'>:platform_osx</span>
+  <span class='const'>IS_WIN</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='symbol'>:platform_win</span>
+  <span class='const'>IS_OSX</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='symbol'>:platform_osx</span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -4870,10 +4868,10 @@ to see if the problem is fixed.</p>
     
       
       <pre class="example code"><code><span class='comment'># Type this in the Ruby console then restart SketchUp.
-</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled'>plugins_disabled</span><span class='op'>=</span><span class='kw'>true</span>
+</span><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled'>plugins_disabled</span><span class='op'>=</span><span class='kw'>true</span>
 
 <span class='comment'># To reactivate plugins, type this into the Ruby console and restart.
-</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled'>plugins_disabled</span><span class='op'>=</span><span class='kw'>false</span></code></pre>
+</span><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled'>plugins_disabled</span><span class='op'>=</span><span class='kw'>false</span></code></pre>
     
   </div>
 
@@ -4973,7 +4971,7 @@ directory will be loaded at startup time.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_is_disabled'>is_disabled</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled?'>plugins_disabled?</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_is_disabled'>is_disabled</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_plugins_disabled?'>plugins_disabled?</span></code></pre>
     
   </div>
 
@@ -5050,7 +5048,7 @@ the model save, in which case the application will not terminate.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_quit'>quit</span>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_quit'>quit</span>
 <span class='comment'># Do not expect code to execute reliably after this point.</span></code></pre>
     
   </div>
@@ -5119,7 +5117,7 @@ value within the specified sub-section section of a .INI file or registry
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_read_default'>read_default</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_read_default'>read_default</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
 <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>variable</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>default</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
@@ -5264,14 +5262,14 @@ SketchUp&#39;s extension manager (in SketchUp preferences).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span> <span class='op'>=</span> <span class='const'>SketchupExtension</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Utilities Tools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <pre class="example code"><code><span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SketchupExtension.html#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Utilities Tools</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Utilities/utilitiesTools.rb</span><span class='tstring_end'>&quot;</span></span>
 
 <span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Adds Tools-&gt;Utilities to the </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SketchUp inteface. The Utilities submenu contains two tools: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Create Face and Query Tool.</span><span class='tstring_end'>&quot;</span></span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_register_extension'>register_extension</span> <span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span><span class='comma'>,</span> <span class='kw'>false</span></code></pre>
+<span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_extension'>register_extension</span> <span class='id identifier rubyid_utilitiesExtension'>utilitiesExtension</span><span class='comma'>,</span> <span class='kw'>false</span></code></pre>
     
   </div>
 
@@ -5389,7 +5387,7 @@ that it will load automatically whenever SketchUp restarts.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_register_importer'>register_importer</span> <span class='id identifier rubyid_importer'>importer</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_importer'>register_importer</span> <span class='id identifier rubyid_importer'>importer</span></code></pre>
     
   </div>
 
@@ -5489,7 +5487,7 @@ object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_remove_observer'>remove_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_observer'>remove_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
     
   </div>
 
@@ -5596,7 +5594,7 @@ SketchUp 2016 the loading order was first .rb then .rbs.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_sfile'>sfile</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application_loader</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># file extension not required
-</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='id identifier rubyid_sfile'>sfile</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='id identifier rubyid_require'>require</span><span class='lparen'>(</span><span class='id identifier rubyid_sfile'>sfile</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -5697,7 +5695,7 @@ included.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_save_thumbnail'>save_thumbnail</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>skp_filename</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>image_filename</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_save_thumbnail'>save_thumbnail</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>skp_filename</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>image_filename</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -6211,7 +6209,7 @@ future versions of the API.)</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_send_action'>send_action</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>selectArcTool:</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_send_action'>send_action</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>selectArcTool:</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -6326,7 +6324,7 @@ status bar</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_set_status_text'>set_status_text</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>SB_VCB_VALUE</span>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_set_status_text'>set_status_text</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="top-level-namespace.html#SB_VCB_VALUE-constant" title="SB_VCB_VALUE (constant)">SB_VCB_VALUE</a></span></span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span>
   <span class='comment'>#code to do something if set_status_text is successful
 </span><span class='kw'>end</span></code></pre>
@@ -6482,7 +6480,7 @@ SB_PROMPT.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_status_text'>status_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_status_text'>status_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -6583,7 +6581,7 @@ not required to persist between SketchUp sessions.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_temp_dir'>temp_dir</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'>temp_dir</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_temp_dir'>temp_dir</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'>temp_dir</span></code></pre>
     
   </div>
 
@@ -6651,7 +6649,7 @@ New.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span></code></pre>
     
   </div>
 
@@ -6719,7 +6717,7 @@ New.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_template'>template</span><span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filename</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_template'><span class='object_link'><a href="#template-class_method" title="Sketchup.template (method)">template</a></span></span><span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filename</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -6820,7 +6818,7 @@ loaded when the user select File &gt; New.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_directory'>directory</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_template_dir'>template_dir</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_directory'>directory</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_template_dir'>template_dir</span></code></pre>
     
   </div>
 
@@ -6886,7 +6884,7 @@ loaded when the user select File &gt; New.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_undo'>undo</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_undo'>undo</span></code></pre>
     
   </div>
 
@@ -6957,7 +6955,7 @@ SB_VCB_LABEL.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_vcb_label'>vcb_label</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_vcb_label'>vcb_label</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -7061,7 +7059,7 @@ SB_VCB_VALUE.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_vcb_value'>vcb_value</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_vcb_value'>vcb_value</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a Test</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -7160,9 +7158,9 @@ SB_VCB_VALUE.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>
+      <pre class="example code"><code><span class='id identifier rubyid_version'>version</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_version'>version</span><span class='rparen'>)</span>
-  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span> <span class='id identifier rubyid_version'>version</span>
+  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_version'>version</span>
 <span class='kw'>else</span>
   <span class='kw'>return</span>
 <span class='kw'>end</span></code></pre>
@@ -7250,10 +7248,10 @@ integer value as follows:</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>if</span> <span class='lparen'>(</span><span class='int'>15003000</span><span class='op'>...</span><span class='int'>15004000</span><span class='rparen'>)</span> <span class='op'>===</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version_number'>version_number</span>
+      <pre class="example code"><code><span class='kw'>if</span> <span class='lparen'>(</span><span class='int'>15003000</span><span class='op'>...</span><span class='int'>15004000</span><span class='rparen'>)</span> <span class='op'>===</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_version_number'>version_number</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SketchUp 15.3</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
-<span class='kw'>if</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_version_number'>version_number</span> <span class='op'>&gt;=</span> <span class='int'>1600000000</span>
+<span class='kw'>if</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_version_number'>version_number</span> <span class='op'>&gt;=</span> <span class='int'>1600000000</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New format</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
@@ -7337,7 +7335,7 @@ the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_write_default'>write_default</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my_value</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_write_default'>write_default</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>section</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my_value</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 

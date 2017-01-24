@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Sketchup::Importer
   
   
@@ -176,7 +174,7 @@ displays its contents in a messagebox.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>TextImporter</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>Importer</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>TextImporter</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>Importer</span>
 
   <span class='comment'># This method is called by SketchUp to determine the description that
 </span>  <span class='comment'># appears in the File &gt; Import dialog&#39;s pulldown list of valid
@@ -209,7 +207,7 @@ displays its contents in a messagebox.</p>
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_do_options'>do_options</span>
     <span class='comment'># In a real use you would probably store this information in an
 </span>    <span class='comment'># instance variable.
-</span>    <span class='id identifier rubyid_my_settings'>my_settings</span> <span class='op'>=</span> <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_inputbox'>inputbox</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>My Import Option:</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+</span>    <span class='id identifier rubyid_my_settings'>my_settings</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_inputbox'><span class='object_link'><a href="../UI.html#inputbox-class_method" title="UI.inputbox (method)">inputbox</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>My Import Option:</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Import Options</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
@@ -217,12 +215,12 @@ displays its contents in a messagebox.</p>
 </span>  <span class='comment'># to import. This is where you do the real work of opening and
 </span>  <span class='comment'># processing the file.
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_load_file'>load_file</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
-    <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='rparen'>)</span>
+    <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='rparen'>)</span>
     <span class='kw'>return</span> <span class='int'>0</span> <span class='comment'># 0 is the code for a successful import
 </span>  <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_register_importer'>register_importer</span><span class='lparen'>(</span><span class='const'>TextImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_importer'><span class='object_link'><a href="../Sketchup.html#register_importer-class_method" title="Sketchup.register_importer (method)">register_importer</a></span></span><span class='lparen'>(</span><span class='const'>TextImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -776,7 +774,7 @@ SketchUp receives each key.</p>
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_load_file'>load_file</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
   <span class='comment'># Here is where you would open the file and process it.
-</span>  <span class='const'>UI</span><span class='period'>.</span><span class='id identifier rubyid_messagebox'>messagebox</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='rparen'>)</span>
+</span>  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='int'>0</span>   <span class='comment'># Success
 </span><span class='kw'>end</span></code></pre>
     

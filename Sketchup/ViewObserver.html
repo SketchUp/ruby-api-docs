@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Sketchup::ViewObserver
   
   
@@ -171,14 +169,14 @@ desired methods, and add an instance of the observer to the view object.</p>
     
       
       <pre class="example code"><code><span class='comment'># This is an example of an observer that watches tool interactions.
-</span><span class='kw'>class</span> <span class='const'>MyViewObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>ViewObserver</span>
+</span><span class='kw'>class</span> <span class='const'>MyViewObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>ViewObserver</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_onViewChanged'>onViewChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onViewChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
 <span class='comment'># Attach the observer.
-</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyViewObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyViewObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
     
   </div>
 

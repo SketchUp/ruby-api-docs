@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Sketchup::LayersObserver
   
   
@@ -171,14 +169,14 @@ interests.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>LayersObserver</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>LayersObserver</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_onLayerAdded'>onLayerAdded</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerAdded: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -376,15 +374,15 @@ different active layer.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>LayersObserver</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
   <span class='kw'>def</span> <span class='id identifier rubyid_onCurrentLayerChanged'>onCurrentLayerChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onCurrentLayerChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_active_layer'>active_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layer'>layer</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_layer'>active_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layer'>layer</span></code></pre>
     
   </div>
 
@@ -482,14 +480,14 @@ different active layer.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>LayersObserver</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
   <span class='kw'>def</span> <span class='id identifier rubyid_onLayerAdded'>onLayerAdded</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerAdded: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -591,8 +589,8 @@ different active layer.</p>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello Universe</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
@@ -692,15 +690,15 @@ model.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>LayersObserver</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
   <span class='kw'>def</span> <span class='id identifier rubyid_onLayerRemoved'>onLayerRemoved</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerRemoved: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -799,15 +797,15 @@ model.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'>Sketchup</span><span class='op'>::</span><span class='const'>LayersObserver</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
   <span class='kw'>def</span> <span class='id identifier rubyid_onRemoveAllLayers'>onRemoveAllLayers</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onRemoveAllLayers: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layers'>layers</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span></code></pre>
     
   </div>
 

@@ -31,19 +31,19 @@
     href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico">
   <link rel='stylesheet' type='text/css'
     href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic'>
-  
+
   <script>
     // Every time this page is loaded, it sends this action to SketchUp, telling
     // SketchUp that a new page has loaded that has example snippets that should
     // be replaced with code editors. Nothing happens if the page is loaded in a
     // regular browser outside of the SketchUp client.
     $( document ).ready(function() {
-      if (typeof sketchup == 'object') { 
+      if (typeof sketchup == 'object') {
          sketchup.page_loaded();
       }
     });
   </script>
-  
+
 </head>
 <body>
 
@@ -118,8 +118,6 @@
         <div class="clear"></div>
       </div>
 
-      <iframe id="search_frame" src="../class_list.html"></iframe>
-
       <div id="content"><h1>Class: Sketchup::Layers
   
   
@@ -176,7 +174,7 @@ model. You get a pointer to the Layers object from within the Model.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span></code></pre>
     
   </div>
@@ -220,7 +218,7 @@ model. You get a pointer to the Layers object from within the Model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%5B%5D-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index_or_name)  &#x21d2; Object </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index_or_name)  &#x21d2; Object </a>
     
 
     
@@ -545,7 +543,7 @@ layer name inside this collection.</p>
     
 <p>The [] method is used to retrieve a layer by index or name.</p>
 
-<p>The <span class='object_link'><a href="#at-instance_method" title="Sketchup::Layers#at (method)">#at</a></span> method is an alias for <span class='object_link'><a href="#%5B%5D-instance_method" title="Sketchup::Layers#[] (method)">#[]</a></span>.</p>
+<p>The <span class='object_link'><a href="#at-instance_method" title="Sketchup::Layers#at (method)">#at</a></span> method is an alias for <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Layers#[] (method)">#[]</a></span>.</p>
 
 
   </div>
@@ -556,7 +554,7 @@ layer name inside this collection.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_new_layer'>new_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_layer_by_number'>layer_by_number</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
@@ -650,7 +648,7 @@ existing Layer rather than adding a new one.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test Layer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
@@ -751,7 +749,7 @@ collection.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
     
   </div>
@@ -842,7 +840,7 @@ collection.</p>
     
 <p>The [] method is used to retrieve a layer by index or name.</p>
 
-<p>The <span class='object_link'><a href="#at-instance_method" title="Sketchup::Layers#at (method)">#at</a></span> method is an alias for <span class='object_link'><a href="#%5B%5D-instance_method" title="Sketchup::Layers#[] (method)">#[]</a></span>.</p>
+<p>The <span class='object_link'><a href="#at-instance_method" title="Sketchup::Layers#at (method)">#at</a></span> method is an alias for <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Layers#[] (method)">#[]</a></span>.</p>
 
 
   </div>
@@ -853,7 +851,7 @@ collection.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_new_layer'>new_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_layer_by_number'>layer_by_number</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
@@ -954,7 +952,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
     
   </div>
@@ -1028,7 +1026,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span> <span class='id identifier rubyid_layer'>layer</span> <span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span></code></pre>
@@ -1100,7 +1098,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>
@@ -1167,7 +1165,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_purge_unused'>purge_unused</span></code></pre>
     
   </div>
@@ -1235,20 +1233,20 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     
       
       <pre class="example code"><code><span class='comment'># Remove layer by layer reference.
-</span><span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
 
 <span class='comment'># Remove layer by name.
-</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
 <span class='comment'># Remove layer by index.
-</span><span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
 
 <span class='comment'># Remove layer and the entities on the layer.
-</span><span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyLayer</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -1367,7 +1365,7 @@ object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove_observer'>remove_observer</span> <span class='id identifier rubyid_observer'>observer</span></code></pre>
     
   </div>
@@ -1469,7 +1467,7 @@ object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>
@@ -1537,7 +1535,7 @@ layer name inside this collection.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'>Sketchup</span><span class='period'>.</span><span class='id identifier rubyid_active_model'>active_model</span>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
 <span class='comment'># Will return &quot;Joe&quot; since there are probably no other layers named that.
 </span><span class='comment'># Or might return something like &quot;Joe #2&quot; if there is already a layer
