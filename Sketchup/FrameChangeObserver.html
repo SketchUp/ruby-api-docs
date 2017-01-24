@@ -170,7 +170,7 @@ the internal animation feature runs.</p>
 
 <p>This abstract observer is any object that implements a callback method
 <code>frameChange</code> with 3 arguments: <code>from_scene</code> (the
-scene that you transition from) <code>to_scene</code> (the scene that you
+scene that you transition from), <code>to_scene</code> (the scene that you
 transition toward) and a <code>percent_done</code> between <code>0.0</code>
 and <code>1.0</code> (that indicates the percentage of transition between
 the two scenes.)</p>
@@ -208,12 +208,26 @@ method.</p>
     <p class="tag_title">Examples:</p>
     
       
+        <p class="example_title"><div class='inline'>
+<p>Draws a progress bar on the status line.</p>
+</div></p>
+      
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyFrameChangeObserver</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_page'>from_page</span><span class='comma'>,</span> <span class='id identifier rubyid_to_page'>to_page</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>From page </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_page'>from_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_page'>to_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>*</span> <span class='int'>100</span><span class='embexpr_end'>}</span><span class='tstring_content'>%)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_scene'>from_scene</span><span class='comma'>,</span> <span class='id identifier rubyid_to_scene'>to_scene</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>==</span> <span class='float'>0.0</span>
+      <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_status_text'>status_text</span><span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>% done:</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_from_scene'>from_scene</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='comment'># PC bug!
+</span>        <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Animating to page: &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_scene'>to_scene</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>From page &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_scene'>from_scene</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; to &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_scene'>to_scene</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_status_text'>status_text</span><span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>% done: </span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>|</span><span class='tstring_end'>&#39;</span></span><span class='op'>*</span><span class='lparen'>(</span><span class='id identifier rubyid_percent_done'>percent_done</span><span class='op'>*</span><span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>All Done!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>&gt;=</span> <span class='float'>1.0</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'><span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">add_frame_change_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+<span class='ivar'>@id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'><span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">add_frame_change_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -240,7 +254,7 @@ method.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#frameChange-instance_method" title="#frameChange (instance method)">#<strong>frameChange</strong>(from_page, to_page, percent_done)  &#x21d2; void </a>
+      <a href="#frameChange-instance_method" title="#frameChange (instance method)">#<strong>frameChange</strong>(from_scene, to_scene, percent_done)  &#x21d2; void </a>
     
 
     
@@ -277,7 +291,7 @@ displayed.</p>
   <h3 class="signature first" id="frameChange-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>frameChange</strong>(from_page, to_page, percent_done)  &#x21d2; <tt>void</tt> 
+    #<strong>frameChange</strong>(from_scene, to_scene, percent_done)  &#x21d2; <tt>void</tt> 
   
 
   
@@ -302,9 +316,9 @@ animation after the camera has been set up, but before the frame is
 displayed. It gives you a chance to perform your own actions during the
 animation. The arguments for <code>frameChange</code> method are the scene
 page that you transition from (<code>from_scene</code>), the scene page
-that you transition to (to_scene), and a <code>percent_done</code> between
-<code>0.0</code> and <code>1.0</code> that tell you the percentage of the
-transition between the two scene pages.</p>
+that you transition to (<code>to_scene</code>), and a
+<code>percent_done</code> between <code>0.0</code> and <code>1.0</code>
+that tell you the percentage of the transition between the two scene pages.</p>
 
 <p>By watching for <tt>percent_done &gt;= 1.0</tt>, you can activate Ruby code that
 executes as soon as the user&#39;s camera has finished animating.</p>
@@ -319,11 +333,15 @@ executes as soon as the user&#39;s camera has finished animating.</p>
     
       
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyFrameChangeObserver</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_page'>from_page</span><span class='comma'>,</span> <span class='id identifier rubyid_to_page'>to_page</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>From page </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_from_page'>from_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_page'>to_page</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>*</span> <span class='int'>100</span><span class='embexpr_end'>}</span><span class='tstring_content'>%)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_frameChange'>frameChange</span><span class='lparen'>(</span><span class='id identifier rubyid_from_scene'>from_scene</span><span class='comma'>,</span> <span class='id identifier rubyid_to_scene'>to_scene</span><span class='comma'>,</span> <span class='id identifier rubyid_percent_done'>percent_done</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_percent_done'>percent_done</span> <span class='op'>==</span> <span class='float'>0.0</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Animating to scene &#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_to_scene'>to_scene</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39;:</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_format'>format</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>% 7.2f %</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_percent_done'>percent_done</span><span class='op'>*</span><span class='int'>100</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'><span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">add_frame_change_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+<span class='ivar'>@id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'><span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">add_frame_change_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
