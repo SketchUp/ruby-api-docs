@@ -243,7 +243,7 @@ combination of other vectors.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#%25-instance_method" title="#dot (instance method)">#<strong>dot</strong>(vector2)  &#x21d2; Object </a>
+      <a href="#%25-instance_method" title="#% (instance method)">#<strong>%</strong>(vector)  &#x21d2; Float </a>
     
 
     
@@ -258,7 +258,7 @@ combination of other vectors.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The dot method is used to compute the dot product between two vectors.</p>
+<p>The <span class='object_link'><a href="#%25-instance_method" title="Geom::Vector3d#% (method)">#%</a></span> method is used to compute the dot product between two vectors.</p>
 </div></span>
   
 </li>
@@ -267,7 +267,7 @@ combination of other vectors.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#*-instance_method" title="#cross (instance method)">#<strong>cross</strong>(vector)  &#x21d2; Object </a>
+      <a href="#*-instance_method" title="#* (instance method)">#<strong>*</strong>(vector)  &#x21d2; Object </a>
     
 
     
@@ -282,7 +282,7 @@ combination of other vectors.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The cross method is used to compute the cross product between two vectors.</p>
+<p>The <span class='object_link'><a href="#*-instance_method" title="Geom::Vector3d#* (method)">#*</a></span> method is used to compute the cross product between two vectors.</p>
 </div></span>
   
 </li>
@@ -528,7 +528,8 @@ vector as the z-axis direction.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The cross method is used to compute the cross product between two vectors.</p>
+<p>The <span class='object_link'><a href="#cross-instance_method" title="Geom::Vector3d#cross (method)">#cross</a></span> method is used to compute the cross product between two
+vectors.</p>
 </div></span>
   
 </li>
@@ -537,7 +538,7 @@ vector as the z-axis direction.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dot-instance_method" title="#dot (instance method)">#<strong>dot</strong>(vector2)  &#x21d2; Object </a>
+      <a href="#dot-instance_method" title="#dot (instance method)">#<strong>dot</strong>(vector)  &#x21d2; Float </a>
     
 
     
@@ -552,7 +553,7 @@ vector as the z-axis direction.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The dot method is used to compute the dot product between two vectors.</p>
+<p>The <span class='object_link'><a href="#dot-instance_method" title="Geom::Vector3d#dot (method)">#dot</a></span> method is used to compute the dot product between two vectors.</p>
 </div></span>
   
 </li>
@@ -1512,7 +1513,7 @@ method with 6 parameters in the form of:</p>
   <h3 class="signature first" id="%-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>dot</strong>(vector2)  &#x21d2; <tt>Object</tt> 
+    #<strong>%</strong>(vector)  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -1521,7 +1522,9 @@ method with 6 parameters in the form of:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The dot method is used to compute the dot product between two vectors.</p>
+<p>The <span class='object_link'><a href="#%25-instance_method" title="Geom::Vector3d#% (method)">#%</a></span> method is used to compute the dot product between two vectors.</p>
+
+<p>This is an alias of the <span class='object_link'><a href="#dot-instance_method" title="Geom::Vector3d#dot (method)">#dot</a></span> method.</p>
 
 
   </div>
@@ -1532,17 +1535,15 @@ method with 6 parameters in the form of:</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
-<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_dot'>dot</span> <span class='id identifier rubyid_vector2'>vector2</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_vector1'>vector1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dot'>dot</span> <span class='op'>=</span> <span class='id identifier rubyid_vector1'>vector1</span> <span class='op'>%</span> <span class='id identifier rubyid_vector2'>vector2</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns d - the dot product of vector1 and vector2</p>
-
 
   </div>
 </div>
@@ -1552,17 +1553,12 @@ method with 6 parameters in the form of:</p>
   
     <li>
       
-        <span class='name'>vector2</span>
+        <span class='name'>vector</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Geom::Vector</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
       
     </li>
   
@@ -1574,14 +1570,9 @@ method with 6 parameters in the form of:</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>d - the dot product of vector1 and vector2</p>
-</div>
       
     </li>
   
@@ -1589,6 +1580,13 @@ method with 6 parameters in the form of:</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#dot-instance_method" title="Geom::Vector3d#dot (method)">#dot</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1613,7 +1611,7 @@ method with 6 parameters in the form of:</p>
   <h3 class="signature " id="*-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>cross</strong>(vector)  &#x21d2; <tt>Object</tt> 
+    #<strong>*</strong>(vector)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1622,11 +1620,13 @@ method with 6 parameters in the form of:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The cross method is used to compute the cross product between two vectors.</p>
+<p>The <span class='object_link'><a href="#*-instance_method" title="Geom::Vector3d#* (method)">#*</a></span> method is used to compute the cross product between two vectors.</p>
 
 <p>The cross product, also called the vector product, is an operation on two
 vectors. The cross product of two vectors produces a third vector which is
 perpendicular to the plane in which the first two lie.</p>
+
+<p>This is an alias of the <span class='object_link'><a href="#cross-instance_method" title="Geom::Vector3d#cross (method)">#cross</a></span> method.</p>
 
 
   </div>
@@ -1637,13 +1637,8 @@ perpendicular to the plane in which the first two lie.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_vector3'>vector3</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_cross'>cross</span><span class='lparen'>(</span><span class='id identifier rubyid_vector2'>vector2</span><span class='rparen'>)</span></code></pre>
-    
-      
-      <pre class="example code"><code><span class='id identifier rubyid_vector1'>vector1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_vector1'>vector1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span>
 <span class='id identifier rubyid_vector3'>vector3</span> <span class='op'>=</span> <span class='id identifier rubyid_vector1'>vector1</span> <span class='op'>*</span> <span class='id identifier rubyid_vector2'>vector2</span></code></pre>
     
   </div>
@@ -1651,7 +1646,7 @@ perpendicular to the plane in which the first two lie.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns vector - the cross of vector1 and vector2</p>
+<p>Returns vector - a Vector3d object if successful</p>
 
 
   </div>
@@ -1690,7 +1685,7 @@ perpendicular to the plane in which the first two lie.</p>
       
         
         <div class='inline'>
-<p>vector - the cross of vector1 and vector2</p>
+<p>vector - a Vector3d object if successful</p>
 </div>
       
     </li>
@@ -1699,6 +1694,13 @@ perpendicular to the plane in which the first two lie.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#cross-instance_method" title="Geom::Vector3d#cross (method)">#cross</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2610,7 +2612,8 @@ vector as the z-axis direction.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The cross method is used to compute the cross product between two vectors.</p>
+<p>The <span class='object_link'><a href="#cross-instance_method" title="Geom::Vector3d#cross (method)">#cross</a></span> method is used to compute the cross product between two
+vectors.</p>
 
 <p>The cross product, also called the vector product, is an operation on two
 vectors. The cross product of two vectors produces a third vector which is
@@ -2687,6 +2690,13 @@ perpendicular to the plane in which the first two lie.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#*-instance_method" title="Geom::Vector3d#* (method)">#*</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2711,7 +2721,7 @@ perpendicular to the plane in which the first two lie.</p>
   <h3 class="signature " id="dot-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>dot</strong>(vector2)  &#x21d2; <tt>Object</tt> 
+    #<strong>dot</strong>(vector)  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -2720,7 +2730,7 @@ perpendicular to the plane in which the first two lie.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The dot method is used to compute the dot product between two vectors.</p>
+<p>The <span class='object_link'><a href="#dot-instance_method" title="Geom::Vector3d#dot (method)">#dot</a></span> method is used to compute the dot product between two vectors.</p>
 
 
   </div>
@@ -2731,17 +2741,15 @@ perpendicular to the plane in which the first two lie.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
-<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_d'>d</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_dot'>dot</span> <span class='id identifier rubyid_vector2'>vector2</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_vector1'>vector1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dot'>dot</span> <span class='op'>=</span> <span class='id identifier rubyid_vector1'>vector1</span><span class='period'>.</span><span class='id identifier rubyid_dot'>dot</span><span class='lparen'>(</span><span class='id identifier rubyid_vector2'>vector2</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns d - the dot product of vector1 and vector2</p>
-
 
   </div>
 </div>
@@ -2751,17 +2759,12 @@ perpendicular to the plane in which the first two lie.</p>
   
     <li>
       
-        <span class='name'>vector2</span>
+        <span class='name'>vector</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Geom::Vector</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Vector3d object.</p>
-</div>
       
     </li>
   
@@ -2773,14 +2776,9 @@ perpendicular to the plane in which the first two lie.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>d - the dot product of vector1 and vector2</p>
-</div>
       
     </li>
   
@@ -2788,6 +2786,13 @@ perpendicular to the plane in which the first two lie.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#%25-instance_method" title="Geom::Vector3d#% (method)">#%</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   

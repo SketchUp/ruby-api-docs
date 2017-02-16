@@ -139,15 +139,17 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Sketchup::Licensing module contains methods for extensions purchased
-from Extension Warehouse to check their licensing status. It is advised to
-place these calls inside encrypted Ruby (.rbe) files. This API is also
-exposed via the SketchUp C API. Extensions that already use native code
-should prefer using the native API, which should be more secure than their
-Ruby API counterparts.</p>
+<p>The <code>Sketchup::Licensing</code> module contains methods for extensions
+purchased from Extension Warehouse to check their licensing status.</p>
 
-<p>See the <a href="../tutorial_licensing">Licensing Tutorial</a> for more
-details.</p>
+<p>It is advised to place these calls inside encrypted Ruby (.rbe) files. This
+API is also exposed via the SketchUp C API. Extensions that already use
+native code should prefer using the native API, which should be more secure
+than their Ruby API counterparts.</p>
+
+<p>For more details, see: <a
+href="https://extensions.sketchup.com/en/developer_center/tutorial_licensing">Developer
+Center Licensing Tutorial</a></p>
 
 
   </div>
@@ -231,7 +233,7 @@ details.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_extension_license-class_method" title="get_extension_license (class method)">.<strong>get_extension_license</strong>(extension_id)  &#x21d2; Object </a>
+      <a href="#get_extension_license-class_method" title="get_extension_license (class method)">.<strong>get_extension_license</strong>(extension_id)  &#x21d2; ExtensionLicense </a>
     
 
     
@@ -266,7 +268,7 @@ details.</p>
   <h3 class="signature first" id="get_extension_license-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>get_extension_license</strong>(extension_id)  &#x21d2; <tt>Object</tt> 
+    .<strong>get_extension_license</strong>(extension_id)  &#x21d2; <tt><span class='object_link'><a href="Licensing/ExtensionLicense.html" title="Sketchup::Licensing::ExtensionLicense (class)">ExtensionLicense</a></span></tt> 
   
 
   
@@ -297,10 +299,6 @@ details.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns ExtensionLicense - an object representing licensing state for the
-extension. Do not store this object, retrieve it again when needed since
-licensing state may have changed.</p>
-
 
   </div>
 </div>
@@ -313,18 +311,21 @@ licensing state may have changed.</p>
         <span class='name'>extension_id</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>String - The Extension Warehouse UUID for the extension.</p>
+<p>The Extension Warehouse UUID for the desired extension.</p>
 </div>
       
     </li>
   
 </ul>
+
+
+</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -332,23 +333,20 @@ licensing state may have changed.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Licensing/ExtensionLicense.html" title="Sketchup::Licensing::ExtensionLicense (class)">ExtensionLicense</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>ExtensionLicense - an object representing licensing state for the
-extension. Do not store this object, retrieve it again when needed since
-licensing state may have changed.</p>
+<p>An object representing licensing state for the extension. Do not store this
+object, retrieve it again when needed since licensing state may have
+changed.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

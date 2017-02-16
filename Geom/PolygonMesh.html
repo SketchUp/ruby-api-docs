@@ -276,7 +276,7 @@ faces.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_polygon-instance_method" title="#add_polygon (instance method)">#<strong>add_polygon</strong>(points)  &#x21d2; Integer </a>
+      <a href="#add_polygon-instance_method" title="#add_polygon (instance method)">#<strong>add_polygon</strong>(*args)  &#x21d2; Integer, 0 </a>
     
 
     
@@ -291,7 +291,8 @@ faces.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">#add_polygon</a></span> method is used for adding a polygon to a polygon mesh.</p>
+<p>The <code>add_polygon</code> method is used for adding a polygon to a
+PolygonMesh.</p>
 </div></span>
   
 </li>
@@ -948,7 +949,17 @@ pre-allocate to speed up adding points and polygons.</p>
   <h3 class="signature " id="add_polygon-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_polygon</strong>(points)  &#x21d2; <tt>Integer</tt> 
+    
+      <span class="overload">#<strong>add_polygon</strong>(index, index, index, ...)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+    
+      <span class="overload">#<strong>add_polygon</strong>(index_array)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+    
+      <span class="overload">#<strong>add_polygon</strong>(point3d, point3d, point3d, ...)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+    
+      <span class="overload">#<strong>add_polygon</strong>(point3d_array)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+    
+      <span class="overload">#<strong>add_polygon</strong>(array)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+    
   
 
   
@@ -957,7 +968,141 @@ pre-allocate to speed up adding points and polygons.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">#add_polygon</a></span> method is used for adding a polygon to a polygon mesh.</p>
+<p>The <code>add_polygon</code> method is used for adding a polygon to a
+PolygonMesh. All variations of this method require at least 3 elements to
+define a polygon, although more may be given.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_polygon</strong>(index, index, index, ...)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a polygon from a list of the mesh&#39;s vertex indices.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">new</a></span></span>
+<span class='comment'># add points to mesh...
+</span><span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_polygon_index'>polygon_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An index of a vertex in the mesh. Remember that mesh indices start at 1.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>...</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Additional indices (optional)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_polygon</strong>(index_array)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a polygon from an Array of the mesh&#39;s vertex indices.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">new</a></span></span>
+<span class='comment'># add points to mesh...
+</span><span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_polygon_index'>polygon_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index_array</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An <span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span> of point indices.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_polygon</strong>(point3d, point3d, point3d, ...)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a polygon from a list of Point3d objects.</p>
 
 
   </div>
@@ -972,39 +1117,159 @@ pre-allocate to speed up adding points and polygons.</p>
 <span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_index'>index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_polygon_index'>polygon_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rparen'>)</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the index of the polygon in the mesh</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
       
-        <span class='name'>points</span>
+        <span class='name'>point3d</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>...</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A list of points that represent the polygon&#39;s vertices.</p>
+<p>Additional points (optional)</p>
 </div>
       
     </li>
   
 </ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>When using Arrays in place of Point3d objects. Normally Arrays may be used
+in place of Point3d objects in most SketchUp methods. This method is an
+exception to that rule.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_polygon</strong>(point3d_array)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a polygon from an Array of Point3d objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_polygon_index'>polygon_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span><span class='comma'>,</span> <span class='id identifier rubyid_point3'>point3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point3d_array</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_polygon</strong>(array)  &#x21d2; <tt>Integer</tt>, <tt>0</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a polygon from an Array of 3-element Arrays.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='float'>0.5</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_polygon_index'>polygon_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_pts'>pts</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_mesh'>mesh</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>array</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(3)&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of arrays of length 3, where the inner arrays are used as if they
+were Point3d objects.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1018,15 +1283,26 @@ pre-allocate to speed up adding points and polygons.</p>
       
         &mdash;
         <div class='inline'>
-<p>the index of the polygon in the mesh</p>
+<p>The index of the polygon in the mesh.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>0</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Invalid index. Returned if the method failed to create a polygon.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

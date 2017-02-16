@@ -382,7 +382,7 @@ model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Object </a>
+      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Integer </a>
     
 
     
@@ -396,9 +396,7 @@ model.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Integer - the number of pages if successful.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -454,7 +452,7 @@ model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Object </a>
+      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Integer </a>
     
 
     
@@ -469,7 +467,7 @@ model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span> method is used to retrieve the number of pages.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Pages#length (method)">#length</a></span> method is an alias for <span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span>.</p>
 </div></span>
   
 </li>
@@ -600,7 +598,7 @@ show) at a given time in seconds.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#size-instance_method" title="#size (instance method)">#<strong>size</strong>  &#x21d2; Object </a>
+      <a href="#size-instance_method" title="#size (instance method)">#<strong>size</strong>  &#x21d2; Integer </a>
     
 
     
@@ -1382,7 +1380,7 @@ the PagesObserver interface for more details.</p>
   <h3 class="signature " id="count-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>count</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>count</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1400,8 +1398,6 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </div>
   </div>
 
-
-<p>Returns integer - the number of pages if successful</p>
 
 
   </div>
@@ -1425,14 +1421,9 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>integer - the number of pages if successful</p>
-</div>
       
     </li>
   
@@ -1656,7 +1647,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   <h3 class="signature " id="length-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>length</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>length</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1665,8 +1656,6 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span> method is used to retrieve the number of pages.</p>
-
 <p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Pages#length (method)">#length</a></span> method is an alias for <span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span>.</p>
 
 
@@ -1681,7 +1670,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
       <pre class="example code"><code><span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
 <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Page 1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Page 2</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span></code></pre>
+<span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>
 
@@ -1691,18 +1680,20 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>integer - the number of pages if successful</p>
-</div>
       
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1713,7 +1704,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
       
         
         <div class='inline'>
-<p>SketchUp 6.0</p>
+<p>SketchUp 2014</p>
 </div>
       
     </li>
@@ -2172,7 +2163,7 @@ show) at a given time in seconds.</p>
   <h3 class="signature " id="size-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>size</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>size</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -2182,8 +2173,6 @@ show) at a given time in seconds.</p>
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span> method is used to retrieve the number of pages.</p>
-
-<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Pages#length (method)">#length</a></span> method is an alias for <span class='object_link'><a href="#size-instance_method" title="Sketchup::Pages#size (method)">#size</a></span>.</p>
 
 
   </div>
@@ -2207,18 +2196,20 @@ show) at a given time in seconds.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>integer - the number of pages if successful</p>
-</div>
       
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#length-instance_method" title="Sketchup::Pages#length (method)">#length</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
