@@ -200,8 +200,8 @@ in a model. Typically, you will access this via the active_model:</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>There are </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> styles in your model.</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>There are </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='embexpr_end'>}</span><span class='tstring_content'> styles in your model.</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -244,7 +244,7 @@ in a model. Typically, you will access this via the active_model:</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(name_or_index)  &#x21d2; Object </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(arg)  &#x21d2; Object </a>
     
 
     
@@ -259,7 +259,7 @@ in a model. Typically, you will access this via the active_model:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The [] method is used to retrieves a style by either name or index.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Styles#[] (method)">#[]</a></span> method is used to retrieves a style by either name or index.</p>
 </div></span>
   
 </li>
@@ -268,7 +268,7 @@ in a model. Typically, you will access this via the active_model:</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#active_style-instance_method" title="#active_style (instance method)">#<strong>active_style</strong>  &#x21d2; Object </a>
+      <a href="#active_style-instance_method" title="#active_style (instance method)">#<strong>active_style</strong>  &#x21d2; Sketchup::Style </a>
     
 
     
@@ -283,7 +283,7 @@ in a model. Typically, you will access this via the active_model:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The active_style method is used to retrieve the active style.</p>
+<p>The #<span class='object_link'><a href="#active_style-instance_method" title="Sketchup::Styles#active_style (method)">#active_style</a></span> method is used to retrieve the active style.</p>
 </div></span>
   
 </li>
@@ -292,7 +292,7 @@ in a model. Typically, you will access this via the active_model:</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#active_style_changed-instance_method" title="#active_style_changed (instance method)">#<strong>active_style_changed</strong>  &#x21d2; Object </a>
+      <a href="#active_style_changed-instance_method" title="#active_style_changed (instance method)">#<strong>active_style_changed</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -307,7 +307,7 @@ in a model. Typically, you will access this via the active_model:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The active_style_changed method tells you if the active style has been
+<p>The <span class='object_link'><a href="#active_style_changed-instance_method" title="Sketchup::Styles#active_style_changed (method)">#active_style_changed</a></span> method tells you if the active style has been
 edited by the user since it was last saved.</p>
 </div></span>
   
@@ -317,7 +317,7 @@ edited by the user since it was last saved.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_style-instance_method" title="#add_style (instance method)">#<strong>add_style</strong>(filename, select)  &#x21d2; Object </a>
+      <a href="#add_style-instance_method" title="#add_style (instance method)">#<strong>add_style</strong>(filename, select)  &#x21d2; Boolean </a>
     
 
     
@@ -332,7 +332,7 @@ edited by the user since it was last saved.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_style method is used to create and load a style from the given
+<p>The <span class='object_link'><a href="#add_style-instance_method" title="Sketchup::Styles#add_style (method)">#add_style</a></span> method is used to create and load a style from the given
 file.</p>
 </div></span>
   
@@ -342,7 +342,7 @@ file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Object </a>
+      <a href="#count-instance_method" title="#count (instance method)">#<strong>count</strong>  &#x21d2; Integer </a>
     
 
     
@@ -356,9 +356,7 @@ file.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Integer - the number of styles found.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -366,7 +364,7 @@ file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|style| ... } &#x21d2; Object </a>
+      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|style| ... } &#x21d2; nil </a>
     
 
     
@@ -381,7 +379,7 @@ file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The each method is used to iterate through styles.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Styles#each (method)">#each</a></span> method is used to iterate through styles.</p>
 </div></span>
   
 </li>
@@ -414,7 +412,7 @@ file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#parent-instance_method" title="#parent (instance method)">#<strong>parent</strong>  &#x21d2; Object </a>
+      <a href="#parent-instance_method" title="#parent (instance method)">#<strong>parent</strong>  &#x21d2; Sketchup::Model </a>
     
 
     
@@ -429,7 +427,7 @@ file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>parent pointer, so we can&#39;t use the normal “parent” method from Entity.</p>
+<p>The <span class='object_link'><a href="#parent-instance_method" title="Sketchup::Styles#parent (method)">#parent</a></span> method is used to return the model for the styles.</p>
 </div></span>
   
 </li>
@@ -438,7 +436,7 @@ file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#purge_unused-instance_method" title="#purge_unused (instance method)">#<strong>purge_unused</strong>  &#x21d2; Object </a>
+      <a href="#purge_unused-instance_method" title="#purge_unused (instance method)">#<strong>purge_unused</strong>  &#x21d2; true </a>
     
 
     
@@ -453,7 +451,7 @@ file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The purge_unused method is used to remove unused styles from the model.</p>
+<p>The <span class='object_link'><a href="#purge_unused-instance_method" title="Sketchup::Styles#purge_unused (method)">#purge_unused</a></span> method is used to remove unused styles from the model.</p>
 </div></span>
   
 </li>
@@ -462,7 +460,7 @@ file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#selected_style-instance_method" title="#selected_style (instance method)">#<strong>selected_style</strong>  &#x21d2; Object </a>
+      <a href="#selected_style-instance_method" title="#selected_style (instance method)">#<strong>selected_style</strong>  &#x21d2; Sketchup::Style </a>
     
 
     
@@ -477,7 +475,8 @@ file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The selected_style method is used to retrieve the currently selected style.</p>
+<p>The <span class='object_link'><a href="#selected_style-instance_method" title="Sketchup::Styles#selected_style (method)">#selected_style</a></span> method is used to retrieve the currently selected
+style.</p>
 </div></span>
   
 </li>
@@ -486,7 +485,7 @@ file.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#selected_style=-instance_method" title="#selected_style (instance method)">#<strong>selected_style</strong>(style)  &#x21d2; Object </a>
+      <a href="#selected_style=-instance_method" title="#selected_style= (instance method)">#<strong>selected_style=</strong>(style)  &#x21d2; false </a>
     
 
     
@@ -501,7 +500,7 @@ file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The selected_style= method is used to set the currently selected style.</p>
+<p>The <span class='object_link'><a href="#selected_style=-instance_method" title="Sketchup::Styles#selected_style= (method)">#selected_style=</a></span> method is used to set the currently selected style.</p>
 </div></span>
   
 </li>
@@ -535,7 +534,7 @@ collection.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update_selected_style-instance_method" title="#update_selected_style (instance method)">#<strong>update_selected_style</strong>  &#x21d2; Object </a>
+      <a href="#update_selected_style-instance_method" title="#update_selected_style (instance method)">#<strong>update_selected_style</strong>  &#x21d2; true </a>
     
 
     
@@ -550,8 +549,8 @@ collection.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The update_selected_style method returns true if the selected style was
-changed (e.g. the user selected a different style).</p>
+<p>The <span class='object_link'><a href="#update_selected_style-instance_method" title="Sketchup::Styles#update_selected_style (method)">#update_selected_style</a></span> method commits the current style settings to
+the style selected in the Style Browser.</p>
 </div></span>
   
 </li>
@@ -583,7 +582,11 @@ changed (e.g. the user selected a different style).</p>
   <h3 class="signature first" id="[]-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>[]</strong>(name_or_index)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>[]</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt><sup>?</sup> </span>
+    
+      <span class="overload">#<strong>[]</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt><sup>?</sup> </span>
+    
   
 
   
@@ -592,7 +595,7 @@ changed (e.g. the user selected a different style).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The [] method is used to retrieves a style by either name or index.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Styles#[] (method)">#[]</a></span> method is used to retrieves a style by either name or index.</p>
 
 
   </div>
@@ -603,17 +606,21 @@ changed (e.g. the user selected a different style).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
 <span class='id identifier rubyid_style1'>style1</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_style2'>style2</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>name</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></code></pre>
+<span class='id identifier rubyid_style2'>style2</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MyStyle</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>[]</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns style - a Style object if successful</p>
-
 
   </div>
 </div>
@@ -623,16 +630,16 @@ changed (e.g. the user selected a different style).</p>
   
     <li>
       
-        <span class='name'>name_or_index</span>
+        <span class='name'>name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The string name or index for a specific style.</p>
+<p>The name of the style to retrieve.</p>
 </div>
       
     </li>
@@ -645,20 +652,66 @@ changed (e.g. the user selected a different style).</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt>, <tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>style - a Style object if successful</p>
-</div>
       
     </li>
   
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>[]</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The index of the style to retrieve.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -684,7 +737,7 @@ changed (e.g. the user selected a different style).</p>
   <h3 class="signature " id="active_style-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>active_style</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>active_style</strong>  &#x21d2; <tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt> 
   
 
   
@@ -693,7 +746,7 @@ changed (e.g. the user selected a different style).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The active_style method is used to retrieve the active style.</p>
+<p>The #<span class='object_link'><a href="#active_style-instance_method" title="Sketchup::Styles#active_style (method)">#active_style</a></span> method is used to retrieve the active style.</p>
 
 
   </div>
@@ -704,9 +757,8 @@ changed (e.g. the user selected a different style).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_style'>style</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_active_style'>active_style</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The active style is: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_active_style'>active_style</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_style'>style</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_active_style'>active_style</span></code></pre>
     
   </div>
 
@@ -716,14 +768,9 @@ changed (e.g. the user selected a different style).</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>style - the active Style object.</p>
-</div>
       
     </li>
   
@@ -752,7 +799,7 @@ changed (e.g. the user selected a different style).</p>
   <h3 class="signature " id="active_style_changed-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>active_style_changed</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>active_style_changed</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -761,7 +808,7 @@ changed (e.g. the user selected a different style).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The active_style_changed method tells you if the active style has been
+<p>The <span class='object_link'><a href="#active_style_changed-instance_method" title="Sketchup::Styles#active_style_changed (method)">#active_style_changed</a></span> method tells you if the active style has been
 edited by the user since it was last saved.</p>
 
 
@@ -773,9 +820,8 @@ edited by the user since it was last saved.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_user_made_change'>user_made_change</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_active_style_changed'>active_style_changed</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The active style was edited: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_user_made_change'>user_made_change</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_style_changed'>style_changed</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_active_style_changed'>active_style_changed</span></code></pre>
     
   </div>
 
@@ -785,15 +831,9 @@ edited by the user since it was last saved.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>changed - true if the active style has been changed from when it was last
-saved.</p>
-</div>
       
     </li>
   
@@ -822,7 +862,7 @@ saved.</p>
   <h3 class="signature " id="add_style-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_style</strong>(filename, select)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_style</strong>(filename, select)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -831,7 +871,7 @@ saved.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_style method is used to create and load a style from the given
+<p>The <span class='object_link'><a href="#add_style-instance_method" title="Sketchup::Styles#add_style (method)">#add_style</a></span> method is used to create and load a style from the given
 file.</p>
 
 
@@ -843,22 +883,12 @@ file.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_add_style'>add_style</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:\\MyStyle.style</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A style was added: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>./MyStyle.style</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_add_style'>add_style</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns status - true if successful, false if unsuccessful.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -866,14 +896,9 @@ file.</p>
         <span class='name'>filename</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The filename for the style.</p>
-</div>
       
     </li>
   
@@ -882,13 +907,13 @@ file.</p>
         <span class='name'>select</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>true if you want to set the style to be the active style, false if not.</p>
+<p><code>true</code> if you want to set the style to be the active style.</p>
 </div>
       
     </li>
@@ -901,21 +926,13 @@ file.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if successful, false if unsuccessful.</p>
-</div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -940,7 +957,7 @@ file.</p>
   <h3 class="signature " id="count-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>count</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>count</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -959,8 +976,6 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   </div>
 
 
-<p>Returns integer - the number of styles found.</p>
-
 
   </div>
 </div>
@@ -970,7 +985,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
     
   </div>
@@ -981,14 +996,9 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>integer - the number of styles found.</p>
-</div>
       
     </li>
   
@@ -1017,7 +1027,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   <h3 class="signature " id="each-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>each</strong> {|style| ... } &#x21d2; <tt>Object</tt> 
+    #<strong>each</strong> {|style| ... } &#x21d2; <tt>nil</tt> 
   
 
   
@@ -1026,7 +1036,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The each method is used to iterate through styles.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Styles#each (method)">#each</a></span> method is used to iterate through styles.</p>
 
 
   </div>
@@ -1037,27 +1047,24 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span><span class='op'>|</span> <span class='id identifier rubyid_style'>style</span> <span class='op'>|</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>style: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_style'>style</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_style'>style</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_style'>style</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
 <span class='rbrace'>}</span></code></pre>
     
   </div>
 
-<p class="tag_title">Yields:</p>
-<ul class="yield">
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
   
     <li>
       
-      
-        <span class='type'>(<tt>style</tt>)</span>
-      
+        <span class='name'>style</span>
       
       
-        &mdash;
-        <div class='inline'>
-<p>Variable that will hold each style as it is found.</p>
-</div>
+        <span class='type'>(<tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt>)</span>
+      
+      
       
     </li>
   
@@ -1068,14 +1075,9 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
@@ -1124,7 +1126,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span></code></pre>
     
   </div>
@@ -1173,7 +1175,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   <h3 class="signature " id="parent-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>parent</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>parent</strong>  &#x21d2; <tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt> 
   
 
   
@@ -1182,31 +1184,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>parent pointer, so we can&#39;t use the normal “parent” method from Entity</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="purge_unused-instance_method">
-  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
-  
-    #<strong>purge_unused</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>The purge_unused method is used to remove unused styles from the model.</p>
+<p>The <span class='object_link'><a href="#parent-instance_method" title="Sketchup::Styles#parent (method)">#parent</a></span> method is used to return the model for the styles.</p>
 
 
   </div>
@@ -1217,9 +1195,8 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_purge_unused'>purge_unused</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Purging Unused styles status: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span></code></pre>
     
   </div>
 
@@ -1229,14 +1206,71 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
       
       
       
         
         <div class='inline'>
-<p>status - true if successful, false if unsuccessful.</p>
+<p>SketchUp 6.0</p>
 </div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="purge_unused-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>purge_unused</strong>  &#x21d2; <tt>true</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#purge_unused-instance_method" title="Sketchup::Styles#purge_unused (method)">#purge_unused</a></span> method is used to remove unused styles from the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_purge_unused'>purge_unused</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>true</tt>)</span>
+      
+      
       
     </li>
   
@@ -1265,7 +1299,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   <h3 class="signature " id="selected_style-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>selected_style</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>selected_style</strong>  &#x21d2; <tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt> 
   
 
   
@@ -1274,7 +1308,8 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The selected_style method is used to retrieve the currently selected style.</p>
+<p>The <span class='object_link'><a href="#selected_style-instance_method" title="Sketchup::Styles#selected_style (method)">#selected_style</a></span> method is used to retrieve the currently selected
+style.</p>
 
 
   </div>
@@ -1285,9 +1320,8 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_style'>style</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_selected_style'>selected_style</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The selected style is: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_style'>style</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_style'>style</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_selected_style'>selected_style</span></code></pre>
     
   </div>
 
@@ -1297,13 +1331,13 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>style - the selected Style object.</p>
+<p>style</p>
 </div>
       
     </li>
@@ -1333,7 +1367,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   <h3 class="signature " id="selected_style=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>selected_style</strong>(style)  &#x21d2; <tt>Object</tt> 
+    #<strong>selected_style=</strong>(style)  &#x21d2; <tt>false</tt> 
   
 
   
@@ -1342,7 +1376,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The selected_style= method is used to set the currently selected style.</p>
+<p>The <span class='object_link'><a href="#selected_style=-instance_method" title="Sketchup::Styles#selected_style= (method)">#selected_style=</a></span> method is used to set the currently selected style.</p>
 
 
   </div>
@@ -1353,21 +1387,11 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_selected_style'>selected_style</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='lbracket'>[</span><span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_selected_style'>selected_style</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns false</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -1375,14 +1399,9 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
         <span class='name'>style</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Sketchup::Style</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The style object to select.</p>
-</div>
       
     </li>
   
@@ -1394,21 +1413,13 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>false</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>false</p>
-</div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1454,7 +1465,7 @@ collection.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
 <span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span></code></pre>
     
   </div>
@@ -1503,7 +1514,7 @@ collection.</p>
   <h3 class="signature " id="update_selected_style-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>update_selected_style</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>update_selected_style</strong>  &#x21d2; <tt>true</tt> 
   
 
   
@@ -1512,8 +1523,8 @@ collection.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The update_selected_style method returns true if the selected style was
-changed (e.g. the user selected a different style).</p>
+<p>The <span class='object_link'><a href="#update_selected_style-instance_method" title="Sketchup::Styles#update_selected_style (method)">#update_selected_style</a></span> method commits the current style settings to
+the style selected in the Style Browser.</p>
 
 
   </div>
@@ -1524,9 +1535,8 @@ changed (e.g. the user selected a different style).</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'>styles</span>
-<span class='id identifier rubyid_success'>success</span> <span class='op'>=</span> <span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_update_selected_style'>update_selected_style</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>The selected style was switched: </span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_success'>success</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_styles'>styles</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_styles'><span class='object_link'><a href="Model.html#styles-instance_method" title="Sketchup::Model#styles (method)">styles</a></span></span>
+<span class='id identifier rubyid_styles'>styles</span><span class='period'>.</span><span class='id identifier rubyid_update_selected_style'>update_selected_style</span></code></pre>
     
   </div>
 
@@ -1536,18 +1546,20 @@ changed (e.g. the user selected a different style).</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>true</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the style was switched</p>
-</div>
       
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#selected_style-instance_method" title="Sketchup::Styles#selected_style (method)">#selected_style</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
