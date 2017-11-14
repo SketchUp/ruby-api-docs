@@ -20,7 +20,7 @@
     <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
     <meta name="title" content="Class: Sketchup::ComponentInstance" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="The ComponentInstance class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model." />
+    <meta name="description" content="The Sketchup::ComponentInstance class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::ComponentInstance" />
     <meta property="og:url"       content="http://ruby.sketchup.com/Sketchup/ComponentInstance.html" />
-    <meta property="og:description" content="The ComponentInstance class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model." />
+    <meta property="og:description" content="The Sketchup::ComponentInstance class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Sketchup::ComponentInstance" />
-    <meta name="twitter:description" content="The ComponentInstance class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model." />
+    <meta name="twitter:description" content="The Sketchup::ComponentInstance class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model." />
     <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="http://ruby.sketchup.com/Sketchup/ComponentInstance.html" />
   <!-- STYLESHEETS -->
@@ -185,12 +185,18 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The ComponentInstance class is used to represent component instances of a
-component definition or components that have been dragged from the
-Component Browser and placed (thus, instanced) within the Model. Therefore,
-the ComponentInstance class contains a reference to a corresponding
-ComponentDefinition object and a Transformation object (which contains the
-location of the component in the Drawing Window).</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class is used to represent component
+instances of a component definition or components that have been dragged
+from the Component Browser and placed (thus, instanced) within the Model.
+Therefore, the ComponentInstance class contains a reference to a
+corresponding ComponentDefinition object and a Transformation object (which
+contains the location of the component in the Drawing Window).</p>
+
+<p>Starting from SketchUp 2018+, the <span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class
+contains default attributes when created or imported. The attributes are:
+“Owner”, “Status”. See the <a href="https://help.sketchup.com/en/article/3000124" target="_parent" title="Help article">Help article</a> for more information. The dictionary cannot be deleted via
+ruby and an @raise ArgumentError will be raised. The key/value pairs in the
+dictionary can be deleted safely.</p>
 
 
   </div>
@@ -236,7 +242,7 @@ location of the component in the Drawing Window).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -260,7 +266,7 @@ location of the component in the Drawing Window).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#definition-instance_method" title="#definition (instance method)">#<strong>definition</strong>  &#x21d2; Object </a>
+      <a href="#definition-instance_method" title="#definition (instance method)">#<strong>definition</strong>  &#x21d2; Sketchup::ComponentDefinition </a>
     
 
     
@@ -285,7 +291,7 @@ component instance.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#definition=-instance_method" title="#definition= (instance method)">#<strong>definition=</strong>(definition)  &#x21d2; Object </a>
+      <a href="#definition=-instance_method" title="#definition= (instance method)">#<strong>definition=</strong>(definition)  &#x21d2; Sketchup::ComponentDefinition </a>
     
 
     
@@ -310,7 +316,7 @@ component.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#equals%3F-instance_method" title="#equals? (instance method)">#<strong>equals?</strong>(instance)  &#x21d2; Object </a>
+      <a href="#equals%3F-instance_method" title="#equals? (instance method)">#<strong>equals?</strong>(instance)  &#x21d2; Boolean </a>
     
 
     
@@ -335,7 +341,7 @@ geometrically equivalent to another instance.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#explode-instance_method" title="#explode (instance method)">#<strong>explode</strong>  &#x21d2; Object </a>
+      <a href="#explode-instance_method" title="#explode (instance method)">#<strong>explode</strong>  &#x21d2; Array&lt;Sketchup:Entity&gt; </a>
     
 
     
@@ -360,7 +366,7 @@ entities.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#glued_to-instance_method" title="#glued_to (instance method)">#<strong>glued_to</strong>  &#x21d2; Object </a>
+      <a href="#glued_to-instance_method" title="#glued_to (instance method)">#<strong>glued_to</strong>  &#x21d2; Sketchup::Face<sup>?</sup> </a>
     
 
     
@@ -385,7 +391,7 @@ glued to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#glued_to=-instance_method" title="#glued_to= (instance method)">#<strong>glued_to=</strong>(face)  &#x21d2; Object </a>
+      <a href="#glued_to=-instance_method" title="#glued_to= (instance method)">#<strong>glued_to=</strong>(face)  &#x21d2; Sketchup::Face<sup>?</sup> </a>
     
 
     
@@ -409,7 +415,7 @@ glued to.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#guid-instance_method" title="#guid (instance method)">#<strong>guid</strong>  &#x21d2; Object </a>
+      <a href="#guid-instance_method" title="#guid (instance method)">#<strong>guid</strong>  &#x21d2; String </a>
     
 
     
@@ -434,7 +440,7 @@ SketchUp object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#intersect-instance_method" title="#intersect (instance method)">#<strong>intersect</strong>(instance)  &#x21d2; Object </a>
+      <a href="#intersect-instance_method" title="#intersect (instance method)">#<strong>intersect</strong>(instance)  &#x21d2; Sketchup::Group<sup>?</sup> </a>
     
 
     
@@ -459,7 +465,7 @@ instances representing manifold solid volumes (this - arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#locked=-instance_method" title="#locked= (instance method)">#<strong>locked=</strong>(lock)  &#x21d2; Object </a>
+      <a href="#locked=-instance_method" title="#locked= (instance method)">#<strong>locked=</strong>(lock)  &#x21d2; Boolean </a>
     
 
     
@@ -483,7 +489,7 @@ instances representing manifold solid volumes (this - arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#locked%3F-instance_method" title="#locked? (instance method)">#<strong>locked?</strong>  &#x21d2; Object </a>
+      <a href="#locked%3F-instance_method" title="#locked? (instance method)">#<strong>locked?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -507,7 +513,7 @@ instances representing manifold solid volumes (this - arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#make_unique-instance_method" title="#make_unique (instance method)">#<strong>make_unique</strong>  &#x21d2; Object </a>
+      <a href="#make_unique-instance_method" title="#make_unique (instance method)">#<strong>make_unique</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -532,7 +538,7 @@ instance that is not used by any other instances.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#manifold%3F-instance_method" title="#manifold? (instance method)">#<strong>manifold?</strong>  &#x21d2; Object </a>
+      <a href="#manifold%3F-instance_method" title="#manifold? (instance method)">#<strong>manifold?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -556,7 +562,7 @@ instance that is not used by any other instances.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#move!-instance_method" title="#move! (instance method)">#<strong>move!</strong>(transform)  &#x21d2; Object </a>
+      <a href="#move!-instance_method" title="#move! (instance method)">#<strong>move!</strong>(transform)  &#x21d2; Boolean </a>
     
 
     
@@ -581,7 +587,7 @@ not record the move as an undo operation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; Object </a>
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
     
 
     
@@ -605,7 +611,7 @@ not record the move as an undo operation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; Object </a>
+      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; Sketchup::ComponentInstance </a>
     
 
     
@@ -629,7 +635,7 @@ not record the move as an undo operation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#outer_shell-instance_method" title="#outer_shell (instance method)">#<strong>outer_shell</strong>(instance)  &#x21d2; Object </a>
+      <a href="#outer_shell-instance_method" title="#outer_shell (instance method)">#<strong>outer_shell</strong>(instance)  &#x21d2; Sketchup::Group<sup>?</sup> </a>
     
 
     
@@ -654,7 +660,7 @@ instances representing manifold solid volumes (this || arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -679,7 +685,7 @@ object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#show_differences-instance_method" title="#show_differences (instance method)">#<strong>show_differences</strong>(instance, verbose)  &#x21d2; Object </a>
+      <a href="#show_differences-instance_method" title="#show_differences (instance method)">#<strong>show_differences</strong>(instance, verbose)  &#x21d2; Boolean </a>
     
 
     
@@ -705,7 +711,7 @@ matching and matching geometry to new layers.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#split-instance_method" title="#split (instance method)">#<strong>split</strong>(instance)  &#x21d2; Object </a>
+      <a href="#split-instance_method" title="#split (instance method)">#<strong>split</strong>(instance)  &#x21d2; Array(Sketchup::Group, Sketchup::Group, Sketchup::Group) </a>
     
 
     
@@ -730,7 +736,7 @@ two instances representing manifold solid volumes (this - arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#subtract-instance_method" title="#subtract (instance method)">#<strong>subtract</strong>(instance)  &#x21d2; Object </a>
+      <a href="#subtract-instance_method" title="#subtract (instance method)">#<strong>subtract</strong>(instance)  &#x21d2; Sketchup::Group<sup>?</sup> </a>
     
 
     
@@ -779,7 +785,7 @@ instances representing manifold solid volumes (this - arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transformation-instance_method" title="#transformation (instance method)">#<strong>transformation</strong>  &#x21d2; Object </a>
+      <a href="#transformation-instance_method" title="#transformation (instance method)">#<strong>transformation</strong>  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -804,7 +810,7 @@ instance.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transformation=-instance_method" title="#transformation= (instance method)">#<strong>transformation=</strong>(transformation)  &#x21d2; Object </a>
+      <a href="#transformation=-instance_method" title="#transformation= (instance method)">#<strong>transformation=</strong>(transformation)  &#x21d2; Sketchup::ComponentInstance </a>
     
 
     
@@ -829,7 +835,7 @@ instance.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#trim-instance_method" title="#trim (instance method)">#<strong>trim</strong>(instance)  &#x21d2; Object </a>
+      <a href="#trim-instance_method" title="#trim (instance method)">#<strong>trim</strong>(instance)  &#x21d2; Sketchup::Group<sup>?</sup> </a>
     
 
     
@@ -854,7 +860,7 @@ of the two instances representing manifold solid volumes (this - arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#union-instance_method" title="#union (instance method)">#<strong>union</strong>(instance)  &#x21d2; Object </a>
+      <a href="#union-instance_method" title="#union (instance method)">#<strong>union</strong>(instance)  &#x21d2; Sketchup::Group<sup>?</sup> </a>
     
 
     
@@ -879,7 +885,7 @@ representing manifold solid volumes (this | arg).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#volume-instance_method" title="#volume (instance method)">#<strong>volume</strong>  &#x21d2; Object </a>
+      <a href="#volume-instance_method" title="#volume (instance method)">#<strong>volume</strong>  &#x21d2; Float </a>
     
 
     
@@ -937,7 +943,7 @@ only if this instance is manifold.</p>
   <h3 class="signature first" id="add_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -968,8 +974,6 @@ only if this instance is manifold.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -982,7 +986,7 @@ only if this instance is manifold.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -995,17 +999,20 @@ only if this instance is manifold.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -1013,9 +1020,6 @@ only if this instance is manifold.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1040,7 +1044,7 @@ only if this instance is manifold.</p>
   <h3 class="signature " id="definition-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>definition</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>definition</strong>  &#x21d2; <tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt> 
   
 
   
@@ -1078,13 +1082,13 @@ component instance.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>componentdefinition - a ComponentDefinition object if successful</p>
+<p>a ComponentDefinition object if successful</p>
 </div>
       
     </li>
@@ -1114,7 +1118,7 @@ component instance.</p>
   <h3 class="signature " id="definition=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>definition=</strong>(definition)  &#x21d2; <tt>Object</tt> 
+    #<strong>definition=</strong>(definition)  &#x21d2; <tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt> 
   
 
   
@@ -1154,9 +1158,6 @@ use the same transformation to position it in the Model.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns componentdefinition - the ComponentDefinition object that was set
-if successful, false if unsuccessful</p>
-
 
   </div>
 </div>
@@ -1169,7 +1170,7 @@ if successful, false if unsuccessful</p>
         <span class='name'>definition</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
@@ -1182,28 +1183,28 @@ if successful, false if unsuccessful</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>componentdefinition - the ComponentDefinition object that was set if
-successful, false if unsuccessful</p>
+<p>the ComponentDefinition object that was set if successful, false if
+unsuccessful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1228,7 +1229,7 @@ successful, false if unsuccessful</p>
   <h3 class="signature " id="equals?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>equals?</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>equals?</strong>(instance)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1259,9 +1260,6 @@ geometrically equivalent to another instance.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if the instances are geometrically equivalent.
-Otherwise false.</p>
-
 
   </div>
 </div>
@@ -1274,7 +1272,7 @@ Otherwise false.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -1287,30 +1285,20 @@ Otherwise false.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the instances are geometrically equivalent. Otherwise
-false.</p>
-</div>
       
     </li>
-  
-</ul>
-
-</div>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
   
     <li>
       
@@ -1346,7 +1334,7 @@ false.</p>
   <h3 class="signature " id="explode-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>explode</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>explode</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Sketchup:Entity&gt;</tt> 
   
 
   
@@ -1383,11 +1371,11 @@ entities.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Sketchup:Entity&gt;</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>An array of entity objects if successful, false if unsuccessful</p>
 </div>
@@ -1419,7 +1407,7 @@ entities.</p>
   <h3 class="signature " id="glued_to-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>glued_to</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>glued_to</strong>  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> 
   
 
   
@@ -1461,13 +1449,13 @@ glued to.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>entity - the Entity object that the instance is glued to (if successful)</p>
+<p>the Entity object that the instance is glued to (if successful)</p>
 </div>
       
     </li>
@@ -1497,7 +1485,7 @@ glued to.</p>
   <h3 class="signature " id="glued_to=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>glued_to=</strong>(face)  &#x21d2; <tt>Object</tt> 
+    #<strong>glued_to=</strong>(face)  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> 
   
 
   
@@ -1555,8 +1543,6 @@ doesn&#39;t support gluing or if the alignment is wrong.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns face - the Face object where the component is glued if successful</p>
-
 
   </div>
 </div>
@@ -1569,13 +1555,16 @@ doesn&#39;t support gluing or if the alignment is wrong.</p>
         <span class='name'>face</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
     </li>
   
 </ul>
+
+
+</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1583,21 +1572,21 @@ doesn&#39;t support gluing or if the alignment is wrong.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
-        <div class='inline'>
-<p>face - the Face object where the component is glued if successful</p>
+        &mdash;
+        <div class='inline'><ul><li>
+<p>the Face object where the component is glued if</p>
+</li></ul>
+
+<p>successful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1622,7 +1611,7 @@ doesn&#39;t support gluing or if the alignment is wrong.</p>
   <h3 class="signature " id="guid-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>guid</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>guid</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -1657,13 +1646,13 @@ SketchUp object.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>guid - a unique 22 character string</p>
+<p>a unique 22 character string</p>
 </div>
       
     </li>
@@ -1693,7 +1682,7 @@ SketchUp object.</p>
   <h3 class="signature " id="intersect-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>intersect</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>intersect</strong>(instance)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt><sup>?</sup> 
   
 
   
@@ -1726,10 +1715,6 @@ method fails.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns result - The resultant group if the two objects (this and arg)
-represent manifold solids and the operation succeeds otherwise nil is
-returned.</p>
-
 
   </div>
 </div>
@@ -1742,7 +1727,7 @@ returned.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -1755,28 +1740,28 @@ returned.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - The resultant group if the two objects (this and arg) represent
-manifold solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold
+solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1801,7 +1786,7 @@ manifold solids and the operation succeeds otherwise nil is returned.</p>
   <h3 class="signature " id="locked=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>locked=</strong>(lock)  &#x21d2; <tt>Object</tt> 
+    #<strong>locked=</strong>(lock)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1832,9 +1817,6 @@ manifold solids and the operation succeeds otherwise nil is returned.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if the component instance is locked. False if the
-instance is not locked.</p>
-
 
   </div>
 </div>
@@ -1855,28 +1837,28 @@ instance is not locked.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if the component instance is locked. False if the instance is
-not locked.</p>
+<p>true if the component instance is locked. False if the instance is not
+locked.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1901,7 +1883,7 @@ not locked.</p>
   <h3 class="signature " id="locked?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>locked?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>locked?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1935,15 +1917,9 @@ not locked.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the component instance is locked. False if the instance is
-not locked.</p>
-</div>
       
     </li>
   
@@ -1981,7 +1957,7 @@ not locked.</p>
   <h3 class="signature " id="make_unique-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>make_unique</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>make_unique</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2023,13 +1999,13 @@ instance that is not used by any other instances.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if successful, false if unsuccessful</p>
+<p>true if successful, false if unsuccessful</p>
 </div>
       
     </li>
@@ -2059,7 +2035,7 @@ instance that is not used by any other instances.</p>
   <h3 class="signature " id="manifold?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>manifold?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>manifold?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2093,15 +2069,9 @@ instance that is not used by any other instances.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the instance is manifold. false if the instance is not
-manifold.</p>
-</div>
       
     </li>
   
@@ -2139,7 +2109,7 @@ manifold.</p>
   <h3 class="signature " id="move!-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>move!</strong>(transform)  &#x21d2; <tt>Object</tt> 
+    #<strong>move!</strong>(transform)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2175,8 +2145,6 @@ transition.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if successful, false if unsuccessful</p>
-
 
   </div>
 </div>
@@ -2189,7 +2157,7 @@ transition.</p>
         <span class='name'>transform</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
       
@@ -2202,27 +2170,27 @@ transition.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if successful, false if unsuccessful</p>
+<p>true if successful, false if unsuccessful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2247,7 +2215,7 @@ transition.</p>
   <h3 class="signature " id="name-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>name</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>name</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -2281,13 +2249,13 @@ transition.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>name - the string name of the ComponentInstance</p>
+<p>the string name of the ComponentInstance</p>
 </div>
       
     </li>
@@ -2317,7 +2285,7 @@ transition.</p>
   <h3 class="signature " id="name=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>name=</strong>(name)  &#x21d2; <tt>Object</tt> 
+    #<strong>name=</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt> 
   
 
   
@@ -2348,8 +2316,6 @@ transition.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns instance - the newly named ComponentInstance</p>
-
 
   </div>
 </div>
@@ -2362,18 +2328,21 @@ transition.</p>
         <span class='name'>name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>name - the string name to set</p>
+<p>the string name to set</p>
 </div>
       
     </li>
   
 </ul>
+
+
+</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2381,21 +2350,18 @@ transition.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>instance - the newly named ComponentInstance</p>
+<p>the newly named ComponentInstance</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2420,7 +2386,7 @@ transition.</p>
   <h3 class="signature " id="outer_shell-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>outer_shell</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>outer_shell</strong>(instance)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt><sup>?</sup> 
   
 
   
@@ -2453,10 +2419,6 @@ method fails.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns result - The resultant group if the two objects (this and arg)
-represent manifold solids and the operation succeeds otherwise nil is
-returned.</p>
-
 
   </div>
 </div>
@@ -2469,7 +2431,7 @@ returned.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -2482,28 +2444,28 @@ returned.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - The resultant group if the two objects (this and arg) represent
-manifold solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold
+solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2528,7 +2490,7 @@ manifold solids and the operation succeeds otherwise nil is returned.</p>
   <h3 class="signature " id="remove_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2560,8 +2522,6 @@ object.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -2574,7 +2534,7 @@ object.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -2587,17 +2547,20 @@ object.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -2605,9 +2568,6 @@ object.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2632,7 +2592,7 @@ object.</p>
   <h3 class="signature " id="show_differences-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>show_differences</strong>(instance, verbose)  &#x21d2; <tt>Object</tt> 
+    #<strong>show_differences</strong>(instance, verbose)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2672,9 +2632,6 @@ component to the other is displayed texturally in the Ruby Console.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if the instances are geometrically equivalent,
-otherwise false.</p>
-
 
   </div>
 </div>
@@ -2687,7 +2644,7 @@ otherwise false.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -2703,7 +2660,7 @@ otherwise false.</p>
         <span class='name'>verbose</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
@@ -2717,28 +2674,27 @@ differences to the Ruby console.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if the instances are geometrically equivalent, otherwise
-false.</p>
+<p>true if the instances are geometrically equivalent, otherwise false.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2763,7 +2719,7 @@ false.</p>
   <h3 class="signature " id="split-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>split</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>split</strong>(instance)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>, <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>, <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>)</tt> 
   
 
   
@@ -2796,12 +2752,6 @@ method fails.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Result - A vector (array) of the three resultant groups if the two objects
-(this and arg) represent manifold solids and the operation succeeds
-otherwise Qnil is returned. The 3 groups are as follows: The intersection
-of volume 1 &amp; volume 2, the difference of volume 1 minus volume 2, and
-the reverse difference of volume 2 minus volume 1.</p>
-
 
   </div>
 </div>
@@ -2814,7 +2764,7 @@ the reverse difference of volume 2 minus volume 1.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -2827,31 +2777,31 @@ the reverse difference of volume 2 minus volume 1.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>, <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>, <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>)</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - A vector (array) of the three resultant groups if the two objects
-(this and arg) represent manifold solids and the operation succeeds
-otherwise Qnil is returned. The 3 groups are as follows: The intersection
-of volume 1 &amp; volume 2, the difference of volume 1 minus volume 2, and
-the reverse difference of volume 2 minus volume 1.</p>
+<p>A vector (array) of the three resultant groups if the two objects (this and
+arg) represent manifold solids and the operation succeeds otherwise nil is
+returned. The 3 groups are as follows: The intersection of volume 1 &amp;
+volume 2, the difference of volume 1 minus volume 2, and the reverse
+difference of volume 2 minus volume 1.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2876,7 +2826,7 @@ the reverse difference of volume 2 minus volume 1.</p>
   <h3 class="signature " id="subtract-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>subtract</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>subtract</strong>(instance)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt><sup>?</sup> 
   
 
   
@@ -2909,10 +2859,6 @@ method fails.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns result - The resultant group if the two objects (this and arg)
-represent manifold solids and the operation succeeds otherwise nil is
-returned.</p>
-
 
   </div>
 </div>
@@ -2925,7 +2871,7 @@ returned.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -2938,28 +2884,28 @@ returned.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - The resultant group if the two objects (this and arg) represent
-manifold solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold
+solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3081,7 +3027,7 @@ manifold solids and the operation succeeds otherwise nil is returned.</p>
   <h3 class="signature " id="transformation-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>transformation</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>transformation</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   
@@ -3116,13 +3062,13 @@ instance.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>transformation - the Transformation object if successful</p>
+<p>the Transformation object if successful</p>
 </div>
       
     </li>
@@ -3152,7 +3098,7 @@ instance.</p>
   <h3 class="signature " id="transformation=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>transformation=</strong>(transformation)  &#x21d2; <tt>Object</tt> 
+    #<strong>transformation=</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt> 
   
 
   
@@ -3185,8 +3131,6 @@ instance.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns instance - the transformed ComponentInstance</p>
-
 
   </div>
 </div>
@@ -3199,7 +3143,7 @@ instance.</p>
         <span class='name'>transformation</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
       
@@ -3212,27 +3156,27 @@ instance.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>instance - the transformed ComponentInstance</p>
+<p>the transformed ComponentInstance</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3257,7 +3201,7 @@ instance.</p>
   <h3 class="signature " id="trim-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>trim</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>trim</strong>(instance)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt><sup>?</sup> 
   
 
   
@@ -3290,10 +3234,6 @@ this method fails.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns result - The resultant group if the two objects (this and arg)
-represent manifold solids and the operation succeeds otherwise nil is
-returned.</p>
-
 
   </div>
 </div>
@@ -3306,7 +3246,7 @@ returned.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -3319,28 +3259,28 @@ returned.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - The resultant group if the two objects (this and arg) represent
-manifold solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold
+solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3365,7 +3305,7 @@ manifold solids and the operation succeeds otherwise nil is returned.</p>
   <h3 class="signature " id="union-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>union</strong>(instance)  &#x21d2; <tt>Object</tt> 
+    #<strong>union</strong>(instance)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt><sup>?</sup> 
   
 
   
@@ -3397,10 +3337,6 @@ representing manifold solid volumes (this | arg).  If the specified objects
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns result - The resultant group if the two objects (this and arg)
-represent manifold solids and the operation succeeds otherwise nil is
-returned.</p>
-
 
   </div>
 </div>
@@ -3413,7 +3349,7 @@ returned.</p>
         <span class='name'>instance</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
       
       
       
@@ -3426,28 +3362,28 @@ returned.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>result - The resultant group if the two objects (this and arg) represent
-manifold solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold
+solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3472,7 +3408,7 @@ manifold solids and the operation succeeds otherwise nil is returned.</p>
   <h3 class="signature " id="volume-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>volume</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>volume</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -3507,14 +3443,14 @@ only if this instance is manifold.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>volume - If the instance represents a manifold volume, volume will be a
-positive value.  If volume is negative, the instance is not manifold.</p>
+<p>If the instance represents a manifold volume, volume will be a positive
+value.  If volume is negative, the instance is not manifold.</p>
 </div>
       
     </li>

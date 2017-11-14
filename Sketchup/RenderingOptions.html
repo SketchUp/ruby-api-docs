@@ -327,6 +327,13 @@ Faster.</p>
 <p><code>SectionCutDrawEdges</code></p>
 </li></ul>
 
+<p>Added in SketchUp 2018:</p>
+<ul><li>
+<p><code>SectionCutFilled</code></p>
+</li><li>
+<p><code>SectionDefaultFillColor</code></p>
+</li></ul>
+
 
   </div>
 </div>
@@ -510,10 +517,16 @@ Faster.</p>
         <dt id="ROPSetSectionActiveColor-constant" class="">Sketchup::RenderingOptions::ROPSetSectionActiveColor
         </dt>
       
+        <dt id="ROPSetSectionCutFilled-constant" class="">Sketchup::RenderingOptions::ROPSetSectionCutFilled
+        </dt>
+      
         <dt id="ROPSetSectionCutWidth-constant" class="">Sketchup::RenderingOptions::ROPSetSectionCutWidth
         </dt>
       
         <dt id="ROPSetSectionDefaultCutColor-constant" class="">Sketchup::RenderingOptions::ROPSetSectionDefaultCutColor
+        </dt>
+      
+        <dt id="ROPSetSectionDefaultFillColor-constant" class="">Sketchup::RenderingOptions::ROPSetSectionDefaultFillColor
         </dt>
       
         <dt id="ROPSetSectionDisplayMode-constant" class="">Sketchup::RenderingOptions::ROPSetSectionDisplayMode
@@ -561,7 +574,7 @@ Faster.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each_key-class_method" title="each_key (class method)">.<strong>each_key</strong> {|key| ... } &#x21d2; Object </a>
+      <a href="#each_key-class_method" title="each_key (class method)">.<strong>each_key</strong> {|key| ... } &#x21d2; nil </a>
     
 
     
@@ -585,7 +598,7 @@ Faster.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#keys-class_method" title="keys (class method)">.<strong>keys</strong>  &#x21d2; Object </a>
+      <a href="#keys-class_method" title="keys (class method)">.<strong>keys</strong>  &#x21d2; Array&lt;String&gt; </a>
     
 
     
@@ -622,7 +635,7 @@ Faster.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(key)  &#x21d2; Object </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(key)  &#x21d2; Object<sup>?</sup> </a>
     
 
     
@@ -637,8 +650,7 @@ Faster.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set value [] method is used to get the value in the array of rendering
-options.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::RenderingOptions#[] (method)">#[]</a></span> method is used to get the value of a rendering option.</p>
 </div></span>
   
 </li>
@@ -672,7 +684,7 @@ options.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -746,7 +758,7 @@ pairs.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each_key-instance_method" title="#each_key (instance method)">#<strong>each_key</strong> {|key| ... } &#x21d2; Object </a>
+      <a href="#each_key-instance_method" title="#each_key (instance method)">#<strong>each_key</strong> {|key| ... } &#x21d2; nil </a>
     
 
     
@@ -794,7 +806,7 @@ pairs.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#keys-instance_method" title="#keys (instance method)">#<strong>keys</strong>  &#x21d2; Object </a>
+      <a href="#keys-instance_method" title="#keys (instance method)">#<strong>keys</strong>  &#x21d2; Array&lt;String&gt; </a>
     
 
     
@@ -843,7 +855,7 @@ collection.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -915,7 +927,7 @@ object.</p>
   <h3 class="signature first" id="each_key-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>each_key</strong> {|key| ... } &#x21d2; <tt>Object</tt> 
+    .<strong>each_key</strong> {|key| ... } &#x21d2; <tt>nil</tt> 
   
 
   
@@ -965,14 +977,9 @@ object.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
@@ -1001,7 +1008,7 @@ object.</p>
   <h3 class="signature " id="keys-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>keys</strong>  &#x21d2; <tt>Object</tt> 
+    .<strong>keys</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>&gt;</tt> 
   
 
   
@@ -1031,13 +1038,13 @@ object.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>keys - an array of keys</p>
+<p>an array of keys</p>
 </div>
       
     </li>
@@ -1073,7 +1080,7 @@ object.</p>
   <h3 class="signature first" id="[]-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>[]</strong>(key)  &#x21d2; <tt>Object</tt> 
+    #<strong>[]</strong>(key)  &#x21d2; <tt>Object</tt><sup>?</sup> 
   
 
   
@@ -1082,8 +1089,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set value [] method is used to get the value in the array of rendering
-options.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::RenderingOptions#[] (method)">#[]</a></span> method is used to get the value of a rendering option.</p>
 
 
   </div>
@@ -1097,17 +1103,7 @@ options.</p>
       <pre class="example code"><code><span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DisplayInstanceAxes</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns value - the value that was found.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -1115,13 +1111,13 @@ options.</p>
         <span class='name'>key</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The key of the rendering option value to set.</p>
+<p>The key of the rendering option value to get.</p>
 </div>
       
     </li>
@@ -1134,21 +1130,13 @@ options.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>, <tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>value - the value that was found.</p>
-</div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1201,8 +1189,6 @@ options.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns value - the value that was set</p>
-
 
   </div>
 </div>
@@ -1215,7 +1201,7 @@ options.</p>
         <span class='name'>key</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -1231,7 +1217,7 @@ options.</p>
         <span class='name'>value</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -1244,27 +1230,27 @@ options.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>value - the value that was set</p>
+<p>the value that was set</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1289,7 +1275,7 @@ options.</p>
   <h3 class="signature " id="add_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1317,8 +1303,6 @@ options.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -1331,7 +1315,7 @@ options.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -1344,17 +1328,20 @@ options.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -1362,9 +1349,6 @@ options.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1572,7 +1556,7 @@ pairs.</p>
   <h3 class="signature " id="each_key-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>each_key</strong> {|key| ... } &#x21d2; <tt>Object</tt> 
+    #<strong>each_key</strong> {|key| ... } &#x21d2; <tt>nil</tt> 
   
 
   
@@ -1592,7 +1576,7 @@ pairs.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each_key'><span class='object_link'><a href="#each_key-class_method" title="Sketchup::RenderingOptions.each_key (method)">each_key</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_key'>key</span>
 <span class='rbrace'>}</span></code></pre>
     
@@ -1622,14 +1606,9 @@ pairs.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
@@ -1728,7 +1707,7 @@ pairs.</p>
   <h3 class="signature " id="keys-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>keys</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>keys</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>&gt;</tt> 
   
 
   
@@ -1748,7 +1727,7 @@ pairs.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_keys'>keys</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_keys'>keys</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span><span class='period'>.</span><span class='id identifier rubyid_keys'><span class='object_link'><a href="#keys-class_method" title="Sketchup::RenderingOptions.keys (method)">keys</a></span></span></code></pre>
     
   </div>
 
@@ -1758,13 +1737,13 @@ pairs.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>keys - an array of keys</p>
+<p>an array of keys</p>
 </div>
       
     </li>
@@ -1864,7 +1843,7 @@ collection.</p>
   <h3 class="signature " id="remove_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1895,8 +1874,6 @@ object.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -1909,7 +1886,7 @@ object.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -1922,17 +1899,20 @@ object.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -1940,9 +1920,6 @@ object.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

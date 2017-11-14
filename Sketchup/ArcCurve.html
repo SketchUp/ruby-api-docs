@@ -284,7 +284,7 @@ the circular arc.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#end_angle-instance_method" title="#end_angle (instance method)">#<strong>end_angle</strong>  &#x21d2; Object </a>
+      <a href="#end_angle-instance_method" title="#end_angle (instance method)">#<strong>end_angle</strong>  &#x21d2; Float </a>
     
 
     
@@ -299,7 +299,7 @@ the circular arc.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The end_angle method is used to retrieve the angle of the end of the arc
+<p>The <span class='object_link'><a href="#end_angle-instance_method" title="Sketchup::ArcCurve#end_angle (method)">#end_angle</a></span> method is used to retrieve the angle of the end of the arc
 measured from the X axis in radians.</p>
 </div></span>
   
@@ -566,7 +566,7 @@ the circular arc.</p>
   <h3 class="signature " id="end_angle-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>end_angle</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>end_angle</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -575,7 +575,17 @@ the circular arc.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The end_angle method is used to retrieve the angle of the end of the arc
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>A bug in SketchUp 2017 and older will report the end-angle for some circles
+as more than 360 degrees. In such case, subtract <tt>2 * PI</tt> from the end
+angle value.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#end_angle-instance_method" title="Sketchup::ArcCurve#end_angle (method)">#end_angle</a></span> method is used to retrieve the angle of the end of the arc
 measured from the X axis in radians.</p>
 
 
@@ -588,17 +598,13 @@ measured from the X axis in radians.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a 1/2 circle, normal to the Z axis
-</span><span class='id identifier rubyid_center'>center</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_normal'>normal</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Vector3d.html#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>1</span>
-<span class='id identifier rubyid_xaxis'>xaxis</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Vector3d.html#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span> <span class='int'>1</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='id identifier rubyid_start_a'>start_a</span> <span class='op'>=</span> <span class='float'>0.0</span>
-<span class='id identifier rubyid_end_a'>end_a</span> <span class='op'>=</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span>
+</span><span class='id identifier rubyid_start_a'>start_a</span> <span class='op'>=</span> <span class='float'>0.0</span>
+<span class='id identifier rubyid_end_a'>end_a</span> <span class='op'>=</span> <span class='int'>180</span><span class='period'>.</span><span class='id identifier rubyid_degrees'>degrees</span>
 <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
-<span class='id identifier rubyid_edgearray'>edgearray</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_arc'>add_arc</span> <span class='id identifier rubyid_center'>center</span><span class='comma'>,</span> <span class='id identifier rubyid_xaxis'>xaxis</span><span class='comma'>,</span> <span class='id identifier rubyid_normal'>normal</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='id identifier rubyid_start_a'>start_a</span><span class='comma'>,</span> <span class='id identifier rubyid_end_a'>end_a</span>
-<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_edgearray'>edgearray</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_arccurve'>arccurve</span> <span class='op'>=</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
-<span class='id identifier rubyid_end_angle'>end_angle</span> <span class='op'>=</span> <span class='id identifier rubyid_arccurve'>arccurve</span><span class='period'>.</span><span class='id identifier rubyid_end_angle'>end_angle</span></code></pre>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_arc'>add_arc</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#X_AXIS-constant" title="X_AXIS (constant)">X_AXIS</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#Z_AXIS-constant" title="Z_AXIS (constant)">Z_AXIS</a></span></span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='id identifier rubyid_start_a'>start_a</span><span class='comma'>,</span> <span class='id identifier rubyid_end_a'>end_a</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_arc_curve'>arc_curve</span> <span class='op'>=</span> <span class='id identifier rubyid_edges'>edges</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
+<span class='id identifier rubyid_end_angle'>end_angle</span> <span class='op'>=</span> <span class='id identifier rubyid_arc_curve'>arc_curve</span><span class='period'>.</span><span class='id identifier rubyid_end_angle'>end_angle</span></code></pre>
     
   </div>
 
@@ -608,14 +614,9 @@ measured from the X axis in radians.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>angle - the angle of the end of the arc if successful</p>
-</div>
       
     </li>
   

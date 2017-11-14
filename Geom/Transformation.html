@@ -878,6 +878,15 @@ equivalent to <span class='object_link'><a href="#clone-instance_method" title="
         <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Versions prior to SU2018 would produce transformations which didn&#39;t
+always work right in SketchUp. See <span class='object_link'><a href="#scaling-class_method" title="Geom::Transformation.scaling (method)">scaling</a></span> for more info.</p>
+</div>
+  </div>
+
+
 <p>Creates a transformation that does uniform scaling.</p>
 
 
@@ -1669,9 +1678,10 @@ about an axis.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This might yield an unexpected transformation. It sets the 16th value to
-the scaling factor. Something not all extensions reading the transformation
-expects. Consider using <tt>scaling(xscale, yscale, zscale)</tt> instead.</p>
+<p>This has been fixed in SketchUp 2018 but in previous versions it might
+yield an unexpected transformation. It sets the 16th value to the scaling
+factor. Something not all extensions reading the transformation expects.
+Consider using <tt>scaling(xscale, yscale, zscale)</tt> instead.</p>
 </div>
   </div>
 
@@ -2549,9 +2559,10 @@ translation.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This only looks at the flag to see if the transform has not been modified.
-If the transform has been changed, this will return false even if it is
-really the identity.</p>
+<p>As of SketchUp 2018, this now looks at the data to determine if the
+transformation is identity. Prior to SU2018, this only looks at the flag to
+see if the transform has not been modified. If the transform has been
+changed, this will return false even if it is really the identity.</p>
 </div>
   </div>
 

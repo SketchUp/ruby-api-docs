@@ -170,6 +170,9 @@ numbers in languages besides English are larger for each release, so it is
 best to check for builds that are greater than or equal to the numbers
 here.</p>
 <ul><li>
+<p><strong>SU2018 M0</strong> = 18.0.16975 on Windows 64-bit, 18.0.16976 on
+Mac 64-bit.</p>
+</li><li>
 <p><strong>SU2017 M0</strong> = 17.0.18899 on Windows 64-bit, 17.0.18898 on
 Mac 64-bit.</p>
 </li><li>
@@ -208,6 +211,201 @@ Windows 32-bit, 15.1.104 on Mac 64-bit.</p>
 <p><strong>SU7.0 M0</strong> = 7.0.8657 on Windows, 7.0.8656 on Mac.</p>
 </li><li>
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
+</li></ul>
+
+<h1 id="label-What-27s+new+in+SketchUp+2018+M0">What&#39;s new in SketchUp 2018 M0</h1>
+
+<h2 id="label-LayOut+Ruby+API+for+SketchUp">LayOut Ruby API for SketchUp</h2>
+
+<p>This is a new Ruby based API for SketchUp that allows developers to read
+and write LayOut files using the regular SketchUp Ruby API. We’ve taken the
+existing LayOut C API and wrapped it with a Ruby layer and then included
+that inside SketchUp. This is proving to be a great working model for how
+to expose API functionality to our base C API and then expose that exact
+functionality to a ruby layer without duplicating code.</p>
+
+<h2 id="label-7BSketchup.send_to_layout-7D"><span class='object_link'><a href="Sketchup.html#send_to_layout-class_method" title="Sketchup.send_to_layout (method)">Sketchup.send_to_layout</a></span></h2>
+
+<p>Along with the LayOut Ruby API for SketchUp we added the ability to open
+LayOut files with the LayOut application. This gives developers the ability
+to write a SketchUp extension purely in ruby that parses the SketchUp
+model, writes a LayOut file and opens the LayOut file in LayOut in one
+smooth motion. This helps create a stronger connection between SketchUp and
+LayOut and can improve user workflows through the use of developer created
+extensions.</p>
+
+<h2 id="label-ImageRep">ImageRep</h2>
+
+<p>Hello Ruby API developers, meet <span class='object_link'><a href="Sketchup/ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span>. This new class
+exposes a data structure internal to SketchUp called an ImageRep. ImageRep
+is an in-memory representation of an image (as opposed to a reference to an
+image inside the SketchUp model). This class exposes a number of image
+reading and manipulation tools to the Ruby API. Now you can get the color
+of a pixel at a specified uv coordinate from an ImageRep, get an array of
+all pixel data from an ImageRep, set pixel data in an ImageRep, save an
+ImageRep out to disk, and more. Of course we’ve also included utilities to
+convert an in-model texture to an ImageRep, and assign an ImageRep object
+directly to a material as the material’s texture. This new class opens up a
+lot of opportunities to read and manipulate images in the model. Check out
+the ImageRep class in Ruby API docs for more information.</p>
+
+<h2 id="label-Exposed+Importer-2FExporter+Options+to+Ruby+API">Exposed Importer/Exporter Options to Ruby API</h2>
+
+<p>We have exposed all the options for our native importers and exporters to
+Ruby. See the Ruby API documentation on <span class='object_link'><a href="Sketchup/Model.html#import-instance_method" title="Sketchup::Model#import (method)">Sketchup::Model#import</a></span> and
+<span class='object_link'><a href="Sketchup/Model.html#export-instance_method" title="Sketchup::Model#export (method)">Sketchup::Model#export</a></span>.</p>
+
+<h2 id="label-New+SketchUp+Features+in+the+API">New SketchUp Features in the API</h2>
+
+<p>A big round of applause for the SketchUp Core team for the improvements
+they have added to the SketchUp application. Well, we also wanted to make
+sure that these new features were accessible to our developer community. We
+have introduced new API features for Named Section Planes and Filled
+Section Cuts. Awesome!</p>
+
+<h2 id="label-Ruby+Handling+of+Advanced+Attributes">Ruby Handling of Advanced Attributes</h2>
+
+<p>SketchUp core added a feature called Advanced Attributes. This adds some
+new attribute dictionaries and attributes to Component Instances and
+Definitions by default on every model. It should be noted that we have
+blocked the ability to delete the dictionaries via ruby. This should not be
+possible, please let us know if you find a scenario where you are able to
+do so. You can however delete the key/value pairs. The UI will recreate
+those key value pairs if they do not exist.</p>
+
+<h2 id="label-Ruby+Improvements+and+Fixes">Ruby Improvements and Fixes</h2>
+<ul><li>
+<p>Added method: <span class='object_link'><a href="UI.html#refresh_toolbars-class_method" title="UI.refresh_toolbars (method)">UI.refresh_toolbars</a></span></p>
+</li><li>
+<p>Added constants to <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span>:</p>
+<ul><li>
+<p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_NORMALS-constant" title="Geom::PolygonMesh::MESH_NORMALS (constant)">Geom::PolygonMesh::MESH_NORMALS</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_POINTS-constant" title="Geom::PolygonMesh::MESH_POINTS (constant)">Geom::PolygonMesh::MESH_POINTS</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_UVQ_BACK-constant" title="Geom::PolygonMesh::MESH_UVQ_BACK (constant)">Geom::PolygonMesh::MESH_UVQ_BACK</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_UVQ_FRONT-constant" title="Geom::PolygonMesh::MESH_UVQ_FRONT (constant)">Geom::PolygonMesh::MESH_UVQ_FRONT</a></span></p>
+</li></ul>
+</li><li>
+<p>Added method: <span class='object_link'><a href="Sketchup/DefinitionList.html#remove-instance_method" title="Sketchup::DefinitionList#remove (method)">Sketchup::DefinitionList#remove</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span> methods:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/Page.html#include_in_animation%3F-instance_method" title="Sketchup::Page#include_in_animation? (method)">Sketchup::Page#include_in_animation?</a></span></p>
+</li><li>
+<p><code>include_in_animation=</code></p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span> methods:</p>
+<ul><li>
+<p><code>name</code></p>
+</li><li>
+<p><code>name=</code></p>
+</li><li>
+<p><code>symbol</code></p>
+</li><li>
+<p><code>symbol=</code></p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span> class:</p>
+<ul><li>
+<p><code>load_file</code></p>
+</li><li>
+<p><code>save_file</code></p>
+</li><li>
+<p><code>initialize</code></p>
+</li><li>
+<p><code>bits_per_pixel</code></p>
+</li><li>
+<p><code>size</code></p>
+</li><li>
+<p><code>data</code></p>
+</li><li>
+<p><code>width</code></p>
+</li><li>
+<p><code>height</code></p>
+</li><li>
+<p><code>row_padding</code></p>
+</li><li>
+<p><code>colors</code></p>
+</li><li>
+<p><code>color_at_uv</code></p>
+</li><li>
+<p><code>set_data</code></p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Materials.html#unique_name-instance_method" title="Sketchup::Materials#unique_name (method)">Sketchup::Materials#unique_name</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Texture.html#image_rep-instance_method" title="Sketchup::Texture#image_rep (method)">Sketchup::Texture#image_rep</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Image.html#image_rep-instance_method" title="Sketchup::Image#image_rep (method)">Sketchup::Image#image_rep</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Material.html#texture=-instance_method" title="Sketchup::Material#texture= (method)">Sketchup::Material#texture=</a></span> to accept <span class='object_link'><a href="Sketchup/ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span> object
+as one of the data types it uses.</p>
+</li><li>
+<p>Added rendering options support for filled section cuts:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span> keys added:</p>
+<ul><li>
+<p><code>&quot;SectionCutFilled&quot;</code></p>
+</li><li>
+<p><code>&quot;SectionDefaultFillColor&quot;</code></p>
+</li></ul>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/RenderingOptionsObserver.html" title="Sketchup::RenderingOptionsObserver (class)">Sketchup::RenderingOptionsObserver</a></span> constants:</p>
+<ul><li>
+<p><code>ROPSetSectionCutFilled</code></p>
+</li><li>
+<p><code>ROPSetSectionDefaultFillColor</code></p>
+</li></ul>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup.html#send_to_layout-class_method" title="Sketchup.send_to_layout (method)">Sketchup.send_to_layout</a></span></p>
+</li><li>
+<p>Added options for all 3D exporters and imports</p>
+</li></ul>
+
+<h3 id="label-Bug+Fixes">Bug Fixes</h3>
+<ul><li>
+<p><strong>Breaking Change</strong> - Fixed a bug in
+<span class='object_link'><a href="Sketchup/Material.html#name=-instance_method" title="Sketchup::Material#name= (method)">Sketchup::Material#name=</a></span> which allowed the API to create materials with
+duplicate names. Now it will raise <code>ArgumentError</code> if it&#39;s
+not unique to the model.</p>
+</li><li>
+<p><strong>Breaking Change</strong> - Changed <span class='object_link'><a href="Sketchup/Color.html" title="Sketchup::Color (class)">class to be common between LayOut and SketchUp. The potentially breaking change is that {Sketchup::Color</a></span> changed to now compare RGBA values instead of the ruby
+objects.</p>
+</li><li>
+<p><strong>Breaking Change</strong> - Changed <span class='object_link'><a href="Geom/Transformation.html#identity%3F-instance_method" title="Geom::Transformation#identity? (method)">Geom::Transformation#identity?</a></span>
+So that it now properly returns true in all cases where the transformation
+matrix match the values for the identity transformation.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="Geom/Transformation.html#scaling-class_method" title="Geom::Transformation.scaling (method)">Geom::Transformation.scaling</a></span><code>(float)</code> and
+<span class='object_link'><a href="Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">Geom::Transformation#initialize</a></span><code>(float)</code> to not set the 15th
+component of the matrix, but instead adjust the other fields.</p>
+</li><li>
+<p>Fixed a crash when trying to call <span class='object_link'><a href="Sketchup/View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">Sketchup::View#animation=</a></span> from
+<span class='object_link'><a href="Sketchup/Animation.html#stop-instance_method" title="Sketchup::Animation#stop (method)">Sketchup::Animation#stop</a></span></p>
+</li><li>
+<p>Fixed a crash when calling <span class='object_link'><a href="UI.html#menu-class_method" title="UI.menu (method)">UI.menu</a></span> with empty string.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Pages.html#erase-instance_method" title="Sketchup::Pages#erase (method)">Sketchup::Pages#erase</a></span> will now correctly delete the Scene tab, like the
+UI does.</p>
+</li><li>
+<p>Fixed a bug in <span class='object_link'><a href="Sketchup/ArcCurve.html#end_angle-instance_method" title="Sketchup::ArcCurve#end_angle (method)">Sketchup::ArcCurve#end_angle</a></span> where it sometimes added 360
+degrees to the returned value.</p>
+</li><li>
+<p>Fixed an issue where a Ruby Importer could cause the Import file dialog to
+render the drop-down items incorrectly under Windows due to pipe characters
+in the description.</p>
+</li><li>
+<p>Fixed a crash when using <code>-RubyStartup</code> command line argument
+with a file that raises errors while loading.</p>
+</li><li>
+<p>Fixed a crash in <span class='object_link'><a href="UI.html#create_cursor-class_method" title="UI.create_cursor (method)">UI.create_cursor</a></span> that would happen if the length was
+less than 4 characters.</p>
+</li><li>
+<p>Fixed a rare crash in <span class='object_link'><a href="Sketchup/MaterialsObserver.html" title="Sketchup::MaterialsObserver (class)">Sketchup::MaterialsObserver</a></span>.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2017+M0">What&#39;s new in SketchUp 2017 M0</h1>
@@ -632,15 +830,19 @@ LOVector2D instead of an LOPoint2D.</p>
 
 <h3 id="label-Ruby+API">Ruby API</h3>
 <ul><li>
-<p>Fixed Entities.transform_by_vectors so that it performs a bounds check on
-the  second array. An ArgumentError is raised if the second array has less
-items  than the first.</p>
+<p>Fixed <span class='object_link'><a href="Sketchup/Entities.html#transform_by_vectors-instance_method" title="Sketchup::Entities#transform_by_vectors (method)">Sketchup::Entities#transform_by_vectors</a></span> so that it performs a
+bounds  check on the second array. An <code>ArgumentError</code> is raised
+if the second array  has less items than the first.</p>
 </li><li>
-<p>Added ability to UI::HtmlDialogs to receive JavaScript arrays and objects 
+<p>Added ability to <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>s to receive JavaScript arrays and objects
 using callbacks.</p>
 </li><li>
-<p>Removed a limitation with UI::HtmlDialog where callbacks were required to
-have  at least one argument. Now no arguments are required.</p>
+<p>Removed a limitation with <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> where callbacks were required to
+have at least one argument. Now no arguments are required.</p>
+</li><li>
+<p><span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> no longer opens a Model Info page for
+<code>&quot;Extensions&quot;</code> as  that page is now replaced by the
+Extension Manager dialog.</p>
 </li></ul>
 
 <h3 id="label-LayOut+C+API">LayOut C API</h3>
@@ -1426,6 +1628,8 @@ to allow for multiple multi-file type filters.</p>
 </li><li>
 <p>Added Sketchup.platform that returns either :platform_win or :platform_osx.
 Developers are encouraged to use this over RUBY_PLATFORM whenever possible.</p>
+</li><li>
+<p>New page <code>&quot;Classifications&quot;</code> for <span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span>.</p>
 </li></ul>
 
 <h3 id="label-Ruby+Console+Upgrades">Ruby Console Upgrades</h3>

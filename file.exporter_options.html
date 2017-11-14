@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AUTHOR and GENERATOR -->
+    <meta name="author" content="SketchUp Extensibility Team">
+    <meta name="generator" content="YARD http://yardoc.org">
+  <!-- TITLE -->
+    <title>
+    File: Exporter Options &mdash; SketchUp Ruby API Documentation
+    </title>
+  <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico" />
+
+  <!-- GENERIC META PROPERTIES -->
+    <meta name="url"   content="http://ruby.sketchup.com/file.exporter_options.html" />
+    <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
+    <meta name="title" content="File: Exporter Options" />
+    <meta name="name"  content="SketchUp Ruby API Documentation" />
+    <meta name="description" content="Exporter Options" />
+  <!-- OPEN GRAPH META PROPERTIES -->
+    <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:image"     content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg" />
+    <meta property="og:image:width"  content="60" />
+    <meta property="og:image:height" content="60" />
+    <meta property="og:title"     content="File: Exporter Options" />
+    <meta property="og:url"       content="http://ruby.sketchup.com/file.exporter_options.html" />
+    <meta property="og:description" content="Exporter Options" />
+  <!-- TWITTER CARD META PROPERTIES -->
+    <meta name="twitter:card"  content="summary"   />
+    <meta name="twitter:site"  content="@sketchup" />
+    <meta name="twitter:title" content="File: Exporter Options" />
+    <meta name="twitter:description" content="Exporter Options" />
+    <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
+    <meta name="twitter:url"   content="http://ruby.sketchup.com/file.exporter_options.html" />
+  <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/sketchup.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/rubyapi.css" type="text/css" charset="utf-8" />
+
+  <!-- SCRIPTS -->
+<script type="text/javascript" charset="utf-8">
+  pathId = "exporter_options";
+  relpath = '';
+</script>
+
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+    <script>
+      // Every time this page is loaded, it sends this action to SketchUp, telling
+      // SketchUp that a new page has loaded that has example snippets that should
+      // be replaced with code editors. Nothing happens if the page is loaded in a
+      // regular browser outside of the SketchUp client.
+      $( document ).ready(function() {
+        if (typeof sketchup == 'object') {
+          sketchup.page_loaded();
+        }
+      });
+    </script>
+
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="http://developer.sketchup.com" title="Home">
+                <img src="http://developer.sketchup.com/sites/help.sketchup.com/files/SU_Developer-RedWhite.png" alt="Home">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="http://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="http://blog.sketchup.com/tags/developers">SketchUpdate Blog</a></li>
+                    <li class="leaf"><a href="http://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="http://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="http://www.sketchup.com/sites/developers.sketchup.com/files/core/trimble-logo-white.png"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="http://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="http://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: Exporter Options</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Exporter+Options">Exporter Options</h1>
+
+<p>The SketchUp Ruby API has different exporter plugins that are shipped with
+the product. Below is a list of the <strong>valid</strong> options that
+each exporter will accept. If an <strong>invalid</strong> option is
+provided, it will be silently ignored.</p>
+
+<h2 id="label-All+Exporters">All Exporters</h2>
+<ul><li>
+<p><code>:show_summary</code> - Boolean to indicate whether to show the
+summary dialog.</p>
+</li></ul>
+
+<h2 id="label-3ds+Max+-283DS-29">3ds Max (3DS)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:geometry</code> - Specifies what geometry to export.</p>
+<ul><li>
+<p>values: <code>&quot;full_hierarchy&quot;</code>,
+<code>&quot;by_layer&quot;</code>, <code>&quot;by_material&quot;</code>, or
+<code>&quot;single_object&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:faces</code> - Specifies how to export faces.</p>
+<ul><li>
+<p>values: <code>&quot;not_two_sided&quot;</code>,
+<code>&quot;two_sided_as_material&quot;</code>,
+<code>&quot;two_sided_as_geometry&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:preserve_texture_coords</code> - Boolean to indicate whether texture
+coordinates are to be preserved.</p>
+</li><li>
+<p><code>:cameras</code> - Boolean to indicate whether to export cameras from
+Scenes.</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
+
+<h2 id="label-Collada+-28DAE-29">Collada (DAE)</h2>
+<ul><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:author_attribution</code> - Boolean to indicate whether to export
+model credits.</p>
+</li><li>
+<p><code>:hidden_geometry</code> - Boolean to indicate whether to export
+hidden geometry.</p>
+</li><li>
+<p><code>:preserve_instancing</code> - Boolean to indicate whether to preserve
+component hierarchies.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li><li>
+<p><code>:camera_lookat</code> - Boolean to indicate whether to export the
+camera looking at the target.</p>
+</li></ul>
+
+<h2 id="label-3D+Autocad+-28DWG-2FDXF-29">3D Autocad (DWG/DXF)</h2>
+<ul><li>
+<p><code>:acad_version</code> - Specifies the autocad_version to export.</p>
+<ul><li>
+<p>values: <code>&quot;acad_12&quot;</code>, <code>&quot;acad_13&quot;</code>,
+<code>&quot;acad_14&quot;</code>, <code>&quot;acad_2000&quot;</code>,
+<code>&quot;acad_2004&quot;</code>, <code>&quot;acad_2007&quot;</code>,
+<code>&quot;acad_2010&quot;</code>, <code>&quot;acad_2013&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:faces_flag</code> - Boolean to indcate whether to export faces.</p>
+</li><li>
+<p><code>:construction_geometry</code> - Boolean to indicate whether to export
+construction geometry.</p>
+</li><li>
+<p><code>:dimensions</code> - Boolean to indicate whether to export
+dimensions.</p>
+</li><li>
+<p><code>:text</code> - Boolean to indicate whether to export text objects.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li></ul>
+
+<h2 id="label-Filmbox+Autodesk+-28FBX-29">Filmbox Autodesk (FBX)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code> or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicated whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:seperate_disconnected_faces</code> - Boolean to indicate whether to
+export separate disconnected faces.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
+
+<h2 id="label-Industry+Foundation+Classes+-28IFC-29">Industry Foundation Classes (IFC)</h2>
+<ul><li>
+<p><code>:hidden_geometry</code> - Boolean to indicate whether to export
+hidden geometry.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:ifc_mapped_items</code> - Boolean to indicate whether to export IFC
+mapped items.</p>
+</li><li>
+<p><code>:ifc types</code> - An Array of strings indicating IFC elements to
+export. One or more of the following values can be in the array.</p>
+<ul><li>
+<p>values: <code>&quot;IfcNonDefined&quot;</code>,
+<code>&quot;IfcBeam&quot;</code>, <code>&quot;IfcBuilding&quot;</code>,
+<code>&quot;IfcBuildingElementProxy&quot;</code>,
+<code>&quot;IfcBuildingStorey&quot;</code>,
+<code>&quot;IfcColumn&quot;</code>,
+<code>&quot;IfcCurtainWall&quot;</code>, <code>&quot;IfcDoor&quot;</code>,
+<code>&quot;IfcFooting&quot;</code>,
+<code>&quot;IfcFurnishingElement&quot;</code>,
+<code>&quot;IfcMember&quot;</code>, <code>&quot;IfcPile&quot;</code>,
+<code>&quot;IfcPlate&quot;</code>, <code>&quot;IfcProject&quot;</code>,
+<code>&quot;IfcRailing&quot;</code>, <code>&quot;IfcRamp&quot;</code>,
+<code>&quot;IfcRampFlight&quot;</code>, <code>&quot;IfcRoof&quot;</code>,
+<code>&quot;IfcSite&quot;</code>, <code>&quot;IfcSlab&quot;</code>,
+<code>&quot;IfcSpace&quot;</code>, <code>&quot;IfcStair&quot;</code>,
+<code>&quot;IfcStairFlight&quot;</code>, <code>&quot;IfcWall&quot;</code>,
+<code>&quot;IfcWallStandardCase&quot;</code>,
+<code>&quot;IfcWindow&quot;</code></p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-Google+Earth+-28KMZ-29">Google Earth (KMZ)</h2>
+<ul><li>
+<p><code>:author_attribution</code> - Boolean to indicate whether to export
+model credits.</p>
+</li><li>
+<p><code>:hidden_geometry</code> - Boolean to indicate whether to export
+hidden geometry</p>
+</li></ul>
+
+<h2 id="label-OBJ">OBJ</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
+
+<h2 id="label-Softimage+XSI+3D+Image+-28XSI-29">Softimage XSI 3D Image (XSI)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
+
+<h2 id="label-Virtual+Reality+Modeling+Language+-28WRL-29">Virtual Reality Modeling Language (WRL)</h2>
+<ul><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:cameras</code> - Boolean to indicate whether to export cameras.</p>
+</li><li>
+<p><code>:use_vrml_orientation</code> - Boolean to indicate whether to use
+VRML standard orientation.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:allow_mirrored_components</code> - Boolean to indicate whether to
+allow mirrored components.</p>
+</li><li>
+<p><code>:material_override</code> - Boolean to indicate whether to check for
+material overrides.</p>
+</li></ul>
+
+<h2 id="label-PDF+-28Windows-29">PDF (Windows)</h2>
+<ul><li>
+<p><code>:output_profile_lines</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:output_section_lines</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:edge_extensions</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:match_screen_profiles</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:match_screen_section</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:match_screen_extensions</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:full_scale</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:map_fonts</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:drawing_units</code> (default = <code>Length::Inches</code>)</p>
+</li><li>
+<p><code>:extension_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:height_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:model_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:width_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:extension_length</code> (default = <code>0.0</code>)</p>
+</li><li>
+<p><code>:line_width</code> (default = <code>0.0</code>)</p>
+</li><li>
+<p><code>:line_width_section</code> (default = <code>0.0</code>)</p>
+</li><li>
+<p><code>:length_in_drawing</code> (default = <code>1.0</code>)</p>
+</li><li>
+<p><code>:length_in_model</code> (default = <code>1.0</code>)</p>
+</li><li>
+<p><code>:window_height</code> (default = <code>1.0</code>)</p>
+</li></ul>
+
+<h2 id="label-PDF+-28Mac-29">PDF (Mac)</h2>
+<ul><li>
+<p><code>:line_weight</code> (default = <code>0.5</code>)</p>
+</li><li>
+<p><code>:imageWidth</code> (default = <code>50</code>)</p>
+</li><li>
+<p><code>:imageHeight</code> (default = <code>50</code>)</p>
+</li></ul>
+
+<h2 id="label-STereoLithography+-28STL-29">STereoLithography (STL)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;feet&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:format</code> - Specifies how the data is represented in the file.</p>
+<ul><li>
+<p>values: <code>&quot;ascii&quot;</code>, <code>&quot;binary&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li></ul>
+</div></div>
+
+      <div id="footer">
+  Generated by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AUTHOR and GENERATOR -->
+    <meta name="author" content="SketchUp Extensibility Team">
+    <meta name="generator" content="YARD http://yardoc.org">
+  <!-- TITLE -->
+    <title>
+    Class: Layout::Path &mdash; SketchUp Ruby API Documentation
+    </title>
+  <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://help.sketchup.com/sites/all/themes/sketch_help/favicon.ico" />
+
+  <!-- GENERIC META PROPERTIES -->
+    <meta name="url"   content="http://ruby.sketchup.com/Layout/Path.html" />
+    <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
+    <meta name="title" content="Class: Layout::Path" />
+    <meta name="name"  content="SketchUp Ruby API Documentation" />
+    <meta name="description" content="A path entity represents a continuous, multi-segment polyline or bezier curve." />
+  <!-- OPEN GRAPH META PROPERTIES -->
+    <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:image"     content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg" />
+    <meta property="og:image:width"  content="60" />
+    <meta property="og:image:height" content="60" />
+    <meta property="og:title"     content="Class: Layout::Path" />
+    <meta property="og:url"       content="http://ruby.sketchup.com/Layout/Path.html" />
+    <meta property="og:description" content="A path entity represents a continuous, multi-segment polyline or bezier curve." />
+  <!-- TWITTER CARD META PROPERTIES -->
+    <meta name="twitter:card"  content="summary"   />
+    <meta name="twitter:site"  content="@sketchup" />
+    <meta name="twitter:title" content="Class: Layout::Path" />
+    <meta name="twitter:description" content="A path entity represents a continuous, multi-segment polyline or bezier curve." />
+    <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
+    <meta name="twitter:url"   content="http://ruby.sketchup.com/Layout/Path.html" />
+  <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
+
+  <!-- SCRIPTS -->
+<script type="text/javascript" charset="utf-8">
+  pathId = "Layout::Path";
+  relpath = '../';
+</script>
+
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+    <script>
+      // Every time this page is loaded, it sends this action to SketchUp, telling
+      // SketchUp that a new page has loaded that has example snippets that should
+      // be replaced with code editors. Nothing happens if the page is loaded in a
+      // regular browser outside of the SketchUp client.
+      $( document ).ready(function() {
+        if (typeof sketchup == 'object') {
+          sketchup.page_loaded();
+        }
+      });
+    </script>
+
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="http://developer.sketchup.com" title="Home">
+                <img src="http://developer.sketchup.com/sites/help.sketchup.com/files/SU_Developer-RedWhite.png" alt="Home">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="http://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="http://blog.sketchup.com/tags/developers">SketchUpdate Blog</a></li>
+                    <li class="leaf"><a href="http://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="http://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="http://www.sketchup.com/sites/developers.sketchup.com/files/core/trimble-logo-white.png"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="http://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="http://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span>
+     &raquo; 
+    <span class="title">Path</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Layout::Path
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span></li>
+          
+            <li class="next">Layout::Path</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>A path entity represents a continuous, multi-segment polyline or bezier
+curve.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+  <h2>
+    Constant Summary
+    <a
+        id="constant_summary"
+        href="#constant_summary"
+        title="Permalink">#</a>
+  </h2>
+  
+    <dl class="constants">
+      
+        <dt id="POINT_TYPE_MOVE_TO-constant" class="">Layout::Path::POINT_TYPE_MOVE_TO
+        </dt>
+      
+        <dt id="POINT_TYPE_LINE_TO-constant" class="">Layout::Path::POINT_TYPE_LINE_TO
+        </dt>
+      
+        <dt id="POINT_TYPE_BEZIER_TO-constant" class="">Layout::Path::POINT_TYPE_BEZIER_TO
+        </dt>
+      
+        <dt id="POINT_TYPE_ARC_CENTER-constant" class="">Layout::Path::POINT_TYPE_ARC_CENTER
+        </dt>
+      
+        <dt id="POINT_TYPE_BEZIER_CONTROL-constant" class="">Layout::Path::POINT_TYPE_BEZIER_CONTROL
+        </dt>
+      
+        <dt id="POINT_TYPE_CLOSE-constant" class="">Layout::Path::POINT_TYPE_CLOSE
+        </dt>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <a
+          id="class_method_summary"
+          href="#class_method_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_arc-class_method" title="new_arc (class method)">.<strong>new_arc</strong>(center_point, radius, start_angle, end_angle)  &#x21d2; Layout::Path </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#new_arc-class_method" title="Layout::Path.new_arc (method)">Path.new_arc</a></span> method creates a new arc-shaped <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <a
+          id="instance_method_summary"
+          href="#instance_method_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#append_point-instance_method" title="#append_point (instance method)">#<strong>append_point</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#append_point-instance_method" title="Layout::Path#append_point (method)">#append_point</a></span> method appends a <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> to the end of the
+<span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#arc-instance_method" title="#arc (instance method)">#<strong>arc</strong>  &#x21d2; Array(Geom::Point2d, Float, Float, Float)<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#arc-instance_method" title="Layout::Path#arc (method)">#arc</a></span> method returns the parameters of an arc from the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>,
+or <code>nil</code> if path is not an arc.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#circle-instance_method" title="#circle (instance method)">#<strong>circle</strong>  &#x21d2; Array(Geom::Point2d, Float)<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#circle-instance_method" title="Layout::Path#circle (method)">#circle</a></span> method returns the parameters of a circle from the
+<span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>, or <code>nil</code> if path is not a circle.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#close-instance_method" title="#close (instance method)">#<strong>close</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#close-instance_method" title="Layout::Path#close (method)">#close</a></span> method closes the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#closed%3F-instance_method" title="#closed? (instance method)">#<strong>closed?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#closed%3F-instance_method" title="Layout::Path#closed? (method)">#closed?</a></span> method returns whether the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span> is closed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end_arrow-instance_method" title="#end_arrow (instance method)">#<strong>end_arrow</strong>  &#x21d2; Layout::Path<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#end_arrow-instance_method" title="Layout::Path#end_arrow (method)">#end_arrow</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span> from an end arrow.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#end_point-instance_method" title="#end_point (instance method)">#<strong>end_point</strong>  &#x21d2; Geom::Point2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#end_point-instance_method" title="Layout::Path#end_point (method)">#end_point</a></span> method returns the end point of the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#initialize-instance_method" title="Layout::Path#initialize (method)">#initialize</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span> between a start point
+and an end point, or from a provided <span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Rectangle</a></span> or
+<span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Ellipse</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parametric_length-instance_method" title="#parametric_length (instance method)">#<strong>parametric_length</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#parametric_length-instance_method" title="Layout::Path#parametric_length (method)">#parametric_length</a></span> method returns the parametric length for the
+<span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_at-instance_method" title="#point_at (instance method)">#<strong>point_at</strong>(parametric_value)  &#x21d2; Geom::Point2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#point_at-instance_method" title="Layout::Path#point_at (method)">#point_at</a></span> method returns the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> at a given parametric
+value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_types-instance_method" title="#point_types (instance method)">#<strong>point_types</strong>  &#x21d2; Array&lt;Integer&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#point_types-instance_method" title="Layout::Path#point_types (method)">#point_types</a></span> method returns an array of point types corresponding to
+the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>s in the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#points-instance_method" title="#points (instance method)">#<strong>points</strong>  &#x21d2; Array&lt;Geom::Point2d&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#points-instance_method" title="Layout::Path#points (method)">#points</a></span> method returns an array of <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>s in the
+<span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_arrow-instance_method" title="#start_arrow (instance method)">#<strong>start_arrow</strong>  &#x21d2; Layout::Path<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#start_arrow-instance_method" title="Layout::Path#start_arrow (method)">#start_arrow</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span> from a start arrow.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start_point-instance_method" title="#start_point (instance method)">#<strong>start_point</strong>  &#x21d2; Geom::Point2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#start_point-instance_method" title="Layout::Path#start_point (method)">#start_point</a></span> method returns the start point of the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#tangent_at-instance_method" title="#tangent_at (instance method)">#<strong>tangent_at</strong>(parametric_value)  &#x21d2; Geom::Vector2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#tangent_at-instance_method" title="Layout::Path#tangent_at (method)">#tangent_at</a></span> method returns the tangent <span class='object_link'><a href="../Geom/Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span> at the given
+parametric value.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Entity.html#==-instance_method" title="Layout::Entity#== (method)">#==</a></span>, <span class='object_link'><a href="Entity.html#bounds-instance_method" title="Layout::Entity#bounds (method)">#bounds</a></span>, <span class='object_link'><a href="Entity.html#document-instance_method" title="Layout::Entity#document (method)">#document</a></span>, <span class='object_link'><a href="Entity.html#drawing_bounds-instance_method" title="Layout::Entity#drawing_bounds (method)">#drawing_bounds</a></span>, <span class='object_link'><a href="Entity.html#group-instance_method" title="Layout::Entity#group (method)">#group</a></span>, <span class='object_link'><a href="Entity.html#layer_instance-instance_method" title="Layout::Entity#layer_instance (method)">#layer_instance</a></span>, <span class='object_link'><a href="Entity.html#locked=-instance_method" title="Layout::Entity#locked= (method)">#locked=</a></span>, <span class='object_link'><a href="Entity.html#locked%3F-instance_method" title="Layout::Entity#locked? (method)">#locked?</a></span>, <span class='object_link'><a href="Entity.html#move_to_group-instance_method" title="Layout::Entity#move_to_group (method)">#move_to_group</a></span>, <span class='object_link'><a href="Entity.html#move_to_layer-instance_method" title="Layout::Entity#move_to_layer (method)">#move_to_layer</a></span>, <span class='object_link'><a href="Entity.html#on_shared_layer%3F-instance_method" title="Layout::Entity#on_shared_layer? (method)">#on_shared_layer?</a></span>, <span class='object_link'><a href="Entity.html#page-instance_method" title="Layout::Entity#page (method)">#page</a></span>, <span class='object_link'><a href="Entity.html#style-instance_method" title="Layout::Entity#style (method)">#style</a></span>, <span class='object_link'><a href="Entity.html#style=-instance_method" title="Layout::Entity#style= (method)">#style=</a></span>, <span class='object_link'><a href="Entity.html#transform!-instance_method" title="Layout::Entity#transform! (method)">#transform!</a></span>, <span class='object_link'><a href="Entity.html#transformation-instance_method" title="Layout::Entity#transformation (method)">#transformation</a></span>, <span class='object_link'><a href="Entity.html#untransformed_bounds-instance_method" title="Layout::Entity#untransformed_bounds (method)">#untransformed_bounds</a></span>, <span class='object_link'><a href="Entity.html#untransformed_bounds=-instance_method" title="Layout::Entity#untransformed_bounds= (method)">#untransformed_bounds=</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    
+      <span class="overload">#<strong>initialize</strong>(start_point, end_point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(start_point, control_point_1, control_point_2, end_point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(rectangle)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(ellipse)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#initialize-instance_method" title="Layout::Path#initialize (method)">#initialize</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> between a start point
+and an end point, or from a provided <span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Rectangle</a></span> or
+<span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Ellipse</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>start = Geom::Point2d.new(1, 1)
+end = Geom::Point2d.new(2, 2)
+new_path = Layout::Path.new(start, end)</code></pre>
+    
+      
+      <pre class="example code"><code>start = Geom::Point2d.new(1, 1)
+control_1 = Geom::Point2d.new(1.5, 1)
+control_2 = Geom::Point2d.new(1, 1.5)
+end = Geom::Point2d.new(2, 2)
+new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(start_point, end_point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a straight path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>start_point</span>
+      
+      
+        <span class='type'>(<tt>Geom::Point2D</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>end_point</span>
+      
+      
+        <span class='type'>(<tt>Geom::Point2D</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the length between start point and end point is zero</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(start_point, control_point_1, control_point_2, end_point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a bezier path</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>start_point</span>
+      
+      
+        <span class='type'>(<tt>Geom::Point2D</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>control_point_1</span>
+      
+      
+        <span class='type'>(<tt>Geom::Point2D</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The first bezier control point</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>control_point_2</span>
+      
+      
+        <span class='type'>(<tt>Geom::Point2D</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The second bezier control point</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>end_point</span>
+      
+      
+        <span class='type'>(<tt>Geom::Point2D</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the length between start point and end point is zero</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(rectangle)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a path created from the <span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Rectangle</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>rectangle</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Layout::Rectangle</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>TypeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if rectangle is not a <span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Rectangle</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(ellipse)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a path created from the <span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Ellipse</a></span></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ellipse</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Layout::Ellipse</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>TypeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if ellipse is not an <span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Ellipse</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="new_arc-class_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    .<strong>new_arc</strong>(center_point, radius, start_angle, end_angle)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#new_arc-class_method" title="Layout::Path.new_arc (method)">new_arc</a></span> method creates a new arc-shaped <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_center'>center</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='float'>2.0</span>
+<span class='id identifier rubyid_start_angle'>start_angle</span> <span class='op'>=</span> <span class='float'>180.0</span>
+<span class='id identifier rubyid_end_angle'>end_angle</span> <span class='op'>=</span> <span class='float'>360.0</span>
+<span class='id identifier rubyid_arc'>arc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_arc'>new_arc</span><span class='lparen'>(</span><span class='id identifier rubyid_center'>center</span><span class='comma'>,</span> <span class='id identifier rubyid_radius'>radius</span><span class='comma'>,</span> <span class='id identifier rubyid_start_angle'>start_angle</span><span class='comma'>,</span> <span class='id identifier rubyid_end_angle'>end_angle</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>center_point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>radius</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>start_angle</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>end_angle</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an arc path</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if radius is less than or equal to zero</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if start angle is equal to end angle</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="append_point-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    
+      <span class="overload">#<strong>append_point</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+    
+      <span class="overload">#<strong>append_point</strong>(point, control_point1, control_point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#append_point-instance_method" title="Layout::Path#append_point (method)">#append_point</a></span> method appends a <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> to the end of the
+<span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_append_point'>append_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>append_point</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>append_point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>append_point</strong>(point, control_point1, control_point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The point to append</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>control_point1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The first bezier control point</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>control_point2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The second bezier control point</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LockedLayerError.html" title="Layout::LockedLayerError (class)">LockedLayerError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> is on a locked <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LockedEntityError.html" title="Layout::LockedEntityError (class)">LockedEntityError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> is locked</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="arc-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>arc</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>, Float, Float, Float)</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#arc-instance_method" title="Layout::Path#arc (method)">#arc</a></span> method returns the parameters of an arc from the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>,
+or <code>nil</code> if path is not an arc.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>start_angle, radius, start, end = path.arc</code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>, Float, Float, Float)</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The center point, radius, start angle, and end angle</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="circle-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>circle</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>, Float)</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#circle-instance_method" title="Layout::Path#circle (method)">#circle</a></span> method returns the parameters of a circle from the
+<span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>, or <code>nil</code> if path is not a circle.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_center_point'>center_point</span><span class='comma'>,</span> <span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_circle'>circle</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>, Float)</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The center point and the radius</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="close-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>close</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#close-instance_method" title="Layout::Path#close (method)">#close</a></span> method closes the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LockedLayerError.html" title="Layout::LockedLayerError (class)">LockedLayerError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> is on a locked <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span></p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> can not be closed becauase it contains less than
+three points.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LockedEntityError.html" title="Layout::LockedEntityError (class)">LockedEntityError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> is locked</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="closed?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>closed?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#closed%3F-instance_method" title="Layout::Path#closed? (method)">#closed?</a></span> method returns whether the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> is closed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_is_closed'>is_closed</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_closed?'>closed?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="end_arrow-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>end_arrow</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#end_arrow-instance_method" title="Layout::Path#end_arrow (method)">#end_arrow</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> from an end arrow.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_end_arrow'>end_arrow</span><span class='lparen'>(</span><span class='id identifier rubyid_path_with_end_arrow'>path_with_end_arrow</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The end arrow</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="end_point-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>end_point</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#end_point-instance_method" title="Layout::Path#end_point (method)">#end_point</a></span> method returns the end point of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_end_point'>end_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Layout::Path#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_start_point'>start_point</span><span class='comma'>,</span> <span class='id identifier rubyid_end_point'>end_point</span><span class='rparen'>)</span>
+<span class='comment'># should be equal to end_point
+</span><span class='id identifier rubyid_endp'>endp</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_end_point'>end_point</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="parametric_length-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>parametric_length</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#parametric_length-instance_method" title="Layout::Path#parametric_length (method)">#parametric_length</a></span> method returns the parametric length for the
+<span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>. The parametric length is the length with respect to the
+curve of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_parametric_length'>parametric_length</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_at-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>point_at</strong>(parametric_value)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#point_at-instance_method" title="Layout::Path#point_at (method)">#point_at</a></span> method returns the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> at a given parametric
+value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_parametric_length'>parametric_length</span>
+<span class='comment'># Get the point halfway along the path
+</span><span class='id identifier rubyid_halfway_point'>halfway_point</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_point_at'>point_at</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='op'>/</span><span class='int'>2</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>parametric_value</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the parametric value is less than zero or greater than the
+<span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>&#39;s parametric length</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_types-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>point_types</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#point_types-instance_method" title="Layout::Path#point_types (method)">#point_types</a></span> method returns an array of point types corresponding to
+the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>s in the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+<p>A point type can be one of the following values:</p>
+<dl class="rdoc-list label-list"><dt><code>POINT_TYPE_MOVE_TO</code>
+<dt><code>POINT_TYPE_LINE_TO</code>
+<dt><code>POINT_TYPE_BEZIER_TO</code>
+<dt><code>POINT_TYPE_ARC_CENTER</code>
+<dt><code>POINT_TYPE_BEZIER_CONTROL</code>
+<dt><code>POINT_TYPE_CLOSE</code>
+<dd></dd></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_types'>types</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_point_types'>point_types</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of integers that correspond with point types.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="points-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>points</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#points-instance_method" title="Layout::Path#points (method)">#points</a></span> method returns an array of <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>s in the
+<span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_end_point'>end_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_new_path'>new_path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Layout::Path#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_start_point'>start_point</span><span class='comma'>,</span> <span class='id identifier rubyid_end_point'>end_point</span><span class='rparen'>)</span>
+<span class='comment'># Should be an array with points [1, 1] and [2, 2]
+</span><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='id identifier rubyid_new_path'>new_path</span><span class='period'>.</span><span class='id identifier rubyid_points'>points</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start_arrow-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>start_arrow</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#start_arrow-instance_method" title="Layout::Path#start_arrow (method)">#start_arrow</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> from a start arrow.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_start_arrow'>start_arrow</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_start_arrow'>start_arrow</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The start arrow</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start_point-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>start_point</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#start_point-instance_method" title="Layout::Path#start_point (method)">#start_point</a></span> method returns the start point of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_end_point'>end_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Layout::Path#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_start_point'>start_point</span><span class='comma'>,</span> <span class='id identifier rubyid_end_point'>end_point</span><span class='rparen'>)</span>
+<span class='comment'># should be equal to start_point
+</span><span class='id identifier rubyid_start'>start</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_start_point'>start_point</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="tangent_at-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>tangent_at</strong>(parametric_value)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#tangent_at-instance_method" title="Layout::Path#tangent_at (method)">#tangent_at</a></span> method returns the tangent <span class='object_link'><a href="../Geom/Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span> at the given
+parametric value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_parametric_length'>parametric_length</span>
+<span class='comment'># Get the tangent halfway along the path
+</span><span class='id identifier rubyid_halfway_tangent'>halfway_tangent</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_tangent_at'>tangent_at</span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='op'>/</span><span class='int'>2</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>parametric_value</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the parametric value is less than zero or greater than the
+<span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>&#39;s parametric length</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

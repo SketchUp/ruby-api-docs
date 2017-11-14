@@ -429,7 +429,7 @@ layer for new pages and existing pages.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#page_behavior=-instance_method" title="#page_behavior= (instance method)">#<strong>page_behavior=</strong>(pagebehavior)  &#x21d2; Object </a>
+      <a href="#page_behavior=-instance_method" title="#page_behavior= (instance method)">#<strong>page_behavior=</strong>(page_behavior)  &#x21d2; Integer </a>
     
 
     
@@ -444,7 +444,7 @@ layer for new pages and existing pages.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The page_behavior= method is used to control the layer&#39;s visibility
+<p>The <span class='object_link'><a href="#page_behavior=-instance_method" title="Sketchup::Layer#page_behavior= (method)">#page_behavior=</a></span> method is used to control the layer&#39;s visibility
 behavior on existing and new pages.</p>
 </div></span>
   
@@ -1172,7 +1172,7 @@ does not contain the visibility state of a layer.</p>
   <h3 class="signature " id="page_behavior=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>page_behavior=</strong>(pagebehavior)  &#x21d2; <tt>Object</tt> 
+    #<strong>page_behavior=</strong>(page_behavior)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1181,23 +1181,29 @@ does not contain the visibility state of a layer.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The page_behavior= method is used to control the layer&#39;s visibility
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2014 the <code>LAYER_HIDDEN_BY_DEFAULT</code> flag would
+trigger the validation check in SketchUp that would reset the
+<span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span> of the layer.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#page_behavior=-instance_method" title="Sketchup::Layer#page_behavior= (method)">#page_behavior=</a></span> method is used to control the layer&#39;s visibility
 behavior on existing and new pages.</p>
-
-<p>The behavior is composed of a combination of these flags:</p>
-
-<pre class="code"><code class="">- LAYER_VISIBLE_BY_DEFAULT: 0x0000
-- LAYER_HIDDEN_BY_DEFAULT: 0x0001
-- LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES: 0x0000
-- LAYER_IS_VISIBLE_ON_NEW_PAGES: 0x0010
-- LAYER_IS_HIDDEN_ON_NEW_PAGES: 0x0020</code></pre>
 
 <p>When you Update a page (as opposed to creating a new page) the current
 visibility of the layer is used.</p>
 
-<p>NOTE: Prior to SketchUp 2014 the <code>LAYER_HIDDEN_BY_DEFAULT</code> flag
-would trigger the validation check in SketchUp that would reset the
-<code>page_behavior</code> of the layer.</p>
+<p>The behavior is composed of a combination of these flags:</p>
+<dl class="rdoc-list label-list"><dt><tt>LAYER_VISIBLE_BY_DEFAULT: 0x0000</tt>
+<dt><tt>LAYER_HIDDEN_BY_DEFAULT: 0x0001</tt>
+<dt><tt>LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES: 0x0000</tt>
+<dt><tt>LAYER_IS_VISIBLE_ON_NEW_PAGES: 0x0010</tt>
+<dt><tt>LAYER_IS_HIDDEN_ON_NEW_PAGES: 0x0020</tt>
+<dd></dd></dl>
 
 
   </div>
@@ -1218,9 +1224,6 @@ would trigger the validation check in SketchUp that would reset the
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns pagebehavior - an integer representing the default visibility of
-the layer.</p>
-
 
   </div>
 </div>
@@ -1230,17 +1233,12 @@ the layer.</p>
   
     <li>
       
-        <span class='name'>pagebehavior</span>
+        <span class='name'>page_behavior</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>Pagebehavior value.</p>
-</div>
       
     </li>
   
@@ -1252,14 +1250,9 @@ the layer.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>pagebehavior - an integer representing the default visibility of the layer.</p>
-</div>
       
     </li>
   

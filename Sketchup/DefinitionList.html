@@ -260,7 +260,7 @@ definitions from the list.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(def_name)  &#x21d2; Object </a>
+      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(def_name)  &#x21d2; Sketchup::ComponentDefinition </a>
     
 
     
@@ -285,7 +285,7 @@ list with the given name.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -355,7 +355,7 @@ list with the given name.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|definition| ... } &#x21d2; Object </a>
+      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|Sketchup::ComponentDefinition| ... } &#x21d2; nil </a>
     
 
     
@@ -405,7 +405,7 @@ the list.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#load-instance_method" title="#load (instance method)">#<strong>load</strong>(path)  &#x21d2; Object </a>
+      <a href="#load-instance_method" title="#load (instance method)">#<strong>load</strong>(path)  &#x21d2; Sketchup::ComponentDefinition </a>
     
 
     
@@ -429,7 +429,7 @@ the list.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#load_from_url-instance_method" title="#load_from_url (instance method)">#<strong>load_from_url</strong>(url, load_handler)  &#x21d2; Object </a>
+      <a href="#load_from_url-instance_method" title="#load_from_url (instance method)">#<strong>load_from_url</strong>(url, load_handler)  &#x21d2; Sketchup::ComponentDefinition </a>
     
 
     
@@ -454,7 +454,7 @@ string url.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#purge_unused-instance_method" title="#purge_unused (instance method)">#<strong>purge_unused</strong>  &#x21d2; Object </a>
+      <a href="#purge_unused-instance_method" title="#purge_unused (instance method)">#<strong>purge_unused</strong>  &#x21d2; Sketchup::DefinitionList </a>
     
 
     
@@ -478,7 +478,32 @@ string url.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#remove-instance_method" title="#remove (instance method)">#<strong>remove</strong>(definition)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#remove-instance_method" title="Sketchup::DefinitionList#remove (method)">#remove</a></span> method is used to remove a component definition from the
+definition list with the given component definition.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -527,7 +552,7 @@ object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#unique_name-instance_method" title="#unique_name (instance method)">#<strong>unique_name</strong>(base_name)  &#x21d2; Object </a>
+      <a href="#unique_name-instance_method" title="#unique_name (instance method)">#<strong>unique_name</strong>(base_name)  &#x21d2; String </a>
     
 
     
@@ -786,7 +811,7 @@ name of the definition.</p>
   <h3 class="signature " id="add-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add</strong>(def_name)  &#x21d2; <tt>Object</tt> 
+    #<strong>add</strong>(def_name)  &#x21d2; <tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt> 
   
 
   
@@ -817,9 +842,6 @@ list with the given name.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns componentdefinition - the ComponentDefinition object that was added
-(if successful)</p>
-
 
   </div>
 </div>
@@ -832,7 +854,7 @@ list with the given name.</p>
         <span class='name'>def_name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -845,28 +867,27 @@ list with the given name.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>componentdefinition - the ComponentDefinition object that was added (if
-successful)</p>
+<p>the ComponentDefinition object that was added (if successful)</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -891,7 +912,7 @@ successful)</p>
   <h3 class="signature " id="add_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -919,8 +940,6 @@ successful)</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -933,7 +952,7 @@ successful)</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -946,17 +965,20 @@ successful)</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -964,9 +986,6 @@ successful)</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1280,7 +1299,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
   <h3 class="signature " id="each-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>each</strong> {|definition| ... } &#x21d2; <tt>Object</tt> 
+    #<strong>each</strong> {|Sketchup::ComponentDefinition| ... } &#x21d2; <tt>nil</tt> 
   
 
   
@@ -1316,14 +1335,13 @@ in the definition list.</p>
     <li>
       
       
-        <span class='type'>(<tt>definition</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A variable that will hold each ComponentDefinition object as they are
-found.</p>
+<p>definition</p>
 </div>
       
     </li>
@@ -1335,14 +1353,9 @@ found.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
@@ -1442,7 +1455,7 @@ the list.</p>
   <h3 class="signature " id="load-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>load</strong>(path)  &#x21d2; <tt>Object</tt> 
+    #<strong>load</strong>(path)  &#x21d2; <tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt> 
   
 
   
@@ -1473,9 +1486,6 @@ the list.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns componentdefinition - the loaded ComponentDefinition object if
-successful</p>
-
 
   </div>
 </div>
@@ -1488,7 +1498,7 @@ successful</p>
         <span class='name'>path</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -1501,27 +1511,27 @@ successful</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>componentdefinition - the loaded ComponentDefinition object if successful</p>
+<p>the loaded ComponentDefinition object if successful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1546,7 +1556,7 @@ successful</p>
   <h3 class="signature " id="load_from_url-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>load_from_url</strong>(url, load_handler)  &#x21d2; <tt>Object</tt> 
+    #<strong>load_from_url</strong>(url, load_handler)  &#x21d2; <tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt> 
   
 
   
@@ -1616,9 +1626,6 @@ object that responds to the following methods:</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns componentdefinition - the loaded ComponentDefinition object if
-successful</p>
-
 
   </div>
 </div>
@@ -1631,7 +1638,7 @@ successful</p>
         <span class='name'>url</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -1647,7 +1654,7 @@ successful</p>
         <span class='name'>load_handler</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -1661,27 +1668,27 @@ details.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>componentdefinition - the loaded ComponentDefinition object if successful</p>
+<p>the loaded ComponentDefinition object if successful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1706,7 +1713,7 @@ details.</p>
   <h3 class="signature " id="purge_unused-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>purge_unused</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>purge_unused</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::DefinitionList (class)">Sketchup::DefinitionList</a></span></tt> 
   
 
   
@@ -1737,14 +1744,9 @@ details.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::DefinitionList (class)">Sketchup::DefinitionList</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>Sketchup::DefinitionList object</p>
-</div>
       
     </li>
   
@@ -1770,10 +1772,91 @@ details.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="remove-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>remove</strong>(definition)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#remove-instance_method" title="Sketchup::DefinitionList#remove (method)">#remove</a></span> method is used to remove a component definition from the
+definition list with the given component definition. This will remove all
+instances of the definition.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_definitions'>definitions</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span>
+<span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_definition'>definition</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>definition</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="remove_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1802,8 +1885,6 @@ object.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -1816,7 +1897,7 @@ object.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -1829,17 +1910,20 @@ object.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -1847,9 +1931,6 @@ object.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1944,7 +2025,7 @@ object.</p>
   <h3 class="signature " id="unique_name-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>unique_name</strong>(base_name)  &#x21d2; <tt>Object</tt> 
+    #<strong>unique_name</strong>(base_name)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -1974,8 +2055,6 @@ a base_name string. For example, a base_name of “Joe” might return “Joe #2
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns new_name - the unique name.</p>
-
 
   </div>
 </div>
@@ -1988,13 +2067,16 @@ a base_name string. For example, a base_name of “Joe” might return “Joe #2
         <span class='name'>base_name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
     </li>
   
 </ul>
+
+
+</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2002,21 +2084,18 @@ a base_name string. For example, a base_name of “Joe” might return “Joe #2
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>new_name - the unique name.</p>
+<p>the unique name.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

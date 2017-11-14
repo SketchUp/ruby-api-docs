@@ -20,7 +20,7 @@
     <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
     <meta name="title" content="Class: Geom::PolygonMesh" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="The PolygonMesh class contains methods to create polygon mesh structures." />
+    <meta name="description" content="The #Geom::PolygonMesh class contains methods to create polygon mesh structures." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Geom::PolygonMesh" />
     <meta property="og:url"       content="http://ruby.sketchup.com/Geom/PolygonMesh.html" />
-    <meta property="og:description" content="The PolygonMesh class contains methods to create polygon mesh structures." />
+    <meta property="og:description" content="The #Geom::PolygonMesh class contains methods to create polygon mesh structures." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Geom::PolygonMesh" />
-    <meta name="twitter:description" content="The PolygonMesh class contains methods to create polygon mesh structures." />
+    <meta name="twitter:description" content="The #Geom::PolygonMesh class contains methods to create polygon mesh structures." />
     <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="http://ruby.sketchup.com/Geom/PolygonMesh.html" />
   <!-- STYLESHEETS -->
@@ -181,17 +181,17 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The PolygonMesh class contains methods to create polygon mesh structures.
-This is useful if you need to write a custom importer/exporter in Ruby that
-works at the level of triangulated polygons. For example, you can determine
-the triangles that make up a 15-sided SketchUp face by using this class, or
-write a SketchupImporter that reads a data file, creates a mesh from it,
-and draws faces based on the mesh.</p>
+<p>The <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span> class contains methods to create polygon mesh
+structures. This is useful if you need to write a custom importer/exporter
+in Ruby that works at the level of triangulated polygons. For example, you
+can determine the triangles that make up a 15-sided <span class='object_link'><a href="../Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> by
+using this class, or write a <span class='object_link'><a href="../Sketchup/Importer.html" title="Sketchup::Importer (class)">Sketchup::Importer</a></span> that reads a data file,
+creates a mesh from it, and draws faces based on the mesh.</p>
 
 <p>You can construct a mesh manually using the methods of this class, or you
 can get a mesh from a face by calling the Face.mesh method. See
-Entities.add_faces_from_mesh for an easy way to convert a mesh back into
-faces.</p>
+<span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span> for an easy way to convert a mesh
+back into faces.</p>
 
 
   </div>
@@ -206,8 +206,8 @@ faces.</p>
 </span><span class='id identifier rubyid_my_mesh'>my_mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_some_face'>some_face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span>
 
 <span class='comment'># Create a new group that we will populate with the mesh.
-</span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="../Sketchup/Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
-<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_my_mesh'>my_mesh</span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="../Sketchup/Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_group'><span class='object_link'><a href="../Sketchup/Entities.html#add_group-instance_method" title="Sketchup::Entities#add_group (method)">add_group</a></span></span>
+<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_my_mesh'>my_mesh</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -252,6 +252,18 @@ faces.</p>
         </dt>
       
         <dt id="SMOOTH_SOFT_EDGES-constant" class="">Geom::PolygonMesh::SMOOTH_SOFT_EDGES
+        </dt>
+      
+        <dt id="MESH_POINTS-constant" class="">Geom::PolygonMesh::MESH_POINTS
+        </dt>
+      
+        <dt id="MESH_UVQ_FRONT-constant" class="">Geom::PolygonMesh::MESH_UVQ_FRONT
+        </dt>
+      
+        <dt id="MESH_UVQ_BACK-constant" class="">Geom::PolygonMesh::MESH_UVQ_BACK
+        </dt>
+      
+        <dt id="MESH_NORMALS-constant" class="">Geom::PolygonMesh::MESH_NORMALS
         </dt>
       
     </dl>
@@ -551,7 +563,7 @@ polygon that is at a specific index in the mesh.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#polygons-instance_method" title="#polygons (instance method)">#<strong>polygons</strong>  &#x21d2; Array&lt;Integer&gt; </a>
+      <a href="#polygons-instance_method" title="#polygons (instance method)">#<strong>polygons</strong>  &#x21d2; Array&lt;Array&lt;Integer&gt;&gt;, Array&lt;nil&gt; </a>
     
 
     
@@ -601,7 +613,7 @@ mesh.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_uv-instance_method" title="#set_uv (instance method)">#<strong>set_uv</strong>(index, point)  &#x21d2; nil </a>
+      <a href="#set_uv-instance_method" title="#set_uv (instance method)">#<strong>set_uv</strong>(index, point, front)  &#x21d2; nil </a>
     
 
     
@@ -1266,7 +1278,7 @@ exception to that rule.</p>
       <pre class="example code"><code><span class='id identifier rubyid_pts'>pts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='float'>0.5</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_polygon_index'>polygon_index</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_pts'>pts</span><span class='rparen'>)</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="../Sketchup/Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_mesh'>mesh</span><span class='rparen'>)</span></code></pre>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="../Sketchup/Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'><span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">add_faces_from_mesh</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_mesh'>mesh</span><span class='rparen'>)</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -1888,11 +1900,18 @@ the mesh</p>
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Index is 1 based (starts at 1).The returned array can contain negative</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#polygon_at-instance_method" title="Geom::PolygonMesh#polygon_at (method)">#polygon_at</a></span> method is used to retrieve an array of vertex index
 values for a polygon at a specific index.</p>
 
-<p>Index is 1 based (starts at 1).  The returned array can contain negative
-values with the sign indicating a hidden edge. For example, a return value
+<p>values with the sign indicating a hidden edge. For example, a return value
 of <tt>[-1, 2, 3]</tt> indicates that the edge from <code>1</code> to
 <code>2</code> is hidden. The negative values should not be used as an
 index for point_at, take the positive value of the index value in the
@@ -2083,7 +2102,7 @@ polygon that is at a specific index in the mesh.</p>
   <h3 class="signature " id="polygons-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>polygons</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;</tt> 
+    #<strong>polygons</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;&gt;</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;nil&gt;</tt> 
   
 
   
@@ -2095,9 +2114,10 @@ polygon that is at a specific index in the mesh.</p>
 <p>The <span class='object_link'><a href="#polygons-instance_method" title="Geom::PolygonMesh#polygons (method)">#polygons</a></span> method is used to retrieve an array of all polygons in the
 mesh.</p>
 
-<p>The returned array can contain negative values with the sign indicating a
-hidden edge. For example, a return value of <tt>[-1, 2, 3]</tt> indicates that the
-edge from <code>1</code> to <code>2</code> is hidden.</p>
+<p>The returned array contains an array that can have a negative value with
+the sign indicating a hidden edge. For example, a return value of +[-1, 2,
+3]+ indicates that the edge from <code>1</code> to <code>2</code> is
+hidden.</p>
 
 
   </div>
@@ -2118,7 +2138,7 @@ edge from <code>1</code> to <code>2</code> is hidden.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Integer&gt;&gt;</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;nil&gt;</tt>)</span>
       
       
       
@@ -2262,7 +2282,7 @@ mesh.</p>
   <h3 class="signature " id="set_uv-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>set_uv</strong>(index, point)  &#x21d2; <tt>nil</tt> 
+    #<strong>set_uv</strong>(index, point, front)  &#x21d2; <tt>nil</tt> 
   
 
   
@@ -2368,6 +2388,22 @@ times you have called <span class='object_link'><a href="#set_uv-instance_method
         &mdash;
         <div class='inline'>
 <p>A Point3d object representing UV coordinates.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>front</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A boolean representing the front or back.</p>
 </div>
       
     </li>
@@ -2659,7 +2695,7 @@ mesh.</p>
       
       <pre class="example code"><code><span class='comment'># Get a mesh with front and back UVs.
 </span><span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span><span class='lparen'>(</span><span class='int'>1</span> <span class='op'>|</span> <span class='int'>2</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_uvs'>uvs</span></code></pre>
+<span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_uvs'>uvs</span><span class='lparen'>(</span><span class='kw'>true</span><span class='rparen'>)</span></code></pre>
     
   </div>
 

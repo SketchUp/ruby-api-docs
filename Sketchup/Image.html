@@ -304,6 +304,31 @@ on it.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#image_rep-instance_method" title="#image_rep (instance method)">#<strong>image_rep</strong>  &#x21d2; Sketchup::ImageRep </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#image_rep-instance_method" title="Sketchup::Image#image_rep (method)">#image_rep</a></span> method returns a copy of a <span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">ImageRep</a></span> object
+representing the pixel data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#normal-instance_method" title="#normal (instance method)">#<strong>normal</strong>  &#x21d2; Object </a>
     
 
@@ -911,6 +936,72 @@ to determine which new entities were created.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="image_rep-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>image_rep</strong>  &#x21d2; <tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#image_rep-instance_method" title="Sketchup::Image#image_rep (method)">#image_rep</a></span> method returns a copy of a <span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span> object
+representing the pixel data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugins/su_dynamiccomponents/images</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_image_file'>image_file</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'><span class='object_link'><a href="../Sketchup.html#find_support_file-class_method" title="Sketchup.find_support_file (method)">find_support_file</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>report_tool.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_image'>add_image</span><span class='lparen'>(</span><span class='id identifier rubyid_image_file'>image_file</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_image_rep'>image_rep</span> <span class='op'>=</span> <span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_image_rep'>image_rep</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2018</p>
 </div>
       
     </li>

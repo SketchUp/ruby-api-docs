@@ -181,6 +181,15 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Valid ranges for <span class='object_link'><a href="#zone_number-instance_method" title="Geom::UTM#zone_number (method)">#zone_number</a></span> and <span class='object_link'><a href="#zone_letter-instance_method" title="Geom::UTM#zone_letter (method)">#zone_letter</a></span> are 1-60 and C-X
+(omitting I and O). Valid ranges for <span class='object_link'><a href="#x-instance_method" title="Geom::UTM#x (method)">#x</a></span> and <span class='object_link'><a href="#y-instance_method" title="Geom::UTM#y (method)">#y</a></span> are 100000-899999.</p>
+</div>
+  </div>
+
+
 <p>The UTM class lets you work with UTM map coordinates.</p>
 
 
@@ -227,7 +236,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(zone_number, zone_letter, x, y)  &#x21d2; Object </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Geom::UTM </a>
     
 
     
@@ -244,7 +253,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The new method is used to create a new UTM coordinate.</p>
+<p>The <span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">#initialize</a></span> method is used to create a new UTM coordinate.</p>
 </div></span>
   
 </li>
@@ -253,7 +262,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_a-instance_method" title="#to_a (instance method)">#<strong>to_a</strong>  &#x21d2; Object </a>
+      <a href="#to_a-instance_method" title="#to_a (instance method)">#<strong>to_a</strong>  &#x21d2; Array(Integer, String, Float, Float) </a>
     
 
     
@@ -268,7 +277,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_a method returns a UTM coordinate as a 4 element array.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::UTM#to_a (method)">#to_a</a></span> method returns a UTM coordinate as a 4 element array.</p>
 </div></span>
   
 </li>
@@ -277,7 +286,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_latlong-instance_method" title="#to_latlong (instance method)">#<strong>to_latlong</strong>  &#x21d2; Object </a>
+      <a href="#to_latlong-instance_method" title="#to_latlong (instance method)">#<strong>to_latlong</strong>  &#x21d2; Geom::LatLong </a>
     
 
     
@@ -292,7 +301,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_latlong method is used to convert UTM coordinates to latitude and
+<p>The <span class='object_link'><a href="#to_latlong-instance_method" title="Geom::UTM#to_latlong (method)">#to_latlong</a></span> method is used to convert UTM coordinates to latitude and
 longitude.</p>
 </div></span>
   
@@ -302,7 +311,7 @@ longitude.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; Object </a>
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; String </a>
     
 
     
@@ -317,7 +326,7 @@ longitude.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_s method is used to retrieve a string representation of a UTM.</p>
+<p>The <span class='object_link'><a href="#to_s-instance_method" title="Geom::UTM#to_s (method)">#to_s</a></span> method is used to retrieve a string representation of a UTM.</p>
 </div></span>
   
 </li>
@@ -326,7 +335,7 @@ longitude.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#x-instance_method" title="#x (instance method)">#<strong>x</strong>  &#x21d2; Object </a>
+      <a href="#x-instance_method" title="#x (instance method)">#<strong>x</strong>  &#x21d2; Float </a>
     
 
     
@@ -341,7 +350,7 @@ longitude.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The x method returns the UTM x coordinate.</p>
+<p>The <span class='object_link'><a href="#x-instance_method" title="Geom::UTM#x (method)">#x</a></span> method returns the UTM x coordinate.</p>
 </div></span>
   
 </li>
@@ -350,7 +359,7 @@ longitude.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#y-instance_method" title="#y (instance method)">#<strong>y</strong>  &#x21d2; Object </a>
+      <a href="#y-instance_method" title="#y (instance method)">#<strong>y</strong>  &#x21d2; Float </a>
     
 
     
@@ -365,7 +374,7 @@ longitude.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The x method returns the UTM y coordinate.</p>
+<p>The <span class='object_link'><a href="#y-instance_method" title="Geom::UTM#y (method)">#y</a></span> method returns the UTM y coordinate.</p>
 </div></span>
   
 </li>
@@ -374,7 +383,7 @@ longitude.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#zone_letter-instance_method" title="#zone_letter (instance method)">#<strong>zone_letter</strong>  &#x21d2; Object </a>
+      <a href="#zone_letter-instance_method" title="#zone_letter (instance method)">#<strong>zone_letter</strong>  &#x21d2; String </a>
     
 
     
@@ -389,7 +398,7 @@ longitude.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The zone_letter method returns the UTM zone letter.</p>
+<p>The <span class='object_link'><a href="#zone_letter-instance_method" title="Geom::UTM#zone_letter (method)">#zone_letter</a></span> method returns the UTM zone letter.</p>
 </div></span>
   
 </li>
@@ -398,7 +407,7 @@ longitude.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#zone_number-instance_method" title="#zone_number (instance method)">#<strong>zone_number</strong>  &#x21d2; Object </a>
+      <a href="#zone_number-instance_method" title="#zone_number (instance method)">#<strong>zone_number</strong>  &#x21d2; Integer </a>
     
 
     
@@ -413,7 +422,7 @@ longitude.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The zone_number method returns the UTM zone number.</p>
+<p>The <span class='object_link'><a href="#zone_number-instance_method" title="Geom::UTM#zone_number (method)">#zone_number</a></span> method returns the UTM zone number.</p>
 </div></span>
   
 </li>
@@ -430,7 +439,13 @@ longitude.</p>
   <h3 class="signature first" id="initialize-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>initialize</strong>(zone_number, zone_letter, x, y)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>initialize</strong>(zone_number, zone_letter, x, y)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(utm)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(array)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt> </span>
+    
   
 
   
@@ -439,9 +454,9 @@ longitude.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The new method is used to create a new UTM coordinate. You will often
-create UTM objects by calling the method Model.point_to_utm instead of
-calling this method.</p>
+<p>The <span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">#initialize</a></span> method is used to create a new UTM coordinate. You will
+often create UTM objects by calling the method
+<span class='object_link'><a href="../Sketchup/Model.html#point_to_utm-instance_method" title="Sketchup::Model#point_to_utm (method)">Sketchup::Model#point_to_utm</a></span> instead of calling this method.</p>
 
 
   </div>
@@ -453,18 +468,22 @@ calling this method.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a copy of an existing UTM object.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_utm2'>utm2</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_utm2'>utm2</span><span class='rparen'>)</span>
 
 <span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span></code></pre>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(zone_number, zone_letter, x, y)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns utm - a utm coordinate if successful</p>
-
 
   </div>
 </div>
@@ -477,14 +496,13 @@ calling this method.</p>
         <span class='name'>zone_number</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A zone number or a UTM object. If this first parameter is a UTM object,
-then the other parameters are ignored.</p>
+<p>A zone number or a UTM object.</p>
 </div>
       
     </li>
@@ -494,7 +512,7 @@ then the other parameters are ignored.</p>
         <span class='name'>zone_letter</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -510,7 +528,7 @@ then the other parameters are ignored.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
@@ -526,7 +544,7 @@ then the other parameters are ignored.</p>
         <span class='name'>y</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
@@ -541,6 +559,79 @@ then the other parameters are ignored.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(utm)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>utm</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A UTM object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(array)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::UTM (class)">Geom::UTM</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>An</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, <span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Float, Float)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>array containing the zone number, zone letter, x and y positions.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -573,7 +664,7 @@ then the other parameters are ignored.</p>
   <h3 class="signature first" id="to_a-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>to_a</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_a</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, <span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Float, Float)</tt> 
   
 
   
@@ -582,7 +673,7 @@ then the other parameters are ignored.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_a method returns a UTM coordinate as a 4 element array. The Array
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::UTM#to_a (method)">#to_a</a></span> method returns a UTM coordinate as a 4 element array. The Array
 elements are the zone number, the zone letter, the x coordinate and the y
 coordinate.</p>
 
@@ -596,7 +687,7 @@ coordinate.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span></code></pre>
     
   </div>
@@ -607,14 +698,9 @@ coordinate.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, <span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Float, Float)</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>utm_as_array - a utm array if successful</p>
-</div>
       
     </li>
   
@@ -643,7 +729,7 @@ coordinate.</p>
   <h3 class="signature " id="to_latlong-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>to_latlong</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_latlong</strong>  &#x21d2; <tt><span class='object_link'><a href="LatLong.html" title="Geom::LatLong (class)">Geom::LatLong</a></span></tt> 
   
 
   
@@ -652,7 +738,7 @@ coordinate.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_latlong method is used to convert UTM coordinates to latitude and
+<p>The <span class='object_link'><a href="#to_latlong-instance_method" title="Geom::UTM#to_latlong (method)">#to_latlong</a></span> method is used to convert UTM coordinates to latitude and
 longitude. See the LatLong class for more information.</p>
 
 
@@ -665,7 +751,7 @@ longitude. See the LatLong class for more information.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_ll'>ll</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_to_latlong'>to_latlong</span></code></pre>
     
   </div>
@@ -676,14 +762,9 @@ longitude. See the LatLong class for more information.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="LatLong.html" title="Geom::LatLong (class)">Geom::LatLong</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>utm_as_latlong - a LatLong object if successful</p>
-</div>
       
     </li>
   
@@ -712,7 +793,7 @@ longitude. See the LatLong class for more information.</p>
   <h3 class="signature " id="to_s-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>to_s</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>to_s</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -721,7 +802,7 @@ longitude. See the LatLong class for more information.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_s method is used to retrieve a string representation of a UTM.</p>
+<p>The <span class='object_link'><a href="#to_s-instance_method" title="Geom::UTM#to_s (method)">#to_s</a></span> method is used to retrieve a string representation of a UTM.</p>
 
 
   </div>
@@ -733,7 +814,7 @@ longitude. See the LatLong class for more information.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_string'>string</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span></code></pre>
     
   </div>
@@ -744,14 +825,9 @@ longitude. See the LatLong class for more information.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>utm_as_string - a utm string if successful</p>
-</div>
       
     </li>
   
@@ -780,7 +856,7 @@ longitude. See the LatLong class for more information.</p>
   <h3 class="signature " id="x-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>x</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>x</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -789,7 +865,7 @@ longitude. See the LatLong class for more information.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The x method returns the UTM x coordinate.</p>
+<p>The <span class='object_link'><a href="#x-instance_method" title="Geom::UTM#x (method)">#x</a></span> method returns the UTM x coordinate.</p>
 
 
   </div>
@@ -801,7 +877,7 @@ longitude. See the LatLong class for more information.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span></code></pre>
     
   </div>
@@ -812,14 +888,9 @@ longitude. See the LatLong class for more information.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>x - the UTM x coordinate</p>
-</div>
       
     </li>
   
@@ -848,7 +919,7 @@ longitude. See the LatLong class for more information.</p>
   <h3 class="signature " id="y-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>y</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>y</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -857,7 +928,7 @@ longitude. See the LatLong class for more information.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The x method returns the UTM y coordinate.</p>
+<p>The <span class='object_link'><a href="#y-instance_method" title="Geom::UTM#y (method)">#y</a></span> method returns the UTM y coordinate.</p>
 
 
   </div>
@@ -869,7 +940,7 @@ longitude. See the LatLong class for more information.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span></code></pre>
     
   </div>
@@ -880,14 +951,9 @@ longitude. See the LatLong class for more information.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>y - the UTM y coordinate</p>
-</div>
       
     </li>
   
@@ -916,7 +982,7 @@ longitude. See the LatLong class for more information.</p>
   <h3 class="signature " id="zone_letter-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>zone_letter</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>zone_letter</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -925,7 +991,7 @@ longitude. See the LatLong class for more information.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The zone_letter method returns the UTM zone letter.</p>
+<p>The <span class='object_link'><a href="#zone_letter-instance_method" title="Geom::UTM#zone_letter (method)">#zone_letter</a></span> method returns the UTM zone letter.</p>
 
 
   </div>
@@ -937,7 +1003,7 @@ longitude. See the LatLong class for more information.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_zl'>zl</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_zone_letter'>zone_letter</span></code></pre>
     
   </div>
@@ -948,14 +1014,9 @@ longitude. See the LatLong class for more information.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>zone_letter - the UTM zone letter</p>
-</div>
       
     </li>
   
@@ -984,7 +1045,7 @@ longitude. See the LatLong class for more information.</p>
   <h3 class="signature " id="zone_number-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>zone_number</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>zone_number</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -993,7 +1054,7 @@ longitude. See the LatLong class for more information.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The zone_number method returns the UTM zone number.</p>
+<p>The <span class='object_link'><a href="#zone_number-instance_method" title="Geom::UTM#zone_number (method)">#zone_number</a></span> method returns the UTM zone number.</p>
 
 
   </div>
@@ -1005,7 +1066,7 @@ longitude. See the LatLong class for more information.</p>
     
       
       <pre class="example code"><code><span class='comment'># Create a new UTM object from scratch.
-</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span> <span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span>
+</span><span class='id identifier rubyid_utm'>utm</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::UTM (class)">UTM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::UTM#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>13</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>T</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='float'>475849.37521</span><span class='comma'>,</span> <span class='float'>4429682.73749</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_zn'>zn</span> <span class='op'>=</span> <span class='id identifier rubyid_utm'>utm</span><span class='period'>.</span><span class='id identifier rubyid_zone_number'>zone_number</span></code></pre>
     
   </div>
@@ -1016,14 +1077,9 @@ longitude. See the LatLong class for more information.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>zone_number - the UTM zone number</p>
-</div>
       
     </li>
   

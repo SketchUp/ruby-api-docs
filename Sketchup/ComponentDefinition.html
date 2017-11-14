@@ -20,7 +20,7 @@
     <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
     <meta name="title" content="Class: Sketchup::ComponentDefinition" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="The ComponentDefinition class is used to define the contents for a SketchUp component." />
+    <meta name="description" content="The Sketchup::ComponentDefinition class is used to define the contents for a SketchUp component." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::ComponentDefinition" />
     <meta property="og:url"       content="http://ruby.sketchup.com/Sketchup/ComponentDefinition.html" />
-    <meta property="og:description" content="The ComponentDefinition class is used to define the contents for a SketchUp component." />
+    <meta property="og:description" content="The Sketchup::ComponentDefinition class is used to define the contents for a SketchUp component." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Sketchup::ComponentDefinition" />
-    <meta name="twitter:description" content="The ComponentDefinition class is used to define the contents for a SketchUp component." />
+    <meta name="twitter:description" content="The Sketchup::ComponentDefinition class is used to define the contents for a SketchUp component." />
     <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="http://ruby.sketchup.com/Sketchup/ComponentDefinition.html" />
   <!-- STYLESHEETS -->
@@ -190,16 +190,24 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The ComponentDefinition class is used to define the contents for a SketchUp
-component. Components are a collection of entities that can be instanced
-and reused multiple times throughout a model. For example, you could draw a
-chair once, turn it into a component, and then use 6 instances of it to
-surround a table. Edits to the original “definition” will then propagate
-across all of its instances.</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span> class is used to define the contents
+for a SketchUp component. Components are a collection of entities that can
+be instanced and reused multiple times throughout a model. For example, you
+could draw a chair once, turn it into a component, and then use 6 instances
+of it to surround a table. Edits to the original “definition” will then
+propagate across all of its instances.</p>
 
 <p>The ComponentDefinition class contains the global entities and settings for
-each definition. See the ComponentInstance class for how each copy is
-defined.</p>
+each definition. See the <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class for how each
+copy is defined.</p>
+
+<p>Starting from SketchUp 2018+, the <span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span> class
+contains a new default attribute dictionary named “SU_DefinitionSet” with
+default keys named named “Price”, “Size”, “Url”. See the
+<a href="https://help.sketchup.com/en/article/3000124" target="_parent" title="Help article">Help article</a> for more
+information. The dictionary cannot be deleted via ruby and an ArgumentError
+will be raised. The key/value pairs in the dictionary can be deleted
+safely.</p>
 
 
   </div>
@@ -245,7 +253,7 @@ defined.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#<=>-instance_method" title="#&lt;=&gt; (instance method)">#<strong>&lt;=&gt;</strong>(compdef2)  &#x21d2; Object </a>
+      <a href="#<=>-instance_method" title="#&lt;=&gt; (instance method)">#<strong>&lt;=&gt;</strong>(compdef2)  &#x21d2; Integer </a>
     
 
     
@@ -270,7 +278,7 @@ sorting.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(compdef2)  &#x21d2; Object </a>
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(compdef2)  &#x21d2; Boolean </a>
     
 
     
@@ -295,7 +303,7 @@ same (based on their address in memory).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_classification-instance_method" title="#add_classification (instance method)">#<strong>add_classification</strong>(schema_name, schema_type)  &#x21d2; Object </a>
+      <a href="#add_classification-instance_method" title="#add_classification (instance method)">#<strong>add_classification</strong>(schema_name, schema_type)  &#x21d2; Boolean </a>
     
 
     
@@ -320,7 +328,7 @@ component.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -344,7 +352,7 @@ component.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#behavior-instance_method" title="#behavior (instance method)">#<strong>behavior</strong>  &#x21d2; Object </a>
+      <a href="#behavior-instance_method" title="#behavior (instance method)">#<strong>behavior</strong>  &#x21d2; Sketchup::Behavior </a>
     
 
     
@@ -369,7 +377,7 @@ a component definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#count_instances-instance_method" title="#count_instances (instance method)">#<strong>count_instances</strong>  &#x21d2; Object </a>
+      <a href="#count_instances-instance_method" title="#count_instances (instance method)">#<strong>count_instances</strong>  &#x21d2; Integer </a>
     
 
     
@@ -394,7 +402,7 @@ instances in a model using this component definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#count_used_instances-instance_method" title="#count_used_instances (instance method)">#<strong>count_used_instances</strong>  &#x21d2; Object </a>
+      <a href="#count_used_instances-instance_method" title="#count_used_instances (instance method)">#<strong>count_used_instances</strong>  &#x21d2; Integer </a>
     
 
     
@@ -419,7 +427,7 @@ component instances in a model using this component definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#description-instance_method" title="#description (instance method)">#<strong>description</strong>  &#x21d2; Object </a>
+      <a href="#description-instance_method" title="#description (instance method)">#<strong>description</strong>  &#x21d2; String </a>
     
 
     
@@ -444,7 +452,7 @@ definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#description=-instance_method" title="#description= (instance method)">#<strong>description=</strong>(description)  &#x21d2; Object </a>
+      <a href="#description=-instance_method" title="#description= (instance method)">#<strong>description=</strong>(description)  &#x21d2; String </a>
     
 
     
@@ -469,7 +477,7 @@ definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#entities-instance_method" title="#entities (instance method)">#<strong>entities</strong>  &#x21d2; Object </a>
+      <a href="#entities-instance_method" title="#entities (instance method)">#<strong>entities</strong>  &#x21d2; Sketchup::Entities </a>
     
 
     
@@ -494,7 +502,7 @@ component definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_classification_value-instance_method" title="#get_classification_value (instance method)">#<strong>get_classification_value</strong>(path)  &#x21d2; Object </a>
+      <a href="#get_classification_value-instance_method" title="#get_classification_value (instance method)">#<strong>get_classification_value</strong>(path)  &#x21d2; Object<sup>?</sup> </a>
     
 
     
@@ -519,7 +527,7 @@ classification attribute given a key path.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#group%3F-instance_method" title="#group? (instance method)">#<strong>group?</strong>  &#x21d2; Object </a>
+      <a href="#group%3F-instance_method" title="#group? (instance method)">#<strong>group?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -544,7 +552,7 @@ to hold the elements of a group.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#guid-instance_method" title="#guid (instance method)">#<strong>guid</strong>  &#x21d2; Object </a>
+      <a href="#guid-instance_method" title="#guid (instance method)">#<strong>guid</strong>  &#x21d2; String </a>
     
 
     
@@ -569,7 +577,7 @@ definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hidden%3F-instance_method" title="#hidden? (instance method)">#<strong>hidden?</strong>  &#x21d2; Object </a>
+      <a href="#hidden%3F-instance_method" title="#hidden? (instance method)">#<strong>hidden?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -594,7 +602,7 @@ be hidden on the component browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#image%3F-instance_method" title="#image? (instance method)">#<strong>image?</strong>  &#x21d2; Object </a>
+      <a href="#image%3F-instance_method" title="#image? (instance method)">#<strong>image?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -619,7 +627,7 @@ to define an image.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#insertion_point-instance_method" title="#insertion_point (instance method)">#<strong>insertion_point</strong>  &#x21d2; Object </a>
+      <a href="#insertion_point-instance_method" title="#insertion_point (instance method)">#<strong>insertion_point</strong>  &#x21d2; Geom::Point3d </a>
     
 
     
@@ -668,7 +676,7 @@ component was inserted.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#instances-instance_method" title="#instances (instance method)">#<strong>instances</strong>  &#x21d2; Object </a>
+      <a href="#instances-instance_method" title="#instances (instance method)">#<strong>instances</strong>  &#x21d2; Array&lt;Sketchup::ComponentInstance&gt; </a>
     
 
     
@@ -693,7 +701,7 @@ this ComponentDefinition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#internal%3F-instance_method" title="#internal? (instance method)">#<strong>internal?</strong>  &#x21d2; Object </a>
+      <a href="#internal%3F-instance_method" title="#internal? (instance method)">#<strong>internal?</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -718,7 +726,7 @@ internal to the Component Browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#invalidate_bounds-instance_method" title="#invalidate_bounds (instance method)">#<strong>invalidate_bounds</strong>  &#x21d2; Object </a>
+      <a href="#invalidate_bounds-instance_method" title="#invalidate_bounds (instance method)">#<strong>invalidate_bounds</strong>  &#x21d2; Boolean </a>
     
 
     
@@ -742,7 +750,7 @@ internal to the Component Browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; Object </a>
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
     
 
     
@@ -766,7 +774,7 @@ internal to the Component Browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; Object </a>
+      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; String </a>
     
 
     
@@ -790,7 +798,7 @@ internal to the Component Browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#path-instance_method" title="#path (instance method)">#<strong>path</strong>  &#x21d2; Object </a>
+      <a href="#path-instance_method" title="#path (instance method)">#<strong>path</strong>  &#x21d2; String, false </a>
     
 
     
@@ -815,7 +823,7 @@ loaded.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#refresh_thumbnail-instance_method" title="#refresh_thumbnail (instance method)">#<strong>refresh_thumbnail</strong>  &#x21d2; Object </a>
+      <a href="#refresh_thumbnail-instance_method" title="#refresh_thumbnail (instance method)">#<strong>refresh_thumbnail</strong>  &#x21d2; nil </a>
     
 
     
@@ -840,7 +848,7 @@ thumbnail image that appears in the component browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_classification-instance_method" title="#remove_classification (instance method)">#<strong>remove_classification</strong>(schema_name, schema_type)  &#x21d2; Object </a>
+      <a href="#remove_classification-instance_method" title="#remove_classification (instance method)">#<strong>remove_classification</strong>(schema_name, schema_type)  &#x21d2; Boolean </a>
     
 
     
@@ -865,7 +873,7 @@ from the component.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Object </a>
+      <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
     
@@ -890,7 +898,7 @@ object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#save_as-instance_method" title="#save_as (instance method)">#<strong>save_as</strong>(file_path)  &#x21d2; Object </a>
+      <a href="#save_as-instance_method" title="#save_as (instance method)">#<strong>save_as</strong>(file_path)  &#x21d2; Boolean </a>
     
 
     
@@ -915,7 +923,7 @@ the specified file destination.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#save_thumbnail-instance_method" title="#save_thumbnail (instance method)">#<strong>save_thumbnail</strong>(filename)  &#x21d2; Object </a>
+      <a href="#save_thumbnail-instance_method" title="#save_thumbnail (instance method)">#<strong>save_thumbnail</strong>(filename)  &#x21d2; Boolean </a>
     
 
     
@@ -939,7 +947,7 @@ the specified file destination.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_classification_value-instance_method" title="#set_classification_value (instance method)">#<strong>set_classification_value</strong>(path, value)  &#x21d2; Object </a>
+      <a href="#set_classification_value-instance_method" title="#set_classification_value (instance method)">#<strong>set_classification_value</strong>(path, value)  &#x21d2; Boolean </a>
     
 
     
@@ -998,7 +1006,7 @@ classification attribute given a key path.</p>
   <h3 class="signature first" id="<=>-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>&lt;=&gt;</strong>(compdef2)  &#x21d2; <tt>Object</tt> 
+    #<strong>&lt;=&gt;</strong>(compdef2)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1032,9 +1040,6 @@ sorting. The comparison is done based on the component name.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - a -1 if component1 is less then component2. A 1 if
-component1 greater than component2</p>
-
 
   </div>
 </div>
@@ -1047,7 +1052,7 @@ component1 greater than component2</p>
         <span class='name'>compdef2</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
@@ -1060,28 +1065,28 @@ component1 greater than component2</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - a -1 if component1 is less then component2. A 1 if component1
-greater than component2</p>
+<p>a -1 if component1 is less then component2. A 1 if component1 greater than
+component2</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1106,7 +1111,7 @@ greater than component2</p>
   <h3 class="signature " id="==-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>==</strong>(compdef2)  &#x21d2; <tt>Object</tt> 
+    #<strong>==</strong>(compdef2)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1140,9 +1145,6 @@ same (based on their address in memory).</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if the ComponentDefinition objects are the same
-object. False if the objects are not the same.</p>
-
 
   </div>
 </div>
@@ -1155,7 +1157,7 @@ object. False if the objects are not the same.</p>
         <span class='name'>compdef2</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">Sketchup::ComponentDefinition</a></span></tt>)</span>
       
       
       
@@ -1168,28 +1170,28 @@ object. False if the objects are not the same.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if the ComponentDefinition objects are the same object. False
-if the objects are not the same.</p>
+<p>true if the ComponentDefinition objects are the same object. False if the
+objects are not the same.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1214,7 +1216,7 @@ if the objects are not the same.</p>
   <h3 class="signature " id="add_classification-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_classification</strong>(schema_name, schema_type)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_classification</strong>(schema_name, schema_type)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1245,8 +1247,6 @@ component.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if the classification succeeds. Otherwise false.</p>
-
 
   </div>
 </div>
@@ -1259,7 +1259,7 @@ component.</p>
         <span class='name'>schema_name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -1275,7 +1275,7 @@ component.</p>
         <span class='name'>schema_type</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -1288,17 +1288,20 @@ component.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if the classification succeeds. Otherwise false.</p>
 </div>
@@ -1306,9 +1309,6 @@ component.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1333,7 +1333,7 @@ component.</p>
   <h3 class="signature " id="add_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>add_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -1361,8 +1361,6 @@ component.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -1375,7 +1373,7 @@ component.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -1388,17 +1386,20 @@ component.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -1406,9 +1407,6 @@ component.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1433,7 +1431,7 @@ component.</p>
   <h3 class="signature " id="behavior-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>behavior</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>behavior</strong>  &#x21d2; <tt><span class='object_link'><a href="Behavior.html" title="Sketchup::Behavior (class)">Sketchup::Behavior</a></span></tt> 
   
 
   
@@ -1469,13 +1467,13 @@ a component definition.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Behavior.html" title="Sketchup::Behavior (class)">Sketchup::Behavior</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>behavior - a Behavior object if successful</p>
+<p>a Behavior object if successful</p>
 </div>
       
     </li>
@@ -1505,7 +1503,7 @@ a component definition.</p>
   <h3 class="signature " id="count_instances-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>count_instances</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>count_instances</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1542,13 +1540,13 @@ doesn&#39;t take into account instances inside unused definitions.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>count - the number of component instances of this component definition (if
+<p>the number of component instances of this component definition (if
 successful)</p>
 </div>
       
@@ -1579,7 +1577,7 @@ successful)</p>
   <h3 class="signature " id="count_used_instances-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>count_used_instances</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>count_used_instances</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1615,13 +1613,13 @@ takes into account the full hierarchy of the model.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>count - the number of component instances of this component definition (if
+<p>the number of component instances of this component definition (if
 successful)</p>
 </div>
       
@@ -1652,7 +1650,7 @@ successful)</p>
   <h3 class="signature " id="description-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>description</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>description</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -1687,13 +1685,13 @@ definition.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>description - the description of the component definition if successful</p>
+<p>the description of the component definition if successful</p>
 </div>
       
     </li>
@@ -1723,7 +1721,7 @@ definition.</p>
   <h3 class="signature " id="description=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>description=</strong>(description)  &#x21d2; <tt>Object</tt> 
+    #<strong>description=</strong>(description)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -1753,8 +1751,6 @@ definition.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - the description if successful, false if unsuccessful</p>
-
 
   </div>
 </div>
@@ -1775,27 +1771,27 @@ definition.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - the description if successful, false if unsuccessful</p>
+<p>the description if successful, false if unsuccessful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1820,7 +1816,7 @@ definition.</p>
   <h3 class="signature " id="entities-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>entities</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>entities</strong>  &#x21d2; <tt><span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span></tt> 
   
 
   
@@ -1852,13 +1848,13 @@ component definition</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>entities - an Entities object if successful</p>
+<p>an Entities object if successful</p>
 </div>
       
     </li>
@@ -1888,7 +1884,7 @@ component definition</p>
   <h3 class="signature " id="get_classification_value-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>get_classification_value</strong>(path)  &#x21d2; <tt>Object</tt> 
+    #<strong>get_classification_value</strong>(path)  &#x21d2; <tt>Object</tt><sup>?</sup> 
   
 
   
@@ -1924,7 +1920,7 @@ classification attribute given a key path.</p>
         <span class='name'>path</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
       
       
       
@@ -1943,13 +1939,13 @@ classification attribute given a key path.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>mixed - a Ruby object if successful, nil otherwise.</p>
+<p>a Ruby object if successful, nil otherwise.</p>
 </div>
       
     </li>
@@ -1979,7 +1975,7 @@ classification attribute given a key path.</p>
   <h3 class="signature " id="group?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>group?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>group?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2015,15 +2011,9 @@ to hold the elements of a group.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the definition is used to hold a group, false if the
-definition does not hold a group.</p>
-</div>
       
     </li>
   
@@ -2061,7 +2051,7 @@ definition does not hold a group.</p>
   <h3 class="signature " id="guid-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>guid</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>guid</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -2094,13 +2084,13 @@ the component edit is exited.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>guid - a string guid if successful</p>
+<p>a string guid if successful</p>
 </div>
       
     </li>
@@ -2130,7 +2120,7 @@ the component edit is exited.</p>
   <h3 class="signature " id="hidden?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>hidden?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>hidden?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2162,15 +2152,9 @@ be hidden on the component browser.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the definition should be hidden, false if the definition
-should not be hidden</p>
-</div>
       
     </li>
   
@@ -2208,7 +2192,7 @@ should not be hidden</p>
   <h3 class="signature " id="image?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>image?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>image?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2246,15 +2230,9 @@ to define an image.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the component definition defines an image, false if the
-component definition does not define an image.</p>
-</div>
       
     </li>
   
@@ -2292,7 +2270,7 @@ component definition does not define an image.</p>
   <h3 class="signature " id="insertion_point-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>insertion_point</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>insertion_point</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> 
   
 
   
@@ -2332,14 +2310,14 @@ component was inserted.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>point - the Point3d where the component was inserted if successful. False
-if unsuccessful.</p>
+<p>the Point3d where the component was inserted if successful. False if
+unsuccessful.</p>
 </div>
       
     </li>
@@ -2470,7 +2448,7 @@ if unsuccessful.</p>
   <h3 class="signature " id="instances-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>instances</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>instances</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span>&gt;</tt> 
   
 
   
@@ -2502,13 +2480,13 @@ this ComponentDefinition.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span>&gt;</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>instances - an array of ComponentInstances (if successful)</p>
+<p>an array of ComponentInstances (if successful)</p>
 </div>
       
     </li>
@@ -2538,7 +2516,7 @@ this ComponentDefinition.</p>
   <h3 class="signature " id="internal?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>internal?</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>internal?</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2577,16 +2555,9 @@ internal to the Component Browser</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if the component definition is internal to SketchUp&#39;s
-Component Browser.  False if the component definition is not internal to
-SketchUp.</p>
-</div>
       
     </li>
   
@@ -2624,7 +2595,7 @@ SketchUp.</p>
   <h3 class="signature " id="invalidate_bounds-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>invalidate_bounds</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>invalidate_bounds</strong>  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2661,11 +2632,11 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful</p>
 </div>
@@ -2697,7 +2668,7 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
   <h3 class="signature " id="name-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>name</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>name</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -2732,13 +2703,13 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>name - the component definition&#39;s name if successful</p>
+<p>the component definition&#39;s name if successful</p>
 </div>
       
     </li>
@@ -2768,7 +2739,7 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
   <h3 class="signature " id="name=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>name=</strong>(name)  &#x21d2; <tt>Object</tt> 
+    #<strong>name=</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -2796,17 +2767,7 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
 <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_componentdefinition'>componentdefinition</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bed</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns name - the name assigned to the component definition if successful</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -2828,21 +2789,18 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>name - the name assigned to the component definition if successful</p>
+<p>the name assigned to the component definition if successful</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2867,7 +2825,7 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
   <h3 class="signature " id="path-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>path</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>path</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>, <tt>false</tt> 
   
 
   
@@ -2905,13 +2863,13 @@ loaded.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>, <tt>false</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>path - a valid path if successful, false if unsuccessful</p>
+<p>a valid path if successful, false if unsuccessful</p>
 </div>
       
     </li>
@@ -2941,7 +2899,7 @@ loaded.</p>
   <h3 class="signature " id="refresh_thumbnail-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>refresh_thumbnail</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>refresh_thumbnail</strong>  &#x21d2; <tt>nil</tt> 
   
 
   
@@ -2975,14 +2933,9 @@ like the thumbnail to match.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
@@ -3011,7 +2964,7 @@ like the thumbnail to match.</p>
   <h3 class="signature " id="remove_classification-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>remove_classification</strong>(schema_name, schema_type)  &#x21d2; <tt>Object</tt> 
+    #<strong>remove_classification</strong>(schema_name, schema_type)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3042,8 +2995,6 @@ from the component.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if the removal succeeds. Otherwise false.</p>
-
 
   </div>
 </div>
@@ -3056,13 +3007,13 @@ from the component.</p>
         <span class='name'>schema_name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>a String - Schema name to remove</p>
+<p>Schema name to remove</p>
 </div>
       
     </li>
@@ -3072,19 +3023,22 @@ from the component.</p>
         <span class='name'>schema_type</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>a String - Schema type to remove. If not provided or an empty string, the
-currently applied schema type for the given schema name will be removed.</p>
+<p>Schema type to remove. If not provided or an empty string, the currently
+applied schema type for the given schema name will be removed.</p>
 </div>
       
     </li>
   
 </ul>
+
+
+</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -3092,11 +3046,11 @@ currently applied schema type for the given schema name will be removed.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if the removal succeeds. Otherwise false.</p>
 </div>
@@ -3104,9 +3058,6 @@ currently applied schema type for the given schema name will be removed.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3131,7 +3082,7 @@ currently applied schema type for the given schema name will be removed.</p>
   <h3 class="signature " id="remove_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Object</tt> 
+    #<strong>remove_observer</strong>(observer)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3160,8 +3111,6 @@ object.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -3174,7 +3123,7 @@ object.</p>
         <span class='name'>observer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -3187,17 +3136,20 @@ object.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false if unsuccessful.</p>
 </div>
@@ -3205,9 +3157,6 @@ object.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3232,7 +3181,7 @@ object.</p>
   <h3 class="signature " id="save_as-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>save_as</strong>(file_path)  &#x21d2; <tt>Object</tt> 
+    #<strong>save_as</strong>(file_path)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3261,8 +3210,6 @@ the specified file destination.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful</p>
-
 
   </div>
 </div>
@@ -3275,7 +3222,7 @@ the specified file destination.</p>
         <span class='name'>file_path</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -3288,17 +3235,20 @@ the specified file destination.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful</p>
 </div>
@@ -3306,9 +3256,6 @@ the specified file destination.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3333,7 +3280,7 @@ the specified file destination.</p>
   <h3 class="signature " id="save_thumbnail-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>save_thumbnail</strong>(filename)  &#x21d2; <tt>Object</tt> 
+    #<strong>save_thumbnail</strong>(filename)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3363,8 +3310,6 @@ pct, and gif.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns true if successful, false otherwise.</p>
-
 
   </div>
 </div>
@@ -3385,17 +3330,20 @@ pct, and gif.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
 <p>true if successful, false otherwise.</p>
 </div>
@@ -3403,9 +3351,6 @@ pct, and gif.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3430,7 +3375,7 @@ pct, and gif.</p>
   <h3 class="signature " id="set_classification_value-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>set_classification_value</strong>(path, value)  &#x21d2; <tt>Object</tt> 
+    #<strong>set_classification_value</strong>(path, value)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3466,7 +3411,7 @@ classification attribute given a key path.</p>
         <span class='name'>path</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
       
       
       
@@ -3482,7 +3427,7 @@ classification attribute given a key path.</p>
         <span class='name'>value</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
       
@@ -3501,13 +3446,13 @@ classification attribute given a key path.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>boolean - true if the path was valid, false otherwise.</p>
+<p>true if the path was valid, false otherwise.</p>
 </div>
       
     </li>

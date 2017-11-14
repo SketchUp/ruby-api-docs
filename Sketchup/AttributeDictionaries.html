@@ -255,7 +255,7 @@ grabbing a handle from an existing entity.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(key)  &#x21d2; Object </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(key)  &#x21d2; Sketchup::AttributeDictionary </a>
     
 
     
@@ -303,7 +303,7 @@ grabbing a handle from an existing entity.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(key_or_dict)  &#x21d2; Object </a>
+      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(key_or_dict)  &#x21d2; Sketchup::AttributeDictionaries </a>
     
 
     
@@ -424,7 +424,7 @@ the collection.</p>
   <h3 class="signature first" id="[]-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>[]</strong>(key)  &#x21d2; <tt>Object</tt> 
+    #<strong>[]</strong>(key)  &#x21d2; <tt><span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">Sketchup::AttributeDictionary</a></span></tt> 
   
 
   
@@ -460,8 +460,6 @@ given name.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns dictionary - the dictionary</p>
-
 
   </div>
 </div>
@@ -474,7 +472,7 @@ given name.</p>
         <span class='name'>key</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
@@ -487,27 +485,27 @@ given name.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">Sketchup::AttributeDictionary</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>dictionary - the dictionary</p>
+<p>the dictionary</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -603,7 +601,7 @@ given name.</p>
   <h3 class="signature " id="delete-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>delete</strong>(key_or_dict)  &#x21d2; <tt>Object</tt> 
+    #<strong>delete</strong>(key_or_dict)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::AttributeDictionaries (class)">Sketchup::AttributeDictionaries</a></span></tt> 
   
 
   
@@ -615,6 +613,13 @@ given name.</p>
 <p>The delete method destroys a given AttributeDictionary. This
 AttributeDictionary can be passed directly or identified by its string
 name.</p>
+
+<p>In SketchUp 2018, special attribute dictionaries have been added. The name
+of these dictionaries are “SU_InstanceSet” and “SU_DefinitionSet”. The
+dictionaries cannot be deleted via ruby and an ArgumentError will be
+raised. The key/value pairs in the dictionary can be deleted safely.</p>
+
+<p>object</p>
 
 
   </div>
@@ -635,8 +640,6 @@ name.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns dictionaries - the modified AttributeDictionaries object</p>
-
 
   </div>
 </div>
@@ -649,7 +652,7 @@ name.</p>
         <span class='name'>key_or_dict</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>, <tt><span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">Sketchup::AttributeDictionary</a></span></tt>)</span>
       
       
       
@@ -663,8 +666,29 @@ itself.</p>
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::AttributeDictionaries (class)">Sketchup::AttributeDictionaries</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the modified AttributeDictionaries</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
   
     <li>
       
@@ -675,15 +699,12 @@ itself.</p>
       
         
         <div class='inline'>
-<p>dictionaries - the modified AttributeDictionaries object</p>
+<p>ArgumentError if an advanced attribute dictionary is being deleted.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
