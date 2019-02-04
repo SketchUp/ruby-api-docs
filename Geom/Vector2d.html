@@ -548,7 +548,7 @@ the specific index of the value.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Numeric </a>
+      <a href="#length-instance_method" title="#length (instance method)">#<strong>length</strong>  &#x21d2; Length </a>
     
 
     
@@ -836,6 +836,55 @@ Array.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#to_s-instance_method" title="Geom::Vector2d#to_s (method)">#to_s</a></span> method returns a string representation of the <span class='object_link'><a href="" title="Geom::Vector2d (class)">Vector2d</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transform-instance_method" title="#transform (instance method)">#<strong>transform</strong>(transform)  &#x21d2; Geom::Vector2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#transform-instance_method" title="Geom::Vector2d#transform (method)">#transform</a></span> method applies a transformation to a vector, returning a
+new vector.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transform!-instance_method" title="#transform! (instance method)">#<strong>transform!</strong>(transform)  &#x21d2; Geom::Vector2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#transform!-instance_method" title="Geom::Vector2d#transform! (method)">#transform!</a></span> method applies a transformation to a vector.</p>
 </div></span>
   
 </li>
@@ -1593,7 +1642,7 @@ index.</p>
         <span class='name'>index</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -2130,7 +2179,7 @@ is an alias of the dot method.</p>
   <h3 class="signature " id="length-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>length</strong>  &#x21d2; <tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt> 
+    #<strong>length</strong>  &#x21d2; <tt><span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span></tt> 
   
 
   
@@ -2162,7 +2211,7 @@ is an alias of the dot method.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span></tt>)</span>
       
       
       
@@ -2208,7 +2257,7 @@ is an alias of the dot method.</p>
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#length=-instance_method" title="Geom::Vector2d#length= (method)">#length=</a></span> method sets the length of the <span class='object_link'><a href="" title="Geom::Vector2d (class)">Geom::Vector2d</a></span>. The new
-length must be greater than 0.</p>
+length must not be 0.</p>
 
 
   </div>
@@ -3055,6 +3104,186 @@ Array.</p>
         
         <div class='inline'>
 <p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transform-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#transform-instance_method" title="Geom::Vector2d#transform (method)">#transform</a></span> method applies a transformation to a vector, returning a
+new vector. The original vector is unchanged by this method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector2d (class)">Vector2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>4</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Transformation2d.html#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='comment'># vector2 will be (6, 8)
+</span><span class='id identifier rubyid_vector2'>vector2</span> <span class='op'>=</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_transform'>transform</span><span class='lparen'>(</span><span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A transformation object to apply to the vector.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the newly transformed vector</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transform!-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#transform!-instance_method" title="Geom::Vector2d#transform! (method)">#transform!</a></span> method applies a transformation to a vector. The vector
+itself is modified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Vector2d (class)">Vector2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Vector2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>4</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Transformation2d.html#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='comment'># vector will be (6, 8)
+</span><span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_transform!'>transform!</span><span class='lparen'>(</span><span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Transformation object to apply to the vector.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the transformed vector</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
 </div>
       
     </li>

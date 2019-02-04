@@ -858,6 +858,24 @@ pre-allocate to speed up adding points and polygons.</p>
     
   </ul>
 
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RangeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>If number of points or polygons are negative numbers.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1517,7 +1535,7 @@ were Point3d objects.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Index is 1 based (starts at 1).</p>
+<p>Index starts at 1.</p>
 </div>
   </div>
 
@@ -1621,7 +1639,7 @@ particular index in the mesh. This only works for meshes retrieved from
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Index is 1 based (starts at 1).</p>
+<p>Index starts at 1.</p>
 </div>
   </div>
 
@@ -1903,20 +1921,25 @@ the mesh</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Index is 1 based (starts at 1).The returned array can contain negative</p>
+<p>Index starts at 1.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The returned array can contain negative values with the sign indicating a
+hidden edge. For example, a return value of <tt>[-1, 2, 3]</tt> indicates that the
+edge from <code>1</code> to <code>2</code> is hidden. The negative values
+should not be used as an index for <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>, take the absolute value of
+the index value in the polygon array.  So if you get <tt>[-1, 2,3]</tt> use
+<code>1</code> as the argument to <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>.</p>
 </div>
   </div>
 
 
 <p>The <span class='object_link'><a href="#polygon_at-instance_method" title="Geom::PolygonMesh#polygon_at (method)">#polygon_at</a></span> method is used to retrieve an array of vertex index
 values for a polygon at a specific index.</p>
-
-<p>values with the sign indicating a hidden edge. For example, a return value
-of <tt>[-1, 2, 3]</tt> indicates that the edge from <code>1</code> to
-<code>2</code> is hidden. The negative values should not be used as an
-index for point_at, take the positive value of the index value in the
-polygon array.  So if you get <tt>[-1, 2,3]</tt> use <code>1</code> as the
-argument to <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>.</p>
 
 
   </div>
@@ -2013,6 +2036,14 @@ argument to <span class='object_link'><a href="#point_at-instance_method" title=
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Index starts at 1.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#polygon_points_at-instance_method" title="Geom::PolygonMesh#polygon_points_at (method)">#polygon_points_at</a></span> method is used to retrieve the points for a
 polygon that is at a specific index in the mesh.</p>
 

@@ -425,7 +425,7 @@ picked elements.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#init-instance_method" title="#init (instance method)">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; Object </a>
+      <a href="#init-instance_method" title="#init (instance method)">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; PickHelper </a>
     
 
     
@@ -440,7 +440,7 @@ picked elements.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The init method is used to initialize the PickHelper for testing points.</p>
+<p>The <span class='object_link'><a href="#init-instance_method" title="Sketchup::PickHelper#init (method)">#init</a></span> method is used to initialize the PickHelper for testing points.</p>
 </div></span>
   
 </li>
@@ -498,7 +498,7 @@ pick list (as an array).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pick_segment-instance_method" title="#pick_segment (instance method)">#<strong>pick_segment</strong>(array_or_list, x, y, aperture = 0)  &#x21d2; Object </a>
+      <a href="#pick_segment-instance_method" title="#pick_segment (instance method)">#<strong>pick_segment</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -513,8 +513,8 @@ pick list (as an array).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pick_segment method is used to pick a segment of a polyline curve that
-is defined by an array of points.</p>
+<p>The <span class='object_link'><a href="#pick_segment-instance_method" title="Sketchup::PickHelper#pick_segment (method)">#pick_segment</a></span> method is used to pick a segment of a polyline curve
+that is defined by an array of points.</p>
 </div></span>
   
 </li>
@@ -596,7 +596,7 @@ an edge or a face, picked.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#test_point-instance_method" title="#test_point (instance method)">#<strong>test_point</strong>(point, x, y, aperture = 0)  &#x21d2; Object </a>
+      <a href="#test_point-instance_method" title="#test_point (instance method)">#<strong>test_point</strong>(*args)  &#x21d2; Boolean </a>
     
 
     
@@ -611,7 +611,7 @@ an edge or a face, picked.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The test_point method is used to test a point to see if it would be
+<p>The <span class='object_link'><a href="#test_point-instance_method" title="Sketchup::PickHelper#test_point (method)">#test_point</a></span> method is used to test a point to see if it would be
 selected using the default or given pick aperture.</p>
 </div></span>
   
@@ -1419,7 +1419,7 @@ entities.</p>
   <h3 class="signature " id="init-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt>Object</tt> 
+    #<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></tt> 
   
 
   
@@ -1428,10 +1428,10 @@ entities.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The init method is used to initialize the PickHelper for testing points.</p>
+<p>The <span class='object_link'><a href="#init-instance_method" title="Sketchup::PickHelper#init (method)">#init</a></span> method is used to initialize the PickHelper for testing points.</p>
 
 <p>You do not normally need to call this method, but you can use this if you
-want to call test_point or pick_segment on a lot of points.</p>
+want to call <span class='object_link'><a href="#test_point-instance_method" title="Sketchup::PickHelper#test_point (method)">#test_point</a></span> or <span class='object_link'><a href="#pick_segment-instance_method" title="Sketchup::PickHelper#pick_segment (method)">#pick_segment</a></span> on a lot of points.</p>
 
 <p>If the optional aperture is given, it is given in pixels.</p>
 
@@ -1456,7 +1456,7 @@ want to call test_point or pick_segment on a lot of points.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns p - the (receiver) PickHelper Object</p>
+<p>Returns self</p>
 
 
   </div>
@@ -1470,7 +1470,7 @@ want to call test_point or pick_segment on a lot of points.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -1486,7 +1486,7 @@ want to call test_point or pick_segment on a lot of points.</p>
         <span class='name'>y</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -1502,7 +1502,7 @@ want to call test_point or pick_segment on a lot of points.</p>
         <span class='name'>aperture</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
@@ -1523,13 +1523,13 @@ want to call test_point or pick_segment on a lot of points.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>p - the (receiver) PickHelper Object</p>
+<p>self</p>
 </div>
       
     </li>
@@ -1783,7 +1783,11 @@ item will be a drawing element that is not a group, component or image.</p>
   <h3 class="signature " id="pick_segment-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>pick_segment</strong>(array_or_list, x, y, aperture = 0)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>pick_segment</strong>(points)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
+    
+      <span class="overload">#<strong>pick_segment</strong>(points, x, y, aperture = 0)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
+    
   
 
   
@@ -1792,17 +1796,28 @@ item will be a drawing element that is not a group, component or image.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The pick_segment method is used to pick a segment of a polyline curve that
-is defined by an array of points.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The return value will be a negative index when a segment is picked.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#pick_segment-instance_method" title="Sketchup::PickHelper#pick_segment (method)">#pick_segment</a></span> method is used to pick a segment of a polyline curve
+that is defined by an array of points.</p>
 
 <p>If you click on a point in a polyline curve, the index of the point in the
-curve is returned (starting at 0). If you click on a segment in the
-polyline curve, the index of the segment is returned. Segments start at
-index -1 (for the segment connecting the first two points) and increase by
-a factor of -1 (for example, the segment connecting second and third point
-is -2).</p>
+curve is returned (starting at 0).</p>
 
-<p>There is no need to invoke do_pick for this and the results are unrelated.</p>
+<p>If you click on a segment in the polyline curve, the index of the segment
+is returned. Segments are returned by negative indicies and start at index
+-1 (for the segment connecting the first two points) and increase by a
+factor of -1 (for example, the segment connecting second and third point is
+-2).</p>
+
+<p>There is no need to invoke <span class='object_link'><a href="#do_pick-instance_method" title="Sketchup::PickHelper#do_pick (method)">#do_pick</a></span> for this and the results are
+unrelated.</p>
 
 
   </div>
@@ -1820,16 +1835,22 @@ is -2).</p>
 <span class='comment'># If testing many points this is the fastest way to test.
 </span><span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_init'>init</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_picked'>picked</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_pick_segment'>pick_segment</span><span class='lparen'>(</span><span class='id identifier rubyid_segment'>segment</span><span class='rparen'>)</span>
-<span class='comment'># This do not require init(
+<span class='comment'># This do not require .init
 </span><span class='id identifier rubyid_picked'>picked</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_pick_segment'>pick_segment</span><span class='lparen'>(</span><span class='id identifier rubyid_segment'>segment</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pick_segment</strong>(points)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns index - an index of the point in the array if you clicked on a
-point or an index of a segment if you clicked on a segment (if successful)</p>
+<p>This is more efficient if you need to test a number of segments for the
+same set of screen coordinates. But then you must use <span class='object_link'><a href="#init-instance_method" title="Sketchup::PickHelper#init (method)">#init</a></span> first.</p>
 
 
   </div>
@@ -1840,17 +1861,73 @@ point or an index of a segment if you clicked on a segment (if successful)</p>
   
     <li>
       
-        <span class='name'>array_or_list</span>
+        <span class='name'>points</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A series of Point3d objects in the polyline as a list of parameters or an
-array containing Point3d objects.</p>
+<p>A series of points in the polyline as a list of parameters or an array
+containing Point3d objects.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>false</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an index on success, <code>false</code> on failure</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pick_segment</strong>(points, x, y, aperture = 0)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an index on success, <code>false</code> on failure</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A series of points in the polyline as a list of parameters or an array
+containing Point3d objects.</p>
 </div>
       
     </li>
@@ -1860,7 +1937,7 @@ array containing Point3d objects.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -1876,13 +1953,13 @@ array containing Point3d objects.</p>
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>optional(required if x given)</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>screen mouse position in pixels.</p>
+<p>(required if x given) screen mouse position in pixels.</p>
 </div>
       
     </li>
@@ -1892,7 +1969,7 @@ array containing Point3d objects.</p>
         <span class='name'>aperture</span>
       
       
-        <span class='type'>(<tt>optional but requires x and y</tt>)</span>
+        <span class='type'></span>
       
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
@@ -1913,14 +1990,13 @@ array containing Point3d objects.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>, <tt>false</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>index - an index of the point in the array if you clicked on a point or an
-index of a segment if you clicked on a segment (if successful)</p>
+<p>an index on success, <code>false</code> on failure</p>
 </div>
       
     </li>
@@ -1928,6 +2004,9 @@ index of a segment if you clicked on a segment (if successful)</p>
 </ul>
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2196,7 +2275,11 @@ before calling this method.</p>
   <h3 class="signature " id="test_point-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>test_point</strong>(point, x, y, aperture = 0)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>test_point</strong>(point)  &#x21d2; <tt>Boolean</tt> </span>
+    
+      <span class="overload">#<strong>test_point</strong>(point, x, y, aperture = 0)  &#x21d2; <tt>Boolean</tt> </span>
+    
   
 
   
@@ -2205,18 +2288,11 @@ before calling this method.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The test_point method is used to test a point to see if it would be
+<p>The <span class='object_link'><a href="#test_point-instance_method" title="Sketchup::PickHelper#test_point (method)">#test_point</a></span> method is used to test a point to see if it would be
 selected using the default or given pick aperture.</p>
 
-<p>In the first form, you must have initialized the PickHelper using the init
-method. This is more efficient if you want to test a lot of points using
-the same screen point.</p>
-
-<p>In the second and third forms, it initializes the PickHelper using a screen
-point and an optional pick aperture that you pass in as the 2nd-4th
-arguments.</p>
-
-<p>There is no need to invoke do_pick for this and the results are unrelated.</p>
+<p>There is no need to invoke <span class='object_link'><a href="#do_pick-instance_method" title="Sketchup::PickHelper#do_pick (method)">#do_pick</a></span> for this and the results are
+unrelated.</p>
 
 
   </div>
@@ -2237,10 +2313,18 @@ arguments.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>test_point</strong>(point)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns would_be_selected - true or false</p>
+<p>This is more efficient if you want to test a lot of points using the same
+screen point. But you <strong>must</strong> have called the <span class='object_link'><a href="#init-instance_method" title="Sketchup::PickHelper#init (method)">#init</a></span> method
+first for this to work.</p>
 
 
   </div>
@@ -2254,14 +2338,39 @@ arguments.</p>
         <span class='name'>point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>Screen point.</p>
+    </li>
+  
+</ul>
+
+
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>test_point</strong>(point, x, y, aperture = 0)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
       
     </li>
   
@@ -2270,14 +2379,9 @@ arguments.</p>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>x position of pick.</p>
-</div>
       
     </li>
   
@@ -2286,14 +2390,9 @@ arguments.</p>
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>y position of pick.</p>
-</div>
       
     </li>
   
@@ -2302,20 +2401,21 @@ arguments.</p>
         <span class='name'>aperture</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
       
       
-        &mdash;
-        <div class='inline'>
-<p>aperture in pixels.</p>
-</div>
-      
     </li>
   
 </ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2323,21 +2423,13 @@ arguments.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>would_be_selected - true or false</p>
-</div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

@@ -237,6 +237,15 @@ curve.</p>
         <dt id="POINT_TYPE_CLOSE-constant" class="">Layout::Path::POINT_TYPE_CLOSE
         </dt>
       
+        <dt id="PATH_WINDING_NONE-constant" class="">Layout::Path::PATH_WINDING_NONE
+        </dt>
+      
+        <dt id="PATH_WINDING_CLOCKWISE-constant" class="">Layout::Path::PATH_WINDING_CLOCKWISE
+        </dt>
+      
+        <dt id="PATH_WINDING_COUNTER_CLOCKWISE-constant" class="">Layout::Path::PATH_WINDING_COUNTER_CLOCKWISE
+        </dt>
+      
     </dl>
   
 
@@ -662,6 +671,30 @@ the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#tangent_at-instance_method" title="Layout::Path#tangent_at (method)">#tangent_at</a></span> method returns the tangent <span class='object_link'><a href="../Geom/Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span> at the given
 parametric value.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#winding-instance_method" title="#winding (instance method)">#<strong>winding</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#winding-instance_method" title="Layout::Path#winding (method)">#winding</a></span> method returns the winding type of the <span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span>.</p>
 </div></span>
   
 </li>
@@ -1181,7 +1214,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
     
       <span class="overload">#<strong>append_point</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
     
-      <span class="overload">#<strong>append_point</strong>(point, control_point1, control_point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+      <span class="overload">#<strong>append_point</strong>(control_point1, control_point2, point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
     
   
 
@@ -1226,7 +1259,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
     <li>
       
-        <span class='name'>append_point</span>
+        <span class='name'>point</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
@@ -1256,7 +1289,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>append_point</strong>(point, control_point1, control_point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
+        <span class="signature">#<strong>append_point</strong>(control_point1, control_point2, point)  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -1266,22 +1299,6 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   <p class="tag_title">Parameters:</p>
 <ul class="param">
-  
-    <li>
-      
-        <span class='name'>point</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The point to append</p>
-</div>
-      
-    </li>
   
     <li>
       
@@ -1311,6 +1328,22 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
         &mdash;
         <div class='inline'>
 <p>The second bezier control point</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The point to append</p>
 </div>
       
     </li>
@@ -2341,6 +2374,73 @@ parametric value.</p>
         
         <div class='inline'>
 <p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="winding-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>winding</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#winding-instance_method" title="Layout::Path#winding (method)">#winding</a></span> method returns the winding type of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
+
+<p>A point type can be one of the following values:</p>
+<dl class="rdoc-list label-list"><dt><code>PATH_WINDING_NONE</code>
+<dt><code>PATH_WINDING_CLOCKWISE</code>
+<dt><code>PATH_WINDING_COUNTER_CLOCKWISE</code>
+<dd></dd></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_winding'>winding</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_winding'>winding</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
 </div>
       
     </li>

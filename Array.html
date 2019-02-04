@@ -578,7 +578,7 @@ on a plane (to within SketchUp&#39;s standard floating point tolerance).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transform-instance_method" title="#transform (instance method)">#<strong>transform</strong>(transform)  &#x21d2; Array(Length, Length, Length) </a>
+      <a href="#transform-instance_method" title="#transform (instance method)">#<strong>transform</strong>(transform)  &#x21d2; Object </a>
     
 
     
@@ -593,8 +593,9 @@ on a plane (to within SketchUp&#39;s standard floating point tolerance).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#transform-instance_method" title="Array#transform (method)">#transform</a></span> method is used to apply a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> object to
-a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> object defined by an <span class='object_link'><a href="" title="Array (class)">Array</a></span> object.</p>
+<p>The <span class='object_link'><a href="#transform-instance_method" title="Array#transform (method)">#transform</a></span> method is used to apply a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> or
+<span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span> object to a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> or <span class='object_link'><a href="Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>
+object defined by an <span class='object_link'><a href="" title="Array (class)">Array</a></span> object.</p>
 </div></span>
   
 </li>
@@ -603,7 +604,7 @@ a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (cl
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transform!-instance_method" title="#transform! (instance method)">#<strong>transform!</strong>(transform)  &#x21d2; Array </a>
+      <a href="#transform!-instance_method" title="#transform! (instance method)">#<strong>transform!</strong>(transform)  &#x21d2; Object </a>
     
 
     
@@ -4168,7 +4169,11 @@ on a plane (to within SketchUp&#39;s standard floating point tolerance).</p>
   <h3 class="signature " id="transform-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>)</tt> 
+    
+      <span class="overload">#<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>&gt;</tt> </span>
+    
+      <span class="overload">#<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>&gt;</tt> </span>
+    
   
 
   
@@ -4177,8 +4182,9 @@ on a plane (to within SketchUp&#39;s standard floating point tolerance).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#transform-instance_method" title="Array#transform (method)">#transform</a></span> method is used to apply a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> object to
-a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> object defined by an <span class='object_link'><a href="" title="Array (class)">Array</a></span> object.</p>
+<p>The <span class='object_link'><a href="#transform-instance_method" title="Array#transform (method)">#transform</a></span> method is used to apply a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> or
+<span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span> object to a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> or <span class='object_link'><a href="Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>
+object defined by an <span class='object_link'><a href="" title="Array (class)">Array</a></span> object.</p>
 
 <p>This method returns a new <span class='object_link'><a href="" title="Array (class)">Array</a></span> object instead of modifying the original.</p>
 
@@ -4198,7 +4204,73 @@ a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (cl
 </span><span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='id identifier rubyid_array'>array</span><span class='period'>.</span><span class='id identifier rubyid_transform'>transform</span><span class='lparen'>(</span><span class='id identifier rubyid_transform'>transform</span><span class='rparen'>)</span></code></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>&gt;</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The newly transformed point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The newly transformed point.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>&gt;</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The newly transformed point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -4220,7 +4292,7 @@ a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (cl
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>)</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="Length.html" title="Length (class)">Length</a></span>&gt;</tt>)</span>
       
       
       
@@ -4232,6 +4304,12 @@ a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (cl
     </li>
   
 </ul>
+
+</div>
+      </li>
+    
+  </ul>
+
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -4256,7 +4334,11 @@ a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (cl
   <h3 class="signature " id="transform!-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt> 
+    
+      <span class="overload">#<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt> </span>
+    
+      <span class="overload">#<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt> </span>
+    
   
 
   
@@ -4292,7 +4374,73 @@ to a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d 
 </span><span class='id identifier rubyid_array'>array</span><span class='period'>.</span><span class='id identifier rubyid_transform!'>transform!</span><span class='lparen'>(</span><span class='id identifier rubyid_transform'>transform</span><span class='rparen'>)</span></code></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The newly transformed point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The newly transformed point.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Array (class)">Array</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The newly transformed point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -4326,6 +4474,12 @@ to a <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d 
     </li>
   
 </ul>
+
+</div>
+      </li>
+    
+  </ul>
+
 <p class="tag_title">Version:</p>
 <ul class="version">
   

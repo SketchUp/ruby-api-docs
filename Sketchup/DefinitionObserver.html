@@ -274,7 +274,7 @@ instance is added to a model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#onComponentInstanceRemoved-instance_method" title="#onComponentInstanceAdded (instance method)">#<strong>onComponentInstanceAdded</strong>(definition, instance)  &#x21d2; nil </a>
+      <a href="#onComponentInstanceRemoved-instance_method" title="#onComponentInstanceRemoved (instance method)">#<strong>onComponentInstanceRemoved</strong>(definition, instance)  &#x21d2; nil </a>
     
 
     
@@ -432,7 +432,7 @@ instance is added to a model.</p>
   <h3 class="signature " id="onComponentInstanceRemoved-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>onComponentInstanceAdded</strong>(definition, instance)  &#x21d2; <tt>nil</tt> 
+    #<strong>onComponentInstanceRemoved</strong>(definition, instance)  &#x21d2; <tt>nil</tt> 
   
 
   
@@ -444,16 +444,15 @@ instance is added to a model.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Due to the underlying way that the SketchUp Move Tool is</p>
+<p>Due to the underlying way that the SketchUp Move Tool is implemented, this
+method is fired on a Move + Copy operation even though no
+<span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> is apparently removed.</p>
 </div>
   </div>
 
 
 <p>The <span class='object_link'><a href="#onComponentInstanceRemoved-instance_method" title="Sketchup::DefinitionObserver#onComponentInstanceRemoved (method)">#onComponentInstanceRemoved</a></span> method is called when a component
 instance is removed from a model.</p>
-
-<p>implemented, this method is fired on a Move + Copy operation even though no
-<span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> is apparently removed.</p>
 
 
   </div>

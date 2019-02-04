@@ -595,6 +595,55 @@ returns a new <span class='object_link'><a href="" title="Geom::Point2d (class)"
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#transform-instance_method" title="#transform (instance method)">#<strong>transform</strong>(transform)  &#x21d2; Geom::Point2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#transform-instance_method" title="Geom::Point2d#transform (method)">#transform</a></span> method applies a transformation to a point, returning a
+new point.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#transform!-instance_method" title="#transform! (instance method)">#<strong>transform!</strong>(transform)  &#x21d2; Geom::Point2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#transform!-instance_method" title="Geom::Point2d#transform! (method)">#transform!</a></span> method applies a transformation to a point.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#vector_to-instance_method" title="#vector_to (instance method)">#<strong>vector_to</strong>(point)  &#x21d2; Geom::Vector2d </a>
     
 
@@ -2215,6 +2264,186 @@ be zero.</p>
         
         <div class='inline'>
 <p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transform-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>transform</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#transform-instance_method" title="Geom::Point2d#transform (method)">#transform</a></span> method applies a transformation to a point, returning a
+new point. The original point is unchanged by this method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>4</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Transformation2d.html#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='comment'># pt will be (6, 8)
+</span><span class='id identifier rubyid_pt'>pt</span> <span class='op'>=</span> <span class='id identifier rubyid_point'>point</span><span class='period'>.</span><span class='id identifier rubyid_transform'>transform</span><span class='lparen'>(</span><span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Transformation object to apply to the point.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the transformed point</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="transform!-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>transform!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#transform!-instance_method" title="Geom::Point2d#transform! (method)">#transform!</a></span> method applies a transformation to a point. The point
+itself is modified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>4</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Transformation2d.html#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>2</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='comment'># point will be (6, 8)
+</span><span class='id identifier rubyid_point'>point</span><span class='period'>.</span><span class='id identifier rubyid_transform!'>transform!</span><span class='lparen'>(</span><span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transform</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Transformation object to apply to the point.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the transformed point</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
 </div>
       
     </li>

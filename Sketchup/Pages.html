@@ -599,7 +599,7 @@ object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#show_frame_at-instance_method" title="#show_frame_at (instance method)">#<strong>show_frame_at</strong>(seconds)  &#x21d2; Object </a>
+      <a href="#show_frame_at-instance_method" title="#show_frame_at (instance method)">#<strong>show_frame_at</strong>(seconds)  &#x21d2; Array(Sketchup::Page, Float)<sup>?</sup> </a>
     
 
     
@@ -614,8 +614,8 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The show_frame_at method is used to show a frame in animation (of the slide
-show) at a given time in seconds.</p>
+<p>The <span class='object_link'><a href="#show_frame_at-instance_method" title="Sketchup::Pages#show_frame_at (method)">#show_frame_at</a></span> method is used to show a frame in animation (of the
+slide show) at a given time in seconds.</p>
 </div></span>
   
 </li>
@@ -2073,7 +2073,7 @@ on its scene tab.</p>
   <h3 class="signature " id="show_frame_at-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>show_frame_at</strong>(seconds)  &#x21d2; <tt>Object</tt> 
+    #<strong>show_frame_at</strong>(seconds)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span>, Float)</tt><sup>?</sup> 
   
 
   
@@ -2082,8 +2082,17 @@ on its scene tab.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The show_frame_at method is used to show a frame in animation (of the slide
-show) at a given time in seconds.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In versions prior to SketchUp 2019 this method will crash if called when
+there are no pages in the model.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#show_frame_at-instance_method" title="Sketchup::Pages#show_frame_at (method)">#show_frame_at</a></span> method is used to show a frame in animation (of the
+slide show) at a given time in seconds.</p>
 
 
   </div>
@@ -2096,22 +2105,12 @@ show) at a given time in seconds.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Page 1</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Page 2</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_show_frame_at'>show_frame_at</span> <span class='int'>10</span></code></pre>
+<span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Page 1</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Page 2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span><span class='comma'>,</span> <span class='id identifier rubyid_ratio'>ratio</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_show_frame_at'>show_frame_at</span><span class='lparen'>(</span><span class='float'>1.8</span><span class='rparen'>)</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns nil</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -2119,7 +2118,7 @@ show) at a given time in seconds.</p>
         <span class='name'>seconds</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
@@ -2138,21 +2137,20 @@ show) at a given time in seconds.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span>, Float)</tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>nil</p>
+<p>Upon success it returns the page that is displayed and a parameter between
+<code>0.0</code> and <code>1.0</code> that is tells how far along the
+transition to next page you are at.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

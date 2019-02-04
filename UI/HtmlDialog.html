@@ -190,6 +190,11 @@ expertise.</p>
 <span class='object_link'>#openURL</span>, which will show them a web page in their default browser
 rather than inside a dialog in SketchUp.</p>
 
+<p>The left, top, width, height etc. dimensions of the dialog are in logical
+units. This means you provide the units as if they where on a monitor with
+“normal” DPI. The units given will be multiplied by the same factor as
+returned by <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">scale_factor</a></span>.</p>
+
 
   </div>
 </div>
@@ -674,6 +679,17 @@ still return <code>true</code>.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2019 the <code>:width</code> and <code>:height</code>
+provided is ignored if a <code>:preference_key</code> is also present. To
+work around this bug on older versions use <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> after you initialize
+the dialog.</p>
+</div>
+  </div>
+
+
 <p>The new method is used to create a new HtmlDialog.</p>
 
 <p>The <code>properties</code> hash accepts an optional key <code>style</code>

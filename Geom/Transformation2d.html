@@ -212,6 +212,93 @@
 
   
     <h2>
+      Class Method Summary
+      <a
+          id="class_method_summary"
+          href="#class_method_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rotation-class_method" title="rotation (class method)">.<strong>rotation</strong>(point, angle)  &#x21d2; Geom::Transformation2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#rotation-class_method" title="Geom::Transformation2d.rotation (method)">Transformation2d.rotation</a></span> method is used to create a transformation that does
+rotation about a point.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scaling-class_method" title="scaling (class method)">.<strong>scaling</strong>(*args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#scaling-class_method" title="Geom::Transformation2d.scaling (method)">Transformation2d.scaling</a></span> method is used to create a transformation that does scaling.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#translation-class_method" title="translation (class method)">.<strong>translation</strong>(vector)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#translation-class_method" title="Geom::Transformation2d.translation (method)">Transformation2d.translation</a></span> method is used to create a transformation that does
+translation.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Instance Method Summary
       <a
           id="instance_method_summary"
@@ -221,6 +308,30 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#*-instance_method" title="#* (instance method)">#<strong>*</strong>(arg)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#*-instance_method" title="Geom::Transformation2d#* (method)">#*</a></span> method is used to do matrix multiplication using the transform.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -317,6 +428,54 @@ equal.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">#initialize</a></span> method creates a new <span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inverse-instance_method" title="#inverse (instance method)">#<strong>inverse</strong>  &#x21d2; Geom::Transformation2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#inverse-instance_method" title="Geom::Transformation2d#inverse (method)">#inverse</a></span> method is used to retrieve the inverse of a transformation.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#invert!-instance_method" title="#invert! (instance method)">#<strong>invert!</strong>  &#x21d2; Geom::Transformation2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#invert!-instance_method" title="Geom::Transformation2d#invert! (method)">#invert!</a></span> method sets the transformation to its inverse.</p>
 </div></span>
   
 </li>
@@ -527,12 +686,812 @@ is equivalent to <span class='object_link'><a href="#clone-instance_method" titl
 </div>
 
 
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="rotation-class_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    .<strong>rotation</strong>(point, angle)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#rotation-class_method" title="Geom::Transformation2d.rotation (method)">rotation</a></span> method is used to create a transformation that does
+rotation about a point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_angle'>angle</span> <span class='op'>=</span> <span class='int'>45</span><span class='period'>.</span><span class='id identifier rubyid_degrees'>degrees</span> <span class='comment'># Return 45 degrees in radians.
+</span><span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rotation'>rotation</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_angle'>angle</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>angle</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The angle in radians.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scaling-class_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    
+      <span class="overload">.<strong>scaling</strong>(scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+      <span class="overload">.<strong>scaling</strong>(xscale, yscale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+      <span class="overload">.<strong>scaling</strong>(point, scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+      <span class="overload">.<strong>scaling</strong>(point, xscale, yscale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#scaling-class_method" title="Geom::Transformation2d.scaling (method)">scaling</a></span> method is used to create a transformation that does scaling.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_scale'>scale</span> <span class='op'>=</span> <span class='int'>10</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_scaling'>scaling</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='id identifier rubyid_scale'>scale</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>scaling</strong>(scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>With one argument, it does a uniform scale about the origin.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>scale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The global scale factor for the transform.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>scaling</strong>(xscale, yscale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>With two arguments, it does a non-uniform scale about the origin.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>xscale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The scale factor in the x direction for the transform.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>yscale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The scale factor in the y direction for the transform.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>scaling</strong>(point, scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>With two arguments, it does a uniform scale about an arbitrary point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>scale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The global scale factor for the transform.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>scaling</strong>(point, xscale, yscale)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>With three arguments it does a non-uniform scale about an arbitrary point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>xscale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The scale factor in the x direction for the transform.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>yscale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The scale factor in the y direction for the transform.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="translation-class_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    
+      <span class="overload">.<strong>translation</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+      <span class="overload">.<strong>translation</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#translation-class_method" title="Geom::Transformation2d.translation (method)">translation</a></span> method is used to create a transformation that does
+translation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Vector2d.html" title="Geom::Vector2d (class)">Vector2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Vector2d.html#initialize-instance_method" title="Geom::Vector2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_translation'>translation</span><span class='lparen'>(</span><span class='id identifier rubyid_vector'>vector</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>translation</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>vector</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>translation</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="==-instance_method">
+  <h3 class="signature first" id="*-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    
+      <span class="overload">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float&gt;</tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#*-instance_method" title="Geom::Transformation2d#* (method)">#*</a></span> method is used to do matrix multiplication using the transform.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_point2'>point2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='comment'># Returns Point2d(7, 12)
+</span><span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='id identifier rubyid_tr'>tr</span> <span class='op'>*</span> <span class='id identifier rubyid_point2'>point2</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(vector)  &#x21d2; <tt><span class='object_link'><a href="Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>vector</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>transformation</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>*</strong>(point)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float&gt;</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;Float, Float&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="==-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     #<strong>==</strong>(other)  &#x21d2; <tt>Boolean</tt> 
@@ -708,7 +1667,7 @@ status = tr.identity?</code></pre>
     
       
       <pre class="example code"><code><span class='comment'># Returns true.
-</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#IDENTITY-constant" title="IDENTITY (constant)">IDENTITY</a></span></span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span></code></pre>
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#IDENTITY_2D-constant" title="IDENTITY_2D (constant)">IDENTITY_2D</a></span></span><span class='period'>.</span><span class='id identifier rubyid_identity?'>identity?</span></code></pre>
     
   </div>
 
@@ -750,6 +1709,132 @@ status = tr.identity?</code></pre>
         
         <div class='inline'>
 <p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="inverse-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>inverse</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#inverse-instance_method" title="Geom::Transformation2d#inverse (method)">#inverse</a></span> method is used to retrieve the inverse of a transformation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr1'>tr1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr2'>tr2</span> <span class='op'>=</span> <span class='id identifier rubyid_tr1'>tr1</span><span class='period'>.</span><span class='id identifier rubyid_inverse'>inverse</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invert!-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>invert!</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#invert!-instance_method" title="Geom::Transformation2d#invert! (method)">#invert!</a></span> method sets the transformation to its inverse.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Transformation2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Transformation2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tr'>tr</span><span class='period'>.</span><span class='id identifier rubyid_invert!'>invert!</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2019</p>
 </div>
       
     </li>
