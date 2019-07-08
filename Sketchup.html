@@ -664,8 +664,8 @@ it into degrees.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The format_area method formats a number as an area using the current units
-settings.</p>
+<p>The #<span class='object_link'><a href="#format_area-class_method" title="Sketchup.format_area (method)">Sketchup.format_area</a></span> method formats a number as an area using the current
+units settings.</p>
 </div></span>
   
 </li>
@@ -698,7 +698,7 @@ settings.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#format_length-class_method" title="format_length (class method)">.<strong>format_length</strong>(number)  &#x21d2; String </a>
+      <a href="#format_length-class_method" title="format_length (class method)">.<strong>format_length</strong>(*args)  &#x21d2; String </a>
     
 
     
@@ -713,7 +713,32 @@ settings.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The format_length method formats a number as a length using the current
+<p>The <span class='object_link'>#format_length</span> method formats a number as a length using the current
+units settings.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_volume-class_method" title="format_volume (class method)">.<strong>format_volume</strong>(number)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The #<span class='object_link'><a href="#format_volume-class_method" title="Sketchup.format_volume (method)">Sketchup.format_volume</a></span> method formats a number as a volume using the current
 units settings.</p>
 </div></span>
   
@@ -2059,15 +2084,6 @@ user via the user interface.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2280,15 +2296,6 @@ console when it detects incorrect usage of the API.</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       
@@ -2949,15 +2956,6 @@ method can be used to test it.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -3090,11 +3088,10 @@ it into degrees. For example, format_angle(Math::PI) will return 180.0.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The format_area method formats a number as an area using the current units
-settings.</p>
+<p>The #<span class='object_link'><a href="#format_area-class_method" title="Sketchup.format_area (method)">format_area</a></span> method formats a number as an area using the current
+units settings.</p>
 
-<p>The default unit setting is inches. For example, 10 becomes 10 inches
-squared.</p>
+<p>The <code>number</code> must be in square inches.</p>
 
 
   </div>
@@ -3105,18 +3102,11 @@ squared.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_area'>area</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_area'>format_area</span><span class='lparen'>(</span><span class='id identifier rubyid_number'>number</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span> <span class='op'>*</span> <span class='int'>4</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span> <span class='comment'># This will result in 12m2 in inches.
+</span><span class='id identifier rubyid_formatted_area'>formatted_area</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_area'>format_area</span><span class='lparen'>(</span><span class='id identifier rubyid_number'>number</span><span class='rparen'>)</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -3137,9 +3127,6 @@ squared.</p>
   
 </ul>
 
-
-</div>
-
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -3149,11 +3136,6 @@ squared.</p>
         <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>an area if successful, false if unsuccessful.</p>
-</div>
       
     </li>
   
@@ -3280,7 +3262,11 @@ For example, 10 becomes 10.0. This is the equivalent to a to_f call.</p>
   <h3 class="signature " id="format_length-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>format_length</strong>(number)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt> 
+    
+      <span class="overload">.<strong>format_length</strong>(number)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt> </span>
+    
+      <span class="overload">.<strong>format_length</strong>(number, precision)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt> </span>
+    
   
 
   
@@ -3289,7 +3275,7 @@ For example, 10 becomes 10.0. This is the equivalent to a to_f call.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The format_length method formats a number as a length using the current
+<p>The <span class='object_link'>#format_length</span> method formats a number as a length using the current
 units settings.</p>
 
 <p>The default unit setting is inches. For example, 10 becomes 10“.</p>
@@ -3303,14 +3289,17 @@ units settings.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_length'>format_length</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span>
-<span class='kw'>if</span> <span class='id identifier rubyid_length'>length</span>
-  <span class='const'><span class='object_link'><a href="UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
-<span class='kw'>end</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_length'>format_length</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>format_length</strong>(number)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -3340,6 +3329,60 @@ units settings.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>format_length</strong>(number, precision)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number to be formatted.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A custom precision. Negative number will strip trailing zeros.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -3350,11 +3393,6 @@ units settings.</p>
         <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>length if successful, false if unsuccessful</p>
-</div>
       
     </li>
   
@@ -3370,6 +3408,91 @@ units settings.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="format_volume-class_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    .<strong>format_volume</strong>(number)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The #<span class='object_link'><a href="#format_volume-class_method" title="Sketchup.format_volume (method)">format_volume</a></span> method formats a number as a volume using the current
+units settings.</p>
+
+<p>The <code>number</code> must be in cubic inches.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span> <span class='op'>*</span> <span class='int'>4</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span> <span class='op'>*</span> <span class='int'>5</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span> <span class='comment'># This will result in 60m3 in inches.
+</span><span class='id identifier rubyid_formatted_volume'>formatted_volume</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_format_area'><span class='object_link'><a href="#format_area-class_method" title="Sketchup.format_area (method)">format_area</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_number'>number</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>number</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A number to be formatted.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2019.2</p>
 </div>
       
     </li>
@@ -4061,15 +4184,6 @@ versions to load.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -4204,15 +4318,6 @@ product.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -4296,15 +4401,6 @@ contains illegal characters.</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       
@@ -4929,15 +5025,6 @@ directory will be loaded at startup time.</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       
@@ -6023,7 +6110,9 @@ future versions of the API.)</p>
 </li><li>
 <p>21100: select the Offset tool</p>
 </li><li>
-<p>21101: slect all objects</p>
+<p>21101: select all objects</p>
+</li><li>
+<p>21107: invert selection</p>
 </li><li>
 <p>21112: open the Import Window</p>
 </li><li>

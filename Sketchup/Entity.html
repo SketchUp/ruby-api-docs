@@ -310,7 +310,7 @@ AttributeDictionaries collection attached to the entity.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attribute_dictionary-instance_method" title="#attribute_dictionary (instance method)">#<strong>attribute_dictionary</strong>(name, create)  &#x21d2; Sketchup::AttributeDictionary<sup>?</sup> </a>
+      <a href="#attribute_dictionary-instance_method" title="#attribute_dictionary (instance method)">#<strong>attribute_dictionary</strong>(name, create = false)  &#x21d2; Sketchup::AttributeDictionary<sup>?</sup> </a>
     
 
     
@@ -856,7 +856,7 @@ return 0.</p>
   <h3 class="signature " id="attribute_dictionary-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>attribute_dictionary</strong>(name, create)  &#x21d2; <tt><span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">Sketchup::AttributeDictionary</a></span></tt><sup>?</sup> 
+    #<strong>attribute_dictionary</strong>(name, create = false)  &#x21d2; <tt><span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">Sketchup::AttributeDictionary</a></span></tt><sup>?</sup> 
   
 
   
@@ -931,6 +931,8 @@ with a given name that is attached to an Entity.</p>
       
         <span class='type'>(<tt>Boolean</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
       
       
         &mdash;
@@ -1011,13 +1013,6 @@ does not exist.</p>
 of these dictionaries are “SU_InstanceSet” and “SU_DefinitionSet”. The
 dictionaries cannot be deleted via ruby and an ArgumentError will be
 raised. The key/value pairs in the dictionary can be deleted safely.</p>
-</div>
-  </div>
-
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>The return values are fixed in SketchUp 2019 M0.</p>
 </div>
   </div>
 
@@ -1191,6 +1186,22 @@ with the given key from the given dictionary.</p>
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2019.0 the return values was always <code>true</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -1239,15 +1250,6 @@ deleted by another script, for example.)</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       
@@ -2349,15 +2351,6 @@ deleted by another script, for example.)</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       

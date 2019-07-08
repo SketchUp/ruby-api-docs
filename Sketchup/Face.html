@@ -487,7 +487,7 @@ projection for either the front or back side of the face.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#get_UVHelper-instance_method" title="#get_UVHelper (instance method)">#<strong>get_UVHelper</strong>(front, back, texturewriter)  &#x21d2; Sketchup::UVHelper </a>
+      <a href="#get_UVHelper-instance_method" title="#get_UVHelper (instance method)">#<strong>get_UVHelper</strong>(*args)  &#x21d2; Sketchup::UVHelper </a>
     
 
     
@@ -1878,7 +1878,11 @@ projection for either the front or back side of the face.</p>
   <h3 class="signature " id="get_UVHelper-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>get_UVHelper</strong>(front, back, texturewriter)  &#x21d2; <tt><span class='object_link'><a href="UVHelper.html" title="Sketchup::UVHelper (class)">Sketchup::UVHelper</a></span></tt> 
+    
+      <span class="overload">#<strong>get_UVHelper</strong>(front = true, back = true)  &#x21d2; <tt><span class='object_link'><a href="UVHelper.html" title="Sketchup::UVHelper (class)">Sketchup::UVHelper</a></span></tt> </span>
+    
+      <span class="overload">#<strong>get_UVHelper</strong>(front = true, back = true, texturewriter)  &#x21d2; <tt><span class='object_link'><a href="UVHelper.html" title="Sketchup::UVHelper (class)">Sketchup::UVHelper</a></span></tt> </span>
+    
   
 
   
@@ -1914,7 +1918,13 @@ texture manipulation on a face.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>get_UVHelper</strong>(front = true, back = true)  &#x21d2; <tt><span class='object_link'><a href="UVHelper.html" title="Sketchup::UVHelper (class)">Sketchup::UVHelper</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -1932,11 +1942,12 @@ texture manipulation on a face.</p>
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>True if you want the texture coordinates for the front face, false if not.
-Defaults to true.</p>
+<p>True if you want the texture coordinates for the front face, false if not.</p>
 </div>
       
     </li>
@@ -1949,11 +1960,67 @@ Defaults to true.</p>
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>True if you want the texture coordinates for the back face, false if not.
-Defaults to true.</p>
+<p>True if you want the texture coordinates for the back face, false if not.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>get_UVHelper</strong>(front = true, back = true, texturewriter)  &#x21d2; <tt><span class='object_link'><a href="UVHelper.html" title="Sketchup::UVHelper (class)">Sketchup::UVHelper</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>front</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if you want the texture coordinates for the front face, false if not.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>back</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>True if you want the texture coordinates for the back face, false if not.</p>
 </div>
       
     </li>
@@ -1978,6 +2045,9 @@ Defaults to true.</p>
 
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1988,11 +2058,6 @@ Defaults to true.</p>
         <span class='type'>(<tt><span class='object_link'><a href="UVHelper.html" title="Sketchup::UVHelper (class)">Sketchup::UVHelper</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>a UVHelper object</p>
-</div>
       
     </li>
   

@@ -428,7 +428,7 @@ the Entities object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_curve-instance_method" title="#add_curve (instance method)">#<strong>add_curve</strong>(pts_or_array)  &#x21d2; Array&lt;Sketchup::Edge&gt; </a>
+      <a href="#add_curve-instance_method" title="#add_curve (instance method)">#<strong>add_curve</strong>(*args)  &#x21d2; Array&lt;Sketchup::Edge&gt; </a>
     
 
     
@@ -526,7 +526,7 @@ radius/diameter dimension) to the entities.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_face-instance_method" title="#add_face (instance method)">#<strong>add_face</strong>(some_entities)  &#x21d2; Sketchup::Face </a>
+      <a href="#add_face-instance_method" title="#add_face (instance method)">#<strong>add_face</strong>(*args)  &#x21d2; Sketchup::Face<sup>?</sup> </a>
     
 
     
@@ -575,7 +575,7 @@ collection of entities from a PolygonMesh.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_group-instance_method" title="#add_group (instance method)">#<strong>add_group</strong>(entities)  &#x21d2; Sketchup::Group </a>
+      <a href="#add_group-instance_method" title="#add_group (instance method)">#<strong>add_group</strong>(*args)  &#x21d2; Sketchup::Group </a>
     
 
     
@@ -600,7 +600,7 @@ entities.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_image-instance_method" title="#add_image (instance method)">#<strong>add_image</strong>(filename, point, width, height)  &#x21d2; Sketchup::Image </a>
+      <a href="#add_image-instance_method" title="#add_image (instance method)">#<strong>add_image</strong>(filename, point, width, height = 0.0)  &#x21d2; Sketchup::Image<sup>?</sup> </a>
     
 
     
@@ -865,7 +865,7 @@ of entities.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#erase_entities-instance_method" title="#erase_entities (instance method)">#<strong>erase_entities</strong>(entities)  &#x21d2; nil </a>
+      <a href="#erase_entities-instance_method" title="#erase_entities (instance method)">#<strong>erase_entities</strong>(*args)  &#x21d2; nil </a>
     
 
     
@@ -2462,7 +2462,11 @@ finite or infinite.</p>
   <h3 class="signature " id="add_curve-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_curve</strong>(pts_or_array)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt> 
+    
+      <span class="overload">#<strong>add_curve</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt> </span>
+    
+      <span class="overload">#<strong>add_curve</strong>(*points)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt> </span>
+    
   
 
   
@@ -2490,7 +2494,13 @@ are required.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_curve</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -2502,18 +2512,12 @@ are required.</p>
   
     <li>
       
-        <span class='name'>pts_or_array</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>You can pass either a series of Point3d objects or a single array
-containing Point3d objects.</p>
-</div>
       
     </li>
   
@@ -2521,6 +2525,39 @@ containing Point3d objects.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_curve</strong>(*points)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2531,11 +2568,6 @@ containing Point3d objects.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>an array of Edges that make up the curve if successful</p>
-</div>
       
     </li>
   
@@ -3218,7 +3250,11 @@ If you intend to create a face from the edges, use <span class='object_link'><a 
   <h3 class="signature " id="add_face-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_face</strong>(some_entities)  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt> 
+    
+      <span class="overload">#<strong>add_face</strong>(entities)  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> </span>
+    
+      <span class="overload">#<strong>add_face</strong>(*entities)  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> </span>
+    
   
 
   
@@ -3267,7 +3303,13 @@ down.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_face</strong>(entities)  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -3279,7 +3321,7 @@ down.</p>
   
     <li>
       
-        <span class='name'>some_entities</span>
+        <span class='name'>entities</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>, <tt><span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Sketchup::Curve</a></span></tt>)</span>
@@ -3292,6 +3334,39 @@ down.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_face</strong>(*entities)  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entities</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -3299,14 +3374,9 @@ down.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>, <tt>nil</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>a Face object if successful</p>
-</div>
       
     </li>
   
@@ -3520,7 +3590,11 @@ string name of a material currently in the model.</p>
   <h3 class="signature " id="add_group-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_group</strong>(entities)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> 
+    
+      <span class="overload">#<strong>add_group</strong>(entities)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> </span>
+    
+      <span class="overload">#<strong>add_group</strong>(*entities)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> </span>
+    
   
 
   
@@ -3529,12 +3603,18 @@ string name of a material currently in the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Calling add_group with entities in its parameters has been known to crash
+SketchUp before version 8.0. It is preferable to create an empty group and
+then add things to its Entities collection.</p>
+</div>
+  </div>
+
+
 <p>The add_group method is used to create an empty group or a group with
 entities.</p>
-
-<p>NOTE: calling add_group with entities in its parameters has been known to
-crash SketchUp before version 8.0. It is preferable to create an empty
-group and then add things to its Entities collection.</p>
 
 
   </div>
@@ -3547,16 +3627,17 @@ group and then add things to its Entities collection.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
-<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_group'>group</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_group'>group</span>
-<span class='kw'>else</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></code></pre>
+<span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_group</strong>(entities)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -3586,6 +3667,44 @@ group and then add things to its Entities collection.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_group</strong>(*entities)  &#x21d2; <tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entities</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>an entities collection to add to the group.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -3596,11 +3715,6 @@ group and then add things to its Entities collection.</p>
         <span class='type'>(<tt><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the new group</p>
-</div>
       
     </li>
   
@@ -3629,7 +3743,7 @@ group and then add things to its Entities collection.</p>
   <h3 class="signature " id="add_image-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_image</strong>(filename, point, width, height)  &#x21d2; <tt><span class='object_link'><a href="Image.html" title="Sketchup::Image (class)">Sketchup::Image</a></span></tt> 
+    #<strong>add_image</strong>(filename, point, width, height = 0.0)  &#x21d2; <tt><span class='object_link'><a href="Image.html" title="Sketchup::Image (class)">Sketchup::Image</a></span></tt><sup>?</sup> 
   
 
   
@@ -3731,10 +3845,14 @@ aspect ratio of the image.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>0.0</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>height for the image if you want to control width and height independently.</p>
+<p>height for the image if you want to control width and height independently.
+Leave as default <code>0.0</code> when you want it to be relative to the
+aspect ratio.</p>
 </div>
       
     </li>
@@ -3750,7 +3868,7 @@ aspect ratio of the image.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Image.html" title="Sketchup::Image (class)">Sketchup::Image</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Image.html" title="Sketchup::Image (class)">Sketchup::Image</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -4410,7 +4528,7 @@ to the Geom module for information on how planes are represented.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#add_text-instance_method" title="Sketchup::Entities#add_text (method)">#add_text</a></span> method adds a note or label text entity to the entities</p>
+<p>The <span class='object_link'><a href="#add_text-instance_method" title="Sketchup::Entities#add_text (method)">#add_text</a></span> method adds a note or label text entity to the entities.</p>
 
 
   </div>
@@ -4490,7 +4608,7 @@ to the Geom module for information on how planes are represented.</p>
         <span class='name'>point</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>, <tt><span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span></tt>, <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
       
       
       
@@ -4519,6 +4637,24 @@ to the Geom module for information on how planes are represented.</p>
   
 </ul>
 
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2019.0 had a regression bug where an error was thrown if
+<code>point</code> was provided as a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span> or
+<span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span>. This was fixed in SketchUp 2019.1.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
@@ -4529,14 +4665,6 @@ to the Geom module for information on how planes are represented.</p>
         <div class="docstring">
   <div class="discussion">
     
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>Added in SketchUp 2019.</p>
-</div>
-  </div>
-
-
 
   </div>
 </div>
@@ -4594,6 +4722,22 @@ to the Geom module for information on how planes are represented.</p>
   
 </ul>
 
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
@@ -4604,14 +4748,6 @@ to the Geom module for information on how planes are represented.</p>
         <div class="docstring">
   <div class="discussion">
     
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>Added in SketchUp 2019.</p>
-</div>
-  </div>
-
-
 
   </div>
 </div>
@@ -4673,6 +4809,22 @@ entity.</p>
   
 </ul>
 
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2019</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
@@ -5044,7 +5196,11 @@ of entities.</p>
   <h3 class="signature " id="erase_entities-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>erase_entities</strong>(entities)  &#x21d2; <tt>nil</tt> 
+    
+      <span class="overload">#<strong>erase_entities</strong>(entities)  &#x21d2; <tt>nil</tt> </span>
+    
+      <span class="overload">#<strong>erase_entities</strong>(*entities)  &#x21d2; <tt>nil</tt> </span>
+    
   
 
   
@@ -5086,7 +5242,13 @@ model.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>erase_entities</strong>(entities)  &#x21d2; <tt>nil</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -5105,10 +5267,35 @@ model.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>An entity or array of entities.</p>
+    </li>
+  
+</ul>
+
+
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>erase_entities</strong>(*entities)  &#x21d2; <tt>nil</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entities</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+      
+      
       
     </li>
   
@@ -5116,6 +5303,9 @@ model.</p>
 
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">

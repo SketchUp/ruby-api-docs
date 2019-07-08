@@ -271,7 +271,7 @@ selection by index.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(ents_or_array)  &#x21d2; Integer </a>
+      <a href="#add-instance_method" title="#add (instance method)">#<strong>add</strong>(*args)  &#x21d2; Integer </a>
     
 
     
@@ -511,6 +511,30 @@ in the selection.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#invert-instance_method" title="#invert (instance method)">#<strong>invert</strong>  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The #<span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#is_curve%3F-instance_method" title="#is_curve? (instance method)">#<strong>is_curve?</strong>  &#x21d2; Boolean </a>
     
 
@@ -633,7 +657,7 @@ all of the faces that are part of a single curved surface.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#remove-instance_method" title="#remove (instance method)">#<strong>remove</strong>(ents_or_array)  &#x21d2; Integer </a>
+      <a href="#remove-instance_method" title="#remove (instance method)">#<strong>remove</strong>(*args)  &#x21d2; Integer </a>
     
 
     
@@ -756,7 +780,7 @@ single object.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#toggle-instance_method" title="#toggle (instance method)">#<strong>toggle</strong>(ents_or_array)  &#x21d2; Integer </a>
+      <a href="#toggle-instance_method" title="#toggle (instance method)">#<strong>toggle</strong>(*args)  &#x21d2; Integer </a>
     
 
     
@@ -890,7 +914,11 @@ manually grab each one.</p>
   <h3 class="signature " id="add-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add</strong>(ents_or_array)  &#x21d2; <tt>Integer</tt> 
+    
+      <span class="overload">#<strong>add</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>add</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+    
   
 
   
@@ -931,7 +959,13 @@ assumption about the currently selected state of a given entity.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -943,17 +977,12 @@ assumption about the currently selected state of a given entity.</p>
   
     <li>
       
-        <span class='name'>ents_or_array</span>
+        <span class='name'>entities</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>List or Array of Entity objects.</p>
-</div>
       
     </li>
   
@@ -961,6 +990,39 @@ assumption about the currently selected state of a given entity.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entities</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1325,19 +1387,6 @@ assumption about the currently selected state of a given entity.</p>
 
 </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
   <p class="tag_title">See Also:</p>
   <ul class="see">
@@ -1566,15 +1615,6 @@ selection.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -1738,15 +1778,6 @@ in the selection.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 
   <p class="tag_title">See Also:</p>
@@ -1766,6 +1797,77 @@ in the selection.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="invert-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>invert</strong>  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The #<span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span>
+<span class='comment'># Create a cube
+</span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>9</span><span class='rparen'>)</span>
+<span class='comment'># Add the first two faces to the selection
+</span><span class='id identifier rubyid_faces'>faces</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_grep'>grep</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Face</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_take'>take</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_faces'>faces</span><span class='rparen'>)</span>
+<span class='comment'># Invert selection
+</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_invert'>invert</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2019.2</p>
 </div>
       
     </li>
@@ -1807,15 +1909,6 @@ edges that belong to a single curve.</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       
@@ -1879,15 +1972,6 @@ all of the faces that are part of a single curved surface.</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       
@@ -2129,7 +2213,11 @@ all of the faces that are part of a single curved surface.</p>
   <h3 class="signature " id="remove-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>remove</strong>(ents_or_array)  &#x21d2; <tt>Integer</tt> 
+    
+      <span class="overload">#<strong>remove</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>remove</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+    
   
 
   
@@ -2168,7 +2256,13 @@ assumption about the currently selected state of a given entity.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>remove</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -2180,17 +2274,12 @@ assumption about the currently selected state of a given entity.</p>
   
     <li>
       
-        <span class='name'>ents_or_array</span>
+        <span class='name'>entities</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>List or Array of Entity objects.</p>
-</div>
       
     </li>
   
@@ -2198,6 +2287,39 @@ assumption about the currently selected state of a given entity.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>remove</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entities</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2449,15 +2571,6 @@ or is_surface? will return true.</p>
       
     </li>
   
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
-  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2552,7 +2665,11 @@ or is_surface? will return true.</p>
   <h3 class="signature " id="toggle-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>toggle</strong>(ents_or_array)  &#x21d2; <tt>Integer</tt> 
+    
+      <span class="overload">#<strong>toggle</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>toggle</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+    
   
 
   
@@ -2593,7 +2710,13 @@ assumption about the currently selected state of a given entity.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>toggle</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -2605,17 +2728,12 @@ assumption about the currently selected state of a given entity.</p>
   
     <li>
       
-        <span class='name'>ents_or_array</span>
+        <span class='name'>entities</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>List or Array of Entity objects.</p>
-</div>
       
     </li>
   
@@ -2623,6 +2741,39 @@ assumption about the currently selected state of a given entity.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>toggle</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>entities</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">

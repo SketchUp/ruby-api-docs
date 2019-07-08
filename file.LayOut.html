@@ -142,121 +142,132 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>LayOut Ruby API</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-LayOut+Ruby+API">LayOut Ruby API</h1>
 
-<p>The LayOut Ruby API provides an interface for reading and writing data to and
-from LayOut <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>s (.layout files) via an intuitive and easy to
-learn programming language, Ruby. It can create new
+<p>The LayOut Ruby API provides an interface for reading and writing data to
+and from LayOut <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>s (.layout files) via an intuitive and
+easy to learn programming language, Ruby. It can create new
 <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>s as well as read or modify existing <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>s.</p>
 
-<h2>LayOut Ruby API Documentation</h2>
+<h2 id="label-LayOut+Ruby+API+Documentation">LayOut Ruby API Documentation</h2>
 
 <p>The documentation contains reference material for all functions, data
 structures, constants, and enumerations in the LayOut Ruby API.</p>
 
-<p>The online Ruby API documentation can be found here:
-<a href="https://ruby.sketchup.com/file.LayOut.html">LayOut Ruby API Online Documentation</a></p>
+<p>The online Ruby API documentation can be found here: <a
+href="https://ruby.sketchup.com/file.LayOut.html">LayOut Ruby API Online
+Documentation</a></p>
 
-<h2>Using the LayOut Ruby API in SketchUp</h2>
+<h2 id="label-Using+the+LayOut+Ruby+API+in+SketchUp">Using the LayOut Ruby API in SketchUp</h2>
 
-<p>The LayOut Ruby API is included in the SketchUp application, meaning developers
-may utilize the LayOut Ruby API from within their SketchUp application via the
-console, or in their SketchUp Ruby extension without being required to include
-it. For an example of how to use the LayOut Ruby API from within a SketchUp
-extension, see the RubyExampleCreateLayOut sample.</p>
+<p>The LayOut Ruby API is included in the SketchUp application, meaning
+developers may utilize the LayOut Ruby API from within their SketchUp
+application via the console, or in their SketchUp Ruby extension without
+being required to include it. For an example of how to use the LayOut Ruby
+API from within a SketchUp extension, see the RubyExampleCreateLayOut
+sample.</p>
 
-<h2>Things To Know About The LayOut Ruby API</h2>
+<h2 id="label-Things+To+Know+About+The+LayOut+Ruby+API">Things To Know About The LayOut Ruby API</h2>
 
-<h3>LayOut&#39;s Coordinate System</h3>
+<h3 id="label-LayOut-27s+Coordinate+System">LayOut&#39;s Coordinate System</h3>
 
-<p>LayOut uses a 2D coordinate system for <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s, whose origin is at the
-top-left corner of the page. The positive X axis extends to the right, and the
-positive Y axis extends downward. The units for all <span class='object_link'><a href="Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> objects are
-inches. All 2D lengths and radii are also specified in inches, unless the
-function documentation specifies otherwise.</p>
+<p>LayOut uses a 2D coordinate system for <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s, whose origin is
+at the top-left corner of the page. The positive X axis extends to the
+right, and the positive Y axis extends downward. The units for all
+<span class='object_link'><a href="Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> objects are inches. All 2D lengths and radii are also
+specified in inches, unless the function documentation specifies otherwise.</p>
 
 <p><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects are used for certain functions that interact with a
-<span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span>. <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects specify model-space coordinates
-within a <span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span>.</p>
+<span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span>. <span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects specify model-space
+coordinates within a <span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span>.</p>
 
-<h3>Shared and Non-Shared Groups</h3>
+<h3 id="label-Shared+and+Non-Shared+Groups">Shared and Non-Shared Groups</h3>
 
-<p>A <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> may not contain a mix of <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on both shared and
-non-shared <span class='object_link'><a href="Layout/Layers.html" title="Layout::Layers (class)">Layout::Layers</a></span>. This is enforced when creating <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>s
-(see <span class='object_link'><a href="Layout/Group.html#initialize-instance_method" title="Layout::Group#initialize (method)">Layout::Group#initialize</a></span>) as well as when moving <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s into a
-<span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> (see <span class='object_link'><a href="Layout/Entity.html#move_to_group-instance_method" title="Layout::Entity#move_to_group (method)">Layout::Entity#move_to_group</a></span>). Also, functions that cause
-an <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>&#39;s sharedness to change may have the side effect of splitting
-<span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>s (see <span class='object_link'><a href="Layout/Entity.html#move_to_layer-instance_method" title="Layout::Entity#move_to_layer (method)">Layout::Entity#move_to_layer</a></span>). In general, these
-operations follow the same behavior as the LayOut application itself.</p>
+<p>A <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> may not contain a mix of <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on both shared
+and non-shared <span class='object_link'><a href="Layout/Layers.html" title="Layout::Layers (class)">Layout::Layers</a></span>. This is enforced when creating
+<span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>s (see <span class='object_link'><a href="Layout/Group.html#initialize-instance_method" title="Layout::Group#initialize (method)">Layout::Group#initialize</a></span>) as well as when moving
+<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s into a <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> (see
+<span class='object_link'><a href="Layout/Entity.html#move_to_group-instance_method" title="Layout::Entity#move_to_group (method)">Layout::Entity#move_to_group</a></span>). Also, functions that cause an
+<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>&#39;s sharedness to change may have the side effect of
+splitting <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>s (see <span class='object_link'><a href="Layout/Entity.html#move_to_layer-instance_method" title="Layout::Entity#move_to_layer (method)">Layout::Entity#move_to_layer</a></span>). In
+general, these operations follow the same behavior as the LayOut
+application itself.</p>
 
-<p>To traverse the hierarchical <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure of a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>,
-it is important to understand that due to the rule about shared and non-shared
-<span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>s, there are multiple <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structures in a
-<span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>. Each <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span> has its own <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure
-that contains all of the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on non-shared <span class='object_link'><a href="Layout/Layers.html" title="Layout::Layers (class)">Layout::Layers</a></span> for
-that <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span> (see <span class='object_link'><a href="Layout/Page.html#nonshared_entities-instance_method" title="Layout::Page#nonshared_entities (method)">Layout::Page#nonshared_entities</a></span>). Likewise, the
-<span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span> has a <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure that contains all of the
-<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on shared <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span>s for the entire <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>
-(see <span class='object_link'><a href="Layout/Document.html#shared_entities-instance_method" title="Layout::Document#shared_entities (method)">Layout::Document#shared_entities</a></span>). These functions provide access to an
-object, <span class='object_link'><a href="Layout/Entities.html" title="Layout::Entities (class)">Layout::Entities</a></span>, which is a list of <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> objects at the
-top of the hierarchy. Furthermore, the <span class='object_link'><a href="Layout/Group.html#entities-instance_method" title="Layout::Group#entities (method)">Layout::Group#entities</a></span> function
-provides an inlet to recursively traverse the <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure.</p>
+<p>To traverse the hierarchical <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure of a
+<span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>, it is important to understand that due to the rule
+about shared and non-shared <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>s, there are multiple
+<span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structures in a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>. Each <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span> has
+its own <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure that contains all of the
+<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on non-shared <span class='object_link'><a href="Layout/Layers.html" title="Layout::Layers (class)">Layout::Layers</a></span> for that <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>
+(see <span class='object_link'><a href="Layout/Page.html#nonshared_entities-instance_method" title="Layout::Page#nonshared_entities (method)">Layout::Page#nonshared_entities</a></span>). Likewise, the <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>
+has a <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span> structure that contains all of the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s
+on shared <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span>s for the entire <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span> (see
+<span class='object_link'><a href="Layout/Document.html#shared_entities-instance_method" title="Layout::Document#shared_entities (method)">Layout::Document#shared_entities</a></span>). These functions provide access to an
+object, <span class='object_link'><a href="Layout/Entities.html" title="Layout::Entities (class)">Layout::Entities</a></span>, which is a list of <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> objects at
+the top of the hierarchy. Furthermore, the <span class='object_link'><a href="Layout/Group.html#entities-instance_method" title="Layout::Group#entities (method)">Layout::Group#entities</a></span>
+function provides an inlet to recursively traverse the <span class='object_link'><a href="Layout/Group.html" title="Layout::Group (class)">Layout::Group</a></span>
+structure.</p>
 
-<h3>Iterating Over Entities On A Page</h3>
+<h3 id="label-Iterating+Over+Entities+On+A+Page">Iterating Over Entities On A Page</h3>
 
 <p>In cases where you need to iterate over all the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s that are
-visible on a <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>, including the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on both shared and
-non-shared layers, you can use the <span class='object_link'><a href="Layout/Page.html#entities-instance_method" title="Layout::Page#entities (method)">Layout::Page#entities</a></span> method. This method
-returns a list that, when iterated over, will visit <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s in exactly
-the same order they are drawn by LayOut.</p>
+visible on a <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>, including the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on both shared
+and non-shared layers, you can use the <span class='object_link'><a href="Layout/Page.html#entities-instance_method" title="Layout::Page#entities (method)">Layout::Page#entities</a></span> method. This
+method returns a list that, when iterated over, will visit
+<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s in exactly the same order they are drawn by LayOut.</p>
 
-<h3>Locked Entities</h3>
+<h3 id="label-Locked+Entities">Locked Entities</h3>
 
-<p>Any <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> in LayOut can be individually locked or unlocked via the
-<span class='object_link'><a href="Layout/Entity.html#locked=-instance_method" title="Layout::Entity#locked= (method)">Layout::Entity#locked=</a></span> method. Locked <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s cannot be moved,
-rotated, scaled, or modified in any way, besides being unlocked.</p>
+<p>Any <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> in LayOut can be individually locked or unlocked via
+the <span class='object_link'><a href="Layout/Entity.html#locked=-instance_method" title="Layout::Entity#locked= (method)">Layout::Entity#locked=</a></span> method. Locked <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s cannot be
+moved, rotated, scaled, or modified in any way, besides being unlocked.</p>
 
-<h3>Locked and Hidden Layers</h3>
+<h3 id="label-Locked+and+Hidden+Layers">Locked and Hidden Layers</h3>
 
-<p>In LayOut, the locked state of a <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> is a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>-wide
-setting, whereas the visible state of a <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> is a per-<span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>
-setting. LayOut has a rule that there must always be at least one unlocked,
-visible <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> on every <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>. This rule is enforced by the
-LayOut Ruby API by methods such as <span class='object_link'><a href="Layout/Layer.html#locked=-instance_method" title="Layout::Layer#locked= (method)">Layout::Layer#locked=</a></span>,
+<p>In LayOut, the locked state of a <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> is a
+<span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>-wide setting, whereas the visible state of a
+<span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> is a per-<span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span> setting. LayOut has a rule that
+there must always be at least one unlocked, visible <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> on
+every <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>. This rule is enforced by the LayOut Ruby API by
+methods such as <span class='object_link'><a href="Layout/Layer.html#locked=-instance_method" title="Layout::Layer#locked= (method)">Layout::Layer#locked=</a></span>,
 <span class='object_link'><a href="Layout/Page.html#set_layer_visibility-instance_method" title="Layout::Page#set_layer_visibility (method)">Layout::Page#set_layer_visibility</a></span>, and <span class='object_link'><a href="Layout/Layers.html#remove-instance_method" title="Layout::Layers#remove (method)">Layout::Layers#remove</a></span>.</p>
 
-<h3>There Must Be At Least One Page And One Layer In A Document</h3>
+<h3 id="label-There+Must+Be+At+Least+One+Page+And+One+Layer+In+A+Document">There Must Be At Least One Page And One Layer In A Document</h3>
 
-<p>There must be at least one <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> in a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>, and there
-must be at least one <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>. <span class='object_link'><a href="Layout/Layers.html#remove-instance_method" title="Layout::Layers#remove (method)">Layout::Layers#remove</a></span> and
-<span class='object_link'><a href="Layout/Pages.html#remove-instance_method" title="Layout::Pages#remove (method)">Layout::Pages#remove</a></span> enforce this. Also, new <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>s created by
-<span class='object_link'><a href="Layout/Document.html#initialize-instance_method" title="Layout::Document#initialize (method)">Layout::Document#initialize</a></span> will create a blank <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span> that starts
- out with one <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> and one <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>.</p>
+<p>There must be at least one <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> in a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>, and
+there must be at least one <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>. <span class='object_link'><a href="Layout/Layers.html#remove-instance_method" title="Layout::Layers#remove (method)">Layout::Layers#remove</a></span> and
+<span class='object_link'><a href="Layout/Pages.html#remove-instance_method" title="Layout::Pages#remove (method)">Layout::Pages#remove</a></span> enforce this. Also, new <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>s created
+by <span class='object_link'><a href="Layout/Document.html#initialize-instance_method" title="Layout::Document#initialize (method)">Layout::Document#initialize</a></span> will create a blank <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>
+that starts  out with one <span class='object_link'><a href="Layout/Layer.html" title="Layout::Layer (class)">Layout::Layer</a></span> and one <span class='object_link'><a href="Layout/Page.html" title="Layout::Page (class)">Layout::Page</a></span>.</p>
 
-<h3>Explicit Transforms and Untransformed Bounds</h3>
+<h3 id="label-Explicit+Transforms+and+Untransformed+Bounds">Explicit Transforms and Untransformed Bounds</h3>
 
-<p>Only some <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s in LayOut have explicit <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>:
-<span class='object_link'><a href="Layout/Ellipse.html" title="Layout::Ellipse (class)">Layout::Ellipse</a></span>, <span class='object_link'><a href="Layout/FormattedText.html" title="Layout::FormattedText (class)">Layout::FormattedText</a></span>, <span class='object_link'><a href="Layout/Image.html" title="Layout::Image (class)">Layout::Image</a></span>, <span class='object_link'><a href="Layout/Rectangle.html" title="Layout::Rectangle (class)">Layout::Rectangle</a></span>
-and <span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span> will always have an explicit
-<span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>. These are the only <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s that will return
-a value for <span class='object_link'><a href="Layout/Entity.html#untransformed_bounds-instance_method" title="Layout::Entity#untransformed_bounds (method)">Layout::Entity#untransformed_bounds</a></span>. <span class='object_link'><a href="Layout/Entity.html#transform!-instance_method" title="Layout::Entity#transform! (method)">Layout::Entity#transform!</a></span>
-will work on any <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> type, regardless of whether the
+<p>Only some <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s in LayOut have explicit
+<span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>: <span class='object_link'><a href="Layout/Ellipse.html" title="Layout::Ellipse (class)">Layout::Ellipse</a></span>, <span class='object_link'><a href="Layout/FormattedText.html" title="Layout::FormattedText (class)">Layout::FormattedText</a></span>,
+<span class='object_link'><a href="Layout/Image.html" title="Layout::Image (class)">Layout::Image</a></span>, <span class='object_link'><a href="Layout/Rectangle.html" title="Layout::Rectangle (class)">Layout::Rectangle</a></span> and <span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span> will
+always have an explicit <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>. These are the only
+<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s that will return a value for
+<span class='object_link'><a href="Layout/Entity.html#untransformed_bounds-instance_method" title="Layout::Entity#untransformed_bounds (method)">Layout::Entity#untransformed_bounds</a></span>. <span class='object_link'><a href="Layout/Entity.html#transform!-instance_method" title="Layout::Entity#transform! (method)">Layout::Entity#transform!</a></span> will
+work on any <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> type, regardless of whether the
 <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> has an explicit <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span> or not. It is
 important to note that LayOut will attempt to simplify the
 <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>, which may affect both the untransformed bounds as
-well as the explicit <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span> of the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>. Due to
-this, it is likely that the transform returned by <span class='object_link'><a href="Layout/Entity.html#transformation-instance_method" title="Layout::Entity#transformation (method)">Layout::Entity#transformation</a></span>
-will be different than the one that was applied. Also, the bounds returned by
-<span class='object_link'><a href="Layout/Entity.html#untransformed_bounds-instance_method" title="Layout::Entity#untransformed_bounds (method)">Layout::Entity#untransformed_bounds</a></span> will likely be different from the
-<span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>&#39;s initial untransformed bounds.</p>
+well as the explicit <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span> of the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>. Due
+to this, it is likely that the transform returned by
+<span class='object_link'><a href="Layout/Entity.html#transformation-instance_method" title="Layout::Entity#transformation (method)">Layout::Entity#transformation</a></span> will be different than the one that was
+applied. Also, the bounds returned by <span class='object_link'><a href="Layout/Entity.html#untransformed_bounds-instance_method" title="Layout::Entity#untransformed_bounds (method)">Layout::Entity#untransformed_bounds</a></span>
+will likely be different from the <span class='object_link'><a href="Layout/Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>&#39;s initial
+untransformed bounds.</p>
 
-<h3>Paths Must Have At Least Two Points</h3>
+<h3 id="label-Paths+Must+Have+At+Least+Two+Points">Paths Must Have At Least Two Points</h3>
 
 <p><span class='object_link'><a href="Layout/Path.html#initialize-instance_method" title="Layout::Path#initialize (method)">Layout::Path#initialize</a></span> enforces the rule that every <span class='object_link'><a href="Layout/Path.html" title="Layout::Path (class)">Layout::Path</a></span> must
-contain at least two points. This is because a 0 or 1-point <span class='object_link'><a href="Layout/Path.html" title="Layout::Path (class)">Layout::Path</a></span> is
-not visible and cannot be selected (or deleted) in the LayOut application.</p>
+contain at least two points. This is because a 0 or 1-point <span class='object_link'><a href="Layout/Path.html" title="Layout::Path (class)">Layout::Path</a></span>
+is not visible and cannot be selected (or deleted) in the LayOut
+application.</p>
 
-<h3>Text Cannot Be Empty</h3>
+<h3 id="label-Text+Cannot+Be+Empty">Text Cannot Be Empty</h3>
 
 <p>The functions for <span class='object_link'><a href="Layout/FormattedText.html" title="Layout::FormattedText (class)">Layout::FormattedText</a></span> enforce the rule that the content
 of the text cannot be empty. This is because an empty text box is not

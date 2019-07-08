@@ -614,7 +614,7 @@ the Outliner.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#select_directory-class_method" title="select_directory (class method)">.<strong>select_directory</strong>(options)  &#x21d2; String<sup>+</sup> </a>
+      <a href="#select_directory-class_method" title="select_directory (class method)">.<strong>select_directory</strong>(options = {})  &#x21d2; String, ... </a>
     
 
     
@@ -629,8 +629,8 @@ the Outliner.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The select_directory method is used to display the OS dialog for selecting
-one or several directories from the file system.</p>
+<p>The <span class='object_link'>#select_directory</span> method is used to display the OS dialog for
+selecting one or several directories from the file system.</p>
 </div></span>
   
 </li>
@@ -639,7 +639,7 @@ one or several directories from the file system.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_cursor-class_method" title="set_cursor (class method)">.<strong>set_cursor</strong>(cursor_id)  &#x21d2; nil </a>
+      <a href="#set_cursor-class_method" title="set_cursor (class method)">.<strong>set_cursor</strong>(cursor_id)  &#x21d2; Boolean </a>
     
 
     
@@ -654,8 +654,8 @@ one or several directories from the file system.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_cursor method is used to change the cursor to a new cursor with a
-given cursor id.</p>
+<p>The #<span class='object_link'><a href="#set_cursor-class_method" title="UI.set_cursor (method)">UI.set_cursor</a></span> method is used to change the cursor to a new cursor with
+a given cursor id.</p>
 </div></span>
   
 </li>
@@ -2643,7 +2643,7 @@ points2d.each { |point| point.transform!(tr)</code></pre>
   <h3 class="signature " id="select_directory-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>select_directory</strong>(options)  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt><sup>+</sup> 
+    .<strong>select_directory</strong>(options = {})  &#x21d2; <tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, ... 
   
 
   
@@ -2652,24 +2652,8 @@ points2d.each { |point| point.transform!(tr)</code></pre>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The select_directory method is used to display the OS dialog for selecting
-one or several directories from the file system.</p>
-
-<p>Options:</p>
-<ul><li>
-<p>:title             string  The title for the dialog.</p>
-</li><li>
-<p>:directory         string  Force the starting directory for the dialog. If</p>
-
-<pre class="code"><code class=""><span class='kw'>not</span> <span class='id identifier rubyid_specified'>specified</span> <span class='id identifier rubyid_the'>the</span> <span class='id identifier rubyid_last'>last</span> <span class='id identifier rubyid_chosen'>chosen</span> <span class='id identifier rubyid_directory'>directory</span> <span class='id identifier rubyid_will'>will</span> <span class='id identifier rubyid_be'>be</span>
-<span class='id identifier rubyid_used'>used</span>
-</code></pre>
-</li><li>
-<p>:select_multiple   boolean Set to true to allow multiple items to be</p>
-
-<pre class="code"><code class="">selected.
-</code></pre>
-</li></ul>
+<p>The <span class='object_link'>#select_directory</span> method is used to display the OS dialog for
+selecting one or several directories from the file system.</p>
 
 
   </div>
@@ -2718,6 +2702,8 @@ one or several directories from the file system.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
@@ -2729,6 +2715,64 @@ options.</p>
   
 </ul>
 
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:title</span>
+          <span class="type">(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>nil</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The title for the dialog.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:directory</span>
+          <span class="type">(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>nil</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Force the starting directory for the dialog. If not specified the last
+chosen directory will be used.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:select_multiple</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>false</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Set to true to allow multiple items to be selected.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
 
 </div>
 
@@ -2738,7 +2782,7 @@ options.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="String.html" title="String (class)">String</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>, <tt><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="String.html" title="String (class)">String</a></span>&gt;</tt>, <tt>nil</tt>)</span>
       
       
       
@@ -2776,7 +2820,7 @@ cancelled.</p>
   <h3 class="signature " id="set_cursor-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>set_cursor</strong>(cursor_id)  &#x21d2; <tt>nil</tt> 
+    .<strong>set_cursor</strong>(cursor_id)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2785,8 +2829,8 @@ cancelled.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_cursor method is used to change the cursor to a new cursor with a
-given cursor id. See UI.create_cursor and the Tool class for details on
+<p>The #<span class='object_link'><a href="#set_cursor-class_method" title="UI.set_cursor (method)">set_cursor</a></span> method is used to change the cursor to a new cursor with
+a given cursor id. See UI.create_cursor and the Tool class for details on
 creating your own tools with arbitrary cursors.</p>
 
 <p>If you call this while a standard SketchUp tool is active, you will not see
@@ -2845,7 +2889,7 @@ to indicate SketchUp&#39;s state.</p>
     <li>
       
       
-        <span class='type'>(<tt>nil</tt>)</span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
@@ -3816,15 +3860,6 @@ cross-platform script.</p>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-    </li>
   
     <li>
       

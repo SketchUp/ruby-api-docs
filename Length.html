@@ -186,8 +186,8 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2015, Length used to be derived from Float. This is no
-longer the case.</p>
+<p>Prior to SketchUp 2015, <code>Length</code> used to be derived from
+<code>Float</code>. This is no longer the case.</p>
 </div>
   </div>
 
@@ -200,33 +200,63 @@ Length object any place that you would use a Float.</p>
 stores values in inches as well. A number of methods have been added to the
 Ruby Numeric class to do units conversions.</p>
 
-<p>Constants: Length Format:</p>
-<ul><li>
-<p>Length::Decimal</p>
-</li><li>
-<p>Length::Architectural</p>
-</li><li>
-<p>Length::Engineering</p>
-</li><li>
-<p>Length::Fractional</p>
-</li></ul>
+<p>The setting for the Length Format and Length Unit can be retrieved from the
+<span class='object_link'><a href="Sketchup/Model.html#options-instance_method" title="Sketchup::Model#options (method)">Sketchup::Model#options</a></span> by querying the <tt>“UnitsOptions”</tt>
+<span class='object_link'><a href="Sketchup/OptionsProvider.html" title="Sketchup::OptionsProvider (class)">Sketchup::OptionsProvider</a></span> for <tt>“LengthFormat”</tt> and <tt>“LengthUnit”</tt>
+respectively.</p>
 
-<p>Length Unit:</p>
-<ul><li>
-<p>Length::Inches</p>
+<p><strong>Constants:</strong></p>
+<dl class="rdoc-list label-list"><dt>Length Format
+<dd><ul><li>
+<p><code>Length::Decimal</code></p>
 </li><li>
-<p>Length::Feet</p>
+<p><code>Length::Architectural</code></p>
 </li><li>
-<p>Length::Millimeter</p>
+<p><code>Length::Engineering</code></p>
 </li><li>
-<p>Length::Centimeter</p>
-</li><li>
-<p>Length::Meter</p>
+<p><code>Length::Fractional</code></p>
 </li></ul>
-
-<p>The setting for the Length format and Length unit can be retrieved from the
-model options by querying the “UnitsOptions” OptionsProvider for
-“LengthFormat” and “LengthUnit” respectively.</p>
+</dd><dt>Length Unit
+<dd><ul><li>
+<p><code>Length::Inches</code></p>
+</li><li>
+<p><code>Length::Feet</code></p>
+</li><li>
+<p><code>Length::Millimeter</code></p>
+</li><li>
+<p><code>Length::Centimeter</code></p>
+</li><li>
+<p><code>Length::Meter</code></p>
+</li></ul>
+</dd><dt>Area Unit
+<dd>
+<p>(Added in SketchUp 2019.1)</p>
+<ul><li>
+<p><code>Length::SquareInches</code></p>
+</li><li>
+<p><code>Length::SquareFeet</code></p>
+</li><li>
+<p><code>Length::SquareMillimeter</code></p>
+</li><li>
+<p><code>Length::SquareCentimeter</code></p>
+</li><li>
+<p><code>Length::SquareMeter</code></p>
+</li></ul>
+</dd><dt>Volume Unit
+<dd>
+<p>(Added in SketchUp 2019.1)</p>
+<ul><li>
+<p><code>Length::CubicInches</code></p>
+</li><li>
+<p><code>Length::CubicFeet</code></p>
+</li><li>
+<p><code>Length::CubicMillimeter</code></p>
+</li><li>
+<p><code>Length::CubicCentimeter</code></p>
+</li><li>
+<p><code>Length::CubicMeter</code></p>
+</li></ul>
+</dd></dl>
 
 
   </div>
@@ -251,6 +281,76 @@ model options by querying the “UnitsOptions” OptionsProvider for
 </ul>
 
 </div>
+  <h2>
+    Constant Summary
+    <a
+        id="constant_summary"
+        href="#constant_summary"
+        title="Permalink">#</a>
+  </h2>
+  
+    <dl class="constants">
+      
+        <dt id="Decimal-constant" class="">Length::Decimal
+        </dt>
+      
+        <dt id="Architectural-constant" class="">Length::Architectural
+        </dt>
+      
+        <dt id="Engineering-constant" class="">Length::Engineering
+        </dt>
+      
+        <dt id="Fractional-constant" class="">Length::Fractional
+        </dt>
+      
+        <dt id="Inches-constant" class="">Length::Inches
+        </dt>
+      
+        <dt id="Feet-constant" class="">Length::Feet
+        </dt>
+      
+        <dt id="Millimeter-constant" class="">Length::Millimeter
+        </dt>
+      
+        <dt id="Centimeter-constant" class="">Length::Centimeter
+        </dt>
+      
+        <dt id="Meter-constant" class="">Length::Meter
+        </dt>
+      
+        <dt id="SquareInches-constant" class="">Length::SquareInches
+        </dt>
+      
+        <dt id="SquareFeet-constant" class="">Length::SquareFeet
+        </dt>
+      
+        <dt id="SquareMillimeter-constant" class="">Length::SquareMillimeter
+        </dt>
+      
+        <dt id="SquareCentimeter-constant" class="">Length::SquareCentimeter
+        </dt>
+      
+        <dt id="SquareMeter-constant" class="">Length::SquareMeter
+        </dt>
+      
+        <dt id="CubicInches-constant" class="">Length::CubicInches
+        </dt>
+      
+        <dt id="CubicFeet-constant" class="">Length::CubicFeet
+        </dt>
+      
+        <dt id="CubicMillimeter-constant" class="">Length::CubicMillimeter
+        </dt>
+      
+        <dt id="CubicCentimeter-constant" class="">Length::CubicCentimeter
+        </dt>
+      
+        <dt id="CubicMeter-constant" class="">Length::CubicMeter
+        </dt>
+      
+    </dl>
+  
+
 
 
 

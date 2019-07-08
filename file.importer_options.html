@@ -142,79 +142,104 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>Importer Options</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Importer+Options">Importer Options</h1>
 
-<p>The SketchUp Ruby API provides access to several importers that are shipped with SketchUp. Lists of valid options supported by each importer are given below.</p>
+<p>The SketchUp Ruby API provides access to several importers that are shipped
+with SketchUp. Lists of valid options supported by each importer are given
+below.</p>
 
-<h1>Note</h1>
+<h1 id="label-Note">Note</h1>
 
-<p>The option <code>merge_coplaner_faces</code> was a typo in SketchUp 2018. This option will still work in the current SketchUp, but has been changed to <code>merge_coplanar_faces</code>.</p>
+<p>The option <code>merge_coplaner_faces</code> was a typo in SketchUp 2018.
+This option will still work in the current SketchUp, but has been changed
+to <code>merge_coplanar_faces</code>.</p>
 
-<h2>All Importers</h2>
+<h2 id="label-All+Importers">All Importers</h2>
+<ul><li>
+<p><code>show_summary</code> - Boolean to indicate whether to show the summary
+dialog.</p>
+</li></ul>
 
-<ul>
-<li><code>show_summary</code> - Boolean to indicate whether to show the summary dialog.</li>
-</ul>
+<h2 id="label-3ds+Max+-283DS-29">3ds Max (3DS)</h2>
+<ul><li>
+<p><code>units</code> - Specifies the import units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge
+coplanar faces.</p>
+</li></ul>
 
-<h2>3ds Max (3DS)</h2>
+<h2 id="label-Collada+-28DAE-29">Collada (DAE)</h2>
+<ul><li>
+<p><code>validate_dae</code> - Boolean to indicate whether to validate the
+input file.</p>
+</li><li>
+<p><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge
+coplanar faces.</p>
+</li></ul>
 
-<ul>
-<li><code>units</code> - Specifies the import units.
+<h2 id="label-Digital+Elevation+Model+-28DEM-2FDDF-29">Digital Elevation Model (DEM/DDF)</h2>
+<ul><li>
+<p><code>max_points</code> - Integer to specify the number of TIN points.</p>
+</li><li>
+<p><code>generate_texture</code> - Boolean to indicate whether to generate
+gradient textures.</p>
+</li></ul>
 
-<ul>
-<li>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>, <code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>, <code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>, <code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or <code>&quot;km&quot;</code></li>
-</ul></li>
-<li><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge coplanar faces.</li>
-</ul>
+<h2 id="label-3D+Autocad+-28DWG-2FDXF-29">3D Autocad (DWG/DXF)</h2>
+<ul><li>
+<p><code>import_materials</code> - Boolean to indicate whether to import
+materials. Added in SU2019.</p>
+</li><li>
+<p><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge
+coplanar faces.</p>
+</li><li>
+<p><code>orient_faces</code> - Boolean to indicate whether to orient faces
+consistently.</p>
+</li><li>
+<p><code>preserve_origin</code> - Boolean to indicate whether to preserve
+drawing origin.</p>
+</li></ul>
 
-<h2>Collada (DAE)</h2>
+<h2 id="label-Industry+Foundation+Classes+-28IFC-29">Industry Foundation Classes (IFC)</h2>
+<ul><li>
+<p>No options are supported for this type on import.</p>
+</li></ul>
 
-<ul>
-<li><code>validate_dae</code> - Boolean to indicate whether to validate the input file.</li>
-<li><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge coplanar faces.</li>
-</ul>
+<h2 id="label-Google+Earth+-28KMZ-29">Google Earth (KMZ)</h2>
+<ul><li>
+<p><code>validate_kmz</code> - Boolean to indicate whether to validate the
+input file.</p>
+</li><li>
+<p><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge
+coplanar faces.</p>
+</li></ul>
 
-<h2>Digital Elevation Model (DEM/DDF)</h2>
-
-<ul>
-<li><code>max_points</code> - Integer to specify the number of TIN points.</li>
-<li><code>generate_texture</code> - Boolean to indicate whether to generate gradient textures.</li>
-</ul>
-
-<h2>3D Autocad (DWG/DXF)</h2>
-
-<ul>
-<li><code>import_materials</code> - Boolean to indicate whether to import materials. Added in SU2019.</li>
-<li><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge coplanar faces.</li>
-<li><code>orient_faces</code> - Boolean to indicate whether to orient faces consistently.</li>
-<li><code>preserve_origin</code> - Boolean to indicate whether to preserve drawing origin.</li>
-</ul>
-
-<h2>Industry Foundation Classes (IFC)</h2>
-
-<ul>
-<li>No options are supported for this type on import.</li>
-</ul>
-
-<h2>Google Earth (KMZ)</h2>
-
-<ul>
-<li><code>validate_kmz</code> - Boolean to indicate whether to validate the input file.</li>
-<li><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge coplanar faces.</li>
-</ul>
-
-<h2>STereoLithography (STL)</h2>
-
-<ul>
-<li><code>units</code> - Specifies the import units.
-
-<ul>
-<li>values: <code>&quot;inch&quot;</code>, <code>&quot;feet&quot;</code>, <code>&quot;mm&quot;</code>, <code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code></li>
-</ul></li>
-<li><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge coplanar faces.</li>
-<li><code>preserve_origin</code> - Boolean to indicate whether to preserve drawing origin.</li>
-<li><code>swap_yz</code> - Boolean to indicate whether to swap Y and Z coordinates (Y is up).</li>
-</ul>
+<h2 id="label-STereoLithography+-28STL-29">STereoLithography (STL)</h2>
+<ul><li>
+<p><code>units</code> - Specifies the import units.</p>
+<ul><li>
+<p>values: <code>&quot;inch&quot;</code>, <code>&quot;feet&quot;</code>,
+<code>&quot;mm&quot;</code>, <code>&quot;cm&quot;</code>,
+<code>&quot;m&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>merge_coplanar_faces</code> - Boolean to indicate whether to merge
+coplanar faces.</p>
+</li><li>
+<p><code>preserve_origin</code> - Boolean to indicate whether to preserve
+drawing origin.</p>
+</li><li>
+<p><code>swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li></ul>
 </div></div>
 
       <div id="footer">
