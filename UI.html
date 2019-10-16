@@ -460,7 +460,7 @@ available model info pages.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#openURL-class_method" title="UI.openURL (method)">UI.openURL</a></span> method is used to open the default Web browser to a URL.</p>
+<p>The <span class='object_link'><a href="#openURL-class_method" title="UI.openURL (method)">UI.openURL</a></span> method is used to open the default browser to a URL.</p>
 </div></span>
   
 </li>
@@ -2051,7 +2051,7 @@ canceled.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#openURL-class_method" title="UI.openURL (method)">openURL</a></span> method is used to open the default Web browser to a URL.</p>
+<p>The <span class='object_link'><a href="#openURL-class_method" title="UI.openURL (method)">openURL</a></span> method is used to open the default browser to a URL.</p>
 
 
   </div>
@@ -2116,6 +2116,26 @@ canceled.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Before SketchUp 2019.3 the mac version would URL encode the given URL. This
+could inadvertently mangle some URLs, if for example if they had URL
+fragments (# character). The Windows version would not. As of SketchUp
+2019.3 both platforms do not perform URL encoding and the API user is
+expected to provide a valid URL.</p>
 </div>
       
     </li>
