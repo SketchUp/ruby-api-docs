@@ -144,188 +144,338 @@
       </div>
 
       <div id="content"><div id='filecontents'>
-<h1 id="exporter-options">Exporter Options</h1>
+<h1 id="label-Exporter+Options">Exporter Options</h1>
 
-<p>The SketchUp Ruby API has different exporter plugins that are shipped with the
-product. Below is a list of the <strong>valid</strong> options that each exporter will accept.
-If an <strong>invalid</strong> option is provided, it will be silently ignored.</p>
+<p>The SketchUp Ruby API has different exporter plugins that are shipped with
+the product. Below is a list of the <strong>valid</strong> options that
+each exporter will accept. If an <strong>invalid</strong> option is
+provided, it will be silently ignored.</p>
 
-<h2 id="all-exporters">All Exporters</h2>
-<ul>
-  <li><code>:show_summary</code> - Boolean to indicate whether to show the summary dialog.</li>
-</ul>
+<h2 id="label-All+Exporters">All Exporters</h2>
+<ul><li>
+<p><code>:show_summary</code> - Boolean to indicate whether to show the
+summary dialog.</p>
+</li></ul>
 
-<h2 id="ds-max-3ds">3ds Max (3DS)</h2>
-<ul>
-  <li><code>:units</code> - Specifies the export units.
-    <ul>
-      <li>values: <code>"model"</code>, <code>"inch"</code>, <code>"foot"</code>, <code>"yard"</code>, <code>"mile"</code>, <code>"mm"</code>, <code>"cm"</code>, <code>"m"</code>, or <code>"km"</code></li>
-    </ul>
-  </li>
-  <li><code>:geometry</code> - Specifies what geometry to export.
-    <ul>
-      <li>values: <code>"full_hierarchy"</code>, <code>"by_layer"</code>, <code>"by_material"</code>, or <code>"single_object"</code></li>
-    </ul>
-  </li>
-  <li><code>:doublesided_faces</code> - Boolean to indicate whether to export 2-sided faces.</li>
-  <li><code>:faces</code> - Specifies how to export faces.
-    <ul>
-      <li>values: <code>"not_two_sided"</code>, <code>"two_sided_as_material"</code>, <code>"two_sided_as_geometry"</code></li>
-    </ul>
-  </li>
-  <li><code>:edges</code> - Boolean to indicate whether to export edges.</li>
-  <li><code>:texture_maps</code> - Boolean to indicate whether to export texture maps.</li>
-  <li><code>:preserve_texture_coords</code> - Boolean to indicate whether texture coordinates are to be preserved.</li>
-  <li><code>:cameras</code> - Boolean to indicate whether to export cameras from Scenes.</li>
-  <li><code>:selectionset_only</code> - Boolean to indicate whether to export the selected entities.</li>
-</ul>
+<h2 id="label-3ds+Max+-283DS-29">3ds Max (3DS)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:geometry</code> - Specifies what geometry to export.</p>
+<ul><li>
+<p>values: <code>&quot;full_hierarchy&quot;</code>,
+<code>&quot;by_layer&quot;</code>, <code>&quot;by_material&quot;</code>, or
+<code>&quot;single_object&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:faces</code> - Specifies how to export faces.</p>
+<ul><li>
+<p>values: <code>&quot;not_two_sided&quot;</code>,
+<code>&quot;two_sided_as_material&quot;</code>,
+<code>&quot;two_sided_as_geometry&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:preserve_texture_coords</code> - Boolean to indicate whether texture
+coordinates are to be preserved.</p>
+</li><li>
+<p><code>:cameras</code> - Boolean to indicate whether to export cameras from
+Scenes.</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
 
-<h2 id="collada-dae">Collada (DAE)</h2>
-<ul>
-  <li><code>:triangulated_faces</code> - Boolean to indicate whether to export triangulated faces.</li>
-  <li><code>:doublesided_faces</code> - Boolean to indicate whether to export 2-sided faces.</li>
-  <li><code>:edges</code> - Boolean to indicate whether to export edges.</li>
-  <li><code>:author_attribution</code> - Boolean to indicate whether to export model credits.</li>
-  <li><code>:hidden_geometry</code> - Boolean to indicate whether to export hidden geometry.</li>
-  <li><code>:preserve_instancing</code> - Boolean to indicate whether to preserve component hierarchies.</li>
-  <li><code>:texture_maps</code> - Boolean to indicate whether to export texture maps.</li>
-  <li><code>:selectionset_only</code> - Boolean to indicate whether to export the selected entities.</li>
-  <li><code>:camera_lookat</code> - Boolean to indicate whether to export the camera looking at the target.</li>
-</ul>
+<h2 id="label-Collada+-28DAE-29">Collada (DAE)</h2>
+<ul><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:author_attribution</code> - Boolean to indicate whether to export
+model credits.</p>
+</li><li>
+<p><code>:hidden_geometry</code> - Boolean to indicate whether to export
+hidden geometry.</p>
+</li><li>
+<p><code>:preserve_instancing</code> - Boolean to indicate whether to preserve
+component hierarchies.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li><li>
+<p><code>:camera_lookat</code> - Boolean to indicate whether to export the
+camera looking at the target.</p>
+</li></ul>
 
-<h2 id="d-autocad-dwgdxf">3D Autocad (DWG/DXF)</h2>
-<ul>
-  <li><code>:acad_version</code> - Specifies the autocad_version to export.
-    <ul>
-      <li>values: <code>"acad_12"</code>, <code>"acad_13"</code>, <code>"acad_14"</code>, <code>"acad_2000"</code>, <code>"acad_2004"</code>, <code>"acad_2007"</code>, <code>"acad_2010"</code>, <code>"acad_2013"</code></li>
-    </ul>
-  </li>
-  <li><code>:faces_flag</code> - Boolean to indcate whether to export faces.</li>
-  <li><code>:construction_geometry</code> - Boolean to indicate whether to export construction geometry.</li>
-  <li><code>:dimensions</code> - Boolean to indicate whether to export dimensions.</li>
-  <li><code>:text</code> - Boolean to indicate whether to export text objects.</li>
-  <li><code>:edges</code> - Boolean to indicate whether to export edges.</li>
-</ul>
+<h2 id="label-3D+Autocad+-28DWG-2FDXF-29">3D Autocad (DWG/DXF)</h2>
+<ul><li>
+<p><code>:acad_version</code> - Specifies the autocad_version to export.</p>
+<ul><li>
+<p>values: <code>&quot;acad_12&quot;</code>, <code>&quot;acad_13&quot;</code>,
+<code>&quot;acad_14&quot;</code>, <code>&quot;acad_2000&quot;</code>,
+<code>&quot;acad_2004&quot;</code>, <code>&quot;acad_2007&quot;</code>,
+<code>&quot;acad_2010&quot;</code>, <code>&quot;acad_2013&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:faces_flag</code> - Boolean to indcate whether to export faces.</p>
+</li><li>
+<p><code>:construction_geometry</code> - Boolean to indicate whether to export
+construction geometry.</p>
+</li><li>
+<p><code>:dimensions</code> - Boolean to indicate whether to export
+dimensions.</p>
+</li><li>
+<p><code>:text</code> - Boolean to indicate whether to export text objects.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li></ul>
 
-<h2 id="filmbox-autodesk-fbx">Filmbox Autodesk (FBX)</h2>
-<ul>
-  <li><code>:units</code> - Specifies the export units.
-    <ul>
-      <li>values: <code>"model"</code>, <code>"inch"</code>, <code>"foot"</code>, <code>"yard"</code>, <code>"mile"</code>, <code>"mm"</code>, <code>"cm"</code>, <code>"m"</code> or <code>"km"</code></li>
-    </ul>
-  </li>
-  <li><code>:triangulated_faces</code> - Boolean to indicate whether to export triangulated faces.</li>
-  <li><code>:doublesided_faces</code> - Boolean to indicated whether to export 2-sided faces.</li>
-  <li><code>:texture_maps</code> - Boolean to indicate whether to export texture maps.</li>
-  <li><code>:seperate_disconnected_faces</code> - Boolean to indicate whether to export separate disconnected faces.</li>
-  <li><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z coordinates (Y is up).</li>
-  <li><code>:selectionset_only</code> - Boolean to indicate whether to export the selected entities.</li>
-</ul>
+<h2 id="label-Filmbox+Autodesk+-28FBX-29">Filmbox Autodesk (FBX)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code> or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicated whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:seperate_disconnected_faces</code> - Boolean to indicate whether to
+export separate disconnected faces.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
 
-<h2 id="industry-foundation-classes-ifc">Industry Foundation Classes (IFC)</h2>
-<ul>
-  <li><code>:hidden_geometry</code> - Boolean to indicate whether to export hidden geometry.</li>
-  <li><code>:doublesided_faces</code> - Boolean to indicate whether to export 2-sided faces.</li>
-  <li><code>:ifc_mapped_items</code> - Boolean to indicate whether to export IFC mapped items.</li>
-  <li><code>:ifc_types</code> - An Array of strings indicating IFC elements to export. One or more of the following values can be in the array. If there are no values in the array, no geometry will be exported.
-    <ul>
-      <li>values: <code>"IfcNonDefined"</code>, <code>"IfcBeam"</code>, <code>"IfcBuilding"</code>, <code>"IfcBuildingElementProxy"</code>, <code>"IfcBuildingStorey"</code>, <code>"IfcColumn"</code>, <code>"IfcCurtainWall"</code>, <code>"IfcDoor"</code>, <code>"IfcFooting"</code>, <code>"IfcFurnishingElement"</code>, <code>"IfcMember"</code>, <code>"IfcPile"</code>, <code>"IfcPlate"</code>, <code>"IfcProject"</code>, <code>"IfcRailing"</code>, <code>"IfcRamp"</code>, <code>"IfcRampFlight"</code>, <code>"IfcRoof"</code>, <code>"IfcSite"</code>, <code>"IfcSlab"</code>, <code>"IfcSpace"</code>, <code>"IfcStair"</code>, <code>"IfcStairFlight"</code>, <code>"IfcWall"</code>, <code>"IfcWallStandardCase"</code>, <code>"IfcWindow"</code></li>
-    </ul>
-  </li>
-</ul>
+<h2 id="label-Industry+Foundation+Classes+-28IFC-29">Industry Foundation Classes (IFC)</h2>
+<ul><li>
+<p><code>:hidden_geometry</code> - Boolean to indicate whether to export
+hidden geometry.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:ifc_mapped_items</code> - Boolean to indicate whether to export IFC
+mapped items.</p>
+</li><li>
+<p><code>:ifc_types</code> - An Array of strings indicating IFC elements to
+export. One or more of the following values can be in the array. If there
+are no values in the array, no geometry will be exported.</p>
+<ul><li>
+<p>values: <code>&quot;IfcNonDefined&quot;</code>,
+<code>&quot;IfcBeam&quot;</code>, <code>&quot;IfcBuilding&quot;</code>,
+<code>&quot;IfcBuildingElementProxy&quot;</code>,
+<code>&quot;IfcBuildingStorey&quot;</code>,
+<code>&quot;IfcColumn&quot;</code>,
+<code>&quot;IfcCurtainWall&quot;</code>, <code>&quot;IfcDoor&quot;</code>,
+<code>&quot;IfcFooting&quot;</code>,
+<code>&quot;IfcFurnishingElement&quot;</code>,
+<code>&quot;IfcMember&quot;</code>, <code>&quot;IfcPile&quot;</code>,
+<code>&quot;IfcPlate&quot;</code>, <code>&quot;IfcProject&quot;</code>,
+<code>&quot;IfcRailing&quot;</code>, <code>&quot;IfcRamp&quot;</code>,
+<code>&quot;IfcRampFlight&quot;</code>, <code>&quot;IfcRoof&quot;</code>,
+<code>&quot;IfcSite&quot;</code>, <code>&quot;IfcSlab&quot;</code>,
+<code>&quot;IfcSpace&quot;</code>, <code>&quot;IfcStair&quot;</code>,
+<code>&quot;IfcStairFlight&quot;</code>, <code>&quot;IfcWall&quot;</code>,
+<code>&quot;IfcWallStandardCase&quot;</code>,
+<code>&quot;IfcWindow&quot;</code></p>
+</li></ul>
+</li></ul>
 
-<h2 id="google-earth-kmz">Google Earth (KMZ)</h2>
-<ul>
-  <li><code>:author_attribution</code> - Boolean to indicate whether to export model credits.</li>
-  <li><code>:hidden_geometry</code> - Boolean to indicate whether to export hidden geometry</li>
-</ul>
+<h2 id="label-Google+Earth+-28KMZ-29">Google Earth (KMZ)</h2>
+<ul><li>
+<p><code>:author_attribution</code> - Boolean to indicate whether to export
+model credits.</p>
+</li><li>
+<p><code>:hidden_geometry</code> - Boolean to indicate whether to export
+hidden geometry</p>
+</li></ul>
 
-<h2 id="obj">OBJ</h2>
-<ul>
-  <li><code>:units</code> - Specifies the export units.
-    <ul>
-      <li>values: <code>"model"</code>, <code>"inch"</code>, <code>"foot"</code>, <code>"yard"</code>, <code>"mile"</code>, <code>"mm"</code>, <code>"cm"</code>, <code>"m"</code>, or <code>"km"</code></li>
-    </ul>
-  </li>
-  <li><code>:triangulated_faces</code> - Boolean to indicate whether to export triangulated faces.</li>
-  <li><code>:doublesided_faces</code> - Boolean to indicate whether to export 2-sided faces.</li>
-  <li><code>:edges</code> - Boolean to indicate whether to export edges.</li>
-  <li><code>:texture_maps</code> - Boolean to indicate whether to export texture maps.</li>
-  <li><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z coordinates (Y is up).</li>
-  <li><code>:selectionset_only</code> - Boolean to indicate whether to export the selected entities.</li>
-</ul>
+<h2 id="label-OBJ">OBJ</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
 
-<h2 id="softimage-xsi-3d-image-xsi">Softimage XSI 3D Image (XSI)</h2>
-<ul>
-  <li><code>:units</code> - Specifies the export units.
-    <ul>
-      <li>values: <code>"model"</code>, <code>"inch"</code>, <code>"foot"</code>, <code>"yard"</code>, <code>"mile"</code>, <code>"mm"</code>, <code>"cm"</code>, <code>"m"</code>, or <code>"km"</code></li>
-    </ul>
-  </li>
-  <li><code>:triangulated_faces</code> - Boolean to indicate whether to export triangulated faces.</li>
-  <li><code>:doublesided_faces</code> - Boolean to indicate whether to export 2-sided faces.</li>
-  <li><code>:edges</code> - Boolean to indicate whether to export edges.</li>
-  <li><code>:texture_maps</code> - Boolean to indicate whether to export texture maps.</li>
-  <li><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z coordinates (Y is up).</li>
-  <li><code>:selectionset_only</code> - Boolean to indicate whether to export the selected entities.</li>
-</ul>
+<h2 id="label-Softimage+XSI+3D+Image+-28XSI-29">Softimage XSI 3D Image (XSI)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;foot&quot;</code>, <code>&quot;yard&quot;</code>,
+<code>&quot;mile&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code>, or
+<code>&quot;km&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:triangulated_faces</code> - Boolean to indicate whether to export
+triangulated faces.</p>
+</li><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li></ul>
 
-<h2 id="virtual-reality-modeling-language-wrl">Virtual Reality Modeling Language (WRL)</h2>
-<ul>
-  <li><code>:doublesided_faces</code> - Boolean to indicate whether to export 2-sided faces.</li>
-  <li><code>:cameras</code> - Boolean to indicate whether to export cameras.</li>
-  <li><code>:use_vrml_orientation</code> - Boolean to indicate whether to use VRML standard orientation.</li>
-  <li><code>:edges</code> - Boolean to indicate whether to export edges.</li>
-  <li><code>:texture_maps</code> - Boolean to indicate whether to export texture maps.</li>
-  <li><code>:allow_mirrored_components</code> - Boolean to indicate whether to allow mirrored components.</li>
-  <li><code>:material_override</code> - Boolean to indicate whether to check for material overrides.</li>
-</ul>
+<h2 id="label-Virtual+Reality+Modeling+Language+-28WRL-29">Virtual Reality Modeling Language (WRL)</h2>
+<ul><li>
+<p><code>:doublesided_faces</code> - Boolean to indicate whether to export
+2-sided faces.</p>
+</li><li>
+<p><code>:cameras</code> - Boolean to indicate whether to export cameras.</p>
+</li><li>
+<p><code>:use_vrml_orientation</code> - Boolean to indicate whether to use
+VRML standard orientation.</p>
+</li><li>
+<p><code>:edges</code> - Boolean to indicate whether to export edges.</p>
+</li><li>
+<p><code>:texture_maps</code> - Boolean to indicate whether to export texture
+maps.</p>
+</li><li>
+<p><code>:allow_mirrored_components</code> - Boolean to indicate whether to
+allow mirrored components.</p>
+</li><li>
+<p><code>:material_override</code> - Boolean to indicate whether to check for
+material overrides.</p>
+</li></ul>
 
-<h2 id="pdf-windows">PDF (Windows)</h2>
-<ul>
-  <li><code>:output_profile_lines</code> (default = <code>true</code>)</li>
-  <li><code>:output_section_lines</code> (default = <code>true</code>)</li>
-  <li><code>:edge_extensions</code> (default = <code>true</code>)</li>
-  <li><code>:match_screen_profiles</code> (default = <code>true</code>)</li>
-  <li><code>:match_screen_section</code> (default = <code>true</code>)</li>
-  <li><code>:match_screen_extensions</code> (default = <code>true</code>)</li>
-  <li><code>:full_scale</code> (default = <code>true</code>)</li>
-  <li><code>:map_fonts</code> (default = <code>true</code>)</li>
-  <li><code>:drawing_units</code> (default = <code>Length::Inches</code>)</li>
-  <li><code>:extension_units</code> (default = <code>Length::Feet</code>)</li>
-  <li><code>:height_units</code> (default = <code>Length::Feet</code>)</li>
-  <li><code>:model_units</code> (default = <code>Length::Feet</code>)</li>
-  <li><code>:width_units</code> (default = <code>Length::Feet</code>)</li>
-  <li><code>:extension_length</code> (default = <code>0.0</code>)</li>
-  <li><code>:line_width</code> (default = <code>0.0</code>)</li>
-  <li><code>:line_width_section</code> (default = <code>0.0</code>)</li>
-  <li><code>:length_in_drawing</code> (default = <code>1.0</code>)</li>
-  <li><code>:length_in_model</code> (default = <code>1.0</code>)</li>
-  <li><code>:window_height</code> (default = <code>1.0</code>)</li>
-</ul>
+<h2 id="label-PDF+-28Windows-29">PDF (Windows)</h2>
+<ul><li>
+<p><code>:output_profile_lines</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:output_section_lines</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:edge_extensions</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:match_screen_profiles</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:match_screen_section</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:match_screen_extensions</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:full_scale</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:map_fonts</code> (default = <code>true</code>)</p>
+</li><li>
+<p><code>:drawing_units</code> (default = <code>Length::Inches</code>)</p>
+</li><li>
+<p><code>:extension_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:height_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:model_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:width_units</code> (default = <code>Length::Feet</code>)</p>
+</li><li>
+<p><code>:extension_length</code> (default = <code>0.0</code>)</p>
+</li><li>
+<p><code>:line_width</code> (default = <code>0.0</code>)</p>
+</li><li>
+<p><code>:line_width_section</code> (default = <code>0.0</code>)</p>
+</li><li>
+<p><code>:length_in_drawing</code> (default = <code>1.0</code>)</p>
+</li><li>
+<p><code>:length_in_model</code> (default = <code>1.0</code>)</p>
+</li><li>
+<p><code>:window_height</code> (default = <code>1.0</code>)</p>
+</li></ul>
 
-<h2 id="pdf-mac">PDF (Mac)</h2>
-<ul>
-  <li><code>:line_weight</code> (default = <code>0.5</code>)</li>
-  <li><code>:imageWidth</code> (default = <code>50</code>)</li>
-  <li><code>:imageHeight</code> (default = <code>50</code>)</li>
-</ul>
+<h2 id="label-PDF+-28Mac-29">PDF (Mac)</h2>
+<ul><li>
+<p><code>:line_weight</code> (default = <code>0.5</code>)</p>
+</li><li>
+<p><code>:imageWidth</code> (default = <code>50</code>)</p>
+</li><li>
+<p><code>:imageHeight</code> (default = <code>50</code>)</p>
+</li></ul>
 
-<h2 id="stereolithography-stl">STereoLithography (STL)</h2>
-<ul>
-  <li><code>:units</code> - Specifies the export units.
-    <ul>
-      <li>values: <code>"model"</code>, <code>"inch"</code>, <code>"feet"</code>, <code>"mm"</code>, <code>"cm"</code>, <code>"m"</code></li>
-    </ul>
-  </li>
-  <li><code>:format</code> - Specifies how the data is represented in the file.
-    <ul>
-      <li>values: <code>"ascii"</code>, <code>"binary"</code></li>
-    </ul>
-  </li>
-  <li><code>:selectionset_only</code> - Boolean to indicate whether to export the selected entities.</li>
-  <li><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z coordinates (Y is up).</li>
-</ul>
+<h2 id="label-STereoLithography+-28STL-29">STereoLithography (STL)</h2>
+<ul><li>
+<p><code>:units</code> - Specifies the export units.</p>
+<ul><li>
+<p>values: <code>&quot;model&quot;</code>, <code>&quot;inch&quot;</code>,
+<code>&quot;feet&quot;</code>, <code>&quot;mm&quot;</code>,
+<code>&quot;cm&quot;</code>, <code>&quot;m&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:format</code> - Specifies how the data is represented in the file.</p>
+<ul><li>
+<p>values: <code>&quot;ascii&quot;</code>, <code>&quot;binary&quot;</code></p>
+</li></ul>
+</li><li>
+<p><code>:selectionset_only</code> - Boolean to indicate whether to export the
+selected entities.</p>
+</li><li>
+<p><code>:swap_yz</code> - Boolean to indicate whether to swap Y and Z
+coordinates (Y is up).</p>
+</li></ul>
 </div></div>
 
       <div id="footer">
