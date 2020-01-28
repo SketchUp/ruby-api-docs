@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
   <!-- SCRIPTS -->
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "Sketchup::View";
   relpath = '../';
 </script>
@@ -413,7 +413,7 @@ of the view.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw-instance_method" title="#draw (instance method)">#<strong>draw</strong>(openglenum, points)  &#x21d2; Sketchup::View </a>
+      <a href="#draw-instance_method" title="#draw (instance method)">#<strong>draw</strong>(*args)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -437,7 +437,7 @@ of the view.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw2d-instance_method" title="#draw2d (instance method)">#<strong>draw2d</strong>(openglenum, points)  &#x21d2; Sketchup::View </a>
+      <a href="#draw2d-instance_method" title="#draw2d (instance method)">#<strong>draw2d</strong>(*args)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -559,7 +559,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw_text-instance_method" title="#draw_text (instance method)">#<strong>draw_text</strong>(point, text, options = {})  &#x21d2; Sketchup::View </a>
+      <a href="#draw_text-instance_method" title="#draw_text (instance method)">#<strong>draw_text</strong>(*args)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -606,7 +606,7 @@ to the view.</p>
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#dynamic=-instance_method" title="#dynamic= (instance method)">#<strong>dynamic=</strong>(value)  &#x21d2; Boolean </a>
@@ -619,13 +619,12 @@ to the view.</p>
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The dynamic= method allows you to degrade visual quality while improving
-performance when a model is large and view refresh time is slow.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>This method is no longer doing anything.</p>
 </div></span>
   
 </li>
@@ -856,6 +855,30 @@ drawing.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#load_texture-instance_method" title="#load_texture (instance method)">#<strong>load_texture</strong>(image_rep)  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Loads a texture to be drawn with <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> or <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#lock_inference-instance_method" title="#lock_inference (instance method)">#<strong>lock_inference</strong>(*args)  &#x21d2; Sketchup::View </a>
     
 
@@ -1002,6 +1025,30 @@ size at a given point.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#release_texture-instance_method" title="#release_texture (instance method)">#<strong>release_texture</strong>(texture_id)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Releases a texture loaded via <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>, freeing up it&#39;s memory.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
@@ -1094,6 +1141,31 @@ you want to draw.</p>
     <span class="summary_desc"><div class='inline'>
 <p>The show_frame method is used to show a frame of an Animation object in the
 current view.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#text_bounds-instance_method" title="#text_bounds (instance method)">#<strong>text_bounds</strong>(point, text, options = {})  &#x21d2; Geom::Bounds2d </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This method is used to compute the bounds of the text when using
+<span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span>.</p>
 </div></span>
   
 </li>
@@ -1940,7 +2012,15 @@ coordinate you want to retrieve.</p>
   <h3 class="signature " id="draw-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>draw</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
+    
+      <span class="overload">#<strong>draw</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw</strong>(openglenum, *points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw</strong>(openglenum, points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw</strong>(openglenum, *points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
   
 
   
@@ -2033,7 +2113,13 @@ strip data is different from that used with independent data.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -2075,6 +2161,319 @@ such as <code>GL_LINES</code>.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw</strong>(openglenum, *points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>openglenum</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw</strong>(openglenum, points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>openglenum</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>**options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:normals</span>
+          <span class="type">(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Without normals the polygons will be rendered with flat shading. No light
+will affect it. By providing an array of vertex normals lighting is turned
+on and will use the model&#39;s current light. Note that the number of
+normals must match the number of points provided.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:texture_id</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A texture id provided by <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:uvs</span>
+          <span class="type">(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
+This must be used along with the <code>:texture_id</code> option.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw</strong>(openglenum, *points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>openglenum</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>**options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:normals</span>
+          <span class="type">(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>[]</tt>
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Without normals the polygons will be rendered with flat shading. No light
+will affect it. By providing an array of vertex normals lighting is turned
+on and will use the model&#39;s current light. Note that the number of
+normals must match the number of points provided.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:texture_id</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A texture id provided by <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:uvs</span>
+          <span class="type">(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
+This must be used along with the <code>:texture_id</code> option.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2120,7 +2519,15 @@ such as <code>GL_LINES</code>.</p>
   <h3 class="signature " id="draw2d-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>draw2d</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
+    
+      <span class="overload">#<strong>draw2d</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw2d</strong>(openglenum, *points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw2d</strong>(openglenum, points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw2d</strong>(openglenum, *points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
   
 
   
@@ -2158,7 +2565,13 @@ used.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw2d</strong>(openglenum, points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -2179,8 +2592,8 @@ used.</p>
       
         &mdash;
         <div class='inline'>
-<p>An OpenGL enumerator (unsigned integer). See comments in the <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> method
-for a list of constants.</p>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2200,6 +2613,284 @@ for a list of constants.</p>
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw2d</strong>(openglenum, *points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>openglenum</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw2d</strong>(openglenum, points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>openglenum</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>**options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:texture_id</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A texture id provided by <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:uvs</span>
+          <span class="type">(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
+This must be used along with the <code>:texture_id</code> option.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw2d</strong>(openglenum, *points, **options)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>openglenum</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The item you are going to draw, one of the constants from the comments,
+such as <code>GL_LINES</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>points</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>**options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:texture_id</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A texture id provided by <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:uvs</span>
+          <span class="type">(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>&gt;</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
+This must be used along with the <code>:texture_id</code> option.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2210,11 +2901,6 @@ for a list of constants.</p>
         <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>returns the View object.</p>
-</div>
       
     </li>
   
@@ -2800,7 +3486,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a View object</p>
+<p>Returns a View object.</p>
 
 
   </div>
@@ -2855,7 +3541,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a View object</p>
+<p>Returns a View object.</p>
 
 
   </div>
@@ -2930,7 +3616,11 @@ segments from pt1 to pt2 to pt3, and so on.</p>
   <h3 class="signature " id="draw_text-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>draw_text</strong>(point, text, options = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
+    
+      <span class="overload">#<strong>draw_text</strong>(point, text)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>draw_text</strong>(point, text, options = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
   
 
   
@@ -2955,9 +3645,27 @@ as <span class='object_link'><a href="../UI.html#scale_factor-class_method" titl
 </div>
   </div>
 
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The font size is platform dependent. On Windows the method expects points,
+where on Mac it&#39;s pixels. See “Cross Platform Font Size” example for
+details.</p>
+</div>
+  </div>
+
 
 <p>This method is used to draw text on the screen and is usually invoked
 within the draw method of a tool.</p>
+
+<p>The <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span> option will align the text to the center of
+the height of the first line, not the whole boundingbox of the text. To
+align around the full bounds of the text, use <span class='object_link'><a href="#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">#text_bounds</a></span> to compute the
+desired alignment.</p>
+
+<p><strong>Example of different vertical alignment and text bounds:</strong></p>
+
+<p><img src="../images/view-draw-text-with-bounds.png"></p>
 
 
   </div>
@@ -2968,30 +3676,118 @@ within the draw method of a tool.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='comment'># This works in all SketchUp versions and draws the text using the
+</span>    <span class='comment'># default font, color and size.
+</span>    <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
-<span class='comment'># This works in all SketchUp versions and draws the text using the
-</span><span class='comment'># default font, color and size.
-</span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='comment'># This works in SketchUp 2016 and up.
+</span>    <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:font</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Arial</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='symbol'>:size</span> <span class='op'>=&gt;</span> <span class='int'>20</span><span class='comma'>,</span>
+      <span class='symbol'>:bold</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+      <span class='symbol'>:align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span></span>
+    <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is another\ntest</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 
-<span class='comment'># This works in SketchUp 2016 and up.
-</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-  <span class='symbol'>:font</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Arial</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-  <span class='symbol'>:size</span> <span class='op'>=&gt;</span> <span class='int'>20</span><span class='comma'>,</span>
-  <span class='symbol'>:bold</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
-  <span class='symbol'>:align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span></span>
-<span class='rbrace'>}</span>
-<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is another\ntest</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+    <span class='comment'># You can also use Ruby 2.0&#39;s named arguments:
+</span>    <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world!</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Red</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Cross Platform Font Size</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
+  <span class='const'>IS_WIN</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'><span class='object_link'><a href="../Sketchup.html#platform-class_method" title="Sketchup.platform (method)">platform</a></span></span> <span class='op'>==</span> <span class='symbol'>:platform_win</span>
 
-<span class='comment'># You can also use Ruby 2.0&#39;s named arguments:
-</span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world!</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Red</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>size:</span> <span class='int'>20</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_private'>private</span>
+
+  <span class='comment'># This will ensure text is drawn with consistent size across platforms,
+</span>  <span class='comment'># using pixels as size units.
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_native_options'>native_options</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+    <span class='kw'>if</span> <span class='const'>IS_WIN</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='symbol'>:size</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_native_options'>native_options</span><span class='lbracket'>[</span><span class='symbol'>:size</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_pixels_to_points'>pixels_to_points</span><span class='lparen'>(</span><span class='id identifier rubyid_size'>size</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_position'>position</span><span class='comma'>,</span> <span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_native_options'>native_options</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_pixels_to_points'>pixels_to_points</span><span class='lparen'>(</span><span class='id identifier rubyid_pixels'>pixels</span><span class='rparen'>)</span>
+    <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_pixels'>pixels</span><span class='period'>.</span><span class='id identifier rubyid_to_f'>to_f</span> <span class='op'>/</span> <span class='float'>96.0</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='float'>72.0</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw_text</strong>(point, text)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object representing a 2D coordinate in view space.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text string to draw.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>draw_text</strong>(point, text, options = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -3047,7 +3843,7 @@ within the draw method of a tool.</p>
         &mdash;
         <div class='inline'>
 <p>The text can be customized by providing a hash or named arguments of
-options. Available from SketchUp 2016.</p>
+options.</p>
 </div>
       
     </li>
@@ -3138,15 +3934,53 @@ font will be used instead.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>The text alignment, one of the following constants
-<code>TextAlignLeft</code>, <code>TextAlignCenter</code> or
-<code>TextAlignRight</code>.</p>
+<p>The text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextAlignLeft-constant" title="TextAlignLeft (constant)">TextAlignLeft</a></span>,
+<span class='object_link'><a href="../top-level-namespace.html#TextAlignCenter-constant" title="TextAlignCenter (constant)">TextAlignCenter</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:vertical_align</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p><strong>Added SketchUp 2020.0.</strong> The vertical text alignment, one of
+the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>,
+<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or
+<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>. Note that some fonts on Mac might not align as
+expected due to the system reporting incorrect font metrics.</p>
 </div>
           
         </li>
       
     </ul>
   
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2016</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -3161,9 +3995,6 @@ font will be used instead.</p>
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3291,7 +4122,10 @@ to the view.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>This method is no longer doing anything.</p>
+</div></div>
+
 <p>The dynamic= method allows you to degrade visual quality while improving
 performance when a model is large and view refresh time is slow. For
 example, if you were using a Ruby script to animate the camera through a
@@ -3330,11 +4164,6 @@ large scene, you may want to set dynamic to true during that time.</p>
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>true or false</p>
-</div>
       
     </li>
   
@@ -4160,6 +4989,153 @@ The value is a Double indicating the desired width in pixels.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="load_texture-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>load_texture</strong>(image_rep)  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>To conserve resources on the user&#39;s machine, textures can be loaded
+only when there is a Ruby tool on the tool stack. Make sure to release the
+texture when it&#39;s no longer needed. Any textures not already released
+when the last Ruby tool on the tool stack is removed will be automatically
+released by SketchUp.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Avoid loading and releasing textures within the <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> event
+as that is not efficient.</p>
+</div>
+  </div>
+
+
+<p>Loads a texture to be drawn with <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> or <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
+  <span class='kw'>class</span> <span class='const'>MyTool</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
+      <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
+      <span class='id identifier rubyid_image_rep'>image_rep</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_image_rep'>image_rep</span>
+      <span class='ivar'>@texture_id</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_load_texture'>load_texture</span><span class='lparen'>(</span><span class='id identifier rubyid_image_rep'>image_rep</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_deactivate'>deactivate</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_release_texture'>release_texture</span><span class='lparen'>(</span><span class='ivar'>@texture_id</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
+      <span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='label'>texture_id:</span> <span class='ivar'>@texture_id</span><span class='comma'>,</span> <span class='label'>uvs:</span> <span class='id identifier rubyid_uvs'>uvs</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_tool'><span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">select_tool</a></span></span><span class='lparen'>(</span><span class='const'>Example</span><span class='op'>::</span><span class='const'>MyTool</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>image_rep</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A resource ID referring to the image loaded.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the provided <span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">ImageRep</a></span> is not valid.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if a Ruby tool was not on the tool stack.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#release_texture-instance_method" title="Sketchup::View#release_texture (method)">#release_texture</a></span></li>
+    
+      <li><span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span></li>
+    
+  </ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="lock_inference-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -4443,7 +5419,7 @@ the PickHelper class for information on pick helpers.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a PickHelper object</p>
+<p>Returns a PickHelper object.</p>
 
 
   </div>
@@ -4478,7 +5454,7 @@ the PickHelper class for information on pick helpers.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a PickHelper object</p>
+<p>Returns a PickHelper object.</p>
 
 
   </div>
@@ -4610,7 +5586,7 @@ position in the viewing direction.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a ray</p>
+<p>Returns a ray.</p>
 
 
   </div>
@@ -4660,7 +5636,7 @@ position in the viewing direction.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a ray</p>
+<p>Returns a ray.</p>
 
 
   </div>
@@ -4937,6 +5913,104 @@ you cannot use <span class='object_link'><a href="#invalidate-instance_method" t
     </li>
   
 </ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="release_texture-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>release_texture</strong>(texture_id)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Releases a texture loaded via <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>, freeing up it&#39;s memory.
+It&#39;s good practice to do so whenever there is no longer any need for
+the resource.</p>
+
+<p>For example, when your tool deactivates you probably want to release your
+resources as you don&#39;t know if your tool will be used again.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
+  <span class='kw'>class</span> <span class='const'>MyTool</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
+      <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
+      <span class='id identifier rubyid_image_rep'>image_rep</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_image_rep'>image_rep</span>
+      <span class='ivar'>@texture_id</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_load_texture'>load_texture</span><span class='lparen'>(</span><span class='id identifier rubyid_image_rep'>image_rep</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_deactivate'>deactivate</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_release_texture'>release_texture</span><span class='lparen'>(</span><span class='ivar'>@texture_id</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
+      <span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='label'>texture_id:</span> <span class='ivar'>@texture_id</span><span class='comma'>,</span> <span class='label'>uvs:</span> <span class='id identifier rubyid_uvs'>uvs</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_tool'><span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">select_tool</a></span></span><span class='lparen'>(</span><span class='const'>Example</span><span class='op'>::</span><span class='const'>MyTool</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>texture_id</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>true</code> if texture was released. <code>false</code> otherwise.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span></li>
+    
+  </ul>
 
 </div>
 </div>
@@ -5346,6 +6420,291 @@ frame. This can be useful to control the speed at which the animation runs.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="text_bounds-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>text_bounds</strong>(point, text, options = {})  &#x21d2; <tt><span class='object_link'><a href="../Geom/Bounds2d.html" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Under Windows the font name must be less than 32 characters - due to system
+limitations.</p>
+</div>
+  </div>
+
+
+<p>This method is used to compute the bounds of the text when using
+<span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span>. The bounds are not a tight fit around the top and bottom as
+they include varying amount of line spacing depending on the font used.</p>
+
+<p>The <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span> option will align the text to the center of
+the height of the first line, not the whole boundingbox of the text.</p>
+
+<p><strong>Example of different vertical alignment and text bounds:</strong></p>
+
+<p><img src="../images/view-draw-text-with-bounds.png"></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
+  <span class='const'>TEXT_OPTIONS</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:font</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Arial</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='symbol'>:size</span> <span class='op'>=&gt;</span> <span class='int'>20</span><span class='comma'>,</span>
+    <span class='symbol'>:bold</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+    <span class='symbol'>:align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span></span><span class='comma'>,</span>
+    <span class='symbol'>:align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span></span>
+  <span class='rbrace'>}</span>
+
+  <span class='comment'># Since `draw` is called frequently it can be useful to pre-compute and
+</span>  <span class='comment'># cache values used by `draw`.
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
+    <span class='ivar'>@text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello SketchUp</span><span class='tstring_end'>&quot;</span></span>
+    <span class='ivar'>@position</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+
+    <span class='comment'># Compute text bounds
+</span>    <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
+    <span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_text_bounds'>text_bounds</span><span class='lparen'>(</span><span class='ivar'>@position</span><span class='comma'>,</span> <span class='ivar'>@text</span><span class='comma'>,</span> <span class='const'>TEXT_OPTIONS</span><span class='rparen'>)</span>
+
+    <span class='comment'># Compute polygon for the text bounds
+</span>    <span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_upper_left'>upper_left</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
+    <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_lower_right'>lower_right</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
+    <span class='ivar'>@points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='comment'># Draw text bounds
+</span>    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>64</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw2d'>draw2d</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_QUADS-constant" title="GL_QUADS (constant)">GL_QUADS</a></span></span><span class='comma'>,</span> <span class='ivar'>@points</span><span class='rparen'>)</span>
+
+    <span class='comment'># Draw text
+</span>    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='ivar'>@position</span><span class='comma'>,</span> <span class='ivar'>@text</span><span class='comma'>,</span> <span class='const'>TEXT_OPTIONS</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Point3d object representing a 2D coordinate in view space.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text string to draw.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The text can be customized by providing a hash or named arguments of
+options.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:font</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The name of the font to use. If it does not exist on the system, a default
+font will be used instead.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The size of the font in points</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:bold</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Controls the Bold property of the font.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:italic</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Controls the Italic property of the font.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:align</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextAlignLeft-constant" title="TextAlignLeft (constant)">TextAlignLeft</a></span>,
+<span class='object_link'><a href="../top-level-namespace.html#TextAlignCenter-constant" title="TextAlignCenter (constant)">TextAlignCenter</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:vertical_align</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>The vertical text alignment one of the following constants:
+<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>,
+<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+
+</div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Bounds2d.html" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
 </div>
       
     </li>
@@ -5852,7 +7211,7 @@ view.write_image(filename, 640, 480, antialias, compression)</code></pre>
             &mdash; <div class='inline'>
 <p>Scaling factor for elements that are viewport dependent, such as text
 heights, arrow heads, line widths, stipple patterns, etc. (Added in 
-SketchUp 2019.1)</p>
+SketchUp 2019.2)</p>
 </div>
           
         </li>

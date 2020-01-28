@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
   <!-- SCRIPTS -->
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "Sketchup::Model";
   relpath = '../';
 </script>
@@ -182,16 +182,6 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>Prior to SketchUp 2019 this class would yield <code>TypeError</code> for
-all method calls if <code>#singleton_class</code> was called on the model
-object.</p>
-</div>
-  </div>
-
-
 <p>This is the interface to a SketchUp model. The model is the 3D drawing that
 the user is working with, and it serves as the “entry point” for most Ruby
 API interactions. The Sketchup.active_model method gives you a handle to
@@ -257,6 +247,24 @@ start getting information and making changes.</p>
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2019.0 this class would yield <code>TypeError</code> for
+all method calls if <code>#singleton_class</code> was called on the model
+object.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
   <h2>
@@ -306,6 +314,9 @@ start getting information and making changes.</p>
         </dt>
       
         <dt id="VERSION_2019-constant" class="">Sketchup::Model::VERSION_2019
+        </dt>
+      
+        <dt id="VERSION_2020-constant" class="">Sketchup::Model::VERSION_2020
         </dt>
       
         <dt id="ProTrial-constant" class="">Sketchup::Model::ProTrial
@@ -459,6 +470,31 @@ open group or component instance.</p>
     <span class="summary_desc"><div class='inline'>
 <p>Returns an array containing the sequence of entities the user has
 double-clicked on for editing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#active_path=-instance_method" title="#active_path= (instance method)">#<strong>active_path=</strong>(instance_path)  &#x21d2; Sketchup::Model </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">#active_path=</a></span> method is used to open a given instance path for
+editing.</p>
 </div></span>
   
 </li>
@@ -724,8 +760,8 @@ object for this model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The close_active method is used to close the currently active (open) group
-or component.</p>
+<p>The <span class='object_link'><a href="#close_active-instance_method" title="Sketchup::Model#close_active (method)">#close_active</a></span> method is used to close the currently active (open)
+group or component.</p>
 </div></span>
   
 </li>
@@ -824,6 +860,31 @@ Model Info &gt; Files panel.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#description=-instance_method" title="Sketchup::Model#description= (method)">#description=</a></span> method sets the description of the model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drawing_element_visible%3F-instance_method" title="#drawing_element_visible? (instance method)">#<strong>drawing_element_visible?</strong>(instance_path)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">#drawing_element_visible?</a></span> method reports whether the given drawing
+element in an instance path is visible given the current model options.</p>
 </div></span>
   
 </li>
@@ -2396,6 +2457,201 @@ active_path might contain:</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="active_path=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>active_path=</strong>(instance_path)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>An instance path can only be opened if the instances are not locked. This
+also include instances of the same component definition that are not on the
+given path. A definition cannot be edited if any of its instances are
+locked.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Open/close operations are special operations in SketchUp which has to be
+treated with special care.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">#active_path=</a></span> method is used to open a given instance path for
+editing.</p>
+
+<p>It is expected that no entities are modified in an operation that
+opens/closes instances.</p>
+
+<p>To ensure that undo/redo is done correctly this method breaks up any open
+Ruby operations into a set of chained operations:</p>
+
+<p>If the API user tries to do this:</p>
+
+<pre class="code"><code class="">model.start_operation(&#39;...&#39;, true)
+model.entities.add_face(...)
+model.active_path = instance_path
+model.entities.add_face(...)
+model.commit_operation
+</code></pre>
+
+<p>Then the method will break it up to something like this:</p>
+
+<pre class="code"><code class="">model.start_operation(&#39;...&#39;, true)
+model.entities.add_face(...)
+model.commit_operation
+
+model.start_operation(&#39;...&#39;, true, false, true)
+model.active_path = instance_path
+model.commit_operation
+
+model.start_operation(&#39;...&#39;, true, false, true)
+model.entities.add_face(...)
+model.commit_operation
+</code></pre>
+
+<p>For the end user this will be experienced as a single operation. For the
+API user the side-effect is multiple transaction notifications.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Open an instance</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_instance'>instance</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_grep'>grep</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
+<span class='id identifier rubyid_instance_path'>instance_path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">InstancePath</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InstancePath.html#initialize-instance_method" title="Sketchup::InstancePath#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_instance'>instance</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_path'>active_path</span> <span class='op'>=</span> <span class='id identifier rubyid_instance_path'>instance_path</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Close all instances</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_path'>active_path</span> <span class='op'>=</span> <span class='kw'>nil</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>instance_path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">Sketchup::InstancePath</a></span></tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span>, <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span>&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Passing <code>nil</code> or an empty array will close all open instances.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the instance path is not valid.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the instance path contains locked instances.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the instance path contains instances who&#39;s siblings are locked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="active_view-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -3283,12 +3539,18 @@ normally.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The close_active method is used to close the currently active (open) group
-or component.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Before SketchUp 2014 this method had a bug where it didn&#39;t create an
+undo operation and that could lead to corrupted geometry when undo/redo was
+used after invoking this method.</p>
+</div>
+  </div>
 
-<p>Note: before SketchUp 2014 this method had a bug where it didn&#39;t create
-an undo operation and that could lead to corrupted geometry when undo/redo
-was used after invoking this method.</p>
+
+<p>The <span class='object_link'><a href="#close_active-instance_method" title="Sketchup::Model#close_active (method)">#close_active</a></span> method is used to close the currently active (open)
+group or component.</p>
 
 
   </div>
@@ -3630,6 +3892,142 @@ models is empty.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="drawing_element_visible?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>drawing_element_visible?</strong>(instance_path)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">#drawing_element_visible?</a></span> method reports whether the given drawing
+element in an instance path is visible given the current model options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Traversing every visible entity in the model</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
+
+  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_instance?'>instance?</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Walk the visible entities in the model, taking into account
+</span>  <span class='comment'># &quot;DrawHiddenGeometry&quot; and &quot;DrawHiddenObjects&quot; rendering options.
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_walk'>walk</span><span class='lparen'>(</span><span class='id identifier rubyid_entities'>entities</span><span class='comma'>,</span> <span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#IDENTITY-constant" title="IDENTITY (constant)">IDENTITY</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span>
+      <span class='id identifier rubyid_entity_path'>entity_path</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span> <span class='op'>+</span> <span class='lbracket'>[</span><span class='id identifier rubyid_entity'>entity</span><span class='rbracket'>]</span>
+      <span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_drawing_element_visible?'>drawing_element_visible?</span><span class='lparen'>(</span><span class='id identifier rubyid_entity_path'>entity_path</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='comma'>,</span> <span class='id identifier rubyid_transformation'>transformation</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_instance?'>instance?</span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_child_entities'>child_entities</span> <span class='op'>=</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+        <span class='id identifier rubyid_child_transformation'>child_transformation</span> <span class='op'>=</span> <span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>*</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span>
+        <span class='id identifier rubyid_walk'>walk</span><span class='lparen'>(</span><span class='id identifier rubyid_child_entities'>child_entities</span><span class='comma'>,</span> <span class='id identifier rubyid_child_transformation'>child_transformation</span><span class='comma'>,</span> <span class='id identifier rubyid_entity_path'>entity_path</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='const'>Example</span><span class='period'>.</span><span class='id identifier rubyid_walk'>walk</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='comma'>,</span> <span class='id identifier rubyid_transformation'>transformation</span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+  <span class='comment'># Do something to every visible entity in the model...
+</span><span class='kw'>end</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>instance_path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">Sketchup::InstancePath</a></span></tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <code>instance_path</code> is not valid.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">RenderingOptions</a></span></li>
+    
+      <li><span class='object_link'><a href="Drawingelement.html#visible%3F-instance_method" title="Sketchup::Drawingelement#visible? (method)">Drawingelement#visible?</a></span></li>
+    
+      <li><span class='object_link'><a href="Layer.html#visible%3F-instance_method" title="Sketchup::Layer#visible? (method)">Layer#visible?</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
 </div>
       
     </li>
@@ -6868,7 +7266,7 @@ Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8,
 Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014,
 Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016,
 Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018,
-Sketchup::Model::VERSION_2019</p>
+Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
 </div>
       
     </li>
@@ -6998,7 +7396,7 @@ Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8,
 Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014,
 Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016,
 Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018,
-Sketchup::Model::VERSION_2019</p>
+Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
 </div>
       
     </li>

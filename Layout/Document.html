@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
   <!-- SCRIPTS -->
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "Layout::Document";
   relpath = '../';
 </script>
@@ -269,6 +269,9 @@ document-level methods to start getting information and making changes.</p>
         </dt>
       
         <dt id="VERSION_2019-constant" class="">Layout::Document::VERSION_2019
+        </dt>
+      
+        <dt id="VERSION_2020-constant" class="">Layout::Document::VERSION_2020
         </dt>
       
         <dt id="VERSION_CURRENT-constant" class="">Layout::Document::VERSION_CURRENT
@@ -975,7 +978,7 @@ time.</p>
   <div class="discussion">
     
 <p>Returns an empty <span class='object_link'><a href="" title="Layout::Document (class)">Layout::Document</a></span> with one <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span> and one
-<span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span></p>
+<span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>.</p>
 
 
   </div>
@@ -992,7 +995,7 @@ time.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns an unsaved <span class='object_link'><a href="" title="Layout::Document (class)">Layout::Document</a></span> based on the template</p>
+<p>Returns an unsaved <span class='object_link'><a href="" title="Layout::Document (class)">Layout::Document</a></span> based on the template.</p>
 
 
   </div>
@@ -2552,6 +2555,21 @@ current path.</p>
         &mdash;
         <div class='inline'>
 <p>if version is not a valid version</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if saving failed. This may be due to the LayOut file being open in the
+LayOut application</p>
 </div>
       
     </li>

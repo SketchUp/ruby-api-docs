@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
   <!-- SCRIPTS -->
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "Sketchup::Page";
   relpath = '../';
 </script>
@@ -381,6 +381,31 @@ Scenes manager dialog.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#get_drawingelement_visibility-instance_method" title="#get_drawingelement_visibility (instance method)">#<strong>get_drawingelement_visibility</strong>(element)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">#get_drawingelement_visibility</a></span> method is used to get the visibility
+of a drawing element on a particular page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#hidden_entities-instance_method" title="#hidden_entities (instance method)">#<strong>hidden_entities</strong>  &#x21d2; Object </a>
     
 
@@ -568,6 +593,31 @@ included when exporting an animation from the model.</p>
     <span class="summary_desc"><div class='inline'>
 <p>The rendering_options method retrieves a RenderingOptions object for the
 page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_drawingelement_visibility-instance_method" title="#set_drawingelement_visibility (instance method)">#<strong>set_drawingelement_visibility</strong>(element, visibility)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">#set_drawingelement_visibility</a></span> method is used to change the
+visibility of a drawing element on a particular page.</p>
 </div></span>
   
 </li>
@@ -1384,7 +1434,7 @@ panel of the SketchUp User Interface.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns time - the number of seconds of delay</p>
+<p>Returns time - the number of seconds of delay.</p>
 
 
   </div>
@@ -1557,7 +1607,7 @@ Scenes manager dialog.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns description - the new string description for the page</p>
+<p>Returns description - the new string description for the page.</p>
 
 
   </div>
@@ -1616,6 +1666,95 @@ Scenes manager dialog.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_drawingelement_visibility-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>get_drawingelement_visibility</strong>(element)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">#get_drawingelement_visibility</a></span> method is used to get the visibility
+of a drawing element on a particular page.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_constpoint'>constpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_cpoint'>add_cpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_get_drawingelement_visibility'>get_drawingelement_visibility</span><span class='lparen'>(</span><span class='id identifier rubyid_constpoint'>constpoint</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>element</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>true if visible, false if not.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
 </div>
       
     </li>
@@ -2088,7 +2227,7 @@ included when exporting an animation from the model.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns name - the name that you have set</p>
+<p>Returns name - the name that you have set.</p>
 
 
   </div>
@@ -2217,6 +2356,102 @@ page.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_drawingelement_visibility-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>set_drawingelement_visibility</strong>(element, visibility)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">#set_drawingelement_visibility</a></span> method is used to change the
+visibility of a drawing element on a particular page. Only drawing elements
+on the root of the model, as well as nested instances of components,
+groups, and images are controlled by Page visibility.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+<span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_constpoint'>constpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_cpoint'>add_cpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_point1'>point1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_set_drawingelement_visibility'>set_drawingelement_visibility</span><span class='lparen'>(</span><span class='id identifier rubyid_constpoint'>constpoint</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>element</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>visibility</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.0</p>
 </div>
       
     </li>
@@ -2592,7 +2827,7 @@ during a slideshow or animation export.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns transitiontime - the new transition time</p>
+<p>Returns transitiontime - the new transition time.</p>
 
 
   </div>
@@ -2715,7 +2950,7 @@ Planes properties, the flag would be 73 (1 + 8 + 64).</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if successful, false if unsuccessful</p>
+<p>Returns status - true if successful, false if unsuccessful.</p>
 
 
   </div>
@@ -4052,7 +4287,7 @@ you are not storing this property with the page.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns nil</p>
+<p>Returns nil.</p>
 
 
   </div>
