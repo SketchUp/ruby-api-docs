@@ -171,7 +171,10 @@ numbers in languages besides English are larger for each release, so it is
 best to check for builds that are greater than or equal to the numbers
 here.</p>
 <ul><li>
-<p><strong>SU2020.0</strong> = 20.0.363 on Windows 64-bit, 20.0.362 on Mac
+<p><strong>SU2020.1</strong> = 20.1.229 on Windows 64-bit, 20.1.228 on Mac
+64-bit.</p>
+</li><li>
+<p><strong>SU2020.0</strong> = 20.0.133 on Windows 64-bit, 20.0.134 on Mac
 64-bit.</p>
 </li><li>
 <p><strong>SU2019.3</strong> = 19.3.253 on Windows 64-bit, 19.3.252 on Mac
@@ -232,6 +235,23 @@ Windows 32-bit, 15.1.104 on Mac 64-bit.</p>
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
 </li></ul>
 
+<h1 id="label-What-27s+new+in+SketchUp+2020.1">What&#39;s new in SketchUp 2020.1</h1>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Entities.html#weld-instance_method" title="Sketchup::Entities#weld (method)">Sketchup::Entities#weld</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Page.html#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">Sketchup::Page#use_hidden_geometry=</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Page.html#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">Sketchup::Page#use_hidden_geometry?</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Page.html#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">Sketchup::Page#use_hidden_objects=</a></span></p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Page.html#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">Sketchup::Page#use_hidden_objects?</a></span></p>
+</li><li>
+<p>Deprecated <span class='object_link'><a href="Sketchup/Page.html#use_hidden%3F-instance_method" title="Sketchup::Page#use_hidden? (method)">Sketchup::Page#use_hidden?</a></span></p>
+</li></ul>
+
 <h1 id="label-What-27s+new+in+SketchUp+2020.0">What&#39;s new in SketchUp 2020.0</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
@@ -284,7 +304,7 @@ path for editing by the user.</p>
 <p>Added <span class='object_link'><a href="Sketchup/Layer.html#display_name-instance_method" title="Sketchup::Layer#display_name (method)">Sketchup::Layer#display_name</a></span> - this will return
 <code>&quot;Untagged&quot;</code> for layer0 while the old
 <span class='object_link'><a href="Sketchup/Layer.html#name-instance_method" title="Sketchup::Layer#name (method)">Sketchup::Layer#name</a></span> will continue to return
-<code>&quot;Layer0&quot;</code></p>
+<code>&quot;Layer0&quot;</code>.</p>
 </li><li>
 <p>Additional entity types now return PIDs for
 <span class='object_link'><a href="Sketchup/Entity.html#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">Sketchup::Entity#persistent_id</a></span>:</p>
@@ -297,11 +317,7 @@ path for editing by the user.</p>
 <p>Deprecated <span class='object_link'><a href="Sketchup/ComponentDefinition.html#insertion_point-instance_method" title="Sketchup::ComponentDefinition#insertion_point (method)">Sketchup::ComponentDefinition#insertion_point</a></span> and
 <span class='object_link'><a href="Sketchup/ComponentDefinition.html#insertion_point=-instance_method" title="Sketchup::ComponentDefinition#insertion_point= (method)">Sketchup::ComponentDefinition#insertion_point=</a></span> as this feature was
 removed in SketchUp. It now returns the origin of the definition and the
-setter is now a noop</p>
-</li><li>
-<p>Added <span class='object_link'><a href="Sketchup/Page.html#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">Sketchup::Page#get_drawingelement_visibility</a></span> and
-<span class='object_link'><a href="Sketchup/Page.html#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">Sketchup::Page#set_drawingelement_visibility</a></span> to pages to adjust element
-visibility in scenes.</p>
+setter is now a noop.</p>
 </li></ul>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
@@ -310,15 +326,7 @@ visibility in scenes.</p>
 protected against Ruby&#39;s garbage collection.</p>
 </li><li>
 <p>Fixed model validation where it incorrectly flagged some valid UV mapping
-as invalid and reset it</p>
-</li><li>
-<p>Fixed <span class='object_link'><a href="Sketchup/Entities.html#add_face-instance_method" title="Sketchup::Entities#add_face (method)">Sketchup::Entities#add_face</a></span> with duplicate points will crash</p>
-</li><li>
-<p>Restored the missing Racc Ruby library in Windows</p>
-</li><li>
-<p>Fixed <span class='object_link'><a href="Sketchup/Page.html#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">Sketchup::Page#set_drawingelement_visibility</a></span> to only affect drawing
-elements on the root of the model. Nested instances of components, groups,
-and images are controlled by Page visibility.</p>
+as invalid and reset it.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2019.3">What&#39;s new in SketchUp 2019.3</h1>

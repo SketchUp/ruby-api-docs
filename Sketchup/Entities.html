@@ -1112,6 +1112,31 @@ sub-entities all at once.</p>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#weld-instance_method" title="#weld (instance method)">#<strong>weld</strong>(edges)  &#x21d2; Array&lt;Sketchup::Curve&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#weld-instance_method" title="Sketchup::Entities#weld (method)">#weld</a></span> method takes a set of edges and find all possible chains of
+edges and connect them with a <span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Curve</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -6335,6 +6360,107 @@ ModelObserver.onActivePathChanged for more information.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="weld-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>weld</strong>(edges)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Sketchup::Curve</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#weld-instance_method" title="Sketchup::Entities#weld (method)">#weld</a></span> method takes a set of edges and find all possible chains of
+edges and connect them with a <span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Curve</a></span>.</p>
+
+<p>A curve will not cross another curve. They will split where multiple curves
+meet.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_grep'>grep</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Edge</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_curves'>curves</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_weld'>weld</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>edges</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Sketchup::Curve</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the given entities are not part of the same <span class='object_link'><a href="" title="Sketchup::Entities (class)">Sketchup::Entities</a></span>
+collection.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.1</p>
 </div>
       
     </li>

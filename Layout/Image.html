@@ -552,7 +552,18 @@ invalid</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#clip_mask=-instance_method" title="Layout::Image#clip_mask= (method)">#clip_mask=</a></span> method sets the clip mask of the <span class='object_link'><a href="" title="Layout::Image (class)">Layout::Image</a></span>.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p><code>clip_mask</code> may be <code>nil</code> as of LayOut 2020.1.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#clip_mask=-instance_method" title="Layout::Image#clip_mask= (method)">#clip_mask=</a></span> method sets the clip mask of the <span class='object_link'><a href="" title="Layout::Image (class)">Layout::Image</a></span>.
+clip_mask can be a <span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Rectangle</a></span>, <span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Ellipse</a></span>, or
+<span class='object_link'><a href="Path.html" title="Layout::Path (class)">Path</a></span>, or <code>nil</code>, and it must not currently exist in a
+<span class='object_link'><a href="Document.html" title="Layout::Document (class)">Document</a></span>, or <span class='object_link'><a href="Group.html" title="Layout::Group (class)">Group</a></span>.</p>
 
 
   </div>
@@ -579,7 +590,7 @@ invalid</p>
         <span class='name'>clip_mask</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -605,7 +616,7 @@ invalid</p>
       
         &mdash;
         <div class='inline'>
-<p>if clip mask is already in a document</p>
+<p>if clip mask is already in a <span class='object_link'><a href="Document.html" title="Layout::Document (class)">Document</a></span> or <span class='object_link'><a href="Group.html" title="Layout::Group (class)">Group</a></span></p>
 </div>
       
     </li>

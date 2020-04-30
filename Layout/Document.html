@@ -434,6 +434,30 @@ and places it on the given <span class='object_link'><a href="Layer.html" title=
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#export-instance_method" title="#export (instance method)">#<strong>export</strong>(file_path, options = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#export-instance_method" title="Layout::Document#export (method)">#export</a></span> method exports the <span class='object_link'><a href="" title="Layout::Document (class)">Document</a></span> to a given file format.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#grid-instance_method" title="#grid (instance method)">#<strong>grid</strong>  &#x21d2; Layout::Grid </a>
     
 
@@ -1577,6 +1601,203 @@ will be added to the <span class='object_link'><a href="" title="Layout::Documen
         
         <div class='inline'>
 <p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="export-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>export</strong>(file_path, options = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#export-instance_method" title="Layout::Document#export (method)">#export</a></span> method exports the <span class='object_link'><a href="" title="Layout::Document (class)">Layout::Document</a></span> to a given file format.
+It knows which format to export based on the file extension you place on
+the file name. For example, a filename of “thing.pdf” will export a PDF
+file, whereas “thing.png” will export a set of PNG images.</p>
+
+<p>For LayOut version 2020.1, valid extensions include .pdf, .jpg, and .png.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>PDF Export Examples</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Document (class)">Document</a></span></span><span class='period'>.</span><span class='id identifier rubyid_open'><span class='object_link'><a href="#open-class_method" title="Layout::Document.open (method)">open</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/path/to/document.layout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Export pdf file on a PC, with default settings.
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/my_export.pdf</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Export pages one through three at high quality, compressing jpeg images
+</span><span class='comment'># at 0.75 compression quality (valid range is 0.0 - 1.0). Note that the
+</span><span class='comment'># first page of a {Layout::Document} is index 0.
+</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>start_page:</span> <span class='int'>1</span><span class='comma'>,</span>
+            <span class='label'>end_page:</span> <span class='int'>3</span><span class='comma'>,</span>
+            <span class='label'>output_resolution:</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="PageInfo.html" title="Layout::PageInfo (class)">PageInfo</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="PageInfo.html#RESOLUTION_HIGH-constant" title="Layout::PageInfo::RESOLUTION_HIGH (constant)">RESOLUTION_HIGH</a></span></span><span class='comma'>,</span>
+            <span class='label'>compress_images:</span> <span class='const'>TRUE</span><span class='comma'>,</span>
+            <span class='label'>compress_quality:</span> <span class='float'>0.75</span> <span class='rbrace'>}</span>
+
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/my_export.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Image Set Export Examples</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Document (class)">Document</a></span></span><span class='period'>.</span><span class='id identifier rubyid_open'><span class='object_link'><a href="#open-class_method" title="Layout::Document.open (method)">open</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/path/to/document.layout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Export png files on macOS, with default settings.
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/Users/username/Desktop/pngs/page.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Export pages one through three at 300 dpi as JPGs.
+</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>start_page:</span> <span class='int'>1</span><span class='comma'>,</span>
+            <span class='label'>end_page:</span> <span class='int'>3</span><span class='comma'>,</span>
+            <span class='label'>dpi:</span> <span class='int'>300</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c:/page.jpg</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>file_path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The file or image set to create. The directory path must already exist. The
+path must include the file extension.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An optional hash of settings for the export.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>TypeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if an options value is the wrong type</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RangeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if an options value is out of range</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the full file path does not exist</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the specified file type is missing or not supported</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2020.1</p>
 </div>
       
     </li>

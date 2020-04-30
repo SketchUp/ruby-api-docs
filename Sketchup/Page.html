@@ -867,7 +867,7 @@ property with the page.</p>
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#use_hidden=-instance_method" title="#use_hidden= (instance method)">#<strong>use_hidden=</strong>(setting)  &#x21d2; Object </a>
@@ -880,12 +880,38 @@ property with the page.</p>
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The use_hidden= method sets the page&#39;s hidden property.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span> and
+<span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span> in SketchUp 2020.1.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public deprecated">
+  <span class="summary_signature">
+    
+      <a href="#use_hidden%3F-instance_method" title="#use_hidden? (instance method)">#<strong>use_hidden?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  <span class="deprecated note title">deprecated</span>
+  
+
+  
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span> and
+<span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span> in SketchUp 2020.1.</p>
 </div></span>
   
 </li>
@@ -894,7 +920,7 @@ property with the page.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#use_hidden%3F-instance_method" title="#use_hidden? (instance method)">#<strong>use_hidden?</strong>  &#x21d2; Boolean </a>
+      <a href="#use_hidden_geometry=-instance_method" title="#use_hidden_geometry= (instance method)">#<strong>use_hidden_geometry=</strong>(setting)  &#x21d2; Object </a>
     
 
     
@@ -909,8 +935,31 @@ property with the page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_hidden? method determines whether you are storing the hidden
-property with the page.</p>
+<p>Sets the page&#39;s use hidden geometry property.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#use_hidden_geometry%3F-instance_method" title="#use_hidden_geometry? (instance method)">#<strong>use_hidden_geometry?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the use hidden geometry property from the page.</p>
 </div></span>
   
 </li>
@@ -960,6 +1009,54 @@ property with the page.</p>
     <span class="summary_desc"><div class='inline'>
 <p>The use_hidden_layers? method determines whether you are storing the hidden
 layers property with the page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#use_hidden_objects=-instance_method" title="#use_hidden_objects= (instance method)">#<strong>use_hidden_objects=</strong>(setting)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the page&#39;s use hidden objects property.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#use_hidden_objects%3F-instance_method" title="#use_hidden_objects? (instance method)">#<strong>use_hidden_objects?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the use hidden objects property from the page.</p>
 </div></span>
   
 </li>
@@ -2918,9 +3015,11 @@ together:</p>
 - 2 - Drawing Style,
 - 4 - Shadow Settings,
 - 8 - Axes Location,
-- 16 - Hidden Geometry,
+- 16 - Hidden Geometry &amp; Objects,
 - 32 - Visible Layers,
-- 64 - Active Section Planes.
+- 64 - Active Section Planes,
+- 128 - Hidden Geometry,
+- 256 - Hidden Objects
 </code></pre>
 
 <p>The bit code values are added together to provide the flags value.  For
@@ -3383,7 +3482,11 @@ you are not storing this property with the page.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span> and
+<span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span> in SketchUp 2020.1.</p>
+</div></div>
+
 <p>The use_hidden= method sets the page&#39;s hidden property.</p>
 
 
@@ -3398,7 +3501,7 @@ you are not storing this property with the page.</p>
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
 <span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden'>use_hidden</span><span class='op'>=</span><span class='kw'>false</span></code></pre>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden'>use_hidden</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
     
   </div>
 
@@ -3456,6 +3559,15 @@ the property.</p>
 
 </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span></li>
+    
+      <li><span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3488,7 +3600,11 @@ the property.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span> and
+<span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span> in SketchUp 2020.1.</p>
+</div></div>
+
 <p>The use_hidden? method determines whether you are storing the hidden
 property with the page.</p>
 
@@ -3503,7 +3619,7 @@ property with the page.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
-<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden?'>use_hidden?</span></code></pre>
     
   </div>
@@ -3527,6 +3643,15 @@ you are not storing this property with the page.</p>
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span></li>
+    
+      <li><span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3538,6 +3663,142 @@ you are not storing this property with the page.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="use_hidden_geometry=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>use_hidden_geometry=</strong>(setting)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the page&#39;s use hidden geometry property.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden_geometry'>use_hidden_geometry</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>setting</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>`true` if you want your page to save this property, `false` if you do not
+want your page to save this property.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="use_hidden_geometry?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>use_hidden_geometry?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the use hidden geometry property from the page.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden_geometry?'>use_hidden_geometry?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.1</p>
 </div>
       
     </li>
@@ -3714,6 +3975,142 @@ you are not storing this property with the page.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="use_hidden_objects=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>use_hidden_objects=</strong>(setting)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the page&#39;s use hidden objects property.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden_objects'>use_hidden_objects</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>setting</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>`true` if you want your page to save this property, `false` if you do not
+want your page to save this property.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="use_hidden_objects?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>use_hidden_objects?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the use hidden objects property from the page.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_use_hidden_objects?'>use_hidden_objects?</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2020.1</p>
 </div>
       
     </li>
