@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- AUTHOR and GENERATOR -->
     <meta name="author" content="SketchUp Extensibility Team">
-    <meta name="generator" content="YARD http://yardoc.org">
+    <meta name="generator" content="YARD https://yardoc.org">
   <!-- TITLE -->
     <title>
     Class: Sketchup::Layer &mdash; SketchUp Ruby API Documentation
     </title>
   <!-- SHORTCUT ICON -->
     <link rel="shortcut icon" type="image/vnd.microsoft.icon"
-    href="https://developer.sketchup.com/sites/all/themes/sketch_help/favicon.ico" />
+    href="https://ruby.sketchup.com/favicon.ico" />
 
   <!-- GENERIC META PROPERTIES -->
-    <meta name="url"   content="http://ruby.sketchup.com/Sketchup/Layer.html" />
+    <meta name="url"   content="https://ruby.sketchup.com/Sketchup/Layer.html" />
     <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
     <meta name="title" content="Class: Sketchup::Layer" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
@@ -28,7 +28,7 @@
     <meta property="og:image:width"  content="60" />
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::Layer" />
-    <meta property="og:url"       content="http://ruby.sketchup.com/Sketchup/Layer.html" />
+    <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/Layer.html" />
     <meta property="og:description" content="The Layer class contains methods modifying and extracting information for a layer." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
@@ -36,7 +36,9 @@
     <meta name="twitter:title" content="Class: Sketchup::Layer" />
     <meta name="twitter:description" content="The Layer class contains methods modifying and extracting information for a layer." />
     <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
-    <meta name="twitter:url"   content="http://ruby.sketchup.com/Sketchup/Layer.html" />
+    <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/Layer.html" />
+
+
   <!-- STYLESHEETS -->
     <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
@@ -77,8 +79,8 @@
 <header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
     <div id="api-documentation-header">
         <div class="navbar-header">
-            <a class="logo navbar-btn pull-left" href="http://developer.sketchup.com" title="Home">
-                <img src="https://www.sketchup.com/sites/www.sketchup.com/files/ruby/SU_Developer-RedWhite.png" alt="Home">
+            <a class="logo navbar-btn pull-left" href="https://developer.sketchup.com" title="Home">
+                <img src="https://ruby.sketchup.com/images/SU_Developer-RedWhite.png" alt="Home">
             </a>
             <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
             <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -92,15 +94,15 @@
         <div class="navbar-collapse collapse">
             <nav role="navigation">
                 <ul class="menu nav navbar-nav">
-                    <li class="first leaf"><a href="http://forums.sketchup.com/c/developers">Community</a></li>
-                    <li class="leaf"><a href="http://blog.sketchup.com/tags/developers">SketchUpdate Blog</a></li>
-                    <li class="leaf"><a href="http://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="first leaf"><a href="https://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="https://blog.sketchup.com/">SketchUp Blog</a></li>
+                    <li class="leaf"><a href="https://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
                     <li class="last expanded dropdown">
-                        <a href="http://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="https://www.sketchup.com/sites/www.sketchup.com/files/ruby/trimble-logo-white.png"><span class="caret"></span></a>
+                        <a href="https://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="https://ruby.sketchup.com/images/trimble-logo-white.png"><span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="first leaf"><a href="http://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="first leaf"><a href="https://connect.trimble.com/">Trimble Connect</a></li>
                             <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
-                            <li class="last leaf"><a href="http://buildings.trimble.com/">Trimble Buildings</a></li>
+                            <li class="last leaf"><a href="https://buildings.trimble.com/">Trimble Buildings</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -189,23 +191,30 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>As of SketchUp 2020 “Layers” were renamed to “Tags” in the UI. The API
+retains the use of “Layer” for compatibility and is synonymous with “Tag”.</p>
+</div>
+  </div>
+
+
 <p>The Layer class contains methods modifying and extracting information for a
 layer.</p>
 
-<p>By default, a SketchUp model has one layer, Layer 0 (zero), which is the
-base layer. You can&#39;t delete or rename Layer 0. Unlike certain other
-CAD software packages, entities associated with different layers in
-SketchUp still intersect with each other. (If you want collections of
-entities to not intersect, place them in Groups instead.)</p>
+<p>By default, a SketchUp model has one layer, Layer 0 (Named “Untagged” in
+the UI since SketchUp 2020), which is the base layer. You can&#39;t delete
+or rename Layer 0. Unlike certain other CAD software packages, entities
+associated with different layers in SketchUp still intersect with each
+other. (If you want collections of entities to not intersect, place them in
+Groups instead.)</p>
 
 <p>Layers are commonly used to organize your model and control the visibility
 of related groups and components. For example, you could make all of your
 wall and roof entities different groups, associate layers with those
 groups, and then hide those layers so as to display just the floor plan in
 the model.</p>
-
-<p>You can programatically create a new layer by calling the Layers.add
-method.</p>
 
 
   </div>
@@ -218,7 +227,7 @@ method.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
-<span class='id identifier rubyid_new_layer'>new_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer</span><span class='tstring_end'>&quot;</span></span></code></pre>
+<span class='id identifier rubyid_new_layer'>new_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -261,7 +270,7 @@ method.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#<=>-instance_method" title="#&lt;=&gt; (instance method)">#<strong>&lt;=&gt;</strong>(layer2)  &#x21d2; Object </a>
+      <a href="#<=>-instance_method" title="#&lt;=&gt; (instance method)">#<strong>&lt;=&gt;</strong>(layer2)  &#x21d2; Integer </a>
     
 
     
@@ -276,7 +285,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The &lt;=&gt; method is used to compare two layers based on their names.</p>
+<p>The <span class='object_link'><a href="#<=>-instance_method" title="Sketchup::Layer#&lt;=&gt; (method)">#&lt;=&gt;</a></span> method is used to compare two layers based on their names.</p>
 </div></span>
   
 </li>
@@ -285,7 +294,7 @@ method.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(layer2)  &#x21d2; Object </a>
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Object </a>
     
 
     
@@ -300,7 +309,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The == method is used to determine if two layers are the same.</p>
+<p>The <span class='object_link'><a href="#==-instance_method" title="Sketchup::Layer#== (method)">#==</a></span> method is used to determine if two layers are the same.</p>
 </div></span>
   
 </li>
@@ -309,7 +318,7 @@ method.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#color-instance_method" title="#color (instance method)">#<strong>color</strong>  &#x21d2; Object </a>
+      <a href="#color-instance_method" title="#color (instance method)">#<strong>color</strong>  &#x21d2; Sketchup::Color </a>
     
 
     
@@ -324,7 +333,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The color method is used to retrieve the color of the layer.</p>
+<p>The <span class='object_link'><a href="#color-instance_method" title="Sketchup::Layer#color (method)">#color</a></span> method is used to retrieve the color of the layer.</p>
 </div></span>
   
 </li>
@@ -348,7 +357,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The color= method is used to set the name of a layer.</p>
+<p>The <span class='object_link'><a href="#color=-instance_method" title="Sketchup::Layer#color= (method)">#color=</a></span> method is used to set the name of a layer.</p>
 </div></span>
   
 </li>
@@ -469,7 +478,7 @@ layer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The name= method is used to set the name of a layer.</p>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::Layer#name= (method)">#name=</a></span> method is used to set the name of a layer.</p>
 </div></span>
   
 </li>
@@ -478,7 +487,7 @@ layer.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#page_behavior-instance_method" title="#page_behavior (instance method)">#<strong>page_behavior</strong>  &#x21d2; Object </a>
+      <a href="#page_behavior-instance_method" title="#page_behavior (instance method)">#<strong>page_behavior</strong>  &#x21d2; Integer </a>
     
 
     
@@ -493,8 +502,8 @@ layer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The page_behavior method is used to retrieve the visibility behavior of the
-layer for new pages and existing pages.</p>
+<p>The <span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span> method is used to retrieve the visibility behavior of
+the layer for new pages and existing pages.</p>
 </div></span>
   
 </li>
@@ -503,7 +512,7 @@ layer for new pages and existing pages.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#page_behavior=-instance_method" title="#page_behavior= (instance method)">#<strong>page_behavior=</strong>(page_behavior)  &#x21d2; Integer </a>
+      <a href="#page_behavior=-instance_method" title="#page_behavior= (instance method)">#<strong>page_behavior=</strong>(page_behavior)  &#x21d2; Object </a>
     
 
     
@@ -528,7 +537,7 @@ behavior on existing and new pages.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#visible=-instance_method" title="#visible= (instance method)">#<strong>visible=</strong>(is_visible)  &#x21d2; Object </a>
+      <a href="#visible=-instance_method" title="#visible= (instance method)">#<strong>visible=</strong>(visible)  &#x21d2; Object </a>
     
 
     
@@ -543,7 +552,7 @@ behavior on existing and new pages.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The visible= method is used to set if the layer is visible.</p>
+<p>The <span class='object_link'><a href="#visible=-instance_method" title="Sketchup::Layer#visible= (method)">#visible=</a></span> method is used to set if the layer is visible.</p>
 </div></span>
   
 </li>
@@ -567,7 +576,7 @@ behavior on existing and new pages.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The visible? method is used to determine if the layer is visible.</p>
+<p>The <span class='object_link'><a href="#visible%3F-instance_method" title="Sketchup::Layer#visible? (method)">#visible?</a></span> method is used to determine if the layer is visible.</p>
 </div></span>
   
 </li>
@@ -599,7 +608,7 @@ behavior on existing and new pages.</p>
   <h3 class="signature first" id="<=>-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>&lt;=&gt;</strong>(layer2)  &#x21d2; <tt>Object</tt> 
+    #<strong>&lt;=&gt;</strong>(layer2)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -608,7 +617,7 @@ behavior on existing and new pages.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &lt;=&gt; method is used to compare two layers based on their names.
+<p>The <span class='object_link'><a href="#<=>-instance_method" title="Sketchup::Layer#&lt;=&gt; (method)">#&lt;=&gt;</a></span> method is used to compare two layers based on their names.
 You could use this for sorting if you&#39;re building a list of layer
 names.</p>
 
@@ -633,8 +642,8 @@ names.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - -1 if layer1 is less than layer2. 1 if layer2 is less than
-layer1. 0 if layer1 and layer2 are equal.</p>
+<p>Returns -1 if layer1 is less than layer2. 1 if layer2 is less than layer1.
+0 if layer1 and layer2 are equal.</p>
 
 
   </div>
@@ -648,14 +657,9 @@ layer1. 0 if layer1 and layer2 are equal.</p>
         <span class='name'>layer2</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::Layer (class)">Sketchup::Layer</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Layer object.</p>
-</div>
       
     </li>
   
@@ -667,14 +671,14 @@ layer1. 0 if layer1 and layer2 are equal.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - -1 if layer1 is less than layer2. 1 if layer2 is less than layer1.
-0 if layer1 and layer2 are equal.</p>
+<p>-1 if layer1 is less than layer2. 1 if layer2 is less than layer1. 0 if
+layer1 and layer2 are equal.</p>
 </div>
       
     </li>
@@ -707,7 +711,7 @@ layer1. 0 if layer1 and layer2 are equal.</p>
   <h3 class="signature " id="==-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>==</strong>(layer2)  &#x21d2; <tt>Object</tt> 
+    #<strong>==</strong>(other)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -716,7 +720,7 @@ layer1. 0 if layer1 and layer2 are equal.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The == method is used to determine if two layers are the same.</p>
+<p>The <span class='object_link'><a href="#==-instance_method" title="Sketchup::Layer#== (method)">#==</a></span> method is used to determine if two layers are the same.</p>
 
 
   </div>
@@ -729,18 +733,15 @@ layer1. 0 if layer1 and layer2 are equal.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
-<span class='id identifier rubyid_layer1'>layer1</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer 1</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_layer2'>layer2</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer 2</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_layer1'>layer1</span> <span class='op'>==</span> <span class='id identifier rubyid_layer2'>layer2</span></code></pre>
+<span class='id identifier rubyid_layer1'>layer1</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test layer 1</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer2'>layer2</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test layer 2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_equal'>equal</span> <span class='op'>=</span> <span class='id identifier rubyid_layer1'>layer1</span> <span class='op'>==</span> <span class='id identifier rubyid_layer2'>layer2</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if layer1 and layer2 are equal. false if layer1 and
-layer2 are not equal.</p>
-
 
   </div>
 </div>
@@ -750,41 +751,17 @@ layer2 are not equal.</p>
   
     <li>
       
-        <span class='name'>layer2</span>
+        <span class='name'>other</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Object</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Layer object.</p>
-</div>
       
     </li>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>status - true if layer1 and layer2 are equal. false if layer1 and layer2
-are not equal.</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div>
 
@@ -812,7 +789,7 @@ are not equal.</p>
   <h3 class="signature " id="color-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>color</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>color</strong>  &#x21d2; <tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> 
   
 
   
@@ -821,7 +798,7 @@ are not equal.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The color method is used to retrieve the color of the layer.</p>
+<p>The <span class='object_link'><a href="#color-instance_method" title="Sketchup::Layer#color (method)">#color</a></span> method is used to retrieve the color of the layer.</p>
 
 
   </div>
@@ -845,14 +822,9 @@ are not equal.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>color - the color of the Layer object</p>
-</div>
       
     </li>
   
@@ -890,7 +862,7 @@ are not equal.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The color= method is used to set the name of a layer.</p>
+<p>The <span class='object_link'><a href="#color=-instance_method" title="Sketchup::Layer#color= (method)">#color=</a></span> method is used to set the name of a layer.</p>
 
 
   </div>
@@ -911,8 +883,6 @@ are not equal.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns color.</p>
-
 
   </div>
 </div>
@@ -925,37 +895,14 @@ are not equal.</p>
         <span class='name'>color</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The new color for the Layer object.</p>
-</div>
       
     </li>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>color</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div>
 
@@ -1020,11 +967,6 @@ layer.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the display name of the Layer object</p>
-</div>
       
     </li>
   
@@ -1293,7 +1235,7 @@ layer.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The name= method is used to set the name of a layer.</p>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::Layer#name= (method)">#name=</a></span> method is used to set the name of a layer.</p>
 
 
   </div>
@@ -1314,8 +1256,6 @@ layer.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns name - the newly set name.</p>
-
 
   </div>
 </div>
@@ -1328,37 +1268,14 @@ layer.</p>
         <span class='name'>name</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The new name for the Layer object.</p>
-</div>
       
     </li>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>name - the newly set name</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div>
 
@@ -1386,7 +1303,7 @@ layer.</p>
   <h3 class="signature " id="page_behavior-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>page_behavior</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>page_behavior</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1395,8 +1312,8 @@ layer.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The page_behavior method is used to retrieve the visibility behavior of the
-layer for new pages and existing pages. For example, you may want your
+<p>The <span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span> method is used to retrieve the visibility behavior of
+the layer for new pages and existing pages. For example, you may want your
 layer to be visible or hidden by default in any new pages (aka Scenes)
 created by the user.</p>
 
@@ -1405,18 +1322,33 @@ layer is not in that list, then it is set to its default visibility
 determined by one of these values:</p>
 
 <p>The behaviour is composed of a combination of these flags:</p>
-
-<pre class="code"><code class="">- LAYER_VISIBLE_BY_DEFAULT: 0x0000
-- LAYER_HIDDEN_BY_DEFAULT: 0x0001
-- LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES: 0x0000
-- LAYER_IS_VISIBLE_ON_NEW_PAGES: 0x0010
-- LAYER_IS_HIDDEN_ON_NEW_PAGES: 0x0020
-</code></pre>
+<dl class="rdoc-list label-list"><dt>Default visibility
+<dd>
+<p>These flags are used to set the value of <span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span>. A page keeps a
+list of layers that do not have their default behavior. If a layer is not
+in that list, then it is set to its default visibility which is determined
+by one of these flags.</p>
+<ul><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_VISIBLE_BY_DEFAULT-constant" title="LAYER_VISIBLE_BY_DEFAULT (constant)">LAYER_VISIBLE_BY_DEFAULT</a></span>: <code>0x0000</code></p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_HIDDEN_BY_DEFAULT-constant" title="LAYER_HIDDEN_BY_DEFAULT (constant)">LAYER_HIDDEN_BY_DEFAULT</a></span>: <code>0x0001</code></p>
+</li></ul>
+</dd><dt>Visibility on new pages
+<dd>
+<p>You can also set this addition flag that controls the visibility of a layer
+on newly created pages.</p>
+<ul><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES-constant" title="LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES (constant)">LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES</a></span>: <code>0x0000</code></p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_IS_VISIBLE_ON_NEW_PAGES-constant" title="LAYER_IS_VISIBLE_ON_NEW_PAGES (constant)">LAYER_IS_VISIBLE_ON_NEW_PAGES</a></span>: <code>0x0010</code></p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_IS_HIDDEN_ON_NEW_PAGES-constant" title="LAYER_IS_HIDDEN_ON_NEW_PAGES (constant)">LAYER_IS_HIDDEN_ON_NEW_PAGES</a></span>: <code>0x0020</code></p>
+</li></ul>
+</dd></dl>
 
 <p>The default visibility for a layer is set by either
-<code>LAYER_VISIBLE_BY_DEFAULT</code> or
-<code>LAYER_HIDDEN_BY_DEFAULT</code>. This is what will be used when a page
-does not contain the visibility state of a layer.</p>
+<span class='object_link'><a href="../top-level-namespace.html#LAYER_VISIBLE_BY_DEFAULT-constant" title="LAYER_VISIBLE_BY_DEFAULT (constant)">LAYER_VISIBLE_BY_DEFAULT</a></span> or <span class='object_link'><a href="../top-level-namespace.html#LAYER_HIDDEN_BY_DEFAULT-constant" title="LAYER_HIDDEN_BY_DEFAULT (constant)">LAYER_HIDDEN_BY_DEFAULT</a></span>. This is what will
+be used when a page does not contain the visibility state of a layer.</p>
 
 <p>The remaining flags control the visibility of the layer for new pages.</p>
 
@@ -1443,13 +1375,13 @@ does not contain the visibility state of a layer.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>pagebehavior - an integer representing the current behavior of the layer.</p>
+<p>an integer representing the current behavior of the layer.</p>
 </div>
       
     </li>
@@ -1479,7 +1411,7 @@ does not contain the visibility state of a layer.</p>
   <h3 class="signature " id="page_behavior=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>page_behavior=</strong>(page_behavior)  &#x21d2; <tt>Integer</tt> 
+    #<strong>page_behavior=</strong>(page_behavior)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1488,16 +1420,6 @@ does not contain the visibility state of a layer.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>Prior to SketchUp 2014 the <code>LAYER_HIDDEN_BY_DEFAULT</code> flag would
-trigger the validation check in SketchUp that would reset the
-<span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span> of the layer.</p>
-</div>
-  </div>
-
-
 <p>The <span class='object_link'><a href="#page_behavior=-instance_method" title="Sketchup::Layer#page_behavior= (method)">#page_behavior=</a></span> method is used to control the layer&#39;s visibility
 behavior on existing and new pages.</p>
 
@@ -1505,12 +1427,29 @@ behavior on existing and new pages.</p>
 visibility of the layer is used.</p>
 
 <p>The behavior is composed of a combination of these flags:</p>
-<dl class="rdoc-list label-list"><dt><tt>LAYER_VISIBLE_BY_DEFAULT: 0x0000</tt>
-<dt><tt>LAYER_HIDDEN_BY_DEFAULT: 0x0001</tt>
-<dt><tt>LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES: 0x0000</tt>
-<dt><tt>LAYER_IS_VISIBLE_ON_NEW_PAGES: 0x0010</tt>
-<dt><tt>LAYER_IS_HIDDEN_ON_NEW_PAGES: 0x0020</tt>
-<dd></dd></dl>
+<dl class="rdoc-list label-list"><dt>Default visibility
+<dd>
+<p>These flags are used to set the value of <span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span>. A page keeps a
+list of layers that do not have their default behavior. If a layer is not
+in that list, then it is set to its default visibility which is determined
+by one of these flags.</p>
+<ul><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_VISIBLE_BY_DEFAULT-constant" title="LAYER_VISIBLE_BY_DEFAULT (constant)">LAYER_VISIBLE_BY_DEFAULT</a></span>: <code>0x0000</code></p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_HIDDEN_BY_DEFAULT-constant" title="LAYER_HIDDEN_BY_DEFAULT (constant)">LAYER_HIDDEN_BY_DEFAULT</a></span>: <code>0x0001</code></p>
+</li></ul>
+</dd><dt>Visibility on new pages
+<dd>
+<p>You can also set this addition flag that controls the visibility of a layer
+on newly created pages.</p>
+<ul><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES-constant" title="LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES (constant)">LAYER_USES_DEFAULT_VISIBILITY_ON_NEW_PAGES</a></span>: <code>0x0000</code></p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_IS_VISIBLE_ON_NEW_PAGES-constant" title="LAYER_IS_VISIBLE_ON_NEW_PAGES (constant)">LAYER_IS_VISIBLE_ON_NEW_PAGES</a></span>: <code>0x0010</code></p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#LAYER_IS_HIDDEN_ON_NEW_PAGES-constant" title="LAYER_IS_HIDDEN_ON_NEW_PAGES (constant)">LAYER_IS_HIDDEN_ON_NEW_PAGES</a></span>: <code>0x0020</code></p>
+</li></ul>
+</dd></dl>
 
 
   </div>
@@ -1551,19 +1490,6 @@ visibility of the layer is used.</p>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
 
@@ -1583,6 +1509,24 @@ visibility of the layer is used.</p>
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2014 the <code>LAYER_HIDDEN_BY_DEFAULT</code> flag would
+trigger the validation check in SketchUp that would reset the
+<span class='object_link'><a href="#page_behavior-instance_method" title="Sketchup::Layer#page_behavior (method)">#page_behavior</a></span> of the layer.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -1591,7 +1535,7 @@ visibility of the layer is used.</p>
   <h3 class="signature " id="visible=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>visible=</strong>(is_visible)  &#x21d2; <tt>Object</tt> 
+    #<strong>visible=</strong>(visible)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1600,7 +1544,7 @@ visibility of the layer is used.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The visible= method is used to set if the layer is visible.</p>
+<p>The <span class='object_link'><a href="#visible=-instance_method" title="Sketchup::Layer#visible= (method)">#visible=</a></span> method is used to set if the layer is visible.</p>
 
 
   </div>
@@ -1613,43 +1557,25 @@ visibility of the layer is used.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
-<span class='id identifier rubyid_new_layer'>new_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer</span><span class='tstring_end'>&quot;</span></span>
-
-<span class='comment'># Hide the layer.
-</span><span class='id identifier rubyid_new_layer'>new_layer</span><span class='period'>.</span><span class='id identifier rubyid_visible'>visible</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_visible'>visible</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
     
   </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
       
-        <span class='name'>is_visible</span>
+        <span class='name'>visible</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The new visibility setting.</p>
-</div>
       
     </li>
   
 </ul>
-
-
-</div>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -1684,7 +1610,7 @@ visibility of the layer is used.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The visible? method is used to determine if the layer is visible.</p>
+<p>The <span class='object_link'><a href="#visible%3F-instance_method" title="Sketchup::Layer#visible? (method)">#visible?</a></span> method is used to determine if the layer is visible.</p>
 
 
   </div>
@@ -1697,8 +1623,8 @@ visibility of the layer is used.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
-<span class='id identifier rubyid_new_layer'>new_layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test layer</span><span class='tstring_end'>&quot;</span></span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_new_layer'>new_layer</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span> <span class='comment'># Returns: true</span></code></pre>
     
   </div>
 
@@ -1711,11 +1637,6 @@ visibility of the layer is used.</p>
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>true if the layer is visible</p>
-</div>
       
     </li>
   
@@ -1746,7 +1667,7 @@ visibility of the layer is used.</p>
 
       <div id="footer">
   Generated by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
 </div>
 
     </div>
