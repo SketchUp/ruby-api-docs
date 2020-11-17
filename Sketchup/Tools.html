@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,8 +186,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Tools class contains methods to manipulate a collection of SketchUp
-tools. You access this collection by calling the Model.tools method.</p>
+<p>The Tools class contains methods to manipulate a collection of SketchUp tools. You access this collection by calling the Model.tools method.</p>
 
 
   </div>
@@ -350,8 +351,7 @@ tools. You access this collection by calling the Model.tools method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The model method is used to get the model associated with this tools
-object.</p>
+<p>The model method is used to get the model associated with this tools object.</p>
 </div></span>
   
 </li>
@@ -423,8 +423,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -465,7 +464,7 @@ object.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_tools'>tools</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_tools'><span class='object_link'><a href="Model.html#tools-instance_method" title="Sketchup::Model#tools (method)">tools</a></span></span>
-<span class='id identifier rubyid_tool'>tool</span> <span class='op'>=</span> <span class='id identifier rubyid_tools'>tools</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span></code></pre>
+<span class='id identifier rubyid_tool'>tool</span> <span class='op'>=</span> <span class='id identifier rubyid_tools'>tools</span><span class='period'>.</span><span class='id identifier rubyid_active_tool'>active_tool</span></code></pre>
     
   </div>
 
@@ -759,8 +758,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The model method is used to get the model associated with this tools
-object.</p>
+<p>The model method is used to get the model associated with this tools object.</p>
 
 
   </div>
@@ -855,8 +853,7 @@ object.</p>
       
         
         <div class='inline'>
-<p>the last pushed Tool object, if it is a Ruby tool. If a native tool is
-active, selects the default native tool and returns nil.</p>
+<p>the last pushed Tool object, if it is a Ruby tool. If a native tool is active, selects the default native tool and returns nil.</p>
 </div>
       
     </li>
@@ -895,8 +892,7 @@ active, selects the default native tool and returns nil.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The push_tool method is used to push (aka activate) a user-defined tool.
-See the Tool interface for details on creating your own SketchUp tool.</p>
+<p>The push_tool method is used to push (aka activate) a user-defined tool. See the Tool interface for details on creating your own SketchUp tool.</p>
 
 
   </div>
@@ -996,8 +992,7 @@ See the Tool interface for details on creating your own SketchUp tool.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>

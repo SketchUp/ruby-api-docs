@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::ShadowInfoObserver
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,11 +185,14 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This observer interface is implemented to react to changes to the shadow
-settings. To implement this observer, create a Ruby class of this type,
-override the desired methods, and add an instance of the observer to the
-<span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span> object.</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>To implement this observer, create a Ruby class of this type, override the desired methods, and add an instance of the observer to the <span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span> object.</p>
+</div>
+</div>
+
+<p>This observer interface is implemented to react to changes to the shadow settings.</p>
 
 
   </div>
@@ -265,8 +270,7 @@ override the desired methods, and add an instance of the observer to the
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onShadowInfoChanged-instance_method" title="Sketchup::ShadowInfoObserver#onShadowInfoChanged (method)">#onShadowInfoChanged</a></span> method is invoked whenever the user alters a
-setting inside the Shadows and Model Info dialogs.</p>
+<p>The <span class='object_link'><a href="#onShadowInfoChanged-instance_method" title="Sketchup::ShadowInfoObserver#onShadowInfoChanged (method)">#onShadowInfoChanged</a></span> method is invoked whenever the user alters a setting inside the Shadows and Model Info dialogs.</p>
 </div></span>
   
 </li>
@@ -295,10 +299,7 @@ setting inside the Shadows and Model Info dialogs.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onShadowInfoChanged-instance_method" title="Sketchup::ShadowInfoObserver#onShadowInfoChanged (method)">#onShadowInfoChanged</a></span> method is invoked whenever the user alters a
-setting inside the Shadows and Model Info dialogs. The type parameter
-contains a number identifying which option was altered. Here are the types
-to expect:</p>
+<p>The <span class='object_link'><a href="#onShadowInfoChanged-instance_method" title="Sketchup::ShadowInfoObserver#onShadowInfoChanged (method)">#onShadowInfoChanged</a></span> method is invoked whenever the user alters a setting inside the Shadows and Model Info dialogs. The type parameter contains a number identifying which option was altered. Here are the types to expect:</p>
 <ul><li>
 <p>0 = Time/Date sliders</p>
 </li><li>

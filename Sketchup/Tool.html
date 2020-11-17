@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::Tool
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,18 +185,18 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Tool is the interface that you implement to create a SketchUp tool. See <a
-href="https://github.com/SketchUp/sketchup-ruby-api-tutorials/tree/master/examples/02_custom_tool">github.com/SketchUp/sketchup-ruby-api-tutorials/tree/master/examples/02_custom_tool</a>
-for an example of how to create a custom tool in Ruby.</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>Implement the methods described in this class to create a tool. You can not sub-class this class because it is not defined by the API.</p>
+</div>
+</div>
 
-<p>To create a new tool in Ruby, you must define a new class that implements
-the methods for the events that you want to respond to. You do not have to
-implement methods for every possible event that a Tool can respond to.</p>
+<p>Tool is the interface that you implement to create a SketchUp tool. See <a href="https://github.com/SketchUp/sketchup-ruby-api-tutorials/tree/master/examples/02_custom_tool">github.com/SketchUp/sketchup-ruby-api-tutorials/tree/master/examples/02_custom_tool</a> for an example of how to create a custom tool in Ruby.</p>
 
-<p>Once you have defined a tool class, you select that tool by creating an
-instance of it and passing it to <span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">Model#select_tool</a></span>. For
-example:</p>
+<p>To create a new tool in Ruby, you must define a new class that implements the methods for the events that you want to respond to. You do not have to implement methods for every possible event that a Tool can respond to.</p>
+
+<p>Once you have defined a tool class, you select that tool by creating an instance of it and passing it to <span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">Model#select_tool</a></span>. For example:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>MyTool</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
@@ -206,8 +208,7 @@ example:</p>
 <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_tool'><span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">select_tool</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_my_tool'>my_tool</span><span class='rparen'>)</span>
 </code></pre>
 
-<p>The following table contains several constants you can use when check for
-certain key presses inside the keyboard handling callbacks:</p>
+<p>The following table contains several constants you can use when check for certain key presses inside the keyboard handling callbacks:</p>
 <ul><li>
 <p><code>CONSTRAIN_MODIFIER_KEY</code> = Shift Key</p>
 </li><li>
@@ -281,7 +282,7 @@ certain key presses inside the keyboard handling callbacks:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#activate-instance_method" title="Sketchup::Tool#activate (method)">#activate</a></span> method is called by SketchUp when the tool is selected.</p>
+<p>The <span class='object_link'><a href="#activate-instance_method" title="Sketchup::Tool#activate (method)">#activate</a></span> method is called by SketchUp when the tool is selected.</p>
 </div></span>
   
 </li>
@@ -305,8 +306,7 @@ certain key presses inside the keyboard handling callbacks:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#deactivate-instance_method" title="Sketchup::Tool#deactivate (method)">#deactivate</a></span> method is called when the tool is deactivated because a
-different tool was selected.</p>
+<p>The <span class='object_link'><a href="#deactivate-instance_method" title="Sketchup::Tool#deactivate (method)">#deactivate</a></span> method is called when the tool is deactivated because a different tool was selected.</p>
 </div></span>
   
 </li>
@@ -330,8 +330,7 @@ different tool was selected.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::Tool#draw (method)">#draw</a></span> method is called by SketchUp whenever the view is refreshed to
-allow the tool to do its own drawing.</p>
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::Tool#draw (method)">#draw</a></span> method is called by SketchUp whenever the view is refreshed to allow the tool to do its own drawing.</p>
 </div></span>
   
 </li>
@@ -355,9 +354,7 @@ allow the tool to do its own drawing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#enableVCB%3F-instance_method" title="Sketchup::Tool#enableVCB? (method)">#enableVCB?</a></span> method is used to tell SketchUp whether to allow the user
-to enter text into the VCB (value control box, aka the “measurements”
-panel).</p>
+<p>The <span class='object_link'><a href="#enableVCB%3F-instance_method" title="Sketchup::Tool#enableVCB? (method)">#enableVCB?</a></span> method is used to tell SketchUp whether to allow the user to enter text into the VCB (value control box, aka the “measurements” panel).</p>
 </div></span>
   
 </li>
@@ -381,8 +378,7 @@ panel).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>In order to accurately draw things, SketchUp needs to know the extents of
-what it is drawing.</p>
+<p>In order to accurately draw things, SketchUp needs to know the extents of what it is drawing.</p>
 </div></span>
   
 </li>
@@ -406,8 +402,7 @@ what it is drawing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the
-directory containing your Tool&#39;s instructor content.</p>
+<p>The <span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the directory containing your Tool&#39;s instructor content.</p>
 </div></span>
   
 </li>
@@ -431,8 +426,7 @@ directory containing your Tool&#39;s instructor content.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#getMenu-instance_method" title="Sketchup::Tool#getMenu (method)">#getMenu</a></span> method is called by SketchUp to let the tool provide its own
-context menu.</p>
+<p>The <span class='object_link'><a href="#getMenu-instance_method" title="Sketchup::Tool#getMenu (method)">#getMenu</a></span> method is called by SketchUp to let the tool provide its own context menu.</p>
 </div></span>
   
 </li>
@@ -456,8 +450,7 @@ context menu.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span> method is called by SketchUp to cancel the current
-operation of the tool.</p>
+<p>The <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span> method is called by SketchUp to cancel the current operation of the tool.</p>
 </div></span>
   
 </li>
@@ -481,8 +474,7 @@ operation of the tool.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> method is called by SketchUp when the user presses a key
-on the keyboard.</p>
+<p>The <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> method is called by SketchUp when the user presses a key on the keyboard.</p>
 </div></span>
   
 </li>
@@ -506,8 +498,7 @@ on the keyboard.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">#onKeyUp</a></span> method is called by SketchUp when the user releases a key on
-the keyboard.</p>
+<p>The <span class='object_link'><a href="#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">#onKeyUp</a></span> method is called by SketchUp when the user releases a key on the keyboard.</p>
 </div></span>
   
 </li>
@@ -531,8 +522,7 @@ the keyboard.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onLButtonDoubleClick-instance_method" title="Sketchup::Tool#onLButtonDoubleClick (method)">#onLButtonDoubleClick</a></span> is called by SketchUp when the user double
-clicks with the left mouse button.</p>
+<p>The <span class='object_link'><a href="#onLButtonDoubleClick-instance_method" title="Sketchup::Tool#onLButtonDoubleClick (method)">#onLButtonDoubleClick</a></span> is called by SketchUp when the user double clicks with the left mouse button.</p>
 </div></span>
   
 </li>
@@ -556,8 +546,7 @@ clicks with the left mouse button.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onLButtonDown-instance_method" title="Sketchup::Tool#onLButtonDown (method)">#onLButtonDown</a></span> method is called by SketchUp when the left mouse
-button is pressed.</p>
+<p>The <span class='object_link'><a href="#onLButtonDown-instance_method" title="Sketchup::Tool#onLButtonDown (method)">#onLButtonDown</a></span> method is called by SketchUp when the left mouse button is pressed.</p>
 </div></span>
   
 </li>
@@ -581,8 +570,7 @@ button is pressed.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onLButtonUp-instance_method" title="Sketchup::Tool#onLButtonUp (method)">#onLButtonUp</a></span> method is called by SketchUp when the left mouse button
-is released.</p>
+<p>The <span class='object_link'><a href="#onLButtonUp-instance_method" title="Sketchup::Tool#onLButtonUp (method)">#onLButtonUp</a></span> method is called by SketchUp when the left mouse button is released.</p>
 </div></span>
   
 </li>
@@ -606,8 +594,7 @@ is released.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMButtonDoubleClick-instance_method" title="Sketchup::Tool#onMButtonDoubleClick (method)">#onMButtonDoubleClick</a></span> method is called by SketchUp when the middle
-mouse button (on a three button mouse) is double-clicked.</p>
+<p>The <span class='object_link'><a href="#onMButtonDoubleClick-instance_method" title="Sketchup::Tool#onMButtonDoubleClick (method)">#onMButtonDoubleClick</a></span> method is called by SketchUp when the middle mouse button (on a three button mouse) is double-clicked.</p>
 </div></span>
   
 </li>
@@ -631,8 +618,7 @@ mouse button (on a three button mouse) is double-clicked.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMButtonDown-instance_method" title="Sketchup::Tool#onMButtonDown (method)">#onMButtonDown</a></span> method is called by SketchUp when the middle mouse
-button (on a three button mouse) is down.</p>
+<p>The <span class='object_link'><a href="#onMButtonDown-instance_method" title="Sketchup::Tool#onMButtonDown (method)">#onMButtonDown</a></span> method is called by SketchUp when the middle mouse button (on a three button mouse) is down.</p>
 </div></span>
   
 </li>
@@ -656,8 +642,7 @@ button (on a three button mouse) is down.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMButtonUp-instance_method" title="Sketchup::Tool#onMButtonUp (method)">#onMButtonUp</a></span> method is called by SketchUp when the middle mouse
-button (on a three button mouse) is released.</p>
+<p>The <span class='object_link'><a href="#onMButtonUp-instance_method" title="Sketchup::Tool#onMButtonUp (method)">#onMButtonUp</a></span> method is called by SketchUp when the middle mouse button (on a three button mouse) is released.</p>
 </div></span>
   
 </li>
@@ -681,8 +666,7 @@ button (on a three button mouse) is released.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMouseEnter-instance_method" title="Sketchup::Tool#onMouseEnter (method)">#onMouseEnter</a></span> method is called by SketchUp when the mouse enters the
-viewport.</p>
+<p>The <span class='object_link'><a href="#onMouseEnter-instance_method" title="Sketchup::Tool#onMouseEnter (method)">#onMouseEnter</a></span> method is called by SketchUp when the mouse enters the viewport.</p>
 </div></span>
   
 </li>
@@ -706,8 +690,7 @@ viewport.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMouseLeave-instance_method" title="Sketchup::Tool#onMouseLeave (method)">#onMouseLeave</a></span> method is called by SketchUp when the mouse leaves the
-viewport.</p>
+<p>The <span class='object_link'><a href="#onMouseLeave-instance_method" title="Sketchup::Tool#onMouseLeave (method)">#onMouseLeave</a></span> method is called by SketchUp when the mouse leaves the viewport.</p>
 </div></span>
   
 </li>
@@ -731,8 +714,7 @@ viewport.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMouseMove-instance_method" title="Sketchup::Tool#onMouseMove (method)">#onMouseMove</a></span> method is called by SketchUp whenever the mouse is
-moved.</p>
+<p>The <span class='object_link'><a href="#onMouseMove-instance_method" title="Sketchup::Tool#onMouseMove (method)">#onMouseMove</a></span> method is called by SketchUp whenever the mouse is moved.</p>
 </div></span>
   
 </li>
@@ -756,8 +738,7 @@ moved.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onMouseWheel-instance_method" title="Sketchup::Tool#onMouseWheel (method)">#onMouseWheel</a></span> method is called by SketchUp when the mouse scroll
-wheel is used.</p>
+<p>The <span class='object_link'><a href="#onMouseWheel-instance_method" title="Sketchup::Tool#onMouseWheel (method)">#onMouseWheel</a></span> method is called by SketchUp when the mouse scroll wheel is used.</p>
 </div></span>
   
 </li>
@@ -766,7 +747,7 @@ wheel is used.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#onRButtonDoubleClick-instance_method" title="#onRButtonDoubleClock (instance method)">#<strong>onRButtonDoubleClock</strong>(flags, x, y, view)  &#x21d2; Object </a>
+      <a href="#onRButtonDoubleClick-instance_method" title="#onRButtonDoubleClick (instance method)">#<strong>onRButtonDoubleClick</strong>(flags, x, y, view)  &#x21d2; Object </a>
     
 
     
@@ -781,8 +762,7 @@ wheel is used.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onRButtonDoubleClick-instance_method" title="Sketchup::Tool#onRButtonDoubleClick (method)">#onRButtonDoubleClick</a></span> is called by SketchUp when the user double
-clicks with the right mouse button.</p>
+<p>The <span class='object_link'><a href="#onRButtonDoubleClick-instance_method" title="Sketchup::Tool#onRButtonDoubleClick (method)">#onRButtonDoubleClick</a></span> is called by SketchUp when the user double clicks with the right mouse button.</p>
 </div></span>
   
 </li>
@@ -806,8 +786,7 @@ clicks with the right mouse button.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onRButtonDown-instance_method" title="Sketchup::Tool#onRButtonDown (method)">#onRButtonDown</a></span> method is called by SketchUp when the user presses the
-right mouse button.</p>
+<p>The <span class='object_link'><a href="#onRButtonDown-instance_method" title="Sketchup::Tool#onRButtonDown (method)">#onRButtonDown</a></span> method is called by SketchUp when the user presses the right mouse button.</p>
 </div></span>
   
 </li>
@@ -831,8 +810,7 @@ right mouse button.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onRButtonUp-instance_method" title="Sketchup::Tool#onRButtonUp (method)">#onRButtonUp</a></span> method is called by SketchUp when the user releases the
-right mouse button.</p>
+<p>The <span class='object_link'><a href="#onRButtonUp-instance_method" title="Sketchup::Tool#onRButtonUp (method)">#onRButtonUp</a></span> method is called by SketchUp when the user releases the right mouse button.</p>
 </div></span>
   
 </li>
@@ -856,8 +834,7 @@ right mouse button.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onReturn-instance_method" title="Sketchup::Tool#onReturn (method)">#onReturn</a></span> method is called by SketchUp when the user hit the Return
-key to complete an operation in the tool.</p>
+<p>The <span class='object_link'><a href="#onReturn-instance_method" title="Sketchup::Tool#onReturn (method)">#onReturn</a></span> method is called by SketchUp when the user hit the Return key to complete an operation in the tool.</p>
 </div></span>
   
 </li>
@@ -881,8 +858,7 @@ key to complete an operation in the tool.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#onSetCursor-instance_method" title="Sketchup::Tool#onSetCursor (method)">#onSetCursor</a></span> method is called by SketchUp when the tool wants to set
-the cursor.</p>
+<p>The <span class='object_link'><a href="#onSetCursor-instance_method" title="Sketchup::Tool#onSetCursor (method)">#onSetCursor</a></span> method is called by SketchUp when the tool wants to set the cursor.</p>
 </div></span>
   
 </li>
@@ -906,8 +882,7 @@ the cursor.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onUserText-instance_method" title="Sketchup::Tool#onUserText (method)">#onUserText</a></span> method is called by SketchUp when the user has typed text
-into the VCB and hit return.</p>
+<p>The <span class='object_link'><a href="#onUserText-instance_method" title="Sketchup::Tool#onUserText (method)">#onUserText</a></span> method is called by SketchUp when the user has typed text into the VCB and hit return.</p>
 </div></span>
   
 </li>
@@ -931,8 +906,7 @@ into the VCB and hit return.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#resume-instance_method" title="Sketchup::Tool#resume (method)">#resume</a></span> method is called by SketchUp when the tool becomes active
-again after being suspended.</p>
+<p>The <span class='object_link'><a href="#resume-instance_method" title="Sketchup::Tool#resume (method)">#resume</a></span> method is called by SketchUp when the tool becomes active again after being suspended.</p>
 </div></span>
   
 </li>
@@ -956,8 +930,7 @@ again after being suspended.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#suspend-instance_method" title="Sketchup::Tool#suspend (method)">#suspend</a></span> method is called by SketchUp when the tool temporarily
-becomes inactive because another tool has been activated.</p>
+<p>The <span class='object_link'><a href="#suspend-instance_method" title="Sketchup::Tool#suspend (method)">#suspend</a></span> method is called by SketchUp when the tool temporarily becomes inactive because another tool has been activated.</p>
 </div></span>
   
 </li>
@@ -986,9 +959,7 @@ becomes inactive because another tool has been activated.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#activate-instance_method" title="Sketchup::Tool#activate (method)">#activate</a></span> method is called by SketchUp when the tool is selected. It
-is a good place to put most of your initialization, such as instance
-variables to track the state of the tool.</p>
+<p>The <span class='object_link'><a href="#activate-instance_method" title="Sketchup::Tool#activate (method)">#activate</a></span> method is called by SketchUp when the tool is selected. It is a good place to put most of your initialization, such as instance variables to track the state of the tool.</p>
 
 
   </div>
@@ -1038,8 +1009,7 @@ variables to track the state of the tool.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#deactivate-instance_method" title="Sketchup::Tool#deactivate (method)">#deactivate</a></span> method is called when the tool is deactivated because a
-different tool was selected.</p>
+<p>The <span class='object_link'><a href="#deactivate-instance_method" title="Sketchup::Tool#deactivate (method)">#deactivate</a></span> method is called when the tool is deactivated because a different tool was selected.</p>
 
 
   </div>
@@ -1118,17 +1088,12 @@ different tool was selected.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>If you draw outside the model bounds you need to implement
-<span class='object_link'><a href="#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">#getExtents</a></span> which return a bounding box large enough to include the
-points you draw. Otherwise your drawing will be clipped.</p>
+<p>If you draw outside the model bounds you need to implement <span class='object_link'><a href="#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">#getExtents</a></span> which return a bounding box large enough to include the points you draw. Otherwise your drawing will be clipped.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::Tool#draw (method)">#draw</a></span> method is called by SketchUp whenever the view is refreshed to
-allow the tool to do its own drawing. If the tool has some temporary
-graphics that it wants displayed while it is active, it should implement
-this method and draw to the <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span>.</p>
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::Tool#draw (method)">#draw</a></span> method is called by SketchUp whenever the view is refreshed to allow the tool to do its own drawing. If the tool has some temporary graphics that it wants displayed while it is active, it should implement this method and draw to the <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span>.</p>
 
 
   </div>
@@ -1231,10 +1196,7 @@ this method and draw to the <span class='object_link'><a href="View.html" title=
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#enableVCB%3F-instance_method" title="Sketchup::Tool#enableVCB? (method)">#enableVCB?</a></span> method is used to tell SketchUp whether to allow the user
-to enter text into the VCB (value control box, aka the “measurements”
-panel). If you do not implement this method, then the vcb is disabled by
-default.</p>
+<p>The <span class='object_link'><a href="#enableVCB%3F-instance_method" title="Sketchup::Tool#enableVCB? (method)">#enableVCB?</a></span> method is used to tell SketchUp whether to allow the user to enter text into the VCB (value control box, aka the “measurements” panel). If you do not implement this method, then the vcb is disabled by default.</p>
 
 
   </div>
@@ -1303,16 +1265,9 @@ default.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>In order to accurately draw things, SketchUp needs to know the extents of
-what it is drawing. If the tool is doing its own drawing, it may need to
-implement this method to tell SketchUp the extents of what it will be
-drawing. If you don&#39;t implement this method, you may find that part of
-what the tool is drawing gets clipped to the extents of the rest of the
-model.</p>
+<p>In order to accurately draw things, SketchUp needs to know the extents of what it is drawing. If the tool is doing its own drawing, it may need to implement this method to tell SketchUp the extents of what it will be drawing. If you don&#39;t implement this method, you may find that part of what the tool is drawing gets clipped to the extents of the rest of the model.</p>
 
-<p>This must return a <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>. In a typical implementation, you
-will create a new <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>, add points to set the extents of the
-drawing that the tool will do and then return it.</p>
+<p>This must return a <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>. In a typical implementation, you will create a new <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>, add points to set the extents of the drawing that the tool will do and then return it.</p>
 
 
   </div>
@@ -1379,20 +1334,12 @@ drawing that the tool will do and then return it.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2014 this method would assume the path was relative to
-the SketchUp resource folder. From 2014 and onwards you can specify the
-absolute path to an HTML file or the absolute path to a directory
-containing an index.html file.</p>
+<p>Prior to SketchUp 2014 this method would assume the path was relative to the SketchUp resource folder. From 2014 and onwards you can specify the absolute path to an HTML file or the absolute path to a directory containing an index.html file.</p>
 </div>
   </div>
 
 
-<p>The #<span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the
-directory containing your Tool&#39;s instructor content. To use this,
-create a custom instructor directory, put an index.html file inside of it,
-and then return that path via this method. If the SketchUp user has the
-Instructor window open when they activate your tool, they will see your
-html file.</p>
+<p>The <span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the directory containing your Tool&#39;s instructor content. To use this, create a custom instructor directory, put an index.html file inside of it, and then return that path via this method. If the SketchUp user has the Instructor window open when they activate your tool, they will see your html file.</p>
 
 
   </div>
@@ -1462,21 +1409,13 @@ end</code></pre>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#getMenu-instance_method" title="Sketchup::Tool#getMenu (method)">#getMenu</a></span> method is called by SketchUp to let the tool provide its own
-context menu. Most tools will not want to implement this method and,
-instead, use the normal context menu found on all entities.</p>
+<p>The <span class='object_link'><a href="#getMenu-instance_method" title="Sketchup::Tool#getMenu (method)">#getMenu</a></span> method is called by SketchUp to let the tool provide its own context menu. Most tools will not want to implement this method and, instead, use the normal context menu found on all entities.</p>
 
-<p>If you do implement this method, the argument is a Menu. You should use the
-add_item method to build the context menu.</p>
+<p>If you do implement this method, the argument is a Menu. You should use the add_item method to build the context menu.</p>
 
-<p>Your tool will use a standard context menu by default if you do not
-implement this method. Implement this method if you want a context-click to
-display something other than this default context menu.</p>
+<p>Your tool will use a standard context menu by default if you do not implement this method. Implement this method if you want a context-click to display something other than this default context menu.</p>
 
-<p>In SketchUp 2015 the flags, x, y and view parameters were added. They are
-needed if you need to pick the entities under the mouse position. The new
-parameters are optional, but if you need to use one you must include them
-all.</p>
+<p>In SketchUp 2015 the flags, x, y and view parameters were added. They are needed if you need to pick the entities under the mouse position. The new parameters are optional, but if you need to use one you must include them all.</p>
 
 
   </div>
@@ -1550,8 +1489,7 @@ all.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time. Added in SU2015.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time. Added in SU2015.</p>
 </div>
       
     </li>
@@ -1663,25 +1601,25 @@ buttons at the time. Added in SU2015.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>When something is undone <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span> is called before the undo is actually
-executed. If you need to do something with the model after an undo use
-<span class='object_link'><a href="ModelObserver.html#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">ModelObserver#onTransactionUndo</a></span>.</p>
+<p>When something is undone <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span> is called before the undo is actually executed. If you need to do something with the model after an undo use <span class='object_link'><a href="ModelObserver.html#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">ModelObserver#onTransactionUndo</a></span>.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> is implemented and returns <code>true</code>, pressing Esc doesn&#39;t trigger <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span>.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span> method is called by SketchUp to cancel the current
-operation of the tool. The typical response will be to reset the tool to
-its initial state.</p>
+<p>The <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span> method is called by SketchUp to cancel the current operation of the tool. The typical response will be to reset the tool to its initial state.</p>
 
-<p>The reason identifies the action that triggered the call. The reason can be
-one of the following values:</p>
+<p>The reason identifies the action that triggered the call. The reason can be one of the following values:</p>
 <ul><li>
-<p><code>0</code>: the user canceled the current operation by hitting the
-escape key.</p>
+<p><code>0</code>: the user canceled the current operation by hitting the escape key.</p>
 </li><li>
-<p><code>1</code>: the user re-selected the same tool from the toolbar or
-menu.</p>
+<p><code>1</code>: the user re-selected the same tool from the toolbar or menu.</p>
 </li><li>
 <p><code>2</code>: the user did an undo while the tool was active.</p>
 </li></ul>
@@ -1776,16 +1714,11 @@ menu.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> method is called by SketchUp when the user presses a key
-on the keyboard. If you want to get input from the VCB, you should
-implement onUserText rather than this method.</p>
+<p>The <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> method is called by SketchUp when the user presses a key on the keyboard. If you want to get input from the VCB, you should implement onUserText rather than this method.</p>
 
-<p>This method is can be used for special keys such as the Shift key, Ctrl
-key, and so on, or for just determining which key a user pressed. This
-method is actually called for all keys that are pressed.</p>
+<p>This method is can be used for special keys such as the Shift key, Ctrl key, and so on, or for just determining which key a user pressed. This method is actually called for all keys that are pressed.</p>
 
-<p>There are several “virtual keys” defined as constants you can use.  Their
-use is cross platform. They are:</p>
+<p>There are several “virtual keys” defined as constants you can use.  Their use is cross platform. They are:</p>
 <ul><li>
 <p><code>VK_ALT</code></p>
 </li><li>
@@ -1820,8 +1753,7 @@ use is cross platform. They are:</p>
 <p><code>VK_UP</code></p>
 </li></ul>
 
-<p>V6: There is a bug on Windows where the typematic effect does not work.
-Typematic effects work fine on a Mac.</p>
+<p>V6: There is a bug on Windows where the typematic effect does not work. Typematic effects work fine on a Mac.</p>
 
 
   </div>
@@ -1880,8 +1812,7 @@ Typematic effects work fine on a Mac.</p>
       
         &mdash;
         <div class='inline'>
-<p>A value of 1 for a single press of a key.  A value of 2 if the user has
-pressed a key and is holding it down.</p>
+<p>A value of 1 for a single press of a key.  A value of 2 if the user has pressed a key and is holding it down.</p>
 </div>
       
     </li>
@@ -1897,8 +1828,7 @@ pressed a key and is holding it down.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys at the time of the
-event.</p>
+<p>A bit mask that tells the state of the modifier keys at the time of the event.</p>
 </div>
       
     </li>
@@ -1970,8 +1900,7 @@ event.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">#onKeyUp</a></span> method is called by SketchUp when the user releases a key on
-the keyboard.</p>
+<p>The <span class='object_link'><a href="#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">#onKeyUp</a></span> method is called by SketchUp when the user releases a key on the keyboard.</p>
 
 
   </div>
@@ -2030,8 +1959,7 @@ the keyboard.</p>
       
         &mdash;
         <div class='inline'>
-<p>A value of 1 for a single press of a key.  A value of 2 if the user has
-pressed a key and is holding it down.</p>
+<p>A value of 1 for a single press of a key.  A value of 2 if the user has pressed a key and is holding it down.</p>
 </div>
       
     </li>
@@ -2047,8 +1975,7 @@ pressed a key and is holding it down.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys at the time of the
-event.</p>
+<p>A bit mask that tells the state of the modifier keys at the time of the event.</p>
 </div>
       
     </li>
@@ -2120,8 +2047,7 @@ event.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onLButtonDoubleClick-instance_method" title="Sketchup::Tool#onLButtonDoubleClick (method)">#onLButtonDoubleClick</a></span> is called by SketchUp when the user double
-clicks with the left mouse button.</p>
+<p>The <span class='object_link'><a href="#onLButtonDoubleClick-instance_method" title="Sketchup::Tool#onLButtonDoubleClick (method)">#onLButtonDoubleClick</a></span> is called by SketchUp when the user double clicks with the left mouse button.</p>
 
 
   </div>
@@ -2162,8 +2088,7 @@ clicks with the left mouse button.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -2249,8 +2174,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onLButtonDown-instance_method" title="Sketchup::Tool#onLButtonDown (method)">#onLButtonDown</a></span> method is called by SketchUp when the left mouse
-button is pressed. Most tools will implement this method.</p>
+<p>The <span class='object_link'><a href="#onLButtonDown-instance_method" title="Sketchup::Tool#onLButtonDown (method)">#onLButtonDown</a></span> method is called by SketchUp when the left mouse button is pressed. Most tools will implement this method.</p>
 
 
   </div>
@@ -2291,8 +2215,7 @@ button is pressed. Most tools will implement this method.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -2378,8 +2301,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onLButtonUp-instance_method" title="Sketchup::Tool#onLButtonUp (method)">#onLButtonUp</a></span> method is called by SketchUp when the left mouse button
-is released.</p>
+<p>The <span class='object_link'><a href="#onLButtonUp-instance_method" title="Sketchup::Tool#onLButtonUp (method)">#onLButtonUp</a></span> method is called by SketchUp when the left mouse button is released.</p>
 
 
   </div>
@@ -2420,8 +2342,7 @@ is released.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -2510,19 +2431,14 @@ buttons at the time.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Though this method has been documented in the Ruby API for many years, it
-has never worked properly. We are leaving this documentation in place for
-now in the hopes of fixing the implementation, but you won&#39;t have any
-luck trying to use it in SU7 and earlier.</p>
+<p>Though this method has been documented in the Ruby API for many years, it has never worked properly. We are leaving this documentation in place for now in the hopes of fixing the implementation, but you won&#39;t have any luck trying to use it in SU7 and earlier.</p>
 </div>
   </div>
 
 
-<p>The #<span class='object_link'><a href="#onMButtonDoubleClick-instance_method" title="Sketchup::Tool#onMButtonDoubleClick (method)">#onMButtonDoubleClick</a></span> method is called by SketchUp when the middle
-mouse button (on a three button mouse) is double-clicked.</p>
+<p>The <span class='object_link'><a href="#onMButtonDoubleClick-instance_method" title="Sketchup::Tool#onMButtonDoubleClick (method)">#onMButtonDoubleClick</a></span> method is called by SketchUp when the middle mouse button (on a three button mouse) is double-clicked.</p>
 
-<p>Only implement this method if you want SketchUp to react to a middle mouse
-button being double-clicked.</p>
+<p>Only implement this method if you want SketchUp to react to a middle mouse button being double-clicked.</p>
 
 
   </div>
@@ -2563,8 +2479,7 @@ button being double-clicked.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -2650,12 +2565,9 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onMButtonDown-instance_method" title="Sketchup::Tool#onMButtonDown (method)">#onMButtonDown</a></span> method is called by SketchUp when the middle mouse
-button (on a three button mouse) is down.</p>
+<p>The <span class='object_link'><a href="#onMButtonDown-instance_method" title="Sketchup::Tool#onMButtonDown (method)">#onMButtonDown</a></span> method is called by SketchUp when the middle mouse button (on a three button mouse) is down.</p>
 
-<p>The Orbit tool is activated by default when the middle mouse button is
-down. Implement this method if you want a middle mouse button to do
-something other than invoke the Orbit tool.</p>
+<p>The Orbit tool is activated by default when the middle mouse button is down. Implement this method if you want a middle mouse button to do something other than invoke the Orbit tool.</p>
 
 
   </div>
@@ -2696,8 +2608,7 @@ something other than invoke the Orbit tool.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -2783,13 +2694,9 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onMButtonUp-instance_method" title="Sketchup::Tool#onMButtonUp (method)">#onMButtonUp</a></span> method is called by SketchUp when the middle mouse
-button (on a three button mouse) is released.</p>
+<p>The <span class='object_link'><a href="#onMButtonUp-instance_method" title="Sketchup::Tool#onMButtonUp (method)">#onMButtonUp</a></span> method is called by SketchUp when the middle mouse button (on a three button mouse) is released.</p>
 
-<p>SketchUp returns to the previous tool from the Orbit tool when the middle
-mouse button is released. Implement this method if you want a middle mouse
-button to do something other than return to the previous tool when in the
-Orbit tool.</p>
+<p>SketchUp returns to the previous tool from the Orbit tool when the middle mouse button is released. Implement this method if you want a middle mouse button to do something other than return to the previous tool when in the Orbit tool.</p>
 
 
   </div>
@@ -2830,8 +2737,7 @@ Orbit tool.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -2917,8 +2823,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onMouseEnter-instance_method" title="Sketchup::Tool#onMouseEnter (method)">#onMouseEnter</a></span> method is called by SketchUp when the mouse enters the
-viewport.</p>
+<p>The <span class='object_link'><a href="#onMouseEnter-instance_method" title="Sketchup::Tool#onMouseEnter (method)">#onMouseEnter</a></span> method is called by SketchUp when the mouse enters the viewport.</p>
 
 
   </div>
@@ -2994,8 +2899,7 @@ viewport.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onMouseLeave-instance_method" title="Sketchup::Tool#onMouseLeave (method)">#onMouseLeave</a></span> method is called by SketchUp when the mouse leaves the
-viewport.</p>
+<p>The <span class='object_link'><a href="#onMouseLeave-instance_method" title="Sketchup::Tool#onMouseLeave (method)">#onMouseLeave</a></span> method is called by SketchUp when the mouse leaves the viewport.</p>
 
 
   </div>
@@ -3071,11 +2975,9 @@ viewport.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onMouseMove-instance_method" title="Sketchup::Tool#onMouseMove (method)">#onMouseMove</a></span> method is called by SketchUp whenever the mouse is
-moved. You will often want to implement this method.</p>
+<p>The <span class='object_link'><a href="#onMouseMove-instance_method" title="Sketchup::Tool#onMouseMove (method)">#onMouseMove</a></span> method is called by SketchUp whenever the mouse is moved. You will often want to implement this method.</p>
 
-<p>Try to make this method as efficient as possible because this method is
-called often.</p>
+<p>Try to make this method as efficient as possible because this method is called often.</p>
 
 
   </div>
@@ -3116,8 +3018,7 @@ called often.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -3203,8 +3104,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onMouseWheel-instance_method" title="Sketchup::Tool#onMouseWheel (method)">#onMouseWheel</a></span> method is called by SketchUp when the mouse scroll
-wheel is used.</p>
+<p>The <span class='object_link'><a href="#onMouseWheel-instance_method" title="Sketchup::Tool#onMouseWheel (method)">#onMouseWheel</a></span> method is called by SketchUp when the mouse scroll wheel is used.</p>
 
 
   </div>
@@ -3264,8 +3164,7 @@ wheel is used.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Return <code>true</code> to prevent SketchUp from performing default zoom
-action.</p>
+<p>Return <code>true</code> to prevent SketchUp from performing default zoom action.</p>
 
 
   </div>
@@ -3285,8 +3184,7 @@ action.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -3302,8 +3200,7 @@ buttons at the time.</p>
       
         &mdash;
         <div class='inline'>
-<p>Either <code>1</code> or <code>-1</code> depending on which direction the
-mouse wheel scrolled.</p>
+<p>Either <code>1</code> or <code>-1</code> depending on which direction the mouse wheel scrolled.</p>
 </div>
       
     </li>
@@ -3365,8 +3262,7 @@ mouse wheel scrolled.</p>
       
         &mdash;
         <div class='inline'>
-<p>Return <code>true</code> to prevent SketchUp from performing default zoom
-action.</p>
+<p>Return <code>true</code> to prevent SketchUp from performing default zoom action.</p>
 </div>
       
     </li>
@@ -3399,7 +3295,7 @@ action.</p>
   <h3 class="signature " id="onRButtonDoubleClick-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>onRButtonDoubleClock</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+    #<strong>onRButtonDoubleClick</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3408,8 +3304,7 @@ action.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onRButtonDoubleClick-instance_method" title="Sketchup::Tool#onRButtonDoubleClick (method)">#onRButtonDoubleClick</a></span> is called by SketchUp when the user double
-clicks with the right mouse button.</p>
+<p>The <span class='object_link'><a href="#onRButtonDoubleClick-instance_method" title="Sketchup::Tool#onRButtonDoubleClick (method)">#onRButtonDoubleClick</a></span> is called by SketchUp when the user double clicks with the right mouse button.</p>
 
 
   </div>
@@ -3450,8 +3345,7 @@ clicks with the right mouse button.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -3537,10 +3431,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onRButtonDown-instance_method" title="Sketchup::Tool#onRButtonDown (method)">#onRButtonDown</a></span> method is called by SketchUp when the user presses the
-right mouse button. Implement this method, along with the tool.getMenu
-method, when you want your tool to do something other than display the
-default context menu when the right mouse button is clicked.</p>
+<p>The <span class='object_link'><a href="#onRButtonDown-instance_method" title="Sketchup::Tool#onRButtonDown (method)">#onRButtonDown</a></span> method is called by SketchUp when the user presses the right mouse button. Implement this method, along with the tool.getMenu method, when you want your tool to do something other than display the default context menu when the right mouse button is clicked.</p>
 
 
   </div>
@@ -3581,8 +3472,7 @@ default context menu when the right mouse button is clicked.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -3668,8 +3558,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onRButtonUp-instance_method" title="Sketchup::Tool#onRButtonUp (method)">#onRButtonUp</a></span> method is called by SketchUp when the user releases the
-right mouse button.</p>
+<p>The <span class='object_link'><a href="#onRButtonUp-instance_method" title="Sketchup::Tool#onRButtonUp (method)">#onRButtonUp</a></span> method is called by SketchUp when the user releases the right mouse button.</p>
 
 
   </div>
@@ -3710,8 +3599,7 @@ right mouse button.</p>
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse
-buttons at the time.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -3797,9 +3685,7 @@ buttons at the time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onReturn-instance_method" title="Sketchup::Tool#onReturn (method)">#onReturn</a></span> method is called by SketchUp when the user hit the Return
-key to complete an operation in the tool. This method will rarely need to
-be implemented.</p>
+<p>The <span class='object_link'><a href="#onReturn-instance_method" title="Sketchup::Tool#onReturn (method)">#onReturn</a></span> method is called by SketchUp when the user hit the Return key to complete an operation in the tool. This method will rarely need to be implemented.</p>
 
 
   </div>
@@ -3888,8 +3774,7 @@ be implemented.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#onSetCursor-instance_method" title="Sketchup::Tool#onSetCursor (method)">#onSetCursor</a></span> method is called by SketchUp when the tool wants to set
-the cursor.</p>
+<p>The <span class='object_link'><a href="#onSetCursor-instance_method" title="Sketchup::Tool#onSetCursor (method)">#onSetCursor</a></span> method is called by SketchUp when the tool wants to set the cursor.</p>
 
 
   </div>
@@ -3959,8 +3844,7 @@ the cursor.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onUserText-instance_method" title="Sketchup::Tool#onUserText (method)">#onUserText</a></span> method is called by SketchUp when the user has typed text
-into the VCB and hit return.</p>
+<p>The <span class='object_link'><a href="#onUserText-instance_method" title="Sketchup::Tool#onUserText (method)">#onUserText</a></span> method is called by SketchUp when the user has typed text into the VCB and hit return.</p>
 
 
   </div>
@@ -3974,7 +3858,7 @@ into the VCB and hit return.</p>
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onUserText'>onUserText</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
   <span class='ivar'>@distance</span> <span class='op'>=</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
 <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
-  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_tooltop'>tooltop</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Invalid length</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Invalid length</span><span class='tstring_end'>&#39;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -4059,8 +3943,7 @@ into the VCB and hit return.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#resume-instance_method" title="Sketchup::Tool#resume (method)">#resume</a></span> method is called by SketchUp when the tool becomes active
-again after being suspended.</p>
+<p>The <span class='object_link'><a href="#resume-instance_method" title="Sketchup::Tool#resume (method)">#resume</a></span> method is called by SketchUp when the tool becomes active again after being suspended.</p>
 
 
   </div>
@@ -4136,10 +4019,7 @@ again after being suspended.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#suspend-instance_method" title="Sketchup::Tool#suspend (method)">#suspend</a></span> method is called by SketchUp when the tool temporarily
-becomes inactive because another tool has been activated. This typically
-happens when a viewing tool is activated, such as when orbit is active due
-to the middle mouse button.</p>
+<p>The <span class='object_link'><a href="#suspend-instance_method" title="Sketchup::Tool#suspend (method)">#suspend</a></span> method is called by SketchUp when the tool temporarily becomes inactive because another tool has been activated. This typically happens when a viewing tool is activated, such as when orbit is active due to the middle mouse button.</p>
 
 
   </div>

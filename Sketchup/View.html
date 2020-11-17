@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,10 +186,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>This class contains methods to manipulate the current point of view of the
-model. The drawing methods here (draw_line, draw_polyline, etc) are meant
-to be invoked within a tool&#39;s Tool.draw method. Calling them outside
-Tool.draw will have no effect.</p>
+<p>This class contains methods to manipulate the current point of view of the model. The drawing methods here (draw_line, draw_polyline, etc) are meant to be invoked within a tool&#39;s Tool.draw method. Calling them outside Tool.draw will have no effect.</p>
 
 <p>You access the View by calling the Model.active_view method.</p>
 
@@ -282,8 +281,7 @@ Tool.draw will have no effect.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The animation= method is used to set an animation that is displayed for a
-view.</p>
+<p>The animation= method is used to set an animation that is displayed for a view.</p>
 </div></span>
   
 </li>
@@ -307,8 +305,7 @@ view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The average_refresh_time is used to set the average time used to refresh
-the current model in the view.</p>
+<p>The average_refresh_time is used to set the average time used to refresh the current model in the view.</p>
 </div></span>
   
 </li>
@@ -380,8 +377,7 @@ the current model in the view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The center method is used to retrieve the coordinates of the center of the
-view in pixels.</p>
+<p>The center method is used to retrieve the coordinates of the center of the view in pixels.</p>
 </div></span>
   
 </li>
@@ -405,8 +401,7 @@ view in pixels.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The corner method is used to retrieve the coordinates of one of the corners
-of the view.</p>
+<p>The corner method is used to retrieve the coordinates of one of the corners of the view.</p>
 </div></span>
   
 </li>
@@ -454,8 +449,7 @@ of the view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen
-coordinates) instead of 3D space.</p>
+<p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen coordinates) instead of 3D space.</p>
 </div></span>
   
 </li>
@@ -512,7 +506,7 @@ coordinates) instead of 3D space.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#draw_points-instance_method" title="#draw_points (instance method)">#<strong>draw_points</strong>(pts, pointsize = 6, pointstyle = 3, pointcolor = &#39;black&#39;)  &#x21d2; Sketchup::View </a>
+      <a href="#draw_points-instance_method" title="#draw_points (instance method)">#<strong>draw_points</strong>(points, size = 6, style = 3, color = &#39;black&#39;)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -551,8 +545,7 @@ coordinates) instead of 3D space.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The draw_polyline method is used to draw a series of connected line
-segments from pt1 to pt2 to pt3, and so on.</p>
+<p>The draw_polyline method is used to draw a series of connected line segments from pt1 to pt2 to pt3, and so on.</p>
 </div></span>
   
 </li>
@@ -576,8 +569,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is used to draw text on the screen and is usually invoked
-within the draw method of a tool.</p>
+<p>This method is used to draw text on the screen and is usually invoked within the draw method of a tool.</p>
 </div></span>
   
 </li>
@@ -601,8 +593,7 @@ within the draw method of a tool.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The drawing_color method is used to set the color that is used for drawing
-to the view.</p>
+<p>The drawing_color method is used to set the color that is used for drawing to the view.</p>
 </div></span>
   
 </li>
@@ -650,8 +641,7 @@ to the view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The field_of_view method is used get the view&#39;s field of view setting,
-in degrees.</p>
+<p>The field_of_view method is used get the view&#39;s field of view setting, in degrees.</p>
 </div></span>
   
 </li>
@@ -675,8 +665,7 @@ in degrees.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The field_of_view= method is used set the view&#39;s field of view setting,
-in degrees.</p>
+<p>The field_of_view= method is used set the view&#39;s field of view setting, in degrees.</p>
 </div></span>
   
 </li>
@@ -700,8 +689,7 @@ in degrees.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The guess_target method is used to guess at what the user is looking at
-when you have a perspective view.</p>
+<p>The guess_target method is used to guess at what the user is looking at when you have a perspective view.</p>
 </div></span>
   
 </li>
@@ -725,8 +713,7 @@ when you have a perspective view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The inference_locked? method is used to determine if inference locking is
-on for the view.</p>
+<p>The inference_locked? method is used to determine if inference locking is on for the view.</p>
 </div></span>
   
 </li>
@@ -798,8 +785,7 @@ on for the view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The last_refresh_time method is used to retrieve the time for the last full
-view refresh.</p>
+<p>The last_refresh_time method is used to retrieve the time for the last full view refresh.</p>
 </div></span>
   
 </li>
@@ -823,8 +809,7 @@ view refresh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The line_stipple= method is used to set the line pattern to use for
-drawing.</p>
+<p>The line_stipple= method is used to set the line pattern to use for drawing.</p>
 </div></span>
   
 </li>
@@ -896,7 +881,7 @@ drawing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The lock_inference method is used to lock or unlock an inference.</p>
+<p>The <span class='object_link'><a href="#lock_inference-instance_method" title="Sketchup::View#lock_inference (method)">#lock_inference</a></span> method is used to lock or unlock an inference.</p>
 </div></span>
   
 </li>
@@ -968,8 +953,7 @@ drawing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pickray method is used to retrieve a ray passing through a given screen
-position in the viewing direction.</p>
+<p>The pickray method is used to retrieve a ray passing through a given screen position in the viewing direction.</p>
 </div></span>
   
 </li>
@@ -993,8 +977,7 @@ position in the viewing direction.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pixels_to_model method is used to compute a model size from a pixel
-size at a given point.</p>
+<p>The pixels_to_model method is used to compute a model size from a pixel size at a given point.</p>
 </div></span>
   
 </li>
@@ -1066,8 +1049,7 @@ size at a given point.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -1091,8 +1073,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The screen_coords method is used to retrieve the screen coordinates of the
-given point on the screen.</p>
+<p>The screen_coords method is used to retrieve the screen coordinates of the given point on the screen.</p>
 </div></span>
   
 </li>
@@ -1116,8 +1097,7 @@ given point on the screen.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Set the drawing color for the view based on the direction of a line that
-you want to draw.</p>
+<p>Set the drawing color for the view based on the direction of a line that you want to draw.</p>
 </div></span>
   
 </li>
@@ -1141,8 +1121,7 @@ you want to draw.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The show_frame method is used to show a frame of an Animation object in the
-current view.</p>
+<p>The show_frame method is used to show a frame of an Animation object in the current view.</p>
 </div></span>
   
 </li>
@@ -1166,8 +1145,7 @@ current view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is used to compute the bounds of the text when using
-<span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span>.</p>
+<p>This method is used to compute the bounds of the text when using <span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span>.</p>
 </div></span>
   
 </li>
@@ -1215,8 +1193,7 @@ current view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The vpheight method is used to retrieve the height of the viewport for the
-view.</p>
+<p>The vpheight method is used to retrieve the height of the viewport for the view.</p>
 </div></span>
   
 </li>
@@ -1240,8 +1217,7 @@ view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The vpwidth method is used to retrieve the width of the viewport for the
-view.</p>
+<p>The vpwidth method is used to retrieve the width of the viewport for the view.</p>
 </div></span>
   
 </li>
@@ -1265,8 +1241,7 @@ view.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#write_image-instance_method" title="Sketchup::View#write_image (method)">#write_image</a></span> method is used to write the current view to an image
-file.</p>
+<p>The <span class='object_link'><a href="#write_image-instance_method" title="Sketchup::View#write_image (method)">#write_image</a></span> method is used to write the current view to an image file.</p>
 </div></span>
   
 </li>
@@ -1314,8 +1289,7 @@ file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The zoom_extents method is used to zoom to the extents about the entire
-model, as if the user has selected the zoom extents command from the menu.</p>
+<p>The zoom_extents method is used to zoom to the extents about the entire model, as if the user has selected the zoom extents command from the menu.</p>
 </div></span>
   
 </li>
@@ -1442,8 +1416,7 @@ model, as if the user has selected the zoom extents command from the menu.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The animation= method is used to set an animation that is displayed for a
-view. See Animation for details on how to create an animation object.</p>
+<p>The animation= method is used to set an animation that is displayed for a view. See Animation for details on how to create an animation object.</p>
 
 
   </div>
@@ -1548,9 +1521,7 @@ view. See Animation for details on how to create an animation object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The average_refresh_time is used to set the average time used to refresh
-the current model in the view. This can be used to estimate the frame rate
-for an animation.</p>
+<p>The average_refresh_time is used to set the average time used to refresh the current model in the view. This can be used to estimate the frame rate for an animation.</p>
 
 
   </div>
@@ -1676,9 +1647,9 @@ for an animation.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>camera=</strong>(camera)  &#x21d2; <tt><span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span></tt> </span>
+      <span class="overload">#<strong>camera=</strong>(camera)  &#x21d2; <tt>Object</tt> </span>
     
-      <span class="overload">#<strong>camera=</strong>(camera_and_transition)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, Float)</tt> </span>
+      <span class="overload">#<strong>camera=</strong>(camera_and_transition)  &#x21d2; <tt>Object</tt> </span>
     
   
 
@@ -1688,9 +1659,7 @@ for an animation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#camera=-instance_method" title="Sketchup::View#camera= (method)">#camera=</a></span> method is used to set the camera for the view. If a
-transition time is given, then it will animate the transition from the
-current camera to the new one.</p>
+<p>The <span class='object_link'><a href="#camera=-instance_method" title="Sketchup::View#camera= (method)">#camera=</a></span> method is used to set the camera for the view. If a transition time is given, then it will animate the transition from the current camera to the new one.</p>
 
 
   </div>
@@ -1712,7 +1681,7 @@ current camera to the new one.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>camera=</strong>(camera)  &#x21d2; <tt><span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span></tt> </span>
+        <span class="signature">#<strong>camera=</strong>(camera)  &#x21d2; <tt>Object</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -1734,33 +1703,20 @@ current camera to the new one.</p>
       
         &mdash;
         <div class='inline'>
-<p>The new Camera object.</p>
+<p>The new camera object.</p>
 </div>
       
     </li>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
       </li>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>camera=</strong>(camera_and_transition)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, Float)</tt> </span>
+        <span class="signature">#<strong>camera=</strong>(camera_and_transition)  &#x21d2; <tt>Object</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -1782,27 +1738,13 @@ current camera to the new one.</p>
       
         &mdash;
         <div class='inline'>
-<p>The second item in the array represents the transition time from the
-existing camera to the new one</p>
+<p>The second item in the array represents the transition time from the existing camera to the new one.</p>
 </div>
       
     </li>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, Float)</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
       </li>
@@ -1842,8 +1784,7 @@ existing camera to the new one</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The center method is used to retrieve the coordinates of the center of the
-view in pixels. It is returned as an array of 2 values for x and y.</p>
+<p>The center method is used to retrieve the coordinates of the center of the view in pixels. It is returned as an array of 2 values for x and y.</p>
 
 
   </div>
@@ -1911,13 +1852,7 @@ view in pixels. It is returned as an array of 2 values for x and y.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The corner method is used to retrieve the coordinates of one of the corners
-of the view. The argument is an index between 0 and 3 that identifies which
-corner you want. This method returns an array with two integers which are
-the coordinates of the corner of the view in the view space. If the view
-uses a Camera with a fixed aspect ratio, then the corners are the corners
-of the viewing are of the camera which might be different than the actual
-corners of the view itself.</p>
+<p>The corner method is used to retrieve the coordinates of one of the corners of the view. The argument is an index between 0 and 3 that identifies which corner you want. This method returns an array with two integers which are the coordinates of the corner of the view in the view space. If the view uses a Camera with a fixed aspect ratio, then the corners are the corners of the viewing are of the camera which might be different than the actual corners of the view itself.</p>
 
 <p>The index numbers are as follows:</p>
 
@@ -1961,8 +1896,7 @@ corners of the view itself.</p>
       
         &mdash;
         <div class='inline'>
-<p>A value between (or including) 0 and 3 identifying the corner whose
-coordinate you want to retrieve.</p>
+<p>A value between (or including) 0 and 3 identifying the corner whose coordinate you want to retrieve.</p>
 </div>
       
     </li>
@@ -2034,63 +1968,41 @@ coordinate you want to retrieve.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>If you draw outside the model bounds you need to implement
-<span class='object_link'><a href="Tool.html#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">Tool#getExtents</a></span> which returns a bounding box large enough to include the
-points you draw. Otherwise your drawing will be clipped.</p>
+<p>If you draw outside the model bounds you need to implement <span class='object_link'><a href="Tool.html#getExtents-instance_method" title="Sketchup::Tool#getExtents (method)">Tool#getExtents</a></span> which returns a bounding box large enough to include the points you draw. Otherwise your drawing will be clipped.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> method is used to do basic drawing. This method can only be
-called from within the <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> method of a tool that you implement in
-Ruby.</p>
+<p>The <span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span> method is used to do basic drawing. This method can only be called from within the <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> method of a tool that you implement in Ruby.</p>
 
-<p>The following constants are all OpenGL terms and have been externalized to
-Ruby. Here is a summary of their meanings:</p>
+<p>The following constants are all OpenGL terms and have been externalized to Ruby. Here is a summary of their meanings:</p>
 <dl class="rdoc-list label-list"><dt>GL_POINTS
 <dd>
-<p>Treats each vertex as a single point. Vertex n defines point n. N points
-are drawn.</p>
+<p>Treats each vertex as a single point. Vertex n defines point n. N points are drawn.</p>
 </dd><dt>GL_LINES
 <dd>
-<p>Treats each pair of vertices as an independent line segment. Vertices 2n-1
-and 2n define line n. N/2 lines are drawn.</p>
+<p>Treats each pair of vertices as an independent line segment. Vertices 2n-1 and 2n define line n. N/2 lines are drawn.</p>
 </dd><dt>GL_LINE_STRIP
 <dd>
-<p>Draws a connected group of line segments from the first vertex to the last.
-Vertices n and n+1 define line n. N-1 lines are drawn.</p>
+<p>Draws a connected group of line segments from the first vertex to the last. Vertices n and n+1 define line n. N-1 lines are drawn.</p>
 </dd><dt>GL_LINE_LOOP
 <dd>
-<p>Draws a connected group of line segments from the first vertex to the last,
-then back to the first. Vertices n and n+1 define line n. The last line,
-however, is defined by vertices N and 1. N lines are drawn.</p>
+<p>Draws a connected group of line segments from the first vertex to the last, then back to the first. Vertices n and n+1 define line n. The last line, however, is defined by vertices N and 1. N lines are drawn.</p>
 </dd><dt>GL_TRIANGLES
 <dd>
-<p>Treats each triplet of vertices as an independent triangle. Vertices 3n-2,
-3n-1, and 3n define triangle n. N/3 triangles are drawn.</p>
+<p>Treats each triplet of vertices as an independent triangle. Vertices 3n-2, 3n-1, and 3n define triangle n. N/3 triangles are drawn.</p>
 </dd><dt>GL_TRIANGLE_STRIP
 <dd>
-<p>Draws a connected group of triangles. One triangle is defined for each
-vertex presented after the first two vertices. For odd n, vertices n, n+1,
-and n+2 define triangle n. For even n, vertices n+1, n, and n+2 define
-triangle n. N-2 triangles are drawn.</p>
+<p>Draws a connected group of triangles. One triangle is defined for each vertex presented after the first two vertices. For odd n, vertices n, n+1, and n+2 define triangle n. For even n, vertices n+1, n, and n+2 define triangle n. N-2 triangles are drawn.</p>
 </dd><dt>GL_TRIANGLE_FAN
 <dd>
-<p>Draws a connected group of triangles. One triangle is defined for each
-vertex presented after the first two vertices. Vertices 1, n+1, and n+2
-define triangle n. N-2 triangles are drawn.</p>
+<p>Draws a connected group of triangles. One triangle is defined for each vertex presented after the first two vertices. Vertices 1, n+1, and n+2 define triangle n. N-2 triangles are drawn.</p>
 </dd><dt>GL_QUADS
 <dd>
-<p>Treats each group of four vertices as an independent quadrilateral.
-Vertices 4n-3, 4n-2, 4n-1, and 4n define quadrilateral n. N/4
-quadrilaterals are drawn.</p>
+<p>Treats each group of four vertices as an independent quadrilateral. Vertices 4n-3, 4n-2, 4n-1, and 4n define quadrilateral n. N/4 quadrilaterals are drawn.</p>
 </dd><dt>GL_QUAD_STRIP
 <dd>
-<p>Draws a connected group of quadrilaterals. One quadrilateral is defined for
-each pair of vertices presented after the first pair. Vertices 2n-1, 2n,
-2n+2, and 2n+1 define quadrilateral n. N/2-1 quadrilaterals are drawn. Note
-that the order in which vertices are used to construct a quadrilateral from
-strip data is different from that used with independent data.</p>
+<p>Draws a connected group of quadrilaterals. One quadrilateral is defined for each pair of vertices presented after the first pair. Vertices 2n-1, 2n, 2n+2, and 2n+1 define quadrilateral n. N/2-1 quadrilaterals are drawn. Note that the order in which vertices are used to construct a quadrilateral from strip data is different from that used with independent data.</p>
 </dd><dt>GL_POLYGON
 <dd>
 <p>Draws a single, convex polygon. Vertices 1 through N define this polygon.</p>
@@ -2142,8 +2054,7 @@ strip data is different from that used with independent data.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2189,8 +2100,7 @@ such as <code>GL_LINES</code>.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2236,8 +2146,7 @@ such as <code>GL_LINES</code>.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2284,16 +2193,13 @@ such as <code>GL_LINES</code>.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Without normals the polygons will be rendered with flat shading. No light
-will affect it. By providing an array of vertex normals lighting is turned
-on and will use the model&#39;s current light. Note that the number of
-normals must match the number of points provided.</p>
+<p>Without normals the polygons will be rendered with flat shading. No light will affect it. By providing an array of vertex normals lighting is turned on and will use the model&#39;s current light. Note that the number of normals must match the number of points provided.</p>
 </div>
           
         </li>
       
         <li>
-          <span class="name">:texture_id</span>
+          <span class="name">:texture</span>
           <span class="type">(<tt>Integer</tt>)</span>
           <span class="default">
             
@@ -2313,8 +2219,7 @@ normals must match the number of points provided.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
-This must be used along with the <code>:texture_id</code> option.</p>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided. This must be used along with the <code>:texture</code> option.</p>
 </div>
           
         </li>
@@ -2366,8 +2271,7 @@ This must be used along with the <code>:texture_id</code> option.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2417,16 +2321,13 @@ such as <code>GL_LINES</code>.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Without normals the polygons will be rendered with flat shading. No light
-will affect it. By providing an array of vertex normals lighting is turned
-on and will use the model&#39;s current light. Note that the number of
-normals must match the number of points provided.</p>
+<p>Without normals the polygons will be rendered with flat shading. No light will affect it. By providing an array of vertex normals lighting is turned on and will use the model&#39;s current light. Note that the number of normals must match the number of points provided.</p>
 </div>
           
         </li>
       
         <li>
-          <span class="name">:texture_id</span>
+          <span class="name">:texture</span>
           <span class="type">(<tt>Integer</tt>)</span>
           <span class="default">
             
@@ -2446,8 +2347,7 @@ normals must match the number of points provided.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
-This must be used along with the <code>:texture_id</code> option.</p>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided. This must be used along with the <code>:texture</code> option.</p>
 </div>
           
         </li>
@@ -2538,15 +2438,9 @@ This must be used along with the <code>:texture_id</code> option.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen
-coordinates) instead of 3D space.</p>
+<p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen coordinates) instead of 3D space.</p>
 
-<p>The second parameter is an <span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span> of <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects (or several
-individual <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects). These <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects are in
-screen space, not 3D space. The X value corresponds to the number of pixels
-from the left edge of the drawing area. The Y value corresponds to the
-number of pixels down from the top of the drawing area. The Z value is not
-used.</p>
+<p>The second parameter is an <span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span> of <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects (or several individual <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects). These <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects are in screen space, not 3D space. The X value corresponds to the number of pixels from the left edge of the drawing area. The Y value corresponds to the number of pixels down from the top of the drawing area. The Z value is not used.</p>
 
 
   </div>
@@ -2594,8 +2488,7 @@ used.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2641,8 +2534,7 @@ such as <code>GL_LINES</code>.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2688,8 +2580,7 @@ such as <code>GL_LINES</code>.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2729,7 +2620,7 @@ such as <code>GL_LINES</code>.</p>
     <ul class="option">
       
         <li>
-          <span class="name">:texture_id</span>
+          <span class="name">:texture</span>
           <span class="type">(<tt>Integer</tt>)</span>
           <span class="default">
             
@@ -2749,8 +2640,7 @@ such as <code>GL_LINES</code>.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
-This must be used along with the <code>:texture_id</code> option.</p>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided. This must be used along with the <code>:texture</code> option.</p>
 </div>
           
         </li>
@@ -2802,8 +2692,7 @@ This must be used along with the <code>:texture_id</code> option.</p>
       
         &mdash;
         <div class='inline'>
-<p>The item you are going to draw, one of the constants from the comments,
-such as <code>GL_LINES</code>.</p>
+<p>The item you are going to draw, one of the constants from the comments, such as <code>GL_LINES</code>.</p>
 </div>
       
     </li>
@@ -2843,7 +2732,7 @@ such as <code>GL_LINES</code>.</p>
     <ul class="option">
       
         <li>
-          <span class="name">:texture_id</span>
+          <span class="name">:texture</span>
           <span class="type">(<tt>Integer</tt>)</span>
           <span class="default">
             
@@ -2863,8 +2752,7 @@ such as <code>GL_LINES</code>.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Set of UV (Not UVQ) coordinates matching the number of points provided.
-This must be used along with the <code>:texture_id</code> option.</p>
+<p>Set of UV (Not UVQ) coordinates matching the number of points provided. This must be used along with the <code>:texture</code> option.</p>
 </div>
           
         </li>
@@ -2941,9 +2829,9 @@ This must be used along with the <code>:texture_id</code> option.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>draw_lines</strong>(point_list, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+      <span class="overload">#<strong>draw_lines</strong>(points, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
     
-      <span class="overload">#<strong>draw_lines</strong>(pts)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+      <span class="overload">#<strong>draw_lines</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
     
   
 
@@ -2955,8 +2843,7 @@ This must be used along with the <code>:texture_id</code> option.</p>
     
 <p>The draw_lines method is used to draw disconnected lines.</p>
 
-<p>You must have an even number of points. This method is usually  invoked
-within the draw method of a tool.</p>
+<p>You must have an even number of points. This method is usually  invoked within the draw method of a tool.</p>
 
 
   </div>
@@ -2980,12 +2867,10 @@ within the draw method of a tool.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>draw_lines</strong>(point_list, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <span class="signature">#<strong>draw_lines</strong>(points, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns the View object</p>
-
 
   </div>
 </div>
@@ -2995,7 +2880,7 @@ within the draw method of a tool.</p>
   
     <li>
       
-        <span class='name'>point_list</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
@@ -3021,11 +2906,6 @@ within the draw method of a tool.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>returns the View object</p>
-</div>
-      
     </li>
   
 </ul>
@@ -3035,12 +2915,10 @@ within the draw method of a tool.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>draw_lines</strong>(pts)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <span class="signature">#<strong>draw_lines</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns the View object</p>
-
 
   </div>
 </div>
@@ -3050,7 +2928,7 @@ within the draw method of a tool.</p>
   
     <li>
       
-        <span class='name'>pts</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
@@ -3075,11 +2953,6 @@ within the draw method of a tool.</p>
         <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>returns the View object</p>
-</div>
       
     </li>
   
@@ -3115,9 +2988,9 @@ within the draw method of a tool.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>draw_lines</strong>(point_list, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+      <span class="overload">#<strong>draw_lines</strong>(points, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
     
-      <span class="overload">#<strong>draw_lines</strong>(pts)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+      <span class="overload">#<strong>draw_lines</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
     
   
 
@@ -3129,8 +3002,7 @@ within the draw method of a tool.</p>
     
 <p>The draw_lines method is used to draw disconnected lines.</p>
 
-<p>You must have an even number of points. This method is usually  invoked
-within the draw method of a tool.</p>
+<p>You must have an even number of points. This method is usually  invoked within the draw method of a tool.</p>
 
 
   </div>
@@ -3154,12 +3026,10 @@ within the draw method of a tool.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>draw_lines</strong>(point_list, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <span class="signature">#<strong>draw_lines</strong>(points, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns the View object</p>
-
 
   </div>
 </div>
@@ -3169,7 +3039,7 @@ within the draw method of a tool.</p>
   
     <li>
       
-        <span class='name'>point_list</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
@@ -3195,11 +3065,6 @@ within the draw method of a tool.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>returns the View object</p>
-</div>
-      
     </li>
   
 </ul>
@@ -3209,12 +3074,10 @@ within the draw method of a tool.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>draw_lines</strong>(pts)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <span class="signature">#<strong>draw_lines</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns the View object</p>
-
 
   </div>
 </div>
@@ -3224,7 +3087,7 @@ within the draw method of a tool.</p>
   
     <li>
       
-        <span class='name'>pts</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
@@ -3249,11 +3112,6 @@ within the draw method of a tool.</p>
         <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>returns the View object</p>
-</div>
       
     </li>
   
@@ -3288,7 +3146,7 @@ within the draw method of a tool.</p>
   <h3 class="signature " id="draw_points-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>draw_points</strong>(pts, pointsize = 6, pointstyle = 3, pointcolor = &#39;black&#39;)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
+    #<strong>draw_points</strong>(points, size = 6, style = 3, color = &#39;black&#39;)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
   
 
   
@@ -3312,7 +3170,7 @@ within the draw method of a tool.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
 <span class='comment'># returns a view
-</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_points'>draw_points</span> <span class='id identifier rubyid_point3'>point3</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>red</span><span class='tstring_end'>&quot;</span></span></code></pre>
+</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_points'>draw_points</span><span class='lparen'>(</span><span class='id identifier rubyid_point3'>point3</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>red</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3328,23 +3186,18 @@ within the draw method of a tool.</p>
   
     <li>
       
-        <span class='name'>pts</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>An array of Point3d objects.</p>
-</div>
-      
     </li>
   
     <li>
       
-        <span class='name'>pointsize</span>
+        <span class='name'>size</span>
       
       
         <span class='type'>(<tt>Integer</tt>)</span>
@@ -3362,25 +3215,7 @@ within the draw method of a tool.</p>
   
     <li>
       
-        <span class='name'>pointcolor</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>&#39;black&#39;</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>Color of the point.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>pointstyle</span>
+        <span class='name'>style</span>
       
       
         <span class='type'>(<tt>Integer</tt>)</span>
@@ -3391,9 +3226,21 @@ within the draw method of a tool.</p>
       
         &mdash;
         <div class='inline'>
-<p>Style of the point. 1 = open square, 2 = filled square, 3 = “+”, 4 = “X”, 5
-= “*”, 6 = open triangle, 7 = filled triangle.</p>
+<p>1 = open square, 2 = filled square, 3 = “+”, 4 = “X”, 5 = “*”, 6 = open triangle, 7 = filled triangle.</p>
 </div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;black&#39;</tt>)</em>
+      
       
     </li>
   
@@ -3445,9 +3292,9 @@ within the draw method of a tool.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>draw_polyline</strong>(point_list, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+      <span class="overload">#<strong>draw_polyline</strong>(points, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
     
-      <span class="overload">#<strong>draw_polyline</strong>(pts)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+      <span class="overload">#<strong>draw_polyline</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
     
   
 
@@ -3457,8 +3304,7 @@ within the draw method of a tool.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The draw_polyline method is used to draw a series of connected line
-segments from pt1 to pt2 to pt3, and so on.</p>
+<p>The draw_polyline method is used to draw a series of connected line segments from pt1 to pt2 to pt3, and so on.</p>
 
 <p>This method is usually invoked within the draw method of a tool.</p>
 
@@ -3484,12 +3330,10 @@ segments from pt1 to pt2 to pt3, and so on.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>draw_polyline</strong>(point_list, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <span class="signature">#<strong>draw_polyline</strong>(points, ...)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a View object.</p>
-
 
   </div>
 </div>
@@ -3499,7 +3343,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
   
     <li>
       
-        <span class='name'>point_list</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
@@ -3525,11 +3369,6 @@ segments from pt1 to pt2 to pt3, and so on.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>a View object</p>
-</div>
-      
     </li>
   
 </ul>
@@ -3539,12 +3378,10 @@ segments from pt1 to pt2 to pt3, and so on.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>draw_polyline</strong>(pts)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <span class="signature">#<strong>draw_polyline</strong>(points)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a View object.</p>
-
 
   </div>
 </div>
@@ -3554,7 +3391,7 @@ segments from pt1 to pt2 to pt3, and so on.</p>
   
     <li>
       
-        <span class='name'>pts</span>
+        <span class='name'>points</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
@@ -3579,11 +3416,6 @@ segments from pt1 to pt2 to pt3, and so on.</p>
         <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>a View object</p>
-</div>
       
     </li>
   
@@ -3634,36 +3466,28 @@ segments from pt1 to pt2 to pt3, and so on.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Under Windows the font name must be less than 32 characters - due to system
-limitations.</p>
+<p>Under Windows the font name must be less than 32 characters - due to system limitations.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the font-size by the same factor
-as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the font-size by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The font size is platform dependent. On Windows the method expects points,
-where on Mac it&#39;s pixels. See “Cross Platform Font Size” example for
-details.</p>
+<p>The font size is platform dependent. On Windows the method expects points, where on Mac it&#39;s pixels. See “Cross Platform Font Size” example for details.</p>
 </div>
   </div>
 
 
-<p>This method is used to draw text on the screen and is usually invoked
-within the draw method of a tool.</p>
+<p>This method is used to draw text on the screen and is usually invoked within the draw method of a tool.</p>
 
-<p>The <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span> option will align the text to the center of
-the height of the first line, not the whole boundingbox of the text. To
-align around the full bounds of the text, use <span class='object_link'><a href="#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">#text_bounds</a></span> to compute the
-desired alignment.</p>
+<p>The <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span> option will align the text to the center of the height of the first line, not the whole boundingbox of the text. To align around the full bounds of the text, use <span class='object_link'><a href="#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">#text_bounds</a></span> to compute the desired alignment.</p>
 
 <p><strong>Example of different vertical alignment and text bounds:</strong></p>
 
@@ -3681,7 +3505,7 @@ desired alignment.</p>
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
     <span class='comment'># This works in all SketchUp versions and draws the text using the
-</span>    <span class='comment'># default font, color and size.
+</span>    <span class='comment'># default font, size and color (i.e. the model edge color).
 </span>    <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is a test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
@@ -3844,8 +3668,7 @@ desired alignment.</p>
       
         &mdash;
         <div class='inline'>
-<p>The text can be customized by providing a hash or named arguments of
-options.</p>
+<p>The text can be customized by providing a hash or named arguments of options.</p>
 </div>
       
     </li>
@@ -3870,8 +3693,7 @@ options.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>The name of the font to use. If it does not exist on the system, a default
-font will be used instead.</p>
+<p>The name of the font to use. If it does not exist on the system, a default font will be used instead.</p>
 </div>
           
         </li>
@@ -3936,8 +3758,7 @@ font will be used instead.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>The text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextAlignLeft-constant" title="TextAlignLeft (constant)">TextAlignLeft</a></span>,
-<span class='object_link'><a href="../top-level-namespace.html#TextAlignCenter-constant" title="TextAlignCenter (constant)">TextAlignCenter</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span>.</p>
+<p>The text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextAlignLeft-constant" title="TextAlignLeft (constant)">TextAlignLeft</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextAlignCenter-constant" title="TextAlignCenter (constant)">TextAlignCenter</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span>.</p>
 </div>
           
         </li>
@@ -3950,11 +3771,7 @@ font will be used instead.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p><strong>Added SketchUp 2020.0.</strong> The vertical text alignment, one of
-the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>,
-<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or
-<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>. Note that some fonts on Mac might not align as
-expected due to the system reporting incorrect font metrics.</p>
+<p><strong>Added SketchUp 2020.0.</strong> The vertical text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>. Note that some fonts on Mac might not align as expected due to the system reporting incorrect font metrics.</p>
 </div>
           
         </li>
@@ -4030,8 +3847,7 @@ expected due to the system reporting incorrect font metrics.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The drawing_color method is used to set the color that is used for drawing
-to the view.</p>
+<p>The drawing_color method is used to set the color that is used for drawing to the view.</p>
 
 <p>This method is usually invoked within the draw method of a tool.</p>
 
@@ -4128,10 +3944,7 @@ to the view.</p>
 <p>This method is no longer doing anything.</p>
 </div></div>
 
-<p>The dynamic= method allows you to degrade visual quality while improving
-performance when a model is large and view refresh time is slow. For
-example, if you were using a Ruby script to animate the camera through a
-large scene, you may want to set dynamic to true during that time.</p>
+<p>The dynamic= method allows you to degrade visual quality while improving performance when a model is large and view refresh time is slow. For example, if you were using a Ruby script to animate the camera through a large scene, you may want to set dynamic to true during that time.</p>
 
 <p>See also camera.rb which is part of the film and stage ruby scripts.</p>
 
@@ -4220,8 +4033,7 @@ large scene, you may want to set dynamic to true during that time.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The field_of_view method is used get the view&#39;s field of view setting,
-in degrees.</p>
+<p>The field_of_view method is used get the view&#39;s field of view setting, in degrees.</p>
 
 
   </div>
@@ -4287,8 +4099,7 @@ in degrees.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The field_of_view= method is used set the view&#39;s field of view setting,
-in degrees.</p>
+<p>The field_of_view= method is used set the view&#39;s field of view setting, in degrees.</p>
 
 
   </div>
@@ -4382,11 +4193,9 @@ in degrees.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The guess_target method is used to guess at what the user is looking at
-when you have a perspective view.</p>
+<p>The guess_target method is used to guess at what the user is looking at when you have a perspective view.</p>
 
-<p>This method is useful when writing a viewing tool. See also camera.rb which
-is part of the film and stage ruby scripts.</p>
+<p>This method is useful when writing a viewing tool. See also camera.rb which is part of the film and stage ruby scripts.</p>
 
 
   </div>
@@ -4413,8 +4222,7 @@ is part of the film and stage ruby scripts.</p>
       
         &mdash;
         <div class='inline'>
-<p>a Point3d object representing the point in the model that the user is
-likely interested in.</p>
+<p>a Point3d object representing the point in the model that the user is likely interested in.</p>
 </div>
       
     </li>
@@ -4453,8 +4261,7 @@ likely interested in.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The inference_locked? method is used to determine if inference locking is
-on for the view.</p>
+<p>The inference_locked? method is used to determine if inference locking is on for the view.</p>
 
 
   </div>
@@ -4519,9 +4326,7 @@ on for the view.</p>
     
 <p>The inputpoint method is used to retrieve an input point.</p>
 
-<p>This will normally be used inside one of the mouse event handling methods
-in a tool. Usually, it is preferable to create the InputPoint first and
-then use the pick method on it.</p>
+<p>This will normally be used inside one of the mouse event handling methods in a tool. Usually, it is preferable to create the InputPoint first and then use the pick method on it.</p>
 
 
   </div>
@@ -4648,8 +4453,7 @@ then use the pick method on it.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This is the preferred method to update the viewport. Use this before trying
-to use <span class='object_link'><a href="#refresh-instance_method" title="Sketchup::View#refresh (method)">#refresh</a></span>.</p>
+<p>This is the preferred method to update the viewport. Use this before trying to use <span class='object_link'><a href="#refresh-instance_method" title="Sketchup::View#refresh (method)">#refresh</a></span>.</p>
 </div>
   </div>
 
@@ -4722,8 +4526,7 @@ to use <span class='object_link'><a href="#refresh-instance_method" title="Sketc
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The last_refresh_time method is used to retrieve the time for the last full
-view refresh.</p>
+<p>The last_refresh_time method is used to retrieve the time for the last full view refresh.</p>
 
 
   </div>
@@ -4789,8 +4592,7 @@ view refresh.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The line_stipple= method is used to set the line pattern to use for
-drawing. The stipple pattern is given as a string. Valid strings are:</p>
+<p>The line_stipple= method is used to set the line pattern to use for drawing. The stipple pattern is given as a string. Valid strings are:</p>
 
 <pre class="code"><code class="">&quot;.&quot; (Dotted Line),
 &quot;-&quot; (Short Dashes Line),
@@ -4902,14 +4704,12 @@ drawing. The stipple pattern is given as a string. Valid strings are:</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the line width by the same
-factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the line width by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The line_width= method is used to set the line width to use for drawing.
-The value is a Double indicating the desired width in pixels.</p>
+<p>The line_width= method is used to set the line width to use for drawing. The value is a Double indicating the desired width in pixels.</p>
 
 <p>This method is usually invoked within the draw method of a tool.</p>
 
@@ -5006,19 +4806,14 @@ The value is a Double indicating the desired width in pixels.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>To conserve resources on the user&#39;s machine, textures can be loaded
-only when there is a Ruby tool on the tool stack. Make sure to release the
-texture when it&#39;s no longer needed. Any textures not already released
-when the last Ruby tool on the tool stack is removed will be automatically
-released by SketchUp.</p>
+<p>To conserve resources on the user&#39;s machine, textures can be loaded only when there is a Ruby tool on the tool stack. Make sure to release the texture when it&#39;s no longer needed. Any textures not already released when the last Ruby tool on the tool stack is removed will be automatically released by SketchUp.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Avoid loading and releasing textures within the <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> event
-as that is not efficient.</p>
+<p>Avoid loading and releasing textures within the <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> event as that is not efficient.</p>
 </div>
   </div>
 
@@ -5036,7 +4831,6 @@ as that is not efficient.</p>
       
       <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
   <span class='kw'>class</span> <span class='const'>MyTool</span>
-
     <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
       <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
       <span class='id identifier rubyid_image_rep'>image_rep</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_image_rep'>image_rep</span>
@@ -5050,9 +4844,8 @@ as that is not efficient.</p>
     <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
       <span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
-      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='label'>texture_id:</span> <span class='ivar'>@texture_id</span><span class='comma'>,</span> <span class='label'>uvs:</span> <span class='id identifier rubyid_uvs'>uvs</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_QUADS-constant" title="GL_QUADS (constant)">GL_QUADS</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='label'>texture:</span> <span class='ivar'>@texture_id</span><span class='comma'>,</span> <span class='label'>uvs:</span> <span class='id identifier rubyid_uvs'>uvs</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
-
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_tool'><span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">select_tool</a></span></span><span class='lparen'>(</span><span class='const'>Example</span><span class='op'>::</span><span class='const'>MyTool</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
@@ -5133,6 +4926,22 @@ as that is not efficient.</p>
       <li><span class='object_link'><a href="#draw-instance_method" title="Sketchup::View#draw (method)">#draw</a></span></li>
     
   </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>2020.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -5156,13 +4965,11 @@ as that is not efficient.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The lock_inference method is used to lock or unlock an inference.</p>
+<p>The <span class='object_link'><a href="#lock_inference-instance_method" title="Sketchup::View#lock_inference (method)">#lock_inference</a></span> method is used to lock or unlock an inference.</p>
 
-<p>This method will typically be called from inside a tool class when the user
-presses the shift key.</p>
+<p>This method will typically be called from inside a tool class when the user presses the shift key or arrow keys.</p>
 
-<p>With no arguments it unlocks all inferences. With one or two arguments, it
-locks the inference based on the given InputPoint(s).</p>
+<p>With no arguments it unlocks all inferences. With one argument it locks inference based on that passed <span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span>&#39;s entities, e.g. along a <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Edge</a></span>&#39;s line or a <span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Face</a></span>&#39;s plane. With two arguments, it locks inference along an axis.</p>
 
 
   </div>
@@ -5205,11 +5012,6 @@ locks the inference based on the given InputPoint(s).</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>1st InputPoint to inference to.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -5228,7 +5030,21 @@ locks the inference based on the given InputPoint(s).</p>
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='comment'># Lock inference to X axis.
+</span><span class='comment'># The points can be anywhere; only the vector between them affects
+</span><span class='comment'># the result.
+</span><span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_lock_inference'>lock_inference</span><span class='lparen'>(</span>
+  <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InputPoint.html#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InputPoint.html#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
 <ul class="param">
   
     <li>
@@ -5240,11 +5056,6 @@ locks the inference based on the given InputPoint(s).</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>1st InputPoint to inference to.</p>
-</div>
-      
     </li>
   
     <li>
@@ -5255,11 +5066,6 @@ locks the inference based on the given InputPoint(s).</p>
         <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>2nd InputPoint to inference to.</p>
-</div>
       
     </li>
   
@@ -5392,8 +5198,7 @@ locks the inference based on the given InputPoint(s).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The pick_helper method is used to retrieve a pick helper for the view. See
-the PickHelper class for information on pick helpers.</p>
+<p>The pick_helper method is used to retrieve a pick helper for the view. See the PickHelper class for information on pick helpers.</p>
 
 <p>This call returns an initialized PickHelper.</p>
 
@@ -5563,8 +5368,7 @@ the PickHelper class for information on pick helpers.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The pickray method is used to retrieve a ray passing through a given screen
-position in the viewing direction.</p>
+<p>The pickray method is used to retrieve a ray passing through a given screen position in the viewing direction.</p>
 
 
   </div>
@@ -5731,17 +5535,14 @@ position in the viewing direction.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the pixel-size by the same
-factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the pixel-size by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The pixels_to_model method is used to compute a model size from a pixel
-size at a given point.</p>
+<p>The pixels_to_model method is used to compute a model size from a pixel size at a given point.</p>
 
-<p>This method is useful for deciding how big to draw something based on a
-desired size in pixels.</p>
+<p>This method is useful for deciding how big to draw something based on a desired size in pixels.</p>
 
 
   </div>
@@ -5857,9 +5658,7 @@ desired size in pixels.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This method might impact performance and if used incorrectly cause
-instability or crashes. Don&#39;t use this unless you have verified that
-you cannot use <span class='object_link'><a href="#invalidate-instance_method" title="Sketchup::View#invalidate (method)">#invalidate</a></span> instead.</p>
+<p>This method might impact performance and if used incorrectly cause instability or crashes. Don&#39;t use this unless you have verified that you cannot use <span class='object_link'><a href="#invalidate-instance_method" title="Sketchup::View#invalidate (method)">#invalidate</a></span> instead.</p>
 </div>
   </div>
 
@@ -5932,12 +5731,9 @@ you cannot use <span class='object_link'><a href="#invalidate-instance_method" t
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Releases a texture loaded via <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>, freeing up it&#39;s memory.
-It&#39;s good practice to do so whenever there is no longer any need for
-the resource.</p>
+<p>Releases a texture loaded via <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>, freeing up it&#39;s memory. It&#39;s good practice to do so whenever there is no longer any need for the resource.</p>
 
-<p>For example, when your tool deactivates you probably want to release your
-resources as you don&#39;t know if your tool will be used again.</p>
+<p>For example, when your tool deactivates you probably want to release your resources as you don&#39;t know if your tool will be used again.</p>
 
 
   </div>
@@ -5950,7 +5746,6 @@ resources as you don&#39;t know if your tool will be used again.</p>
       
       <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
   <span class='kw'>class</span> <span class='const'>MyTool</span>
-
     <span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span>
       <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
       <span class='id identifier rubyid_image_rep'>image_rep</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_image_rep'>image_rep</span>
@@ -5964,9 +5759,8 @@ resources as you don&#39;t know if your tool will be used again.</p>
     <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
       <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
       <span class='id identifier rubyid_uvs'>uvs</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
-      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='label'>texture_id:</span> <span class='ivar'>@texture_id</span><span class='comma'>,</span> <span class='label'>uvs:</span> <span class='id identifier rubyid_uvs'>uvs</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_QUADS-constant" title="GL_QUADS (constant)">GL_QUADS</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='comma'>,</span> <span class='label'>texture:</span> <span class='ivar'>@texture_id</span><span class='comma'>,</span> <span class='label'>uvs:</span> <span class='id identifier rubyid_uvs'>uvs</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
-
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_tool'><span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">select_tool</a></span></span><span class='lparen'>(</span><span class='const'>Example</span><span class='op'>::</span><span class='const'>MyTool</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
@@ -6030,8 +5824,7 @@ resources as you don&#39;t know if your tool will be used again.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>
@@ -6129,12 +5922,9 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The screen_coords method is used to retrieve the screen coordinates of the
-given point on the screen.</p>
+<p>The screen_coords method is used to retrieve the screen coordinates of the given point on the screen.</p>
 
-<p>The x and y values returned correspond to the x and y screen coordinates.
-Ignore the z values.  If the referenced point is not in the current
-viewport,  the x and/or y value may be negative.</p>
+<p>The x and y values returned correspond to the x and y screen coordinates. Ignore the z values.  If the referenced point is not in the current viewport,  the x and/or y value may be negative.</p>
 
 
   </div>
@@ -6231,9 +6021,7 @@ viewport,  the x and/or y value may be negative.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set the drawing color for the view based on the direction of a line that
-you want to draw. These colors will match the axes colors in the SketchUp
-model (typically blue for straight up and down, etc.)</p>
+<p>Set the drawing color for the view based on the direction of a line that you want to draw. These colors will match the axes colors in the SketchUp model (typically blue for straight up and down, etc.)</p>
 
 <p>This method is usually invoked within the draw method of a tool.</p>
 
@@ -6348,11 +6136,9 @@ model (typically blue for straight up and down, etc.)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The show_frame method is used to show a frame of an Animation object in the
-current view.</p>
+<p>The show_frame method is used to show a frame of an Animation object in the current view.</p>
 
-<p>You can supply an optional delay in seconds to wait before showing the next
-frame. This can be useful to control the speed at which the animation runs.</p>
+<p>You can supply an optional delay in seconds to wait before showing the next frame. This can be useful to control the speed at which the animation runs.</p>
 
 
   </div>
@@ -6447,18 +6233,14 @@ frame. This can be useful to control the speed at which the animation runs.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Under Windows the font name must be less than 32 characters - due to system
-limitations.</p>
+<p>Under Windows the font name must be less than 32 characters - due to system limitations.</p>
 </div>
   </div>
 
 
-<p>This method is used to compute the bounds of the text when using
-<span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span>. The bounds are not a tight fit around the top and bottom as
-they include varying amount of line spacing depending on the font used.</p>
+<p>This method is used to compute the bounds of the text when using <span class='object_link'><a href="#draw_text-instance_method" title="Sketchup::View#draw_text (method)">#draw_text</a></span>. The bounds are not a tight fit around the top and bottom as they include varying amount of line spacing depending on the font used.</p>
 
-<p>The <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span> option will align the text to the center of
-the height of the first line, not the whole boundingbox of the text.</p>
+<p>The <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span> option will align the text to the center of the height of the first line, not the whole boundingbox of the text.</p>
 
 <p><strong>Example of different vertical alignment and text bounds:</strong></p>
 
@@ -6570,8 +6352,7 @@ the height of the first line, not the whole boundingbox of the text.</p>
       
         &mdash;
         <div class='inline'>
-<p>The text can be customized by providing a hash or named arguments of
-options.</p>
+<p>The text can be customized by providing a hash or named arguments of options.</p>
 </div>
       
     </li>
@@ -6596,8 +6377,7 @@ options.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>The name of the font to use. If it does not exist on the system, a default
-font will be used instead.</p>
+<p>The name of the font to use. If it does not exist on the system, a default font will be used instead.</p>
 </div>
           
         </li>
@@ -6649,8 +6429,7 @@ font will be used instead.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>The text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextAlignLeft-constant" title="TextAlignLeft (constant)">TextAlignLeft</a></span>,
-<span class='object_link'><a href="../top-level-namespace.html#TextAlignCenter-constant" title="TextAlignCenter (constant)">TextAlignCenter</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span>.</p>
+<p>The text alignment, one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextAlignLeft-constant" title="TextAlignLeft (constant)">TextAlignLeft</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextAlignCenter-constant" title="TextAlignCenter (constant)">TextAlignCenter</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span>.</p>
 </div>
           
         </li>
@@ -6663,9 +6442,7 @@ font will be used instead.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>The vertical text alignment one of the following constants:
-<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>,
-<span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>.</p>
+<p>The vertical text alignment one of the following constants: <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>, <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or <span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>.</p>
 </div>
           
         </li>
@@ -6729,8 +6506,7 @@ font will be used instead.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Set a tooltip to display in the view. This is useful for displaying
-tooltips in a tool that you write in Ruby.</p>
+<p>Set a tooltip to display in the view. This is useful for displaying tooltips in a tool that you write in Ruby.</p>
 
 
   </div>
@@ -6827,8 +6603,7 @@ tooltips in a tool that you write in Ruby.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The vpheight method is used to retrieve the height of the viewport for the
-view.</p>
+<p>The vpheight method is used to retrieve the height of the viewport for the view.</p>
 
 
   </div>
@@ -6857,7 +6632,7 @@ view.</p>
       
         &mdash;
         <div class='inline'>
-<p>the height of the viewport in pixels.</p>
+<p>the height of the viewport in physical pixels.</p>
 </div>
       
     </li>
@@ -6896,8 +6671,7 @@ view.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The vpwidth method is used to retrieve the width of the viewport for the
-view.</p>
+<p>The vpwidth method is used to retrieve the width of the viewport for the view.</p>
 
 
   </div>
@@ -6924,7 +6698,7 @@ view.</p>
       
         &mdash;
         <div class='inline'>
-<p>the width of the viewport in pixels.</p>
+<p>the width of the viewport in physical pixels.</p>
 </div>
       
     </li>
@@ -6969,8 +6743,9 @@ view.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#write_image-instance_method" title="Sketchup::View#write_image (method)">#write_image</a></span> method is used to write the current view to an image
-file.</p>
+<p>The <span class='object_link'><a href="#write_image-instance_method" title="Sketchup::View#write_image (method)">#write_image</a></span> method is used to write the current view to an image file.</p>
+
+<p>Supported file types are `.png`, `.jpg`, `.jpeg`, `gif`, `.bmp`, `.tif`. For other file formats  available from the GUI in File &gt; Export &gt; 2D Graphics, .e.g `.pdf`, use <span class='object_link'><a href="Model.html#export-instance_method" title="Sketchup::Model#export (method)">Model#export</a></span>.</p>
 
 
   </div>
@@ -6989,8 +6764,7 @@ file.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prefer the overload with option hash instead of this variant. This overload
-is not updated with new options.</p>
+<p>Prefer the overload with option hash instead of this variant. This overload is not updated with new options.</p>
 </div>
   </div>
 
@@ -7004,12 +6778,12 @@ is not updated with new options.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>filename =&gt; &quot;c:/tmp/write_image.png&quot;
-antialias =&gt; false
-compression =&gt; 0.9
-model = Sketchup.active_model
-view = model.active_view
-view.write_image(filename, 640, 480, antialias, compression)</code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'><span class='object_link'><a href="../Sketchup.html#temp_dir-class_method" title="Sketchup.temp_dir (method)">temp_dir</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_antialias'>antialias</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='id identifier rubyid_compression'>compression</span> <span class='op'>=</span> <span class='float'>0.9</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_write_image'>write_image</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='int'>640</span><span class='comma'>,</span> <span class='int'>480</span><span class='comma'>,</span> <span class='id identifier rubyid_antialias'>antialias</span><span class='comma'>,</span> <span class='id identifier rubyid_compression'>compression</span><span class='rparen'>)</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -7093,8 +6867,7 @@ view.write_image(filename, 640, 480, antialias, compression)</code></pre>
       
         &mdash;
         <div class='inline'>
-<p>Compression factor for JPEG images, between <code>0.0</code> and
-<code>1.0</code>.</p>
+<p>Compression factor for JPEG images, between <code>0.0</code> and <code>1.0</code>.</p>
 </div>
       
     </li>
@@ -7121,7 +6894,7 @@ view.write_image(filename, 640, 480, antialias, compression)</code></pre>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-  <span class='symbol'>:filename</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/tmp/write_image.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:filename</span> <span class='op'>=&gt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'><span class='object_link'><a href="../Sketchup.html#temp_dir-class_method" title="Sketchup.temp_dir (method)">temp_dir</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
   <span class='symbol'>:width</span> <span class='op'>=&gt;</span> <span class='int'>640</span><span class='comma'>,</span>
   <span class='symbol'>:height</span> <span class='op'>=&gt;</span> <span class='int'>480</span><span class='comma'>,</span>
   <span class='symbol'>:antialias</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
@@ -7179,7 +6952,7 @@ view.write_image(filename, 640, 480, antialias, compression)</code></pre>
           </span>
           
             &mdash; <div class='inline'>
-<p>Width in pixels (max <code>1600</code>).</p>
+<p>Width in pixels (max <code>16000</code>).</p>
 </div>
           
         </li>
@@ -7211,9 +6984,7 @@ view.write_image(filename, 640, 480, antialias, compression)</code></pre>
           </span>
           
             &mdash; <div class='inline'>
-<p>Scaling factor for elements that are viewport dependent, such as text
-heights, arrow heads, line widths, stipple patterns, etc. (Added in 
-SketchUp 2019.2)</p>
+<p>Scaling factor for elements that are viewport dependent, such as text heights, arrow heads, line widths, stipple patterns, etc. (Added in  SketchUp 2019.2)</p>
 </div>
           
         </li>
@@ -7241,8 +7012,7 @@ SketchUp 2019.2)</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Compression factor for JPEG, images between <code>0.0</code> and
-<code>1.0</code>.</p>
+<p>Compression factor for JPEG, images between <code>0.0</code> and <code>1.0</code>.</p>
 </div>
           
         </li>
@@ -7292,9 +7062,7 @@ SketchUp 2019.2)</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>It is possible to dump the framebuffer to file by setting
-<code>:source</code> to <code>:framebuffer</code>. When saving the
-framebuffer only the following options are valid.</p>
+<p>It is possible to dump the framebuffer to file by setting <code>:source</code> to <code>:framebuffer</code>. When saving the framebuffer only the following options are valid.</p>
 
 
   </div>
@@ -7306,7 +7074,7 @@ framebuffer only the following options are valid.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-  <span class='symbol'>:filename</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/tmp/write_image.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='symbol'>:filename</span> <span class='op'>=&gt;</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'><span class='object_link'><a href="../Sketchup.html#temp_dir-class_method" title="Sketchup.temp_dir (method)">temp_dir</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span>
   <span class='symbol'>:source</span> <span class='op'>=&gt;</span> <span class='symbol'>:framebuffer</span><span class='comma'>,</span>
   <span class='symbol'>:compression</span> <span class='op'>=&gt;</span> <span class='float'>0.9</span><span class='comma'>,</span>
 <span class='rbrace'>}</span>
@@ -7377,8 +7145,7 @@ framebuffer only the following options are valid.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>Compression factor for JPEG, images between <code>0.0</code> and
-<code>1.0</code>.</p>
+<p>Compression factor for JPEG, images between <code>0.0</code> and <code>1.0</code>.</p>
 </div>
           
         </li>
@@ -7493,8 +7260,7 @@ framebuffer only the following options are valid.</p>
       
         &mdash;
         <div class='inline'>
-<p>A Float zoom factor from 1.0 or larger or an Array or collection of
-entities to “zoom extents” around.</p>
+<p>A Float zoom factor from 1.0 or larger or an Array or collection of entities to “zoom extents” around.</p>
 </div>
       
     </li>
@@ -7555,8 +7321,7 @@ entities to “zoom extents” around.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The zoom_extents method is used to zoom to the extents about the entire
-model, as if the user has selected the zoom extents command from the menu.</p>
+<p>The zoom_extents method is used to zoom to the extents about the entire model, as if the user has selected the zoom extents command from the menu.</p>
 
 
   </div>

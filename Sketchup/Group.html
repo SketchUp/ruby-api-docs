@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -190,13 +192,7 @@
     
 <p>A Group class contains methods for manipulating groups of entities.</p>
 
-<p>Groups in SketchUp are very similar to Components, except that there is no
-instancing of groups. That means that you always will have one and only one
-of each of your groups. (In the actual implementation, SketchUp keeps track
-of groups as a special kind of Component that combines properties of
-definitions and instances, which is why you will see deprecated methods
-like Group.make_unique, and the class of observer you attach to Groups are
-ComponentInstance observers.)</p>
+<p>Groups in SketchUp are very similar to components, but can from a user point of view be thought of as unique objects. Groups can be instanced when copied but are silently made unique when edited through the GUI. To honor this behavior, make sure to call <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::Group#make_unique (method)">#make_unique</a></span> before modifying a group through the API.</p>
 
 
   </div>
@@ -257,8 +253,7 @@ ComponentInstance observers.)</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_observer method is used to add a ComponentInstance observer to the
-group.</p>
+<p>The add_observer method is used to add a ComponentInstance observer to the group.</p>
 </div></span>
   
 </li>
@@ -282,8 +277,7 @@ group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The copy method is used to create a new Group object that is a copy of the
-group.</p>
+<p>The copy method is used to create a new Group object that is a copy of the group.</p>
 </div></span>
   
 </li>
@@ -307,8 +301,7 @@ group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The definition method is used to retrieve the component definition for this
-group.</p>
+<p>The definition method is used to retrieve the component definition for this group.</p>
 </div></span>
   
 </li>
@@ -380,8 +373,7 @@ group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The entities method is used to retrieve a collection of entities in the
-group.</p>
+<p>The entities method is used to retrieve a collection of entities in the group.</p>
 </div></span>
   
 </li>
@@ -405,8 +397,7 @@ group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The equals? method is used to determine if a group is geometrically
-equivalent to another group.</p>
+<p>The equals? method is used to determine if a group is geometrically equivalent to another group.</p>
 </div></span>
   
 </li>
@@ -454,8 +445,7 @@ equivalent to another group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The guid method is used to get the base 64 encoded unique id for this
-SketchUp object.</p>
+<p>The guid method is used to get the base 64 encoded unique id for this SketchUp object.</p>
 </div></span>
   
 </li>
@@ -479,14 +469,13 @@ SketchUp object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The intersect method is used to compute the boolean intersection of two
-groups representing manifold solid volumes (this &amp; arg).</p>
+<p>The intersect method is used to compute the boolean intersection of two groups representing manifold solid volumes (this &amp; arg).</p>
 </div></span>
   
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#local_bounds-instance_method" title="#local_bounds (instance method)">#<strong>local_bounds</strong>  &#x21d2; Geom::BoundingBox </a>
@@ -499,13 +488,12 @@ groups representing manifold solid volumes (this &amp; arg).</p>
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The local_bounds method returns the BoundingBox object that defines the
-size of the group in an untransformed state.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>In favor of `group.definition.bounds`.</p>
 </div></span>
   
 </li>
@@ -577,8 +565,7 @@ size of the group in an untransformed state.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The make_unique method is used to force a group to have a unique
-definition.</p>
+<p>The <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::Group#make_unique (method)">#make_unique</a></span> method is used to force a group to have a unique definition.</p>
 </div></span>
   
 </li>
@@ -611,7 +598,7 @@ definition.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#move!-instance_method" title="#move! (instance method)">#<strong>move!</strong>(transform)  &#x21d2; Sketchup::Group </a>
+      <a href="#move!-instance_method" title="#move! (instance method)">#<strong>move!</strong>(transformation)  &#x21d2; Sketchup::Group </a>
     
 
     
@@ -626,7 +613,7 @@ definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The move! method is used to apply a transformation to the group.</p>
+<p>The <span class='object_link'><a href="#move!-instance_method" title="Sketchup::Group#move! (method)">#move!</a></span> method is used to set the transformation of this group instance, similarly to <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">#transformation=</a></span> but without recording to the undo stack.</p>
 </div></span>
   
 </li>
@@ -698,8 +685,7 @@ definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The outer_shell method is used to compute the outer shell of the two groups
-representing manifold solid volumes (this || arg).</p>
+<p>The outer_shell method is used to compute the outer shell of the two groups representing manifold solid volumes (this || arg).</p>
 </div></span>
   
 </li>
@@ -723,8 +709,7 @@ representing manifold solid volumes (this || arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove a ComponentInstance observer
-from the group.</p>
+<p>The remove_observer method is used to remove a ComponentInstance observer from the group.</p>
 </div></span>
   
 </li>
@@ -748,9 +733,7 @@ from the group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The show_differences method is used to determine if a group is
-geometrically equivalent to another group and in addition move the non-
-matching and matching geometry to new layers.</p>
+<p>The show_differences method is used to determine if a group is geometrically equivalent to another group and in addition move the non- matching and matching geometry to new layers.</p>
 </div></span>
   
 </li>
@@ -774,8 +757,7 @@ matching and matching geometry to new layers.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The split method is used to compute the boolean split (map overlay) of the
-two groups representing manifold solid volumes (this ^ arg).</p>
+<p>The split method is used to compute the boolean split (map overlay) of the two groups representing manifold solid volumes (this ^ arg).</p>
 </div></span>
   
 </li>
@@ -799,8 +781,7 @@ two groups representing manifold solid volumes (this ^ arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The subtract method is used to compute the boolean difference of the two
-groups representing manifold solid volumes (this - arg).</p>
+<p>The subtract method is used to compute the boolean difference of the two groups representing manifold solid volumes (this - arg).</p>
 </div></span>
   
 </li>
@@ -824,8 +805,7 @@ groups representing manifold solid volumes (this - arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_component method is used to convert the group to a component
-instance.</p>
+<p>The to_component method is used to convert the group to a component instance.</p>
 </div></span>
   
 </li>
@@ -873,8 +853,7 @@ instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The transformation method is used to retrieve the transformation for the
-group.</p>
+<p>The transformation method is used to retrieve the transformation for the group.</p>
 </div></span>
   
 </li>
@@ -883,7 +862,7 @@ group.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transformation=-instance_method" title="#transformation= (instance method)">#<strong>transformation=</strong>(transform)  &#x21d2; Geom::Transformation </a>
+      <a href="#transformation=-instance_method" title="#transformation= (instance method)">#<strong>transformation=</strong>(transformation)  &#x21d2; Object </a>
     
 
     
@@ -898,7 +877,7 @@ group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The transformation= method is used to set the transformation for the group.</p>
+<p>The <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">#transformation=</a></span> method is used to set the transformation of this group.</p>
 </div></span>
   
 </li>
@@ -922,8 +901,7 @@ group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The trim method is used to compute the (non-destructive) boolean difference
-of the two groups representing manifold solid volumes (this - arg).</p>
+<p>The trim method is used to compute the (non-destructive) boolean difference of the two groups representing manifold solid volumes (this - arg).</p>
 </div></span>
   
 </li>
@@ -947,8 +925,7 @@ of the two groups representing manifold solid volumes (this - arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The union method is used to compute the boolean union of the two groups
-representing manifold solid volumes (this | arg).</p>
+<p>The union method is used to compute the boolean union of the two groups representing manifold solid volumes (this | arg).</p>
 </div></span>
   
 </li>
@@ -972,8 +949,7 @@ representing manifold solid volumes (this | arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The volume method is used to compute the volume of this group if and only
-if this group is manifold.</p>
+<p>The volume method is used to compute the volume of this group if and only if this group is manifold.</p>
 </div></span>
   
 </li>
@@ -1024,8 +1000,7 @@ if this group is manifold.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_observer method is used to add a ComponentInstance observer to the
-group.</p>
+<p>The add_observer method is used to add a ComponentInstance observer to the group.</p>
 
 
   </div>
@@ -1125,8 +1100,7 @@ group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The copy method is used to create a new Group object that is a copy of the
-group.</p>
+<p>The copy method is used to create a new Group object that is a copy of the group.</p>
 
 
   </div>
@@ -1195,8 +1169,7 @@ group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The definition method is used to retrieve the component definition for this
-group.</p>
+<p>The definition method is used to retrieve the component definition for this group.</p>
 
 
   </div>
@@ -1468,8 +1441,7 @@ group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The entities method is used to retrieve a collection of entities in the
-group.</p>
+<p>The entities method is used to retrieve a collection of entities in the group.</p>
 
 
   </div>
@@ -1557,8 +1529,7 @@ group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The equals? method is used to determine if a group is geometrically
-equivalent to another group.</p>
+<p>The equals? method is used to determine if a group is geometrically equivalent to another group.</p>
 
 
   </div>
@@ -1728,8 +1699,7 @@ equivalent to another group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The guid method is used to get the base 64 encoded unique id for this
-SketchUp object.</p>
+<p>The guid method is used to get the base 64 encoded unique id for this SketchUp object.</p>
 
 
   </div>
@@ -1798,10 +1768,15 @@ SketchUp object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The intersect method is used to compute the boolean intersection of two
-groups representing manifold solid volumes (this &amp; arg).  If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The intersect method is used to compute the boolean intersection of two groups representing manifold solid volumes (this &amp; arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -1862,8 +1837,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds. Otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds. Otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -1901,12 +1875,11 @@ solids and the operation succeeds. Otherwise nil is returned.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>The local_bounds method returns the BoundingBox object that defines the
-size of the group in an untransformed state. Useful for determining the
-original width, height, and depth of a group regardless of its current
-position or scale. For components, you can get a similar result by checking
-my_instance.definition.bounds.</p>
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>In favor of `group.definition.bounds`.</p>
+</div></div>
+
+<p>The <span class='object_link'><a href="#local_bounds-instance_method" title="Sketchup::Group#local_bounds (method)">#local_bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding the contents of a <span class='object_link'><a href="" title="Sketchup::Group (class)">Sketchup::Group</a></span>, in the group&#39;s own internal coordinate system.</p>
 
 
   </div>
@@ -1939,11 +1912,6 @@ my_instance.definition.bounds.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>a BoundingBox object</p>
-</div>
       
     </li>
   
@@ -2150,15 +2118,9 @@ my_instance.definition.bounds.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The make_unique method is used to force a group to have a unique
-definition.</p>
+<p>The <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::Group#make_unique (method)">#make_unique</a></span> method is used to force a group to have a unique definition. If the group is already unique in the model, nothing happens.</p>
 
-<p>Copying a group using the copy tool in SketchUp will create copies of the
-group that share a common definition until an instance is edited manually
-or this method is used. If multiple copies are made, all copies share a
-definition until all copies are edited manually, or all copies have this
-method used on them. This method ensures that the group uses a unique
-definition entry in the drawing database.</p>
+<p>Copying a group in SketchUp will create a group that shares the same definition. SketchUp implicitly makes group unique when edited from the GUI, and from a user point of view groups could be thought of as always being unique. To honor this behavior, call this method before editing a group through the API.</p>
 
 
   </div>
@@ -2285,7 +2247,7 @@ definition entry in the drawing database.</p>
   <h3 class="signature " id="move!-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>move!</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> 
+    #<strong>move!</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Group (class)">Sketchup::Group</a></span></tt> 
   
 
   
@@ -2294,11 +2256,17 @@ definition entry in the drawing database.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The move! method is used to apply a transformation to the group.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Despite the name being similar to <span class='object_link'><a href="#transform!-instance_method" title="Sketchup::Group#transform! (method)">#transform!</a></span>, this method closer corresponds to <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">#transformation=</a></span>.</p>
+</div>
+  </div>
 
-<p>This method is the same as the transform! method except that it does not
-record the move in an undo operation. This method is useful for
-transparently moving things during an animation.</p>
+
+<p>The <span class='object_link'><a href="#move!-instance_method" title="Sketchup::Group#move! (method)">#move!</a></span> method is used to set the transformation of this group instance, similarly to <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">#transformation=</a></span> but without recording to the undo stack.</p>
+
+<p>This method is useful for moving entities inside of an animation or page transition.</p>
 
 
   </div>
@@ -2310,7 +2278,7 @@ transparently moving things during an animation.</p>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>500</span><span class='comma'>,</span><span class='int'>500</span><span class='comma'>,</span><span class='int'>500</span>
-<span class='id identifier rubyid_t'>t</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span> <span class='id identifier rubyid_point'>point</span>
+<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span> <span class='id identifier rubyid_point'>point</span>
 <span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -2330,13 +2298,7 @@ transparently moving things during an animation.</p>
 <span class='comment'># Add a face to within the group
 </span><span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities2'>entities2</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span> <span class='id identifier rubyid_pts'>pts</span>
 <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Group before Move</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_move!'>move!</span> <span class='id identifier rubyid_t'>t</span>
-<span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_group'>group</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Group after move</span><span class='tstring_end'>&quot;</span></span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_group'>group</span>
-<span class='kw'>else</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></code></pre>
+<span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_move!'>move!</span><span class='lparen'>(</span><span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2352,17 +2314,12 @@ transparently moving things during an animation.</p>
   
     <li>
       
-        <span class='name'>transform</span>
+        <span class='name'>transformation</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A Transformation object.</p>
-</div>
       
     </li>
   
@@ -2593,10 +2550,7 @@ transparently moving things during an animation.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The outer_shell method is used to compute the outer shell of the two groups
-representing manifold solid volumes (this || arg).  If the specified
-objects (this and arg) do not represent manifold volumes, this method
-fails.</p>
+<p>The outer_shell method is used to compute the outer shell of the two groups representing manifold solid volumes (this || arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -2657,8 +2611,7 @@ fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -2697,8 +2650,7 @@ solids and the operation succeeds otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove a ComponentInstance observer
-from the group.</p>
+<p>The remove_observer method is used to remove a ComponentInstance observer from the group.</p>
 
 
   </div>
@@ -2800,17 +2752,11 @@ from the group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The show_differences method is used to determine if a group is
-geometrically equivalent to another group and in addition move the non-
-matching and matching geometry to new layers.</p>
+<p>The show_differences method is used to determine if a group is geometrically equivalent to another group and in addition move the non- matching and matching geometry to new layers.</p>
 
-<p>This method will move both groups to Layer0.  Geometry that is the same in
-both groups will be moved to a new layer named group_name + “_same”.
-Geometry that is not the same will be moved to a layer named group_name +
-“_diff”.</p>
+<p>This method will move both groups to Layer0.  Geometry that is the same in both groups will be moved to a new layer named group_name + “_same”. Geometry that is not the same will be moved to a layer named group_name + “_diff”.</p>
 
-<p>If verbose is true, a list of all the geometry that is different from one
-group to the other is displayed texturally in the Ruby Console.</p>
+<p>If verbose is true, a list of all the geometry that is different from one group to the other is displayed texturally in the Ruby Console.</p>
 
 
   </div>
@@ -2865,8 +2811,7 @@ group to the other is displayed texturally in the Ruby Console.</p>
       
         &mdash;
         <div class='inline'>
-<p>A boolean flag indicating whether to display a textural report of the found
-differences to the Ruby console.</p>
+<p>A boolean flag indicating whether to display a textural report of the found differences to the Ruby console.</p>
 </div>
       
     </li>
@@ -2927,10 +2872,15 @@ differences to the Ruby console.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The split method is used to compute the boolean split (map overlay) of the
-two groups representing manifold solid volumes (this ^ arg). If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The split method is used to compute the boolean split (map overlay) of the two groups representing manifold solid volumes (this ^ arg). If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -2991,11 +2941,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>A vector (array) of the three resultant groups If the two objects (this and
-arg) represent manifold solids and the operation succeeds otherwise nil is
-returned. The 3 groups are as follows: The intersection of volume 1 &amp;
-volume 2, the difference of volume 1 minus volume 2, and the reverse
-difference of volume 2 minus volume 1.</p>
+<p>A vector (array) of the three resultant groups If the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned. The 3 groups are as follows: The intersection of volume 1 &amp; volume 2, the difference of volume 1 minus volume 2, and the reverse difference of volume 2 minus volume 1.</p>
 </div>
       
     </li>
@@ -3034,10 +2980,15 @@ difference of volume 2 minus volume 1.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The subtract method is used to compute the boolean difference of the two
-groups representing manifold solid volumes (this - arg).  If the specified
-objects (this and arg) do not represent manifold volumes, this method
-fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The subtract method is used to compute the boolean difference of the two groups representing manifold solid volumes (this - arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -3098,8 +3049,7 @@ fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds. Otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds. Otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -3138,8 +3088,7 @@ solids and the operation succeeds. Otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_component method is used to convert the group to a component
-instance.</p>
+<p>The to_component method is used to convert the group to a component instance.</p>
 
 
   </div>
@@ -3334,8 +3283,7 @@ instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The transformation method is used to retrieve the transformation for the
-group.</p>
+<p>The transformation method is used to retrieve the transformation for the group.</p>
 
 
   </div>
@@ -3396,7 +3344,7 @@ group.</p>
   <h3 class="signature " id="transformation=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>transformation=</strong>(transform)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
+    #<strong>transformation=</strong>(transformation)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3405,7 +3353,7 @@ group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The transformation= method is used to set the transformation for the group.</p>
+<p>The <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">#transformation=</a></span> method is used to set the transformation of this group</p>
 
 
   </div>
@@ -3420,8 +3368,8 @@ group.</p>
 </span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_group'><span class='object_link'><a href="Entities.html#add_group-instance_method" title="Sketchup::Entities#add_group (method)">add_group</a></span></span>
 <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
-<span class='id identifier rubyid_new_transform'>new_transform</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='id identifier rubyid_new_transform'>new_transform</span></code></pre>
+<span class='id identifier rubyid_new_transformation'>new_transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='id identifier rubyid_new_transformation'>new_transformation</span></code></pre>
     
   </div>
 
@@ -3437,17 +3385,12 @@ group.</p>
   
     <li>
       
-        <span class='name'>transform</span>
+        <span class='name'>transformation</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The Transformation object to apply</p>
-</div>
       
     </li>
   
@@ -3456,24 +3399,6 @@ group.</p>
 
 </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the applied transformation</p>
-</div>
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3507,10 +3432,15 @@ group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The trim method is used to compute the (non-destructive) boolean difference
-of the two groups representing manifold solid volumes (this - arg).  If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The trim method is used to compute the (non-destructive) boolean difference of the two groups representing manifold solid volumes (this - arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -3571,8 +3501,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -3611,9 +3540,15 @@ solids and the operation succeeds otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The union method is used to compute the boolean union of the two groups
-representing manifold solid volumes (this | arg).  If the specified objects
-(this and arg) do not represent manifold volumes, this method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The union method is used to compute the boolean union of the two groups representing manifold solid volumes (this | arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -3674,8 +3609,7 @@ representing manifold solid volumes (this | arg).  If the specified objects
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds. Otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds. Otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -3714,8 +3648,7 @@ solids and the operation succeeds. Otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The volume method is used to compute the volume of this group if and only
-if this group is manifold.</p>
+<p>The volume method is used to compute the volume of this group if and only if this group is manifold.</p>
 
 
   </div>
@@ -3746,8 +3679,7 @@ if this group is manifold.</p>
       
         &mdash;
         <div class='inline'>
-<p>If the group represents a manifold volume, volume will be a positive value.
-If volume is negative, the group is not manifold.</p>
+<p>If the group represents a manifold volume, volume will be a positive value. If volume is negative, the group is not manifold.</p>
 </div>
       
     </li>

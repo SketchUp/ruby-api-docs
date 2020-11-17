@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
 
     <script>
@@ -184,11 +186,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Sketchup::Licensing::ExtensionLicense class is used to store extension
-license information. An instance of this class is returned by
-Sketchup::Licensing.get_extension_license. Note that this is a temporary
-object representing the extension licensing state for the moment it was
-returned. It will not reflect any licensing state changes that may occur.</p>
+<p>The Sketchup::Licensing::ExtensionLicense class is used to store extension license information. An instance of this class is returned by Sketchup::Licensing.get_extension_license. Note that this is a temporary object representing the extension licensing state for the moment it was returned. It will not reflect any licensing state changes that may occur.</p>
 
 
   </div>
@@ -249,8 +247,7 @@ returned. It will not reflect any licensing state changes that may occur.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The days_remaining method is used to get the number of days remaining until
-license expiration.</p>
+<p>The days_remaining method is used to get the number of days remaining until license expiration.</p>
 </div></span>
   
 </li>
@@ -274,8 +271,7 @@ license expiration.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The error_description method is used to obtain error information in case of
-failure to acquire a license.</p>
+<p>The error_description method is used to obtain error information in case of failure to acquire a license.</p>
 </div></span>
   
 </li>
@@ -299,8 +295,7 @@ failure to acquire a license.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The licensed? method is used to decide whether the extension is licensed to
-run or not.</p>
+<p>The licensed? method is used to decide whether the extension is licensed to run or not.</p>
 </div></span>
   
 </li>
@@ -324,8 +319,7 @@ run or not.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The state method returns a constant indicating the specific licensing
-state.</p>
+<p>The state method returns a constant indicating the specific licensing state.</p>
 </div></span>
   
 </li>
@@ -354,8 +348,7 @@ state.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The days_remaining method is used to get the number of days remaining until
-license expiration.</p>
+<p>The days_remaining method is used to get the number of days remaining until license expiration.</p>
 
 
   </div>
@@ -386,8 +379,7 @@ license expiration.</p>
       
         
         <div class='inline'>
-<p>Integer - Number of days until license expiration. Zero if a permanent
-license or not licensed.</p>
+<p>Integer - Number of days until license expiration. Zero if a permanent license or not licensed.</p>
 </div>
       
     </li>
@@ -426,9 +418,7 @@ license or not licensed.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The error_description method is used to obtain error information in case of
-failure to acquire a license. This is meant to aid in debugging only.
-Extensions should not rely on any exact error description.</p>
+<p>The error_description method is used to obtain error information in case of failure to acquire a license. This is meant to aid in debugging only. Extensions should not rely on any exact error description.</p>
 
 
   </div>
@@ -498,8 +488,7 @@ Extensions should not rely on any exact error description.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The licensed? method is used to decide whether the extension is licensed to
-run or not.</p>
+<p>The licensed? method is used to decide whether the extension is licensed to run or not.</p>
 
 
   </div>
@@ -530,8 +519,7 @@ run or not.</p>
       
         &mdash;
         <div class='inline'>
-<p>Boolean - true if the extension is allowed to run, false if it is not
-licensed and should quit.</p>
+<p>Boolean - true if the extension is allowed to run, false if it is not licensed and should quit.</p>
 </div>
       
     </li>
@@ -570,10 +558,7 @@ licensed and should quit.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The state method returns a constant indicating the specific licensing
-state. These should be used for informational purposes only and not to
-decide if the extension is licensed to run. For that, please use the
-licensed? method.</p>
+<p>The state method returns a constant indicating the specific licensing state. These should be used for informational purposes only and not to decide if the extension is licensed to run. For that, please use the licensed? method.</p>
 
 
   </div>
@@ -604,9 +589,7 @@ licensed? method.</p>
       
         
         <div class='inline'>
-<p>Integer - One of Sketchup::Licensing::LICENSED,
-Sketchup::Licensing::EXPIRED, Sketchup::Licensing::TRIAL,
-Sketchup::Licensing::TRIAL_EXPIRED, Sketchup::Licensing::NOT_LICENSED</p>
+<p>Integer - One of Sketchup::Licensing::LICENSED, Sketchup::Licensing::EXPIRED, Sketchup::Licensing::TRIAL, Sketchup::Licensing::TRIAL_EXPIRED, Sketchup::Licensing::NOT_LICENSED</p>
 </div>
       
     </li>

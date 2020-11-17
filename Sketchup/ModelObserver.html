@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::ModelObserver
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,20 +185,16 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This observer interface is implemented to react to model events. To
-implement this observer, create a Ruby class of this type, override the
-desired methods, and add an instance of the observer to the model.</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>To implement this observer, create a Ruby class of this type, override the desired methods, and add an instance of the observer to the model.</p>
+</div>
+</div>
 
-<p>Note that the observers related to transactions (aka undoable operations)
-are primarily for reporting and debugging. Performing any edit operations
-of your own (such as modifying the model) inside the observer callback
-should be avoided, as it could cause crashes or model corruption. The most
-common use for these callbacks is to help debug problems where your Ruby
-script&#39;s <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and
-<span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> calls are somehow conflicting with
-SketchUp&#39;s native undo operations. You can set up an observer set to
-watch precisely what is going on.</p>
+<p>This observer interface is implemented to react to model events.</p>
+
+<p>Note that the observers related to transactions (aka undoable operations) are primarily for reporting and debugging. Performing any edit operations of your own (such as modifying the model) inside the observer callback should be avoided, as it could cause crashes or model corruption. The most common use for these callbacks is to help debug problems where your Ruby script&#39;s <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> calls are somehow conflicting with SketchUp&#39;s native undo operations. You can set up an observer set to watch precisely what is going on.</p>
 
 
   </div>
@@ -274,8 +272,7 @@ watch precisely what is going on.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onActivePathChanged-instance_method" title="Sketchup::ModelObserver#onActivePathChanged (method)">#onActivePathChanged</a></span> method is invoked when the user opens or closes
-a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> or <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> for editing.</p>
+<p>The <span class='object_link'><a href="#onActivePathChanged-instance_method" title="Sketchup::ModelObserver#onActivePathChanged (method)">#onActivePathChanged</a></span> method is invoked when the user opens or closes a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> or <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> for editing.</p>
 </div></span>
   
 </li>
@@ -299,8 +296,7 @@ a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::Co
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> method is invoked when the user
-context-clicks &gt; Save As on a component instance.</p>
+<p>The <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> method is invoked when the user context-clicks &gt; Save As on a component instance.</p>
 </div></span>
   
 </li>
@@ -324,8 +320,7 @@ context-clicks &gt; Save As on a component instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> method is invoked when the user
-context-clicks &gt; Save As on a component instance.</p>
+<p>The <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> method is invoked when the user context-clicks &gt; Save As on a component instance.</p>
 </div></span>
   
 </li>
@@ -397,8 +392,7 @@ context-clicks &gt; Save As on a component instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this
-model is exploded.</p>
+<p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this model is exploded.</p>
 </div></span>
   
 </li>
@@ -422,8 +416,7 @@ model is exploded.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onPidChanged-instance_method" title="Sketchup::ModelObserver#onPidChanged (method)">#onPidChanged</a></span> method is invoked when a persistent id in the model
-changes.</p>
+<p>The <span class='object_link'><a href="#onPidChanged-instance_method" title="Sketchup::ModelObserver#onPidChanged (method)">#onPidChanged</a></span> method is invoked when a persistent id in the model changes.</p>
 </div></span>
   
 </li>
@@ -447,8 +440,7 @@ changes.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onPlaceComponent-instance_method" title="Sketchup::ModelObserver#onPlaceComponent (method)">#onPlaceComponent</a></span> method is invoked when a component is “placed” into
-the model, meaning it is dragged from the Component Browser.</p>
+<p>The <span class='object_link'><a href="#onPlaceComponent-instance_method" title="Sketchup::ModelObserver#onPlaceComponent (method)">#onPlaceComponent</a></span> method is invoked when a component is “placed” into the model, meaning it is dragged from the Component Browser.</p>
 </div></span>
   
 </li>
@@ -472,8 +464,7 @@ the model, meaning it is dragged from the Component Browser.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onPostSaveModel-instance_method" title="Sketchup::ModelObserver#onPostSaveModel (method)">#onPostSaveModel</a></span> method is invoked after a model has been saved to
-disk.</p>
+<p>The <span class='object_link'><a href="#onPostSaveModel-instance_method" title="Sketchup::ModelObserver#onPostSaveModel (method)">#onPostSaveModel</a></span> method is invoked after a model has been saved to disk.</p>
 </div></span>
   
 </li>
@@ -569,8 +560,7 @@ disk.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is
-completed.</p>
+<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is completed.</p>
 </div></span>
   
 </li>
@@ -594,9 +584,7 @@ completed.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an
-undoable operation) starts and then is committed without anything being
-altered in between.</p>
+<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an undoable operation) starts and then is committed without anything being altered in between.</p>
 </div></span>
   
 </li>
@@ -620,9 +608,7 @@ altered in between.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a
-transaction (aka undo operation.) You can programmatically fire a redo by
-calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a transaction (aka undo operation.) You can programmatically fire a redo by calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
 </div></span>
   
 </li>
@@ -646,8 +632,7 @@ calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an
-undoable operation) starts.</p>
+<p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an undoable operation) starts.</p>
 </div></span>
   
 </li>
@@ -671,9 +656,7 @@ undoable operation) starts.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a
-transaction (aka undo operation.) You can programmatically fire an undo by
-calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a transaction (aka undo operation.) You can programmatically fire an undo by calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
 </div></span>
   
 </li>
@@ -702,20 +685,13 @@ calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onActivePathChanged-instance_method" title="Sketchup::ModelObserver#onActivePathChanged (method)">#onActivePathChanged</a></span> method is invoked when the user opens or closes
-a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> or <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> for editing.</p>
+<p>The <span class='object_link'><a href="#onActivePathChanged-instance_method" title="Sketchup::ModelObserver#onActivePathChanged (method)">#onActivePathChanged</a></span> method is invoked when the user opens or closes a <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> or <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> for editing.</p>
 
-<p>When the user opens an instance for editing the positions and
-transformations of the entities in the opened instance will be relative to
-global world coordinates instead of the local coordinates relative to their
-parent.</p>
+<p>When the user opens an instance for editing the positions and transformations of the entities in the opened instance will be relative to global world coordinates instead of the local coordinates relative to their parent.</p>
 
-<p>See <span class='object_link'><a href="Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Sketchup::Model#active_path</a></span> and <span class='object_link'><a href="Model.html#edit_transform-instance_method" title="Sketchup::Model#edit_transform (method)">Sketchup::Model#edit_transform</a></span> for
-methods that report the current edit origin vs. the global origin, etc.</p>
+<p>See <span class='object_link'><a href="Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Sketchup::Model#active_path</a></span> and <span class='object_link'><a href="Model.html#edit_transform-instance_method" title="Sketchup::Model#edit_transform (method)">Sketchup::Model#edit_transform</a></span> for methods that report the current edit origin vs. the global origin, etc.</p>
 
-<p>By using this observer callback, you can keep track of the various nested
-transformations as your users double click to drill into and out of
-component edits.</p>
+<p>By using this observer callback, you can keep track of the various nested transformations as your users double click to drill into and out of component edits.</p>
 
 
   </div>
@@ -799,10 +775,7 @@ component edits.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> method is invoked when the user
-context-clicks &gt; Save As on a component instance. It is called just
-after the component is written to disk, so you can restore the component to
-some state before returning control to the user.</p>
+<p>The <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> method is invoked when the user context-clicks &gt; Save As on a component instance. It is called just after the component is written to disk, so you can restore the component to some state before returning control to the user.</p>
 
 
   </div>
@@ -898,19 +871,11 @@ some state before returning control to the user.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> method is invoked when the user
-context-clicks &gt; Save As on a component instance. It is called just
-before the component is written to disk, so you can make changes within the
-handler and it will make it into the save.</p>
+<p>The <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> method is invoked when the user context-clicks &gt; Save As on a component instance. It is called just before the component is written to disk, so you can make changes within the handler and it will make it into the save.</p>
 
-<p>For example, you may decide that you want to add some attribute to every
-component that is saved out, but you do not want that attribute sticking
-around inside the current model. Within <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> you
-could add the attribute, and within <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> you could
-delete that attribute.</p>
+<p>For example, you may decide that you want to add some attribute to every component that is saved out, but you do not want that attribute sticking around inside the current model. Within <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> you could add the attribute, and within <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> you could delete that attribute.</p>
 
-<p>The callback is not sent the component that is to be saved, but the
-model&#39;s selection will contain it.</p>
+<p>The callback is not sent the component that is to be saved, but the model&#39;s selection will contain it.</p>
 
 
   </div>
@@ -1177,19 +1142,11 @@ model&#39;s selection will contain it.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this
-model is exploded. This is an easier way to watch explode events vs.
-attaching an InstanceObserver to every instance in the model.</p>
+<p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this model is exploded. This is an easier way to watch explode events vs. attaching an InstanceObserver to every instance in the model.</p>
 
-<p>Since the callback does not return what was exploded, one solution is to
-place a selection observer that keeps track of which entities whose
-explosion you are interested in are in the selection. Since SketchUp&#39;s
-user interface only provides a means of exploding the selection, this
-method is a reliable way to know what was just exploded.</p>
+<p>Since the callback does not return what was exploded, one solution is to place a selection observer that keeps track of which entities whose explosion you are interested in are in the selection. Since SketchUp&#39;s user interface only provides a means of exploding the selection, this method is a reliable way to know what was just exploded.</p>
 
-<p>Another method would be to watch
-ComponentDefinition.count_instances to determine what just
-changed, as any components that were exploded will now be less an instance.</p>
+<p>Another method would be to watch ComponentDefinition.count_instances to determine what just changed, as any components that were exploded will now be less an instance.</p>
 
 
   </div>
@@ -1278,8 +1235,7 @@ changed, as any components that were exploded will now be less an instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onPidChanged-instance_method" title="Sketchup::ModelObserver#onPidChanged (method)">#onPidChanged</a></span> method is invoked when a persistent id in the model
-changes. For example when entities are grouped.</p>
+<p>The <span class='object_link'><a href="#onPidChanged-instance_method" title="Sketchup::ModelObserver#onPidChanged (method)">#onPidChanged</a></span> method is invoked when a persistent id in the model changes. For example when entities are grouped.</p>
 
 
   </div>
@@ -1390,8 +1346,7 @@ changes. For example when entities are grouped.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onPlaceComponent-instance_method" title="Sketchup::ModelObserver#onPlaceComponent (method)">#onPlaceComponent</a></span> method is invoked when a component is “placed” into
-the model, meaning it is dragged from the Component Browser.</p>
+<p>The <span class='object_link'><a href="#onPlaceComponent-instance_method" title="Sketchup::ModelObserver#onPlaceComponent (method)">#onPlaceComponent</a></span> method is invoked when a component is “placed” into the model, meaning it is dragged from the Component Browser.</p>
 
 
   </div>
@@ -1480,8 +1435,7 @@ the model, meaning it is dragged from the Component Browser.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onPostSaveModel-instance_method" title="Sketchup::ModelObserver#onPostSaveModel (method)">#onPostSaveModel</a></span> method is invoked after a model has been saved to
-disk.</p>
+<p>The <span class='object_link'><a href="#onPostSaveModel-instance_method" title="Sketchup::ModelObserver#onPostSaveModel (method)">#onPostSaveModel</a></span> method is invoked after a model has been saved to disk.</p>
 
 
   </div>
@@ -1844,8 +1798,7 @@ disk.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is
-completed.</p>
+<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is completed.</p>
 
 
   </div>
@@ -1941,9 +1894,7 @@ completed.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an
-undoable operation) starts and then is committed without anything being
-altered in between.</p>
+<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an undoable operation) starts and then is committed without anything being altered in between.</p>
 
 
   </div>
@@ -2039,9 +1990,7 @@ altered in between.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a
-transaction (aka undo operation.) You can programmatically fire a redo by
-calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a transaction (aka undo operation.) You can programmatically fire a redo by calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
 
 
   </div>
@@ -2130,8 +2079,7 @@ calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an
-undoable operation) starts.</p>
+<p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an undoable operation) starts.</p>
 
 
   </div>
@@ -2227,9 +2175,7 @@ undoable operation) starts.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a
-transaction (aka undo operation.) You can programmatically fire an undo by
-calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a transaction (aka undo operation.) You can programmatically fire an undo by calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
 
 
   </div>

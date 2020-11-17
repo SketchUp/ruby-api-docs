@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -191,18 +193,13 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The ShadowInfo class contains method to extract the shadow information for
-a model. The majority of the shadow information returned exists in the
-Model Info &gt; Location and Model Info &gt; Shadows dialogs inside
-SketchUp.</p>
+<p>The ShadowInfo class contains method to extract the shadow information for a model. The majority of the shadow information returned exists in the Model Info &gt; Location and Model Info &gt; Shadows dialogs inside SketchUp.</p>
 
 <p>The following shadow information keys are maintained in SketchUp:</p>
 <ul><li>
-<p><code>City</code> (in Model Info &gt; Geo-location &gt; Set Manual
-Location…) Note that &#39;City&#39; is called &#39;Location&#39; in the UI</p>
+<p><code>City</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…) Note that &#39;City&#39; is called &#39;Location&#39; in the UI</p>
 </li><li>
-<p><code>Country</code> (in Model Info &gt; Geo-location &gt; Set Manual
-Location…)</p>
+<p><code>Country</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…)</p>
 </li><li>
 <p><code>Dark</code> (in Window &gt; Shadows)</p>
 </li><li>
@@ -210,8 +207,7 @@ Location…)</p>
 </li><li>
 <p><code>DaylightSavings</code></p>
 </li><li>
-<p><code>DisplayNorth</code> (in View &gt; Toolbars &gt; Solar North) Note
-that &#39;Toolbar&#39; is called &#39;Tool Palettes&#39; on Mac</p>
+<p><code>DisplayNorth</code> (in View &gt; Toolbars &gt; Solar North) Note that &#39;Toolbar&#39; is called &#39;Tool Palettes&#39; on Mac</p>
 </li><li>
 <p><code>DisplayOnAllFaces</code> (in Window &gt; Shadows)</p>
 </li><li>
@@ -221,16 +217,13 @@ that &#39;Toolbar&#39; is called &#39;Tool Palettes&#39; on Mac</p>
 </li><li>
 <p><code>EdgesCastShadows</code> (in Window &gt; Shadows)</p>
 </li><li>
-<p><code>Latitude</code> (in Model Info &gt; Geo-location &gt; Set Manual
-Location…)</p>
+<p><code>Latitude</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…)</p>
 </li><li>
 <p><code>Light</code> (in Window &gt; Shadows)</p>
 </li><li>
-<p><code>Longitude</code> (in Model Info &gt; Geo-location &gt; Set Manual
-Location…)</p>
+<p><code>Longitude</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…)</p>
 </li><li>
-<p><code>North</code> Angle (in View &gt; Toolbars &gt; Solar North) Note that
-&#39;Toolbar&#39; is called &#39;Tool Palettes&#39; on Mac</p>
+<p><code>NorthAngle</code> (in View &gt; Toolbars &gt; Solar North) Note that &#39;Toolbar&#39; is called &#39;Tool Palettes&#39; on Mac</p>
 </li><li>
 <p><code>ShadowTime</code> (in Window &gt; Shadows)</p>
 </li><li>
@@ -346,8 +339,7 @@ Location…)</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The keys method is a class method that returns an array with all of the
-attribute keys.</p>
+<p>The keys method is a class method that returns an array with all of the attribute keys.</p>
 </div></span>
   
 </li>
@@ -408,8 +400,7 @@ attribute keys.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set value []= method is used to set the value in the array of shadow
-info options.</p>
+<p>The set value []= method is used to set the value in the array of shadow info options.</p>
 </div></span>
   
 </li>
@@ -481,8 +472,7 @@ info options.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span> method iterates through all of the shadow information key/value
-pairs.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span> method iterates through all of the shadow information key/value pairs.</p>
 </div></span>
   
 </li>
@@ -530,7 +520,7 @@ pairs.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#each_pair-instance_method" title="Sketchup::ShadowInfo#each_pair (method)">#each_pair</a></span> method is an alias for <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span>.</p>
+<p>The <span class='object_link'><a href="#each_pair-instance_method" title="Sketchup::ShadowInfo#each_pair (method)">#each_pair</a></span> method is an alias for <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span>.</p>
 </div></span>
   
 </li>
@@ -554,8 +544,7 @@ pairs.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The keys method is a class method that returns an array with all of the
-attribute keys.</p>
+<p>The keys method is a class method that returns an array with all of the attribute keys.</p>
 </div></span>
   
 </li>
@@ -579,8 +568,7 @@ attribute keys.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::ShadowInfo#length (method)">#length</a></span> method returns the number of options in the shadow options
-collection.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::ShadowInfo#length (method)">#length</a></span> method returns the number of options in the shadow options collection.</p>
 </div></span>
   
 </li>
@@ -604,8 +592,7 @@ collection.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -681,7 +668,7 @@ object.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_shadowinfo'>shadowinfo</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_shadowinfo'>shadowinfo</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_key'>key</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -749,8 +736,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The keys method is a class method that returns an array with all of the
-attribute keys</p>
+<p>The keys method is a class method that returns an array with all of the attribute keys</p>
 
 
   </div>
@@ -919,8 +905,7 @@ attribute keys</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set value []= method is used to set the value in the array of shadow
-info options.</p>
+<p>The set value []= method is used to set the value in the array of shadow info options.</p>
 
 
   </div>
@@ -1197,8 +1182,7 @@ info options.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span> method iterates through all of the shadow information key/value
-pairs.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span> method iterates through all of the shadow information key/value pairs.</p>
 
 
   </div>
@@ -1320,7 +1304,7 @@ pairs.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_shadowinfo'>shadowinfo</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_shadowinfo'>shadowinfo</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_key'>key</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -1388,7 +1372,7 @@ pairs.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#each_pair-instance_method" title="Sketchup::ShadowInfo#each_pair (method)">#each_pair</a></span> method is an alias for <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span>.</p>
+<p>The <span class='object_link'><a href="#each_pair-instance_method" title="Sketchup::ShadowInfo#each_pair (method)">#each_pair</a></span> method is an alias for <span class='object_link'><a href="#each-instance_method" title="Sketchup::ShadowInfo#each (method)">#each</a></span>.</p>
 
 
   </div>
@@ -1499,8 +1483,7 @@ pairs.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The keys method is a class method that returns an array with all of the
-attribute keys</p>
+<p>The keys method is a class method that returns an array with all of the attribute keys</p>
 
 
   </div>
@@ -1566,8 +1549,7 @@ attribute keys</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::ShadowInfo#length (method)">#length</a></span> method returns the number of options in the shadow options
-collection</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::ShadowInfo#length (method)">#length</a></span> method returns the number of options in the shadow options collection</p>
 
 
   </div>
@@ -1636,8 +1618,7 @@ collection</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>

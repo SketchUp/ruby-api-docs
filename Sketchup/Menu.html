@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -269,7 +271,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_separator method is used to add a menu separator to a menu.</p>
+<p>The <span class='object_link'><a href="#add_separator-instance_method" title="Sketchup::Menu#add_separator (method)">#add_separator</a></span> method is used to add a menu separator to a menu.</p>
 </div></span>
   
 </li>
@@ -293,7 +295,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_submenu method is used to add a sub-menu to a menu.</p>
+<p>The <span class='object_link'><a href="#add_submenu-instance_method" title="Sketchup::Menu#add_submenu (method)">#add_submenu</a></span> method is used to add a sub-menu to a menu.</p>
 </div></span>
   
 </li>
@@ -302,7 +304,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_validation_proc-instance_method" title="#set_validation_proc (instance method)">#<strong>set_validation_proc</strong>(menu) { ... } &#x21d2; Integer </a>
+      <a href="#set_validation_proc-instance_method" title="#set_validation_proc (instance method)">#<strong>set_validation_proc</strong>(item) { ... } &#x21d2; Object </a>
     
 
     
@@ -317,8 +319,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_validation_proc method is used to identify the menu validation
-procedure.</p>
+<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="Sketchup::Menu#set_validation_proc (method)">#set_validation_proc</a></span> method is used to specify the menu validation procedure.</p>
 </div></span>
   
 </li>
@@ -339,7 +340,7 @@ procedure.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>add_item</strong>(menu) { ... } &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>add_item</strong>(title) { ... } &#x21d2; <tt>Integer</tt> </span>
     
       <span class="overload">#<strong>add_item</strong>(command)  &#x21d2; <tt>Integer</tt> </span>
     
@@ -353,11 +354,9 @@ procedure.</p>
     
 <p>The <span class='object_link'><a href="#add_item-instance_method" title="Sketchup::Menu#add_item (method)">#add_item</a></span> method is used to add a menu item to the specified menu.</p>
 
-<p>This method takes a block that defines the action to perform when the menu
-item is selected.</p>
+<p>This method takes a block that defines the action to perform when the menu item is selected.</p>
 
-<p>The item id that is returned can be used when adding an optional validation
-procedure for the menu item.</p>
+<p>The item id that is returned can be used when adding an optional validation procedure for the menu item.</p>
 
 
   </div>
@@ -378,7 +377,7 @@ procedure for the menu item.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>add_item</strong>(menu) { ... } &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>add_item</strong>(title) { ... } &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -393,17 +392,12 @@ procedure for the menu item.</p>
   
     <li>
       
-        <span class='name'>menu</span>
+        <span class='name'>title</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The name of the menu to add.</p>
-</div>
       
     </li>
   
@@ -534,7 +528,7 @@ procedure for the menu item.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_separator method is used to add a menu separator to a menu.</p>
+<p>The <span class='object_link'><a href="#add_separator-instance_method" title="Sketchup::Menu#add_separator (method)">#add_separator</a></span> method is used to add a menu separator to a menu.</p>
 
 
   </div>
@@ -596,7 +590,7 @@ procedure for the menu item.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_submenu method is used to add a sub-menu to a menu.</p>
+<p>The <span class='object_link'><a href="#add_submenu-instance_method" title="Sketchup::Menu#add_submenu (method)">#add_submenu</a></span> method is used to add a sub-menu to a menu.</p>
 
 
   </div>
@@ -688,7 +682,7 @@ procedure for the menu item.</p>
   <h3 class="signature " id="set_validation_proc-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>set_validation_proc</strong>(menu) { ... } &#x21d2; <tt>Integer</tt> 
+    #<strong>set_validation_proc</strong>(item) { ... } &#x21d2; <tt>Object</tt> 
   
 
   
@@ -697,9 +691,7 @@ procedure for the menu item.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_validation_proc method is used to identify the menu validation
-procedure. Your procedure should return either MF_ENABLED, MF_DISABLED,
-MF_CHECKED, MF_UNCHECKED, or MF_GRAYED.</p>
+<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="Sketchup::Menu#set_validation_proc (method)">#set_validation_proc</a></span> method is used to specify the menu validation procedure. Your procedure should return either MF_ENABLED, MF_DISABLED, MF_CHECKED, MF_UNCHECKED, or MF_GRAYED.</p>
 
 
   </div>
@@ -734,16 +726,16 @@ MF_CHECKED, MF_UNCHECKED, or MF_GRAYED.</p>
   
     <li>
       
-        <span class='name'>menu</span>
+        <span class='name'>item</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A string name of the menu to add.</p>
+<p>The numerical identifier for the menu item.</p>
 </div>
       
     </li>
@@ -771,24 +763,6 @@ MF_CHECKED, MF_UNCHECKED, or MF_GRAYED.</p>
 
 </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>Integer</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>a unique numerical item id for the menu</p>
-</div>
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   

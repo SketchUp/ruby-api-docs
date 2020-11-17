@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -186,10 +188,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Drawingelement is a base class for an item in the model that can be
-displayed. These items include edges, construction points, construction
-lines, and images. Arc curves and arcs are not included because they are
-not drawing elements by themselves, but are a composition of edges.</p>
+<p>Drawingelement is a base class for an item in the model that can be displayed. These items include edges, construction points, construction lines, and images. Arc curves and arcs are not included because they are not drawing elements by themselves, but are a composition of edges.</p>
 
 
   </div>
@@ -254,8 +253,7 @@ not drawing elements by themselves, but are a composition of edges.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The bounds method is used to retrieve the BoundingBox for an drawing
-element.</p>
+<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Drawingelement#bounds (method)">#bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding a <span class='object_link'><a href="" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>.</p>
 </div></span>
   
 </li>
@@ -279,8 +277,7 @@ element.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The casts_shadows= method is used to set the Drawingelement to cast
-shadows.</p>
+<p>The casts_shadows= method is used to set the Drawingelement to cast shadows.</p>
 </div></span>
   
 </li>
@@ -304,8 +301,7 @@ shadows.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The casts_shadows? method is used to determine if the Drawingelement is
-casting shadows.</p>
+<p>The casts_shadows? method is used to determine if the Drawingelement is casting shadows.</p>
 </div></span>
   
 </li>
@@ -401,8 +397,7 @@ casting shadows.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The layer method is used to retrieve the Layer object of the drawing
-element.</p>
+<p>The layer method is used to retrieve the Layer object of the drawing element.</p>
 </div></span>
   
 </li>
@@ -450,8 +445,7 @@ element.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The material method is used to retrieve the material for the drawing
-element.</p>
+<p>The material method is used to retrieve the material for the drawing element.</p>
 </div></span>
   
 </li>
@@ -499,8 +493,7 @@ element.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The receive_shadows= method is used to set the Drawingelement to receive
-shadows.</p>
+<p>The receive_shadows= method is used to set the Drawingelement to receive shadows.</p>
 </div></span>
   
 </li>
@@ -524,8 +517,7 @@ shadows.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The receive_shadows? method is used to determine if the Drawingelement is
-receiving shadows.</p>
+<p>The receive_shadows? method is used to determine if the Drawingelement is receiving shadows.</p>
 </div></span>
   
 </li>
@@ -613,8 +605,9 @@ receiving shadows.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The bounds method is used to retrieve the BoundingBox for an drawing
-element.</p>
+<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Drawingelement#bounds (method)">#bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding a <span class='object_link'><a href="" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>.</p>
+
+<p>For a <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Edge</a></span>, <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> and most other <span class='object_link'><a href="" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>s, the boundingbox follows the coordinate system the drawing element is placed in. For <span class='object_link'><a href="ComponentDefinition.html" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span>, the box bounds the contents of the component and follows the component&#39;s own internal coordinate system.</p>
 
 
   </div>
@@ -653,11 +646,6 @@ element.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A BoundingBox object if successful</p>
-</div>
-      
     </li>
   
 </ul>
@@ -694,8 +682,7 @@ element.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The casts_shadows= method is used to set the Drawingelement to cast
-shadows.</p>
+<p>The casts_shadows= method is used to set the Drawingelement to cast shadows.</p>
 
 
   </div>
@@ -745,8 +732,7 @@ shadows.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want the Drawingelement object to cast shadows, false if you do
-not want the Drawingelement object to cast shadows.</p>
+<p>true if you want the Drawingelement object to cast shadows, false if you do not want the Drawingelement object to cast shadows.</p>
 </div>
       
     </li>
@@ -807,8 +793,7 @@ not want the Drawingelement object to cast shadows.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The casts_shadows? method is used to determine if the Drawingelement is
-casting shadows.</p>
+<p>The casts_shadows? method is used to determine if the Drawingelement is casting shadows.</p>
 
 
   </div>
@@ -1008,8 +993,7 @@ casting shadows.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want to hide the element, false if you do not want to hide the
-element.</p>
+<p>true if you want to hide the element, false if you do not want to hide the element.</p>
 </div>
       
     </li>
@@ -1031,8 +1015,7 @@ element.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if the element has been hidden, false if the element has not been
-hidden.</p>
+<p>true if the element has been hidden, false if the element has not been hidden.</p>
 </div>
       
     </li>
@@ -1146,8 +1129,7 @@ hidden.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The layer method is used to retrieve the Layer object of the drawing
-element.</p>
+<p>The layer method is used to retrieve the Layer object of the drawing element.</p>
 
 
   </div>
@@ -1226,8 +1208,7 @@ element.</p>
     
 <p>The layer= method is used to set the layer for the drawing element.</p>
 
-<p>An exception is raised if you give a string that doesn&#39;t match any
-layer name.</p>
+<p>An exception is raised if you give a string that doesn&#39;t match any layer name.</p>
 
 
   </div>
@@ -1338,8 +1319,7 @@ layer name.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The material method is used to retrieve the material for the drawing
-element.</p>
+<p>The material method is used to retrieve the material for the drawing element.</p>
 
 
   </div>
@@ -1533,8 +1513,7 @@ element.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The receive_shadows= method is used to set the Drawingelement to receive
-shadows.</p>
+<p>The receive_shadows= method is used to set the Drawingelement to receive shadows.</p>
 
 
   </div>
@@ -1584,8 +1563,7 @@ shadows.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want the Drawingelement object to receive shadows, false if
-not.</p>
+<p>true if you want the Drawingelement object to receive shadows, false if not.</p>
 </div>
       
     </li>
@@ -1646,8 +1624,7 @@ not.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The receive_shadows? method is used to determine if the Drawingelement is
-receiving shadows.</p>
+<p>The receive_shadows? method is used to determine if the Drawingelement is receiving shadows.</p>
 
 
   </div>
@@ -1720,8 +1697,7 @@ receiving shadows.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The visible= method is used to set the visible status for an element. This
-method performs an opposite function to the hidden= method.</p>
+<p>The visible= method is used to set the visible status for an element. This method performs an opposite function to the hidden= method.</p>
 
 
   </div>
@@ -1791,8 +1767,7 @@ method performs an opposite function to the hidden= method.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if the element has been hidden, false if the element has not been
-hidden.</p>
+<p>true if the element has been hidden, false if the element has not been hidden.</p>
 </div>
       
     </li>

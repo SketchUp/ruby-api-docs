@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -189,11 +191,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A set of the currently selected entities. Use the Model.selection method to
-get a Selection object.  Note that the order of entities
-(<code>selection[0]</code>, <code>selection[1]</code> and so on) in the set
-is in no particular order and should not be assumed to be in the same order
-as the user selected the entities.</p>
+<p>A set of the currently selected entities. Use the Model.selection method to get a Selection object.  Note that the order of entities (<code>selection[0]</code>, <code>selection[1]</code> and so on) in the set is in no particular order and should not be assumed to be in the same order as the user selected the entities.</p>
 
 
   </div>
@@ -249,7 +247,7 @@ as the user selected the entities.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index)  &#x21d2; Sketchup::Entitiy<sup>?</sup> </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index)  &#x21d2; Sketchup::Entity<sup>?</sup> </a>
     
 
     
@@ -264,8 +262,7 @@ as the user selected the entities.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> from the
-selection by index.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> from the selection by index.</p>
 </div></span>
   
 </li>
@@ -322,7 +319,7 @@ selection by index.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#at-instance_method" title="#at (instance method)">#<strong>at</strong>(index)  &#x21d2; Sketchup::Entitiy<sup>?</sup> </a>
+      <a href="#at-instance_method" title="#at (instance method)">#<strong>at</strong>(index)  &#x21d2; Sketchup::Entity<sup>?</sup> </a>
     
 
     
@@ -455,8 +452,7 @@ selection by index.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The empty? method is used to determine if there are entities in the
-selection.</p>
+<p>The empty? method is used to determine if there are entities in the selection.</p>
 </div></span>
   
 </li>
@@ -504,8 +500,7 @@ selection.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> is
-in the selection.</p>
+<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> is in the selection.</p>
 </div></span>
   
 </li>
@@ -529,7 +524,7 @@ in the selection.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
+<p>The <span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
 </div></span>
   
 </li>
@@ -553,8 +548,7 @@ in the selection.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The is_curve? method is used to determine if the selection contains all
-edges that belong to a single curve.</p>
+<p>The is_curve? method is used to determine if the selection contains all edges that belong to a single curve.</p>
 </div></span>
   
 </li>
@@ -578,8 +572,7 @@ edges that belong to a single curve.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The is_surface? method is used to determine if the selection contains only
-all of the faces that are part of a single curved surface.</p>
+<p>The is_surface? method is used to determine if the selection contains only all of the faces that are part of a single curved surface.</p>
 </div></span>
   
 </li>
@@ -699,8 +692,7 @@ all of the faces that are part of a single curved surface.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the selection
-object.</p>
+<p>The remove_observer method is used to remove an observer from the selection object.</p>
 </div></span>
   
 </li>
@@ -724,8 +716,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The shift method is used to remove the first entity from the selection and
-returns it.</p>
+<p>The shift method is used to remove the first entity from the selection and returns it.</p>
 </div></span>
   
 </li>
@@ -749,8 +740,7 @@ returns it.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The single_object? method is used to determine if the selection contains a
-single object.</p>
+<p>The single_object? method is used to determine if the selection contains a single object.</p>
 </div></span>
   
 </li>
@@ -798,8 +788,7 @@ single object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The toggle method is used to change whether an entity is part of the
-selection.</p>
+<p>The toggle method is used to change whether an entity is part of the selection.</p>
 </div></span>
   
 </li>
@@ -820,7 +809,7 @@ selection.</p>
   <h3 class="signature first" id="[]-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>[]</strong>(index)  &#x21d2; <tt>Sketchup::Entitiy</tt><sup>?</sup> 
+    #<strong>[]</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt><sup>?</sup> 
   
 
   
@@ -829,12 +818,9 @@ selection.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> from the
-selection by index. Index 0 is the first entity in the selection.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> from the selection by index. Index 0 is the first entity in the selection.</p>
 
-<p>This method is not very efficient. If you need to look at every entity in
-the selection, consider using <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> instead of using this method to
-manually grab each one.</p>
+<p>This method is not very efficient. If you need to look at every entity in the selection, consider using <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> instead of using this method to manually grab each one.</p>
 
 
   </div>
@@ -879,7 +865,7 @@ manually grab each one.</p>
     <li>
       
       
-        <span class='type'>(<tt>Sketchup::Entitiy</tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -930,15 +916,9 @@ manually grab each one.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add method is used to add entities to the selection.  Entities that are
-added to the Selection are visually indicated by the selection bounding
-box.</p>
+<p>The add method is used to add entities to the selection.  Entities that are added to the Selection are visually indicated by the selection bounding box.</p>
 
-<p>You can pass it individual Entities or an Array of Entities: Note that the
-add, remove, and toggle methods are all aliases for one another. So if you
-call remove on an entity that is not selected, it will be toggled to be
-selected, not removed! Be cautious when writing your code to not make the
-assumption about the currently selected state of a given entity.</p>
+<p>You can pass it individual Entities or an Array of Entities: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on an entity that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given entity.</p>
 
 
   </div>
@@ -1167,7 +1147,7 @@ assumption about the currently selected state of a given entity.</p>
   <h3 class="signature " id="at-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>at</strong>(index)  &#x21d2; <tt>Sketchup::Entitiy</tt><sup>?</sup> 
+    #<strong>at</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt><sup>?</sup> 
   
 
   
@@ -1221,7 +1201,7 @@ assumption about the currently selected state of a given entity.</p>
     <li>
       
       
-        <span class='type'>(<tt>Sketchup::Entitiy</tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -1433,9 +1413,7 @@ assumption about the currently selected state of a given entity.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s
-<code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::Selection#count (method)">#count</a></span> method is
-an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span>.</p>
+<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s <code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::Selection#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span>.</p>
 </div>
   </div>
 
@@ -1507,10 +1485,17 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Don&#39;t remove content from this collection while iterating over it with <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span>. This would change the size of the collection and cause elemnts to be skipped as the indices change. Instead copy the current collection to an array using <code>to_a</code> and then use <code>each</code> on the array, when removing content.</p>
+</div>
+  </div>
+
+
 <p>The each method is used to iterate through all of the selected entities.</p>
 
-<p>If you want to do something with all of the selected Entities, this is more
-efficient than using [].</p>
+<p>If you want to do something with all of the selected Entities, this is more efficient than using [].</p>
 
 
   </div>
@@ -1521,7 +1506,7 @@ efficient than using [].</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_entity'>entity</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -1589,8 +1574,7 @@ efficient than using [].</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The empty? method is used to determine if there are entities in the
-selection.</p>
+<p>The empty? method is used to determine if there are entities in the selection.</p>
 
 
   </div>
@@ -1654,9 +1638,7 @@ selection.</p>
     
 <p>The first method is used to retrieve the first selected entity</p>
 
-<p>Returns nil if nothing is selected. This method is useful when you know
-that only a single entity is selected, or you are only interested in the
-first selected entity.</p>
+<p>Returns nil if nothing is selected. This method is useful when you know that only a single entity is selected, or you are only interested in the first selected entity.</p>
 
 
   </div>
@@ -1723,8 +1705,7 @@ first selected entity.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> is
-in the selection.</p>
+<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> is in the selection.</p>
 
 
   </div>
@@ -1822,7 +1803,7 @@ in the selection.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
+<p>The <span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
 
 
   </div>
@@ -1893,8 +1874,7 @@ in the selection.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The is_curve? method is used to determine if the selection contains all
-edges that belong to a single curve.</p>
+<p>The is_curve? method is used to determine if the selection contains all edges that belong to a single curve.</p>
 
 
   </div>
@@ -1956,8 +1936,7 @@ edges that belong to a single curve.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The is_surface? method is used to determine if the selection contains only
-all of the faces that are part of a single curved surface.</p>
+<p>The is_surface? method is used to determine if the selection contains only all of the faces that are part of a single curved surface.</p>
 
 
   </div>
@@ -2231,11 +2210,7 @@ all of the faces that are part of a single curved surface.</p>
     
 <p>The remove method is used to remove entities from the selection.</p>
 
-<p>You can pass it individual Entities or an Array of Entities: Note that the
-add, remove, and toggle methods are all aliases for one another. So if you
-call remove on an entity that is not selected, it will be toggled to be
-selected, not removed! Be cautious when writing your code to not make the
-assumption about the currently selected state of a given entity.</p>
+<p>You can pass it individual Entities or an Array of Entities: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on an entity that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given entity.</p>
 
 
   </div>
@@ -2375,8 +2350,7 @@ assumption about the currently selected state of a given entity.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the selection
-object.</p>
+<p>The remove_observer method is used to remove an observer from the selection object.</p>
 
 
   </div>
@@ -2474,8 +2448,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The shift method is used to remove the first entity from the selection and
-returns it.</p>
+<p>The shift method is used to remove the first entity from the selection and returns it.</p>
 
 
   </div>
@@ -2543,11 +2516,9 @@ returns it.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The single_object? method is used to determine if the selection contains a
-single object.</p>
+<p>The single_object? method is used to determine if the selection contains a single object.</p>
 
-<p>It can either be a single Entity or a group of Entities for which is_curve?
-or is_surface? will return true.</p>
+<p>It can either be a single Entity or a group of Entities for which is_curve? or is_surface? will return true.</p>
 
 
   </div>
@@ -2681,15 +2652,9 @@ or is_surface? will return true.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The toggle method is used to change whether an entity is part of the
-selection. Entities that are not already selected are added. Entities that
-are already selected are removed.</p>
+<p>The toggle method is used to change whether an entity is part of the selection. Entities that are not already selected are added. Entities that are already selected are removed.</p>
 
-<p>You can pass it individual Entities or an Array of Entities: Note that the
-add, remove, and toggle methods are all aliases for one another. So if you
-call remove on an entity that is not selected, it will be toggled to be
-selected, not removed! Be cautious when writing your code to not make the
-assumption about the currently selected state of a given entity.</p>
+<p>You can pass it individual Entities or an Array of Entities: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on an entity that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given entity.</p>
 
 
   </div>

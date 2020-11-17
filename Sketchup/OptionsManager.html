@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -189,8 +191,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The OptionsManager class manages various kinds of OptionsProviders on a
-Model.</p>
+<p>The OptionsManager class manages various kinds of OptionsProviders on a Model.</p>
 
 
   </div>
@@ -371,8 +372,7 @@ Model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::OptionsManager#size (method)">#size</a></span> method returns the number of <span class='object_link'><a href="OptionsProvider.html" title="Sketchup::OptionsProvider (class)">OptionsProvider</a></span> objects inside
-this <span class='object_link'><a href="" title="Sketchup::OptionsManager (class)">OptionsManager</a></span>.</p>
+<p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::OptionsManager#size (method)">#size</a></span> method returns the number of <span class='object_link'><a href="OptionsProvider.html" title="Sketchup::OptionsProvider (class)">OptionsProvider</a></span> objects inside this <span class='object_link'><a href="" title="Sketchup::OptionsManager (class)">OptionsManager</a></span>.</p>
 </div></span>
   
 </li>
@@ -408,8 +408,7 @@ this <span class='object_link'><a href="" title="Sketchup::OptionsManager (class
     
 <p>The [] method is used to get an option provider by name or index.</p>
 
-<p>For example, to get the UnitsOptions on the Model, you could use the
-command:</p>
+<p>For example, to get the UnitsOptions on the Model, you could use the command:</p>
 
 
   </div>
@@ -443,8 +442,7 @@ command:</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns optionprovider - an OptionsProvider object if successful, otherwise
-nil.</p>
+<p>Returns optionprovider - an OptionsProvider object if successful, otherwise nil.</p>
 
 
   </div>
@@ -499,8 +497,7 @@ nil.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns optionprovider - an OptionsProvider object if successful, otherwise
-nil.</p>
+<p>Returns optionprovider - an OptionsProvider object if successful, otherwise nil.</p>
 
 
   </div>
@@ -587,9 +584,7 @@ nil.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s
-<code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::OptionsManager#count (method)">#count</a></span> method is
-an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::OptionsManager#length (method)">#length</a></span>.</p>
+<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s <code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::OptionsManager#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::OptionsManager#length (method)">#length</a></span>.</p>
 </div>
   </div>
 
@@ -681,8 +676,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span>
-<span class='comment'># Retrieves each provider
-</span><span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_provider'>provider</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_provider'>provider</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span></code></pre>
+<span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_provider'>provider</span><span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_provider'>provider</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -897,8 +891,7 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::OptionsManager#size (method)">#size</a></span> method returns the number of <span class='object_link'><a href="OptionsProvider.html" title="Sketchup::OptionsProvider (class)">Sketchup::OptionsProvider</a></span> objects inside
-this <span class='object_link'><a href="" title="Sketchup::OptionsManager (class)">Sketchup::OptionsManager</a></span>.</p>
+<p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::OptionsManager#size (method)">#size</a></span> method returns the number of <span class='object_link'><a href="OptionsProvider.html" title="Sketchup::OptionsProvider (class)">Sketchup::OptionsProvider</a></span> objects inside this <span class='object_link'><a href="" title="Sketchup::OptionsManager (class)">Sketchup::OptionsManager</a></span>.</p>
 
 
   </div>

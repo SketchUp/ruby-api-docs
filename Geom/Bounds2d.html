@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,10 +186,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The bounds2d class represents an axis aligned bounding box represented by
-two <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> objects, upper left and lower right positions. The
-units utilized in the creation and modification <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span> are
-inches.</p>
+<p>The bounds2d class represents an axis aligned bounding box represented by two <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> objects, upper left and lower right positions. The units utilized in the creation and modification <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span> are inches.</p>
 
 
   </div>
@@ -322,8 +321,7 @@ inches.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#lower_right-instance_method" title="Geom::Bounds2d#lower_right (method)">#lower_right</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the lower right
-corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#lower_right-instance_method" title="Geom::Bounds2d#lower_right (method)">#lower_right</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the lower right corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
 </div></span>
   
 </li>
@@ -371,8 +369,7 @@ corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> that
-define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> that define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
 </div></span>
   
 </li>
@@ -396,8 +393,7 @@ define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">B
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#upper_left-instance_method" title="Geom::Bounds2d#upper_left (method)">#upper_left</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the upper left
-corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#upper_left-instance_method" title="Geom::Bounds2d#upper_left (method)">#upper_left</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the upper left corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
 </div></span>
   
 </li>
@@ -721,8 +717,7 @@ corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#==-instance_method" title="Geom::Bounds2d#== (method)">#==</a></span> method checks to see if the two <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>s are equal. This
-checks whether the point values are the same</p>
+<p>The <span class='object_link'><a href="#==-instance_method" title="Geom::Bounds2d#== (method)">#==</a></span> method checks to see if the two <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>s are equal. This checks whether the point values are the same</p>
 
 
   </div>
@@ -809,8 +804,8 @@ checks whether the point values are the same</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>bounds = Geom::Bounds2d.new({0.0, 0.0, 1.0, 1.0})
-height = bounds.height</code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span></code></pre>
     
   </div>
 
@@ -860,8 +855,7 @@ height = bounds.height</code></pre>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#lower_right-instance_method" title="Geom::Bounds2d#lower_right (method)">#lower_right</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the lower right
-corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#lower_right-instance_method" title="Geom::Bounds2d#lower_right (method)">#lower_right</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the lower right corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
 
 
   </div>
@@ -872,8 +866,8 @@ corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>bounds = Geom::Bounds2d.new({0.0, 0.0, 1.0, 1.0})
-l_r = bounds.lower_right</code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_l_r'>l_r</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_lower_right'>lower_right</span></code></pre>
     
   </div>
 
@@ -933,8 +927,7 @@ l_r = bounds.lower_right</code></pre>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set!-instance_method" title="Geom::Bounds2d#set! (method)">#set!</a></span> method sets the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span> to match another one. The
-argument is anything that can be converted into a <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#set!-instance_method" title="Geom::Bounds2d#set! (method)">#set!</a></span> method sets the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span> to match another one. The argument is anything that can be converted into a <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
 
 
   </div>
@@ -1257,8 +1250,7 @@ argument is anything that can be converted into a <span class='object_link'><a h
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> that
-define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> that define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
 
 
   </div>
@@ -1320,8 +1312,7 @@ define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">G
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#upper_left-instance_method" title="Geom::Bounds2d#upper_left (method)">#upper_left</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the upper left
-corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#upper_left-instance_method" title="Geom::Bounds2d#upper_left (method)">#upper_left</a></span> method returns the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> of the upper left corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
 
 
   </div>
@@ -1332,8 +1323,8 @@ corner of the <span class='object_link'><a href="" title="Geom::Bounds2d (class)
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>bounds = Geom::Bounds2d.new({0.0, 0.0, 1.0, 1.0})
-u_l = bounds.upper_left</code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_u_l'>u_l</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_upper_left'>upper_left</span></code></pre>
     
   </div>
 
@@ -1394,8 +1385,8 @@ u_l = bounds.upper_left</code></pre>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>bounds = Geom::Bounds2d.new({0.0, 0.0, 1.0, 1.0})
-width = bounds.width</code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_width'>width</span></code></pre>
     
   </div>
 

@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
     <script>
@@ -176,28 +178,23 @@
   </div>
 
 
-<p>The Geom module defines a number of Module methods that let you perform
-different geometric operations.</p>
+<p>The Geom module defines a number of Module methods that let you perform different geometric operations.</p>
 
-<p>The methods in this module take lines and planes as arguments. There is no
-special class for representing lines or planes. Arrays are used for both.</p>
+<p>The methods in this module take lines and planes as arguments. There is no special class for representing lines or planes. Arrays are used for both.</p>
 
-<p>A line can be represented as either an Array of a point and a vector, or as
-an Array of two points.</p>
+<p>A line can be represented as either an Array of a point and a vector, or as an Array of two points.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_line1'>line1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Geom</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Vector3d.html#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_line2'>line2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Geom</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='rparen'>)</span><span class='rbracket'>]</span>
 </code></pre>
 
-<p>A plane can be represented as either an Array of a point and a vector, or
-as an Array of 4 numbers that give the coefficients of a plane equation.</p>
+<p>A plane can be represented as either an Array of a point and a vector, or as an Array of 4 numbers that give the coefficients of a plane equation.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_plane1'>plane1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>Geom</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Geom</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Vector3d.html#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span><span class='rbracket'>]</span>
 <span class='id identifier rubyid_plane2'>plane2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
 </code></pre>
 
-<p>There are several good books on 3D math if you are new to the concepts of a
-line, plane, and vector.</p>
+<p>There are several good books on 3D math if you are new to the concepts of a line, plane, and vector.</p>
 
 
   </div>
@@ -268,8 +265,7 @@ line, plane, and vector.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#closest_points-class_method" title="Geom.closest_points (method)">Geom.closest_points</a></span> method is used to compute the closest points on two
-lines.</p>
+<p>The <span class='object_link'><a href="#closest_points-class_method" title="Geom.closest_points (method)">Geom.closest_points</a></span> method is used to compute the closest points on two lines.</p>
 </div></span>
   
 </li>
@@ -293,8 +289,7 @@ lines.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#fit_plane_to_points-class_method" title="Geom.fit_plane_to_points (method)">Geom.fit_plane_to_points</a></span> method is used to compute a plane that is a best
-fit to an array of points.</p>
+<p>The <span class='object_link'><a href="#fit_plane_to_points-class_method" title="Geom.fit_plane_to_points (method)">Geom.fit_plane_to_points</a></span> method is used to compute a plane that is a best fit to an array of points.</p>
 </div></span>
   
 </li>
@@ -342,8 +337,7 @@ fit to an array of points.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#intersect_line_plane-class_method" title="Geom.intersect_line_plane (method)">Geom.intersect_line_plane</a></span> method is used to compute the intersection of a
-line and a plane.</p>
+<p>The <span class='object_link'><a href="#intersect_line_plane-class_method" title="Geom.intersect_line_plane (method)">Geom.intersect_line_plane</a></span> method is used to compute the intersection of a line and a plane.</p>
 </div></span>
   
 </li>
@@ -367,8 +361,7 @@ line and a plane.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#intersect_plane_plane-class_method" title="Geom.intersect_plane_plane (method)">Geom.intersect_plane_plane</a></span> method is used to compute the intersection of
-two planes.</p>
+<p>The <span class='object_link'><a href="#intersect_plane_plane-class_method" title="Geom.intersect_plane_plane (method)">Geom.intersect_plane_plane</a></span> method is used to compute the intersection of two planes.</p>
 </div></span>
   
 </li>
@@ -392,8 +385,7 @@ two planes.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#linear_combination-class_method" title="Geom.linear_combination (method)">Geom.linear_combination</a></span> method is used to compute the linear combination
-of points or vectors.</p>
+<p>The <span class='object_link'><a href="#linear_combination-class_method" title="Geom.linear_combination (method)">Geom.linear_combination</a></span> method is used to compute the linear combination of points or vectors.</p>
 </div></span>
   
 </li>
@@ -417,8 +409,7 @@ of points or vectors.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#point_in_polygon_2D-class_method" title="Geom.point_in_polygon_2D (method)">Geom.point_in_polygon_2D</a></span> method is used to determine whether a point is
-inside a polygon.</p>
+<p>The <span class='object_link'><a href="#point_in_polygon_2D-class_method" title="Geom.point_in_polygon_2D (method)">Geom.point_in_polygon_2D</a></span> method is used to determine whether a point is inside a polygon.</p>
 </div></span>
   
 </li>
@@ -471,8 +462,7 @@ inside a polygon.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#closest_points-class_method" title="Geom.closest_points (method)">closest_points</a></span> method is used to compute the closest points on two
-lines.</p>
+<p>The <span class='object_link'><a href="#closest_points-class_method" title="Geom.closest_points (method)">closest_points</a></span> method is used to compute the closest points on two lines.</p>
 
 <p>line.</p>
 
@@ -540,8 +530,7 @@ lines.</p>
       
         &mdash;
         <div class='inline'>
-<p>An array of two points. The first point is on the first line and the second
-point is on the second</p>
+<p>An array of two points. The first point is on the first line and the second point is on the second</p>
 </div>
       
     </li>
@@ -584,12 +573,9 @@ point is on the second</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#fit_plane_to_points-class_method" title="Geom.fit_plane_to_points (method)">fit_plane_to_points</a></span> method is used to compute a plane that is a best
-fit to an array of points. If more than three points are given some of the
-points may not be on the plane.</p>
+<p>The <span class='object_link'><a href="#fit_plane_to_points-class_method" title="Geom.fit_plane_to_points (method)">fit_plane_to_points</a></span> method is used to compute a plane that is a best fit to an array of points. If more than three points are given some of the points may not be on the plane.</p>
 
-<p>The plane is returned as an <span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span> of 4 numbers which are the coefficients
-of the plane equation <code>Ax + By + Cz + D = 0</code>.</p>
+<p>The plane is returned as an <span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span> of 4 numbers which are the coefficients of the plane equation <code>Ax + By + Cz + D = 0</code>.</p>
 
 
   </div>
@@ -881,8 +867,7 @@ of the plane equation <code>Ax + By + Cz + D = 0</code>.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#intersect_line_plane-class_method" title="Geom.intersect_line_plane (method)">intersect_line_plane</a></span> method is used to compute the intersection of a
-line and a plane.</p>
+<p>The <span class='object_link'><a href="#intersect_line_plane-class_method" title="Geom.intersect_line_plane (method)">intersect_line_plane</a></span> method is used to compute the intersection of a line and a plane.</p>
 
 
   </div>
@@ -986,8 +971,7 @@ line and a plane.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#intersect_plane_plane-class_method" title="Geom.intersect_plane_plane (method)">intersect_plane_plane</a></span> method is used to compute the intersection of
-two planes.</p>
+<p>The <span class='object_link'><a href="#intersect_plane_plane-class_method" title="Geom.intersect_plane_plane (method)">intersect_plane_plane</a></span> method is used to compute the intersection of two planes.</p>
 
 
   </div>
@@ -1055,8 +1039,7 @@ two planes.</p>
       
         &mdash;
         <div class='inline'>
-<p>A line where the planes intersect if successful. Returns <code>nil</code>
-if the planes do not intersect.</p>
+<p>A line where the planes intersect if successful. Returns <code>nil</code> if the planes do not intersect.</p>
 </div>
       
     </li>
@@ -1099,8 +1082,9 @@ if the planes do not intersect.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#linear_combination-class_method" title="Geom.linear_combination (method)">linear_combination</a></span> method is used to compute the linear combination
-of points or vectors.</p>
+<p>The <span class='object_link'><a href="#linear_combination-class_method" title="Geom.linear_combination (method)">linear_combination</a></span> method is used to compute the linear combination of points or vectors.</p>
+
+<p>A linear combination is a standard term for vector math. It is defined as vector = weight1 * vector1 + weight2 * vector2.</p>
 
 
   </div>
@@ -1309,9 +1293,7 @@ of points or vectors.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#point_in_polygon_2D-class_method" title="Geom.point_in_polygon_2D (method)">point_in_polygon_2D</a></span> method is used to determine whether a point is
-inside a polygon. The z component of both the point you&#39;re checking and
-the points in the polygon are ignored, effectively making it a 2-d check.</p>
+<p>The <span class='object_link'><a href="#point_in_polygon_2D-class_method" title="Geom.point_in_polygon_2D (method)">point_in_polygon_2D</a></span> method is used to determine whether a point is inside a polygon. The z component of both the point you&#39;re checking and the points in the polygon are ignored, effectively making it a 2-d check.</p>
 
 
   </div>
@@ -1363,8 +1345,7 @@ the points in the polygon are ignored, effectively making it a 2-d check.</p>
       
         &mdash;
         <div class='inline'>
-<p>An array of points that represent the corners of the polygon you are
-checking against.</p>
+<p>An array of points that represent the corners of the polygon you are checking against.</p>
 </div>
       
     </li>
@@ -1441,43 +1422,30 @@ checking against.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The winding order of the polygons matter. The outer loop should be in
-counter-clockwise order. To cut an empty hole the inner loops should be in
-clockwise order, otherwise they will create a loop filled with triangles.</p>
+<p>The winding order of the polygons matter. The outer loop should be in counter-clockwise order. To cut an empty hole the inner loops should be in clockwise order, otherwise they will create a loop filled with triangles.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The tesselation is using the same logic as SketchUp its rendering pipeline.
-But the exact result is an implementation detail which may change between
-versions. In particularly the results of degenerate polygons and non-planar
-polygons is undefined  as part of the API contract. Such polygons are for
-example polygons where all points are colinear, polygons with duplicate
-points, non-planar polygons.</p>
+<p>The tesselation is using the same logic as SketchUp its rendering pipeline. But the exact result is an implementation detail which may change between versions. In particularly the results of degenerate polygons and non-planar  polygons is undefined  as part of the API contract. Such polygons are for example polygons where all points are colinear, polygons with duplicate points, non-planar polygons.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>If you want the triangles from an existing <span class='object_link'><a href="Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> it&#39;s better
-to use <span class='object_link'><a href="Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span>.</p>
+<p>If you want the triangles from an existing <span class='object_link'><a href="Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> it&#39;s better to use <span class='object_link'><a href="Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span>.</p>
 </div>
   </div>
 
 
-<p>Tessellates a polygon, represented as a collection of 3D points. Can
-include holes by providing collections of points describing the inner
-loops. This is intended to be used for planar polygons.</p>
+<p>Tessellates a polygon, represented as a collection of 3D points. Can include holes by providing collections of points describing the inner loops. This is intended to be used for planar polygons.</p>
 
-<p>Useful to draw concave polygons using <span class='object_link'><a href="Sketchup/View.html#draw-instance_method" title="Sketchup::View#draw (method)">Sketchup::View#draw</a></span> or
-<span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span>.</p>
+<p>Useful to draw concave polygons using <span class='object_link'><a href="Sketchup/View.html#draw-instance_method" title="Sketchup::View#draw (method)">Sketchup::View#draw</a></span> or <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span>.</p>
 
-<p>It can also be useful for importers where the input format describes only
-the loops for a polygon and you want to work with a collection of
-triangles.</p>
+<p>It can also be useful for importers where the input format describes only the loops for a polygon and you want to work with a collection of triangles.</p>
 
 <p><strong>Polygon with two holes, one empty and one filled:</strong></p>
 
@@ -1571,8 +1539,7 @@ triangles.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns an array of points with a stride of three representing a set of
-triangles.</p>
+<p>Returns an array of points with a stride of three representing a set of triangles.</p>
 
 
   </div>

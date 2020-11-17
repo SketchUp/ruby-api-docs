@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -186,23 +188,13 @@
     <div class="note abstract">
   <strong>This class is abstract.</strong>
   <div class='inline'>
-<p>Implement the methods described in this class to create a frame change
-observer. You can not sub-class this class because it is not defined by the
-API.</p>
+<p>Implement the methods described in this class to create a frame change observer. You can not sub-class this class because it is not defined by the API.</p>
 </div>
 </div>
 
-<p>This observer interface is implemented to react to changes in camera
-position (a frame) between one scene page and another. This observer&#39;s
-callback method is called when the user manually makes a scene change, or
-the internal animation feature runs.</p>
+<p>This observer interface is implemented to react to changes in camera position (a frame) between one scene page and another. This observer&#39;s callback method is called when the user manually makes a scene change, or the internal animation feature runs.</p>
 
-<p>This abstract observer is any object that implements a callback method
-<code>frameChange</code> with 3 arguments: <code>from_scene</code> (the
-scene that you transition from), <code>to_scene</code> (the scene that you
-transition toward) and a <code>percent_done</code> between <code>0.0</code>
-and <code>1.0</code> (that indicates the percentage of transition between
-the two scenes.)</p>
+<p>This abstract observer is any object that implements a callback method <code>frameChange</code> with 3 arguments: <code>from_scene</code> (the scene that you transition from), <code>to_scene</code> (the scene that you transition toward) and a <code>percent_done</code> between <code>0.0</code> and <code>1.0</code> (that indicates the percentage of transition between the two scenes.)</p>
 
 <pre class="code ruby"><code class="ruby"><span class='comment'># Basic Class Definition:
 </span><span class='kw'>class</span> <span class='const'>MyFrameChangeObserver</span>
@@ -212,17 +204,13 @@ the two scenes.)</p>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>The observer is attached using the
-<span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">Pages.add_frame_change_observer</a></span> class method, which returns an
-integer id that can be stored and later used to detach the observer.</p>
+<p>The observer is attached using the <span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">Pages.add_frame_change_observer</a></span> class method, which returns an integer id that can be stored and later used to detach the observer.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='comment'># Attach an observer to the global Pages object:
 </span><span class='ivar'>@id</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_frame_change_observer'><span class='object_link'><a href="Pages.html#add_frame_change_observer-class_method" title="Sketchup::Pages.add_frame_change_observer (method)">add_frame_change_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyFrameChangeObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
 </code></pre>
 
-<p>Later, detaching this observer is done by passing this <code>id</code>
-reference to the <span class='object_link'><a href="Pages.html#remove_frame_change_observer-class_method" title="Sketchup::Pages.remove_frame_change_observer (method)">Pages.remove_frame_change_observer</a></span> class
-method.</p>
+<p>Later, detaching this observer is done by passing this <code>id</code> reference to the <span class='object_link'><a href="Pages.html#remove_frame_change_observer-class_method" title="Sketchup::Pages.remove_frame_change_observer (method)">Pages.remove_frame_change_observer</a></span> class method.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='comment'># Basic Observer Detachment:
 </span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove_frame_change_observer'><span class='object_link'><a href="Pages.html#remove_frame_change_observer-class_method" title="Sketchup::Pages.remove_frame_change_observer (method)">remove_frame_change_observer</a></span></span><span class='lparen'>(</span><span class='ivar'>@id</span><span class='rparen'>)</span>
@@ -298,9 +286,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This callback method is called during a slide show or creation of an
-animation after the camera has been set up, but before the frame is
-displayed.</p>
+<p>This callback method is called during a slide show or creation of an animation after the camera has been set up, but before the frame is displayed.</p>
 </div></span>
   
 </li>
@@ -332,25 +318,14 @@ displayed.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The <code>from_scene</code> argument into this callback does not appear to
-be populated on the PC. You can store a variable that keeps track of the
-<code>to_scene</code> and then use that on a subsequent Scene selection to
-determine the last Page that the user was on.</p>
+<p>The <code>from_scene</code> argument into this callback does not appear to be populated on the PC. You can store a variable that keeps track of the <code>to_scene</code> and then use that on a subsequent Scene selection to determine the last Page that the user was on.</p>
 </div>
   </div>
 
 <p class="note returns_void">This method returns an undefined value.</p>
-<p>This callback method is called during a slide show or creation of an
-animation after the camera has been set up, but before the frame is
-displayed. It gives you a chance to perform your own actions during the
-animation. The arguments for <code>frameChange</code> method are the scene
-page that you transition from (<code>from_scene</code>), the scene page
-that you transition to (<code>to_scene</code>), and a
-<code>percent_done</code> between <code>0.0</code> and <code>1.0</code>
-that tell you the percentage of the transition between the two scene pages.</p>
+<p>This callback method is called during a slide show or creation of an animation after the camera has been set up, but before the frame is displayed. It gives you a chance to perform your own actions during the animation. The arguments for <code>frameChange</code> method are the scene page that you transition from (<code>from_scene</code>), the scene page that you transition to (<code>to_scene</code>), and a <code>percent_done</code> between <code>0.0</code> and <code>1.0</code> that tell you the percentage of the transition between the two scene pages.</p>
 
-<p>By watching for <tt>percent_done &gt;= 1.0</tt>, you can activate Ruby code that
-executes as soon as the user&#39;s camera has finished animating.</p>
+<p>By watching for <tt>percent_done &gt;= 1.0</tt>, you can activate Ruby code that executes as soon as the user&#39;s camera has finished animating.</p>
 
 
   </div>

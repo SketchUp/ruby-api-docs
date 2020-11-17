@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::SelectionObserver
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,11 +185,14 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This observer interface is implemented to react to selection events. To
-implement this observer, create a Ruby class of this type, override the
-desired methods, and add an instance of the observer to the objects of
-interests.</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>To implement this observer, create a Ruby class of this type, override the desired methods, and add an instance of the observer to the objects of interests.</p>
+</div>
+</div>
+
+<p>This observer interface is implemented to react to selection events.</p>
 
 
   </div>
@@ -287,8 +292,7 @@ interests.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> method is called whenever items are added or
-removed from the selection set.</p>
+<p>The <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> method is called whenever items are added or removed from the selection set.</p>
 </div></span>
   
 </li>
@@ -312,8 +316,7 @@ removed from the selection set.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onSelectionCleared-instance_method" title="Sketchup::SelectionObserver#onSelectionCleared (method)">#onSelectionCleared</a></span> method is called when the selection is completely
-emptied.</p>
+<p>The <span class='object_link'><a href="#onSelectionCleared-instance_method" title="Sketchup::SelectionObserver#onSelectionCleared (method)">#onSelectionCleared</a></span> method is called when the selection is completely emptied.</p>
 </div></span>
   
 </li>
@@ -367,8 +370,7 @@ emptied.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This event might not trigger even if a single element is selected. For
-instance the Selection tool will trigger #onSelectionBulkChange regardless.</p>
+<p>This event might not trigger even if a single element is selected. For instance the Selection tool will trigger <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> regardless.</p>
 </div>
   </div>
 
@@ -478,12 +480,9 @@ instance the Selection tool will trigger #onSelectionBulkChange regardless.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> method is called whenever items are added or
-removed from the selection set.</p>
+<p>The <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> method is called whenever items are added or removed from the selection set.</p>
 
-<p>The <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> callback will not trigger if the selection is
-cleared by clicking on empty model space. Use the <span class='object_link'><a href="#onSelectionCleared-instance_method" title="Sketchup::SelectionObserver#onSelectionCleared (method)">#onSelectionCleared</a></span>
-method to catch this case.</p>
+<p>The <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> callback will not trigger if the selection is cleared by clicking on empty model space. Use the <span class='object_link'><a href="#onSelectionCleared-instance_method" title="Sketchup::SelectionObserver#onSelectionCleared (method)">#onSelectionCleared</a></span> method to catch this case.</p>
 
 
   </div>
@@ -495,7 +494,7 @@ method to catch this case.</p>
     
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onSelectionBulkChange'>onSelectionBulkChange</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSelectionRemoved: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_selection'>selection</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSelectionBulkChange: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_selection'>selection</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -572,8 +571,7 @@ method to catch this case.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onSelectionCleared-instance_method" title="Sketchup::SelectionObserver#onSelectionCleared (method)">#onSelectionCleared</a></span> method is called when the selection is completely
-emptied.</p>
+<p>The <span class='object_link'><a href="#onSelectionCleared-instance_method" title="Sketchup::SelectionObserver#onSelectionCleared (method)">#onSelectionCleared</a></span> method is called when the selection is completely emptied.</p>
 
 
   </div>
@@ -665,8 +663,7 @@ emptied.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Due to a bug in SketchUp this event doesn&#39;t trigger. Instead
-<code>onSelectedRemoved</code> is called.</p>
+<p>This event might not trigger even if a single element is deselected. For instance the Selection tool will trigger <span class='object_link'><a href="#onSelectionBulkChange-instance_method" title="Sketchup::SelectionObserver#onSelectionBulkChange (method)">#onSelectionBulkChange</a></span> regardless.</p>
 </div>
   </div>
 
@@ -681,17 +678,12 @@ emptied.</p>
     
       
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MySelectionObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::SelectionObserver (class)">SelectionObserver</a></span></span>
-  <span class='comment'># Note that there is a bug that prevent this from being called. Instead
-</span>  <span class='comment'># listen to onSelectedRemoved until the bug is fixed.
-</span>  <span class='kw'>def</span> <span class='id identifier rubyid_onSelectionRemoved'>onSelectionRemoved</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSelectionRemoved: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_entity'>entity</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-  <span class='comment'># To work around this you must catch this event instead until the bug is
-</span>  <span class='comment'># fixed:
-</span>  <span class='kw'>def</span> <span class='id identifier rubyid_onSelectedRemoved'>onSelectedRemoved</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
-    <span class='comment'># You can forward it to the correct event to be future compatible.
-</span>    <span class='id identifier rubyid_onSelectionRemoved'>onSelectionRemoved</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
+ <span class='kw'>def</span> <span class='id identifier rubyid_onSelectionRemoved'>onSelectionRemoved</span><span class='lparen'>(</span><span class='id identifier rubyid_selection'>selection</span><span class='comma'>,</span> <span class='id identifier rubyid_entity'>entity</span><span class='rparen'>)</span>
+   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onSelectionRemoved: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_entity'>entity</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+ <span class='kw'>end</span>
+
+ <span class='comment'># Due to a SketchUp bug, this method is called by the wrong name.
+</span> <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='symbol'>:onSelectedRemoved</span><span class='comma'>,</span> <span class='symbol'>:onSelectionRemoved</span>
 <span class='kw'>end</span>
 
 <span class='comment'># Attach the observer.
@@ -760,6 +752,22 @@ emptied.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Due to a bug in SketchUp this event doesn&#39;t trigger. Instead <code>onSelectedRemoved</code> is called.</p>
 </div>
       
     </li>

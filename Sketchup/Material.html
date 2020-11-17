@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -191,12 +193,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Material class represents a texture or color that can be applied to
-Drawingelements. It is most often applied to Faces.</p>
+<p>The Material class represents a texture or color that can be applied to Drawingelements. It is most often applied to Faces.</p>
 
-<p>You can pass any object that can be used as a material to a method that
-requires a material. Objects include actual materials, color, and classes
-that can be converted to a color.</p>
+<p>You can pass any object that can be used as a material to a method that requires a material. Objects include actual materials, color, and classes that can be converted to a color.</p>
 
 <p>The following are valid (assuming the existence of a Material mat1.)</p>
 
@@ -474,8 +473,7 @@ that can be converted to a color.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The colorize_type method retrieves the type of colorization of the
-material.</p>
+<p>The colorize_type method retrieves the type of colorization of the material.</p>
 </div></span>
   
 </li>
@@ -523,8 +521,7 @@ material.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The display_name method retrieves the name that is displayed within
-SketchUp for the material.</p>
+<p>The display_name method retrieves the name that is displayed within SketchUp for the material.</p>
 </div></span>
   
 </li>
@@ -620,8 +617,7 @@ SketchUp for the material.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#owner_type-instance_method" title="Sketchup::Material#owner_type (method)">#owner_type</a></span> method is used to determine if the material is owned by a
-<span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Materials</a></span>.</p>
+<p>The <span class='object_link'><a href="#owner_type-instance_method" title="Sketchup::Material#owner_type (method)">#owner_type</a></span> method is used to determine if the material is owned by a <span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Materials</a></span>.</p>
 </div></span>
   
 </li>
@@ -726,7 +722,7 @@ SketchUp for the material.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#write_thumbnail-instance_method" title="#write_thumbnail (instance method)">#<strong>write_thumbnail</strong>(filename, resolution)  &#x21d2; Boolean </a>
+      <a href="#write_thumbnail-instance_method" title="#write_thumbnail (instance method)">#<strong>write_thumbnail</strong>(path, resolution)  &#x21d2; Boolean </a>
     
 
     
@@ -741,8 +737,7 @@ SketchUp for the material.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The write_thumbnail method writes a bitmap thumbnail to the given file
-name.</p>
+<p>The write_thumbnail method writes a bitmap thumbnail to the given file name.</p>
 </div></span>
   
 </li>
@@ -783,8 +778,7 @@ name.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &lt;=&gt; method is used to compare two materials based on name. The
-number returned relates to the “string distance” between the names.</p>
+<p>The &lt;=&gt; method is used to compare two materials based on name. The number returned relates to the “string distance” between the names.</p>
 
 
   </div>
@@ -846,8 +840,7 @@ number returned relates to the “string distance” between the names.</p>
       
         &mdash;
         <div class='inline'>
-<p>0 if they are equal, positive number if material1 &gt; material2, negative
-if material1 &lt; material2</p>
+<p>0 if they are equal, positive number if material1 &gt; material2, negative if material1 &lt; material2</p>
 </div>
       
     </li>
@@ -993,9 +986,7 @@ if material1 &lt; material2</p>
     
 <p>The alpha method is used to get the opacity of the material.</p>
 
-<p>The value will be between 0.0 and 1.0. A value of 0.0 means that the
-material is completely transparent. A value of 1.0 means that the Material
-is completely opaque.</p>
+<p>The value will be between 0.0 and 1.0. A value of 0.0 means that the material is completely transparent. A value of 1.0 means that the Material is completely opaque.</p>
 
 
   </div>
@@ -1063,9 +1054,7 @@ is completely opaque.</p>
     
 <p>The alpha= method is used to set the opacity of the material.</p>
 
-<p>The value must be between 0.0 and 1.0. A value of 0.0 means that the
-material is completely transparent. A value of 1.0 means that the Material
-is completely opaque.</p>
+<p>The value must be between 0.0 and 1.0. A value of 0.0 means that the material is completely transparent. A value of 1.0 means that the Material is completely opaque.</p>
 
 
   </div>
@@ -1408,9 +1397,7 @@ is completely opaque.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The colorize_type method retrieves the type of colorization of the
-material. This value is only relevant when the materialType is set to 2
-(colorized textured). Types include:</p>
+<p>The colorize_type method retrieves the type of colorization of the material. This value is only relevant when the materialType is set to 2 (colorized textured). Types include:</p>
 
 <pre class="code"><code class="">- 0 = shift (Sketchup::Material::COLORIZE_SHIFT),
 - 1 = tint (Sketchup::Material::COLORIZE_TINT),
@@ -1481,9 +1468,7 @@ material. This value is only relevant when the materialType is set to 2
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The colorize_type method set the type of colorization of the material. This
-value is only relevant when the materialType is set to 2 (colorized
-textured). Types include:</p>
+<p>The colorize_type method set the type of colorization of the material. This value is only relevant when the materialType is set to 2 (colorized textured). Types include:</p>
 
 <pre class="code"><code class="">- 0 = shift (Sketchup::Material::COLORIZE_SHIFT),
 - 1 = tint (Sketchup::Material::COLORIZE_TINT),
@@ -1585,11 +1570,9 @@ textured). Types include:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The display_name method retrieves the name that is displayed within
-SketchUp for the material.</p>
+<p>The display_name method retrieves the name that is displayed within SketchUp for the material.</p>
 
-<p>This should be used when presenting the name in the UI, but the returned
-name cannot be used as a key in model.materials.</p>
+<p>This should be used when presenting the name in the UI, but the returned name cannot be used as a key in model.materials.</p>
 
 
   </div>
@@ -1736,9 +1719,7 @@ name cannot be used as a key in model.materials.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The name method retrieves the name of the material. This is the internal
-name of the object which should be used for retrieving the material from
-the model&#39;s material list.</p>
+<p>The name method retrieves the name of the material. This is the internal name of the object which should be used for retrieving the material from the model&#39;s material list.</p>
 
 <p>Use .display_name to display the name in the UI.</p>
 
@@ -1816,16 +1797,14 @@ the model&#39;s material list.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SketchUp 2018 this method will raise an `ArgumentError` if the name
-is not unique.</p>
+<p>Since SketchUp 2018 this method will raise an `ArgumentError` if the name is not unique.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>SketchUp 2018 would raise an error if you named material the name it
-already had.</p>
+<p>SketchUp 2018 would raise an error if you named material the name it already had.</p>
 </div>
   </div>
 
@@ -1940,8 +1919,7 @@ already had.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#owner_type-instance_method" title="Sketchup::Material#owner_type (method)">#owner_type</a></span> method is used to determine if the material is owned by a
-<span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Sketchup::Materials</a></span>.</p>
+<p>The <span class='object_link'><a href="#owner_type-instance_method" title="Sketchup::Material#owner_type (method)">#owner_type</a></span> method is used to determine if the material is owned by a <span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Sketchup::Materials</a></span>.</p>
 
 <p>Returned value is one of:</p>
 <ul><li>
@@ -2005,8 +1983,7 @@ already had.</p>
     
 <p>The <span class='object_link'><a href="#save_as-instance_method" title="Sketchup::Material#save_as (method)">#save_as</a></span> method is used to write a material to a SKM file.</p>
 
-<p>You must remember to append “.skm” to the filename as this will not be done
-automatically.</p>
+<p>You must remember to append “.skm” to the filename as this will not be done automatically.</p>
 
 
   </div>
@@ -2127,8 +2104,7 @@ automatically.</p>
       
         &mdash;
         <div class='inline'>
-<p>the Texture object within the Material. Returns nil if the Material does
-not have a texture.</p>
+<p>the Texture object within the Material. Returns nil if the Material does not have a texture.</p>
 </div>
       
     </li>
@@ -2159,11 +2135,11 @@ not have a texture.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>texture=</strong>(filename)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> </span>
+      <span class="overload">#<strong>texture=</strong>(filename)  &#x21d2; <tt>Object</tt> </span>
     
-      <span class="overload">#<strong>texture=</strong>(properties)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Integer, Integer)</tt> </span>
+      <span class="overload">#<strong>texture=</strong>(properties)  &#x21d2; <tt>Object</tt> </span>
     
-      <span class="overload">#<strong>texture=</strong>(image_rep)  &#x21d2; <tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt> </span>
+      <span class="overload">#<strong>texture=</strong>(image_rep)  &#x21d2; <tt>Object</tt> </span>
     
   
 
@@ -2198,7 +2174,7 @@ not have a texture.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>texture=</strong>(filename)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> </span>
+        <span class="signature">#<strong>texture=</strong>(filename)  &#x21d2; <tt>Object</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2227,26 +2203,13 @@ not have a texture.</p>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
       </li>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>texture=</strong>(properties)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Integer, Integer)</tt> </span>
+        <span class="signature">#<strong>texture=</strong>(properties)  &#x21d2; <tt>Object</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2262,40 +2225,26 @@ not have a texture.</p>
         <span class='name'>properties</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Integer, Integer)</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, <span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span>, <span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span>)</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>An array with the texture filename and optionally the width and height in
-model units.</p>
+<p>An array with the texture file path and optionally the width and height.</p>
 </div>
       
     </li>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Integer, Integer)</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
       </li>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>texture=</strong>(image_rep)  &#x21d2; <tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt> </span>
+        <span class="signature">#<strong>texture=</strong>(image_rep)  &#x21d2; <tt>Object</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2324,19 +2273,6 @@ model units.</p>
   
 </ul>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 
 </div>
       </li>
@@ -2378,8 +2314,7 @@ model units.</p>
     
 <p>The use_alpha? method tells if the material uses transparency.</p>
 
-<p>Note that this is not affected by the alpha value of the color object. Only
-the .alpha value and transparent texture will make this method return true.</p>
+<p>Note that this is not affected by the alpha value of the color object. Only the .alpha value and transparent texture will make this method return true.</p>
 
 
   </div>
@@ -2432,7 +2367,7 @@ the .alpha value and transparent texture will make this method return true.</p>
   <h3 class="signature " id="write_thumbnail-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>write_thumbnail</strong>(filename, resolution)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>write_thumbnail</strong>(path, resolution)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2441,8 +2376,7 @@ the .alpha value and transparent texture will make this method return true.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The write_thumbnail method writes a bitmap thumbnail to the given file
-name.</p>
+<p>The write_thumbnail method writes a bitmap thumbnail to the given file name.</p>
 
 
   </div>
@@ -2473,7 +2407,7 @@ name.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -2482,7 +2416,7 @@ name.</p>
       
         &mdash;
         <div class='inline'>
-<p>The file name for the thumbnail.</p>
+<p>The file path for the thumbnail.</p>
 </div>
       
     </li>

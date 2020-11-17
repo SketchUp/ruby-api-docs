@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::LayersObserver
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,11 +185,14 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This observer interface is implemented to react to layers events. To
-implement this observer, create a Ruby class of this type, override the
-desired methods, and add an instance of the observer to the objects of
-interests.</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>To implement this observer, create a Ruby class of this type, override the desired methods, and add an instance of the observer to the objects of interests.</p>
+</div>
+</div>
+
+<p>This observer interface is implemented to react to layers events.</p>
 
 
   </div>
@@ -263,8 +268,7 @@ interests.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onCurrentLayerChanged-instance_method" title="Sketchup::LayersObserver#onCurrentLayerChanged (method)">#onCurrentLayerChanged</a></span> method is called when the user selects a
-different active layer.</p>
+<p>The <span class='object_link'><a href="#onCurrentLayerChanged-instance_method" title="Sketchup::LayersObserver#onCurrentLayerChanged (method)">#onCurrentLayerChanged</a></span> method is called when the user selects a different active layer.</p>
 </div></span>
   
 </li>
@@ -321,6 +325,78 @@ different active layer.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#onLayerFolderAdded-instance_method" title="#onLayerFolderAdded (instance method)">#<strong>onLayerFolderAdded</strong>(layers, layer_folder)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onLayerFolderAdded-instance_method" title="Sketchup::LayersObserver#onLayerFolderAdded (method)">#onLayerFolderAdded</a></span> method is called when a layer folder is added to a model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onLayerFolderChanged-instance_method" title="#onLayerFolderChanged (instance method)">#<strong>onLayerFolderChanged</strong>(layers, layer_folder)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onLayerFolderChanged-instance_method" title="Sketchup::LayersObserver#onLayerFolderChanged (method)">#onLayerFolderChanged</a></span> method is called when a layer folder changes one of its properties.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onLayerFolderRemoved-instance_method" title="#onLayerFolderRemoved (instance method)">#<strong>onLayerFolderRemoved</strong>(layers, layer_folder)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onLayerFolderRemoved-instance_method" title="Sketchup::LayersObserver#onLayerFolderRemoved (method)">#onLayerFolderRemoved</a></span> method is called when a layer folder is removed from a model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#onLayerRemoved-instance_method" title="#onLayerRemoved (instance method)">#<strong>onLayerRemoved</strong>(layers, layer)  &#x21d2; nil </a>
     
 
@@ -336,8 +412,31 @@ different active layer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onLayerRemoved-instance_method" title="Sketchup::LayersObserver#onLayerRemoved (method)">#onLayerRemoved</a></span> method is called when a layer is removed from a
-model.</p>
+<p>The <span class='object_link'><a href="#onLayerRemoved-instance_method" title="Sketchup::LayersObserver#onLayerRemoved (method)">#onLayerRemoved</a></span> method is called when a layer is removed from a model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onParentFolderChanged-instance_method" title="#onParentFolderChanged (instance method)">#<strong>onParentFolderChanged</strong>(layers, layer)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onParentFolderChanged-instance_method" title="Sketchup::LayersObserver#onParentFolderChanged (method)">#onParentFolderChanged</a></span> method is called when a layer changes parent folder.</p>
 </div></span>
   
 </li>
@@ -361,8 +460,7 @@ model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onRemoveAllLayers-instance_method" title="Sketchup::LayersObserver#onRemoveAllLayers (method)">#onRemoveAllLayers</a></span> method is called when all layer are removed from a
-model.</p>
+<p>The <span class='object_link'><a href="#onRemoveAllLayers-instance_method" title="Sketchup::LayersObserver#onRemoveAllLayers (method)">#onRemoveAllLayers</a></span> method is called when all layer are removed from a model.</p>
 </div></span>
   
 </li>
@@ -391,8 +489,7 @@ model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onCurrentLayerChanged-instance_method" title="Sketchup::LayersObserver#onCurrentLayerChanged (method)">#onCurrentLayerChanged</a></span> method is called when the user selects a
-different active layer.</p>
+<p>The <span class='object_link'><a href="#onCurrentLayerChanged-instance_method" title="Sketchup::LayersObserver#onCurrentLayerChanged (method)">#onCurrentLayerChanged</a></span> method is called when the user selects a different active layer.</p>
 
 
   </div>
@@ -695,6 +792,327 @@ different active layer.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="onLayerFolderAdded-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onLayerFolderAdded</strong>(layers, layer_folder)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onLayerFolderAdded-instance_method" title="Sketchup::LayersObserver#onLayerFolderAdded (method)">#onLayerFolderAdded</a></span> method is called when a layer folder is added to a model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onLayerFolderAdded'>onLayerFolderAdded</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer_folder'>layer_folder</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerFolderAdded: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer_folder'>layer_folder</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>layers</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Sketchup::Layers</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>layer_folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onLayerFolderChanged-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onLayerFolderChanged</strong>(layers, layer_folder)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onLayerFolderChanged-instance_method" title="Sketchup::LayersObserver#onLayerFolderChanged (method)">#onLayerFolderChanged</a></span> method is called when a layer folder changes one of its properties.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onLayerFolderChanged'>onLayerFolderChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer_folder'>layer_folder</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerFolderChanged: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer_folder'>layer_folder</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello Universe</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_folder'>folder</span><span class='period'>.</span><span class='id identifier rubyid_visible'>visible</span> <span class='op'>=</span> <span class='kw'>false</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>layers</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Sketchup::Layers</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>layer_folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onLayerFolderRemoved-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onLayerFolderRemoved</strong>(layers, layer_folder)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#onLayerFolderRemoved-instance_method" title="Sketchup::LayersObserver#onLayerFolderRemoved (method)">#onLayerFolderRemoved</a></span> method is called when a layer folder is removed from a model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onLayerFolderRemoved'>onLayerFolderRemoved</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer_folder'>layer_folder</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onLayerRemoved: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer_folder'>layer_folder</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_remove_folder'>remove_folder</span><span class='lparen'>(</span><span class='id identifier rubyid_folder'>folder</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>layers</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Sketchup::Layers</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>layer_folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="onLayerRemoved-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -707,8 +1125,7 @@ different active layer.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onLayerRemoved-instance_method" title="Sketchup::LayersObserver#onLayerRemoved (method)">#onLayerRemoved</a></span> method is called when a layer is removed from a
-model.</p>
+<p>The <span class='object_link'><a href="#onLayerRemoved-instance_method" title="Sketchup::LayersObserver#onLayerRemoved (method)">#onLayerRemoved</a></span> method is called when a layer is removed from a model.</p>
 
 
   </div>
@@ -802,6 +1219,122 @@ model.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="onParentFolderChanged-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onParentFolderChanged</strong>(layers, layer)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When a folder changes parent <span class='object_link'><a href="#onLayerFolderRemoved-instance_method" title="Sketchup::LayersObserver#onLayerFolderRemoved (method)">#onLayerFolderRemoved</a></span> and <span class='object_link'><a href="#onLayerFolderAdded-instance_method" title="Sketchup::LayersObserver#onLayerFolderAdded (method)">#onLayerFolderAdded</a></span> triggers.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#onParentFolderChanged-instance_method" title="Sketchup::LayersObserver#onParentFolderChanged (method)">#onParentFolderChanged</a></span> method is called when a layer changes parent folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyLayersObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::LayersObserver (class)">LayersObserver</a></span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onParentFolderChanged'>onParentFolderChanged</span><span class='lparen'>(</span><span class='id identifier rubyid_layers'>layers</span><span class='comma'>,</span> <span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onParentFolderChange: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MyLayersObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_layer'>add_layer</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_folder'>folder</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>layers</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Sketchup::Layers</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>layer</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="onRemoveAllLayers-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -814,8 +1347,7 @@ model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onRemoveAllLayers-instance_method" title="Sketchup::LayersObserver#onRemoveAllLayers (method)">#onRemoveAllLayers</a></span> method is called when all layer are removed from a
-model.</p>
+<p>The <span class='object_link'><a href="#onRemoveAllLayers-instance_method" title="Sketchup::LayersObserver#onRemoveAllLayers (method)">#onRemoveAllLayers</a></span> method is called when all layer are removed from a model.</p>
 
 
   </div>

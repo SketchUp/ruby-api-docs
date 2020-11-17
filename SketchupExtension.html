@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
     <script>
@@ -184,26 +186,13 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The SketchupExtension class contains methods allowing you to create and
-manipulate SketchUp extensions. Extensions are Ruby scripts that can be
-loaded and unloaded using the Extension manager (Extensions panel of the
-Preferences dialog box). Generally you should register your ruby scripts as
-an extension to give SketchUp users the ability to disable it through the
-user interface.</p>
+<p>The SketchupExtension class contains methods allowing you to create and manipulate SketchUp extensions. Extensions are Ruby scripts that can be loaded and unloaded using the Extension manager (Extensions panel of the Preferences dialog box). Generally you should register your ruby scripts as an extension to give SketchUp users the ability to disable it through the user interface.</p>
 
-<p>The idea here is to take the ruby script that actually creates your
-functionality and place it in a folder somewhere outside of the /Plugins
-folder, most commonly a subdirectory like /Plugins/MyExtension. Then you
-create a new ruby script inside the /Plugins directory that will set up the
-extension entry and load your original script if the user has your
-extension turned on.</p>
+<p>The idea here is to take the ruby script that actually creates your functionality and place it in a folder somewhere outside of the /Plugins folder, most commonly a subdirectory like /Plugins/MyExtension. Then you create a new ruby script inside the /Plugins directory that will set up the extension entry and load your original script if the user has your extension turned on.</p>
 
-<p>Here is an example extension loading script. For this example, the
-following code would be saved in /Plugins/StairTools.rb, and the actual
-plugin itself would live in /Plugins/StairTools/core.rb.</p>
+<p>Here is an example extension loading script. For this example, the following code would be saved in /Plugins/StairTools.rb, and the actual plugin itself would live in /Plugins/StairTools/core.rb.</p>
 
-<p>You can find two example extensions that ship with SketchUp,
-su_dynamiccomponents.rb and su_sandboxtools.rb, under the /Plugins/ folder.</p>
+<p>You can find two example extensions that ship with SketchUp, su_dynamiccomponents.rb and su_sandboxtools.rb, under the /Plugins/ folder.</p>
 
 
   </div>
@@ -280,8 +269,7 @@ su_dynamiccomponents.rb and su_sandboxtools.rb, under the /Plugins/ folder.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Loads the extension, meaning the underlying ruby script is immediately
-interpreted.</p>
+<p>Loads the extension, meaning the underlying ruby script is immediately interpreted.</p>
 </div></span>
   
 </li>
@@ -305,8 +293,7 @@ interpreted.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The copyright method returns the copyright string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The copyright method returns the copyright string which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -330,8 +317,7 @@ extension inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The copyright= method sets the copyright string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The copyright= method sets the copyright string which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -355,8 +341,7 @@ extension inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The creator method returns the creator string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The creator method returns the creator string which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -380,8 +365,7 @@ extension inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The creator= method sets the creator string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The creator= method sets the creator string which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -405,8 +389,7 @@ extension inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description method returns the long description which appears beneath
-an extension inside the Extensions Manager dialog.</p>
+<p>The description method returns the long description which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -430,8 +413,7 @@ an extension inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description= method sets the long description which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The description= method sets the long description which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -455,8 +437,7 @@ extension inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The extension_path method returns the file system path to the
-extension&#39;s outer rb file.</p>
+<p>The extension_path method returns the file system path to the extension&#39;s outer rb file.</p>
 </div></span>
   
 </li>
@@ -554,8 +535,7 @@ extension&#39;s outer rb file.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns whether the extension is currently loaded, meaning the actual ruby
-script that implements the extension has been evaluated.</p>
+<p>Returns whether the extension is currently loaded, meaning the actual ruby script that implements the extension has been evaluated.</p>
 </div></span>
   
 </li>
@@ -579,8 +559,7 @@ script that implements the extension has been evaluated.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The name method returns the name which appears for an extension inside the
-Extensions Manager dialog.</p>
+<p>The name method returns the name which appears for an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -604,8 +583,7 @@ Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The name= method sets the name which appears for an extension inside the
-Extensions Manager dialog.</p>
+<p>The name= method sets the name which appears for an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -629,8 +607,7 @@ Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns whether the extension has been registered via
-Sketchup.register_extension.</p>
+<p>Returns whether the extension has been registered via Sketchup.register_extension.</p>
 </div></span>
   
 </li>
@@ -678,8 +655,7 @@ Sketchup.register_extension.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The version method returns the version which appears beneath an extension
-inside the Extensions Manager dialog.</p>
+<p>The version method returns the version which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -703,8 +679,7 @@ inside the Extensions Manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The version method sets the version which appears beneath an extension
-inside the Extensions Manager dialog.</p>
+<p>The version method sets the version which appears beneath an extension inside the Extensions Manager dialog.</p>
 </div></span>
   
 </li>
@@ -757,17 +732,12 @@ inside the Extensions Manager dialog.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>It is recommended to omit the file extension provided in the
-<code>path</code> argument. SketchUp will resolve the file extension to
-<code>.rbe</code>, <code>.rbs</code> or <code>.rb</code>.</p>
+<p>It is recommended to omit the file extension provided in the <code>path</code> argument. SketchUp will resolve the file extension to <code>.rbe</code>, <code>.rbs</code> or <code>.rb</code>.</p>
 </div>
   </div>
 
 
-<p>The new method is used to create a new SketchupExtension object. Note that
-once the extension object is created, it will not appear in the Extension
-Manager dialog until your register it with the Sketchup.register_extension
-method.</p>
+<p>The new method is used to create a new SketchupExtension object. Note that once the extension object is created, it will not appear in the Extension Manager dialog until your register it with the Sketchup.register_extension method.</p>
 
 
   </div>
@@ -875,9 +845,7 @@ method.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Loads the extension, meaning the underlying ruby script is immediately
-interpreted. This is the equivalent of checking the extension&#39;s
-checkbox in the Preferences &gt; Extensions list.</p>
+<p>Loads the extension, meaning the underlying ruby script is immediately interpreted. This is the equivalent of checking the extension&#39;s checkbox in the Preferences &gt; Extensions list.</p>
 
 
   </div>
@@ -949,8 +917,7 @@ checkbox in the Preferences &gt; Extensions list.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The copyright method returns the copyright string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The copyright method returns the copyright string which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1020,8 +987,7 @@ extension inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The copyright= method sets the copyright string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The copyright= method sets the copyright string which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1122,8 +1088,7 @@ extension inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The creator method returns the creator string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The creator method returns the creator string which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1193,8 +1158,7 @@ extension inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The creator= method sets the creator string which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The creator= method sets the creator string which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1295,8 +1259,7 @@ extension inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description method returns the long description which appears beneath
-an extension inside the Extensions Manager dialog.</p>
+<p>The description method returns the long description which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1366,8 +1329,7 @@ an extension inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description= method sets the long description which appears beneath an
-extension inside the Extensions Manager dialog.</p>
+<p>The description= method sets the long description which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1468,8 +1430,7 @@ extension inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The extension_path method returns the file system path to the
-extension&#39;s outer rb file.</p>
+<p>The extension_path method returns the file system path to the extension&#39;s outer rb file.</p>
 
 
   </div>
@@ -1649,8 +1610,7 @@ extension&#39;s outer rb file.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns whether the extension is currently loaded, meaning the actual ruby
-script that implements the extension has been evaluated.</p>
+<p>Returns whether the extension is currently loaded, meaning the actual ruby script that implements the extension has been evaluated.</p>
 
 
   </div>
@@ -1714,8 +1674,7 @@ script that implements the extension has been evaluated.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The name method returns the name which appears for an extension inside the
-Extensions Manager dialog.</p>
+<p>The name method returns the name which appears for an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1784,8 +1743,7 @@ Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The name= method sets the name which appears for an extension inside the
-Extensions Manager dialog.</p>
+<p>The name= method sets the name which appears for an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -1885,8 +1843,7 @@ Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns whether the extension has been registered via
-Sketchup.register_extension.</p>
+<p>Returns whether the extension has been registered via Sketchup.register_extension.</p>
 
 
   </div>
@@ -1950,12 +1907,9 @@ Sketchup.register_extension.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Unloads the extension. This is the equivalent of unchecking the
-extension&#39;s checkbox in the Preferences &gt; Extensions list.</p>
+<p>Unloads the extension. This is the equivalent of unchecking the extension&#39;s checkbox in the Preferences &gt; Extensions list.</p>
 
-<p>Note that technically the extension is not “unloaded” in the sense that it
-stops running during the current SketchUp session, but the next time the
-user restarts SketchUp, the extension will not be active.</p>
+<p>Note that technically the extension is not “unloaded” in the sense that it stops running during the current SketchUp session, but the next time the user restarts SketchUp, the extension will not be active.</p>
 
 
   </div>
@@ -2025,8 +1979,7 @@ user restarts SketchUp, the extension will not be active.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The version method returns the version which appears beneath an extension
-inside the Extensions Manager dialog.</p>
+<p>The version method returns the version which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>
@@ -2096,8 +2049,7 @@ inside the Extensions Manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The version method sets the version which appears beneath an extension
-inside the Extensions Manager dialog.</p>
+<p>The version method sets the version which appears beneath an extension inside the Extensions Manager dialog.</p>
 
 
   </div>

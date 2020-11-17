@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,18 +186,11 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>This is the base class for all SketchUp entities. Entities are basically
-anything that can be contained in a model, including Drawingelements such
-as Edges, SectionPlanes, Groups, etc. and entities that relate to those
-Drawingelements, such as Loops, Layers, etc.</p>
+<p>This is the base class for all SketchUp entities. Entities are basically anything that can be contained in a model, including Drawingelements such as Edges, SectionPlanes, Groups, etc. and entities that relate to those Drawingelements, such as Loops, Layers, etc.</p>
 
-<p>Keep in mind that the methods below are available on all subclasses. For
-example, an Edge&#39;s parent class is Drawingelement, and a
-Drawingelement&#39;s parent class is Entity. Therefore an Edge has all of
-the methods defined in Drawingelement and Entity.</p>
+<p>Keep in mind that the methods below are available on all subclasses. For example, an Edge&#39;s parent class is Drawingelement, and a Drawingelement&#39;s parent class is Entity. Therefore an Edge has all of the methods defined in Drawingelement and Entity.</p>
 
-<p>The Object.is_a? method is the common way of determining what sort of
-Entity you&#39;re dealing with.</p>
+<p>The Object.is_a? method is the common way of determining what sort of Entity you&#39;re dealing with.</p>
 
 
   </div>
@@ -240,7 +235,7 @@ Entity you&#39;re dealing with.</p>
 
 </div><div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="AttributeDictionaries.html" title="Sketchup::AttributeDictionaries (class)">AttributeDictionaries</a></span>, <span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">AttributeDictionary</a></span>, <span class='object_link'><a href="Axes.html" title="Sketchup::Axes (class)">Axes</a></span>, <span class='object_link'><a href="Behavior.html" title="Sketchup::Behavior (class)">Behavior</a></span>, <span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Curve</a></span>, <span class='object_link'><a href="DefinitionList.html" title="Sketchup::DefinitionList (class)">DefinitionList</a></span>, <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>, <span class='object_link'><a href="EdgeUse.html" title="Sketchup::EdgeUse (class)">EdgeUse</a></span>, <span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Layer</a></span>, <span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Layers</a></span>, <span class='object_link'><a href="LineStyle.html" title="Sketchup::LineStyle (class)">LineStyle</a></span>, <span class='object_link'><a href="LineStyles.html" title="Sketchup::LineStyles (class)">LineStyles</a></span>, <span class='object_link'><a href="Loop.html" title="Sketchup::Loop (class)">Loop</a></span>, <span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Material</a></span>, <span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Materials</a></span>, <span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Page</a></span>, <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span>, <span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">RenderingOptions</a></span>, <span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span>, <span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Style</a></span>, <span class='object_link'><a href="Styles.html" title="Sketchup::Styles (class)">Styles</a></span>, <span class='object_link'><a href="Texture.html" title="Sketchup::Texture (class)">Texture</a></span>, <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span></p>
+  <p class="children"><span class='object_link'><a href="AttributeDictionaries.html" title="Sketchup::AttributeDictionaries (class)">AttributeDictionaries</a></span>, <span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">AttributeDictionary</a></span>, <span class='object_link'><a href="Axes.html" title="Sketchup::Axes (class)">Axes</a></span>, <span class='object_link'><a href="Behavior.html" title="Sketchup::Behavior (class)">Behavior</a></span>, <span class='object_link'><a href="Curve.html" title="Sketchup::Curve (class)">Curve</a></span>, <span class='object_link'><a href="DefinitionList.html" title="Sketchup::DefinitionList (class)">DefinitionList</a></span>, <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>, <span class='object_link'><a href="EdgeUse.html" title="Sketchup::EdgeUse (class)">EdgeUse</a></span>, <span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Layer</a></span>, <span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">LayerFolder</a></span>, <span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Layers</a></span>, <span class='object_link'><a href="LineStyle.html" title="Sketchup::LineStyle (class)">LineStyle</a></span>, <span class='object_link'><a href="LineStyles.html" title="Sketchup::LineStyles (class)">LineStyles</a></span>, <span class='object_link'><a href="Loop.html" title="Sketchup::Loop (class)">Loop</a></span>, <span class='object_link'><a href="Material.html" title="Sketchup::Material (class)">Material</a></span>, <span class='object_link'><a href="Materials.html" title="Sketchup::Materials (class)">Materials</a></span>, <span class='object_link'><a href="Page.html" title="Sketchup::Page (class)">Page</a></span>, <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span>, <span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">RenderingOptions</a></span>, <span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span>, <span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Style</a></span>, <span class='object_link'><a href="Styles.html" title="Sketchup::Styles (class)">Styles</a></span>, <span class='object_link'><a href="Texture.html" title="Sketchup::Texture (class)">Texture</a></span>, <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span></p>
 </div>
 
 
@@ -303,8 +298,7 @@ Entity you&#39;re dealing with.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The attribute_dictionaries method is used to retrieve the
-AttributeDictionaries collection attached to the entity.</p>
+<p>The attribute_dictionaries method is used to retrieve the AttributeDictionaries collection attached to the entity.</p>
 </div></span>
   
 </li>
@@ -328,8 +322,7 @@ AttributeDictionaries collection attached to the entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The attribute_dictionary method is used to retrieve an attribute dictionary
-with a given name that is attached to an Entity.</p>
+<p>The attribute_dictionary method is used to retrieve an attribute dictionary with a given name that is attached to an Entity.</p>
 </div></span>
   
 </li>
@@ -353,8 +346,7 @@ with a given name that is attached to an Entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span> method is used to delete an attribute from an
-entity.</p>
+<p>The <span class='object_link'><a href="#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span> method is used to delete an attribute from an entity.</p>
 </div></span>
   
 </li>
@@ -378,8 +370,7 @@ entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The deleted? method is used to determine if your entity is still valid (not
-deleted by another script, for example.).</p>
+<p>The deleted? method is used to determine if your entity is still valid (not deleted by another script, for example.).</p>
 </div></span>
   
 </li>
@@ -427,8 +418,7 @@ deleted by another script, for example.).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span> method is used to retrieve the value of an attribute
-in the entity&#39;s attribute dictionary.</p>
+<p>The <span class='object_link'><a href="#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span> method is used to retrieve the value of an attribute in the entity&#39;s attribute dictionary.</p>
 </div></span>
   
 </li>
@@ -452,8 +442,7 @@ in the entity&#39;s attribute dictionary.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_s method is used to retrieve the string representation of the
-entity.</p>
+<p>The to_s method is used to retrieve the string representation of the entity.</p>
 </div></span>
   
 </li>
@@ -525,8 +514,7 @@ entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span> method is used to retrieve a unique persistent id
-assigned to an entity.</p>
+<p>The <span class='object_link'><a href="#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span> method is used to retrieve a unique persistent id assigned to an entity.</p>
 </div></span>
   
 </li>
@@ -550,8 +538,7 @@ assigned to an entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -575,8 +562,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set attribute is used to set the value of an attribute in an attribute
-dictionary with the given name.</p>
+<p>The set attribute is used to set the value of an attribute in an attribute dictionary with the given name.</p>
 </div></span>
   
 </li>
@@ -600,8 +586,7 @@ dictionary with the given name.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The to_s method is used to retrieve the string representation of the
-entity.</p>
+<p>The to_s method is used to retrieve the string representation of the entity.</p>
 </div></span>
   
 </li>
@@ -625,8 +610,7 @@ entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The typename method retrieves the type of the entity, which will be a
-string such as “Face”, “Edge”, or “Group”.</p>
+<p>The typename method retrieves the type of the entity, which will be a string such as “Face”, “Edge”, or “Group”.</p>
 </div></span>
   
 </li>
@@ -650,8 +634,7 @@ string such as “Face”, “Edge”, or “Group”.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The valid? method is used to determine if your entity is still valid (not
-deleted by another script, for example.).</p>
+<p>The <span class='object_link'><a href="#valid%3F-instance_method" title="Sketchup::Entity#valid? (method)">#valid?</a></span> method is used to determine if your entity is still valid (not deleted by another script, for example).</p>
 </div></span>
   
 </li>
@@ -780,8 +763,15 @@ deleted by another script, for example.).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The attribute_dictionaries method is used to retrieve the
-AttributeDictionaries collection attached to the entity.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The return value may be either <code>nil</code> or an empty <span class='object_link'><a href="AttributeDictionaries.html" title="Sketchup::AttributeDictionaries (class)">AttributeDictionaries</a></span> collection if this entity has no <span class='object_link'><a href="AttributeDictionary.html" title="Sketchup::AttributeDictionary (class)">AttributeDictionary</a></span>s.</p>
+</div>
+  </div>
+
+
+<p>The attribute_dictionaries method is used to retrieve the AttributeDictionaries collection attached to the entity.</p>
 
 
   </div>
@@ -823,15 +813,6 @@ AttributeDictionaries collection attached to the entity.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>the AttributeDictionaries object associated with the entity, or nil if
-there are no attribute_dictionary objects associated with the model. Care
-must be taken if nil is returned, for example: invoking
-attribute_dictionaries.length will throw a NoMethodError exception, not
-return 0.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -868,8 +849,7 @@ return 0.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The attribute_dictionary method is used to retrieve an attribute dictionary
-with a given name that is attached to an Entity.</p>
+<p>The attribute_dictionary method is used to retrieve an attribute dictionary with a given name that is attached to an Entity.</p>
 
 
   </div>
@@ -940,8 +920,7 @@ with a given name that is attached to an Entity.</p>
       
         &mdash;
         <div class='inline'>
-<p>boolean, if set to true then the attribute dictionary will be created if it
-does not exist.</p>
+<p>boolean, if set to true then the attribute dictionary will be created if it does not exist.</p>
 </div>
       
     </li>
@@ -1012,20 +991,14 @@ does not exist.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>In SketchUp 2018, special attribute dictionaries have been added. The name
-of these dictionaries are “SU_InstanceSet” and “SU_DefinitionSet”. The
-dictionaries cannot be deleted via ruby and an ArgumentError will be
-raised. The key/value pairs in the dictionary can be deleted safely.</p>
+<p>In SketchUp 2018, special attribute dictionaries have been added. The name of these dictionaries are “SU_InstanceSet” and “SU_DefinitionSet”. The dictionaries cannot be deleted via ruby and an ArgumentError will be raised. The key/value pairs in the dictionary can be deleted safely.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span> method is used to delete an attribute from an
-entity.</p>
+<p>The <span class='object_link'><a href="#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span> method is used to delete an attribute from an entity.</p>
 
-<p>If only the dictionary_name is given, then it deletes the entire
-AttributeDictionary. Otherwise, <span class='object_link'><a href="#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span> deletes the attribute
-with the given key from the given dictionary.</p>
+<p>If only the dictionary_name is given, then it deletes the entire AttributeDictionary. Otherwise, <span class='object_link'><a href="#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span> deletes the attribute with the given key from the given dictionary.</p>
 
 
   </div>
@@ -1222,8 +1195,7 @@ with the given key from the given dictionary.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The deleted? method is used to determine if your entity is still valid (not
-deleted by another script, for example.)</p>
+<p>The deleted? method is used to determine if your entity is still valid (not deleted by another script, for example.)</p>
 
 
   </div>
@@ -1378,15 +1350,11 @@ deleted by another script, for example.)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span> method is used to retrieve the value of an attribute
-in the entity&#39;s attribute dictionary.</p>
+<p>The <span class='object_link'><a href="#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span> method is used to retrieve the value of an attribute in the entity&#39;s attribute dictionary.</p>
 
-<p>If the third parameter, <code>default_value</code>, is not passed and there
-is no attribute that matches the given name, it returns <code>nil</code>.</p>
+<p>If the third parameter, <code>default_value</code>, is not passed and there is no attribute that matches the given name, it returns <code>nil</code>.</p>
 
-<p>If <code>default_value</code> is provided and there is no matching
-attribute it returns the given value. It does not create an attribute with
-that name though.</p>
+<p>If <code>default_value</code> is provided and there is no matching attribute it returns the given value. It does not create an attribute with that name though.</p>
 
 
   </div>
@@ -1524,8 +1492,7 @@ that name though.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_s method is used to retrieve the string representation of the
-entity.</p>
+<p>The to_s method is used to retrieve the string representation of the entity.</p>
 
 
   </div>
@@ -1691,8 +1658,7 @@ entity.</p>
     
 <p>The parent method is used to retrieve the parent of the entity.</p>
 
-<p>The parent will be a ComponentDefinition, a Group, or a Model, whatever the
-entity is contained within.</p>
+<p>The parent will be a ComponentDefinition, a Group, or a Model, whatever the entity is contained within.</p>
 
 
   </div>
@@ -1777,15 +1743,12 @@ entity is contained within.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Only a subset of entity types support PIDs. Refer to the table below for
-which and when support was added. In general it is entities that you can
-iterate over in a <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.</p>
+<p>Only a subset of entity types support PIDs. Refer to the table below for which and when support was added. In general it is entities that you can iterate over in a <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span> method is used to retrieve a unique persistent id
-assigned to an entity.</p>
+<p>The <span class='object_link'><a href="#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span> method is used to retrieve a unique persistent id assigned to an entity.</p>
 
 <p>The persistent id persistent between sessions.</p>
 <dl class="rdoc-list label-list"><dt>SketchUp 2020.1
@@ -1832,9 +1795,7 @@ assigned to an entity.</p>
 </li><li>
 <p><span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span></p>
 </li><li>
-<p>Polyline3d entities exposed only as <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> Use
-<span class='object_link'><a href="#typename-instance_method" title="Sketchup::Entity#typename (method)">#typename</a></span> to determine if a <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> is a
-<tt>“Polyline3d”</tt>.</p>
+<p>Polyline3d entities exposed only as <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> Use <span class='object_link'><a href="#typename-instance_method" title="Sketchup::Entity#typename (method)">#typename</a></span> to determine if a <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> is a <tt>“Polyline3d”</tt>.</p>
 </li></ul>
 </dd></dl>
 
@@ -1916,8 +1877,7 @@ assigned to an entity.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>
@@ -2017,14 +1977,11 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set attribute is used to set the value of an attribute in an attribute
-dictionary with the given name.</p>
+<p>The set attribute is used to set the value of an attribute in an attribute dictionary with the given name.</p>
 
 <p>This method will create a new AttributeDictionary if none exists.</p>
 
-<p>Note, a bug prior to SketchUp 2015 would corrupt the model if the key is an
-empty string. This also includes values that will evaluate to empty
-strings, such as nil.</p>
+<p>Note, a bug prior to SketchUp 2015 would corrupt the model if the key is an empty string. This also includes values that will evaluate to empty strings, such as nil.</p>
 
 
   </div>
@@ -2169,8 +2126,7 @@ strings, such as nil.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The to_s method is used to retrieve the string representation of the
-entity.</p>
+<p>The to_s method is used to retrieve the string representation of the entity.</p>
 
 
   </div>
@@ -2252,8 +2208,15 @@ entity.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The typename method retrieves the type of the entity, which will be a
-string such as “Face”, “Edge”, or “Group”.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prefer <code>is_a?</code> over <code>typename</code> when possible as it is faster.</p>
+</div>
+  </div>
+
+
+<p>The typename method retrieves the type of the entity, which will be a string such as “Face”, “Edge”, or “Group”.</p>
 
 
   </div>
@@ -2335,10 +2298,9 @@ string such as “Face”, “Edge”, or “Group”.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The valid? method is used to determine if your entity is still valid (not
-deleted by another script, for example.)</p>
+<p>The <span class='object_link'><a href="#valid%3F-instance_method" title="Sketchup::Entity#valid? (method)">#valid?</a></span> method is used to determine if your entity is still valid (not deleted by another script, for example).</p>
 
-<p>This method is functionally identical to the deleted? method.</p>
+<p>This method is functionally the inverse to the <span class='object_link'><a href="#deleted%3F-instance_method" title="Sketchup::Entity#deleted? (method)">#deleted?</a></span> method.</p>
 
 
   </div>

@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -189,8 +191,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="" title="Sketchup::InstancePath (class)">InstancePath</a></span> class represent the instance path to a given
-entity within the model hierarchy.</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::InstancePath (class)">InstancePath</a></span> class represent the instance path to a given entity within the model hierarchy.</p>
 
 
   </div>
@@ -275,7 +276,7 @@ entity within the model hierarchy.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The elements of an instance path can be accessed like an array.</p>
+<p>The elements of an instance path can be accessed similarly to an array.</p>
 </div></span>
   
 </li>
@@ -393,8 +394,7 @@ entity within the model hierarchy.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The leaf of an instance path is the last element which can be any entity
-that can be represented in the model.</p>
+<p>The leaf of an instance path is the last element which can be any entity that can be represented in the model.</p>
 </div></span>
   
 </li>
@@ -442,8 +442,7 @@ that can be represented in the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The serialized version of an instance path is the persistent ids of its
-entities concatenated with a period.</p>
+<p>The serialized version of an instance path is the persistent ids of its entities concatenated with a period.</p>
 </div></span>
   
 </li>
@@ -467,8 +466,7 @@ entities concatenated with a period.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The root of an instance path is the element located closest to the model
-root.</p>
+<p>The root of an instance path is the element located closest to the model root.</p>
 </div></span>
   
 </li>
@@ -560,8 +558,7 @@ root.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>An instance path is valid if it has at least one element and consist of
-groups and instances with exception of the leaf which can be any entity.</p>
+<p>An instance path is valid if it has at least one element and consist of groups and instances with exception of the leaf which can be any entity.</p>
 </div></span>
   
 </li>
@@ -617,8 +614,7 @@ groups and instances with exception of the leaf which can be any entity.</p>
       
         &mdash;
         <div class='inline'>
-<p>The leaf can be any entity, but the rest must be a group or component
-instance.</p>
+<p>The leaf can be any entity, but the rest must be a group or component instance.</p>
 </div>
       
     </li>
@@ -637,8 +633,7 @@ instance.</p>
       
         &mdash;
         <div class='inline'>
-<p>if the instance path isn&#39;t composed of instances and an optional leaf
-entity.</p>
+<p>if the instance path isn&#39;t composed of instances and an optional leaf entity.</p>
 </div>
       
     </li>
@@ -756,7 +751,15 @@ entity.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The elements of an instance path can be accessed like an array.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method does not accept negative indices. For the exact behavior of an array, use <tt>{#to_a}</tt>.</p>
+</div>
+  </div>
+
+
+<p>The elements of an instance path can be accessed similarly to an array.</p>
 
 
   </div>
@@ -1169,9 +1172,7 @@ entity.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The leaf of an instance path is the last element which can be any entity
-that can be represented in the model. This is normally a
-<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>, but could be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>.</p>
+<p>The leaf of an instance path is the last element which can be any entity that can be represented in the model. This is normally a <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>, but could be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>.</p>
 
 <p>An instance can also be a leaf.</p>
 
@@ -1348,8 +1349,7 @@ that can be represented in the model. This is normally a
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The serialized version of an instance path is the persistent ids of its
-entities concatenated with a period.</p>
+<p>The serialized version of an instance path is the persistent ids of its entities concatenated with a period.</p>
 
 
   </div>
@@ -1439,10 +1439,7 @@ entities concatenated with a period.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The root of an instance path is the element located closest to the model
-root. This will be a group or component instance. If you have a
-non-instance as a leaf with no other parent component this will return
-`nil`.</p>
+<p>The root of an instance path is the element located closest to the model root. This will be a group or component instance. If you have a non-instance as a leaf with no other parent component this will return `nil`.</p>
 
 
   </div>
@@ -1893,11 +1890,9 @@ non-instance as a leaf with no other parent component this will return
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>An instance path is valid if it has at least one element and consist of
-groups and instances with exception of the leaf which can be any entity.</p>
+<p>An instance path is valid if it has at least one element and consist of groups and instances with exception of the leaf which can be any entity.</p>
 
-<p>This method doesn&#39;t check if the path can actually be looked up in the
-model.</p>
+<p>This method doesn&#39;t check if the path can actually be looked up in the model.</p>
 
 
   </div>

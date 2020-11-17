@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -307,7 +309,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The area method is used to retrieve the area of a face in current units.</p>
+<p>The area method is used to retrieve the area of a face.</p>
 </div></span>
   
 </li>
@@ -331,8 +333,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The back_material method is used to retrieve the material assigned to the
-back side of the face.</p>
+<p>The back_material method is used to retrieve the material assigned to the back side of the face.</p>
 </div></span>
   
 </li>
@@ -356,8 +357,7 @@ back side of the face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The back_material= method is used to set the material assigned to the back
-side of the face.</p>
+<p>The back_material= method is used to set the material assigned to the back side of the face.</p>
 </div></span>
   
 </li>
@@ -381,8 +381,7 @@ side of the face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The classify_point method is used to determine if a given Point3d is on the
-referenced Face.</p>
+<p>The classify_point method is used to determine if a given Point3d is on the referenced Face.</p>
 </div></span>
   
 </li>
@@ -430,8 +429,7 @@ referenced Face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#followme-instance_method" title="Sketchup::Face#followme (method)">#followme</a></span> method is used to create a shape by making the face follow
-along an array of edges.</p>
+<p>The <span class='object_link'><a href="#followme-instance_method" title="Sketchup::Face#followme (method)">#followme</a></span> method is used to create a shape by making the face follow along an array of edges.</p>
 </div></span>
   
 </li>
@@ -455,8 +453,7 @@ along an array of edges.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_glued_instances method returns an Array any ComponentInstances that
-are glued to the face.</p>
+<p>The get_glued_instances method returns an Array any ComponentInstances that are glued to the face.</p>
 </div></span>
   
 </li>
@@ -480,8 +477,7 @@ are glued to the face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_texture_projection method will return a vector representing the
-projection for either the front or back side of the face.</p>
+<p>The get_texture_projection method will return a vector representing the projection for either the front or back side of the face.</p>
 </div></span>
   
 </li>
@@ -505,8 +501,7 @@ projection for either the front or back side of the face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_UVHelper object is used to retrieve a UVHelper object for use in
-texture manipulation on a face.</p>
+<p>The get_UVHelper object is used to retrieve a UVHelper object for use in texture manipulation on a face.</p>
 </div></span>
   
 </li>
@@ -530,8 +525,7 @@ texture manipulation on a face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The loops method is used to get an array of all of the loops that bound the
-face.</p>
+<p>The loops method is used to get an array of all of the loops that bound the face.</p>
 </div></span>
   
 </li>
@@ -555,8 +549,7 @@ face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The material method is used to retrieve the material assigned to the front
-of the face.</p>
+<p>The material method is used to retrieve the material assigned to the front of the face.</p>
 </div></span>
   
 </li>
@@ -580,8 +573,7 @@ of the face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The material= method is used to set the material assigned to the front side
-of the face.</p>
+<p>The material= method is used to set the material assigned to the front side of the face.</p>
 </div></span>
   
 </li>
@@ -629,8 +621,7 @@ of the face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The normal method is used to retrieve the 3D vector normal to the face in
-the front direction.</p>
+<p>The normal method is used to retrieve the 3D vector normal to the face in the front direction.</p>
 </div></span>
   
 </li>
@@ -750,8 +741,7 @@ the front direction.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The reverse! method is used to reverse the face&#39;s orientation, meaning
-the front becomes the back.</p>
+<p>The reverse! method is used to reverse the face&#39;s orientation, meaning the front becomes the back.</p>
 </div></span>
   
 </li>
@@ -775,8 +765,7 @@ the front becomes the back.</p>
 
   
     <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>This function never worked right. It&#39;s not possible to control the
-position and orientation of the texture.</p>
+<p>This function never worked right. It&#39;s not possible to control the position and orientation of the texture.</p>
 </div></span>
   
 </li>
@@ -800,8 +789,7 @@ position and orientation of the texture.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The vertices method is used to get an array of all of the vertices that
-bound the face.</p>
+<p>The vertices method is used to get an array of all of the vertices that bound the face.</p>
 </div></span>
   
 </li>
@@ -934,14 +922,9 @@ bound the face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The area method is used to retrieve the area of a face in current units.</p>
+<p>The area method is used to retrieve the area of a face.</p>
 
-<p>You can pass in an optional Transformation (or an array that can represent
-a transformation), to correct for a parent group&#39;s transformation. For
-example, if a face is inside of a group that is scaled to 200%, the area
-method will return the unscaled area of the face. So by passing a 200%
-transformation object to this method, you can account for that to get the
-“visual” area of the face.</p>
+<p>You can pass in an optional Transformation (or an array that can represent a transformation), to correct for a parent group&#39;s transformation. For example, if a face is inside of a group that is scaled to 200%, the area method will return the unscaled area of the face. So by passing a 200% transformation object to this method, you can account for that to get the “visual” area of the face.</p>
 
 
   </div>
@@ -976,7 +959,7 @@ transformation object to this method, you can account for that to get the
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns the area of the face in current units (if successful).</p>
+<p>Returns the area of the face in square inches.</p>
 
 
   </div>
@@ -995,7 +978,7 @@ transformation object to this method, you can account for that to get the
       
         &mdash;
         <div class='inline'>
-<p>the area of the face in current units (if successful)</p>
+<p>the area of the face in square inches.</p>
 </div>
       
     </li>
@@ -1011,7 +994,7 @@ transformation object to this method, you can account for that to get the
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns the area of the face in current units (if successful).</p>
+<p>Returns the area of the face in square inches.</p>
 
 
   </div>
@@ -1031,8 +1014,7 @@ transformation object to this method, you can account for that to get the
       
         &mdash;
         <div class='inline'>
-<p>A Transformation object or array that can be interpreted as a
-Transformation object.</p>
+<p>A Transformation object or array that can be interpreted as a Transformation object.</p>
 </div>
       
     </li>
@@ -1051,7 +1033,7 @@ Transformation object.</p>
       
         &mdash;
         <div class='inline'>
-<p>the area of the face in current units (if successful)</p>
+<p>the area of the face in square inches.</p>
 </div>
       
     </li>
@@ -1096,8 +1078,7 @@ Transformation object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The back_material method is used to retrieve the material assigned to the
-back side of the face.</p>
+<p>The back_material method is used to retrieve the material assigned to the back side of the face.</p>
 
 
   </div>
@@ -1139,8 +1120,7 @@ back side of the face.</p>
       
         &mdash;
         <div class='inline'>
-<p>a Material object representing the material on the back of the face (if
-successful)</p>
+<p>a Material object representing the material on the back of the face (if successful)</p>
 </div>
       
     </li>
@@ -1179,8 +1159,7 @@ successful)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The back_material= method is used to set the material assigned to the back
-side of the face.</p>
+<p>The back_material= method is used to set the material assigned to the back side of the face.</p>
 
 
   </div>
@@ -1288,14 +1267,9 @@ side of the face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The classify_point method is used to determine if a given Point3d is on the
-referenced Face.</p>
+<p>The classify_point method is used to determine if a given Point3d is on the referenced Face.</p>
 
-<p>It is important that return value comparisons be made against the symbolic
-constants (i.e. <span class='object_link'><a href="#PointUnknown-constant" title="Sketchup::Face::PointUnknown (constant)">PointUnknown</a></span>,
-<span class='object_link'><a href="#PointInside-constant" title="Sketchup::Face::PointInside (constant)">PointInside</a></span>, <span class='object_link'><a href="#PointOnVertex-constant" title="Sketchup::Face::PointOnVertex (constant)">PointOnVertex</a></span>, etc.)
-rather than the absolute integer values as these values may change from one
-release to the next.</p>
+<p>It is important that return value comparisons be made against the symbolic constants (i.e. <span class='object_link'><a href="#PointUnknown-constant" title="Sketchup::Face::PointUnknown (constant)">PointUnknown</a></span>, <span class='object_link'><a href="#PointInside-constant" title="Sketchup::Face::PointInside (constant)">PointInside</a></span>, <span class='object_link'><a href="#PointOnVertex-constant" title="Sketchup::Face::PointOnVertex (constant)">PointOnVertex</a></span>, etc.) rather than the absolute integer values as these values may change from one release to the next.</p>
 
 
   </div>
@@ -1397,8 +1371,7 @@ release to the next.</p>
       
         &mdash;
         <div class='inline'>
-<p>an integer describing where a Point3d is in relation to the referenced
-Face.</p>
+<p>an integer describing where a Point3d is in relation to the referenced Face.</p>
 </div>
       
     </li>
@@ -1518,8 +1491,7 @@ Face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#followme-instance_method" title="Sketchup::Face#followme (method)">#followme</a></span> method is used to create a shape by making the face follow
-along an array of edges.</p>
+<p>The <span class='object_link'><a href="#followme-instance_method" title="Sketchup::Face#followme (method)">#followme</a></span> method is used to create a shape by making the face follow along an array of edges.</p>
 
 
   </div>
@@ -1687,8 +1659,7 @@ along an array of edges.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_glued_instances method returns an Array any ComponentInstances that
-are glued to the face.</p>
+<p>The get_glued_instances method returns an Array any ComponentInstances that are glued to the face.</p>
 
 
   </div>
@@ -1765,8 +1736,7 @@ are glued to the face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_texture_projection method will return a vector representing the
-projection for either the front or back side of the face.</p>
+<p>The get_texture_projection method will return a vector representing the projection for either the front or back side of the face.</p>
 
 
   </div>
@@ -1894,8 +1864,7 @@ projection for either the front or back side of the face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_UVHelper object is used to retrieve a UVHelper object for use in
-texture manipulation on a face.</p>
+<p>The get_UVHelper object is used to retrieve a UVHelper object for use in texture manipulation on a face.</p>
 
 
   </div>
@@ -2098,8 +2067,7 @@ texture manipulation on a face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The loops method is used to get an array of all of the loops that bound the
-face.</p>
+<p>The loops method is used to get an array of all of the loops that bound the face.</p>
 
 
   </div>
@@ -2177,9 +2145,7 @@ face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The material method is used to retrieve the material assigned to the front
-of the face. (This method is inherited from the Drawingelement parent
-class.)</p>
+<p>The material method is used to retrieve the material assigned to the front of the face. (This method is inherited from the Drawingelement parent class.)</p>
 
 
   </div>
@@ -2221,8 +2187,7 @@ class.)</p>
       
         &mdash;
         <div class='inline'>
-<p>a Material object representing the material on the front of the face (if
-successful)</p>
+<p>a Material object representing the material on the front of the face (if successful)</p>
 </div>
       
     </li>
@@ -2261,9 +2226,7 @@ successful)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The material= method is used to set the material assigned to the front side
-of the face. (This method is inherited from the Drawingelement parent
-class.)</p>
+<p>The material= method is used to set the material assigned to the front side of the face. (This method is inherited from the Drawingelement parent class.)</p>
 
 
   </div>
@@ -2371,8 +2334,7 @@ class.)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The mesh method creates a polygon mesh that represents the face. See the
-<span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> class for more information.</p>
+<p>The mesh method creates a polygon mesh that represents the face. See the <span class='object_link'><a href="../Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> class for more information.</p>
 
 <p>Valid flags are:</p>
 <ul><li>
@@ -2385,8 +2347,7 @@ class.)</p>
 <p><code>4</code>: Include PolygonMeshNormals.</p>
 </li></ul>
 
-<p>Use bitwise OR to combine flags. A value of <code>7</code> will include all
-flags, for example.</p>
+<p>Use bitwise OR to combine flags. A value of <code>7</code> will include all flags, for example.</p>
 
 
   </div>
@@ -2498,8 +2459,7 @@ flags, for example.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The normal method is used to retrieve the 3D vector normal to the face in
-the front direction.</p>
+<p>The normal method is used to retrieve the 3D vector normal to the face in the front direction.</p>
 
 
   </div>
@@ -2654,8 +2614,7 @@ the front direction.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The plane method is used to retrieve the plane of the face. See the Array
-class for information on how planes are stored.</p>
+<p>The plane method is used to retrieve the plane of the face. See the Array class for information on how planes are stored.</p>
 
 
   </div>
@@ -2735,12 +2694,7 @@ class for information on how planes are stored.</p>
     
 <p>The position_material method is used to position a material on a face.</p>
 
-<p>The pt_array must contain 2, 4, 6 or 8 points. The points are used in pairs
-to tell where a point in the texture image is positioned on the Face. The
-first point in each pair is a 3D point in the model. It should be a point
-on the Face. The second point in each pair of points is a 2D point that
-gives the (u,v) coordinates of a point in the image to match up with the 3D
-point.</p>
+<p>The pt_array must contain 2, 4, 6 or 8 points. The points are used in pairs to tell where a point in the texture image is positioned on the Face. The first point in each pair is a 3D point in the model. It should be a point on the Face. The second point in each pair of points is a 2D point that gives the (u,v) coordinates of a point in the image to match up with the 3D point.</p>
 
 
   </div>
@@ -2835,8 +2789,7 @@ point.</p>
       
         &mdash;
         <div class='inline'>
-<p>true to position the texture on the front of the Face or false to position
-it on the back of the Face.</p>
+<p>true to position the texture on the front of the Face or false to position it on the back of the Face.</p>
 </div>
       
     </li>
@@ -2940,13 +2893,13 @@ it on the back of the Face.</p>
         <span class='name'>distance</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The distance, in current units, to push/pull the face.</p>
+<p>The distance to push/pull the face.</p>
 </div>
       
     </li>
@@ -2964,8 +2917,7 @@ it on the back of the Face.</p>
       
         &mdash;
         <div class='inline'>
-<p>Create a new push/pull starting face if true (equivalent of pressing CTRL
-while in SketchUp), do not create a push/pull starting face if false.</p>
+<p>Create a new push/pull starting face if true (equivalent of pressing CTRL while in SketchUp), do not create a push/pull starting face if false.</p>
 </div>
       
     </li>
@@ -3021,8 +2973,7 @@ while in SketchUp), do not create a push/pull starting face if false.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The reverse! method is used to reverse the face&#39;s orientation, meaning
-the front becomes the back.</p>
+<p>The reverse! method is used to reverse the face&#39;s orientation, meaning the front becomes the back.</p>
 
 
   </div>
@@ -3099,12 +3050,10 @@ the front becomes the back.</p>
 </h3><div class="docstring">
   <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>This function never worked right. It&#39;s not possible to control the
-position and orientation of the texture.</p>
+<p>This function never worked right. It&#39;s not possible to control the position and orientation of the texture.</p>
 </div></div>
 
-<p>The set_texture_projection method is used to set the texture projection
-direction.</p>
+<p>The set_texture_projection method is used to set the texture projection direction.</p>
 
 
   </div>
@@ -3164,8 +3113,7 @@ direction.</p>
       
         &mdash;
         <div class='inline'>
-<p>representing the direction of the projection. Use nil to remove the
-projection.</p>
+<p>representing the direction of the projection. Use nil to remove the projection.</p>
 </div>
       
     </li>
@@ -3242,8 +3190,7 @@ projection.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The vertices method is used to get an array of all of the vertices that
-bound the face.</p>
+<p>The vertices method is used to get an array of all of the vertices that bound the face.</p>
 
 
   </div>

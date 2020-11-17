@@ -20,7 +20,7 @@
     <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
     <meta name="title" content="Class: Sketchup::InputPoint" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="The InputPoint used to pick entities that reside under the current cursor location." />
+    <meta name="description" content="The Sketchup::InputPoint class is used to pick 3d points and/or entities that reside under the current cursor location, similar to native Line tool and other drawing tools." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::InputPoint" />
     <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/InputPoint.html" />
-    <meta property="og:description" content="The InputPoint used to pick entities that reside under the current cursor location." />
+    <meta property="og:description" content="The Sketchup::InputPoint class is used to pick 3d points and/or entities that reside under the current cursor location, similar to native Line tool and other drawing tools." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Sketchup::InputPoint" />
-    <meta name="twitter:description" content="The InputPoint used to pick entities that reside under the current cursor location." />
+    <meta name="twitter:description" content="The Sketchup::InputPoint class is used to pick 3d points and/or entities that reside under the current cursor location, similar to native Line tool and other drawing tools." />
     <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/InputPoint.html" />
 
@@ -57,6 +57,8 @@
 
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
@@ -184,14 +186,13 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The InputPoint used to pick entities that reside under the current cursor
-location. InputPoint and PickHelper are similar, but InputPoint also uses
-inferencing.   Only tools react to cursor location. Therefore, most of the
-methods in this class are only useful in the context of a tool you are
-writing. For example, if you want to determine the entity that you just
-clicked on with the mouse, you would use InputPoint.pick from within your
-onLMouseButton method in a tool. See the example script linetool.rb for
-examples of using the InputPoint class.</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span> class is used to pick 3d points and/or entities that reside under the current cursor location, similar to native Line tool and other drawing tools. Unlike <span class='object_link'><a href="PickHelper.html" title="Sketchup::PickHelper (class)">PickHelper</a></span>, <span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span> uses inference, i.e. “snaps” to vertices and other entities when the cursor is close to them.</p>
+
+<p>Only <span class='object_link'><a href="Tool.html" title="Sketchup::Tool (class)">Tool</a></span>s react to cursor location and most of these methods are only useful in the context of a tool. For example, if you want to determine the 3d point you just moved the cursor over, you would use <span class='object_link'><a href="#pick-instance_method" title="Sketchup::InputPoint#pick (method)">#pick</a></span> from within your <span class='object_link'><a href="Tool.html#onMouseMove-instance_method" title="Sketchup::Tool#onMouseMove (method)">Tool#onMouseMove</a></span> method. InputPoints are best picked from mouse move, as you want them to draw them to the view.</p>
+
+<p>For an example, see <a href="https://github.com/SketchUp/sketchup-ruby-api-tutorials/tree/master/examples/02_custom_tool">github.com/SketchUp/sketchup-ruby-api-tutorials/tree/master/examples/02_custom_tool</a>.</p>
+
+<p>To lock inference similar to native SketchUp tools, see <span class='object_link'><a href="View.html#lock_inference-instance_method" title="Sketchup::View#lock_inference (method)">View#lock_inference</a></span>.</p>
 
 
   </div>
@@ -300,8 +301,7 @@ examples of using the InputPoint class.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The copy! method is used to copy the data from a second input point into
-this input point.</p>
+<p>The copy! method is used to copy the data from a second input point into this input point.</p>
 </div></span>
   
 </li>
@@ -325,8 +325,7 @@ this input point.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The degrees_of_freedom method retrieves the number of degrees of freedom
-there are for an input point.</p>
+<p>The degrees_of_freedom method retrieves the number of degrees of freedom there are for an input point.</p>
 </div></span>
   
 </li>
@@ -350,8 +349,7 @@ there are for an input point.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The depth method retrieves the depth of an inference if it is coming from a
-component.</p>
+<p>The depth method retrieves the depth of an inference if it is coming from a component.</p>
 </div></span>
   
 </li>
@@ -375,8 +373,7 @@ component.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The display? method is used to determine if the input point has anything to
-draw.</p>
+<p>The display? method is used to determine if the input point has anything to draw.</p>
 </div></span>
   
 </li>
@@ -424,8 +421,7 @@ draw.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The edge method is used to retrieve the edge if the input point is getting
-its position from a point on an Edge.</p>
+<p>The edge method is used to retrieve the edge if the input point is getting its position from a point on an Edge.</p>
 </div></span>
   
 </li>
@@ -434,7 +430,7 @@ its position from a point on an Edge.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#face-instance_method" title="#face (instance method)">#<strong>face</strong>  &#x21d2; Object </a>
+      <a href="#face-instance_method" title="#face (instance method)">#<strong>face</strong>  &#x21d2; Sketchup::Face<sup>?</sup> </a>
     
 
     
@@ -449,8 +445,7 @@ its position from a point on an Edge.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The face method retrieves the face if the input point is getting its
-position from a face.</p>
+<p>The face method retrieves the face at or behind the input point.</p>
 </div></span>
   
 </li>
@@ -459,7 +454,7 @@ position from a face.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(pt_or_vertex)  &#x21d2; Object </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -500,8 +495,7 @@ position from a face.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#instance_path-instance_method" title="Sketchup::InputPoint#instance_path (method)">#instance_path</a></span> method retrieves the instance path for the picked
-point.</p>
+<p>The <span class='object_link'><a href="#instance_path-instance_method" title="Sketchup::InputPoint#instance_path (method)">#instance_path</a></span> method retrieves the instance path for the picked point.</p>
 </div></span>
   
 </li>
@@ -525,8 +519,7 @@ point.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pick method is used to get the input point at a specific screen
-position.</p>
+<p>The pick method is used to get the input point at a specific screen position.</p>
 </div></span>
   
 </li>
@@ -574,8 +567,7 @@ position.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The tooltip method is used to retrieve the string that is the tool tip to
-display for the input point.</p>
+<p>The tooltip method is used to retrieve the string that is the tool tip to display for the input point.</p>
 </div></span>
   
 </li>
@@ -599,8 +591,7 @@ display for the input point.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The transformation method retrieves the Transformation object for the input
-point.</p>
+<p>The transformation method retrieves the Transformation object for the input point.</p>
 </div></span>
   
 </li>
@@ -665,7 +656,11 @@ point.</p>
   <h3 class="signature first" id="initialize-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>initialize</strong>(pt_or_vertex)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(pt_or_vertex)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+    
   
 
   
@@ -677,8 +672,7 @@ point.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2019 it was not possible to sub-class
-<span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span> due to a bug in how SketchUp initialized the class.</p>
+<p>Prior to SketchUp 2019 it was not possible to sub-class <span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span> due to a bug in how SketchUp initialized the class.</p>
 </div>
   </div>
 
@@ -702,11 +696,30 @@ point.</p>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns inputpoint - the newly created InputPoint object if successful.</p>
 
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(pt_or_vertex)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
 
   </div>
 </div>
@@ -719,7 +732,7 @@ point.</p>
         <span class='name'>pt_or_vertex</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>, <tt><span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span></tt>)</span>
       
       
       
@@ -734,6 +747,9 @@ point.</p>
 
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -801,8 +817,7 @@ point.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if the InputPoint objects are the same object. False
-if the objects are not the same.</p>
+<p>Returns status - true if the InputPoint objects are the same object. False if the objects are not the same.</p>
 
 
   </div>
@@ -841,8 +856,7 @@ if the objects are not the same.</p>
       
         
         <div class='inline'>
-<p>status - true if the InputPoint objects are the same object. False if the
-objects are not the same.</p>
+<p>status - true if the InputPoint objects are the same object. False if the objects are not the same.</p>
 </div>
       
     </li>
@@ -886,8 +900,7 @@ objects are not the same.</p>
     
 <p>The clear method is used to clear the input point.</p>
 
-<p>This sets it to an empty state. After calling this, valid? will return
-false.</p>
+<p>This sets it to an empty state. After calling this, valid? will return false.</p>
 
 
   </div>
@@ -958,8 +971,7 @@ false.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The copy! method is used to copy the data from a second input point into
-this input point.</p>
+<p>The copy! method is used to copy the data from a second input point into this input point.</p>
 
 
   </div>
@@ -983,8 +995,7 @@ this input point.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns inputpoint - the new input point that received the copy if
-successful.</p>
+<p>Returns inputpoint - the new input point that received the copy if successful.</p>
 
 
   </div>
@@ -1065,21 +1076,15 @@ successful.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The degrees_of_freedom method retrieves the number of degrees of freedom
-there are for an input point.</p>
+<p>The degrees_of_freedom method retrieves the number of degrees of freedom there are for an input point.</p>
 
-<p>If you are just getting a point in space, then the degrees_of_freedom will
-be 3 - meaning that there is nothing about the point that would constrain
-its position.</p>
+<p>If you are just getting a point in space, then the degrees_of_freedom will be 3 - meaning that there is nothing about the point that would constrain its position.</p>
 
-<p>If you are on a face, then the degrees_of_freedom will be 2 meaning that
-you can only move on the plane of the face.</p>
+<p>If you are on a face, then the degrees_of_freedom will be 2 meaning that you can only move on the plane of the face.</p>
 
-<p>If you are on an Edge or an axis, then the degrees_of_freedom will be 1
-meaning that you can only move in the direction of the edge or axis.</p>
+<p>If you are on an Edge or an axis, then the degrees_of_freedom will be 1 meaning that you can only move in the direction of the edge or axis.</p>
 
-<p>If you get an end point of an Edge, or an intersection point, then the
-degrees_of_freedom will be 0.</p>
+<p>If you get an end point of an Edge, or an intersection point, then the degrees_of_freedom will be 0.</p>
 
 
   </div>
@@ -1149,12 +1154,9 @@ degrees_of_freedom will be 0.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The depth method retrieves the depth of an inference if it is coming from a
-component.</p>
+<p>The depth method retrieves the depth of an inference if it is coming from a component.</p>
 
-<p>If the InputPoint is not getting a position from inside a component, this
-method will return 0. Otherwise it returns the depth of the entity in a
-nested component that is providing the position.</p>
+<p>If the InputPoint is not getting a position from inside a component, this method will return 0. Otherwise it returns the depth of the entity in a nested component that is providing the position.</p>
 
 
   </div>
@@ -1185,8 +1187,7 @@ nested component that is providing the position.</p>
       
         
         <div class='inline'>
-<p>depth - a number representing the depth of the inputpoint (inside groups
-and components) if successful</p>
+<p>depth - a number representing the depth of the inputpoint (inside groups and components) if successful</p>
 </div>
       
     </li>
@@ -1225,8 +1226,7 @@ and components) if successful</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The display? method is used to determine if the input point has anything to
-draw.</p>
+<p>The display? method is used to determine if the input point has anything to draw.</p>
 
 <p>If the method returns true, then the draw method will draw something.</p>
 
@@ -1259,8 +1259,7 @@ draw.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if the draw method will draw something, false if the draw
-method has nothing to draw</p>
+<p>status - true if the draw method will draw something, false if the draw method has nothing to draw</p>
 </div>
       
     </li>
@@ -1301,9 +1300,7 @@ method has nothing to draw</p>
     
 <p>The draw method is used to draw the input point.</p>
 
-<p>This is useful for showing an InputPoint from within the draw method of a
-tool that you have implemented in Ruby. Additional examples are available
-in the Plugins/examples directory.</p>
+<p>This is useful for showing an InputPoint from within the draw method of a tool that you have implemented in Ruby. Additional examples are available in the Plugins/examples directory.</p>
 
 
   </div>
@@ -1406,8 +1403,7 @@ in the Plugins/examples directory.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The edge method is used to retrieve the edge if the input point is getting
-its position from a point on an Edge.</p>
+<p>The edge method is used to retrieve the edge if the input point is getting its position from a point on an Edge.</p>
 
 
   </div>
@@ -1468,7 +1464,7 @@ its position from a point on an Edge.</p>
   <h3 class="signature " id="face-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>face</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>face</strong>  &#x21d2; <tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt><sup>?</sup> 
   
 
   
@@ -1477,10 +1473,15 @@ its position from a point on an Edge.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The face method retrieves the face if the input point is getting its
-position from a face.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The InputPoint doesn&#39;t necessarily lie on the face, but can be e.g. on an edge in front of the face.</p>
+</div>
+  </div>
 
-<p>Otherwise it returns nil.</p>
+
+<p>The face method retrieves the face at or behind the input point. This can be used to determine a plane, similar to what native Rotate tool does.</p>
 
 
   </div>
@@ -1505,14 +1506,9 @@ position from a face.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span></tt>, <tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>face - a Face object if successful, or nil if unsuccessful</p>
-</div>
       
     </li>
   
@@ -1550,12 +1546,9 @@ position from a face.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#instance_path-instance_method" title="Sketchup::InputPoint#instance_path (method)">#instance_path</a></span> method retrieves the instance path for the picked
-point.</p>
+<p>The <span class='object_link'><a href="#instance_path-instance_method" title="Sketchup::InputPoint#instance_path (method)">#instance_path</a></span> method retrieves the instance path for the picked point.</p>
 
-<p>The returned instance_path is a copy of what the input point is holding on
-to at the moment you access it. Your copy will not update if you make new
-picks with the input point.</p>
+<p>The returned instance_path is a copy of what the input point is holding on to at the moment you access it. Your copy will not update if you make new picks with the input point.</p>
 
 <p>If there has been no valid pick it will return `nil`.</p>
 
@@ -1622,16 +1615,11 @@ picks with the input point.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The pick method is used to get the input point at a specific screen
-position.</p>
+<p>The pick method is used to get the input point at a specific screen position.</p>
 
-<p>The first form just uses the screen position to compute the InputPoint. It
-is used when you don&#39;t want the InputPoint to be dependent on another
-InputPoint.</p>
+<p>The first form just uses the screen position to compute the InputPoint. It is used when you don&#39;t want the InputPoint to be dependent on another InputPoint.</p>
 
-<p>The second form uses the screen position and another InputPoint. It will
-find additional inferences such as along one of the axis directions from
-the first point.</p>
+<p>The second form uses the screen position and another InputPoint. It will find additional inferences such as along one of the axis directions from the first point.</p>
 
 
   </div>
@@ -1655,8 +1643,7 @@ the first point.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if a valid InputPoint was picked and it is different
-than it was before.</p>
+<p>Returns status - true if a valid InputPoint was picked and it is different than it was before.</p>
 
 
   </div>
@@ -1743,8 +1730,7 @@ than it was before.</p>
       
         
         <div class='inline'>
-<p>status - true if a valid InputPoint was picked and it is different than it
-was before.</p>
+<p>status - true if a valid InputPoint was picked and it is different than it was before.</p>
 </div>
       
     </li>
@@ -1856,8 +1842,7 @@ was before.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The tooltip method is used to retrieve the string that is the tool tip to
-display for the input point.</p>
+<p>The tooltip method is used to retrieve the string that is the tool tip to display for the input point.</p>
 
 
   </div>
@@ -1889,8 +1874,7 @@ display for the input point.</p>
       
         
         <div class='inline'>
-<p>tip - a string tooltip or an empty string (if the input point doesn&#39;t
-provide a tooltip).</p>
+<p>tip - a string tooltip or an empty string (if the input point doesn&#39;t provide a tooltip).</p>
 </div>
       
     </li>
@@ -1929,18 +1913,11 @@ provide a tooltip).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The transformation method retrieves the Transformation object for the input
-point.</p>
+<p>The transformation method retrieves the Transformation object for the input point.</p>
 
-<p>If the InputPoint object is getting its position from something inside of a
-component instance, this method returns the Transformation of the component
-instance. Otherwise it returns the identity Transformation.</p>
+<p>If the InputPoint object is getting its position from something inside of a component instance, this method returns the Transformation of the component instance. Otherwise it returns the identity Transformation.</p>
 
-<p>Note that the position method on a input point always returns a point that
-is transformed into model space. If you are using the edge, face or vertex
-method on the InputPoint though, you will probably need to use the
-transformation method to transform the data that you get back from the
-selected entity.</p>
+<p>Note that the position method on a input point always returns a point that is transformed into model space. If you are using the edge, face or vertex method on the InputPoint though, you will probably need to use the transformation method to transform the data that you get back from the selected entity.</p>
 
 
   </div>
@@ -2044,8 +2021,7 @@ selected entity.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if the input point has valid data, false if it does not have
-valid data.</p>
+<p>status - true if the input point has valid data, false if it does not have valid data.</p>
 </div>
       
     </li>
@@ -2084,9 +2060,7 @@ valid data.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The vertex method returns a Vertex associated with the InputPoint. If the
-InputPoint is on the end of a line, then it will return the Vertex. If the
-InputPoint does not select any vertices this method returns nil.</p>
+<p>The vertex method returns a Vertex associated with the InputPoint. If the InputPoint is on the end of a line, then it will return the Vertex. If the InputPoint does not select any vertices this method returns nil.</p>
 
 
   </div>

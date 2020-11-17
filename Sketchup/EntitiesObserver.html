@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::EntitiesObserver
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,22 +185,22 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>To implement this observer, create a Ruby class of this type, override the desired methods, and add an instance of the observer to the objects of interests.</p>
+</div>
+</div>
+
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The methods of this observer fire in such a way that making changes to the
-model while inside of them is dangerous. If you experience sudden crashes,
-it could be because of this observer. A potential workaround is to use a
-<span class='object_link'><a href="ToolsObserver.html" title="Sketchup::ToolsObserver (class)">ToolsObserver</a></span> to watch what the user is doing instead.</p>
+<p>The methods of this observer fire in such a way that making changes to the model while inside of them is dangerous. If you experience sudden crashes, it could be because of this observer. A potential workaround is to use a <span class='object_link'><a href="ToolsObserver.html" title="Sketchup::ToolsObserver (class)">ToolsObserver</a></span> to watch what the user is doing instead.</p>
 </div>
   </div>
 
 
-<p>This observer interface is implemented to react to <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span>
-collection events. To implement this observer, create a Ruby class of this
-type, override the desired methods, and add an instance of the observer to
-the objects of interests.</p>
+<p>This observer interface is implemented to react to <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> collection events.</p>
 
 
   </div>
@@ -280,8 +282,7 @@ the objects of interests.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onActiveSectionPlaneChanged-instance_method" title="Sketchup::EntitiesObserver#onActiveSectionPlaneChanged (method)">#onActiveSectionPlaneChanged</a></span> method is invoked when a section plane
-within this entities is activated or the active one is deactivated.</p>
+<p>The <span class='object_link'><a href="#onActiveSectionPlaneChanged-instance_method" title="Sketchup::EntitiesObserver#onActiveSectionPlaneChanged (method)">#onActiveSectionPlaneChanged</a></span> method is invoked when a section plane within this entities is activated or the active one is deactivated.</p>
 </div></span>
   
 </li>
@@ -305,8 +306,7 @@ within this entities is activated or the active one is deactivated.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The onElementAdded method is invoked when a single element is added to the
-<span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> collection.</p>
+<p>The onElementAdded method is invoked when a single element is added to the <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> collection.</p>
 </div></span>
   
 </li>
@@ -330,8 +330,7 @@ within this entities is activated or the active one is deactivated.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onElementModified-instance_method" title="Sketchup::EntitiesObserver#onElementModified (method)">#onElementModified</a></span> method is invoked whenever one or more elements in
-the collection are modified.</p>
+<p>The <span class='object_link'><a href="#onElementModified-instance_method" title="Sketchup::EntitiesObserver#onElementModified (method)">#onElementModified</a></span> method is invoked whenever one or more elements in the collection are modified.</p>
 </div></span>
   
 </li>
@@ -355,8 +354,7 @@ the collection are modified.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onElementRemoved-instance_method" title="Sketchup::EntitiesObserver#onElementRemoved (method)">#onElementRemoved</a></span> method is invoked when a single element is removed
-from the <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> collection.</p>
+<p>The <span class='object_link'><a href="#onElementRemoved-instance_method" title="Sketchup::EntitiesObserver#onElementRemoved (method)">#onElementRemoved</a></span> method is invoked when a single element is removed from the <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> collection.</p>
 </div></span>
   
 </li>
@@ -380,8 +378,7 @@ from the <span class='object_link'><a href="Entities.html" title="Sketchup::Enti
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onEraseEntities-instance_method" title="Sketchup::EntitiesObserver#onEraseEntities (method)">#onEraseEntities</a></span> method is invoked when one or more entities are
-erased.</p>
+<p>The <span class='object_link'><a href="#onEraseEntities-instance_method" title="Sketchup::EntitiesObserver#onEraseEntities (method)">#onEraseEntities</a></span> method is invoked when one or more entities are erased.</p>
 </div></span>
   
 </li>
@@ -410,8 +407,7 @@ erased.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onActiveSectionPlaneChanged-instance_method" title="Sketchup::EntitiesObserver#onActiveSectionPlaneChanged (method)">#onActiveSectionPlaneChanged</a></span> method is invoked when a section plane
-within this entities is activated or the active one is deactivated.</p>
+<p>The <span class='object_link'><a href="#onActiveSectionPlaneChanged-instance_method" title="Sketchup::EntitiesObserver#onActiveSectionPlaneChanged (method)">#onActiveSectionPlaneChanged</a></span> method is invoked when a section plane within this entities is activated or the active one is deactivated.</p>
 
 
   </div>
@@ -505,8 +501,7 @@ within this entities is activated or the active one is deactivated.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The onElementAdded method is invoked when a single element is added to the
-<span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.</p>
+<p>The onElementAdded method is invoked when a single element is added to the <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.</p>
 
 
   </div>
@@ -606,8 +601,7 @@ within this entities is activated or the active one is deactivated.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onElementModified-instance_method" title="Sketchup::EntitiesObserver#onElementModified (method)">#onElementModified</a></span> method is invoked whenever one or more elements in
-the collection are modified.</p>
+<p>The <span class='object_link'><a href="#onElementModified-instance_method" title="Sketchup::EntitiesObserver#onElementModified (method)">#onElementModified</a></span> method is invoked whenever one or more elements in the collection are modified.</p>
 
 
   </div>
@@ -707,10 +701,7 @@ the collection are modified.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onElementRemoved-instance_method" title="Sketchup::EntitiesObserver#onElementRemoved (method)">#onElementRemoved</a></span> method is invoked when a single element is removed
-from the <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.  Note that the entity has been
-deleted and should not be used in anyway except to know that the entity has
-been deleted.</p>
+<p>The <span class='object_link'><a href="#onElementRemoved-instance_method" title="Sketchup::EntitiesObserver#onElementRemoved (method)">#onElementRemoved</a></span> method is invoked when a single element is removed from the <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.  Note that the entity has been deleted and should not be used in anyway except to know that the entity has been deleted.</p>
 
 
   </div>
@@ -815,8 +806,7 @@ been deleted.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onEraseEntities-instance_method" title="Sketchup::EntitiesObserver#onEraseEntities (method)">#onEraseEntities</a></span> method is invoked when one or more entities are
-erased.</p>
+<p>The <span class='object_link'><a href="#onEraseEntities-instance_method" title="Sketchup::EntitiesObserver#onEraseEntities (method)">#onEraseEntities</a></span> method is invoked when one or more entities are erased.</p>
 
 
   </div>

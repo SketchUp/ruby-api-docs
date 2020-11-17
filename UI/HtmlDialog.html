@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,19 +186,13 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Ruby HtmlDialog class allows you to create and interact with HTML
-dialog boxes from Ruby. This is the best way to generate complex, embedded
-UIs inside SketchUp, but it does generally require HTML and JavaScript
-expertise.</p>
+<p>The Ruby HtmlDialog class allows you to create and interact with HTML dialog boxes from Ruby. This is the best way to generate complex, embedded UIs inside SketchUp, but it does generally require HTML and JavaScript expertise.</p>
 
-<p>If your goal is to simple display a website to your users, consider using
-<span class='object_link'>#openURL</span>, which will show them a web page in their default browser
-rather than inside a dialog in SketchUp.</p>
+<p>If your goal is to simple display a website to your users, consider using <span class='object_link'>#openURL</span>, which will show them a web page in their default browser rather than inside a dialog in SketchUp.</p>
 
-<p>The left, top, width, height etc. dimensions of the dialog are in logical
-units. This means you provide the units as if they where on a monitor with
-“normal” DPI. The units given will be multiplied by the same factor as
-returned by <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">scale_factor</a></span>.</p>
+<p>The left, top, width, height etc. dimensions of the dialog are in logical units. This means you provide the units as if they where on a monitor with “normal” DPI. The units given will be multiplied by the same factor as returned by <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">scale_factor</a></span>.</p>
+
+<p>For usage examples, including how to migrate from the old WebDialog class, see <a href="https://github.com/SketchUp/htmldialog-examples">github.com/SketchUp/htmldialog-examples</a>.</p>
 
 
   </div>
@@ -279,8 +275,7 @@ returned by <span class='object_link'><a href="../UI.html#scale_factor-class_met
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#add_action_callback-instance_method" title="UI::HtmlDialog#add_action_callback (method)">#add_action_callback</a></span> method establishes a Ruby callback method that
-your html dialog can call to perform some function.</p>
+<p>The <span class='object_link'><a href="#add_action_callback-instance_method" title="UI::HtmlDialog#add_action_callback (method)">#add_action_callback</a></span> method establishes a Ruby callback method that your html dialog can call to perform some function.</p>
 </div></span>
   
 </li>
@@ -304,8 +299,7 @@ your html dialog can call to perform some function.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">#bring_to_front</a></span> method is used to bring the window to the front,
-putting it on top of other windows even if its minimized.</p>
+<p>The <span class='object_link'><a href="#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">#bring_to_front</a></span> method is used to bring the window to the front, putting it on top of other windows even if its minimized.</p>
 </div></span>
   
 </li>
@@ -329,8 +323,7 @@ putting it on top of other windows even if its minimized.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the
-active model window.</p>
+<p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the active model window.</p>
 </div></span>
   
 </li>
@@ -378,8 +371,7 @@ active model window.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#execute_script-instance_method" title="UI::HtmlDialog#execute_script (method)">#execute_script</a></span> method is used to execute a JavaScript string on the
-html dialog asynchronously.</p>
+<p>The <span class='object_link'><a href="#execute_script-instance_method" title="UI::HtmlDialog#execute_script (method)">#execute_script</a></span> method is used to execute a JavaScript string on the html dialog asynchronously.</p>
 </div></span>
   
 </li>
@@ -429,9 +421,7 @@ html dialog asynchronously.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">#set_can_close</a></span> method is used to attach a block that is executed just
-before closing, this block has to return a boolean, if the block returns
-false the close will be canceled.</p>
+<p>The <span class='object_link'><a href="#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">#set_can_close</a></span> method is used to attach a block that is executed just before closing, this block has to return a boolean, if the block returns false the close will be canceled.</p>
 </div></span>
   
 </li>
@@ -455,8 +445,7 @@ false the close will be canceled.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::HtmlDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in
-the HtmlDialog.</p>
+<p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::HtmlDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in the HtmlDialog.</p>
 </div></span>
   
 </li>
@@ -480,8 +469,7 @@ the HtmlDialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_html-instance_method" title="UI::HtmlDialog#set_html (method)">#set_html</a></span> method is used to load a HtmlDialog with a string of
-provided HTML.</p>
+<p>The <span class='object_link'><a href="#set_html-instance_method" title="UI::HtmlDialog#set_html (method)">#set_html</a></span> method is used to load a HtmlDialog with a string of provided HTML.</p>
 </div></span>
   
 </li>
@@ -505,9 +493,7 @@ provided HTML.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_on_closed-instance_method" title="UI::HtmlDialog#set_on_closed (method)">#set_on_closed</a></span> method is used to attach a block that will be executed
-when a dialog is already in the process of closing, do any last minute
-operations within this block such as saving the current state.</p>
+<p>The <span class='object_link'><a href="#set_on_closed-instance_method" title="UI::HtmlDialog#set_on_closed (method)">#set_on_closed</a></span> method is used to attach a block that will be executed when a dialog is already in the process of closing, do any last minute operations within this block such as saving the current state.</p>
 </div></span>
   
 </li>
@@ -531,8 +517,7 @@ operations within this block such as saving the current state.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">#set_position</a></span> method is used to set the position of the HtmlDialog
-relative to the screen, in pixels.</p>
+<p>The <span class='object_link'><a href="#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">#set_position</a></span> method is used to set the position of the HtmlDialog relative to the screen, in pixels.</p>
 </div></span>
   
 </li>
@@ -556,8 +541,7 @@ relative to the screen, in pixels.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> method is used to set the size of the HtmlDialog, in
-pixels.</p>
+<p>The <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> method is used to set the size of the HtmlDialog, in pixels.</p>
 </div></span>
   
 </li>
@@ -581,8 +565,7 @@ pixels.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_url-instance_method" title="UI::HtmlDialog#set_url (method)">#set_url</a></span> method is used to load a HtmlDialog with the content at a
-specific URL.</p>
+<p>The <span class='object_link'><a href="#set_url-instance_method" title="UI::HtmlDialog#set_url (method)">#set_url</a></span> method is used to load a HtmlDialog with the content at a specific URL.</p>
 </div></span>
   
 </li>
@@ -654,9 +637,7 @@ specific URL.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#visible%3F-instance_method" title="UI::HtmlDialog#visible? (method)">#visible?</a></span> method is useful to tell if the dialog is shown and still
-alive, if the dialog is minimized or not visible on the screen this will
-still return <code>true</code>.</p>
+<p>The <span class='object_link'><a href="#visible%3F-instance_method" title="UI::HtmlDialog#visible? (method)">#visible?</a></span> method is useful to tell if the dialog is shown and still alive, if the dialog is minimized or not visible on the screen this will still return <code>true</code>.</p>
 </div></span>
   
 </li>
@@ -685,25 +666,34 @@ still return <code>true</code>.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2019 the <code>:width</code> and <code>:height</code>
-provided is ignored if a <code>:preference_key</code> is also present. To
-work around this bug on older versions use <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> after you initialize
-the dialog.</p>
+<p>Prior to SketchUp 2019 the <code>:width</code> and <code>:height</code> provided is ignored if a <code>:preference_key</code> is also present. To work around this bug on older versions use <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> after you initialize the dialog.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prefix <code>preference_key</code> with something unique to your extension.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If there is no reference kept to the HtmlDialog object, the window will close once the garbage collection runs. This behavior can be confusing in trivial test code but is usually not a concern in real life scenarios. Typically a persistent reference, e.g. an instance variable, should be kept to bring the dialog to front, rather than creating a duplicate, if the user should request it a second time.</p>
 </div>
   </div>
 
 
 <p>The new method is used to create a new HtmlDialog.</p>
 
-<p>The <code>properties</code> hash accepts an optional key <code>style</code>
-where the value is one of:</p>
+<p>The <code>properties</code> hash accepts an optional key <code>style</code> where the value is one of:</p>
 <dl class="rdoc-list label-list"><dt><code>UI::HtmlDialog::STYLE_DIALOG</code>
 <dd>
 <p>HtmlDialog stays at the top of SketchUp.</p>
 </dd><dt><code>UI::HtmlDialog::STYLE_WINDOW</code>
 <dd>
-<p>HtmlDialog can go behind SketchUp and doesn&#39;t disappear when SketchUp
-looses focus.</p>
+<p>HtmlDialog can go behind SketchUp and doesn&#39;t disappear when SketchUp looses focus.</p>
 </dd><dt><code>UI::HtmlDialog::STYLE_UTILITY</code>
 <dd>
 <p>HtmlDialog is shown with small titlebar and stays on top of SketchUp.</p>
@@ -717,6 +707,10 @@ looses focus.</p>
   <div class="examples">
     <p class="tag_title">Examples:</p>
     
+      
+        <p class="example_title"><div class='inline'>
+<p>With options Hash</p>
+</div></p>
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
 <span class='lbrace'>{</span>
@@ -735,6 +729,29 @@ looses focus.</p>
   <span class='symbol'>:style</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#STYLE_DIALOG-constant" title="UI::HtmlDialog::STYLE_DIALOG (constant)">STYLE_DIALOG</a></span></span>
 <span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>With keyword style argument</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
+  <span class='label'>dialog_title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Dialog Example</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='label'>preferences_key:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my_name_my_extension_my_dialog</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+  <span class='label'>scrollable:</span> <span class='kw'>true</span><span class='comma'>,</span>
+  <span class='label'>resizable:</span> <span class='kw'>true</span><span class='comma'>,</span>
+  <span class='label'>width:</span> <span class='int'>600</span><span class='comma'>,</span>
+  <span class='label'>height:</span> <span class='int'>400</span><span class='comma'>,</span>
+  <span class='label'>left:</span> <span class='int'>100</span><span class='comma'>,</span>
+  <span class='label'>top:</span> <span class='int'>100</span><span class='comma'>,</span>
+  <span class='label'>min_width:</span> <span class='int'>50</span><span class='comma'>,</span>
+  <span class='label'>min_height:</span> <span class='int'>50</span><span class='comma'>,</span>
+  <span class='label'>max_width:</span> <span class='int'>1000</span><span class='comma'>,</span>
+  <span class='label'>max_height:</span> <span class='int'>1000</span><span class='comma'>,</span>
+  <span class='label'>style:</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#STYLE_DIALOG-constant" title="UI::HtmlDialog::STYLE_DIALOG (constant)">STYLE_DIALOG</a></span></span>
+<span class='rparen'>)</span>
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
@@ -969,25 +986,18 @@ looses focus.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>When an HtmlDialog is closed, all callbacks to that instance are cleared.
-Re-attach them if you need to open the dialog again.</p>
+<p>When an HtmlDialog is closed, all callbacks to that instance are cleared. Re-attach them if you need to open the dialog again.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#add_action_callback-instance_method" title="UI::HtmlDialog#add_action_callback (method)">#add_action_callback</a></span> method establishes a Ruby callback method that
-your html dialog can call to perform some function.</p>
+<p>The <span class='object_link'><a href="#add_action_callback-instance_method" title="UI::HtmlDialog#add_action_callback (method)">#add_action_callback</a></span> method establishes a Ruby callback method that your html dialog can call to perform some function.</p>
 
-<p>Use the <code>sketchup.callback_method_name</code> to invoke the callback
-method from your html dialog. Your JavaScript in the html dialog will
-invoke the callback with the same number of arguments.</p>
+<p>Use the <code>sketchup.callback_method_name</code> to invoke the callback method from your html dialog. Your JavaScript in the html dialog will invoke the callback with the same number of arguments.</p>
 
-<p>The call is asynchronous. JavaScript call might return before Ruby callback
-even called. Use <code>onCompleted</code> callback to get notified for
-completion.</p>
+<p>The call is asynchronous. JavaScript call might return before Ruby callback even called. Use <code>onCompleted</code> callback to get notified for completion.</p>
 
-<p>Basic types such as booleans, numbers, strings, arrays and hashes are
-automatically converted between Ruby and JavaScript.</p>
+<p>Basic types such as booleans, numbers, strings, arrays and hashes are automatically converted between Ruby and JavaScript.</p>
 
 
   </div>
@@ -1159,8 +1169,7 @@ automatically converted between Ruby and JavaScript.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">#bring_to_front</a></span> method is used to bring the window to the front,
-putting it on top of other windows even if its minimized.</p>
+<p>The <span class='object_link'><a href="#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">#bring_to_front</a></span> method is used to bring the window to the front, putting it on top of other windows even if its minimized.</p>
 
 
   </div>
@@ -1221,9 +1230,7 @@ putting it on top of other windows even if its minimized.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the
-active model window. If there is no active model window, this function
-doesn&#39;t do anything.</p>
+<p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the active model window. If there is no active model window, this function doesn&#39;t do anything.</p>
 
 
   </div>
@@ -1345,8 +1352,7 @@ doesn&#39;t do anything.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#execute_script-instance_method" title="UI::HtmlDialog#execute_script (method)">#execute_script</a></span> method is used to execute a JavaScript string on the
-html dialog asynchronously.</p>
+<p>The <span class='object_link'><a href="#execute_script-instance_method" title="UI::HtmlDialog#execute_script (method)">#execute_script</a></span> method is used to execute a JavaScript string on the html dialog asynchronously.</p>
 
 
   </div>
@@ -1439,9 +1445,7 @@ html dialog asynchronously.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">#set_can_close</a></span> method is used to attach a block that is executed just
-before closing, this block has to return a boolean, if the block returns
-false the close will be canceled.</p>
+<p>The <span class='object_link'><a href="#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">#set_can_close</a></span> method is used to attach a block that is executed just before closing, this block has to return a boolean, if the block returns false the close will be canceled.</p>
 
 
   </div>
@@ -1520,8 +1524,7 @@ false the close will be canceled.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::HtmlDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in
-the HtmlDialog.</p>
+<p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::HtmlDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in the HtmlDialog.</p>
 
 
   </div>
@@ -1602,8 +1605,7 @@ the HtmlDialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_html-instance_method" title="UI::HtmlDialog#set_html (method)">#set_html</a></span> method is used to load a HtmlDialog with a string of
-provided HTML.</p>
+<p>The <span class='object_link'><a href="#set_html-instance_method" title="UI::HtmlDialog#set_html (method)">#set_html</a></span> method is used to load a HtmlDialog with a string of provided HTML.</p>
 
 
   </div>
@@ -1685,9 +1687,7 @@ provided HTML.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_on_closed-instance_method" title="UI::HtmlDialog#set_on_closed (method)">#set_on_closed</a></span> method is used to attach a block that will be executed
-when a dialog is already in the process of closing, do any last minute
-operations within this block such as saving the current state.</p>
+<p>The <span class='object_link'><a href="#set_on_closed-instance_method" title="UI::HtmlDialog#set_on_closed (method)">#set_on_closed</a></span> method is used to attach a block that will be executed when a dialog is already in the process of closing, do any last minute operations within this block such as saving the current state.</p>
 
 
   </div>
@@ -1748,8 +1748,7 @@ operations within this block such as saving the current state.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">#set_position</a></span> method is used to set the position of the HtmlDialog
-relative to the screen, in pixels.</p>
+<p>The <span class='object_link'><a href="#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">#set_position</a></span> method is used to set the position of the HtmlDialog relative to the screen, in pixels.</p>
 
 
   </div>
@@ -1846,8 +1845,7 @@ relative to the screen, in pixels.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> method is used to set the size of the HtmlDialog, in
-pixels.</p>
+<p>The <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> method is used to set the size of the HtmlDialog, in pixels.</p>
 
 
   </div>
@@ -1944,8 +1942,7 @@ pixels.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_url-instance_method" title="UI::HtmlDialog#set_url (method)">#set_url</a></span> method is used to load a HtmlDialog with the content at a
-specific URL. This method allows you to load web sites in a HtmlDialog.</p>
+<p>The <span class='object_link'><a href="#set_url-instance_method" title="UI::HtmlDialog#set_url (method)">#set_url</a></span> method is used to load a HtmlDialog with the content at a specific URL. This method allows you to load web sites in a HtmlDialog.</p>
 
 
   </div>
@@ -1956,7 +1953,7 @@ specific URL. This method allows you to load web sites in a HtmlDialog.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -2148,9 +2145,7 @@ specific URL. This method allows you to load web sites in a HtmlDialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#visible%3F-instance_method" title="UI::HtmlDialog#visible? (method)">#visible?</a></span> method is useful to tell if the dialog is shown and still
-alive, if the dialog is minimized or not visible on the screen this will
-still return <code>true</code>.</p>
+<p>The <span class='object_link'><a href="#visible%3F-instance_method" title="UI::HtmlDialog#visible? (method)">#visible?</a></span> method is useful to tell if the dialog is shown and still alive, if the dialog is minimized or not visible on the screen this will still return <code>true</code>.</p>
 
 
   </div>
@@ -2165,7 +2160,7 @@ still return <code>true</code>.</p>
   <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_bring_to_front'>bring_to_front</span>
 <span class='kw'>else</span>
   <span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::HtmlDialog#initialize (method)">new</a></span></span>
-  <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
 <span class='kw'>end</span></code></pre>
     

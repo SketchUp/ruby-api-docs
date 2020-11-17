@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,16 +186,11 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Color class is used to create and manipulate colors within SketchUp
-Models. The class can also be used the same way with LayOut documents.</p>
+<p>The Color class is used to create and manipulate colors within SketchUp Models. The class can also be used the same way with LayOut documents.</p>
 
-<p>For methods that accept a Color object, such as the face.material method,
-you can pass in an actual Color object, or an object that can be converted
-to a Color. For example:</p>
+<p>For methods that accept a Color object, such as the face.material method, you can pass in an actual Color object, or an object that can be converted to a Color. For example:</p>
 
-<p>SketchUp ships with several built in colors in the Materials Browser. These
-colors are listed in the following table.
-<table>
+<p>SketchUp ships with several built in colors in the Materials Browser. These colors are listed in the following table. <table>
 <tr><td>Name</td><td>RGB Values</td><td>Swatch</td></tr>
 <tr><td>AliceBlue</td><td>240,248,255</td>
 <td style="background-color:rgb(240,248,255)">&nbsp;</td></tr>
@@ -287,8 +284,8 @@ colors are listed in the following table.
 <td style="background-color:rgb(34,139,34)">&nbsp;</td></tr>
 <tr><td>Fuchsia</td><td>255,0,255</td>
 <td style="background-color:rgb(255,0,255)">&nbsp;</td></tr>
-<tr><td>Gainsboro</td><td>220,220,220,</td>
-<td style="background-color:rgb(220,220,220,)">&nbsp;</td></tr>
+<tr><td>Gainsboro</td><td>220,220,220</td>
+<td style="background-color:rgb(220,220,220)">&nbsp;</td></tr>
 <tr><td>GhostWhite</td><td>248,248,255</td>
 <td style="background-color:rgb(248,248,255)">&nbsp;</td></tr>
 <tr><td>Gold</td><td>255,215,0</td>
@@ -550,8 +547,7 @@ colors are listed in the following table.
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#names-class_method" title="Sketchup::Color.names (method)">Color.names</a></span> method is used to retrieve an array of all color names
-recognized by SketchUp.</p>
+<p>The <span class='object_link'><a href="#names-class_method" title="Sketchup::Color.names (method)">Color.names</a></span> method is used to retrieve an array of all color names recognized by SketchUp.</p>
 </div></span>
   
 </li>
@@ -621,7 +617,7 @@ recognized by SketchUp.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#alpha=-instance_method" title="#alpha= (instance method)">#<strong>alpha=</strong>(alpha)  &#x21d2; Integer </a>
+      <a href="#alpha=-instance_method" title="#alpha= (instance method)">#<strong>alpha=</strong>(alpha)  &#x21d2; Integer, Float </a>
     
 
     
@@ -693,7 +689,7 @@ recognized by SketchUp.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#blue=-instance_method" title="#blue= (instance method)">#<strong>blue=</strong>(blue)  &#x21d2; Integer </a>
+      <a href="#blue=-instance_method" title="#blue= (instance method)">#<strong>blue=</strong>(blue)  &#x21d2; Integer, Float </a>
     
 
     
@@ -741,7 +737,7 @@ recognized by SketchUp.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#green=-instance_method" title="#green= (instance method)">#<strong>green=</strong>(green)  &#x21d2; Integer </a>
+      <a href="#green=-instance_method" title="#green= (instance method)">#<strong>green=</strong>(green)  &#x21d2; Integer, Float </a>
     
 
     
@@ -815,7 +811,7 @@ recognized by SketchUp.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#red=-instance_method" title="#red= (instance method)">#<strong>red=</strong>(red)  &#x21d2; Integer </a>
+      <a href="#red=-instance_method" title="#red= (instance method)">#<strong>red=</strong>(red)  &#x21d2; Integer, Float </a>
     
 
     
@@ -902,8 +898,7 @@ recognized by SketchUp.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#to_s-instance_method" title="Sketchup::Color#to_s (method)">#to_s</a></span> method returns a string representation of the <span class='object_link'><a href="" title="Sketchup::Color (class)">Color</a></span>
-object, in the form of “Color(255, 255, 255, 255)”.</p>
+<p>The <span class='object_link'><a href="#to_s-instance_method" title="Sketchup::Color#to_s (method)">#to_s</a></span> method returns a string representation of the <span class='object_link'><a href="" title="Sketchup::Color (class)">Color</a></span> object, in the form of “Color(255, 255, 255, 255)”.</p>
 </div></span>
   
 </li>
@@ -923,7 +918,11 @@ object, in the form of “Color(255, 255, 255, 255)”.</p>
     
       <span class="overload">#<strong>initialize</strong>(red, green, blue, alpha = 255)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
     
+      <span class="overload">#<strong>initialize</strong>(red, green, blue, alpha = 1.0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+    
       <span class="overload">#<strong>initialize</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+    
+      <span class="overload">#<strong>initialize</strong>(hex)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
     
   
 
@@ -933,14 +932,6 @@ object, in the form of “Color(255, 255, 255, 255)”.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>When assigning colors via a hexadecimal, R and B will be flipped.</p>
-</div>
-  </div>
-
-
 <p>The new method is used to create a new Color object.</p>
 
 
@@ -1056,6 +1047,91 @@ object, in the form of “Color(255, 255, 255, 255)”.</p>
     
       
       <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(red, green, blue, alpha = 1.0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>red</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A red value between 0.0 and 1.0.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>green</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A green value between 0.0 and 1.0.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>blue</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A blue value between 0.0 and 1.0.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>alpha</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>1.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A alpha value between 0.0 and 1.0.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
         <span class="signature">#<strong>initialize</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
         <div class="docstring">
   <div class="discussion">
@@ -1078,8 +1154,57 @@ object, in the form of “Color(255, 255, 255, 255)”.</p>
       
         &mdash;
         <div class='inline'>
-<p>A string name of a color that currently exists in SketchUp. See the table
-at the start of this class description for more info.</p>
+<p>A string name of a color that currently exists in SketchUp. See the table at the start of this class description for more info.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>initialize</strong>(hex)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When assigning colors via a hexadecimal, R and B will be flipped.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When assigning colors via a hexadecimal, Alpha is not supported.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>hex</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A hexadecimal color code.</p>
 </div>
       
     </li>
@@ -1132,11 +1257,9 @@ at the start of this class description for more info.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#names-class_method" title="Sketchup::Color.names (method)">names</a></span> method is used to retrieve an array of all color names
-recognized by SketchUp.</p>
+<p>The <span class='object_link'><a href="#names-class_method" title="Sketchup::Color.names (method)">names</a></span> method is used to retrieve an array of all color names recognized by SketchUp.</p>
 
-<p>In general, whenever a method wants a color, you can pass in a String with
-one of these names.</p>
+<p>In general, whenever a method wants a color, you can pass in a String with one of these names.</p>
 
 
   </div>
@@ -1203,10 +1326,7 @@ one of these names.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#==-instance_method" title="Sketchup::Color#== (method)">#==</a></span> method checks to see if the two <span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span>s are equal.
-This checks whether the RGBA values are the same. In versions prior to
-SketchUp 2018 two color objects with the same values would be considered
-different.</p>
+<p>The <span class='object_link'><a href="#==-instance_method" title="Sketchup::Color#== (method)">#==</a></span> method checks to see if the two <span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span>s are equal. This checks whether the RGBA values are the same. In versions prior to SketchUp 2018 two color objects with the same values would be considered different.</p>
 
 
   </div>
@@ -1282,8 +1402,7 @@ different.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#alpha-instance_method" title="Sketchup::Color#alpha (method)">#alpha</a></span> method is used to retrieve the opacity of the color. A value
-of 0 is transparent, 255 is opaque.</p>
+<p>The <span class='object_link'><a href="#alpha-instance_method" title="Sketchup::Color#alpha (method)">#alpha</a></span> method is used to retrieve the opacity of the color. A value of 0 is transparent, 255 is opaque.</p>
 
 
   </div>
@@ -1336,7 +1455,7 @@ of 0 is transparent, 255 is opaque.</p>
   <h3 class="signature " id="alpha=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>alpha=</strong>(alpha)  &#x21d2; <tt>Integer</tt> 
+    #<strong>alpha=</strong>(alpha)  &#x21d2; <tt>Integer</tt>, <tt>Float</tt> 
   
 
   
@@ -1345,8 +1464,7 @@ of 0 is transparent, 255 is opaque.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#alpha=-instance_method" title="Sketchup::Color#alpha= (method)">#alpha=</a></span> method is used to set the opacity of the color. A value of 0
-is transparent, 255 is opaque.</p>
+<p>The <span class='object_link'><a href="#alpha=-instance_method" title="Sketchup::Color#alpha= (method)">#alpha=</a></span> method is used to set the opacity of the color. A value of 0 is transparent, 255 is opaque.</p>
 
 
   </div>
@@ -1369,7 +1487,7 @@ is transparent, 255 is opaque.</p>
         <span class='name'>alpha</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1388,7 +1506,7 @@ is transparent, 255 is opaque.</p>
     <li>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1430,9 +1548,7 @@ is transparent, 255 is opaque.</p>
     
 <p>The <span class='object_link'><a href="#blend-instance_method" title="Sketchup::Color#blend (method)">#blend</a></span> method is used to blend two colors.</p>
 
-<p>The blended color will be the result of taking (1 - weight) * color1 +
-weight * color2. If weight = 0, you will get color2. If weight = 1 you will
-get color1.</p>
+<p>The blended color will be the result of taking (1 - weight) * color1 + weight * color2. If weight = 0, you will get color2. If weight = 1 you will get color1.</p>
 
 
   </div>
@@ -1586,7 +1702,7 @@ get color1.</p>
   <h3 class="signature " id="blue=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>blue=</strong>(blue)  &#x21d2; <tt>Integer</tt> 
+    #<strong>blue=</strong>(blue)  &#x21d2; <tt>Integer</tt>, <tt>Float</tt> 
   
 
   
@@ -1620,7 +1736,7 @@ get color1.</p>
         <span class='name'>blue</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1639,7 +1755,7 @@ get color1.</p>
     <li>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1734,7 +1850,7 @@ get color1.</p>
   <h3 class="signature " id="green=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>green=</strong>(green)  &#x21d2; <tt>Integer</tt> 
+    #<strong>green=</strong>(green)  &#x21d2; <tt>Integer</tt>, <tt>Float</tt> 
   
 
   
@@ -1768,7 +1884,7 @@ get color1.</p>
         <span class='name'>green</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1787,7 +1903,7 @@ get color1.</p>
     <li>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1882,7 +1998,7 @@ get color1.</p>
   <h3 class="signature " id="red=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>red=</strong>(red)  &#x21d2; <tt>Integer</tt> 
+    #<strong>red=</strong>(red)  &#x21d2; <tt>Integer</tt>, <tt>Float</tt> 
   
 
   
@@ -1916,7 +2032,7 @@ get color1.</p>
         <span class='name'>red</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1935,7 +2051,7 @@ get color1.</p>
     <li>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>, <tt>Float</tt>)</span>
       
       
       
@@ -1975,8 +2091,7 @@ get color1.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#to_a-instance_method" title="Sketchup::Color#to_a (method)">#to_a</a></span> method is used to convert a Color object to an Array object.
-The returned array will contain 4 integer values (RGBA) between 0 and 255.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Sketchup::Color#to_a (method)">#to_a</a></span> method is used to convert a Color object to an Array object. The returned array will contain 4 integer values (RGBA) between 0 and 255.</p>
 
 
   </div>
@@ -2100,8 +2215,7 @@ The returned array will contain 4 integer values (RGBA) between 0 and 255.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#to_s-instance_method" title="Sketchup::Color#to_s (method)">#to_s</a></span> method returns a string representation of the <span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span>
-object, in the form of “Color(255, 255, 255, 255)”.</p>
+<p>The <span class='object_link'><a href="#to_s-instance_method" title="Sketchup::Color#to_s (method)">#to_s</a></span> method returns a string representation of the <span class='object_link'><a href="" title="Sketchup::Color (class)">Sketchup::Color</a></span> object, in the form of “Color(255, 255, 255, 255)”.</p>
 
 
   </div>

@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::ToolsObserver
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,14 +185,16 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This observer interface is implemented to react to tool events. To
-implement this observer, create a Ruby class of this type, override the
-desired methods, and add an instance of the observer to the
-<span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span> object.</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>To implement this observer, create a Ruby class of this type, override the desired methods, and add an instance of the observer to the <span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span> object.</p>
+</div>
+</div>
 
-<p>Some of the code below mentions <code>tool_names</code> and
-<code>tool_ids</code>. Here is a list of the common tool IDs and names:</p>
+<p>This observer interface is implemented to react to tool events.</p>
+
+<p>Some of the code below mentions <code>tool_names</code> and <code>tool_ids</code>. Here is a list of the common tool IDs and names:</p>
 <ul><li>
 <p><code>21013</code> = 3DTextTool</p>
 </li><li>
@@ -334,9 +338,7 @@ desired methods, and add an instance of the observer to the
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Once you subclass <span class='object_link'><a href="" title="Sketchup::ToolsObserver (class)">ToolsObserver</a></span> with your unique class, you can
-override the <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> method to receive tool change
-notifications.</p>
+<p>Once you subclass <span class='object_link'><a href="" title="Sketchup::ToolsObserver (class)">ToolsObserver</a></span> with your unique class, you can override the <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> method to receive tool change notifications.</p>
 </div></span>
   
 </li>
@@ -360,8 +362,7 @@ notifications.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an
-action with a tool.</p>
+<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an action with a tool.</p>
 </div></span>
   
 </li>
@@ -393,20 +394,12 @@ action with a tool.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>In SketchUp 6 and SketchUp 7.0, tool names on the Mac have some of their
-first characters truncated. For instance, on Windows, a tool is
-<tt>“CameraOrbit”</tt>. On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore,
-use the <code>tool_id</code> to keep track of which tool you need to watch
-for, or use logic that corrects for the error. There is an example method
-of one way to do this shown below. (This example is not a comprehensive
-list of the tool names.)</p>
+<p>In SketchUp 6 and SketchUp 7.0, tool names on the Mac have some of their first characters truncated. For instance, on Windows, a tool is <tt>“CameraOrbit”</tt>. On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore, use the <code>tool_id</code> to keep track of which tool you need to watch for, or use logic that corrects for the error. There is an example method of one way to do this shown below. (This example is not a comprehensive list of the tool names.)</p>
 </div>
   </div>
 
 
-<p>Once you subclass <span class='object_link'><a href="" title="Sketchup::ToolsObserver (class)">Sketchup::ToolsObserver</a></span> with your unique class, you can
-override the <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> method to receive tool change
-notifications.</p>
+<p>Once you subclass <span class='object_link'><a href="" title="Sketchup::ToolsObserver (class)">Sketchup::ToolsObserver</a></span> with your unique class, you can override the <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> method to receive tool change notifications.</p>
 
 
   </div>
@@ -497,8 +490,7 @@ notifications.</p>
       
         &mdash;
         <div class='inline'>
-<p>The ID of the tool. This is a predefined number unique to a given tool. For
-example, the Materials Browser is tool_id 21074.</p>
+<p>The ID of the tool. This is a predefined number unique to a given tool. For example, the Materials Browser is tool_id 21074.</p>
 </div>
       
     </li>
@@ -557,20 +549,12 @@ example, the Materials Browser is tool_id 21074.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>In SketchUp 6 and SketchUp 7, tool names on the Mac have their first few
-characters truncated. For instance, on Windows, a tool is <tt>“CameraOrbit”.</tt>
-On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore, use the tool_id to
-keep track of which tool you need to watch for, or use logic that corrects
-for the error. This bug was fixed in SketchUp 8.0.</p>
+<p>In SketchUp 6 and SketchUp 7, tool names on the Mac have their first few characters truncated. For instance, on Windows, a tool is <tt>“CameraOrbit”.</tt> On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore, use the tool_id to keep track of which tool you need to watch for, or use logic that corrects for the error. This bug was fixed in SketchUp 8.0.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an
-action with a tool. The actual state that is returned is an internal number
-that varies tool to tool. If you want to watch existing tools for every
-interaction, you will need to experiment with the tool state to determine
-which states you care about. There is little consistency tool to tool.</p>
+<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an action with a tool. The actual state that is returned is an internal number that varies tool to tool. If you want to watch existing tools for every interaction, you will need to experiment with the tool state to determine which states you care about. There is little consistency tool to tool.</p>
 
 
   </div>
@@ -640,8 +624,7 @@ which states you care about. There is little consistency tool to tool.</p>
       
         &mdash;
         <div class='inline'>
-<p>The ID of the tool. This is a predefined number unique to a given tool. For
-example, the Materials Browser is tool_id 21074.</p>
+<p>The ID of the tool. This is a predefined number unique to a given tool. For example, the Materials Browser is tool_id 21074.</p>
 </div>
       
     </li>

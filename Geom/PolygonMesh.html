@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,17 +186,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span> class contains methods to create polygon mesh
-structures. This is useful if you need to write a custom importer/exporter
-in Ruby that works at the level of triangulated polygons. For example, you
-can determine the triangles that make up a 15-sided <span class='object_link'><a href="../Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> by
-using this class, or write a <span class='object_link'><a href="../Sketchup/Importer.html" title="Sketchup::Importer (class)">Sketchup::Importer</a></span> that reads a data file,
-creates a mesh from it, and draws faces based on the mesh.</p>
+<p>The <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span> class contains methods to create polygon mesh structures. This is useful if you need to write a custom importer/exporter in Ruby that works at the level of triangulated polygons. For example, you can determine the triangles that make up a 15-sided <span class='object_link'><a href="../Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> by using this class, or write a <span class='object_link'><a href="../Sketchup/Importer.html" title="Sketchup::Importer (class)">Sketchup::Importer</a></span> that reads a data file, creates a mesh from it, and draws faces based on the mesh.</p>
 
-<p>You can construct a mesh manually using the methods of this class, or you
-can get a mesh from a face by calling the Face.mesh method. See
-<span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span> for an easy way to convert a mesh
-back into faces.</p>
+<p>You can construct a mesh manually using the methods of this class, or you can get a mesh from a face by calling the Face.mesh method. See <span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span> for an easy way to convert a mesh back into faces.</p>
 
 
   </div>
@@ -332,8 +326,7 @@ back into faces.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <code>add_polygon</code> method is used for adding a polygon to a
-PolygonMesh.</p>
+<p>The <code>add_polygon</code> method is used for adding a polygon to a PolygonMesh.</p>
 </div></span>
   
 </li>
@@ -431,8 +424,7 @@ PolygonMesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#normal_at-instance_method" title="Geom::PolygonMesh#normal_at (method)">#normal_at</a></span> method is used to determine the vertex normal at a
-particular index in the mesh.</p>
+<p>The <span class='object_link'><a href="#normal_at-instance_method" title="Geom::PolygonMesh#normal_at (method)">#normal_at</a></span> method is used to determine the vertex normal at a particular index in the mesh.</p>
 </div></span>
   
 </li>
@@ -456,8 +448,7 @@ particular index in the mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span> method is used to retrieve the point at a specific index in
-the mesh.</p>
+<p>The <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span> method is used to retrieve the point at a specific index in the mesh.</p>
 </div></span>
   
 </li>
@@ -481,8 +472,7 @@ the mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#point_index-instance_method" title="Geom::PolygonMesh#point_index (method)">#point_index</a></span> method is used to retrieve the index of a point in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#point_index-instance_method" title="Geom::PolygonMesh#point_index (method)">#point_index</a></span> method is used to retrieve the index of a point in the mesh.</p>
 </div></span>
   
 </li>
@@ -506,8 +496,7 @@ mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#points-instance_method" title="Geom::PolygonMesh#points (method)">#points</a></span> method is used to retrieve an array of points (vertices) in
-the mesh.</p>
+<p>The <span class='object_link'><a href="#points-instance_method" title="Geom::PolygonMesh#points (method)">#points</a></span> method is used to retrieve an array of points (vertices) in the mesh.</p>
 </div></span>
   
 </li>
@@ -531,8 +520,7 @@ the mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#polygon_at-instance_method" title="Geom::PolygonMesh#polygon_at (method)">#polygon_at</a></span> method is used to retrieve an array of vertex index
-values for a polygon at a specific index.</p>
+<p>The <span class='object_link'><a href="#polygon_at-instance_method" title="Geom::PolygonMesh#polygon_at (method)">#polygon_at</a></span> method is used to retrieve an array of vertex index values for a polygon at a specific index.</p>
 </div></span>
   
 </li>
@@ -556,8 +544,7 @@ values for a polygon at a specific index.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#polygon_points_at-instance_method" title="Geom::PolygonMesh#polygon_points_at (method)">#polygon_points_at</a></span> method is used to retrieve the points for a
-polygon that is at a specific index in the mesh.</p>
+<p>The <span class='object_link'><a href="#polygon_points_at-instance_method" title="Geom::PolygonMesh#polygon_points_at (method)">#polygon_points_at</a></span> method is used to retrieve the points for a polygon that is at a specific index in the mesh.</p>
 </div></span>
   
 </li>
@@ -581,8 +568,7 @@ polygon that is at a specific index in the mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#polygons-instance_method" title="Geom::PolygonMesh#polygons (method)">#polygons</a></span> method is used to retrieve an array of all polygons in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#polygons-instance_method" title="Geom::PolygonMesh#polygons (method)">#polygons</a></span> method is used to retrieve an array of all polygons in the mesh.</p>
 </div></span>
   
 </li>
@@ -606,8 +592,7 @@ mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_point-instance_method" title="Geom::PolygonMesh#set_point (method)">#set_point</a></span> method is used to set the point at a specific index in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#set_point-instance_method" title="Geom::PolygonMesh#set_point (method)">#set_point</a></span> method is used to set the point at a specific index in the mesh.</p>
 </div></span>
   
 </li>
@@ -631,8 +616,7 @@ mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span> method is used to define UV mapping coordinates to points in
-the mesh.</p>
+<p>The <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span> method is used to define UV mapping coordinates to points in the mesh.</p>
 </div></span>
   
 </li>
@@ -680,8 +664,7 @@ the mesh.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#uv_at-instance_method" title="Geom::PolygonMesh#uv_at (method)">#uv_at</a></span> method is used to access a uv (texture coordinates) at a
-specific index.</p>
+<p>The <span class='object_link'><a href="#uv_at-instance_method" title="Geom::PolygonMesh#uv_at (method)">#uv_at</a></span> method is used to access a uv (texture coordinates) at a specific index.</p>
 </div></span>
   
 </li>
@@ -705,8 +688,7 @@ specific index.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#uvs-instance_method" title="Geom::PolygonMesh#uvs (method)">#uvs</a></span> method is used to retrieve an array of uv coordinates in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#uvs-instance_method" title="Geom::PolygonMesh#uvs (method)">#uvs</a></span> method is used to retrieve an array of uv coordinates in the mesh.</p>
 </div></span>
   
 </li>
@@ -738,9 +720,7 @@ mesh.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new empty polygon mesh. The number of points and polygons are
-optional and are just used as a hint to decide how much space to
-pre-allocate to speed up adding points and polygons.</p>
+<p>Create a new empty polygon mesh. The number of points and polygons are optional and are just used as a hint to decide how much space to pre-allocate to speed up adding points and polygons.</p>
 
 
   </div>
@@ -1027,9 +1007,7 @@ pre-allocate to speed up adding points and polygons.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <code>add_polygon</code> method is used for adding a polygon to a
-PolygonMesh. All variations of this method require at least 3 elements to
-define a polygon, although more may be given.</p>
+<p>The <code>add_polygon</code> method is used for adding a polygon to a PolygonMesh. All variations of this method require at least 3 elements to define a polygon, although more may be given.</p>
 
 
   </div>
@@ -1223,9 +1201,7 @@ define a polygon, although more may be given.</p>
       
         &mdash;
         <div class='inline'>
-<p>When using Arrays in place of Point3d objects. Normally Arrays may be used
-in place of Point3d objects in most SketchUp methods. This method is an
-exception to that rule.</p>
+<p>When using Arrays in place of Point3d objects. Normally Arrays may be used in place of Point3d objects in most SketchUp methods. This method is an exception to that rule.</p>
 </div>
       
     </li>
@@ -1316,8 +1292,7 @@ exception to that rule.</p>
       
         &mdash;
         <div class='inline'>
-<p>An array of arrays of length 3, where the inner arrays are used as if they
-were Point3d objects.</p>
+<p>An array of arrays of length 3, where the inner arrays are used as if they were Point3d objects.</p>
 </div>
       
     </li>
@@ -1543,9 +1518,7 @@ were Point3d objects.</p>
   </div>
 
 
-<p>The <span class='object_link'><a href="#normal_at-instance_method" title="Geom::PolygonMesh#normal_at (method)">#normal_at</a></span> method is used to determine the vertex normal at a
-particular index in the mesh. This only works for meshes retrieved from
-<span class='object_link'><a href="../Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span> with the <code>PolygonMeshNormals</code> flag.</p>
+<p>The <span class='object_link'><a href="#normal_at-instance_method" title="Geom::PolygonMesh#normal_at (method)">#normal_at</a></span> method is used to determine the vertex normal at a particular index in the mesh. This only works for meshes retrieved from <span class='object_link'><a href="../Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span> with the <code>PolygonMeshNormals</code> flag.</p>
 
 
   </div>
@@ -1647,8 +1620,7 @@ particular index in the mesh. This only works for meshes retrieved from
   </div>
 
 
-<p>The <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span> method is used to retrieve the point at a specific index in
-the mesh.</p>
+<p>The <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span> method is used to retrieve the point at a specific index in the mesh.</p>
 
 
   </div>
@@ -1753,8 +1725,7 @@ the mesh.</p>
   </div>
 
 
-<p>The <span class='object_link'><a href="#point_index-instance_method" title="Geom::PolygonMesh#point_index (method)">#point_index</a></span> method is used to retrieve the index of a point in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#point_index-instance_method" title="Geom::PolygonMesh#point_index (method)">#point_index</a></span> method is used to retrieve the index of a point in the mesh.</p>
 
 
   </div>
@@ -1853,8 +1824,7 @@ mesh.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#points-instance_method" title="Geom::PolygonMesh#points (method)">#points</a></span> method is used to retrieve an array of points (vertices) in
-the mesh</p>
+<p>The <span class='object_link'><a href="#points-instance_method" title="Geom::PolygonMesh#points (method)">#points</a></span> method is used to retrieve an array of points (vertices) in the mesh</p>
 
 
   </div>
@@ -1931,18 +1901,12 @@ the mesh</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The returned array can contain negative values with the sign indicating a
-hidden edge. For example, a return value of <tt>[-1, 2, 3]</tt> indicates that the
-edge from <code>1</code> to <code>2</code> is hidden. The negative values
-should not be used as an index for <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>, take the absolute value of
-the index value in the polygon array.  So if you get <tt>[-1, 2,3]</tt> use
-<code>1</code> as the argument to <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>.</p>
+<p>The returned array can contain negative values with the sign indicating a hidden edge. For example, a return value of <tt>[-1, 2, 3]</tt> indicates that the edge from <code>1</code> to <code>2</code> is hidden. The negative values should not be used as an index for <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>, take the absolute value of the index value in the polygon array.  So if you get <tt>[-1, 2,3]</tt> use <code>1</code> as the argument to <span class='object_link'><a href="#point_at-instance_method" title="Geom::PolygonMesh#point_at (method)">#point_at</a></span>.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#polygon_at-instance_method" title="Geom::PolygonMesh#polygon_at (method)">#polygon_at</a></span> method is used to retrieve an array of vertex index
-values for a polygon at a specific index.</p>
+<p>The <span class='object_link'><a href="#polygon_at-instance_method" title="Geom::PolygonMesh#polygon_at (method)">#polygon_at</a></span> method is used to retrieve an array of vertex index values for a polygon at a specific index.</p>
 
 
   </div>
@@ -2047,8 +2011,7 @@ values for a polygon at a specific index.</p>
   </div>
 
 
-<p>The <span class='object_link'><a href="#polygon_points_at-instance_method" title="Geom::PolygonMesh#polygon_points_at (method)">#polygon_points_at</a></span> method is used to retrieve the points for a
-polygon that is at a specific index in the mesh.</p>
+<p>The <span class='object_link'><a href="#polygon_points_at-instance_method" title="Geom::PolygonMesh#polygon_points_at (method)">#polygon_points_at</a></span> method is used to retrieve the points for a polygon that is at a specific index in the mesh.</p>
 
 
   </div>
@@ -2145,13 +2108,9 @@ polygon that is at a specific index in the mesh.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#polygons-instance_method" title="Geom::PolygonMesh#polygons (method)">#polygons</a></span> method is used to retrieve an array of all polygons in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#polygons-instance_method" title="Geom::PolygonMesh#polygons (method)">#polygons</a></span> method is used to retrieve an array of all polygons in the mesh.</p>
 
-<p>The returned array contains an array that can have a negative value with
-the sign indicating a hidden edge. For example, a return value of +[-1, 2,
-3]+ indicates that the edge from <code>1</code> to <code>2</code> is
-hidden.</p>
+<p>The returned array contains an array that can have a negative value with the sign indicating a hidden edge. For example, a return value of <tt>[-1, 2, 3]</tt> indicates that the edge from <code>1</code> to <code>2</code> is hidden.</p>
 
 
   </div>
@@ -2212,8 +2171,15 @@ hidden.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_point-instance_method" title="Geom::PolygonMesh#set_point (method)">#set_point</a></span> method is used to set the point at a specific index in the
-mesh.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Index starts at 1.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#set_point-instance_method" title="Geom::PolygonMesh#set_point (method)">#set_point</a></span> method is used to set the point at a specific index in the mesh.</p>
 
 
   </div>
@@ -2328,26 +2294,25 @@ mesh.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>If you don&#39;t specify how many points you will be adding to the mesh
-when you initiate it you may risk the UV data becoming out of sync.</p>
+<p>If you don&#39;t specify how many points you will be adding to the mesh when you initiate it you may risk the UV data becoming out of sync.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Index starts at 1.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span> method is used to define UV mapping coordinates to points in
-the mesh.</p>
+<p>The <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span> method is used to define UV mapping coordinates to points in the mesh.</p>
 
-<p>Beware that the polygons connected to the point will share UV coordiates so
-UV mapping coordinates needs to be continuous across the polygon mesh.</p>
+<p>Beware that the polygons connected to the point will share UV coordiates so UV mapping coordinates needs to be continuous across the polygon mesh.</p>
 
-<p>When setting the UV for a point one need to make sure to have the correct
-index for the point. It&#39;s therefore best to add the points using
-<span class='object_link'><a href="#add_point-instance_method" title="Geom::PolygonMesh#add_point (method)">#add_point</a></span> and use the index it returns for following calls to set_uv and
-<span class='object_link'><a href="#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">#add_polygon</a></span>.</p>
+<p>When setting the UV for a point one need to make sure to have the correct index for the point. It&#39;s therefore best to add the points using <span class='object_link'><a href="#add_point-instance_method" title="Geom::PolygonMesh#add_point (method)">#add_point</a></span> and use the index it returns for following calls to set_uv and <span class='object_link'><a href="#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">#add_polygon</a></span>.</p>
 
-<p>If you are not able to calculate how many points there will be in your mesh
-make sure to not specify an index in <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span> higher than the number of
-times you have called <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span>.</p>
+<p>If you are not able to calculate how many points there will be in your mesh make sure to not specify an index in <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span> higher than the number of times you have called <span class='object_link'><a href="#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">#set_uv</a></span>.</p>
 
 
   </div>
@@ -2585,19 +2550,19 @@ times you have called <span class='object_link'><a href="#set_uv-instance_method
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#uv_at-instance_method" title="Geom::PolygonMesh#uv_at (method)">#uv_at</a></span> method is used to access a uv (texture coordinates) at a
-specific index.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Index starts at 1.</p>
+</div>
+  </div>
 
-<p>“UVs” is a way of referring to the u,v texture coordinates (as opposed to
-the X, Y, and Z axis that you construct your meshes on), which are points
-defining 1-by-1 positions within an image. These coordinates connect to
-points in your 3D model, to position an image texture onto it&#39;s surface
-(similar to virtual “thumb tacks”)</p>
 
-<p>These coordinates pin an exact spot on an image that you wish to use to
-texture your model to a specific point on an object&#39;s surface. Between
-these points, your software will stretch the image smoothly. This is what
-is referred to as UV mapping.</p>
+<p>The <span class='object_link'><a href="#uv_at-instance_method" title="Geom::PolygonMesh#uv_at (method)">#uv_at</a></span> method is used to access a uv (texture coordinates) at a specific index.</p>
+
+<p>“UVs” is a way of referring to the u,v texture coordinates (as opposed to the X, Y, and Z axis that you construct your meshes on), which are points defining 1-by-1 positions within an image. These coordinates connect to points in your 3D model, to position an image texture onto it&#39;s surface (similar to virtual “thumb tacks”)</p>
+
+<p>These coordinates pin an exact spot on an image that you wish to use to texture your model to a specific point on an object&#39;s surface. Between these points, your software will stretch the image smoothly. This is what is referred to as UV mapping.</p>
 
 
   </div>
@@ -2615,8 +2580,7 @@ is referred to as UV mapping.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>A Point3d object where the x equals the u value and the y equals the v
-value. Returns nil on failure.</p>
+<p>A Point3d object where the x equals the u value and the y equals the v value. Returns nil on failure.</p>
 
 
   </div>
@@ -2652,8 +2616,7 @@ value. Returns nil on failure.</p>
       
         &mdash;
         <div class='inline'>
-<p>Set to <code>true</code> to get the UV for the front size,
-<code>false</code> for the back side.</p>
+<p>Set to <code>true</code> to get the UV for the front size, <code>false</code> for the back side.</p>
 </div>
       
     </li>
@@ -2672,8 +2635,7 @@ value. Returns nil on failure.</p>
       
         &mdash;
         <div class='inline'>
-<p>a Point3d object where the x equals the u value and the y equals the v
-value. Returns nil on failure.</p>
+<p>a Point3d object where the x equals the u value and the y equals the v value. Returns nil on failure.</p>
 </div>
       
     </li>
@@ -2715,8 +2677,7 @@ value. Returns nil on failure.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#uvs-instance_method" title="Geom::PolygonMesh#uvs (method)">#uvs</a></span> method is used to retrieve an array of uv coordinates in the
-mesh.</p>
+<p>The <span class='object_link'><a href="#uvs-instance_method" title="Geom::PolygonMesh#uvs (method)">#uvs</a></span> method is used to retrieve an array of uv coordinates in the mesh.</p>
 
 
   </div>

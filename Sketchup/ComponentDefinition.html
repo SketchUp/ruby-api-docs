@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -193,24 +195,11 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span> class is used to define the contents
-for a SketchUp component. Components are a collection of entities that can
-be instanced and reused multiple times throughout a model. For example, you
-could draw a chair once, turn it into a component, and then use 6 instances
-of it to surround a table. Edits to the original “definition” will then
-propagate across all of its instances.</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span> class is used to define the contents for a SketchUp component. Components are a collection of entities that can be instanced and reused multiple times throughout a model. For example, you could draw a chair once, turn it into a component, and then use 6 instances of it to surround a table. Edits to the original “definition” will then propagate across all of its instances.</p>
 
-<p>The ComponentDefinition class contains the global entities and settings for
-each definition. See the <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class for how each
-copy is defined.</p>
+<p>The ComponentDefinition class contains the global entities and settings for each definition. See the <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class for how each copy is defined.</p>
 
-<p>Starting from SketchUp 2018+, the <span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span> class
-contains a new default attribute dictionary named “SU_DefinitionSet” with
-default keys named named “Price”, “Size”, “Url”. See the
-<a href="https://help.sketchup.com/en/article/3000124" target="_parent" title="Help article">Help article</a> for more
-information. The dictionary cannot be deleted via ruby and an ArgumentError
-will be raised. The key/value pairs in the dictionary can be deleted
-safely.</p>
+<p>Starting from SketchUp 2018+, the <span class='object_link'><a href="" title="Sketchup::ComponentDefinition (class)">ComponentDefinition</a></span> class contains a new default attribute dictionary named “SU_DefinitionSet” with default keys named named “Price”, “Size”, “Url”. See the <a href="https://help.sketchup.com/en/article/3000124" target="_parent" title="Help article">Help article</a> for more information. The dictionary cannot be deleted via ruby and an ArgumentError will be raised. The key/value pairs in the dictionary can be deleted safely.</p>
 
 
   </div>
@@ -271,8 +260,7 @@ safely.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The &lt;=&gt; method is used to compare two ComponentDefinition objects for
-sorting.</p>
+<p>The &lt;=&gt; method is used to compare two ComponentDefinition objects for sorting.</p>
 </div></span>
   
 </li>
@@ -296,8 +284,7 @@ sorting.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The == method is used to test if two ComponentDefinition objects are the
-same (based on their address in memory).</p>
+<p>The == method is used to test if two ComponentDefinition objects are the same (based on their address in memory).</p>
 </div></span>
   
 </li>
@@ -321,8 +308,7 @@ same (based on their address in memory).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_classification method is used to add a given classification to the
-component.</p>
+<p>The add_classification method is used to add a given classification to the component.</p>
 </div></span>
   
 </li>
@@ -370,8 +356,7 @@ component.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The behavior method is used to retrieve the Behavior object associated with
-a component definition.</p>
+<p>The behavior method is used to retrieve the Behavior object associated with a component definition.</p>
 </div></span>
   
 </li>
@@ -395,8 +380,7 @@ a component definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The count_instances method is used to count the number of unique component
-instances in a model using this component definition.</p>
+<p>The count_instances method is used to count the number of unique component instances in a model using this component definition.</p>
 </div></span>
   
 </li>
@@ -420,8 +404,7 @@ instances in a model using this component definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The count_used_instances method is used to count the total number of
-component instances in a model using this component definition.</p>
+<p>The count_used_instances method is used to count the total number of component instances in a model using this component definition.</p>
 </div></span>
   
 </li>
@@ -445,8 +428,7 @@ component instances in a model using this component definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description method is used to retrieve the description of the component
-definition.</p>
+<p>The description method is used to retrieve the description of the component definition.</p>
 </div></span>
   
 </li>
@@ -470,8 +452,7 @@ definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description= method is used to set the description for the component
-definition.</p>
+<p>The description= method is used to set the description for the component definition.</p>
 </div></span>
   
 </li>
@@ -495,8 +476,7 @@ definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The entities method retrieves a collection of all the entities in the
-component definition.</p>
+<p>The entities method retrieves a collection of all the entities in the component definition.</p>
 </div></span>
   
 </li>
@@ -520,8 +500,7 @@ component definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_classification_value method is used to retrieve the value from a
-classification attribute given a key path.</p>
+<p>The get_classification_value method is used to retrieve the value from a classification attribute given a key path.</p>
 </div></span>
   
 </li>
@@ -545,8 +524,7 @@ classification attribute given a key path.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The group? method is used to determine if this component definition is used
-to hold the elements of a group.</p>
+<p>The group? method is used to determine if this component definition is used to hold the elements of a group.</p>
 </div></span>
   
 </li>
@@ -570,8 +548,7 @@ to hold the elements of a group.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The guid method is used to retrieve the unique identifier of this component
-definition.</p>
+<p>The guid method is used to retrieve the unique identifier of this component definition.</p>
 </div></span>
   
 </li>
@@ -595,8 +572,7 @@ definition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The hidden method is used to determine if this component definition should
-be hidden on the component browser.</p>
+<p>The hidden method is used to determine if this component definition should be hidden on the component browser.</p>
 </div></span>
   
 </li>
@@ -620,8 +596,7 @@ be hidden on the component browser.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The image? method is used to determine if this component definition is used
-to define an image.</p>
+<p>The image? method is used to determine if this component definition is used to define an image.</p>
 </div></span>
   
 </li>
@@ -645,8 +620,7 @@ to define an image.</p>
 
   
     <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>SketchUp 2020.0 removed the insertion point feature. The getter will always
-return the origin point and the setter becomes a no-op.</p>
+<p>SketchUp 2020.0 removed the insertion point feature. The getter will always return the origin point and the setter becomes a no-op.</p>
 </div></span>
   
 </li>
@@ -670,8 +644,7 @@ return the origin point and the setter becomes a no-op.</p>
 
   
     <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>SketchUp 2020.0 removed the insertion point feature. The getter will always
-return the origin point and the setter becomes a no-op.</p>
+<p>SketchUp 2020.0 removed the insertion point feature. The getter will always return the origin point and the setter becomes a no-op.</p>
 </div></span>
   
 </li>
@@ -695,8 +668,7 @@ return the origin point and the setter becomes a no-op.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The instances method is used to return any array of ComponentInstancesfor
-this ComponentDefinition.</p>
+<p>The instances method is used to return any array of ComponentInstancesfor this ComponentDefinition.</p>
 </div></span>
   
 </li>
@@ -720,8 +692,7 @@ this ComponentDefinition.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The internal? method is used to determine if the component definition is
-internal to the Component Browser.</p>
+<p>The internal? method is used to determine if the component definition is internal to the Component Browser.</p>
 </div></span>
   
 </li>
@@ -746,6 +717,30 @@ internal to the Component Browser.</p>
   
     <span class="summary_desc"><div class='inline'>
 <p>Invalidates the bounding box of your definition.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#live_component%3F-instance_method" title="#live_component? (instance method)">#<strong>live_component?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#live_component%3F-instance_method" title="Sketchup::ComponentDefinition#live_component? (method)">#live_component?</a></span> method is used to identify Live Components and sub-definitions of Live Components.</p>
 </div></span>
   
 </li>
@@ -802,7 +797,7 @@ internal to the Component Browser.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#path-instance_method" title="#path (instance method)">#<strong>path</strong>  &#x21d2; String, false </a>
+      <a href="#path-instance_method" title="#path (instance method)">#<strong>path</strong>  &#x21d2; String </a>
     
 
     
@@ -817,8 +812,7 @@ internal to the Component Browser.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The path method is used to retrieve the path where the component was
-loaded.</p>
+<p>The path method is used to retrieve the path where the component was loaded.</p>
 </div></span>
   
 </li>
@@ -842,8 +836,7 @@ loaded.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The refresh_thumbnail method is used to force SketchUp to regenerate the
-thumbnail image that appears in the component browser.</p>
+<p>The refresh_thumbnail method is used to force SketchUp to regenerate the thumbnail image that appears in the component browser.</p>
 </div></span>
   
 </li>
@@ -867,8 +860,7 @@ thumbnail image that appears in the component browser.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_classification method is used to remove a given classification
-from the component.</p>
+<p>The remove_classification method is used to remove a given classification from the component.</p>
 </div></span>
   
 </li>
@@ -892,8 +884,7 @@ from the component.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -917,8 +908,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The save_as method is used to save your definition as a SketchUp file at
-the specified file destination.</p>
+<p>The save_as method is used to save your definition as a SketchUp file at the specified file destination.</p>
 </div></span>
   
 </li>
@@ -966,8 +956,7 @@ the specified file destination.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_classification_value method is used to set the value of a
-classification attribute given a key path.</p>
+<p>The set_classification_value method is used to set the value of a classification attribute given a key path.</p>
 </div></span>
   
 </li>
@@ -1019,8 +1008,7 @@ classification attribute given a key path.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &lt;=&gt; method is used to compare two ComponentDefinition objects for
-sorting. The comparison is done based on the component name.</p>
+<p>The &lt;=&gt; method is used to compare two ComponentDefinition objects for sorting. The comparison is done based on the component name.</p>
 
 
   </div>
@@ -1084,8 +1072,7 @@ sorting. The comparison is done based on the component name.</p>
       
         &mdash;
         <div class='inline'>
-<p>a -1 if component1 is less then component2. A 1 if component1 greater than
-component2</p>
+<p>a -1 if component1 is less then component2. A 1 if component1 greater than component2</p>
 </div>
       
     </li>
@@ -1124,8 +1111,7 @@ component2</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The == method is used to test if two ComponentDefinition objects are the
-same (based on their address in memory).</p>
+<p>The == method is used to test if two ComponentDefinition objects are the same (based on their address in memory).</p>
 
 
   </div>
@@ -1189,8 +1175,7 @@ same (based on their address in memory).</p>
       
         &mdash;
         <div class='inline'>
-<p>true if the ComponentDefinition objects are the same object. False if the
-objects are not the same.</p>
+<p>true if the ComponentDefinition objects are the same object. False if the objects are not the same.</p>
 </div>
       
     </li>
@@ -1229,8 +1214,7 @@ objects are not the same.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_classification method is used to add a given classification to the
-component.</p>
+<p>The add_classification method is used to add a given classification to the component.</p>
 
 <p>Note that you cannot classify image definitions.</p>
 
@@ -1444,8 +1428,7 @@ component.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The behavior method is used to retrieve the Behavior object associated with
-a component definition.</p>
+<p>The behavior method is used to retrieve the Behavior object associated with a component definition.</p>
 
 
   </div>
@@ -1516,10 +1499,7 @@ a component definition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The count_instances method is used to count the number of unique component
-instances in a model using this component definition. This does not
-represent the total number of instances placed in the model as it
-doesn&#39;t take into account instances inside unused definitions.</p>
+<p>The count_instances method is used to count the number of unique component instances in a model using this component definition. This does not represent the total number of instances placed in the model as it doesn&#39;t take into account instances inside unused definitions.</p>
 
 
   </div>
@@ -1550,8 +1530,7 @@ doesn&#39;t take into account instances inside unused definitions.</p>
       
         &mdash;
         <div class='inline'>
-<p>the number of component instances of this component definition (if
-successful)</p>
+<p>the number of component instances of this component definition (if successful)</p>
 </div>
       
     </li>
@@ -1590,9 +1569,7 @@ successful)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The count_used_instances method is used to count the total number of
-component instances in a model using this component definition. This method
-takes into account the full hierarchy of the model.</p>
+<p>The count_used_instances method is used to count the total number of component instances in a model using this component definition. This method takes into account the full hierarchy of the model.</p>
 
 
   </div>
@@ -1623,8 +1600,7 @@ takes into account the full hierarchy of the model.</p>
       
         &mdash;
         <div class='inline'>
-<p>the number of component instances of this component definition (if
-successful)</p>
+<p>the number of component instances of this component definition (if successful)</p>
 </div>
       
     </li>
@@ -1663,8 +1639,7 @@ successful)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description method is used to retrieve the description of the component
-definition.</p>
+<p>The description method is used to retrieve the description of the component definition.</p>
 
 <p>Component definitions do not have a description, by default.</p>
 
@@ -1734,8 +1709,7 @@ definition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description= method is used to set the description for the component
-definition.</p>
+<p>The description= method is used to set the description for the component definition.</p>
 
 
   </div>
@@ -1829,8 +1803,7 @@ definition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The entities method retrieves a collection of all the entities in the
-component definition</p>
+<p>The entities method retrieves a collection of all the entities in the component definition</p>
 
 
   </div>
@@ -1897,8 +1870,7 @@ component definition</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_classification_value method is used to retrieve the value from a
-classification attribute given a key path.</p>
+<p>The get_classification_value method is used to retrieve the value from a classification attribute given a key path.</p>
 
 
   </div>
@@ -1988,8 +1960,7 @@ classification attribute given a key path.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The group? method is used to determine if this component definition is used
-to hold the elements of a group.</p>
+<p>The group? method is used to determine if this component definition is used to hold the elements of a group.</p>
 
 
   </div>
@@ -2055,9 +2026,7 @@ to hold the elements of a group.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The guid method is used to retrieve the unique identifier of this component
-definition. The guid changes after the component definition is modified and
-the component edit is exited.</p>
+<p>The guid method is used to retrieve the unique identifier of this component definition. The guid changes after the component definition is modified and the component edit is exited.</p>
 
 
   </div>
@@ -2124,8 +2093,7 @@ the component edit is exited.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The hidden method is used to determine if this component definition should
-be hidden on the component browser.</p>
+<p>The hidden method is used to determine if this component definition should be hidden on the component browser.</p>
 
 
   </div>
@@ -2187,8 +2155,7 @@ be hidden on the component browser.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The image? method is used to determine if this component definition is used
-to define an image.</p>
+<p>The image? method is used to determine if this component definition is used to define an image.</p>
 
 
   </div>
@@ -2256,12 +2223,10 @@ to define an image.</p>
 </h3><div class="docstring">
   <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>SketchUp 2020.0 removed the insertion point feature. The getter will always
-return the origin point and the setter becomes a no-op.</p>
+<p>SketchUp 2020.0 removed the insertion point feature. The getter will always return the origin point and the setter becomes a no-op.</p>
 </div></div>
 
-<p>The insertion_point method is used to retrieve the Point3d object where the
-component was inserted.</p>
+<p>The insertion_point method is used to retrieve the Point3d object where the component was inserted.</p>
 
 
   </div>
@@ -2297,8 +2262,7 @@ component was inserted.</p>
       
         &mdash;
         <div class='inline'>
-<p>the Point3d where the component was inserted if successful. False if
-unsuccessful.</p>
+<p>the Point3d where the component was inserted if successful. False if unsuccessful.</p>
 </div>
       
     </li>
@@ -2337,8 +2301,7 @@ unsuccessful.</p>
 </h3><div class="docstring">
   <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>SketchUp 2020.0 removed the insertion point feature. The getter will always
-return the origin point and the setter becomes a no-op.</p>
+<p>SketchUp 2020.0 removed the insertion point feature. The getter will always return the origin point and the setter becomes a no-op.</p>
 </div></div>
 
 <p>Sets the insertion point of your definition.</p>
@@ -2442,8 +2405,7 @@ return the origin point and the setter becomes a no-op.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The instances method is used to return any array of ComponentInstancesfor
-this ComponentDefinition.</p>
+<p>The instances method is used to return any array of ComponentInstancesfor this ComponentDefinition.</p>
 
 
   </div>
@@ -2510,8 +2472,7 @@ this ComponentDefinition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The internal? method is used to determine if the component definition is
-internal to the Component Browser</p>
+<p>The internal? method is used to determine if the component definition is internal to the Component Browser</p>
 
 
   </div>
@@ -2580,13 +2541,9 @@ internal to the Component Browser</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Invalidates the bounding box of your definition. This command forces the
-update of the bounding box of definition while inside an operation. See
-Model.start_operation for how to start an operation.</p>
+<p>Invalidates the bounding box of your definition. This command forces the update of the bounding box of definition while inside an operation. See Model.start_operation for how to start an operation.</p>
 
-<p>This method is useful if you make changes to your geometry using the Ruby
-API and then need to know your bounding box size. This method forces
-SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
+<p>This method is useful if you make changes to your geometry using the Ruby API and then need to know your bounding box size. This method forces SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
 
 
   </div>
@@ -2631,6 +2588,83 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="live_component?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>live_component?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>These components are parametrically generated and API users should not modify them.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#live_component%3F-instance_method" title="Sketchup::ComponentDefinition#live_component? (method)">#live_component?</a></span> method is used to identify Live Components and sub-definitions of Live Components.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Skipping Live Components</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_definition'>definition</span><span class='op'>|</span>
+  <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_live_component?'>live_component?</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
 </div>
       
     </li>
@@ -2801,7 +2835,7 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
   <h3 class="signature " id="path-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>path</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>, <tt>false</tt> 
+    #<strong>path</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
   
 
   
@@ -2810,10 +2844,7 @@ SketchUp to recalculate the definition&#39;s bounding box when you choose.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The path method is used to retrieve the path where the component was
-loaded.</p>
-
-<p>Returns nil if it is an internal component.</p>
+<p>The path method is used to retrieve the path where the component was loaded.</p>
 
 
   </div>
@@ -2824,11 +2855,10 @@ loaded.</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'><span class='object_link'><a href="../Sketchup.html#find_support_file-class_method" title="Sketchup.find_support_file (method)">find_support_file</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bed.skp</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components/Components Sampler/</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'><span class='object_link'><a href="../Sketchup.html#find_support_file-class_method" title="Sketchup.find_support_file (method)">find_support_file</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bed.skp</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components/Components Sampler/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_definitions'>definitions</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span>
-<span class='id identifier rubyid_componentdefinition'>componentdefinition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_path'>path</span>
+<span class='id identifier rubyid_componentdefinition'>componentdefinition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_componentdefinition'>componentdefinition</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span></code></pre>
     
   </div>
@@ -2839,13 +2869,13 @@ loaded.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>, <tt>false</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>a valid path if successful, false if unsuccessful</p>
+<p>Returns empty string if it is an internal component.</p>
 </div>
       
     </li>
@@ -2884,10 +2914,7 @@ loaded.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The refresh_thumbnail method is used to force SketchUp to regenerate the
-thumbnail image that appears in the component browser. This is useful if
-you&#39;ve used the API to change the geometry of your component and would
-like the thumbnail to match.</p>
+<p>The refresh_thumbnail method is used to force SketchUp to regenerate the thumbnail image that appears in the component browser. This is useful if you&#39;ve used the API to change the geometry of your component and would like the thumbnail to match.</p>
 
 
   </div>
@@ -2949,8 +2976,7 @@ like the thumbnail to match.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_classification method is used to remove a given classification
-from the component.</p>
+<p>The remove_classification method is used to remove a given classification from the component.</p>
 
 <p>Note that you cannot classify image definitions.</p>
 
@@ -3005,8 +3031,7 @@ from the component.</p>
       
         &mdash;
         <div class='inline'>
-<p>Schema type to remove. If not provided or an empty string, the currently
-applied schema type for the given schema name will be removed.</p>
+<p>Schema type to remove. If not provided or an empty string, the currently applied schema type for the given schema name will be removed.</p>
 </div>
       
     </li>
@@ -3067,8 +3092,7 @@ applied schema type for the given schema name will be removed.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>
@@ -3166,8 +3190,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The save_as method is used to save your definition as a SketchUp file at
-the specified file destination.</p>
+<p>The save_as method is used to save your definition as a SketchUp file at the specified file destination.</p>
 
 
   </div>
@@ -3265,9 +3288,7 @@ the specified file destination.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Saves a component thumbnail image. The image format is specified by the
-file extension of filePath. Supported image formats are bmp, jpg, png, tif,
-pct, and gif.</p>
+<p>Saves a component thumbnail image. The image format is specified by the file extension of filePath. Supported image formats are bmp, jpg, png, tif, pct, and gif.</p>
 
 
   </div>
@@ -3360,8 +3381,7 @@ pct, and gif.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_classification_value method is used to set the value of a
-classification attribute given a key path.</p>
+<p>The set_classification_value method is used to set the value of a classification attribute given a key path.</p>
 
 
   </div>

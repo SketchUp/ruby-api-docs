@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -148,7 +150,7 @@
       </div>
 
       <div id="content"><h1>Class: Sketchup::Animation
-  
+  <span class="abstract note title">Abstract</span>
   
   
 </h1>
@@ -183,11 +185,14 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>The <span class='object_link'><a href="" title="Sketchup::Animation (class)">Animation</a></span> interface is implemented to create animations
-inside SketchUp. At any given time, a single animation can be active on a
-<span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span>. To make your own, build a Ruby class that contains the
-methods described below:</p>
+    <div class="note abstract">
+  <strong>This class is abstract.</strong>
+  <div class='inline'>
+<p>Implement the methods described in this class to create a an animation. You can not sub-class this class because it is not defined by the API.</p>
+</div>
+</div>
+
+<p>The <span class='object_link'><a href="" title="Sketchup::Animation (class)">Animation</a></span> interface is implemented to create animations inside SketchUp. At any given time, a single animation can be active on a <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span>. To make your own, build a Ruby class that contains the methods described below:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='comment'># This is an example of a simple animation that floats the camera up to
 </span><span class='comment'># a z position of 200&quot;. The only required method for an animation is
@@ -209,9 +214,7 @@ methods described below:</p>
 <span class='rbrace'>}</span>
 </code></pre>
 
-<p><span class='object_link'><a href="" title="Sketchup::Animation (class)">Animation</a></span> objects are activated by using the
-<span class='object_link'><a href="View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">View#animation=</a></span> method on a <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span> object. To stop an
-animation set the view&#39;s animation object to <code>nil</code>, like so:</p>
+<p><span class='object_link'><a href="" title="Sketchup::Animation (class)">Animation</a></span> objects are activated by using the <span class='object_link'><a href="View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">View#animation=</a></span> method on a <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span> object. To stop an animation set the view&#39;s animation object to <code>nil</code>, like so:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='kw'>nil</span>
 </code></pre>
@@ -275,8 +278,7 @@ animation set the view&#39;s animation object to <code>nil</code>, like so:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#nextFrame-instance_method" title="Sketchup::Animation#nextFrame (method)">#nextFrame</a></span> method is invoked by SketchUp to tell the animation to
-display its next frame.</p>
+<p>The <span class='object_link'><a href="#nextFrame-instance_method" title="Sketchup::Animation#nextFrame (method)">#nextFrame</a></span> method is invoked by SketchUp to tell the animation to display its next frame.</p>
 </div></span>
   
 </li>
@@ -324,8 +326,7 @@ display its next frame.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#resume-instance_method" title="Sketchup::Animation#resume (method)">#resume</a></span> method is invoked by SketchUp when the animation is resumed
-after being paused.</p>
+<p>The <span class='object_link'><a href="#resume-instance_method" title="Sketchup::Animation#resume (method)">#resume</a></span> method is invoked by SketchUp when the animation is resumed after being paused.</p>
 </div></span>
   
 </li>
@@ -378,12 +379,9 @@ after being paused.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#nextFrame-instance_method" title="Sketchup::Animation#nextFrame (method)">#nextFrame</a></span> method is invoked by SketchUp to tell the animation to
-display its next frame. This method should set up the camera and then call
-<span class='object_link'><a href="View.html#show_frame-instance_method" title="Sketchup::View#show_frame (method)">View#show_frame</a></span>.</p>
+<p>The <span class='object_link'><a href="#nextFrame-instance_method" title="Sketchup::Animation#nextFrame (method)">#nextFrame</a></span> method is invoked by SketchUp to tell the animation to display its next frame. This method should set up the camera and then call <span class='object_link'><a href="View.html#show_frame-instance_method" title="Sketchup::View#show_frame (method)">View#show_frame</a></span>.</p>
 
-<p>The <span class='object_link'><a href="#nextFrame-instance_method" title="Sketchup::Animation#nextFrame (method)">#nextFrame</a></span> method is the only required method of the
-<span class='object_link'><a href="" title="Sketchup::Animation (class)">Sketchup::Animation</a></span> interface that you must implement.</p>
+<p>The <span class='object_link'><a href="#nextFrame-instance_method" title="Sketchup::Animation#nextFrame (method)">#nextFrame</a></span> method is the only required method of the <span class='object_link'><a href="" title="Sketchup::Animation (class)">Sketchup::Animation</a></span> interface that you must implement.</p>
 
 
   </div>
@@ -405,9 +403,7 @@ display its next frame. This method should set up the camera and then call
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns continue - <code>true</code> if you want the animation to continue
-on to the next frame, <code>false</code> if you want the animation to stop
-after this frame.</p>
+<p>Returns continue - <code>true</code> if you want the animation to continue on to the next frame, <code>false</code> if you want the animation to stop after this frame.</p>
 
 
   </div>
@@ -446,9 +442,7 @@ after this frame.</p>
       
         &mdash;
         <div class='inline'>
-<p>continue - <code>true</code> if you want the animation to continue on to
-the next frame, <code>false</code> if you want the animation to stop after
-this frame.</p>
+<p>continue - <code>true</code> if you want the animation to continue on to the next frame, <code>false</code> if you want the animation to stop after this frame.</p>
 </div>
       
     </li>
@@ -509,20 +503,14 @@ this frame.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The user interface for pausing and resuming animations isn&#39;t integrated
-with the Ruby API in the current version, so this method is probably not
-useful to you.</p>
+<p>The user interface for pausing and resuming animations isn&#39;t integrated with the Ruby API in the current version, so this method is probably not useful to you.</p>
 </div>
   </div>
 
 
 <p>The <span class='object_link'><a href="#pause-instance_method" title="Sketchup::Animation#pause (method)">#pause</a></span> method is invoked by SketchUp when the animation is paused.</p>
 
-<p>This method is optional (you do not need to implement this method unless
-you want to perform some specialized function when the animation is
-paused). You cannot call this method in your code explicitly and expect an
-animation to pause, only certain SketchUp events cause the method to be
-called.</p>
+<p>This method is optional (you do not need to implement this method unless you want to perform some specialized function when the animation is paused). You cannot call this method in your code explicitly and expect an animation to pause, only certain SketchUp events cause the method to be called.</p>
 
 
   </div>
@@ -588,21 +576,14 @@ called.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The user interface for pausing and resuming animations isn&#39;t integrated
-with the Ruby API in the current version, so this method is probably not
-useful to you.</p>
+<p>The user interface for pausing and resuming animations isn&#39;t integrated with the Ruby API in the current version, so this method is probably not useful to you.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#resume-instance_method" title="Sketchup::Animation#resume (method)">#resume</a></span> method is invoked by SketchUp when the animation is resumed
-after being paused.</p>
+<p>The <span class='object_link'><a href="#resume-instance_method" title="Sketchup::Animation#resume (method)">#resume</a></span> method is invoked by SketchUp when the animation is resumed after being paused.</p>
 
-<p>This method is optional (you do not need to implement this method unless
-you want to perform some specialized function when the animation is
-resumed). You cannot call this method in your code explicitly and expect an
-animation to stop, only certain SketchUp events cause the method to be
-called.</p>
+<p>This method is optional (you do not need to implement this method unless you want to perform some specialized function when the animation is resumed). You cannot call this method in your code explicitly and expect an animation to stop, only certain SketchUp events cause the method to be called.</p>
 
 
   </div>
@@ -668,24 +649,16 @@ called.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Do not call Sketchup::Animation#Sketchup#Sketchup::View#Sketchup::View#animation= from this method. This will cause
-a recursive loop and crash SketchUp 2017 and earlier versions. As of
-SketchUp 2018 this will raise a <code>RunTimeError</code>.</p>
+<p>Do not call Sketchup::Animation#Sketchup#Sketchup::View#Sketchup::View#animation= from this method. This will cause a recursive loop and crash SketchUp 2017 and earlier versions. As of SketchUp 2018 this will raise a <code>RunTimeError</code>.</p>
 </div>
   </div>
 
 
 <p>The <span class='object_link'><a href="#stop-instance_method" title="Sketchup::Animation#stop (method)">#stop</a></span> method is invoked by SketchUp when the animation is stopped.</p>
 
-<p>This method is optional (you do not need to implement this method unless
-you want to perform some specialized function when the animation is
-stopped). You cannot call this method in your code explicitly and expect an
-animation to stop, only certain SketchUp events cause the method to be
-called.</p>
+<p>This method is optional (you do not need to implement this method unless you want to perform some specialized function when the animation is stopped). You cannot call this method in your code explicitly and expect an animation to stop, only certain SketchUp events cause the method to be called.</p>
 
-<p>Perhaps the most common way for this method to be called is when your Ruby
-code sets <span class='object_link'><a href="View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">View#animation=</a></span> to <code>nil</code>. See the class
-comments for an example of this.</p>
+<p>Perhaps the most common way for this method to be called is when your Ruby code sets <span class='object_link'><a href="View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">View#animation=</a></span> to <code>nil</code>. See the class comments for an example of this.</p>
 
 
   </div>

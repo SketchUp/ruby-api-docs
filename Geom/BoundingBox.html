@@ -20,7 +20,7 @@
     <meta name="image" content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=60" />
     <meta name="title" content="Class: Geom::BoundingBox" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="Bounding boxes are three-dimensional boxes (eight corners), aligned with the global axes, that surround entities within your model." />
+    <meta name="description" content="Bounding boxes are three-dimensional boxes (eight corners), aligned with the axes, that surround entities within your model." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Geom::BoundingBox" />
     <meta property="og:url"       content="https://ruby.sketchup.com/Geom/BoundingBox.html" />
-    <meta property="og:description" content="Bounding boxes are three-dimensional boxes (eight corners), aligned with the global axes, that surround entities within your model." />
+    <meta property="og:description" content="Bounding boxes are three-dimensional boxes (eight corners), aligned with the axes, that surround entities within your model." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Geom::BoundingBox" />
-    <meta name="twitter:description" content="Bounding boxes are three-dimensional boxes (eight corners), aligned with the global axes, that surround entities within your model." />
+    <meta name="twitter:description" content="Bounding boxes are three-dimensional boxes (eight corners), aligned with the axes, that surround entities within your model." />
     <meta name="twitter:image:src"   content="http://developer.sketchup.com/sites/developers.sketchup.com/files/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="https://ruby.sketchup.com/Geom/BoundingBox.html" />
 
@@ -57,6 +57,8 @@
 
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
@@ -187,24 +189,14 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>that the bounding box returned for face-me components is the center of its
-entire range of motion. This behavior changed in SketchUp 7.1. In 7.0 and
-earlier, the .bounds method would return the bounds around the face-me
-component&#39;s current, visible center.</p>
+<p>that the bounding box returned for face-me components is the center of its entire range of motion. This behavior changed in SketchUp 7.1. In 7.0 and earlier, the .bounds method would return the bounds around the face-me component&#39;s current, visible center.</p>
 </div>
   </div>
 
 
-<p>Bounding boxes are three-dimensional boxes (eight corners), aligned with
-the global axes, that surround entities within your model. There is a
-default bounding box for any new model that will surround all entities,
-including all groups and components. Additionally, there are bounding boxes
-for Drawingelement objects, including components and groups. Bounding boxes
-are only large enough to exactly bound the entities within your model,
-group, or component.</p>
+<p>Bounding boxes are three-dimensional boxes (eight corners), aligned with the axes, that surround entities within your model. There is a default bounding box for any new model that will surround all entities, including all groups and components. Additionally, there are bounding boxes for Drawingelement objects, including components and groups. Bounding boxes are only large enough to exactly bound the entities within your model, group, or component.</p>
 
-<p>You can also create arbitrary BoundingBox objects by calling
-BoundingBox.new.</p>
+<p>You can also create arbitrary BoundingBox objects by calling BoundingBox.new.</p>
 
 
   </div>
@@ -282,8 +274,7 @@ BoundingBox.new.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add method is used to add a point, vertex, or other bounding boxes to
-the bounding box.</p>
+<p>The add method is used to add a point, vertex, or other bounding boxes to the bounding box.</p>
 </div></span>
   
 </li>
@@ -307,8 +298,7 @@ the bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The center method is used to retrieve the Point3d object at the center of
-the bounding box.</p>
+<p>The center method is used to retrieve the Point3d object at the center of the bounding box.</p>
 </div></span>
   
 </li>
@@ -356,8 +346,7 @@ the bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is used to determine if a bounding box contains a specific
-Point3d or BoundingBox object.</p>
+<p>This method is used to determine if a bounding box contains a specific Point3d or BoundingBox object.</p>
 </div></span>
   
 </li>
@@ -381,8 +370,7 @@ Point3d or BoundingBox object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The corner method is used to retrieve a point object at a specified corner
-of the bounding box.</p>
+<p>The corner method is used to retrieve a point object at a specified corner of the bounding box.</p>
 </div></span>
   
 </li>
@@ -406,7 +394,7 @@ of the bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#depth-instance_method" title="Geom::BoundingBox#depth (method)">#depth</a></span> method is used to retrieve the depth of the bounding box.</p>
+<p>The <span class='object_link'><a href="#depth-instance_method" title="Geom::BoundingBox#depth (method)">#depth</a></span> method is used to retrieve the Z extents of the bounding box.</p>
 </div></span>
   
 </li>
@@ -430,8 +418,7 @@ of the bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#diagonal-instance_method" title="Geom::BoundingBox#diagonal (method)">#diagonal</a></span> method is used to get the length of the diagonal of the
-bounding box.</p>
+<p>The <span class='object_link'><a href="#diagonal-instance_method" title="Geom::BoundingBox#diagonal (method)">#diagonal</a></span> method is used to get the length of the diagonal of the bounding box.</p>
 </div></span>
   
 </li>
@@ -455,9 +442,7 @@ bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The empty? method is used to determine if a bounding box is empty (such as
-if the bounds have not been set.) This returns the opposite of the valid?
-method.</p>
+<p>The empty? method is used to determine if a bounding box is empty (such as if the bounds have not been set.) This returns the opposite of the valid? method.</p>
 </div></span>
   
 </li>
@@ -481,7 +466,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#height-instance_method" title="Geom::BoundingBox#height (method)">#height</a></span> method is used to retrieve the height of the bounding box.</p>
+<p>The <span class='object_link'><a href="#height-instance_method" title="Geom::BoundingBox#height (method)">#height</a></span> method is used to retrieve the Y extent of the bounding box.</p>
 </div></span>
   
 </li>
@@ -531,8 +516,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The intersect method is used to retrieve a bounding box that is the result
-of intersecting one bounding box with another.</p>
+<p>The intersect method is used to retrieve a bounding box that is the result of intersecting one bounding box with another.</p>
 </div></span>
   
 </li>
@@ -556,8 +540,7 @@ of intersecting one bounding box with another.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The max method is used to retrieve the Point3d object where x, y and z are
-maximum in the bounding box.</p>
+<p>The max method is used to retrieve the Point3d object where x, y and z are maximum in the bounding box.</p>
 </div></span>
   
 </li>
@@ -581,8 +564,7 @@ maximum in the bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The min method is used to retrieve the Point3d where x, y and z are minimum
-in the bounding box.</p>
+<p>The min method is used to retrieve the Point3d where x, y and z are minimum in the bounding box.</p>
 </div></span>
   
 </li>
@@ -606,8 +588,7 @@ in the bounding box.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The valid method is used to determine if a bounding box is valid (contains
-points).</p>
+<p>The valid method is used to determine if a bounding box is valid (contains points).</p>
 </div></span>
   
 </li>
@@ -631,7 +612,7 @@ points).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#width-instance_method" title="Geom::BoundingBox#width (method)">#width</a></span> method is used to retrieve the width of the bounding box.</p>
+<p>The <span class='object_link'><a href="#width-instance_method" title="Geom::BoundingBox#width (method)">#width</a></span> method is used to retrieve the X extent of the bounding box.</p>
 </div></span>
   
 </li>
@@ -716,13 +697,9 @@ points).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add method is used to add a point, vertex, or other bounding boxes to
-the bounding box. The size of the bounding box will increase as necessary
-to accommodate the new items.</p>
+<p>The add method is used to add a point, vertex, or other bounding boxes to the bounding box. The size of the bounding box will increase as necessary to accommodate the new items.</p>
 
-<p>Adding one point to an empty bounding box does not increase the size of the
-bounding box. You must add at least two points before methods such as
-BoundingBox.diagonal will return a size greater than zero.</p>
+<p>Adding one point to an empty bounding box does not increase the size of the bounding box. You must add at least two points before methods such as BoundingBox.diagonal will return a size greater than zero.</p>
 
 
   </div>
@@ -852,8 +829,7 @@ BoundingBox.diagonal will return a size greater than zero.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The center method is used to retrieve the Point3d object at the center of
-the bounding box.</p>
+<p>The center method is used to retrieve the Point3d object at the center of the bounding box.</p>
 
 
   </div>
@@ -924,8 +900,7 @@ the bounding box.</p>
     
 <p>The clear method is used to clear a bounding box.</p>
 
-<p>A cleared BoundingBox does not have a size greater than zero until you add
-at least two points or another bounding box.</p>
+<p>A cleared BoundingBox does not have a size greater than zero until you add at least two points or another bounding box.</p>
 
 
   </div>
@@ -999,8 +974,7 @@ at least two points or another bounding box.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is used to determine if a bounding box contains a specific
-Point3d or BoundingBox object.</p>
+<p>This method is used to determine if a bounding box contains a specific Point3d or BoundingBox object.</p>
 
 
   </div>
@@ -1092,12 +1066,9 @@ Point3d or BoundingBox object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The corner method is used to retrieve a point object at a specified corner
-of the bounding box.</p>
+<p>The corner method is used to retrieve a point object at a specified corner of the bounding box.</p>
 
-<p>There are 8 corners to a bounding box, identified by the numbers 0 through
-7. Points are returned in the currently set units (inches, by default).
-These are which index refers to which corner:</p>
+<p>There are 8 corners to a bounding box, identified by the numbers 0 through 7. Points are returned in the currently set units (inches, by default). These are which index refers to which corner:</p>
 
 <pre class="code"><code class="">- 0 = [0, 0, 0] (left front bottom)
 - 1 = [1, 0, 0] (right front bottom)
@@ -1148,8 +1119,7 @@ These are which index refers to which corner:</p>
       
         &mdash;
         <div class='inline'>
-<p>A number (from 0 to 7) representing point at the corner you want to
-retrieve.</p>
+<p>A number (from 0 to 7) representing point at the corner you want to retrieve.</p>
 </div>
       
     </li>
@@ -1210,7 +1180,15 @@ retrieve.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#depth-instance_method" title="Geom::BoundingBox#depth (method)">#depth</a></span> method is used to retrieve the depth of the bounding box.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp&#39;s coordinate system, this corresponds to the height.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#depth-instance_method" title="Geom::BoundingBox#depth (method)">#depth</a></span> method is used to retrieve the Z extents of the bounding box.</p>
 
 
   </div>
@@ -1224,7 +1202,7 @@ retrieve.</p>
       <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a Length of 500.0.
-</span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_depth'>depth</span></code></pre>
+</span><span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_depth'>depth</span></code></pre>
     
   </div>
 
@@ -1237,11 +1215,6 @@ retrieve.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the depth of the bounding box</p>
-</div>
       
     </li>
   
@@ -1279,8 +1252,7 @@ retrieve.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#diagonal-instance_method" title="Geom::BoundingBox#diagonal (method)">#diagonal</a></span> method is used to get the length of the diagonal of the
-bounding box.</p>
+<p>The <span class='object_link'><a href="#diagonal-instance_method" title="Geom::BoundingBox#diagonal (method)">#diagonal</a></span> method is used to get the length of the diagonal of the bounding box.</p>
 
 
   </div>
@@ -1349,9 +1321,7 @@ bounding box.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The empty? method is used to determine if a bounding box is empty (such as
-if the bounds have not been set.) This returns the opposite of the valid?
-method.</p>
+<p>The empty? method is used to determine if a bounding box is empty (such as if the bounds have not been set.) This returns the opposite of the valid? method.</p>
 
 
   </div>
@@ -1415,7 +1385,15 @@ method.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#height-instance_method" title="Geom::BoundingBox#height (method)">#height</a></span> method is used to retrieve the height of the bounding box.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp&#39;s coordinate system, this corersponds to the depth.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#height-instance_method" title="Geom::BoundingBox#height (method)">#height</a></span> method is used to retrieve the Y extent of the bounding box.</p>
 
 
   </div>
@@ -1429,7 +1407,7 @@ method.</p>
       <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a Length of 200.0.
-</span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span></code></pre>
+</span><span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span></code></pre>
     
   </div>
 
@@ -1442,11 +1420,6 @@ method.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the height of the bounding box</p>
-</div>
       
     </li>
   
@@ -1487,16 +1460,12 @@ method.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SU2015 this method would return incorrect result in some cases.
-For correct result in these versions you must first check if the
-boundingboxes actually overlap - then call this to get the resulting
-boundingbox.</p>
+<p>Prior to SU2015 this method would return incorrect result in some cases. For correct result in these versions you must first check if the boundingboxes actually overlap - then call this to get the resulting boundingbox.</p>
 </div>
   </div>
 
 
-<p>The intersect method is used to retrieve a bounding box that is the result
-of intersecting one bounding box with another.</p>
+<p>The intersect method is used to retrieve a bounding box that is the result of intersecting one bounding box with another.</p>
 
 
   </div>
@@ -1559,8 +1528,7 @@ of intersecting one bounding box with another.</p>
       
         &mdash;
         <div class='inline'>
-<p>the resulting BoundingBox object if successful, an empty BoundingBox object
-if unsuccessful.</p>
+<p>the resulting BoundingBox object if successful, an empty BoundingBox object if unsuccessful.</p>
 </div>
       
     </li>
@@ -1599,11 +1567,9 @@ if unsuccessful.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The max method is used to retrieve the Point3d object where x, y and z are
-maximum in the bounding box.</p>
+<p>The max method is used to retrieve the Point3d object where x, y and z are maximum in the bounding box.</p>
 
-<p>If you attempt to call the max method on an empty bounding box, you will
-receive a very large negative number.</p>
+<p>If you attempt to call the max method on an empty bounding box, you will receive a very large negative number.</p>
 
 
   </div>
@@ -1633,8 +1599,7 @@ receive a very large negative number.</p>
       
         &mdash;
         <div class='inline'>
-<p>a Point3d object representing the point where x, y, and z are the maximum
-in the bounding box.</p>
+<p>a Point3d object representing the point where x, y, and z are the maximum in the bounding box.</p>
 </div>
       
     </li>
@@ -1673,8 +1638,7 @@ in the bounding box.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The min method is used to retrieve the Point3d where x, y and z are minimum
-in the bounding box.</p>
+<p>The min method is used to retrieve the Point3d where x, y and z are minimum in the bounding box.</p>
 
 
   </div>
@@ -1704,8 +1668,7 @@ in the bounding box.</p>
       
         &mdash;
         <div class='inline'>
-<p>a Point3d object representing the point where x, y, and z are the maximum
-in the bounding box.</p>
+<p>a Point3d object representing the point where x, y, and z are the maximum in the bounding box.</p>
 </div>
       
     </li>
@@ -1744,8 +1707,7 @@ in the bounding box.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The valid method is used to determine if a bounding box is valid (contains
-points).</p>
+<p>The valid method is used to determine if a bounding box is valid (contains points).</p>
 
 
   </div>
@@ -1809,7 +1771,7 @@ points).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#width-instance_method" title="Geom::BoundingBox#width (method)">#width</a></span> method is used to retrieve the width of the bounding box.</p>
+<p>The <span class='object_link'><a href="#width-instance_method" title="Geom::BoundingBox#width (method)">#width</a></span> method is used to retrieve the X extent of the bounding box.</p>
 
 
   </div>
@@ -1823,7 +1785,7 @@ points).</p>
       <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return a Length of 100.0.
-</span><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_width'>width</span></code></pre>
+</span><span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_width'>width</span></code></pre>
     
   </div>
 
@@ -1836,11 +1798,6 @@ points).</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Length.html" title="Length (class)">Length</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the width of the bounding box</p>
-</div>
       
     </li>
   

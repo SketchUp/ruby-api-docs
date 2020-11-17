@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -189,34 +191,19 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Entities class is a container class for <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s. A
-<span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> object is different from a SketchUp::Entities object in
-that it is read-only. Adding or removing <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s from a
-<span class='object_link'><a href="Document.html" title="Layout::Document (class)">Document</a></span> happens with the <span class='object_link'><a href="Document.html#add_entity-instance_method" title="Layout::Document#add_entity (method)">Document#add_entity</a></span> and
-<span class='object_link'><a href="Document.html#remove_entity-instance_method" title="Layout::Document#remove_entity (method)">Document#remove_entity</a></span> methods.</p>
+<p>The Entities class is a container class for <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s. A <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> object is different from a SketchUp::Entities object in that it is read-only. Adding or removing <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s from a <span class='object_link'><a href="Document.html" title="Layout::Document (class)">Document</a></span> happens with the <span class='object_link'><a href="Document.html#add_entity-instance_method" title="Layout::Document#add_entity (method)">Document#add_entity</a></span> and <span class='object_link'><a href="Document.html#remove_entity-instance_method" title="Layout::Document#remove_entity (method)">Document#remove_entity</a></span> methods.</p>
 
-<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="AngularDimension.html#entities-instance_method" title="Layout::AngularDimension#entities (method)">AngularDimension#entities</a></span>,
-<span class='object_link'><a href="Label.html#entities-instance_method" title="Layout::Label#entities (method)">Label#entities</a></span>, <span class='object_link'><a href="LinearDimension.html#entities-instance_method" title="Layout::LinearDimension#entities (method)">LinearDimension#entities</a></span>, or
-<span class='object_link'><a href="Table.html#entities-instance_method" title="Layout::Table#entities (method)">Table#entities</a></span> contains the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that represent the
-<span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span> in its exploded form.</p>
+<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="AngularDimension.html#entities-instance_method" title="Layout::AngularDimension#entities (method)">AngularDimension#entities</a></span>, <span class='object_link'><a href="Label.html#entities-instance_method" title="Layout::Label#entities (method)">Label#entities</a></span>, <span class='object_link'><a href="LinearDimension.html#entities-instance_method" title="Layout::LinearDimension#entities (method)">LinearDimension#entities</a></span>, or <span class='object_link'><a href="Table.html#entities-instance_method" title="Layout::Table#entities (method)">Table#entities</a></span> contains the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that represent the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span> in its exploded form.</p>
 
-<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Group.html#entities-instance_method" title="Layout::Group#entities (method)">Group#entities</a></span> contains all the
-<span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong to the <span class='object_link'><a href="Group.html" title="Layout::Group (class)">Group</a></span>.</p>
+<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Group.html#entities-instance_method" title="Layout::Group#entities (method)">Group#entities</a></span> contains all the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong to the <span class='object_link'><a href="Group.html" title="Layout::Group (class)">Group</a></span>.</p>
 
-<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Page.html#entities-instance_method" title="Layout::Page#entities (method)">Page#entities</a></span> contains all of the
-<span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s on both shared and non-shared <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s. This
-class is used to iterate through the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s in draw order or
-pick order (reverse draw order) using the <span class='object_link'><a href="#each-instance_method" title="Layout::Entities#each (method)">#each</a></span> and <span class='object_link'><a href="#reverse_each-instance_method" title="Layout::Entities#reverse_each (method)">#reverse_each</a></span>
-methods.</p>
+<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Page.html#entities-instance_method" title="Layout::Page#entities (method)">Page#entities</a></span> contains all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s on both shared and non-shared <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s. This class is used to iterate through the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s in draw order or pick order (reverse draw order) using the <span class='object_link'><a href="#each-instance_method" title="Layout::Entities#each (method)">#each</a></span> and <span class='object_link'><a href="#reverse_each-instance_method" title="Layout::Entities#reverse_each (method)">#reverse_each</a></span> methods.</p>
 
-<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Document.html#shared_entities-instance_method" title="Layout::Document#shared_entities (method)">Document#shared_entities</a></span> contains all
-of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong on all shared <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s.</p>
+<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Document.html#shared_entities-instance_method" title="Layout::Document#shared_entities (method)">Document#shared_entities</a></span> contains all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong on all shared <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s.</p>
 
-<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Page.html#nonshared_entities-instance_method" title="Layout::Page#nonshared_entities (method)">Page#nonshared_entities</a></span> contains all
-of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong to that <span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>.</p>
+<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="Page.html#nonshared_entities-instance_method" title="Layout::Page#nonshared_entities (method)">Page#nonshared_entities</a></span> contains all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong to that <span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>.</p>
 
-<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="LayerInstance.html#entities-instance_method" title="Layout::LayerInstance#entities (method)">LayerInstance#entities</a></span> contains all
-of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong on that <span class='object_link'><a href="LayerInstance.html" title="Layout::LayerInstance (class)">LayerInstance</a></span>.</p>
+<p>The <span class='object_link'><a href="" title="Layout::Entities (class)">Entities</a></span> from <span class='object_link'><a href="LayerInstance.html#entities-instance_method" title="Layout::LayerInstance#entities (method)">LayerInstance#entities</a></span> contains all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s that belong on that <span class='object_link'><a href="LayerInstance.html" title="Layout::LayerInstance (class)">LayerInstance</a></span>.</p>
 
 
   </div>
@@ -369,8 +356,7 @@ of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (cl
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#reverse_each-instance_method" title="Layout::Entities#reverse_each (method)">#reverse_each</a></span> method iterates through all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s in
-reverse order.</p>
+<p>The <span class='object_link'><a href="#reverse_each-instance_method" title="Layout::Entities#reverse_each (method)">#reverse_each</a></span> method iterates through all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Entity</a></span>s in reverse order.</p>
 </div></span>
   
 </li>
@@ -400,9 +386,7 @@ reverse order.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Layout::Entities#[] (method)">#[]</a></span> method returns the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> at the given index. This
-method is not valid for use when the <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span> object came from a
-<span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Layout::Entities#[] (method)">#[]</a></span> method returns the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span> at the given index. This method is not valid for use when the <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span> object came from a <span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>.</p>
 
 
   </div>
@@ -498,13 +482,15 @@ method is not valid for use when the <span class='object_link'><a href="" title=
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#each-instance_method" title="Layout::Entities#each (method)">#each</a></span> method iterates through all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s. When
-iterating over a <span class='object_link'><a href="LayerInstance.html" title="Layout::LayerInstance (class)">LayerInstance</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, it is
-not necessary to provide a flags Hash. When iterating over a
-<span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, the flags Hash is optional;
-providing no Hash will result in iterating over all <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s,
-including those on hidden or locked <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s. Valid symbols for the
-Hash are <code>:skip_hidden</code> and <code>:skip_locked</code>.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Don&#39;t remove content from this collection while iterating over it with <span class='object_link'><a href="#each-instance_method" title="Layout::Entities#each (method)">#each</a></span>. This would change the size of the collection and cause elements to be skipped as the indices change. Instead copy the current collection to an array using <code>to_a</code> and then use <code>each</code> on the array, when removing content.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#each-instance_method" title="Layout::Entities#each (method)">#each</a></span> method iterates through all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s. When iterating over a <span class='object_link'><a href="LayerInstance.html" title="Layout::LayerInstance (class)">LayerInstance</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, it is not necessary to provide a flags Hash. When iterating over a <span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, the flags Hash is optional; providing no Hash will result in iterating over all <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s, including those on hidden or locked <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s. Valid symbols for the Hash are <code>:skip_hidden</code> and <code>:skip_locked</code>.</p>
 
 
   </div>
@@ -547,8 +533,7 @@ Hash are <code>:skip_hidden</code> and <code>:skip_locked</code>.</p>
       
         &mdash;
         <div class='inline'>
-<p>A hash that allows skipping of <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on hidden or locked
-<span class='object_link'><a href="Layers.html" title="Layout::Layers (class)">Layers</a></span></p>
+<p>A hash that allows skipping of <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on hidden or locked <span class='object_link'><a href="Layers.html" title="Layout::Layers (class)">Layers</a></span></p>
 </div>
       
     </li>
@@ -677,14 +662,7 @@ Hash are <code>:skip_hidden</code> and <code>:skip_locked</code>.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#reverse_each-instance_method" title="Layout::Entities#reverse_each (method)">#reverse_each</a></span> method iterates through all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s in
-reverse order. When iterating over a <span class='object_link'><a href="LayerInstance.html" title="Layout::LayerInstance (class)">LayerInstance</a></span>&#39;s
-<span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, it is not necessary to provide a flags Hash. When
-iterating over a <span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, the flags Hash is
-optional; providing no Hash will result in iterating over all
-<span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s, including those on hidden or locked <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s.
-Valid symbols for the Hash are <code>:skip_hidden</code> and
-<code>:skip_locked</code>.</p>
+<p>The <span class='object_link'><a href="#reverse_each-instance_method" title="Layout::Entities#reverse_each (method)">#reverse_each</a></span> method iterates through all of the <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s in reverse order. When iterating over a <span class='object_link'><a href="LayerInstance.html" title="Layout::LayerInstance (class)">LayerInstance</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, it is not necessary to provide a flags Hash. When iterating over a <span class='object_link'><a href="Page.html" title="Layout::Page (class)">Page</a></span>&#39;s <span class='object_link'><a href="" title="Layout::Entities (class)">Layout::Entities</a></span>, the flags Hash is optional; providing no Hash will result in iterating over all <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s, including those on hidden or locked <span class='object_link'><a href="Layer.html" title="Layout::Layer (class)">Layer</a></span>s. Valid symbols for the Hash are <code>:skip_hidden</code> and <code>:skip_locked</code>.</p>
 
 
   </div>
@@ -761,8 +739,7 @@ Valid symbols for the Hash are <code>:skip_hidden</code> and
       
         &mdash;
         <div class='inline'>
-<p>A hash that allows skipping of <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on hidden or locked
-<span class='object_link'><a href="Layers.html" title="Layout::Layers (class)">Layers</a></span>.</p>
+<p>A hash that allows skipping of <span class='object_link'><a href="Entity.html" title="Layout::Entity (class)">Layout::Entity</a></span>s on hidden or locked <span class='object_link'><a href="Layers.html" title="Layout::Layers (class)">Layers</a></span>.</p>
 </div>
       
     </li>

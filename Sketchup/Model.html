@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,11 +186,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>This is the interface to a SketchUp model. The model is the 3D drawing that
-the user is working with, and it serves as the “entry point” for most Ruby
-API interactions. The Sketchup.active_model method gives you a handle to
-the current model, and from there you can use the model-level methods to
-start getting information and making changes.</p>
+<p>This is the interface to a SketchUp model. The model is the 3D drawing that the user is working with, and it serves as the “entry point” for most Ruby API interactions. The Sketchup.active_model method gives you a handle to the current model, and from there you can use the model-level methods to start getting information and making changes.</p>
 
 <p>Constants: Product Family</p>
 <ul><li>
@@ -259,9 +257,7 @@ start getting information and making changes.</p>
       
         
         <div class='inline'>
-<p>Prior to SketchUp 2019.0 this class would yield <code>TypeError</code> for
-all method calls if <code>#singleton_class</code> was called on the model
-object.</p>
+<p>Prior to SketchUp 2019.0 this class would yield <code>TypeError</code> for all method calls if <code>#singleton_class</code> was called on the model object.</p>
 </div>
       
     </li>
@@ -321,6 +317,9 @@ object.</p>
         <dt id="VERSION_2020-constant" class="">Sketchup::Model::VERSION_2020
         </dt>
       
+        <dt id="VERSION_2021-constant" class="">Sketchup::Model::VERSION_2021
+        </dt>
+      
         <dt id="ProTrial-constant" class="">Sketchup::Model::ProTrial
         </dt>
       
@@ -331,6 +330,12 @@ object.</p>
         </dt>
       
         <dt id="Make-constant" class="">Sketchup::Model::Make
+        </dt>
+      
+        <dt id="LOAD_STATUS_SUCCESS-constant" class="">Sketchup::Model::LOAD_STATUS_SUCCESS
+        </dt>
+      
+        <dt id="LOAD_STATUS_SUCCESS_MORE_RECENT-constant" class="">Sketchup::Model::LOAD_STATUS_SUCCESS_MORE_RECENT
         </dt>
       
     </dl>
@@ -372,8 +377,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The abort_operation method aborts the current operation started with the
-start_operation method.</p>
+<p>The <span class='object_link'><a href="#abort_operation-instance_method" title="Sketchup::Model#abort_operation (method)">#abort_operation</a></span> method aborts the current operation started with the start_operation method.</p>
 </div></span>
   
 </li>
@@ -397,8 +401,7 @@ start_operation method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object which contains the entities in the
-open group or component instance.</p>
+<p>Returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object which contains the entities in the open group or component instance.</p>
 </div></span>
   
 </li>
@@ -470,8 +473,7 @@ open group or component instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns an array containing the sequence of entities the user has
-double-clicked on for editing.</p>
+<p>Returns an array containing the sequence of entities the user has double-clicked on for editing.</p>
 </div></span>
   
 </li>
@@ -495,8 +497,7 @@ double-clicked on for editing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">#active_path=</a></span> method is used to open a given instance path for
-editing.</p>
+<p>The <span class='object_link'><a href="#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">#active_path=</a></span> method is used to open a given instance path for editing.</p>
 </div></span>
   
 </li>
@@ -592,8 +593,7 @@ editing.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#attribute_dictionaries-instance_method" title="Sketchup::Model#attribute_dictionaries (method)">#attribute_dictionaries</a></span> method retrieves the AttributeDictionaries
-object that is associated with the Model.</p>
+<p>The <span class='object_link'><a href="#attribute_dictionaries-instance_method" title="Sketchup::Model#attribute_dictionaries (method)">#attribute_dictionaries</a></span> method retrieves the AttributeDictionaries object that is associated with the Model.</p>
 </div></span>
   
 </li>
@@ -689,7 +689,7 @@ object that is associated with the Model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Model#bounds (method)">#bounds</a></span> method retrieves the bounding box of the model.</p>
+<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Model#bounds (method)">#bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding the contents of a <span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span>.</p>
 </div></span>
   
 </li>
@@ -713,8 +713,7 @@ object that is associated with the Model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#classifications-instance_method" title="Sketchup::Model#classifications (method)">#classifications</a></span> method is used to retrieve the Classifications
-object for this model.</p>
+<p>The <span class='object_link'><a href="#classifications-instance_method" title="Sketchup::Model#classifications (method)">#classifications</a></span> method is used to retrieve the Classifications object for this model.</p>
 </div></span>
   
 </li>
@@ -762,8 +761,7 @@ object for this model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#close_active-instance_method" title="Sketchup::Model#close_active (method)">#close_active</a></span> method is used to close the currently active (open)
-group or component.</p>
+<p>The <span class='object_link'><a href="#close_active-instance_method" title="Sketchup::Model#close_active (method)">#close_active</a></span> method is used to close the currently active (open) group or component.</p>
 </div></span>
   
 </li>
@@ -811,8 +809,7 @@ group or component.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#definitions-instance_method" title="Sketchup::Model#definitions (method)">#definitions</a></span> method retrieves a definition list containing all of the
-component definitions in the model.</p>
+<p>The <span class='object_link'><a href="#definitions-instance_method" title="Sketchup::Model#definitions (method)">#definitions</a></span> method retrieves a definition list containing all of the component definitions in the model.</p>
 </div></span>
   
 </li>
@@ -836,8 +833,7 @@ component definitions in the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description method retrieves a description of the model as found in the
-Model Info &gt; Files panel.</p>
+<p>The description method retrieves a description of the model as found in the Model Info &gt; Files panel.</p>
 </div></span>
   
 </li>
@@ -885,8 +881,7 @@ Model Info &gt; Files panel.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">#drawing_element_visible?</a></span> method reports whether the given drawing
-element in an instance path is visible given the current model options.</p>
+<p>The <span class='object_link'><a href="#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">#drawing_element_visible?</a></span> method reports whether the given drawing element in an instance path is visible given the current model options.</p>
 </div></span>
   
 </li>
@@ -934,8 +929,7 @@ element in an instance path is visible given the current model options.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">#entities</a></span> method returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object containing
-the entities in the root of model.</p>
+<p>The <span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">#entities</a></span> method returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object containing the entities in the root of model.</p>
 </div></span>
   
 </li>
@@ -1055,8 +1049,7 @@ the entities in the root of model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_attribute method gets the value of an attribute that in the
-AttributeDictionary with the given name.</p>
+<p>The get_attribute method gets the value of an attribute that in the AttributeDictionary with the given name.</p>
 </div></span>
   
 </li>
@@ -1080,8 +1073,7 @@ AttributeDictionary with the given name.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>the get_datum method retrieves the datum, in the form of a string, used in
-UTM conversions.</p>
+<p>the get_datum method retrieves the datum, in the form of a string, used in UTM conversions.</p>
 </div></span>
   
 </li>
@@ -1105,8 +1097,7 @@ UTM conversions.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns a value which indicates the product family of the installed
-SketchUp application.</p>
+<p>Returns a value which indicates the product family of the installed SketchUp application.</p>
 </div></span>
   
 </li>
@@ -1130,8 +1121,7 @@ SketchUp application.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The guid method retrieves the globally unique identifier, in the form of a
-string, for the Model.</p>
+<p>The guid method retrieves the globally unique identifier, in the form of a string, for the Model.</p>
 </div></span>
   
 </li>
@@ -1155,8 +1145,7 @@ string, for the Model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The import method is used to load a file by recognizing the file extension
-and calling appropriate importer.</p>
+<p>The import method is used to load a file by recognizing the file extension and calling appropriate importer.</p>
 </div></span>
   
 </li>
@@ -1180,8 +1169,7 @@ and calling appropriate importer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#instance_path_from_pid_path-instance_method" title="Sketchup::Model#instance_path_from_pid_path (method)">#instance_path_from_pid_path</a></span> method returns a instance path given a
-string with persistent ids representing the path to the entity.</p>
+<p>The <span class='object_link'><a href="#instance_path_from_pid_path-instance_method" title="Sketchup::Model#instance_path_from_pid_path (method)">#instance_path_from_pid_path</a></span> method returns a instance path given a string with persistent ids representing the path to the entity.</p>
 </div></span>
   
 </li>
@@ -1205,8 +1193,7 @@ string with persistent ids representing the path to the entity.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The latlong_to_point method converts a latitude and longitude to a Point3d
-object in the model.</p>
+<p>The latlong_to_point method converts a latitude and longitude to a Point3d object in the model.</p>
 </div></span>
   
 </li>
@@ -1230,8 +1217,7 @@ object in the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The {#layers method retrieves a collection of all Layers objects in the
-model..</p>
+<p>The {#layers method retrieves a collection of all Layers objects in the model..</p>
 </div></span>
   
 </li>
@@ -1303,8 +1289,7 @@ model..</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#materials-instance_method" title="Sketchup::Model#materials (method)">#materials</a></span> method returns a collection of all of the materials in the
-model.</p>
+<p>The <span class='object_link'><a href="#materials-instance_method" title="Sketchup::Model#materials (method)">#materials</a></span> method returns a collection of all of the materials in the model.</p>
 </div></span>
   
 </li>
@@ -1376,8 +1361,7 @@ model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The modified? method determines if the Model has been modified since the
-last save.</p>
+<p>The modified? method determines if the Model has been modified since the last save.</p>
 </div></span>
   
 </li>
@@ -1473,8 +1457,7 @@ last save.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#options-instance_method" title="Sketchup::Model#options (method)">#options</a></span> method retrieves the options manager that defines the
-options settings for the model.</p>
+<p>The <span class='object_link'><a href="#options-instance_method" title="Sketchup::Model#options (method)">#options</a></span> method retrieves the options manager that defines the options settings for the model.</p>
 </div></span>
   
 </li>
@@ -1498,8 +1481,7 @@ options settings for the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#pages-instance_method" title="Sketchup::Model#pages (method)">#pages</a></span> method retrieves a <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span> object containing all of
-the pages in the model.</p>
+<p>The <span class='object_link'><a href="#pages-instance_method" title="Sketchup::Model#pages (method)">#pages</a></span> method retrieves a <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span> object containing all of the pages in the model.</p>
 </div></span>
   
 </li>
@@ -1523,8 +1505,7 @@ the pages in the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The path method retrieves the path of the file from which the model was
-opened.</p>
+<p>The path method retrieves the path of the file from which the model was opened.</p>
 </div></span>
   
 </li>
@@ -1548,8 +1529,7 @@ opened.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The place_component method places a new component in the Model using the
-component placement tool.</p>
+<p>The place_component method places a new component in the Model using the component placement tool.</p>
 </div></span>
   
 </li>
@@ -1573,8 +1553,7 @@ component placement tool.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The point_to_latlong method converts a point in the model to a LatLong so
-that you can get its latitude and longitude.</p>
+<p>The point_to_latlong method converts a point in the model to a LatLong so that you can get its latitude and longitude.</p>
 </div></span>
   
 </li>
@@ -1622,8 +1601,7 @@ that you can get its latitude and longitude.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The raytest method is used to cast a ray (line) through the model and
-return the first thing that the ray hits.</p>
+<p>The raytest method is used to cast a ray (line) through the model and return the first thing that the ray hits.</p>
 </div></span>
   
 </li>
@@ -1647,8 +1625,7 @@ return the first thing that the ray hits.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -1672,8 +1649,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">#rendering_options</a></span> method retrieves the RenderingOptions object for
-this model.</p>
+<p>The <span class='object_link'><a href="#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">#rendering_options</a></span> method retrieves the RenderingOptions object for this model.</p>
 </div></span>
   
 </li>
@@ -1706,7 +1682,7 @@ this model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#save_copy-instance_method" title="#save_copy (instance method)">#<strong>save_copy</strong>(filename, version)  &#x21d2; Boolean </a>
+      <a href="#save_copy-instance_method" title="#save_copy (instance method)">#<strong>save_copy</strong>(path, version)  &#x21d2; Boolean </a>
     
 
     
@@ -1793,8 +1769,7 @@ this model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method retrieves a Selection object for the model, containing the
-currently selected entities.</p>
+<p>This method retrieves a Selection object for the model, containing the currently selected entities.</p>
 </div></span>
   
 </li>
@@ -1818,8 +1793,7 @@ currently selected entities.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is used to set the value of an attribute in an attribute
-dictionary with the given name.</p>
+<p>This method is used to set the value of an attribute in an attribute dictionary with the given name.</p>
 </div></span>
   
 </li>
@@ -1843,8 +1817,7 @@ dictionary with the given name.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method sets the datum used in conversions between the internal
-coordinate system and UTM.</p>
+<p>This method sets the datum used in conversions between the internal coordinate system and UTM.</p>
 </div></span>
   
 </li>
@@ -1892,8 +1865,7 @@ coordinate system and UTM.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">#start_operation</a></span> method is used to notify SketchUp that a new
-operation (which can be undone) is starting.</p>
+<p>The <span class='object_link'><a href="#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">#start_operation</a></span> method is used to notify SketchUp that a new operation (which can be undone) is starting.</p>
 </div></span>
   
 </li>
@@ -2013,8 +1985,7 @@ operation (which can be undone) is starting.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#tools-instance_method" title="Sketchup::Model#tools (method)">#tools</a></span> method is used to retrieve the current <span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span>
-object.</p>
+<p>The <span class='object_link'><a href="#tools-instance_method" title="Sketchup::Model#tools (method)">#tools</a></span> method is used to retrieve the current <span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span> object.</p>
 </div></span>
   
 </li>
@@ -2038,8 +2009,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The utm_to_point method converts a position given in UTM coordinates to a
-Point3d in the Model.</p>
+<p>The utm_to_point method converts a position given in UTM coordinates to a Point3d in the Model.</p>
 </div></span>
   
 </li>
@@ -2092,11 +2062,17 @@ Point3d in the Model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The abort_operation method aborts the current operation started with the
-start_operation method.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Never abort a transparent operation. Doing so would abort the operation it chains to. Instead, try to clean up and simply commit in order to make sure the operation is closed.</p>
+</div>
+  </div>
 
-<p>The abort_operation method is normally called from inside of a rescue
-clause to cancel an operation if something goes wrong.</p>
+
+<p>The <span class='object_link'><a href="#abort_operation-instance_method" title="Sketchup::Model#abort_operation (method)">#abort_operation</a></span> method aborts the current operation started with the start_operation method.</p>
+
+<p>The <span class='object_link'><a href="#abort_operation-instance_method" title="Sketchup::Model#abort_operation (method)">#abort_operation</a></span> method is normally called from inside of a rescue clause to cancel an operation if something goes wrong.</p>
 
 
   </div>
@@ -2162,13 +2138,9 @@ clause to cancel an operation if something goes wrong.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object which contains the entities in the
-open group or component instance. If no group or component is open for
-editing then this will be the same as <span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">#entities</a></span>.</p>
+<p>Returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object which contains the entities in the open group or component instance. If no group or component is open for editing then this will be the same as <span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">#entities</a></span>.</p>
 
-<p>To perform actions upon the current set of entities the user is working
-with then this is the method to use. Entities selected by the user will be
-a subset of the active entities.</p>
+<p>To perform actions upon the current set of entities the user is working with then this is the method to use. Entities selected by the user will be a subset of the active entities.</p>
 
 
   </div>
@@ -2397,13 +2369,9 @@ a subset of the active entities.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns an array containing the sequence of entities the user has
-double-clicked on for editing. This allows one to determine whether they
-are in component edit mode and where in the model they are.</p>
+<p>Returns an array containing the sequence of entities the user has double-clicked on for editing. This allows one to determine whether they are in component edit mode and where in the model they are.</p>
 
-<p>For example, if a user has double-clicked into a component to edit its
-geometry, and then double clicked into a sub-group to edit that, the
-active_path might contain:</p>
+<p>For example, if a user has double-clicked into a component to edit its geometry, and then double clicked into a sub-group to edit that, the active_path might contain:</p>
 
 <p><code>[&lt;Sketchup::ComponentInstance&gt;, &lt;Sketchup::Group&gt;]</code></p>
 
@@ -2474,30 +2442,14 @@ active_path might contain:</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>An instance path can only be opened if the instances are not locked. This
-also include instances of the same component definition that are not on the
-given path. A definition cannot be edited if any of its instances are
-locked.</p>
+<p>An instance path can only be opened if the instances are not locked. This also include instances of the same component definition that are not on the given path. A definition cannot be edited if any of its instances are locked.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Open/close operations are special operations in SketchUp which has to be
-treated with special care.</p>
-</div>
-  </div>
-
-
-<p>The <span class='object_link'><a href="#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">#active_path=</a></span> method is used to open a given instance path for
-editing.</p>
-
-<p>It is expected that no entities are modified in an operation that
-opens/closes instances.</p>
-
-<p>To ensure that undo/redo is done correctly this method breaks up any open
-Ruby operations into a set of chained operations:</p>
+<p>Since changing the active entities in SketchUp also changes what coordinate system is used, entities can&#39;t be modified in the same operation as the active entities changes. The API handles this automatically by starting and committing transparent operations as needed.</p>
 
 <p>If the API user tries to do this:</p>
 
@@ -2508,7 +2460,7 @@ model.entities.add_face(...)
 model.commit_operation
 </code></pre>
 
-<p>Then the method will break it up to something like this:</p>
+<p>Then SketchUp will automatically break it up to something like to this:</p>
 
 <pre class="code"><code class="">model.start_operation(&#39;...&#39;, true)
 model.entities.add_face(...)
@@ -2523,8 +2475,14 @@ model.entities.add_face(...)
 model.commit_operation
 </code></pre>
 
-<p>For the end user this will be experienced as a single operation. For the
-API user the side-effect is multiple transaction notifications.</p>
+<p>For the end user this will be experienced as a single operation.</p>
+
+<p>For the API user the side-effect is multiple transaction notifications to <span class='object_link'><a href="ModelObserver.html" title="Sketchup::ModelObserver (class)">Sketchup::ModelObserver</a></span>s.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">#active_path=</a></span> method is used to open a given instance path for editing.</p>
 
 
   </div>
@@ -2632,6 +2590,20 @@ API user the side-effect is multiple transaction notifications.</p>
       
     </li>
   
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the instance path contains Live Components.</p>
+</div>
+      
+    </li>
+  
 </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2728,10 +2700,7 @@ API user the side-effect is multiple transaction notifications.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Add a text note to the Model.  The position of the note is given as
-relative window positions between 0 and 1.  For example, the following
-command would create a note that start 1/10 of the ways down the screen
-from the upper left corner of the window.</p>
+<p>Add a text note to the Model.  The position of the note is given as relative window positions between 0 and 1.  For example, the following command would create a note that start 1/10 of the ways down the screen from the upper left corner of the window.</p>
 
 
   </div>
@@ -2962,8 +2931,7 @@ from the upper left corner of the window.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#attribute_dictionaries-instance_method" title="Sketchup::Model#attribute_dictionaries (method)">#attribute_dictionaries</a></span> method retrieves the AttributeDictionaries
-object that is associated with the Model.</p>
+<p>The <span class='object_link'><a href="#attribute_dictionaries-instance_method" title="Sketchup::Model#attribute_dictionaries (method)">#attribute_dictionaries</a></span> method retrieves the AttributeDictionaries object that is associated with the Model.</p>
 
 
   </div>
@@ -2997,11 +2965,7 @@ object that is associated with the Model.</p>
       
         &mdash;
         <div class='inline'>
-<p>the AttributeDictionaries object associated with the entity, or nil if
-there are no attribute_dictionary objects associated with the model. Care
-must be taken if nil is returned, for example: invoking
-attribute_dictionaries.length will throw a NoMethodError exception, not
-return 0.</p>
+<p>the AttributeDictionaries object associated with the entity, or nil if there are no attribute_dictionary objects associated with the model. Care must be taken if nil is returned, for example: invoking attribute_dictionaries.length will throw a NoMethodError exception, not return 0.</p>
 </div>
       
     </li>
@@ -3040,11 +3004,7 @@ return 0.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the Sketchup::AttributeDictionary object that is specified by name.
-If the model does not have an attribute dictionary that corresponds to
-name, returns either nil, or a creates an attribute dictionary.  If the
-optional second argument is true, and there is no attribute dictionary that
-corresponds to name, a new attribute dictionary is created.</p>
+<p>Returns the Sketchup::AttributeDictionary object that is specified by name.  If the model does not have an attribute dictionary that corresponds to name, returns either nil, or a creates an attribute dictionary.  If the optional second argument is true, and there is no attribute dictionary that corresponds to name, a new attribute dictionary is created.</p>
 
 
   </div>
@@ -3100,8 +3060,7 @@ corresponds to name, a new attribute dictionary is created.</p>
       
         &mdash;
         <div class='inline'>
-<p>if set to true an attribute dictionary of the given “name” will be created
-if not found.</p>
+<p>if set to true an attribute dictionary of the given “name” will be created if not found.</p>
 </div>
       
     </li>
@@ -3306,7 +3265,7 @@ if not found.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Model#bounds (method)">#bounds</a></span> method retrieves the bounding box of the model.</p>
+<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Model#bounds (method)">#bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding the contents of a <span class='object_link'><a href="" title="Sketchup::Model (class)">Sketchup::Model</a></span>.</p>
 
 
   </div>
@@ -3331,11 +3290,6 @@ if not found.</p>
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>bounding box for the model if successful</p>
-</div>
       
     </li>
   
@@ -3373,8 +3327,7 @@ if not found.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#classifications-instance_method" title="Sketchup::Model#classifications (method)">#classifications</a></span> method is used to retrieve the Classifications
-object for this model.</p>
+<p>The <span class='object_link'><a href="#classifications-instance_method" title="Sketchup::Model#classifications (method)">#classifications</a></span> method is used to retrieve the Classifications object for this model.</p>
 
 
   </div>
@@ -3441,9 +3394,7 @@ object for this model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The close method is used to close this model. On Mac OS, only the active
-model can be closed. On Windows, since there can be only one document open,
-this method will perform a File/New operation.</p>
+<p>The close method is used to close this model. On Mac OS, only the active model can be closed. On Windows, since there can be only one document open, this method will perform a File/New operation.</p>
 
 
   </div>
@@ -3483,9 +3434,7 @@ this method will perform a File/New operation.</p>
       
         &mdash;
         <div class='inline'>
-<p>If true, model changes will be ignored and save prompts will be suppressed.
-If false, changes will not be ignored and save prompts will be displayed
-normally.</p>
+<p>If true, model changes will be ignored and save prompts will be suppressed. If false, changes will not be ignored and save prompts will be displayed normally.</p>
 </div>
       
     </li>
@@ -3544,15 +3493,12 @@ normally.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Before SketchUp 2014 this method had a bug where it didn&#39;t create an
-undo operation and that could lead to corrupted geometry when undo/redo was
-used after invoking this method.</p>
+<p>Before SketchUp 2014 this method had a bug where it didn&#39;t create an undo operation and that could lead to corrupted geometry when undo/redo was used after invoking this method.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#close_active-instance_method" title="Sketchup::Model#close_active (method)">#close_active</a></span> method is used to close the currently active (open)
-group or component.</p>
+<p>The <span class='object_link'><a href="#close_active-instance_method" title="Sketchup::Model#close_active (method)">#close_active</a></span> method is used to close the currently active (open) group or component.</p>
 
 
   </div>
@@ -3621,8 +3567,7 @@ group or component.</p>
     
 <p>The commit_operation method commits an operation for undo.</p>
 
-<p>The commit_operation method is normally called at the end of a method to
-commit the operation that the method performs.</p>
+<p>The commit_operation method is normally called at the end of a method to commit the operation that the method performs.</p>
 
 
   </div>
@@ -3688,8 +3633,7 @@ commit the operation that the method performs.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#definitions-instance_method" title="Sketchup::Model#definitions (method)">#definitions</a></span> method retrieves a definition list containing all of the
-component definitions in the model.</p>
+<p>The <span class='object_link'><a href="#definitions-instance_method" title="Sketchup::Model#definitions (method)">#definitions</a></span> method retrieves a definition list containing all of the component definitions in the model.</p>
 
 
   </div>
@@ -3751,11 +3695,9 @@ component definitions in the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description method retrieves a description of the model as found in the
-Model Info &gt; Files panel.</p>
+<p>The description method retrieves a description of the model as found in the Model Info &gt; Files panel.</p>
 
-<p>The returned description can be empty. The default description for all
-models is empty.</p>
+<p>The returned description can be empty. The default description for all models is empty.</p>
 
 
   </div>
@@ -3916,8 +3858,7 @@ models is empty.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">#drawing_element_visible?</a></span> method reports whether the given drawing
-element in an instance path is visible given the current model options.</p>
+<p>The <span class='object_link'><a href="#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">#drawing_element_visible?</a></span> method reports whether the given drawing element in an instance path is visible given the current model options.</p>
 
 
   </div>
@@ -4052,11 +3993,7 @@ element in an instance path is visible given the current model options.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the transformation of the current component edit session. If a user
-has double-clicked to edit a component&#39;s geometry, this will return the
-transformation of that component, relative to its parent&#39;s origin. This
-allows one to correctly calculate “local” transformations of a given entity
-regardless of whether the user is in edit mode.</p>
+<p>Returns the transformation of the current component edit session. If a user has double-clicked to edit a component&#39;s geometry, this will return the transformation of that component, relative to its parent&#39;s origin. This allows one to correctly calculate “local” transformations of a given entity regardless of whether the user is in edit mode.</p>
 
 
   </div>
@@ -4125,15 +4062,12 @@ regardless of whether the user is in edit mode.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This does not return a collection of all the entities in the model, only
-the top level node of the model hierarchy. To get to all entities in a
-model you must recursivly traverse the model.</p>
+<p>This does not return a collection of all the entities in the model, only the top level node of the model hierarchy. To get to all entities in a model you must recursivly traverse the model.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">#entities</a></span> method returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object containing
-the entities in the root of model.</p>
+<p>The <span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">#entities</a></span> method returns an <span class='object_link'><a href="Entities.html" title="Sketchup::Entities (class)">Entities</a></span> object containing the entities in the root of model.</p>
 
 
   </div>
@@ -4192,9 +4126,9 @@ the entities in the root of model.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>export</strong>(filename, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>export</strong>(path, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
     
-      <span class="overload">#<strong>export</strong>(filename, options)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>export</strong>(path, options)  &#x21d2; <tt>Boolean</tt> </span>
     
   
 
@@ -4204,13 +4138,9 @@ the entities in the root of model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The export method is used to export a given file format. It knows which
-format to export based on the file extension you place on the file name.
-For example, a filename of “thing.obj” will export an OBJ file, whereas
-“thing.dae” will export a COLLADA file.</p>
+<p>The export method is used to export a given file format. It knows which format to export based on the file extension you place on the file name. For example, a filename of “thing.obj” will export an OBJ file, whereas “thing.dae” will export a COLLADA file.</p>
 
-<p>For SketchUp Pro 7.1+, valid extensions include dae, kmz, 3ds, dwg, dxf,
-fbx, obj, wrl, and xsi. SketchUp Free only supports dae and kmz.</p>
+<p>For SketchUp Pro 7.1+, valid extensions include dae, kmz, 3ds, dwg, dxf, fbx, obj, wrl, and xsi. SketchUp Free only supports dae and kmz.</p>
 
 <p>Format Support Changes:</p>
 <ul><li>
@@ -4223,8 +4153,7 @@ fbx, obj, wrl, and xsi. SketchUp Free only supports dae and kmz.</p>
 <p>SketchUp Pro 2018+ added options for all 3D exporters.</p>
 </li></ul>
 
-<p>See the <a href="../file.exporter_options.html" title="Exporter Options">Exporter Options</a> file for
-information on creating a valid hash for the various exporters.</p>
+<p>See the <a href="../file.exporter_options.html" title="Exporter Options">Exporter Options</a> file for information on creating a valid hash for the various exporters.</p>
 
 
   </div>
@@ -4284,7 +4213,7 @@ information on creating a valid hash for the various exporters.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>export</strong>(filename, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
+        <span class="signature">#<strong>export</strong>(path, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -4297,7 +4226,7 @@ information on creating a valid hash for the various exporters.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -4350,7 +4279,7 @@ information on creating a valid hash for the various exporters.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>export</strong>(filename, options)  &#x21d2; <tt>Boolean</tt> </span>
+        <span class="signature">#<strong>export</strong>(path, options)  &#x21d2; <tt>Boolean</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -4363,7 +4292,7 @@ information on creating a valid hash for the various exporters.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -4372,7 +4301,7 @@ information on creating a valid hash for the various exporters.</p>
       
         &mdash;
         <div class='inline'>
-<p>The name of the file to export.</p>
+<p>The path to save the export at.</p>
 </div>
       
     </li>
@@ -4462,13 +4391,9 @@ information on creating a valid hash for the various exporters.</p>
     
 <p>Finds and returns entities by their entityID or GUID.</p>
 
-<p>GUIDs looked up are only relevant to Group and ComponentInstance as these
-GUIDs are persistent. ComponentDefinition and Model GUIDs are not
-persistent and are not looked up.</p>
+<p>GUIDs looked up are only relevant to Group and ComponentInstance as these GUIDs are persistent. ComponentDefinition and Model GUIDs are not persistent and are not looked up.</p>
 
-<p>When given an array of IDs, an array is returned with a 1:1 mapping to the
-input arguments. This array may contain nil values if some ids were not
-found. You cannot look up a mix of entityIDs and GUIDs in the same call.</p>
+<p>When given an array of IDs, an array is returned with a 1:1 mapping to the input arguments. This array may contain nil values if some ids were not found. You cannot look up a mix of entityIDs and GUIDs in the same call.</p>
 
 
   </div>
@@ -4518,8 +4443,7 @@ found. You cannot look up a mix of entityIDs and GUIDs in the same call.</p>
       
         &mdash;
         <div class='inline'>
-<p>Pass either a series of ids or a single array containing ids. Ids must
-either be entityID Integers or GUID Strings.</p>
+<p>Pass either a series of ids or a single array containing ids. Ids must either be entityID Integers or GUID Strings.</p>
 </div>
       
     </li>
@@ -4541,8 +4465,7 @@ either be entityID Integers or GUID Strings.</p>
       
         &mdash;
         <div class='inline'>
-<p>Returns an array with Entity  objects for each id found and nil otherwise.
-Single Entity or nil when called with a single id.</p>
+<p>Returns an array with Entity  objects for each id found and nil otherwise. Single Entity or nil when called with a single id.</p>
 </div>
       
     </li>
@@ -4587,9 +4510,7 @@ Single Entity or nil when called with a single id.</p>
     
 <p>Finds and returns entities by their persistent id.</p>
 
-<p>When given an array of IDs, an array is returned with a 1:1 mapping to the
-input arguments. This array may contain `nil` values if some ids were not
-found.</p>
+<p>When given an array of IDs, an array is returned with a 1:1 mapping to the input arguments. This array may contain `nil` values if some ids were not found.</p>
 
 
   </div>
@@ -4638,8 +4559,7 @@ found.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil
-otherwise.</p>
+<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
 
 
   </div>
@@ -4678,8 +4598,7 @@ otherwise.</p>
       
         &mdash;
         <div class='inline'>
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil
-otherwise.</p>
+<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
 </div>
       
     </li>
@@ -4695,8 +4614,7 @@ otherwise.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil
-otherwise.</p>
+<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
 
 
   </div>
@@ -4757,8 +4675,7 @@ otherwise.</p>
       
         &mdash;
         <div class='inline'>
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil
-otherwise.</p>
+<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
 </div>
       
     </li>
@@ -4884,10 +4801,7 @@ otherwise.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_attribute method gets the value of an attribute that in the
-AttributeDictionary with the given name. If no value is associated with
-key, or if the model does not have an attribute dictionary specified by
-name, the optional third parameter will be returned.</p>
+<p>The get_attribute method gets the value of an attribute that in the AttributeDictionary with the given name. If no value is associated with key, or if the model does not have an attribute dictionary specified by name, the optional third parameter will be returned.</p>
 
 
   </div>
@@ -4981,9 +4895,7 @@ name, the optional third parameter will be returned.</p>
       
         &mdash;
         <div class='inline'>
-<p>the value for a given key in the given dictionary if a value exists; the
-default value if a defaultvalue is provided and the value does not exist;
-nil if the value does not exist and no defaultvalue is provided.</p>
+<p>the value for a given key in the given dictionary if a value exists; the default value if a defaultvalue is provided and the value does not exist; nil if the value does not exist and no defaultvalue is provided.</p>
 </div>
       
     </li>
@@ -5022,8 +4934,7 @@ nil if the value does not exist and no defaultvalue is provided.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>the get_datum method retrieves the datum, in the form of a string, used in
-UTM conversions.</p>
+<p>the get_datum method retrieves the datum, in the form of a string, used in UTM conversions.</p>
 
 
   </div>
@@ -5090,8 +5001,7 @@ UTM conversions.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a value which indicates the product family of the installed
-SketchUp application. As of SketchUp 2013, the return values are:</p>
+<p>Returns a value which indicates the product family of the installed SketchUp application. As of SketchUp 2013, the return values are:</p>
 <ul><li>
 <p><code>0</code> = Unknown</p>
 </li><li>
@@ -5110,8 +5020,7 @@ SketchUp application. As of SketchUp 2013, the return values are:</p>
 <p><code>7</code> = Pro License Unavailable</p>
 </li></ul>
 
-<p>The Model class defines some of these values as constants as of SketchUp
-2016.</p>
+<p>The Model class defines some of these values as constants as of SketchUp 2016.</p>
 
 
   </div>
@@ -5181,10 +5090,7 @@ SketchUp application. As of SketchUp 2013, the return values are:</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The guid method retrieves the globally unique identifier, in the form of a
-string, for the Model. The guid will change after the model is modified and
-saved. The Model guid is stored with the SketchUp file; it will not change
-if the file is moved to another computer.</p>
+<p>The guid method retrieves the globally unique identifier, in the form of a string, for the Model. The guid will change after the model is modified and saved. The Model guid is stored with the SketchUp file; it will not change if the file is moved to another computer.</p>
 
 
   </div>
@@ -5243,9 +5149,9 @@ if the file is moved to another computer.</p>
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>import</strong>(filename, options)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>import</strong>(path, options)  &#x21d2; <tt>Boolean</tt> </span>
     
-      <span class="overload">#<strong>import</strong>(filename, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>import</strong>(path, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
     
   
 
@@ -5255,11 +5161,9 @@ if the file is moved to another computer.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The import method is used to load a file by recognizing the file extension
-and calling appropriate importer.</p>
+<p>The import method is used to load a file by recognizing the file extension and calling appropriate importer.</p>
 
-<p>See the <a href="../file.importer_options.html" title="Importer Options">Importer Options</a> file for
-information on creating a valid hash for the various importers.</p>
+<p>See the <a href="../file.importer_options.html" title="Importer Options">Importer Options</a> file for information on creating a valid hash for the various importers.</p>
 
 
   </div>
@@ -5296,7 +5200,7 @@ information on creating a valid hash for the various importers.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>import</strong>(filename, options)  &#x21d2; <tt>Boolean</tt> </span>
+        <span class="signature">#<strong>import</strong>(path, options)  &#x21d2; <tt>Boolean</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -5309,7 +5213,7 @@ information on creating a valid hash for the various importers.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -5318,7 +5222,7 @@ information on creating a valid hash for the various importers.</p>
       
         &mdash;
         <div class='inline'>
-<p>The input filename.</p>
+<p>The input file path.</p>
 </div>
       
     </li>
@@ -5360,7 +5264,7 @@ information on creating a valid hash for the various importers.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>import</strong>(filename, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
+        <span class="signature">#<strong>import</strong>(path, show_summary = false)  &#x21d2; <tt>Boolean</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -5381,7 +5285,7 @@ information on creating a valid hash for the various importers.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -5390,7 +5294,7 @@ information on creating a valid hash for the various importers.</p>
       
         &mdash;
         <div class='inline'>
-<p>The input filename.</p>
+<p>The input file path.</p>
 </div>
       
     </li>
@@ -5467,8 +5371,7 @@ information on creating a valid hash for the various importers.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#instance_path_from_pid_path-instance_method" title="Sketchup::Model#instance_path_from_pid_path (method)">#instance_path_from_pid_path</a></span> method returns a instance path given a
-string with persistent ids representing the path to the entity.</p>
+<p>The <span class='object_link'><a href="#instance_path_from_pid_path-instance_method" title="Sketchup::Model#instance_path_from_pid_path (method)">#instance_path_from_pid_path</a></span> method returns a instance path given a string with persistent ids representing the path to the entity.</p>
 
 
   </div>
@@ -5540,8 +5443,7 @@ string with persistent ids representing the path to the entity.</p>
       
         &mdash;
         <div class='inline'>
-<p>if a valid instance path cannot be created from the given input path
-string.</p>
+<p>if a valid instance path cannot be created from the given input path string.</p>
 </div>
       
     </li>
@@ -5587,10 +5489,7 @@ string.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The latlong_to_point method converts a latitude and longitude to a Point3d
-object in the model. It does not actually work with a LatLong object, but
-operates on a 2-element array. The returned point will always be on the
-ground (z=0).</p>
+<p>The latlong_to_point method converts a latitude and longitude to a Point3d object in the model. It does not actually work with a LatLong object, but operates on a 2-element array. The returned point will always be on the ground (z=0).</p>
 
 
   </div>
@@ -5691,8 +5590,7 @@ ground (z=0).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The {#layers method retrieves a collection of all Layers objects in the
-model.</p>
+<p>The {#layers method retrieves a collection of all Layers objects in the model.</p>
 
 
   </div>
@@ -5892,8 +5790,7 @@ model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#materials-instance_method" title="Sketchup::Model#materials (method)">#materials</a></span> method returns a collection of all of the materials in the
-model.</p>
+<p>The <span class='object_link'><a href="#materials-instance_method" title="Sketchup::Model#materials (method)">#materials</a></span> method returns a collection of all of the materials in the model.</p>
 
 
   </div>
@@ -6113,8 +6010,7 @@ model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The modified? method determines if the Model has been modified since the
-last save.</p>
+<p>The modified? method determines if the Model has been modified since the last save.</p>
 
 
   </div>
@@ -6406,11 +6302,9 @@ last save.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#options-instance_method" title="Sketchup::Model#options (method)">#options</a></span> method retrieves the options manager that defines the
-options settings for the model.</p>
+<p>The <span class='object_link'><a href="#options-instance_method" title="Sketchup::Model#options (method)">#options</a></span> method retrieves the options manager that defines the options settings for the model.</p>
 
-<p>Use the string keys instead of numerical indicies when accessing the
-options as the indicies are not consistent between SketchUp versions.</p>
+<p>Use the string keys instead of numerical indicies when accessing the options as the indicies are not consistent between SketchUp versions.</p>
 
 
   </div>
@@ -6423,7 +6317,7 @@ options as the indicies are not consistent between SketchUp versions.</p>
       
       <pre class="example code"><code><span class='comment'># Output all options available.
 </span><span class='id identifier rubyid_options_manager'>options_manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_options'>options</span>
-<span class='id identifier rubyid_options_manager'>options_manager</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_options_provider'>options_provider</span><span class='op'>|</span>
+<span class='id identifier rubyid_options_manager'>options_manager</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_options_provider'>options_provider</span><span class='op'>|</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_options_provider'>options_provider</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
   <span class='id identifier rubyid_options_provider'>options_provider</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>|</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&gt; </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_content'> - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_value'>value</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -6478,8 +6372,7 @@ options as the indicies are not consistent between SketchUp versions.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#pages-instance_method" title="Sketchup::Model#pages (method)">#pages</a></span> method retrieves a <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span> object containing all of
-the pages in the model.</p>
+<p>The <span class='object_link'><a href="#pages-instance_method" title="Sketchup::Model#pages (method)">#pages</a></span> method retrieves a <span class='object_link'><a href="Pages.html" title="Sketchup::Pages (class)">Pages</a></span> object containing all of the pages in the model.</p>
 
 
   </div>
@@ -6541,11 +6434,9 @@ the pages in the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The path method retrieves the path of the file from which the model was
-opened.</p>
+<p>The path method retrieves the path of the file from which the model was opened.</p>
 
-<p>An empty string is returned for a new model (one which has not been saved
-and opened.)</p>
+<p>An empty string is returned for a new model (one which has not been saved and opened.)</p>
 
 
   </div>
@@ -6612,8 +6503,7 @@ and opened.)</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The place_component method places a new component in the Model using the
-component placement tool.</p>
+<p>The place_component method places a new component in the Model using the component placement tool.</p>
 
 
   </div>
@@ -6649,8 +6539,7 @@ component placement tool.</p>
       
         &mdash;
         <div class='inline'>
-<p>A component definition object containing the definition (blueprint) for the
-component.</p>
+<p>A component definition object containing the definition (blueprint) for the component.</p>
 </div>
       
     </li>
@@ -6668,8 +6557,7 @@ component.</p>
       
         &mdash;
         <div class='inline'>
-<p>If set to true, stay in the component placement tool and place multiple
-components.</p>
+<p>If set to true, stay in the component placement tool and place multiple components.</p>
 </div>
       
     </li>
@@ -6730,14 +6618,11 @@ components.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The point_to_latlong method converts a point in the model to a LatLong so
-that you can get its latitude and longitude.</p>
+<p>The point_to_latlong method converts a point in the model to a LatLong so that you can get its latitude and longitude.</p>
 
 <p>This method uses the location information set in ShadowInfo.</p>
 
-<p>NOTE: SketchUp 6.0 and higher has a change where this method returns a
-Point3d instead of a LatLong, where the x and y values contain the LatLong
-coordinates.</p>
+<p>NOTE: SketchUp 6.0 and higher has a change where this method returns a Point3d instead of a LatLong, where the x and y values contain the LatLong coordinates.</p>
 
 
   </div>
@@ -6945,14 +6830,9 @@ coordinates.</p>
   </div>
 
 
-<p>The raytest method is used to cast a ray (line) through the model and
-return the first thing that the ray hits.</p>
+<p>The raytest method is used to cast a ray (line) through the model and return the first thing that the ray hits.</p>
 
-<p>A ray is a two element array containing a point and a vector
-[Geom::Point3d(), Geom::Vector3d()]. The point defines the start point of
-the ray and the vector defines the direction. If direction can not be
-normalized (e.g. direction = [0, 0, 0]), direction is taken as a point the
-ray intersects.</p>
+<p>A ray is a two element array containing a point and a vector [Geom::Point3d(), Geom::Vector3d()]. The point defines the start point of the ray and the vector defines the direction. If direction can not be normalized (e.g. direction = [0, 0, 0]), direction is taken as a point the ray intersects.</p>
 
 
   </div>
@@ -7009,10 +6889,7 @@ ray intersects.</p>
       
         &mdash;
         <div class='inline'>
-<p>An optional boolean, added in SU8 M1, indicating whether or not to consider
-hidden geometry in intersect computations.  If this flag is not specified,
-it defaults to true (WYSIWYG) - i.e. hidden geometry is not intersected
-against.</p>
+<p>An optional boolean, added in SU8 M1, indicating whether or not to consider hidden geometry in intersect computations.  If this flag is not specified, it defaults to true (WYSIWYG) - i.e. hidden geometry is not intersected against.</p>
 </div>
       
     </li>
@@ -7034,13 +6911,7 @@ against.</p>
       
         &mdash;
         <div class='inline'>
-<p>an array of two values. The first value is a Point3d where the item that
-the ray passed through exists. The second element is the instance path
-array of the entity that the ray hit. For example, if the ray hits a face
-that is contained by a component instance the instance path would be
-[Component1]. If the ray hit a face that is contained by a component
-instance, which is contained by another component instance and so on, the
-instance path would be [Component1, Component2, Component3…].</p>
+<p>an array of two values. The first value is a Point3d where the item that the ray passed through exists. The second element is the instance path array of the entity that the ray hit. For example, if the ray hits a face that is contained by a component instance the instance path would be [Component1]. If the ray hit a face that is contained by a component instance, which is contained by another component instance and so on, the instance path would be [Component1, Component2, Component3…].</p>
 </div>
       
     </li>
@@ -7079,8 +6950,7 @@ instance path would be [Component1, Component2, Component3…].</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>
@@ -7180,8 +7050,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">#rendering_options</a></span> method retrieves the RenderingOptions object for
-this model.</p>
+<p>The <span class='object_link'><a href="#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">#rendering_options</a></span> method retrieves the RenderingOptions object for this model.</p>
 
 
   </div>
@@ -7237,9 +7106,9 @@ this model.</p>
     
       <span class="overload">#<strong>save</strong>  &#x21d2; <tt>Boolean</tt> </span>
     
-      <span class="overload">#<strong>save</strong>(filename)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>save</strong>(path)  &#x21d2; <tt>Boolean</tt> </span>
     
-      <span class="overload">#<strong>save</strong>(filename, version)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>save</strong>(path, version)  &#x21d2; <tt>Boolean</tt> </span>
     
   
 
@@ -7252,9 +7121,7 @@ this model.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>A bug in SketchUp 2016 and older caused the <code>.skb</code> backup file
-written during save to be empty. The <code>.skp</code> file was however
-valid.</p>
+<p>A bug in SketchUp 2016 and older caused the <code>.skb</code> backup file written during save to be empty. The <code>.skp</code> file was however valid.</p>
 </div>
   </div>
 
@@ -7272,15 +7139,15 @@ valid.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='comment'># Save the model using the current SketchUp format
-</span><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HOME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchup.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HOME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchup.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
 <span class='comment'># Save the model to the current file using the current SketchUp format
 </span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
 <span class='comment'># Save the model to the current file in SketchUp 8 format
 </span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span>
 <span class='comment'># Save the model in SketchUp 8 format
-</span><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchup_v8.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filename</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchup_v8.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -7293,9 +7160,7 @@ valid.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Starting with SketchUp 2014, this parameter is optional. If no arguments
-are provided or the filename is an empty string, model will be saved to the
-file to which it is associated. It must have already been saved to a file.</p>
+<p>Starting with SketchUp 2014, this parameter is optional. If no arguments are provided or the filename is an empty string, model will be saved to the file to which it is associated. It must have already been saved to a file.</p>
 
 
   </div>
@@ -7308,7 +7173,7 @@ file to which it is associated. It must have already been saved to a file.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>save</strong>(filename)  &#x21d2; <tt>Boolean</tt> </span>
+        <span class="signature">#<strong>save</strong>(path)  &#x21d2; <tt>Boolean</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -7321,7 +7186,7 @@ file to which it is associated. It must have already been saved to a file.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -7330,9 +7195,7 @@ file to which it is associated. It must have already been saved to a file.</p>
       
         &mdash;
         <div class='inline'>
-<p>The name of the file to save. Starting with SketchUp 2014, this parameter
-is optional. If not provided or an empty string, model will be saved to the
-file to which it is associated. It must have already been saved to a file.</p>
+<p>The name of the file to save. Starting with SketchUp 2014, this parameter is optional. If not provided or an empty string, model will be saved to the file to which it is associated. It must have already been saved to a file.</p>
 </div>
       
     </li>
@@ -7345,7 +7208,7 @@ file to which it is associated. It must have already been saved to a file.</p>
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>save</strong>(filename, version)  &#x21d2; <tt>Boolean</tt> </span>
+        <span class="signature">#<strong>save</strong>(path, version)  &#x21d2; <tt>Boolean</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -7358,7 +7221,7 @@ file to which it is associated. It must have already been saved to a file.</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -7367,9 +7230,7 @@ file to which it is associated. It must have already been saved to a file.</p>
       
         &mdash;
         <div class='inline'>
-<p>The name of the file to save. Starting with SketchUp 2014, this parameter
-is optional. If not provided or an empty string, model will be saved to the
-file to which it is associated. It must have already been saved to a file.</p>
+<p>The path of the file to save to. Starting with SketchUp 2014, this parameter is optional. If not provided or an empty string, model will be saved to the file to which it is associated. It must have already been saved to a file.</p>
 </div>
       
     </li>
@@ -7385,15 +7246,7 @@ file to which it is associated. It must have already been saved to a file.</p>
       
         &mdash;
         <div class='inline'>
-<p>(SketchUp 2014+) Optional SketchUp file format to save. If not provided,
-latest file format will be used. Possible values are:
-Sketchup::Model::VERSION_3, Sketchup::Model::VERSION_4,
-Sketchup::Model::VERSION_5, Sketchup::Model::VERSION_6,
-Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8,
-Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014,
-Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016,
-Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018,
-Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
+<p>(SketchUp 2014+) Optional SketchUp file format to save. If not provided, latest file format will be used. Possible values are: Sketchup::Model::VERSION_3, Sketchup::Model::VERSION_4, Sketchup::Model::VERSION_5, Sketchup::Model::VERSION_6, Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8, Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014, Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016, Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018, Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020, Sketchup::Model::VERSION_2021</p>
 </div>
       
     </li>
@@ -7448,7 +7301,7 @@ Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
   <h3 class="signature " id="save_copy-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>save_copy</strong>(filename, version)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>save_copy</strong>(path, version)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -7470,11 +7323,11 @@ Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='comment'># Save copy of the model using the current SketchUp format
-</span><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myModelCopy.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save_copy'>save_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
+</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myModelCopy.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save_copy'>save_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
 <span class='comment'># Save copy of the model in SketchUp 8 format
-</span><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchupcopy_v8.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save_copy'>save_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span></code></pre>
+</span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchupcopy_v8.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save_copy'>save_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -7490,7 +7343,7 @@ Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
   
     <li>
       
-        <span class='name'>filename</span>
+        <span class='name'>path</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
@@ -7499,7 +7352,7 @@ Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
       
         &mdash;
         <div class='inline'>
-<p>The name of the file to save the model copy.</p>
+<p>The path of the file to save the model copy to.</p>
 </div>
       
     </li>
@@ -7515,15 +7368,7 @@ Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
       
         &mdash;
         <div class='inline'>
-<p>(SketchUp 2014+) Optional SketchUp file format to save. If not provided,
-latest file format will be used. Possible values are:
-Sketchup::Model::VERSION_3, Sketchup::Model::VERSION_4,
-Sketchup::Model::VERSION_5, Sketchup::Model::VERSION_6,
-Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8,
-Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014,
-Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016,
-Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018,
-Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
+<p>(SketchUp 2014+) Optional SketchUp file format to save. If not provided, latest file format will be used. Possible values are: Sketchup::Model::VERSION_3, Sketchup::Model::VERSION_4, Sketchup::Model::VERSION_5, Sketchup::Model::VERSION_6, Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8, Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014, Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016, Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018, Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020, Sketchup::Model::VERSION_2021</p>
 </div>
       
     </li>
@@ -7584,9 +7429,7 @@ Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The save_thumbnail method is used to save a thumbnail image to a file. The
-image format is specified by the file extension of filename.  Supported
-formats are bmp, jpg, png, tif, pct, and gif.</p>
+<p>The save_thumbnail method is used to save a thumbnail image to a file. The image format is specified by the file extension of filename.  Supported formats are bmp, jpg, png, tif, pct, and gif.</p>
 
 
   </div>
@@ -7684,15 +7527,9 @@ formats are bmp, jpg, png, tif, pct, and gif.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is used to select a SketchUp Tool object s the active tool. You
-must implement the SketchUp Tool interface to create a tool prior to
-calling this method.</p>
+<p>This method is used to select a SketchUp Tool object s the active tool. You must implement the SketchUp Tool interface to create a tool prior to calling this method.</p>
 
-<p>The select tool is activated if you pass nil to the select_tool method. You
-must implement the SketchUp Tool interface to create a tool, prior to
-calling this method, and then instance the tool implementation and pass the
-object to this method. If you attempt to set the select_tool to nil in the
-initialize method of a tool you have written, it will be ignored.</p>
+<p>The select tool is activated if you pass nil to the select_tool method. You must implement the SketchUp Tool interface to create a tool, prior to calling this method, and then instance the tool implementation and pass the object to this method. If you attempt to set the select_tool to nil in the initialize method of a tool you have written, it will be ignored.</p>
 
 
   </div>
@@ -7790,9 +7627,7 @@ initialize method of a tool you have written, it will be ignored.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method retrieves a Selection object for the model, containing the
-currently selected entities. The entries in the selection list are not
-necessarily in the same order in which the user selected them.</p>
+<p>This method retrieves a Selection object for the model, containing the currently selected entities. The entries in the selection list are not necessarily in the same order in which the user selected them.</p>
 
 
   </div>
@@ -7859,8 +7694,7 @@ necessarily in the same order in which the user selected them.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is used to set the value of an attribute in an attribute
-dictionary with the given name.</p>
+<p>This method is used to set the value of an attribute in an attribute dictionary with the given name.</p>
 
 <p>This method can be used create a new AttributeDictionary object, if needed.</p>
 
@@ -7992,12 +7826,9 @@ dictionary with the given name.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method sets the datum used in conversions between the internal
-coordinate system and UTM.</p>
+<p>This method sets the datum used in conversions between the internal coordinate system and UTM.</p>
 
-<p>The default datum is WGS84. You can use the method list_datums to get a
-list of all of the datums supported in SketchUp. If you pass an invalid
-datum to set_datum, set_datum returns the default datum.</p>
+<p>The default datum is WGS84. You can use the method list_datums to get a list of all of the datums supported in SketchUp. If you pass an invalid datum to set_datum, set_datum returns the default datum.</p>
 
 
   </div>
@@ -8150,24 +7981,16 @@ datum to set_datum, set_datum returns the default datum.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Operations in SketchUp are sequential and cannot be nested. If you start a
-new Ruby operation while another is still open, you will implicitly close
-the first one.</p>
+<p>Operations in SketchUp are sequential and cannot be nested. If you start a new Ruby operation while another is still open, you will implicitly close the first one.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">#start_operation</a></span> method is used to notify SketchUp that a new
-operation (which can be undone) is starting.</p>
+<p>The <span class='object_link'><a href="#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">#start_operation</a></span> method is used to notify SketchUp that a new operation (which can be undone) is starting.</p>
 
-<p>The <code>op_name</code> argument is a description for the operation that
-is displayed adjacent to the Edit &gt; Undo menu item. Make sure to provide
-a user friendly name for your operation.</p>
+<p>The <code>op_name</code> argument is a description for the operation that is displayed adjacent to the Edit &gt; Undo menu item. Make sure to provide a user friendly name for your operation.</p>
 
-<p>Starting with SketchUp 7.0, there are three additional booleans that one
-can pass in when starting an operation. It is recommended to always set
-<code>disable_ui</code> to <code>true</code>. It&#39;s left to
-<code>false</code> for default for compatibility reasons.</p>
+<p>Starting with SketchUp 7.0, there are three additional booleans that one can pass in when starting an operation. It is recommended to always set <code>disable_ui</code> to <code>true</code>. It&#39;s left to <code>false</code> for default for compatibility reasons.</p>
 
 
   </div>
@@ -8249,10 +8072,7 @@ can pass in when starting an operation. It is recommended to always set
       
         &mdash;
         <div class='inline'>
-<p>if set to true, then SketchUp&#39;s tendency to update the user interface
-after each geometry change will be suppressed. This can result in much
-faster Ruby code execution if the operation involves updating the model in
-any way.</p>
+<p>if set to true, then SketchUp&#39;s tendency to update the user interface after each geometry change will be suppressed. This can result in much faster Ruby code execution if the operation involves updating the model in any way.</p>
 </div>
       
     </li>
@@ -8270,12 +8090,7 @@ any way.</p>
       
         &mdash;
         <div class='inline'>
-<p><strong>Deprecated!</strong> if set to true, then whatever operation comes
-after this one will be appended into one combined operation, allowing the
-user the undo both actions with a single undo command. This flag is a
-highly difficult one, since there are so many ways that a SketchUp user can
-interrupt a given operation with one of their own. <strong>Use extreme
-caution</strong> and test thoroughly when setting this to true.</p>
+<p><strong>Deprecated!</strong> if set to true, then whatever operation comes after this one will be appended into one combined operation, allowing the user the undo both actions with a single undo command. This flag is a highly difficult one, since there are so many ways that a SketchUp user can interrupt a given operation with one of their own. <strong>Use extreme caution</strong> and test thoroughly when setting this to true.</p>
 </div>
       
     </li>
@@ -8293,10 +8108,7 @@ caution</strong> and test thoroughly when setting this to true.</p>
       
         &mdash;
         <div class='inline'>
-<p>if set to true, then this operation will append to the previous operation.
-This is particularly useful for creating observers that react to user
-actions without littering the undo stack with extra steps that Ruby is
-performing.</p>
+<p>if set to true, then this operation will append to the previous operation. This is particularly useful for creating observers that react to user actions without littering the undo stack with extra steps that Ruby is performing.</p>
 </div>
       
     </li>
@@ -8583,9 +8395,7 @@ performing.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The tile method retrieves the name of the model. If the model is saved on
-disk, returns the file name without extension. Otherwise returns an empty
-string.</p>
+<p>The tile method retrieves the name of the model. If the model is saved on disk, returns the file name without extension. Otherwise returns an empty string.</p>
 
 
   </div>
@@ -8652,8 +8462,7 @@ string.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#tools-instance_method" title="Sketchup::Model#tools (method)">#tools</a></span> method is used to retrieve the current <span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span>
-object.</p>
+<p>The <span class='object_link'><a href="#tools-instance_method" title="Sketchup::Model#tools (method)">#tools</a></span> method is used to retrieve the current <span class='object_link'><a href="Tools.html" title="Sketchup::Tools (class)">Tools</a></span> object.</p>
 
 
   </div>
@@ -8720,8 +8529,7 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The utm_to_point method converts a position given in UTM coordinates to a
-Point3d in the Model.</p>
+<p>The utm_to_point method converts a position given in UTM coordinates to a Point3d in the Model.</p>
 
 
   </div>
@@ -8820,12 +8628,9 @@ Point3d in the Model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Determine if a model is a valid Sketchup::Model object. Returns false if
-the model has been closed.</p>
+<p>Determine if a model is a valid Sketchup::Model object. Returns false if the model has been closed.</p>
 
-<p>This is useful on the mac where one can have multiple models open at the
-same time. In such a case, this method can tell you if the user has closed
-the model before you perform operations on it.</p>
+<p>This is useful on the mac where one can have multiple models open at the same time. In such a case, this method can tell you if the user has closed the model before you perform operations on it.</p>
 
 
   </div>

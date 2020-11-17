@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -188,18 +190,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class is used to represent component
-instances of a component definition or components that have been dragged
-from the Component Browser and placed (thus, instanced) within the Model.
-Therefore, the ComponentInstance class contains a reference to a
-corresponding ComponentDefinition object and a Transformation object (which
-contains the location of the component in the Drawing Window).</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class is used to represent component instances of a component definition or components that have been dragged from the Component Browser and placed (thus, instanced) within the Model. Therefore, the ComponentInstance class contains a reference to a corresponding ComponentDefinition object and a Transformation object (which contains the location of the component in the Drawing Window).</p>
 
-<p>Starting from SketchUp 2018+, the <span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class
-contains default attributes when created or imported. The attributes are:
-“Owner”, “Status”. See the <a href="https://help.sketchup.com/en/article/3000124" target="_parent" title="Help article">Help article</a> for more information. The dictionary cannot be deleted via
-ruby and an @raise ArgumentError will be raised. The key/value pairs in the
-dictionary can be deleted safely.</p>
+<p>Starting from SketchUp 2018+, the <span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span> class contains default attributes when created or imported. The attributes are: “Owner”, “Status”. See the <a href="https://help.sketchup.com/en/article/3000124" target="_parent" title="Help article">Help article</a> for more information. The dictionary cannot be deleted via ruby and an @raise ArgumentError will be raised. The key/value pairs in the dictionary can be deleted safely.</p>
 
 
   </div>
@@ -284,8 +277,7 @@ dictionary can be deleted safely.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The definition method is used to retrieve the component definition for this
-component instance.</p>
+<p>The definition method is used to retrieve the component definition for this component instance.</p>
 </div></span>
   
 </li>
@@ -309,8 +301,7 @@ component instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The definition= method is used to set the component definition for this
-component.</p>
+<p>The definition= method is used to set the component definition for this component.</p>
 </div></span>
   
 </li>
@@ -334,8 +325,7 @@ component.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The equals? method is used to determine if a component instance is
-geometrically equivalent to another instance.</p>
+<p>The equals? method is used to determine if a component instance is geometrically equivalent to another instance.</p>
 </div></span>
   
 </li>
@@ -359,8 +349,7 @@ geometrically equivalent to another instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The explode method is used to explode the component instance into separate
-entities.</p>
+<p>The explode method is used to explode the component instance into separate entities.</p>
 </div></span>
   
 </li>
@@ -384,8 +373,7 @@ entities.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The glued_to method is used to retrieve the entity that this instance is
-glued to.</p>
+<p>The glued_to method is used to retrieve the entity that this instance is glued to.</p>
 </div></span>
   
 </li>
@@ -433,8 +421,7 @@ glued to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The guid method is used to get the base 64 encoded unique id for this
-SketchUp object.</p>
+<p>The guid method is used to get the base 64 encoded unique id for this SketchUp object.</p>
 </div></span>
   
 </li>
@@ -458,8 +445,7 @@ SketchUp object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The intersect method is used to compute the boolean intersection of two
-instances representing manifold solid volumes (this - arg).</p>
+<p>The intersect method is used to compute the boolean intersection of two instances representing manifold solid volumes (this - arg).</p>
 </div></span>
   
 </li>
@@ -531,8 +517,7 @@ instances representing manifold solid volumes (this - arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::ComponentInstance#make_unique (method)">#make_unique</a></span> method is used to create a component definition for this
-instance that is not used by any other instances.</p>
+<p>The <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::ComponentInstance#make_unique (method)">#make_unique</a></span> method is used to create a component definition for this instance that is not used by any other instances.</p>
 </div></span>
   
 </li>
@@ -565,7 +550,7 @@ instance that is not used by any other instances.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#move!-instance_method" title="#move! (instance method)">#<strong>move!</strong>(transform)  &#x21d2; Boolean </a>
+      <a href="#move!-instance_method" title="#move! (instance method)">#<strong>move!</strong>(transformation)  &#x21d2; Boolean </a>
     
 
     
@@ -580,8 +565,7 @@ instance that is not used by any other instances.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The move! method is the same as the transform! method, except that it does
-not record the move as an undo operation.</p>
+<p>The <span class='object_link'><a href="#move!-instance_method" title="Sketchup::ComponentInstance#move! (method)">#move!</a></span> method is used to set the transformation of this component instance, similarly to <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">#transformation=</a></span> but without recording to the undo stack.</p>
 </div></span>
   
 </li>
@@ -653,8 +637,7 @@ not record the move as an undo operation.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The outer_shell method is used to compute the outer shell of the two
-instances representing manifold solid volumes (this || arg).</p>
+<p>The outer_shell method is used to compute the outer shell of the two instances representing manifold solid volumes (this || arg).</p>
 </div></span>
   
 </li>
@@ -678,8 +661,7 @@ instances representing manifold solid volumes (this || arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -703,9 +685,7 @@ object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The show_differences method is used to determine if a component instance is
-geometrically equivalent to another instance and in addition move the non-
-matching and matching geometry to new layers.</p>
+<p>The show_differences method is used to determine if a component instance is geometrically equivalent to another instance and in addition move the non- matching and matching geometry to new layers.</p>
 </div></span>
   
 </li>
@@ -729,8 +709,7 @@ matching and matching geometry to new layers.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The split method is used to compute the boolean split (map overlay)of the
-two instances representing manifold solid volumes (this - arg).</p>
+<p>The split method is used to compute the boolean split (map overlay)of the two instances representing manifold solid volumes (this - arg).</p>
 </div></span>
   
 </li>
@@ -754,8 +733,7 @@ two instances representing manifold solid volumes (this - arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The subtract method is used to compute the boolean difference of the two
-instances representing manifold solid volumes (this - arg).</p>
+<p>The subtract method is used to compute the boolean difference of the two instances representing manifold solid volumes (this - arg).</p>
 </div></span>
   
 </li>
@@ -803,8 +781,7 @@ instances representing manifold solid volumes (this - arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The transformation method is used to retrieve the transformation of this
-instance.</p>
+<p>The transformation method is used to retrieve the transformation of this instance.</p>
 </div></span>
   
 </li>
@@ -813,7 +790,7 @@ instance.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#transformation=-instance_method" title="#transformation= (instance method)">#<strong>transformation=</strong>(transformation)  &#x21d2; Sketchup::ComponentInstance </a>
+      <a href="#transformation=-instance_method" title="#transformation= (instance method)">#<strong>transformation=</strong>(transformation)  &#x21d2; Object </a>
     
 
     
@@ -828,8 +805,7 @@ instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The transformation= method is used to set the transformation on this
-instance.</p>
+<p>The <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">#transformation=</a></span> method is used to set the transformation of this component instance.</p>
 </div></span>
   
 </li>
@@ -853,8 +829,7 @@ instance.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The trim method is used to compute the (non-destructive) boolean difference
-of the two instances representing manifold solid volumes (this - arg).</p>
+<p>The trim method is used to compute the (non-destructive) boolean difference of the two instances representing manifold solid volumes (this - arg).</p>
 </div></span>
   
 </li>
@@ -878,8 +853,7 @@ of the two instances representing manifold solid volumes (this - arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The union method is used to compute the boolean union of the two instances
-representing manifold solid volumes (this | arg).</p>
+<p>The union method is used to compute the boolean union of the two instances representing manifold solid volumes (this | arg).</p>
 </div></span>
   
 </li>
@@ -903,8 +877,7 @@ representing manifold solid volumes (this | arg).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The volume method is used to compute the volume of this instance if and
-only if this instance is manifold.</p>
+<p>The volume method is used to compute the volume of this instance if and only if this instance is manifold.</p>
 </div></span>
   
 </li>
@@ -1056,8 +1029,7 @@ only if this instance is manifold.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The definition method is used to retrieve the component definition for this
-component instance.</p>
+<p>The definition method is used to retrieve the component definition for this component instance.</p>
 
 
   </div>
@@ -1130,11 +1102,9 @@ component instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The definition= method is used to set the component definition for this
-component.</p>
+<p>The definition= method is used to set the component definition for this component.</p>
 
-<p>This method causes the instance to use a different definition, but it will
-use the same transformation to position it in the Model.</p>
+<p>This method causes the instance to use a different definition, but it will use the same transformation to position it in the Model.</p>
 
 
   </div>
@@ -1201,8 +1171,7 @@ use the same transformation to position it in the Model.</p>
       
         &mdash;
         <div class='inline'>
-<p>the ComponentDefinition object that was set if successful, false if
-unsuccessful</p>
+<p>the ComponentDefinition object that was set if successful, false if unsuccessful</p>
 </div>
       
     </li>
@@ -1241,8 +1210,7 @@ unsuccessful</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The equals? method is used to determine if a component instance is
-geometrically equivalent to another instance.</p>
+<p>The equals? method is used to determine if a component instance is geometrically equivalent to another instance.</p>
 
 
   </div>
@@ -1337,8 +1305,7 @@ geometrically equivalent to another instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The explode method is used to explode the component instance into separate
-entities.</p>
+<p>The explode method is used to explode the component instance into separate entities.</p>
 
 
   </div>
@@ -1410,8 +1377,7 @@ entities.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The glued_to method is used to retrieve the entity that this instance is
-glued to.</p>
+<p>The glued_to method is used to retrieve the entity that this instance is glued to.</p>
 
 <p>Returns nil if it is not glued to anything.</p>
 
@@ -1490,9 +1456,7 @@ glued to.</p>
     
 <p>The glued_to= method glues this instance to a face.</p>
 
-<p>This method will raise an exception if the instance cannot be glued to the
-given face. Instances cannot be glued if the definition of the instance
-doesn&#39;t support gluing or if the alignment is wrong.</p>
+<p>This method will raise an exception if the instance cannot be glued to the given face. Instances cannot be glued if the definition of the instance doesn&#39;t support gluing or if the alignment is wrong.</p>
 
 
   </div>
@@ -1614,8 +1578,7 @@ doesn&#39;t support gluing or if the alignment is wrong.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The guid method is used to get the base 64 encoded unique id for this
-SketchUp object.</p>
+<p>The guid method is used to get the base 64 encoded unique id for this SketchUp object.</p>
 
 
   </div>
@@ -1685,10 +1648,15 @@ SketchUp object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The intersect method is used to compute the boolean intersection of two
-instances representing manifold solid volumes (this - arg).  If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The intersect method is used to compute the boolean intersection of two instances representing manifold solid volumes (this - arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -1749,8 +1717,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -1846,8 +1813,7 @@ solids and the operation succeeds otherwise nil is returned.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if the component instance is locked. False if the instance is not
-locked.</p>
+<p>true if the component instance is locked. False if the instance is not locked.</p>
 </div>
       
     </li>
@@ -1951,8 +1917,7 @@ locked.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::ComponentInstance#make_unique (method)">#make_unique</a></span> method is used to create a component definition for this
-instance that is not used by any other instances.</p>
+<p>The <span class='object_link'><a href="#make_unique-instance_method" title="Sketchup::ComponentInstance#make_unique (method)">#make_unique</a></span> method is used to create a component definition for this instance that is not used by any other instances. If the component is already unique in the model, nothing happens.</p>
 
 
   </div>
@@ -2085,7 +2050,7 @@ instance that is not used by any other instances.</p>
   <h3 class="signature " id="move!-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>move!</strong>(transform)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>move!</strong>(transformation)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -2094,11 +2059,17 @@ instance that is not used by any other instances.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The move! method is the same as the transform! method, except that it does
-not record the move as an undo operation.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Despite the name being similar to <span class='object_link'><a href="#transform!-instance_method" title="Sketchup::ComponentInstance#transform! (method)">#transform!</a></span>, this method closer corresponds to <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">#transformation=</a></span>.</p>
+</div>
+  </div>
 
-<p>This method is useful for moving entities inside of an animation or page
-transition.</p>
+
+<p>The <span class='object_link'><a href="#move!-instance_method" title="Sketchup::ComponentInstance#move! (method)">#move!</a></span> method is used to set the transformation of this component instance, similarly to <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">#transformation=</a></span> but without recording to the undo stack.</p>
+
+<p>This method is useful for moving entities inside of an animation or page transition.</p>
 
 
   </div>
@@ -2114,7 +2085,7 @@ transition.</p>
 <span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_componentinstance'>componentinstance</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_instance'>add_instance</span><span class='lparen'>(</span><span class='id identifier rubyid_definition'>definition</span><span class='comma'>,</span> <span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_new_transformation'>new_transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_componentinstance'>componentinstance</span><span class='period'>.</span><span class='id identifier rubyid_move!'>move!</span> <span class='id identifier rubyid_new_transformation'>new_transformation</span></code></pre>
+<span class='id identifier rubyid_componentinstance'>componentinstance</span><span class='period'>.</span><span class='id identifier rubyid_move!'>move!</span><span class='lparen'>(</span><span class='id identifier rubyid_new_transformation'>new_transformation</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2130,17 +2101,12 @@ transition.</p>
   
     <li>
       
-        <span class='name'>transform</span>
+        <span class='name'>transformation</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The transform object to apply to the component instance.</p>
-</div>
       
     </li>
   
@@ -2371,10 +2337,7 @@ transition.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The outer_shell method is used to compute the outer shell of the two
-instances representing manifold solid volumes (this || arg). If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+<p>The outer_shell method is used to compute the outer shell of the two instances representing manifold solid volumes (this || arg). If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -2435,8 +2398,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -2475,8 +2437,7 @@ solids and the operation succeeds otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The remove_observer method is used to remove an observer from the current
-object.</p>
+<p>The remove_observer method is used to remove an observer from the current object.</p>
 
 
   </div>
@@ -2577,17 +2538,11 @@ object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The show_differences method is used to determine if a component instance is
-geometrically equivalent to another instance and in addition move the non-
-matching and matching geometry to new layers.</p>
+<p>The show_differences method is used to determine if a component instance is geometrically equivalent to another instance and in addition move the non- matching and matching geometry to new layers.</p>
 
-<p>This method will move both instances to Layer0.  Geometry that is the same
-in both components will be moved to a new layer named def_name + “_same”.
-Geometry that is not the same will be moved to a layer named def_name +
-“_diff”.</p>
+<p>This method will move both instances to Layer0.  Geometry that is the same in both components will be moved to a new layer named def_name + “_same”. Geometry that is not the same will be moved to a layer named def_name + “_diff”.</p>
 
-<p>If verbose is true, a list of all the geometry that is different from one
-component to the other is displayed texturally in the Ruby Console.</p>
+<p>If verbose is true, a list of all the geometry that is different from one component to the other is displayed texturally in the Ruby Console.</p>
 
 
   </div>
@@ -2642,8 +2597,7 @@ component to the other is displayed texturally in the Ruby Console.</p>
       
         &mdash;
         <div class='inline'>
-<p>A boolean flag indicating whether to display a textural report of the found
-differences to the Ruby console.</p>
+<p>A boolean flag indicating whether to display a textural report of the found differences to the Ruby console.</p>
 </div>
       
     </li>
@@ -2704,10 +2658,15 @@ differences to the Ruby console.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The split method is used to compute the boolean split (map overlay)of the
-two instances representing manifold solid volumes (this - arg).  If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The split method is used to compute the boolean split (map overlay)of the two instances representing manifold solid volumes (this - arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -2768,11 +2727,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>A vector (array) of the three resultant groups if the two objects (this and
-arg) represent manifold solids and the operation succeeds otherwise nil is
-returned. The 3 groups are as follows: The intersection of volume 1 &amp;
-volume 2, the difference of volume 1 minus volume 2, and the reverse
-difference of volume 2 minus volume 1.</p>
+<p>A vector (array) of the three resultant groups if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned. The 3 groups are as follows: The intersection of volume 1 &amp; volume 2, the difference of volume 1 minus volume 2, and the reverse difference of volume 2 minus volume 1.</p>
 </div>
       
     </li>
@@ -2811,10 +2766,15 @@ difference of volume 2 minus volume 1.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The subtract method is used to compute the boolean difference of the two
-instances representing manifold solid volumes (this - arg).  If the
-specified objects (this and arg) do not represent manifold volumes, this
-method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The subtract method is used to compute the boolean difference of the two instances representing manifold solid volumes (this - arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -2875,8 +2835,7 @@ method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -3012,8 +2971,7 @@ solids and the operation succeeds otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The transformation method is used to retrieve the transformation of this
-instance.</p>
+<p>The transformation method is used to retrieve the transformation of this instance.</p>
 
 
   </div>
@@ -3074,7 +3032,7 @@ instance.</p>
   <h3 class="signature " id="transformation=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>transformation=</strong>(transformation)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt> 
+    #<strong>transformation=</strong>(transformation)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -3083,8 +3041,7 @@ instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The transformation= method is used to set the transformation on this
-instance.</p>
+<p>The <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">#transformation=</a></span> method is used to set the transformation of this component instance.</p>
 
 
   </div>
@@ -3123,11 +3080,6 @@ instance.</p>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A Transformation object to apply.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -3135,24 +3087,6 @@ instance.</p>
 
 </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the transformed ComponentInstance</p>
-</div>
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3186,10 +3120,15 @@ instance.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The trim method is used to compute the (non-destructive) boolean difference
-of the two instances representing manifold solid volumes (this - arg).  If
-the specified objects (this and arg) do not represent manifold volumes,
-this method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The trim method is used to compute the (non-destructive) boolean difference of the two instances representing manifold solid volumes (this - arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -3250,8 +3189,7 @@ this method fails.</p>
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -3290,9 +3228,15 @@ solids and the operation succeeds otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The union method is used to compute the boolean union of the two instances
-representing manifold solid volumes (this | arg).  If the specified objects
-(this and arg) do not represent manifold volumes, this method fails.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This method is not available in SketchUp Make.</p>
+</div>
+  </div>
+
+
+<p>The union method is used to compute the boolean union of the two instances representing manifold solid volumes (this | arg).  If the specified objects (this and arg) do not represent manifold volumes, this method fails.</p>
 
 
   </div>
@@ -3353,8 +3297,7 @@ representing manifold solid volumes (this | arg).  If the specified objects
       
         &mdash;
         <div class='inline'>
-<p>The resultant group if the two objects (this and arg) represent manifold
-solids and the operation succeeds otherwise nil is returned.</p>
+<p>The resultant group if the two objects (this and arg) represent manifold solids and the operation succeeds otherwise nil is returned.</p>
 </div>
       
     </li>
@@ -3393,8 +3336,7 @@ solids and the operation succeeds otherwise nil is returned.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The volume method is used to compute the volume of this instance if and
-only if this instance is manifold.</p>
+<p>The volume method is used to compute the volume of this instance if and only if this instance is manifold.</p>
 
 
   </div>
@@ -3425,8 +3367,7 @@ only if this instance is manifold.</p>
       
         &mdash;
         <div class='inline'>
-<p>If the instance represents a manifold volume, volume will be a positive
-value.  If volume is negative, the instance is not manifold.</p>
+<p>If the instance represents a manifold volume, volume will be a positive value.  If volume is negative, the instance is not manifold.</p>
 </div>
       
     </li>

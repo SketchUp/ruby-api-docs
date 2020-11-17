@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -194,14 +196,12 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SketchUp 2020 “Layers” were renamed to “Tags” in the UI. The API
-retains the use of “Layer” for compatibility and is synonymous with “Tag”.</p>
+<p>As of SketchUp 2020 “Layers” were renamed to “Tags” in the UI. The API retains the use of “Layer” for compatibility and is synonymous with “Tag”.</p>
 </div>
   </div>
 
 
-<p>The Layers collection allows you to see and manage all of the layers in a
-model. You get a pointer to the Layers object from within the Model.</p>
+<p>The Layers collection allows you to see and manage all of the layers in a model. You get a pointer to the Layers object from within the Model.</p>
 
 
   </div>
@@ -306,6 +306,30 @@ model. You get a pointer to the Layers object from within the Model.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#add_folder-instance_method" title="#add_folder (instance method)">#<strong>add_folder</strong>(arg)  &#x21d2; Sketchup::LayerFolder </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#add_folder-instance_method" title="Sketchup::Layers#add_folder (method)">#add_folder</a></span> method adds or moves a layer folder.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#add_observer-instance_method" title="#add_observer (instance method)">#<strong>add_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
@@ -321,8 +345,7 @@ model. You get a pointer to the Layers object from within the Model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#add_observer-instance_method" title="Sketchup::Layers#add_observer (method)">#add_observer</a></span> method is used to add an observer to the layers
-collection.</p>
+<p>The <span class='object_link'><a href="#add_observer-instance_method" title="Sketchup::Layers#add_observer (method)">#add_observer</a></span> method is used to add an observer to the layers collection.</p>
 </div></span>
   
 </li>
@@ -379,6 +402,54 @@ collection.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#count_folders-instance_method" title="#count_folders (instance method)">#<strong>count_folders</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#count_folders-instance_method" title="Sketchup::Layers#count_folders (method)">#count_folders</a></span> method counts the number of folders which are direct children of the layer manager.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#count_layers-instance_method" title="#count_layers (instance method)">#<strong>count_layers</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#count_layers-instance_method" title="Sketchup::Layers#count_layers (method)">#count_layers</a></span> method retrieves the number of layers not in a folder.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|layer| ... } &#x21d2; Object </a>
     
 
@@ -394,8 +465,103 @@ collection.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Layers#each (method)">#each</a></span> method is used to iterate through all of the layers in the
-model.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Layers#each (method)">#each</a></span> method is used to iterate through all of the layers in the model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_folder-instance_method" title="#each_folder (instance method)">#<strong>each_folder</strong> {|folder| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#each_folder-instance_method" title="Sketchup::Layers#each_folder (method)">#each_folder</a></span> method is used to iterate through the folders that are direct children to the layer manager.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#each_layer-instance_method" title="#each_layer (instance method)">#<strong>each_layer</strong> {|layer| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#each_layer-instance_method" title="Sketchup::Layers#each_layer (method)">#each_layer</a></span> method is used to iterate through the layers that are not inside a layer folder.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#folders-instance_method" title="#folders (instance method)">#<strong>folders</strong>  &#x21d2; Array&lt;Sketchup::LayerFolder&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#folders-instance_method" title="Sketchup::Layers#folders (method)">#folders</a></span> method returns the folders of the layer manager.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#layers-instance_method" title="#layers (instance method)">#<strong>layers</strong>  &#x21d2; Array&lt;Sketchup::Layer&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#layers-instance_method" title="Sketchup::Layers#layers (method)">#layers</a></span> method retrieves the layers not in a folder.</p>
 </div></span>
   
 </li>
@@ -454,6 +620,30 @@ model.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#purge_unused_folders-instance_method" title="#purge_unused_folders (instance method)">#<strong>purge_unused_folders</strong> {|folder| ... } &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#purge_unused_folders-instance_method" title="Sketchup::Layers#purge_unused_folders (method)">#purge_unused_folders</a></span> method is used to remove all layer folder with no children.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#remove-instance_method" title="#remove (instance method)">#<strong>remove</strong>(layer, remove_geometry = false)  &#x21d2; Boolean </a>
     
 
@@ -480,6 +670,30 @@ model.</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#remove_folder-instance_method" title="#remove_folder (instance method)">#<strong>remove_folder</strong>(folder)  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#remove_folder-instance_method" title="Sketchup::Layers#remove_folder (method)">#remove_folder</a></span> method removes the folder from the model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#remove_observer-instance_method" title="#remove_observer (instance method)">#<strong>remove_observer</strong>(observer)  &#x21d2; Boolean </a>
     
 
@@ -495,8 +709,7 @@ model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#remove_observer-instance_method" title="Sketchup::Layers#remove_observer (method)">#remove_observer</a></span> method is used to remove an observer from the
-current object.</p>
+<p>The <span class='object_link'><a href="#remove_observer-instance_method" title="Sketchup::Layers#remove_observer (method)">#remove_observer</a></span> method is used to remove an observer from the current object.</p>
 </div></span>
   
 </li>
@@ -544,8 +757,7 @@ current object.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#unique_name-instance_method" title="Sketchup::Layers#unique_name (method)">#unique_name</a></span> method can be used to get a string that will be a unique
-layer name inside this collection.</p>
+<p>The <span class='object_link'><a href="#unique_name-instance_method" title="Sketchup::Layers#unique_name (method)">#unique_name</a></span> method can be used to get a string that will be a unique layer name inside this collection.</p>
 </div></span>
   
 </li>
@@ -618,8 +830,7 @@ layer name inside this collection.</p>
       
         &mdash;
         <div class='inline'>
-<p>A number representing the layer&#39;s index in an array of Layer objects,
-or the name of the layer.</p>
+<p>A number representing the layer&#39;s index in an array of Layer objects, or the name of the layer.</p>
 </div>
       
     </li>
@@ -685,8 +896,7 @@ or the name of the layer.</p>
     
 <p>The <span class='object_link'><a href="#add-instance_method" title="Sketchup::Layers#add (method)">#add</a></span> method is used to add a new layer.</p>
 
-<p>If you give the name of a Layer that is already defined, it will return the
-existing Layer rather than adding a new one.</p>
+<p>If you give the name of a Layer that is already defined, it will return the existing Layer rather than adding a new one.</p>
 
 
   </div>
@@ -767,6 +977,155 @@ existing Layer rather than adding a new one.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="add_folder-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    
+      <span class="overload">#<strong>add_folder</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt> </span>
+    
+      <span class="overload">#<strong>add_folder</strong>(folder)  &#x21d2; <tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#add_folder-instance_method" title="Sketchup::Layers#add_folder (method)">#add_folder</a></span> method adds or moves a layer folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_folder</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a new folder with the given name. Unlike layers, folders do not need to have a unique name. But the name does have to be non-empty.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_folder</strong>(folder)  &#x21d2; <tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Moves an existing <span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span> to the receiver. This will include any children in the given folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="LayerFolder.html#folder=-instance_method" title="Sketchup::LayerFolder#folder= (method)">Information on how which notifications trigger when reparenting an existing folder.</a></span></li>
+    
+  </ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#count_layers-instance_method" title="Sketchup::Layers#count_layers (method)">#count_layers</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="add_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -779,8 +1138,7 @@ existing Layer rather than adding a new one.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#add_observer-instance_method" title="Sketchup::Layers#add_observer (method)">#add_observer</a></span> method is used to add an observer to the layers
-collection.</p>
+<p>The <span class='object_link'><a href="#add_observer-instance_method" title="Sketchup::Layers#add_observer (method)">#add_observer</a></span> method is used to add an observer to the layers collection.</p>
 
 
   </div>
@@ -950,9 +1308,7 @@ collection.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s
-<code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::Layers#count (method)">#count</a></span> method is
-an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Layers#length (method)">#length</a></span>.</p>
+<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s <code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::Layers#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Layers#length (method)">#length</a></span>.</p>
 </div>
   </div>
 
@@ -1019,6 +1375,140 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="count_folders-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>count_folders</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#count_folders-instance_method" title="Sketchup::Layers#count_folders (method)">#count_folders</a></span> method counts the number of folders which are direct children of the layer manager.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_num_folders'>num_folders</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_count_folders'>count_folders</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="count_layers-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>count_layers</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#count_layers-instance_method" title="Sketchup::Layers#count_layers (method)">#count_layers</a></span> method retrieves the number of layers not in a folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_count_layers'>count_layers</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#size-instance_method" title="Sketchup::Layers#size (method)">#size</a></span></li>
+    
+      <li><span class='object_link'><a href="#length-instance_method" title="Sketchup::Layers#length (method)">#length</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="each-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -1031,8 +1521,15 @@ an alias for <span class='object_link'><a href="#length-instance_method" title="
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Layers#each (method)">#each</a></span> method is used to iterate through all of the layers in the
-model.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Don&#39;t remove content from this collection while iterating over it with <span class='object_link'><a href="#each-instance_method" title="Sketchup::Layers#each (method)">#each</a></span>. This would change the size of the collection and cause elements to be skipped as the indices change. Instead copy the current collection to an array using <code>to_a</code> and then use <code>each</code> on the array, when removing content.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Layers#each (method)">#each</a></span> method is used to iterate through all of the layers in the model. This include layers that are nested inside folders.</p>
 
 
   </div>
@@ -1089,6 +1586,300 @@ model.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_folder-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>each_folder</strong> {|folder| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#each_folder-instance_method" title="Sketchup::Layers#each_folder (method)">#each_folder</a></span> method is used to iterate through the folders that are direct children to the layer manager.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Windows</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_each_folder'>each_folder</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_folder'>folder</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_folder'>folder</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>folder</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='name'>folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each_layer-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>each_layer</strong> {|layer| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#each_layer-instance_method" title="Sketchup::Layers#each_layer (method)">#each_layer</a></span> method is used to iterate through the layers that are not inside a layer folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
+<span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Test layer</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_each_layer'>each_layer</span> <span class='lbrace'>{</span> <span class='op'>|</span> <span class='id identifier rubyid_layer'>layer</span> <span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>layer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='name'>layer</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="folders-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>folders</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This does not return all the folders in the model, only those that are direct children of the layer manager.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#folders-instance_method" title="Sketchup::Layers#folders (method)">#folders</a></span> method returns the folders of the layer manager.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Windows</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folders'>folders</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_folders'>folders</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="layers-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>layers</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#layers-instance_method" title="Sketchup::Layers#layers (method)">#layers</a></span> method retrieves the layers not in a folder.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
 </div>
       
     </li>
@@ -1218,6 +2009,13 @@ model.</p>
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#purge_unused_folders-instance_method" title="Sketchup::Layers#purge_unused_folders (method)">#purge_unused_folders</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -1229,6 +2027,85 @@ model.</p>
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="purge_unused_folders-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>purge_unused_folders</strong> {|folder| ... } &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#purge_unused_folders-instance_method" title="Sketchup::Layers#purge_unused_folders (method)">#purge_unused_folders</a></span> method is used to remove all layer folder with no children.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Windows</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_purge_unused_folders'>purge_unused_folders</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>folder</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='name'>folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
 </div>
       
     </li>
@@ -1320,8 +2197,7 @@ model.</p>
       
         &mdash;
         <div class='inline'>
-<p>If true, geometry in the removed layer will be removed as well. If false
-(which is the default), this geometry will be placed on Layer 0.</p>
+<p>If true, geometry in the removed layer will be removed as well. If false (which is the default), this geometry will be placed on Layer 0.</p>
 </div>
       
     </li>
@@ -1370,6 +2246,102 @@ model.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="remove_folder-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>remove_folder</strong>(folder)  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#remove_folder-instance_method" title="Sketchup::Layers#remove_folder (method)">#remove_folder</a></span> method removes the folder from the model. All children are preserved, but moved up one level.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_manager'>manager</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_layers'><span class='object_link'><a href="Model.html#layers-instance_method" title="Sketchup::Model#layers (method)">layers</a></span></span>
+<span class='id identifier rubyid_folder'>folder</span> <span class='op'>=</span> <span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_add_folder'>add_folder</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doors</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_manager'>manager</span><span class='period'>.</span><span class='id identifier rubyid_remove_folder'>remove_folder</span><span class='lparen'>(</span><span class='id identifier rubyid_folder'>folder</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <code>folder</code> is not a direct child of the receiver.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="remove_observer-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -1382,8 +2354,7 @@ model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#remove_observer-instance_method" title="Sketchup::Layers#remove_observer (method)">#remove_observer</a></span> method is used to remove an observer from the
-current object.</p>
+<p>The <span class='object_link'><a href="#remove_observer-instance_method" title="Sketchup::Layers#remove_observer (method)">#remove_observer</a></span> method is used to remove an observer from the current object.</p>
 
 
   </div>
@@ -1551,8 +2522,7 @@ current object.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#unique_name-instance_method" title="Sketchup::Layers#unique_name (method)">#unique_name</a></span> method can be used to get a string that will be a unique
-layer name inside this collection.</p>
+<p>The <span class='object_link'><a href="#unique_name-instance_method" title="Sketchup::Layers#unique_name (method)">#unique_name</a></span> method can be used to get a string that will be a unique layer name inside this collection.</p>
 
 
   </div>
@@ -1581,8 +2551,7 @@ layer name inside this collection.</p>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns Will default to using “Layer” (SketchUp2019 and older) or “Tag” as
-basename for a unique name.</p>
+<p>Returns Will default to using “Layer” (SketchUp2019 and older) or “Tag” as basename for a unique name.</p>
 
 
   </div>
@@ -1601,8 +2570,7 @@ basename for a unique name.</p>
       
         &mdash;
         <div class='inline'>
-<p>Will default to using “Layer” (SketchUp2019 and older) or “Tag” as basename
-for a unique name.</p>
+<p>Will default to using “Layer” (SketchUp2019 and older) or “Tag” as basename for a unique name.</p>
 </div>
       
     </li>

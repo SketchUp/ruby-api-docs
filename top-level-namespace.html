@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
     <script>
@@ -731,7 +733,7 @@
 
     <ul class="summary">
       
-        <li class="public deprecated">
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="top-level-namespace.html#add_separator_to_menu-instance_method" title="#add_separator_to_menu (instance method)">#<strong>add_separator_to_menu</strong>(menu_name)  &#x21d2; Object </a>
@@ -744,14 +746,11 @@
   
   
   
-  <span class="deprecated note title">deprecated</span>
+  
   
 
   
-    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>Avoid adding separators to top level menus. If you require grouping use a
-sub-menu instead.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -774,8 +773,7 @@ sub-menu instead.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Call this function at the end of a file that you are loading to let the
-system know that you have loaded it.</p>
+<p>Call this function at the end of a file that you are loading to let the system know that you have loaded it.</p>
 </div></span>
   
 </li>
@@ -799,8 +797,7 @@ system know that you have loaded it.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Use in combination with <span class='object_link'><a href="top-level-namespace.html#file_loaded-instance_method" title="#file_loaded (method)">#file_loaded</a></span> to create load guards for code you
-don&#39;t want to reload.</p>
+<p>Use in combination with <span class='object_link'><a href="top-level-namespace.html#file_loaded-instance_method" title="#file_loaded (method)">#file_loaded</a></span> to create load guards for code you don&#39;t want to reload.</p>
 </div></span>
   
 </li>
@@ -900,35 +897,12 @@ don&#39;t want to reload.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>Avoid adding separators to top level menus. If you require grouping use a
-sub-menu instead.</p>
-</div></div>
-
-<p>This function will add a separator to a given menu the first time it is
-called.  It is useful for adding a separator before the first plugin that
-is added to a given menu.</p>
-
+    
 
   </div>
 </div>
 <div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
   
-    <li>
-      
-        <span class='name'>menu_name</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -962,8 +936,7 @@ is added to a given menu.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Call this function at the end of a file that you are loading to let the
-system know that you have loaded it.</p>
+<p>Call this function at the end of a file that you are loading to let the system know that you have loaded it.</p>
 
 
   </div>
@@ -1044,9 +1017,7 @@ system know that you have loaded it.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Use in combination with <span class='object_link'><a href="#file_loaded-instance_method" title="#file_loaded (method)">#file_loaded</a></span> to create load guards for code you
-don&#39;t want to reload. Especially useful to protect your UI setup from
-creating duplicate menus and toolbars.</p>
+<p>Use in combination with <span class='object_link'><a href="#file_loaded-instance_method" title="#file_loaded (method)">#file_loaded</a></span> to create load guards for code you don&#39;t want to reload. Especially useful to protect your UI setup from creating duplicate menus and toolbars.</p>
 
 
   </div>
@@ -1140,11 +1111,7 @@ creating duplicate menus and toolbars.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This is a wrapper for <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span>.  You call it exactly the same as
-<span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span>.  <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span> will raise an exception if it can&#39;t
-convert the string entered for one of the values into the right type. This
-method will trap the exception and display an error dialog and then prompt
-for the values again.</p>
+<p>This is a wrapper for <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span>.  You call it exactly the same as <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span>.  <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span> will raise an exception if it can&#39;t convert the string entered for one of the values into the right type. This method will trap the exception and display an error dialog and then prompt for the values again.</p>
 
 
   </div>
@@ -1194,11 +1161,7 @@ for the values again.</p>
 <p>This adds the path given to <tt>$LOAD_PATH</tt> which can affect other extensions.</p>
 </div></div>
 
-<p>By default, SketchUp automatically loads (using require) all files with the
-.rb extension in the plugins directory.  This function can be used to
-automatically load all .rb files from a different directory also.  to use
-this add a call like the following to a file in the plugins directory
-<code>require_all &quot;MyRubyScripts&quot;</code></p>
+<p>By default, SketchUp automatically loads (using require) all files with the .rb extension in the plugins directory.  This function can be used to automatically load all .rb files from a different directory also.  to use this add a call like the following to a file in the plugins directory <code>require_all &quot;MyRubyScripts&quot;</code></p>
 
 
   </div>
@@ -1256,10 +1219,7 @@ this add a call like the following to a file in the plugins directory
 <p>Use <code>SKETCHUP_CONSOLE.show</code> instead.</p>
 </div></div>
 
-<p>This global method is called by the Ruby Console menu item. We call this
-instead of directly calling
-<code>Sketchup.send_action(&quot;showRubyPanel:&quot;)</code> so that other
-Ruby Console implementations can hijack this method.</p>
+<p>This global method is called by the Ruby Console menu item. We call this instead of directly calling <code>Sketchup.send_action(&quot;showRubyPanel:&quot;)</code> so that other Ruby Console implementations can hijack this method.</p>
 
 
   </div>

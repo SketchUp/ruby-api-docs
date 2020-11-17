@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -186,8 +188,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Page class contains methods to extract information and modify the
-properties of an individual page.</p>
+<p>The Page class contains methods to extract information and modify the properties of an individual page.</p>
 
 <p>Note that inside the SketchUp user interface pages are called “Scenes”.</p>
 
@@ -298,8 +299,7 @@ properties of an individual page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The delay_time method retrieves the amount of time, in seconds, that a page
-will be displayed before transition to another page during a tour.</p>
+<p>The delay_time method retrieves the amount of time, in seconds, that a page will be displayed before transition to another page during a tour.</p>
 </div></span>
   
 </li>
@@ -323,8 +323,7 @@ will be displayed before transition to another page during a tour.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The delay_time= method sets the amount of time, in seconds, that a page
-will be displayed before transitioning to another page during a tour.</p>
+<p>The delay_time= method sets the amount of time, in seconds, that a page will be displayed before transitioning to another page during a tour.</p>
 </div></span>
   
 </li>
@@ -348,8 +347,7 @@ will be displayed before transitioning to another page during a tour.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description method retrieves the description for a page as found in the
-Scenes manager dialog.</p>
+<p>The description method retrieves the description for a page as found in the Scenes manager dialog.</p>
 </div></span>
   
 </li>
@@ -373,8 +371,7 @@ Scenes manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The description method sets the description for a page as found in the
-Scenes manager dialog.</p>
+<p>The description method sets the description for a page as found in the Scenes manager dialog.</p>
 </div></span>
   
 </li>
@@ -398,8 +395,7 @@ Scenes manager dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">#get_drawingelement_visibility</a></span> method is used to get the visibility
-of a drawing element on a particular page.</p>
+<p>The <span class='object_link'><a href="#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">#get_drawingelement_visibility</a></span> method is used to get the visibility of a drawing element on a particular page.</p>
 </div></span>
   
 </li>
@@ -447,8 +443,7 @@ of a drawing element on a particular page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#include_in_animation=-instance_method" title="Sketchup::Page#include_in_animation= (method)">#include_in_animation=</a></span> method controls whether the page should be
-included when exporting an animation from the model.</p>
+<p>The <span class='object_link'><a href="#include_in_animation=-instance_method" title="Sketchup::Page#include_in_animation= (method)">#include_in_animation=</a></span> method controls whether the page should be included when exporting an animation from the model.</p>
 </div></span>
   
 </li>
@@ -472,8 +467,7 @@ included when exporting an animation from the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#include_in_animation%3F-instance_method" title="Sketchup::Page#include_in_animation? (method)">#include_in_animation?</a></span> method determines whether the page should be
-included when exporting an animation from the model.</p>
+<p>The <span class='object_link'><a href="#include_in_animation%3F-instance_method" title="Sketchup::Page#include_in_animation? (method)">#include_in_animation?</a></span> method determines whether the page should be included when exporting an animation from the model.</p>
 </div></span>
   
 </li>
@@ -506,7 +500,7 @@ included when exporting an animation from the model.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#layers-instance_method" title="#layers (instance method)">#<strong>layers</strong>  &#x21d2; Object </a>
+      <a href="#layer_folders-instance_method" title="#layer_folders (instance method)">#<strong>layer_folders</strong>  &#x21d2; Array&lt;Sketchup::LayerFolder&gt;<sup>?</sup> </a>
     
 
     
@@ -521,7 +515,31 @@ included when exporting an animation from the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The layers method retrieves the non-visible layers associated with a page.</p>
+<p>The <span class='object_link'><a href="#layer_folders-instance_method" title="Sketchup::Page#layer_folders (method)">#layer_folders</a></span> method retrieves the hidden layer folders associated with a page.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#layers-instance_method" title="#layers (instance method)">#<strong>layers</strong>  &#x21d2; Array&lt;Sketchup::Layer&gt;<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#layers-instance_method" title="Sketchup::Page#layers (method)">#layers</a></span> method retrieves layers that don&#39;t use their default visibility on this page.</p>
 </div></span>
   
 </li>
@@ -593,8 +611,7 @@ included when exporting an animation from the model.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The rendering_options method retrieves a RenderingOptions object for the
-page.</p>
+<p>The rendering_options method retrieves a RenderingOptions object for the page.</p>
 </div></span>
   
 </li>
@@ -618,8 +635,7 @@ page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">#set_drawingelement_visibility</a></span> method is used to change the
-visibility of a drawing element on a particular page.</p>
+<p>The <span class='object_link'><a href="#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">#set_drawingelement_visibility</a></span> method is used to change the visibility of a drawing element on a particular page.</p>
 </div></span>
   
 </li>
@@ -628,7 +644,7 @@ visibility of a drawing element on a particular page.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_visibility-instance_method" title="#set_visibility (instance method)">#<strong>set_visibility</strong>(layer, visibility)  &#x21d2; Object </a>
+      <a href="#set_visibility-instance_method" title="#set_visibility (instance method)">#<strong>set_visibility</strong>(arg1, arg2)  &#x21d2; Object </a>
     
 
     
@@ -643,7 +659,7 @@ visibility of a drawing element on a particular page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_visibility method sets the visibility for a layer on a page.</p>
+<p>The <span class='object_link'><a href="#set_visibility-instance_method" title="Sketchup::Page#set_visibility (method)">#set_visibility</a></span> method sets the visibility for a layer or layer folder on a page.</p>
 </div></span>
   
 </li>
@@ -715,8 +731,7 @@ visibility of a drawing element on a particular page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Get the amount of time that it takes to transition to this page during a
-slideshow or animation export.</p>
+<p>Get the amount of time that it takes to transition to this page during a slideshow or animation export.</p>
 </div></span>
   
 </li>
@@ -749,7 +764,7 @@ slideshow or animation export.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#update-instance_method" title="#update (instance method)">#<strong>update</strong>(flags)  &#x21d2; Object </a>
+      <a href="#update-instance_method" title="#update (instance method)">#<strong>update</strong>(flags)  &#x21d2; Boolean </a>
     
 
     
@@ -764,8 +779,7 @@ slideshow or animation export.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The update method performs an update on the page properties based on the
-current view that the user has.</p>
+<p>The <span class='object_link'><a href="#update-instance_method" title="Sketchup::Page#update (method)">#update</a></span> method performs an update on the page properties based on the current view that the user has.</p>
 </div></span>
   
 </li>
@@ -813,8 +827,7 @@ current view that the user has.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_axes? method determines whether you are storing the axes property
-with the page.</p>
+<p>The use_axes? method determines whether you are storing the axes property with the page.</p>
 </div></span>
   
 </li>
@@ -862,8 +875,7 @@ with the page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_camera? method determines whether you are storing the camera
-property with the page.</p>
+<p>The use_camera? method determines whether you are storing the camera property with the page.</p>
 </div></span>
   
 </li>
@@ -887,8 +899,7 @@ property with the page.</p>
 
   
     <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span> and
-<span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span> in SketchUp 2020.1.</p>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span> and <span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span> in SketchUp 2020.1.</p>
 </div></span>
   
 </li>
@@ -912,8 +923,7 @@ property with the page.</p>
 
   
     <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span> and
-<span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span> in SketchUp 2020.1.</p>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span> and <span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span> in SketchUp 2020.1.</p>
 </div></span>
   
 </li>
@@ -1009,8 +1019,7 @@ property with the page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_hidden_layers? method determines whether you are storing the hidden
-layers property with the page.</p>
+<p>The use_hidden_layers? method determines whether you are storing the hidden layers property with the page.</p>
 </div></span>
   
 </li>
@@ -1082,8 +1091,7 @@ layers property with the page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_rendering_optoins= method sets the page&#39;s display settings
-property.</p>
+<p>The use_rendering_optoins= method sets the page&#39;s display settings property.</p>
 </div></span>
   
 </li>
@@ -1107,8 +1115,7 @@ property.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_rendering_options? method determines whether you are storing the
-rendering options property with the page.</p>
+<p>The use_rendering_options? method determines whether you are storing the rendering options property with the page.</p>
 </div></span>
   
 </li>
@@ -1156,8 +1163,7 @@ rendering options property with the page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_section_planes? method determines whether you are storing the
-section planes property with the page.</p>
+<p>The use_section_planes? method determines whether you are storing the section planes property with the page.</p>
 </div></span>
   
 </li>
@@ -1205,8 +1211,7 @@ section planes property with the page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The use_shadow_info? method determines whether you are storing the shadow
-info property with the page.</p>
+<p>The use_shadow_info? method determines whether you are storing the shadow info property with the page.</p>
 </div></span>
   
 </li>
@@ -1393,8 +1398,7 @@ info property with the page.</p>
       
         
         <div class='inline'>
-<p>camera - a Camera object if successful, nil if the page does not save
-camera information</p>
+<p>camera - a Camera object if successful, nil if the page does not save camera information</p>
 </div>
       
     </li>
@@ -1433,12 +1437,9 @@ camera information</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The delay_time method retrieves the amount of time, in seconds, that a page
-will be displayed before transition to another page during a tour.</p>
+<p>The delay_time method retrieves the amount of time, in seconds, that a page will be displayed before transition to another page during a tour.</p>
 
-<p>The default delay time can be modified in the Model Info &gt; Animation
-panel of the SketchUp User Interface. If this method returns -1, the
-default delay time is used.</p>
+<p>The default delay time can be modified in the Model Info &gt; Animation panel of the SketchUp User Interface. If this method returns -1, the default delay time is used.</p>
 
 
   </div>
@@ -1507,12 +1508,9 @@ default delay time is used.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The delay_time= method sets the amount of time, in seconds, that a page
-will be displayed before transitioning to another page during a tour. If
-you set the delay for a page to be -1, the default delay time will be used.</p>
+<p>The delay_time= method sets the amount of time, in seconds, that a page will be displayed before transitioning to another page during a tour. If you set the delay for a page to be -1, the default delay time will be used.</p>
 
-<p>The default delay time can be modified in the Model Info &gt; Animation
-panel of the SketchUp User Interface.</p>
+<p>The default delay time can be modified in the Model Info &gt; Animation panel of the SketchUp User Interface.</p>
 
 
   </div>
@@ -1614,8 +1612,7 @@ panel of the SketchUp User Interface.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description method retrieves the description for a page as found in the
-Scenes manager dialog.</p>
+<p>The description method retrieves the description for a page as found in the Scenes manager dialog.</p>
 
 
   </div>
@@ -1684,8 +1681,7 @@ Scenes manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The description method sets the description for a page as found in the
-Scenes manager dialog.</p>
+<p>The description method sets the description for a page as found in the Scenes manager dialog.</p>
 
 
   </div>
@@ -1787,8 +1783,7 @@ Scenes manager dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">#get_drawingelement_visibility</a></span> method is used to get the visibility
-of a drawing element on a particular page.</p>
+<p>The <span class='object_link'><a href="#get_drawingelement_visibility-instance_method" title="Sketchup::Page#get_drawingelement_visibility (method)">#get_drawingelement_visibility</a></span> method is used to get the visibility of a drawing element on a particular page.</p>
 
 
   </div>
@@ -1945,8 +1940,7 @@ of a drawing element on a particular page.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#include_in_animation=-instance_method" title="Sketchup::Page#include_in_animation= (method)">#include_in_animation=</a></span> method controls whether the page should be
-included when exporting an animation from the model.</p>
+<p>The <span class='object_link'><a href="#include_in_animation=-instance_method" title="Sketchup::Page#include_in_animation= (method)">#include_in_animation=</a></span> method controls whether the page should be included when exporting an animation from the model.</p>
 
 
   </div>
@@ -2029,8 +2023,7 @@ included when exporting an animation from the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#include_in_animation%3F-instance_method" title="Sketchup::Page#include_in_animation? (method)">#include_in_animation?</a></span> method determines whether the page should be
-included when exporting an animation from the model.</p>
+<p>The <span class='object_link'><a href="#include_in_animation%3F-instance_method" title="Sketchup::Page#include_in_animation? (method)">#include_in_animation?</a></span> method determines whether the page should be included when exporting an animation from the model.</p>
 
 
   </div>
@@ -2153,10 +2146,10 @@ included when exporting an animation from the model.</p>
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="layers-instance_method">
+  <h3 class="signature " id="layer_folders-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>layers</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>layer_folders</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span>&gt;</tt><sup>?</sup> 
   
 
   
@@ -2165,7 +2158,7 @@ included when exporting an animation from the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The layers method retrieves the non-visible layers associated with a page.</p>
+<p>The <span class='object_link'><a href="#layer_folders-instance_method" title="Sketchup::Page#layer_folders (method)">#layer_folders</a></span> method retrieves the hidden layer folders associated with a page.</p>
 
 
   </div>
@@ -2178,10 +2171,8 @@ included when exporting an animation from the model.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
-<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span>
-<span class='comment'># layers now contains the layers in the model that are
-</span><span class='comment'># set to non-visible on the page</span></code></pre>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_folders'>folders</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_layer_folders'>layer_folders</span></code></pre>
     
   </div>
 
@@ -2191,13 +2182,95 @@ included when exporting an animation from the model.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span>&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns <code>nil</code> if <span class='object_link'><a href="#use_hidden%3F-instance_method" title="Sketchup::Page#use_hidden? (method)">#use_hidden?</a></span> returns <code>false</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
       
       
       
         
         <div class='inline'>
-<p>layers - an array with zero or more Layers objects.</p>
+<p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="layers-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>layers</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span>&gt;</tt><sup>?</sup> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#layers-instance_method" title="Sketchup::Page#layers (method)">#layers</a></span> method retrieves layers that don&#39;t use their default visibility on this page.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layers'>layers</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Test layer visibility</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_visible_in_scene?'>visible_in_scene?</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='comma'>,</span> <span class='id identifier rubyid_scene'>scene</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_scene'>scene</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span> <span class='op'>==</span> <span class='id identifier rubyid_hidden_by_default?'>hidden_by_default?</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_hidden_by_default?'>hidden_by_default?</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_layer'>layer</span><span class='period'>.</span><span class='id identifier rubyid_page_behavior'>page_behavior</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#LAYER_HIDDEN_BY_DEFAULT-constant" title="LAYER_HIDDEN_BY_DEFAULT (constant)">LAYER_HIDDEN_BY_DEFAULT</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#LAYER_HIDDEN_BY_DEFAULT-constant" title="LAYER_HIDDEN_BY_DEFAULT (constant)">LAYER_HIDDEN_BY_DEFAULT</a></span></span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span>&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns <code>nil</code> if <span class='object_link'><a href="#use_hidden%3F-instance_method" title="Sketchup::Page#use_hidden? (method)">#use_hidden?</a></span> returns <code>false</code></p>
 </div>
       
     </li>
@@ -2407,8 +2480,7 @@ included when exporting an animation from the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The rendering_options method retrieves a RenderingOptions object for the
-page.</p>
+<p>The rendering_options method retrieves a RenderingOptions object for the page.</p>
 
 
   </div>
@@ -2477,10 +2549,7 @@ page.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">#set_drawingelement_visibility</a></span> method is used to change the
-visibility of a drawing element on a particular page. Only drawing elements
-on the root of the model, as well as nested instances of components,
-groups, and images are controlled by Page visibility.</p>
+<p>The <span class='object_link'><a href="#set_drawingelement_visibility-instance_method" title="Sketchup::Page#set_drawingelement_visibility (method)">#set_drawingelement_visibility</a></span> method is used to change the visibility of a drawing element on a particular page. Only drawing elements on the root of the model, as well as nested instances of components, groups, and images are controlled by Page visibility.</p>
 
 
   </div>
@@ -2564,7 +2633,11 @@ groups, and images are controlled by Page visibility.</p>
   <h3 class="signature " id="set_visibility-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>set_visibility</strong>(layer, visibility)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>set_visibility</strong>(layer, visible_for_page)  &#x21d2; <tt>Object</tt> </span>
+    
+      <span class="overload">#<strong>set_visibility</strong>(layer_folder, visible_for_page)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Page (class)">Sketchup::Page</a></span></tt> </span>
+    
   
 
   
@@ -2573,7 +2646,7 @@ groups, and images are controlled by Page visibility.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_visibility method sets the visibility for a layer on a page.</p>
+<p>The <span class='object_link'><a href="#set_visibility-instance_method" title="Sketchup::Page#set_visibility (method)">#set_visibility</a></span> method sets the visibility for a layer or layer folder on a page.</p>
 
 
   </div>
@@ -2586,18 +2659,21 @@ groups, and images are controlled by Page visibility.</p>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
-<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_visibility'>visibility</span> <span class='op'>=</span> <span class='kw'>true</span>
-<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_set_visibility'>set_visibility</span> <span class='id identifier rubyid_layer'>layer</span><span class='comma'>,</span> <span class='id identifier rubyid_visibility'>visibility</span></code></pre>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_layer'>layer</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_layers'>layers</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Layer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_set_visibility'>set_visibility</span><span class='lparen'>(</span><span class='id identifier rubyid_layer'>layer</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set_visibility</strong>(layer, visible_for_page)  &#x21d2; <tt>Object</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns page - the page whose visibility was set.</p>
-
 
   </div>
 </div>
@@ -2610,31 +2686,63 @@ groups, and images are controlled by Page visibility.</p>
         <span class='name'>layer</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The layer whose visibility you are setting.</p>
-</div>
       
     </li>
   
     <li>
       
-        <span class='name'>visibility</span>
+        <span class='name'>visible_for_page</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>true if you want items on the layer to be visible, false if you do not want
-items visible.</p>
+    </li>
+  
+</ul>
+
+
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set_visibility</strong>(layer_folder, visible_for_page)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Page (class)">Sketchup::Page</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the page whose visibility was set.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>layer_folder</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>visible_for_page</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
       
     </li>
   
@@ -2646,13 +2754,29 @@ items visible.</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::Page (class)">Sketchup::Page</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the page whose visibility was set.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
       
       
       
         
         <div class='inline'>
-<p>page - the page whose visibility was set.</p>
+<p>SketchUp 20201.0</p>
 </div>
       
     </li>
@@ -2660,6 +2784,9 @@ items visible.</p>
 </ul>
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2724,8 +2851,7 @@ items visible.</p>
       
         
         <div class='inline'>
-<p>shadowinfo - a ShadowInfo object if successful, nil if the page does not
-save shadow information</p>
+<p>shadowinfo - a ShadowInfo object if successful, nil if the page does not save shadow information</p>
 </div>
       
     </li>
@@ -2833,9 +2959,7 @@ save shadow information</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Get the amount of time that it takes to transition to this page during a
-slideshow or animation export.  If this value is -1, it means to use the
-default transition time.</p>
+<p>Get the amount of time that it takes to transition to this page during a slideshow or animation export.  If this value is -1, it means to use the default transition time.</p>
 
 
   </div>
@@ -2865,8 +2989,7 @@ default transition time.</p>
       
         
         <div class='inline'>
-<p>transitiontime - the amount of time it takes to transition to this page
-during a slideshow or animation export.</p>
+<p>transitiontime - the amount of time it takes to transition to this page during a slideshow or animation export.</p>
 </div>
       
     </li>
@@ -2998,7 +3121,7 @@ during a slideshow or animation export.</p>
   <h3 class="signature " id="update-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>update</strong>(flags)  &#x21d2; <tt>Object</tt> 
+    #<strong>update</strong>(flags)  &#x21d2; <tt>Boolean</tt> 
   
 
   
@@ -3007,26 +3130,19 @@ during a slideshow or animation export.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The update method performs an update on the page properties based on the
-current view that the user has. Which parts of the Page get updated are
-controlled via an integer whose bits represent which parts to update. You
-can determine the integer you need to pass by adding these numbers
-together:</p>
+<p>The <span class='object_link'><a href="#update-instance_method" title="Sketchup::Page#update (method)">#update</a></span> method performs an update on the page properties based on the current view that the user has. What properties of the Page get updated are controlled via an integer whose bits corresponds to different properties. These flags can be used individually or combined using bitwise OR.</p>
 
-<pre class="code"><code class="">- 1 - Camera Location,
-- 2 - Drawing Style,
-- 4 - Shadow Settings,
-- 8 - Axes Location,
-- 16 - Hidden Geometry &amp; Objects,
-- 32 - Visible Layers,
-- 64 - Active Section Planes,
-- 128 - Hidden Geometry,
-- 256 - Hidden Objects
-</code></pre>
-
-<p>The bit code values are added together to provide the flags value.  For
-example, to update the Camera Location, Axes Location, and Active Section
-Planes properties, the flag would be 73 (1 + 8 + 64).</p>
+<pre class="code"><code class=""><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_CAMERA-constant" title="PAGE_USE_CAMERA (constant)">PAGE_USE_CAMERA</a></span></span>            <span class='comment'># Camera Location
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_RENDERING_OPTIONS-constant" title="PAGE_USE_RENDERING_OPTIONS (constant)">PAGE_USE_RENDERING_OPTIONS</a></span></span> <span class='comment'># Drawing Style
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_SHADOWINFO-constant" title="PAGE_USE_SHADOWINFO (constant)">PAGE_USE_SHADOWINFO</a></span></span>        <span class='comment'># Shadow Setting
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_SKETCHCS-constant" title="PAGE_USE_SKETCHCS (constant)">PAGE_USE_SKETCHCS</a></span></span>          <span class='comment'># Axes Location
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_HIDDEN-constant" title="PAGE_USE_HIDDEN (constant)">PAGE_USE_HIDDEN</a></span></span>            <span class='comment'># Hidden Geometry &amp; Objects (Up 2019 and older)
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_HIDDEN_GEOMETRY-constant" title="PAGE_USE_HIDDEN_GEOMETRY (constant)">PAGE_USE_HIDDEN_GEOMETRY</a></span></span>   <span class='comment'># Hidden Geometry (SU 2020 and later)
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_HIDDEN_OBJECTS-constant" title="PAGE_USE_HIDDEN_OBJECTS (constant)">PAGE_USE_HIDDEN_OBJECTS</a></span></span>    <span class='comment'># Hidden Objects (SU 2020 and later)
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_LAYER_VISIBILITY-constant" title="PAGE_USE_LAYER_VISIBILITY (constant)">PAGE_USE_LAYER_VISIBILITY</a></span></span>  <span class='comment'># Visible Layers
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_SECTION_PLANES-constant" title="PAGE_USE_SECTION_PLANES (constant)">PAGE_USE_SECTION_PLANES</a></span></span>    <span class='comment'># Active Section Planes
+</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_ALL-constant" title="PAGE_USE_ALL (constant)">PAGE_USE_ALL</a></span></span>               <span class='comment'># All possible scene properties
+</span></code></pre>
 
 
   </div>
@@ -3042,17 +3158,15 @@ Planes properties, the flag would be 73 (1 + 8 + 64).</p>
 <span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span>
 
-<span class='comment'># Updates Camera Location (+1), Shadow Settings(+4),
-</span><span class='comment'># and Visible Layers (+32).
-</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='int'>37</span><span class='rparen'>)</span></code></pre>
+<span class='comment'># Updates Camera Location, Shadow Settings and Visible Layers.
+</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_CAMERA-constant" title="PAGE_USE_CAMERA (constant)">PAGE_USE_CAMERA</a></span></span> <span class='op'>|</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_SHADOWINFO-constant" title="PAGE_USE_SHADOWINFO (constant)">PAGE_USE_SHADOWINFO</a></span></span> <span class='op'>|</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#PAGE_USE_LAYER_VISIBILITY-constant" title="PAGE_USE_LAYER_VISIBILITY (constant)">PAGE_USE_LAYER_VISIBILITY</a></span></span>
+<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if successful, false if unsuccessful.</p>
-
 
   </div>
 </div>
@@ -3065,13 +3179,13 @@ Planes properties, the flag would be 73 (1 + 8 + 64).</p>
         <span class='name'>flags</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>Integer representing the sum of the bit flags.</p>
+<p>The bitwise OR of the bit flags.</p>
 </div>
       
     </li>
@@ -3084,14 +3198,9 @@ Planes properties, the flag would be 73 (1 + 8 + 64).</p>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>status - true if successful, false if unsuccessful</p>
-</div>
       
     </li>
   
@@ -3154,8 +3263,7 @@ Planes properties, the flag would be 73 (1 + 8 + 64).</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -3175,8 +3283,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -3195,8 +3302,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -3238,8 +3344,7 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_axes? method determines whether you are storing the axes property
-with the page.</p>
+<p>The use_axes? method determines whether you are storing the axes property with the page.</p>
 
 
   </div>
@@ -3269,8 +3374,7 @@ with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -3330,8 +3434,7 @@ you are not storing this property with the page.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -3351,8 +3454,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -3371,8 +3473,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -3414,8 +3515,7 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_camera? method determines whether you are storing the camera
-property with the page.</p>
+<p>The use_camera? method determines whether you are storing the camera property with the page.</p>
 
 
   </div>
@@ -3445,8 +3545,7 @@ property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -3485,8 +3584,7 @@ you are not storing this property with the page.</p>
 </h3><div class="docstring">
   <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span> and
-<span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span> in SketchUp 2020.1.</p>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry=-instance_method" title="Sketchup::Page#use_hidden_geometry= (method)">#use_hidden_geometry=</a></span> and <span class='object_link'><a href="#use_hidden_objects=-instance_method" title="Sketchup::Page#use_hidden_objects= (method)">#use_hidden_objects=</a></span> in SketchUp 2020.1.</p>
 </div></div>
 
 <p>The use_hidden= method sets the page&#39;s hidden property.</p>
@@ -3510,8 +3608,7 @@ you are not storing this property with the page.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -3531,8 +3628,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -3551,8 +3647,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -3603,12 +3698,10 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span> and
-<span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span> in SketchUp 2020.1.</p>
+<p>The functionality is replaced by <span class='object_link'><a href="#use_hidden_geometry%3F-instance_method" title="Sketchup::Page#use_hidden_geometry? (method)">#use_hidden_geometry?</a></span> and <span class='object_link'><a href="#use_hidden_objects%3F-instance_method" title="Sketchup::Page#use_hidden_objects? (method)">#use_hidden_objects?</a></span> in SketchUp 2020.1.</p>
 </div></div>
 
-<p>The use_hidden? method determines whether you are storing the hidden
-property with the page.</p>
+<p>The use_hidden? method determines whether you are storing the hidden property with the page.</p>
 
 
   </div>
@@ -3638,8 +3731,7 @@ property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -3718,8 +3810,7 @@ you are not storing this property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>`true` if you want your page to save this property, `false` if you do not
-want your page to save this property.</p>
+<p>`true` if you want your page to save this property, `false` if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -3844,8 +3935,7 @@ want your page to save this property.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -3865,8 +3955,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -3885,8 +3974,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -3928,8 +4016,7 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_hidden_layers? method determines whether you are storing the hidden
-layers property with the page.</p>
+<p>The use_hidden_layers? method determines whether you are storing the hidden layers property with the page.</p>
 
 
   </div>
@@ -3959,8 +4046,7 @@ layers property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -4030,8 +4116,7 @@ you are not storing this property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>`true` if you want your page to save this property, `false` if you do not
-want your page to save this property.</p>
+<p>`true` if you want your page to save this property, `false` if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -4135,8 +4220,7 @@ want your page to save this property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_rendering_optoins= method sets the page&#39;s display settings
-property.</p>
+<p>The use_rendering_optoins= method sets the page&#39;s display settings property.</p>
 
 
   </div>
@@ -4157,8 +4241,7 @@ property.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -4178,8 +4261,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -4198,8 +4280,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -4241,8 +4322,7 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_rendering_options? method determines whether you are storing the
-rendering options property with the page.</p>
+<p>The use_rendering_options? method determines whether you are storing the rendering options property with the page.</p>
 
 
   </div>
@@ -4272,8 +4352,7 @@ rendering options property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -4333,8 +4412,7 @@ you are not storing this property with the page.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -4354,8 +4432,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -4374,8 +4451,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -4417,8 +4493,7 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_section_planes? method determines whether you are storing the
-section planes property with the page.</p>
+<p>The use_section_planes? method determines whether you are storing the section planes property with the page.</p>
 
 
   </div>
@@ -4448,8 +4523,7 @@ section planes property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -4509,8 +4583,7 @@ you are not storing this property with the page.</p>
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if you are saving the property, false if you are not
-saving the property.</p>
+<p>Returns status - true if you are saving the property, false if you are not saving the property.</p>
 
 
   </div>
@@ -4530,8 +4603,7 @@ saving the property.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want your page to save this property, false if you do not want
-your page to save this property.</p>
+<p>true if you want your page to save this property, false if you do not want your page to save this property.</p>
 </div>
       
     </li>
@@ -4550,8 +4622,7 @@ your page to save this property.</p>
       
         
         <div class='inline'>
-<p>status - true if you are saving the property, false if you are not saving
-the property.</p>
+<p>status - true if you are saving the property, false if you are not saving the property.</p>
 </div>
       
     </li>
@@ -4593,8 +4664,7 @@ the property.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The use_shadow_info? method determines whether you are storing the shadow
-info property with the page.</p>
+<p>The use_shadow_info? method determines whether you are storing the shadow info property with the page.</p>
 
 
   </div>
@@ -4624,8 +4694,7 @@ info property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>
@@ -4797,8 +4866,7 @@ you are not storing this property with the page.</p>
       
         &mdash;
         <div class='inline'>
-<p>status - true if you are storing the this property with the page, false if
-you are not storing this property with the page.</p>
+<p>status - true if you are storing the this property with the page, false if you are not storing this property with the page.</p>
 </div>
       
     </li>

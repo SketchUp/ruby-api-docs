@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,15 +186,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Importer interface lets you build your own importers for SketchUp. To
-use this, you create a subclass of Importer and implement all of the
-methods described below. This will make your importer appear in the list
-that users see under File &gt; Import, and you can use Ruby to do all of
-the work of opening the file and creating whatever you need inside
-SketchUp.</p>
+<p>The Importer interface lets you build your own importers for SketchUp. To use this, you create a subclass of Importer and implement all of the methods described below. This will make your importer appear in the list that users see under File &gt; Import, and you can use Ruby to do all of the work of opening the file and creating whatever you need inside SketchUp.</p>
 
-<p>Here is an example of a complete script that imports a .txt file and
-displays its contents in a messagebox.</p>
+<p>Here is an example of a complete script that imports a .txt file and displays its contents in a messagebox.</p>
 
 
   </div>
@@ -245,8 +241,9 @@ displays its contents in a messagebox.</p>
 </span>  <span class='comment'># processing the file.
 </span>  <span class='kw'>def</span> <span class='id identifier rubyid_load_file'>load_file</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
     <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='rparen'>)</span>
-    <span class='kw'>return</span> <span class='int'>0</span> <span class='comment'># 0 is the code for a successful import
-</span>  <span class='kw'>end</span>
+
+    <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>Importer</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#ImportSuccess-constant" title="Sketchup::Importer::ImportSuccess (constant)">ImportSuccess</a></span></span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span>
 
 <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_importer'><span class='object_link'><a href="../Sketchup.html#register_importer-class_method" title="Sketchup.register_importer (method)">register_importer</a></span></span><span class='lparen'>(</span><span class='const'>TextImporter</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
@@ -288,9 +285,6 @@ displays its contents in a messagebox.</p>
         </dt>
       
         <dt id="ImportCanceled-constant" class="">Sketchup::Importer::ImportCanceled
-        </dt>
-      
-        <dt id="ImporterNotFound-constant" class="">Sketchup::Importer::ImporterNotFound
         </dt>
       
         <dt id="ImportFileNotFound-constant" class="">Sketchup::Importer::ImportFileNotFound
@@ -335,8 +329,7 @@ displays its contents in a messagebox.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is called by SketchUp to determine the description that appears
-in the File &gt; Import dialog&#39;s pulldown list of valid importers.</p>
+<p>This method is called by SketchUp to determine the description that appears in the File &gt; Import dialog&#39;s pulldown list of valid importers.</p>
 </div></span>
   
 </li>
@@ -360,8 +353,7 @@ in the File &gt; Import dialog&#39;s pulldown list of valid importers.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is called by SketchUp when the user clicks on the “Options”
-button inside the File &gt; Import dialog.</p>
+<p>This method is called by SketchUp when the user clicks on the “Options” button inside the File &gt; Import dialog.</p>
 </div></span>
   
 </li>
@@ -385,8 +377,7 @@ button inside the File &gt; Import dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is called by SketchUp to determine a single file extension is
-associated with your importer.</p>
+<p>This method is called by SketchUp to determine a single file extension is associated with your importer.</p>
 </div></span>
   
 </li>
@@ -410,8 +401,7 @@ associated with your importer.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is called by SketchUp to determine a unique identifier for your
-importer, typically something like “com.sketchup.importers.dxf”.</p>
+<p>This method is called by SketchUp to determine a unique identifier for your importer, typically something like “com.sketchup.importers.dxf”.</p>
 </div></span>
   
 </li>
@@ -435,8 +425,7 @@ importer, typically something like “com.sketchup.importers.dxf”.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is called by SketchUp after the user has selected a file to
-import.</p>
+<p>This method is called by SketchUp after the user has selected a file to import.</p>
 </div></span>
   
 </li>
@@ -460,9 +449,7 @@ import.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is called by SketchUp to determine if the “Options” button
-inside the File &gt; Import dialog should be enabled while your importer is
-selected.</p>
+<p>This method is called by SketchUp to determine if the “Options” button inside the File &gt; Import dialog should be enabled while your importer is selected.</p>
 </div></span>
   
 </li>
@@ -491,12 +478,9 @@ selected.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is called by SketchUp to determine the description that appears
-in the File &gt; Import dialog&#39;s pulldown list of valid importers.</p>
+<p>This method is called by SketchUp to determine the description that appears in the File &gt; Import dialog&#39;s pulldown list of valid importers.</p>
 
-<p>Though it is common for the description to include the file extension
-supported by the importer (such as “Text Importer (.txt)”), the actual
-extension is defined in the file_extension method.</p>
+<p>Though it is common for the description to include the file extension supported by the importer (such as “Text Importer (.txt)”), the actual extension is defined in the file_extension method.</p>
 
 
   </div>
@@ -564,12 +548,9 @@ extension is defined in the file_extension method.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is called by SketchUp when the user clicks on the “Options”
-button inside the File &gt; Import dialog. You can use it to gather and
-store settings for your importer.</p>
+<p>This method is called by SketchUp when the user clicks on the “Options” button inside the File &gt; Import dialog. You can use it to gather and store settings for your importer.</p>
 
-<p>Only applicable if the importer supports options, meaning its
-supports_options method returns true.</p>
+<p>Only applicable if the importer supports options, meaning its supports_options method returns true.</p>
 
 
   </div>
@@ -637,9 +618,7 @@ supports_options method returns true.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is called by SketchUp to determine a single file extension is
-associated with your importer. Only files that match this extension will be
-shown to the user as they browse their harddrive for things to import.</p>
+<p>This method is called by SketchUp to determine a single file extension is associated with your importer. Only files that match this extension will be shown to the user as they browse their harddrive for things to import.</p>
 
 <p>Ruby importers are only allowed to support a single extension.</p>
 
@@ -709,8 +688,7 @@ shown to the user as they browse their harddrive for things to import.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is called by SketchUp to determine a unique identifier for your
-importer, typically something like “com.sketchup.importers.dxf”.</p>
+<p>This method is called by SketchUp to determine a unique identifier for your importer, typically something like “com.sketchup.importers.dxf”.</p>
 
 
   </div>
@@ -778,19 +756,14 @@ importer, typically something like “com.sketchup.importers.dxf”.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is called by SketchUp after the user has selected a file to
-import. This is where you do the real work by opening the file via
-Ruby&#39;s File object and processing it in whatever way you need.</p>
+<p>This method is called by SketchUp after the user has selected a file to import. This is where you do the real work by opening the file via Ruby&#39;s File object and processing it in whatever way you need.</p>
 
-<p>You must return an integer success code to SketchUp when you are done.
-These are the codes that SketchUp understands and what will happen when
-SketchUp receives each key.</p>
+<p>You must return an integer success code to SketchUp when you are done. These are the codes that SketchUp understands:</p>
 
-<pre class="code"><code class="">- 0 = Import Success (no additional dialog shown)
-- 1 = Import Failed (no additional dialog shown)
-- 2 = Import Cancelled by User (SketchUp will show a &quot;cancelled&quot; dialog)
-- 4 = Import File not Found (SketchUp will show a &quot;not found&quot; dialog)
-- 5 = SketchUp version not supported (no additional dialog shown)
+<pre class="code"><code class="">- Sketchup::Importer::ImportSuccess
+- Sketchup::Importer::ImportFail
+- Sketchup::Importer::ImportCanceled - SketchUp will show a &quot;cancelled&quot; dialog
+- Sketchup::Importer::ImportFileNotFound - SketchUp will show a &quot;not found&quot; dialog
 </code></pre>
 
 
@@ -804,9 +777,10 @@ SketchUp receives each key.</p>
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_load_file'>load_file</span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='comma'>,</span> <span class='id identifier rubyid_status'>status</span><span class='rparen'>)</span>
   <span class='comment'># Here is where you would open the file and process it.
-</span>  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_file_path'>file_path</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='int'>0</span>   <span class='comment'># Success
-</span><span class='kw'>end</span></code></pre>
+</span>  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_file_path'>file_path</span>
+
+  <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Importer (class)">Importer</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#ImportSuccess-constant" title="Sketchup::Importer::ImportSuccess (constant)">ImportSuccess</a></span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -910,9 +884,7 @@ SketchUp receives each key.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>This method is called by SketchUp to determine if the “Options” button
-inside the File &gt; Import dialog should be enabled while your importer is
-selected.</p>
+<p>This method is called by SketchUp to determine if the “Options” button inside the File &gt; Import dialog should be enabled while your importer is selected.</p>
 
 
   </div>

@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -187,21 +189,13 @@
 <p>Please use <span class='object_link'><a href="HtmlDialog.html" title="UI::HtmlDialog (class)">HtmlDialog</a></span> that was introduced in SketchUp 2017.</p>
 </div></div>
 
-<p>The Ruby WebDialog class allows you to create and interact with DHTML
-dialog boxes from Ruby.</p>
+<p>The Ruby WebDialog class allows you to create and interact with DHTML dialog boxes from Ruby.</p>
 
-<p>If your goal is to simply display a website to your users, consider using
-UI.getURL, which will show them a web page in their default browser rather
-than inside a dialog in SketchUp.</p>
+<p>If your goal is to simply display a website to your users, consider using <span class='object_link'><a href="../UI.html#openURL-class_method" title="UI.openURL (method)">openURL</a></span>, which will show them a web page in their default browser rather than inside a dialog in SketchUp.</p>
 
-<p>See this blog post for a detailed, step-by-step example: <a
-href="http://sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html">sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html</a></p>
+<p>See this blog post for a detailed, step-by-step example: <a href="http://sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html">sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html</a></p>
 
-<p>Under Windows the IE render mode is different in webdialogs than from what
-you see in the normal browser. It will by default pick an older render mode
-and different versions of SketchUp will use different modes. In order to
-reliably control the render mode of your webdialogs under Windows you need
-to insert a special META compatibility tag:</p>
+<p>Under Windows the IE render mode is different in webdialogs than from what you see in the normal browser. It will by default pick an older render mode and different versions of SketchUp will use different modes. In order to reliably control the render mode of your webdialogs under Windows you need to insert a special META compatibility tag:</p>
 
 <pre class="code ruby"><code class="ruby">// To always force the latest version available:
 &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;/&gt;
@@ -210,15 +204,9 @@ to insert a special META compatibility tag:</p>
 &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=8&quot;/&gt;
 </code></pre>
 
-<p>Starting with SketchUp 2013, you can embed a special HTML link in your
-dialog that will launch Extension Warehouse and show a specified
-extension&#39;s page. This can be useful if your extension has a dependency
-on another one and you would like to direct the user to install that
-extension.</p>
+<p>Starting with SketchUp 2013, you can embed a special HTML link in your dialog that will launch Extension Warehouse and show a specified extension&#39;s page. This can be useful if your extension has a dependency on another one and you would like to direct the user to install that extension.</p>
 
-<p>For example, to launch an extension&#39;s page whose URL is: <a
-href="http://extensions.sketchup.com/en/content/advanced-camera-tools">extensions.sketchup.com/en/content/advanced-camera-tools</a>
-The link would be:</p>
+<p>For example, to launch an extension&#39;s page whose URL is: <a href="http://extensions.sketchup.com/en/content/advanced-camera-tools">extensions.sketchup.com/en/content/advanced-camera-tools</a> The link would be:</p>
 
 
   </div>
@@ -287,8 +275,7 @@ The link would be:</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_action_callback method establishes a Ruby callback method that your
-web dialog can call to perform some function.</p>
+<p>The add_action_callback method establishes a Ruby callback method that your web dialog can call to perform some function.</p>
 </div></span>
   
 </li>
@@ -312,8 +299,7 @@ web dialog can call to perform some function.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>By default, actions are only allowed on the host where the webdialog is
-displayed.</p>
+<p>By default, actions are only allowed on the host where the webdialog is displayed.</p>
 </div></span>
   
 </li>
@@ -337,8 +323,7 @@ displayed.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The bring_to_front method is used to bring the webdialog to the front of
-all the windows on the desktop.</p>
+<p>The bring_to_front method is used to bring the webdialog to the front of all the windows on the desktop.</p>
 </div></span>
   
 </li>
@@ -386,8 +371,7 @@ all the windows on the desktop.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The execute_script method is used to execute a JavaScript string on the web
-dialog.</p>
+<p>The execute_script method is used to execute a JavaScript string on the web dialog.</p>
 </div></span>
   
 </li>
@@ -411,8 +395,7 @@ dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_default_dialog_color method is used to get the default dialog color
-for the web dialog.</p>
+<p>The get_default_dialog_color method is used to get the default dialog color for the web dialog.</p>
 </div></span>
   
 </li>
@@ -436,8 +419,7 @@ for the web dialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The get_element_value method is used to get a value, with a given
-element_id, from the web dialog&#39;s DOM.</p>
+<p>The get_element_value method is used to get a value, with a given element_id, from the web dialog&#39;s DOM.</p>
 </div></span>
   
 </li>
@@ -487,8 +469,7 @@ element_id, from the web dialog&#39;s DOM.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The max_height method is used to get the maximum height that the user is
-allowed to resize the dialog to.</p>
+<p>The max_height method is used to get the maximum height that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -512,8 +493,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The max_height= method is used to set the maximum height that the user is
-allowed to resize the dialog to.</p>
+<p>The max_height= method is used to set the maximum height that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -537,8 +517,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The max_width method is used to get the maximum width that the user is
-allowed to resize the dialog to.</p>
+<p>The max_width method is used to get the maximum width that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -562,8 +541,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The max_width= method is used to set the maximum width that the user is
-allowed to resize the dialog to.</p>
+<p>The max_width= method is used to set the maximum width that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -587,8 +565,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The min_width method is used to get the minimum height that the user is
-allowed to resize the dialog to.</p>
+<p>The min_width method is used to get the minimum height that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -612,8 +589,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The min_height= method is used to set the minimum height that the user is
-allowed to resize the dialog to.</p>
+<p>The min_height= method is used to set the minimum height that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -637,8 +613,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The min_width method is used to get the minimum width that the user is
-allowed to resize the dialog to.</p>
+<p>The min_width method is used to get the minimum width that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -662,8 +637,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The min_width= method is used to set the minimum width that the user is
-allowed to resize the dialog to.</p>
+<p>The min_width= method is used to set the minimum width that the user is allowed to resize the dialog to.</p>
 </div></span>
   
 </li>
@@ -687,8 +661,7 @@ allowed to resize the dialog to.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The navigation_buttons_enabled= method is used to set whether the home,
-next, and back buttons are visible at the top of the WebDialog on the mac.</p>
+<p>The navigation_buttons_enabled= method is used to set whether the home, next, and back buttons are visible at the top of the WebDialog on the mac.</p>
 </div></span>
   
 </li>
@@ -712,8 +685,7 @@ next, and back buttons are visible at the top of the WebDialog on the mac.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The navigation_buttons_enabled? method is used to get whether the home,
-next, and back buttons are visible at the top of the WebDialog on the mac.</p>
+<p>The navigation_buttons_enabled? method is used to get whether the home, next, and back buttons are visible at the top of the WebDialog on the mac.</p>
 </div></span>
   
 </li>
@@ -737,8 +709,7 @@ next, and back buttons are visible at the top of the WebDialog on the mac.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The post_url method is used to send the data to a url using the HTTP POST
-method.</p>
+<p>The post_url method is used to send the data to a url using the HTTP POST method.</p>
 </div></span>
   
 </li>
@@ -762,9 +733,7 @@ method.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The screen_scale_factor method returns the ratio of screen pixels to
-logical window units (called &#39;points&#39; on Mac) for the screen this
-WebDialog is currently in.</p>
+<p>The screen_scale_factor method returns the ratio of screen pixels to logical window units (called &#39;points&#39; on Mac) for the screen this WebDialog is currently in.</p>
 </div></span>
   
 </li>
@@ -788,8 +757,7 @@ WebDialog is currently in.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_background_color method is used to set the background color for the
-webdialog.</p>
+<p>The set_background_color method is used to set the background color for the webdialog.</p>
 </div></span>
   
 </li>
@@ -813,8 +781,7 @@ webdialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The #<span class='object_link'><a href="#set_file-instance_method" title="UI::WebDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in
-the webdialog.</p>
+<p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::WebDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in the webdialog.</p>
 </div></span>
   
 </li>
@@ -838,9 +805,7 @@ the webdialog.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_full_security method is used to place the WebDialog into a higher
-security mode where remote URLs and plugins (such as Flash) are not allowed
-inside the browser.</p>
+<p>The set_full_security method is used to place the WebDialog into a higher security mode where remote URLs and plugins (such as Flash) are not allowed inside the browser.</p>
 </div></span>
   
 </li>
@@ -864,8 +829,7 @@ inside the browser.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_html method is used to load a webdialog with a string of provided
-HTML.</p>
+<p>The set_html method is used to load a webdialog with a string of provided HTML.</p>
 </div></span>
   
 </li>
@@ -889,9 +853,7 @@ HTML.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_on_close method is used to establish one or more activities to
-perform when the dialog closes (such as saving values stored in the
-dialog).</p>
+<p>The set_on_close method is used to establish one or more activities to perform when the dialog closes (such as saving values stored in the dialog).</p>
 </div></span>
   
 </li>
@@ -915,8 +877,7 @@ dialog).</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_position method is used to set the position of the webdialog
-relative to the screen, in pixels.</p>
+<p>The set_position method is used to set the position of the webdialog relative to the screen, in pixels.</p>
 </div></span>
   
 </li>
@@ -964,8 +925,7 @@ relative to the screen, in pixels.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The set_url method is used to load a webdialog with the content at a
-specific URL.</p>
+<p>The set_url method is used to load a webdialog with the content at a specific URL.</p>
 </div></span>
   
 </li>
@@ -1061,8 +1021,7 @@ specific URL.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The write_image method is used to grab a portion of the web dialog screen
-and save the image to the given file path.</p>
+<p>The write_image method is used to grab a portion of the web dialog screen and save the image to the given file path.</p>
 </div></span>
   
 </li>
@@ -1095,18 +1054,14 @@ and save the image to the given file path.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SU2017 the position and size of the dialog is DPI aware - it will
-scale to the DPI of the monitor automatically. Specify units as they would
-be on a traditional low-DPI monitor.</p>
+<p>Since SU2017 the position and size of the dialog is DPI aware - it will scale to the DPI of the monitor automatically. Specify units as they would be on a traditional low-DPI monitor.</p>
 </div>
   </div>
 
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The browser which is embedded inside the dialog depends on the user&#39;s
-OS. On Mac, Safari is embedded, while on the PC whatever version of
-Internet Explorer is installed will be embedded.</p>
+<p>The browser which is embedded inside the dialog depends on the user&#39;s OS. On Mac, Safari is embedded, while on the PC whatever version of Internet Explorer is installed will be embedded.</p>
 </div>
   </div>
 
@@ -1176,8 +1131,7 @@ Internet Explorer is installed will be embedded.</p>
       
         &mdash;
         <div class='inline'>
-<p>true if you want to allow scrollbars, false if you do not want to allow
-scrollbars.</p>
+<p>true if you want to allow scrollbars, false if you do not want to allow scrollbars.</p>
 </div>
       
     </li>
@@ -1195,9 +1149,7 @@ scrollbars.</p>
       
         &mdash;
         <div class='inline'>
-<p>The registry entry where the location and size of the dialog will be saved.
-If preferences_key is not included, the location and size will not be
-stored.</p>
+<p>The registry entry where the location and size of the dialog will be saved. If preferences_key is not included, the location and size will not be stored.</p>
 </div>
       
     </li>
@@ -1559,18 +1511,11 @@ stored.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The add_action_callback method establishes a Ruby callback method that your
-web dialog can call to perform some function.</p>
+<p>The add_action_callback method establishes a Ruby callback method that your web dialog can call to perform some function.</p>
 
-<p>Use the skp:callback_method_name to invoke the callback method from your
-webdialog. Your JavaScript in the webdialog will invoke the callback method
-with a string representing arguments to the callback method.</p>
+<p>Use the skp:callback_method_name to invoke the callback method from your webdialog. Your JavaScript in the webdialog will invoke the callback method with a string representing arguments to the callback method.</p>
 
-<p>Note that you&#39;re sending data down to Ruby as a single string
-that&#39;s passed via the window.location bar. In Internet Explorer on PC,
-there is a length limit of 2038 characters for this bar, so if you&#39;re
-needing to pass large data down you might consider using get_element_value
-to pull in a longer string from a hidden input field in the HTML.</p>
+<p>Note that you&#39;re sending data down to Ruby as a single string that&#39;s passed via the window.location bar. In Internet Explorer on PC, there is a length limit of 2038 characters for this bar, so if you&#39;re needing to pass large data down you might consider using get_element_value to pull in a longer string from a hidden input field in the HTML.</p>
 
 
   </div>
@@ -1664,8 +1609,7 @@ to pull in a longer string from a hidden input field in the HTML.</p>
       
         &mdash;
         <div class='inline'>
-<p>Any parameters passed to the dialog from HTML. This is passed as a single
-string.</p>
+<p>Any parameters passed to the dialog from HTML. This is passed as a single string.</p>
 </div>
       
     </li>
@@ -1725,11 +1669,7 @@ string.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>By default, actions are only allowed on the host where the webdialog is
-displayed. The allow_actions_from_host method is used to selectively allow
-actions to take place on a host remote from the host where the webdialog
-exists. If the webdialog is local, no remote host is allowed unless you use
-this method.</p>
+<p>By default, actions are only allowed on the host where the webdialog is displayed. The allow_actions_from_host method is used to selectively allow actions to take place on a host remote from the host where the webdialog exists. If the webdialog is local, no remote host is allowed unless you use this method.</p>
 
 
   </div>
@@ -1821,9 +1761,7 @@ this method.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The bring_to_front method is used to bring the webdialog to the front of
-all the windows on the desktop. See show_modal for how to ensure that your
-WedDialogs are on top.</p>
+<p>The bring_to_front method is used to bring the webdialog to the front of all the windows on the desktop. See show_modal for how to ensure that your WedDialogs are on top.</p>
 
 
   </div>
@@ -1945,8 +1883,7 @@ WedDialogs are on top.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The execute_script method is used to execute a JavaScript string on the web
-dialog.</p>
+<p>The execute_script method is used to execute a JavaScript string on the web dialog.</p>
 
 
   </div>
@@ -2039,8 +1976,7 @@ dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_default_dialog_color method is used to get the default dialog color
-for the web dialog.</p>
+<p>The get_default_dialog_color method is used to get the default dialog color for the web dialog.</p>
 
 
   </div>
@@ -2107,8 +2043,7 @@ for the web dialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The get_element_value method is used to get a value, with a given
-element_id, from the web dialog&#39;s DOM.</p>
+<p>The get_element_value method is used to get a value, with a given element_id, from the web dialog&#39;s DOM.</p>
 
 
   </div>
@@ -2209,8 +2144,7 @@ dialog.get_element_value(&quot;myTextInput&quot;)
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The max_height method is used to get the maximum height that the user is
-allowed to resize the dialog to.</p>
+<p>The max_height method is used to get the maximum height that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2279,14 +2213,12 @@ allowed to resize the dialog to.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the height by the same factor as
-<span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the height by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The max_height= method is used to set the maximum height that the user is
-allowed to resize the dialog to.</p>
+<p>The max_height= method is used to set the maximum height that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2378,8 +2310,7 @@ allowed to resize the dialog to.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The max_width method is used to get the maximum width that the user is
-allowed to resize the dialog to.</p>
+<p>The max_width method is used to get the maximum width that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2448,14 +2379,12 @@ allowed to resize the dialog to.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the width by the same factor as
-<span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the width by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The max_width= method is used to set the maximum width that the user is
-allowed to resize the dialog to.</p>
+<p>The max_width= method is used to set the maximum width that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2547,8 +2476,7 @@ allowed to resize the dialog to.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The min_width method is used to get the minimum height that the user is
-allowed to resize the dialog to.</p>
+<p>The min_width method is used to get the minimum height that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2617,14 +2545,12 @@ allowed to resize the dialog to.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the height by the same factor as
-<span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the height by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The min_height= method is used to set the minimum height that the user is
-allowed to resize the dialog to.</p>
+<p>The min_height= method is used to set the minimum height that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2716,8 +2642,7 @@ allowed to resize the dialog to.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The min_width method is used to get the minimum width that the user is
-allowed to resize the dialog to.</p>
+<p>The min_width method is used to get the minimum width that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2786,14 +2711,12 @@ allowed to resize the dialog to.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the width by the same factor as
-<span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the width by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The min_width= method is used to set the minimum width that the user is
-allowed to resize the dialog to.</p>
+<p>The min_width= method is used to set the minimum width that the user is allowed to resize the dialog to.</p>
 
 
   </div>
@@ -2885,9 +2808,7 @@ allowed to resize the dialog to.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The navigation_buttons_enabled= method is used to set whether the home,
-next, and back buttons are visible at the top of the WebDialog on the mac.
-This method has no use on the PC, as these buttons are never displayed.</p>
+<p>The navigation_buttons_enabled= method is used to set whether the home, next, and back buttons are visible at the top of the WebDialog on the mac. This method has no use on the PC, as these buttons are never displayed.</p>
 
 
   </div>
@@ -2950,9 +2871,7 @@ This method has no use on the PC, as these buttons are never displayed.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The navigation_buttons_enabled? method is used to get whether the home,
-next, and back buttons are visible at the top of the WebDialog on the mac.
-This method has no use on the PC, as these buttons are never displayed.</p>
+<p>The navigation_buttons_enabled? method is used to get whether the home, next, and back buttons are visible at the top of the WebDialog on the mac. This method has no use on the PC, as these buttons are never displayed.</p>
 
 <p>On the mac, this defaults to true for new WebDialogs.</p>
 
@@ -3015,8 +2934,7 @@ This method has no use on the PC, as these buttons are never displayed.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The post_url method is used to send the data to a url using the HTTP POST
-method.</p>
+<p>The post_url method is used to send the data to a url using the HTTP POST method.</p>
 
 
   </div>
@@ -3124,10 +3042,7 @@ method.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The screen_scale_factor method returns the ratio of screen pixels to
-logical window units (called &#39;points&#39; on Mac) for the screen this
-WebDialog is currently in. On a retina screen Mac, this ratio will be
-greater than 1.0. On Windows this always return 1.0.</p>
+<p>The screen_scale_factor method returns the ratio of screen pixels to logical window units (called &#39;points&#39; on Mac) for the screen this WebDialog is currently in. On a retina screen Mac, this ratio will be greater than 1.0. On Windows this always return 1.0.</p>
 
 
   </div>
@@ -3193,8 +3108,7 @@ greater than 1.0. On Windows this always return 1.0.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_background_color method is used to set the background color for the
-webdialog.</p>
+<p>The set_background_color method is used to set the background color for the webdialog.</p>
 
 
   </div>
@@ -3286,8 +3200,7 @@ webdialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The #<span class='object_link'><a href="#set_file-instance_method" title="UI::WebDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in
-the webdialog.</p>
+<p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::WebDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in the webdialog.</p>
 
 
   </div>
@@ -3398,9 +3311,7 @@ the webdialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_full_security method is used to place the WebDialog into a higher
-security mode where remote URLs and plugins (such as Flash) are not allowed
-inside the browser. This defaults to false when a new WebDialog is created.</p>
+<p>The set_full_security method is used to place the WebDialog into a higher security mode where remote URLs and plugins (such as Flash) are not allowed inside the browser. This defaults to false when a new WebDialog is created.</p>
 
 
   </div>
@@ -3466,8 +3377,7 @@ inside the browser. This defaults to false when a new WebDialog is created.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_html method is used to load a webdialog with a string of provided
-HTML.</p>
+<p>The set_html method is used to load a webdialog with a string of provided HTML.</p>
 
 
   </div>
@@ -3560,9 +3470,7 @@ HTML.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_on_close method is used to establish one or more activities to
-perform when the dialog closes (such as saving values stored in the
-dialog).</p>
+<p>The set_on_close method is used to establish one or more activities to perform when the dialog closes (such as saving values stored in the dialog).</p>
 
 
   </div>
@@ -3644,14 +3552,12 @@ dialog).</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the x and y by the same factor
-as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the x and y by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
 
-<p>The set_position method is used to set the position of the webdialog
-relative to the screen, in pixels.</p>
+<p>The set_position method is used to set the position of the webdialog relative to the screen, in pixels.</p>
 
 
   </div>
@@ -3762,8 +3668,7 @@ relative to the screen, in pixels.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>As of SU2017 this will automatically scale the width and height by the same
-factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
+<p>As of SU2017 this will automatically scale the width and height by the same factor as <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>.</p>
 </div>
   </div>
 
@@ -3876,8 +3781,7 @@ factor as <span class='object_link'><a href="../UI.html#scale_factor-class_metho
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The set_url method is used to load a webdialog with the content at a
-specific URL. This method allows you to load web sites in a webdialog.</p>
+<p>The set_url method is used to load a webdialog with the content at a specific URL. This method allows you to load web sites in a webdialog.</p>
 
 
   </div>
@@ -4050,11 +3954,7 @@ specific URL. This method allows you to load web sites in a webdialog.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The show_modal method is used to display a modal dialog box. In SketchUp 6
-and 7, this behaves differently on Mac vs. PC. On the PC, it shows a truly
-modal dialog, meaning so long as the WebDialog is visible, no input can be
-performed elsewhere inside SketchUp. On the Mac, “modal” WebDialogs do not
-behave this way, but instead are “always on top” of other windows.</p>
+<p>The show_modal method is used to display a modal dialog box. In SketchUp 6 and 7, this behaves differently on Mac vs. PC. On the PC, it shows a truly modal dialog, meaning so long as the WebDialog is visible, no input can be performed elsewhere inside SketchUp. On the Mac, “modal” WebDialogs do not behave this way, but instead are “always on top” of other windows.</p>
 
 
   </div>
@@ -4196,8 +4096,7 @@ behave this way, but instead are “always on top” of other windows.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The write_image method is used to grab a portion of the web dialog screen
-and save the image to the given file path.</p>
+<p>The write_image method is used to grab a portion of the web dialog screen and save the image to the given file path.</p>
 
 
   </div>
@@ -4250,10 +4149,7 @@ and save the image to the given file path.</p>
       
         &mdash;
         <div class='inline'>
-<p>Specifies what method to use when saving the image. For JPG/JPEG images,
-this specifies the image quality and can range from 1 to 100. For PNG
-images this specifies the compression algorithm: &lt;4 (best speed), 4-8
-(default), or &gt;=9 (best compression).</p>
+<p>Specifies what method to use when saving the image. For JPG/JPEG images, this specifies the image quality and can range from 1 to 100. For PNG images this specifies the compression algorithm: &lt;4 (best speed), 4-8 (default), or &gt;=9 (best compression).</p>
 </div>
       
     </li>

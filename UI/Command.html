@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
 
     <script>
@@ -184,15 +186,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Command class is the preferred class for adding tools to the menus and
-Ruby toolbars. For example, you could add a menu item and pass it a code
-block directly, or you could first create a Command.</p>
+<p>The Command class is the preferred class for adding tools to the menus and Ruby toolbars. For example, you could add a menu item and pass it a code block directly, or you could first create a Command.</p>
 
-<p>Using Commands gives you greater control over how the item works in the UI,
-and it allows multiple spots in the UI to call the same code. For example,
-You might want a toolbar button and a context-click menu item to both point
-to the same command, and to control the tooltip and its “graying” from a
-single spot in your code.</p>
+<p>Using Commands gives you greater control over how the item works in the UI, and it allows multiple spots in the UI to call the same code. For example, You might want a toolbar button and a context-click menu item to both point to the same command, and to control the tooltip and its “graying” from a single spot in your code.</p>
 
 
   </div>
@@ -316,8 +312,7 @@ single spot in your code.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The large_icon method returns the icon file for the command&#39;s large
-icon.</p>
+<p>The large_icon method returns the icon file for the command&#39;s large icon.</p>
 </div></span>
   
 </li>
@@ -341,8 +336,7 @@ icon.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The large_icon= method is used to identify the icon file for the
-command&#39;s large icon.</p>
+<p>The large_icon= method is used to identify the icon file for the command&#39;s large icon.</p>
 </div></span>
   
 </li>
@@ -414,8 +408,7 @@ command&#39;s large icon.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="UI::Command#set_validation_proc (method)">#set_validation_proc</a></span> method allows you to change whether the command
-is enabled, checked, etc.</p>
+<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="UI::Command#set_validation_proc (method)">#set_validation_proc</a></span> method allows you to change whether the command is enabled, checked, etc.</p>
 </div></span>
   
 </li>
@@ -439,8 +432,7 @@ is enabled, checked, etc.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The small_icon method returns the icon file for the command&#39;s small
-icon.</p>
+<p>The small_icon method returns the icon file for the command&#39;s small icon.</p>
 </div></span>
   
 </li>
@@ -464,8 +456,7 @@ icon.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The small_icon= method is used to identify the icon file for the
-command&#39;s small icon.</p>
+<p>The small_icon= method is used to identify the icon file for the command&#39;s small icon.</p>
 </div></span>
   
 </li>
@@ -513,8 +504,7 @@ command&#39;s small icon.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The status_bar_text= method is used to set the status bar text for the
-command.</p>
+<p>The status_bar_text= method is used to set the status bar text for the command.</p>
 </div></span>
   
 </li>
@@ -594,8 +584,7 @@ command.</p>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2019 it was not possible to sub-class <span class='object_link'><a href="" title="UI::Command (class)">UI::Command</a></span> due
-to a bug in how SketchUp initialized the class.</p>
+<p>Prior to SketchUp 2019 it was not possible to sub-class <span class='object_link'><a href="" title="UI::Command (class)">UI::Command</a></span> due to a bug in how SketchUp initialized the class.</p>
 </div>
   </div>
 
@@ -643,8 +632,7 @@ to a bug in how SketchUp initialized the class.</p>
       
         &mdash;
         <div class='inline'>
-<p>The text that will appear for this command&#39;s menu item if it appears on
-a menu.</p>
+<p>The text that will appear for this command&#39;s menu item if it appears on a menu.</p>
 </div>
       
     </li>
@@ -663,8 +651,7 @@ a menu.</p>
       
         
         <div class='inline'>
-<p>Code that executes the command when the menu item or toolbar item is
-selected.</p>
+<p>Code that executes the command when the menu item or toolbar item is selected.</p>
 </div>
       
     </li>
@@ -730,8 +717,7 @@ selected.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The large_icon method returns the icon file for the command&#39;s large
-icon.</p>
+<p>The large_icon method returns the icon file for the command&#39;s large icon.</p>
 
 
   </div>
@@ -804,14 +790,9 @@ icon.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The large_icon= method is used to identify the icon file for the
-command&#39;s large icon. large icons should be 24x24 pixel images for best
-display quality.</p>
+<p>The large_icon= method is used to identify the icon file for the command&#39;s large icon. large icons should be 32x32 pixel images for best display quality.</p>
 
-<p>Since SketchUp 2016 it is possible to provide vector images for the
-cursors. SVG format for Windows and PDF format for OS X. Since the vector
-images scale for both small and large icon sizes, you may choose to use
-only one vector image for both variants.</p>
+<p>Since SketchUp 2016 it is possible to provide vector images for the command. SVG format for Windows and PDF format for OS X. Since the vector images scale for both small and large icon sizes, you may choose to use only one vector image for both variants.</p>
 
 
   </div>
@@ -1073,9 +1054,15 @@ only one vector image for both variants.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="UI::Command#set_validation_proc (method)">#set_validation_proc</a></span> method allows you to change whether the command
-is enabled, checked, etc. based on the user state. For example, you might
-want your command to be disabled unless the user has a current selection.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Avoid disabling an command as it often isn&#39;t obvious to the user why it is disabled. Prefer keeping the command enabled but show an error message if pressed when it cannot be used.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#set_validation_proc-instance_method" title="UI::Command#set_validation_proc (method)">#set_validation_proc</a></span> method allows you to change whether the command is enabled, checked, etc. For instance, the command toggling a dialog window may be displayed as checked while the dialog is open.</p>
 
 
   </div>
@@ -1140,8 +1127,7 @@ want your command to be disabled unless the user has a current selection.</p>
       
         &mdash;
         <div class='inline'>
-<p><code>MF_ENABLED</code>, <code>MF_DISABLED</code>, <code>MF_CHECKED</code>,
-<code>MF_UNCHECKED</code>, or <code>MF_GRAYED</code></p>
+<p><code>MF_ENABLED</code>, <code>MF_DISABLED</code>, <code>MF_CHECKED</code>, <code>MF_UNCHECKED</code>, or <code>MF_GRAYED</code></p>
 </div>
       
     </li>
@@ -1179,6 +1165,22 @@ want your command to be disabled unless the user has a current selection.</p>
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>On Mac the validation proc isn&#39;t called as often as it should. For instance a selection change doesn&#39;t trigger it.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -1196,8 +1198,7 @@ want your command to be disabled unless the user has a current selection.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The small_icon method returns the icon file for the command&#39;s small
-icon.</p>
+<p>The small_icon method returns the icon file for the command&#39;s small icon.</p>
 
 
   </div>
@@ -1270,14 +1271,9 @@ icon.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The small_icon= method is used to identify the icon file for the
-command&#39;s small icon. Small icons should be 16x16 pixel images for best
-display quality.</p>
+<p>The small_icon= method is used to identify the icon file for the command&#39;s small icon. Small icons should be 24x24 pixel images for best display quality.</p>
 
-<p>Since SketchUp 2016 it is possible to provide vector images for the
-cursors. SVG format for Windows and PDF format for OS X. Since the vector
-images scale for both small and large icon sizes, you may choose to use
-only one vector image for both variants.</p>
+<p>Since SketchUp 2016 it is possible to provide vector images for the cursors. SVG format for Windows and PDF format for OS X. Since the vector images scale for both small and large icon sizes, you may choose to use only one vector image for both variants.</p>
 
 
   </div>
@@ -1450,8 +1446,7 @@ only one vector image for both variants.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The status_bar_text= method is used to set the status bar text for the
-command.</p>
+<p>The status_bar_text= method is used to set the status bar text for the command.</p>
 
 
   </div>
@@ -1494,8 +1489,7 @@ command.</p>
       
         &mdash;
         <div class='inline'>
-<p>The text that will appear on the status bar when the cursor is over the
-command&#39;s menu item.</p>
+<p>The text that will appear on the status bar when the cursor is over the command&#39;s menu item.</p>
 </div>
       
     </li>
@@ -1623,9 +1617,7 @@ command&#39;s menu item.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The tooltip= method is used to define a command item&#39;s tooltip text.
-Tooltips will appear when the command is attached to a tool bar and the
-user hovers their cursor over the icon.</p>
+<p>The tooltip= method is used to define a command item&#39;s tooltip text. Tooltips will appear when the command is attached to a tool bar and the user hovers their cursor over the icon.</p>
 
 
   </div>

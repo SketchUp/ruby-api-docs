@@ -58,6 +58,8 @@
 
     <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
+    <script type="text/javascript" charset="utf-8" src="js/jquery-migrate.js"></script>
+
     <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
     <script>
@@ -189,24 +191,16 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2015, <code>Length</code> used to be derived from
-<code>Float</code>. This is no longer the case.</p>
+<p>Prior to SketchUp 2015, <code>Length</code> used to be derived from <code>Float</code>. This is no longer the case.</p>
 </div>
   </div>
 
 
-<p>Because length units are used so often in SketchUp, a special class has
-been added to make it easier to work with length values. You can use a
-Length object any place that you would use a Float.</p>
+<p>Because length units are used so often in SketchUp, a special class has been added to make it easier to work with length values. You can use a Length object any place that you would use a Float.</p>
 
-<p>Internally, all lengths in SketchUp are stored in inches. The Length class
-stores values in inches as well. A number of methods have been added to the
-Ruby Numeric class to do units conversions.</p>
+<p>Internally, all lengths in SketchUp are stored in inches. The Length class stores values in inches as well. A number of methods have been added to the Ruby Numeric class to do units conversions.</p>
 
-<p>The setting for the Length Format and Length Unit can be retrieved from the
-<span class='object_link'><a href="Sketchup/Model.html#options-instance_method" title="Sketchup::Model#options (method)">Sketchup::Model#options</a></span> by querying the <tt>“UnitsOptions”</tt>
-<span class='object_link'><a href="Sketchup/OptionsProvider.html" title="Sketchup::OptionsProvider (class)">Sketchup::OptionsProvider</a></span> for <tt>“LengthFormat”</tt> and <tt>“LengthUnit”</tt>
-respectively.</p>
+<p>The setting for the Length Format and Length Unit can be retrieved from the <span class='object_link'><a href="Sketchup/Model.html#options-instance_method" title="Sketchup::Model#options (method)">Sketchup::Model#options</a></span> by querying the <tt>“UnitsOptions”</tt> <span class='object_link'><a href="Sketchup/OptionsProvider.html" title="Sketchup::OptionsProvider (class)">Sketchup::OptionsProvider</a></span> for <tt>“LengthFormat”</tt> and <tt>“LengthUnit”</tt> respectively.</p>
 
 <p><strong>Constants:</strong></p>
 <dl class="rdoc-list label-list"><dt>Length Format
@@ -448,8 +442,7 @@ respectively.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The &lt;= method is used to see if one length is less than or equal to
-another length.</p>
+<p>The &lt;= method is used to see if one length is less than or equal to another length.</p>
 </div></span>
   
 </li>
@@ -473,8 +466,7 @@ another length.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The &lt;=&gt; method is used to see if one length is less than equal or
-greater than another length.</p>
+<p>The &lt;=&gt; method is used to see if one length is less than equal or greater than another length.</p>
 </div></span>
   
 </li>
@@ -522,8 +514,7 @@ greater than another length.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The &gt; method is used to see if one length is greater than another
-length.</p>
+<p>The &gt; method is used to see if one length is greater than another length.</p>
 </div></span>
   
 </li>
@@ -547,8 +538,7 @@ length.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The &gt;= method is used to see if one length is greater than or equal to
-another length.</p>
+<p>The &gt;= method is used to see if one length is greater than or equal to another length.</p>
 </div></span>
   
 </li>
@@ -572,9 +562,7 @@ another length.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The inspect method is used to retrieve an unformatted string for the
-length, which is the length in inches, regardless of the user&#39;s model
-unit settings.</p>
+<p>The inspect method is used to retrieve an unformatted string for the length, which is the length in inches, regardless of the user&#39;s model unit settings.</p>
 </div></span>
   
 </li>
@@ -622,8 +610,7 @@ unit settings.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Format a length as a String using the current units formatting settings for
-the model.</p>
+<p>Format a length as a String using the current units formatting settings for the model.</p>
 </div></span>
   
 </li>
@@ -655,8 +642,7 @@ the model.</p>
     
 <p>The &lt; method is used to see if one length is less than another length.</p>
 
-<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1
-&lt; l2 should return false.</p>
+<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1 &lt; l2 should return false.</p>
 
 
   </div>
@@ -759,8 +745,7 @@ the model.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &lt;= method is used to see if one length is less than or equal to
-another length.</p>
+<p>The &lt;= method is used to see if one length is less than or equal to another length.</p>
 
 
   </div>
@@ -863,10 +848,7 @@ another length.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &lt;=&gt; method is used to see if one length is less than equal or
-greater than another length. Because we change == for Length to do a test
-based on a tolerance, we also need to change &lt;=&gt; to also take
-tolerance into account.</p>
+<p>The &lt;=&gt; method is used to see if one length is less than equal or greater than another length. Because we change == for Length to do a test based on a tolerance, we also need to change &lt;=&gt; to also take tolerance into account.</p>
 
 
   </div>
@@ -967,8 +949,7 @@ tolerance into account.</p>
     
 <p>The == method is used to see if one length is equal to another length.</p>
 
-<p>The equality comparison on Length values uses the default tolerance that
-SketchUp uses for comparing lengths.</p>
+<p>The equality comparison on Length values uses the default tolerance that SketchUp uses for comparing lengths.</p>
 
 
   </div>
@@ -1067,11 +1048,9 @@ SketchUp uses for comparing lengths.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &gt; method is used to see if one length is greater than another
-length.</p>
+<p>The &gt; method is used to see if one length is greater than another length.</p>
 
-<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1
-&gt; l2 should return false.</p>
+<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1 &gt; l2 should return false.</p>
 
 
   </div>
@@ -1174,11 +1153,9 @@ length.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The &gt;= method is used to see if one length is greater than or equal to
-another length.</p>
+<p>The &gt;= method is used to see if one length is greater than or equal to another length.</p>
 
-<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1
-&gt;= l2 should return true. Also L1 &lt;= l2 would return true.</p>
+<p>For example, if l1 = 1.0.inch and l2 = 1.000001.inch then l1 == l2 so l1 &gt;= l2 should return true. Also L1 &lt;= l2 would return true.</p>
 
 
   </div>
@@ -1281,10 +1258,7 @@ another length.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The inspect method is used to retrieve an unformatted string for the
-length, which is the length in inches, regardless of the user&#39;s model
-unit settings. See Length.to_s for a way automatically format your Length
-to the user&#39;s model units.</p>
+<p>The inspect method is used to retrieve an unformatted string for the length, which is the length in inches, regardless of the user&#39;s model unit settings. See Length.to_s for a way automatically format your Length to the user&#39;s model units.</p>
 
 
   </div>
@@ -1418,9 +1392,7 @@ to the user&#39;s model units.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Format a length as a String using the current units formatting settings for
-the model. (So if the user&#39;s model is set to feet, this method will
-return a nicely formatted length in feet.)</p>
+<p>Format a length as a String using the current units formatting settings for the model. (So if the user&#39;s model is set to feet, this method will return a nicely formatted length in feet.)</p>
 
 
   </div>
