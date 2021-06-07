@@ -188,7 +188,7 @@
     
 <p>The <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span> class contains methods to create polygon mesh structures. This is useful if you need to write a custom importer/exporter in Ruby that works at the level of triangulated polygons. For example, you can determine the triangles that make up a 15-sided <span class='object_link'><a href="../Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> by using this class, or write a <span class='object_link'><a href="../Sketchup/Importer.html" title="Sketchup::Importer (class)">Sketchup::Importer</a></span> that reads a data file, creates a mesh from it, and draws faces based on the mesh.</p>
 
-<p>You can construct a mesh manually using the methods of this class, or you can get a mesh from a face by calling the Face.mesh method. See <span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span> for an easy way to convert a mesh back into faces.</p>
+<p>You can construct a mesh manually using the methods of this class, or you can get a mesh from a face by calling the <span class='object_link'><a href="../Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span> method. See <span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span> for an easy way to convert a mesh back into faces.</p>
 
 
   </div>
@@ -199,12 +199,13 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='comment'># Grab a mesh from a given face.
-</span><span class='id identifier rubyid_my_mesh'>my_mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_some_face'>some_face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span>
+      <pre class="example code"><code><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_entities'><span class='object_link'><a href="../Sketchup/Model.html#active_entities-instance_method" title="Sketchup::Model#active_entities (method)">active_entities</a></span></span>
+<span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_grep'>grep</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Sketchup/Face.html" title="Sketchup::Face (class)">Face</a></span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
 
-<span class='comment'># Create a new group that we will populate with the mesh.
-</span><span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="../Sketchup/Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_group'><span class='object_link'><a href="../Sketchup/Entities.html#add_group-instance_method" title="Sketchup::Entities#add_group (method)">add_group</a></span></span>
-<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_my_mesh'>my_mesh</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_mesh'>mesh</span>
+
+<span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+<span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_faces_from_mesh'>add_faces_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_mesh'>mesh</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -720,7 +721,19 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Create a new empty polygon mesh. The number of points and polygons are optional and are just used as a hint to decide how much space to pre-allocate to speed up adding points and polygons.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When creating a mesh with normals and/or UVQ data it&#39;s critical that the number of points estimated is equal to or higher than the final number of points added. If fewer points are estimated the normals and UVQ data might end up out of sync.</p>
+</div>
+  </div>
+
+
+<p>Create a new empty polygon mesh.</p>
+
+<p>The number of points and polygons are optional and are used as a hint to decide how much space to pre-allocate to speed up adding points and polygons.</p>
+
+<p>As of SketchUp 2021.1 the performance of looking up and inserting points is significantly better provided the mesh was initialized with roughly the correct number of total points.</p>
 
 
   </div>

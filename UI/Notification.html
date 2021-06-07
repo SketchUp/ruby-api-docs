@@ -186,7 +186,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>UI::Notification objects allows you to show native notifications in the desktop. Notifications can have a message, icon and accept and/or dismiss buttons with callback blocks.</p>
+<p><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span> objects allows you to show native notifications in the desktop. Notifications can have a message, icon and accept and/or dismiss buttons with callback blocks.</p>
 
 
   </div>
@@ -200,18 +200,18 @@
       <pre class="example code"><code><span class='comment'># For consistency, the accept (yes) and the dismiss (no) buttons
 </span><span class='comment'># are always displayed in the same order.
 </span><span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A new version of pizza is available. Install now?</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>Notification</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No thanks</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No pizza</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
+<span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>Notification</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No thanks</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>No pizza</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
 
 <span class='comment'># The two options are however not treated differently by SketchUp and can
 </span><span class='comment'># also be used for questions with no strict yes/no answer.
 </span><span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza clashes with health. Select which one to keep.</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>Notification</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Health</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Salad</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+<span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>Notification</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pizza</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Health</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Salad</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -350,7 +350,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(sketchup_extension, message, icon_name, icon_tooltip)  &#x21d2; UI::Notification </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(sketchup_extension, message = nil, icon_name = nil, icon_tooltip = nil)  &#x21d2; UI::Notification </a>
     
 
     
@@ -367,7 +367,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The new method is used to create a new <span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span>.</p>
+<p>Creates a new <span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span> object.</p>
 </div></span>
   
 </li>
@@ -552,7 +552,7 @@
   <h3 class="signature first" id="initialize-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>initialize</strong>(sketchup_extension, message, icon_name, icon_tooltip)  &#x21d2; <tt><span class='object_link'><a href="" title="UI::Notification (class)">UI::Notification</a></span></tt> 
+    #<strong>initialize</strong>(sketchup_extension, message = nil, icon_name = nil, icon_tooltip = nil)  &#x21d2; <tt><span class='object_link'><a href="" title="UI::Notification (class)">UI::Notification</a></span></tt> 
   
 
   
@@ -561,9 +561,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The new method is used to create a new <span class='object_link'><a href="" title="UI::Notification (class)">UI::Notification</a></span>.</p>
-
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
 <p>In order to insert line breaks into the message you need to use <tt>\r\n</tt>.</p>
+</div>
+  </div>
+
+
+<p>Creates a new <span class='object_link'><a href="" title="UI::Notification (class)">UI::Notification</a></span> object.</p>
 
 
   </div>
@@ -574,8 +580,9 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon Tooltip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Icon Tooltip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -600,7 +607,7 @@
       
         &mdash;
         <div class='inline'>
-<p>Required sketchup_extension to identify the sender.</p>
+<p><span class='object_link'><a href="../SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span> instance used to identify the source of the notification.</p>
 </div>
       
     </li>
@@ -613,10 +620,12 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>Optionally assign the message.</p>
+<p>Message to display.</p>
 </div>
       
     </li>
@@ -629,10 +638,12 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>Optionally set a path to an image.</p>
+<p>Path to an icon to display along with the message.</p>
 </div>
       
     </li>
@@ -645,10 +656,12 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
       
         &mdash;
         <div class='inline'>
-<p>Optionally set an image tooltip.</p>
+<p>Tooltip for the icon.</p>
 </div>
       
     </li>
@@ -689,6 +702,18 @@
       
     </li>
   
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2021.1 SketchUp could crash if the <span class='object_link'><a href="" title="UI::Notification (class)">UI::Notification</a></span> object is garbaged collected while it has notifications displayed on the screen. This could happen if the <span class='object_link'><a href="" title="UI::Notification (class)">UI::Notification</a></span> object was assigned to a local variable. The local variable would go out of scope and the garbage collector might collect it before the callbacks are invoked.</p>
+</div>
+      
+    </li>
+  
 </ul>
 
 </div>
@@ -725,9 +750,10 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon Tooltip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Icon Name: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_name'>icon_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Icon Tooltip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Icon Name: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_name'>icon_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -788,9 +814,9 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_name'>icon_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_name'>icon_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -871,9 +897,10 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon Tooltip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tooltip: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_tooltip'>icon_tooltip</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/path/to/icon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Icon Tooltip</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tooltip: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_tooltip'>icon_tooltip</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -934,9 +961,9 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_tooltip'>icon_tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon Tooltip</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_icon_tooltip'>icon_tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icon Tooltip</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -1017,9 +1044,9 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is the current message: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is the current message: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1069,7 +1096,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sets a new message. Notifications are meant for quick &amp; brief messages. Remember that they disappear automatically.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In order to insert line breaks into the message you need to use <tt>\r\n</tt>.</p>
+</div>
+  </div>
+
+
+<p>Sets a new message. Notifications are meant for quick and brief messages. These message disappear automatically after a short while if they are not interacted with.</p>
 
 
   </div>
@@ -1080,9 +1115,9 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -1163,11 +1198,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Accept</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Accept</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The user pressed [</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_content'>] with message </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1309,11 +1344,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Accept</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept'>on_accept</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Accept</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The user pressed </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_accept_title'>on_accept_title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1374,11 +1409,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Close</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Close</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The user pressed [</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_content'>] with message </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1520,11 +1555,11 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Close</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss'>on_dismiss</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Close</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_notification'>notification</span><span class='comma'>,</span> <span class='id identifier rubyid_title'>title</span><span class='op'>|</span>
    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The user pressed </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_on_dismiss_title'>on_dismiss_title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1585,8 +1620,8 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_notification'>notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_notification'>notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='ivar'>@notification</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Notification (class)">Notification</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_sketchup_extension'>sketchup_extension</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello world</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@notification</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1614,6 +1649,22 @@
         
         <div class='inline'>
 <p>SketchUp 2017</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>If assigned to a local variable SketchUp might crash prior to SketchUp 2021.1. See <span class='object_link'><a href="#initialize-instance_method" title="UI::Notification#initialize (method)">#initialize</a></span> for more details.</p>
 </div>
       
     </li>

@@ -168,9 +168,13 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
+<p><strong>SU2021.1</strong> = 21.1.279 on Windows 64-bit, 21.1.278 on Mac 64-bit.</p>
+</li><li>
 <p><strong>SU2021.0.1</strong> = 21.0.391 on Windows 64-bit, 21.0.392 on Mac 64-bit. (Contained no Ruby API changes)</p>
 </li><li>
 <p><strong>SU2021.0</strong> = 21.0.339 on Windows 64-bit, 21.0.338 on Mac 64-bit.</p>
+</li><li>
+<p><strong>SU2021.0</strong> = 21.0.114 on Windows 64-bit, 21.0.113 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2020.2</strong> = 20.2.172 on Windows 64-bit, 20.2.171 on Mac 64-bit.</p>
 </li><li>
@@ -225,6 +229,91 @@
 <p><strong>SU7.0</strong> = 7.0.8657 on Windows, 7.0.8656 on Mac.</p>
 </li><li>
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
+</li></ul>
+
+<h1 id="label-What-27s+new+in+SketchUp+2021.1">What&#39;s new in SketchUp 2021.1</h1>
+
+<h2 id="label-Upgrade+Ruby+to+2.7.2">Upgrade Ruby to 2.7.2</h2>
+
+<p>For SketchUp 2021.1 we have upgraded the version of Ruby that we ship with SketchUp from 2.7.1 to 2.7.2.</p>
+
+<p>Notable bug-fix in Ruby 2.7.2 is correcting a bug that prevented profiling tools such as ruby-prof from reporting correct results. (<a href="https://bugs.ruby-lang.org/issues/17152">bugs.ruby-lang.org/issues/17152</a>)</p>
+
+<h2 id="label-Update+OpenSSL+to+1.1.1k">Update OpenSSL to 1.1.1k</h2>
+
+<p>The version of OpenSSL in Ruby was updated to 1.1.1k.</p>
+
+<h2 id="label-Ruby+Console+Improvements">Ruby Console Improvements</h2>
+<ul><li>
+<p>The Ruby Console now remembers its visibility between sessions.</p>
+</li><li>
+<p>The Ruby Console was moved from the Windows menu to the new Developer menu.</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Upgraded CEF (used by <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>) to version 88.</p>
+</li><li>
+<p>Added method <span class='object_link'><a href="UI/HtmlDialog.html#get_position-instance_method" title="UI::HtmlDialog#get_position (method)">UI::HtmlDialog#get_position</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="UI/HtmlDialog.html#get_size-instance_method" title="UI::HtmlDialog#get_size (method)">UI::HtmlDialog#get_size</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="UI/HtmlDialog.html#get_content_size-instance_method" title="UI::HtmlDialog#get_content_size (method)">UI::HtmlDialog#get_content_size</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="UI/HtmlDialog.html#set_content_size-instance_method" title="UI::HtmlDialog#set_content_size (method)">UI::HtmlDialog#set_content_size</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup.html#focus-class_method" title="Sketchup.focus (method)">Sketchup.focus</a></span></p>
+</li><li>
+<p>Added constant <span class='object_link'><a href="UI/HtmlDialog.html#CEF_VERSION-constant" title="UI::HtmlDialog::CEF_VERSION (constant)">UI::HtmlDialog::CEF_VERSION</a></span></p>
+</li><li>
+<p>Added constant <span class='object_link'><a href="UI/HtmlDialog.html#CHROME_VERSION-constant" title="UI::HtmlDialog::CHROME_VERSION (constant)">UI::HtmlDialog::CHROME_VERSION</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Face.html#clear_texture_projection-instance_method" title="Sketchup::Face#clear_texture_projection (method)">Sketchup::Face#clear_texture_projection</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Face.html#texture_positioned%3F-instance_method" title="Sketchup::Face#texture_positioned? (method)">Sketchup::Face#texture_positioned?</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Face.html#texture_projected%3F-instance_method" title="Sketchup::Face#texture_projected? (method)">Sketchup::Face#texture_projected?</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Face.html#uv_tile_at-instance_method" title="Sketchup::Face#uv_tile_at (method)">Sketchup::Face#uv_tile_at</a></span></p>
+</li><li>
+<p>Added method overload to <span class='object_link'><a href="Sketchup/Face.html#position_material-instance_method" title="Sketchup::Face#position_material (method)">Sketchup::Face#position_material</a></span> allowing projected materials to be applied.</p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/DefinitionList.html#import-instance_method" title="Sketchup::DefinitionList#import (method)">Sketchup::DefinitionList#import</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Group.html#glued_to-instance_method" title="Sketchup::Group#glued_to (method)">Sketchup::Group#glued_to</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Group.html#glued_to=-instance_method" title="Sketchup::Group#glued_to= (method)">Sketchup::Group#glued_to=</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Image.html#glued_to-instance_method" title="Sketchup::Image#glued_to (method)">Sketchup::Image#glued_to</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Image.html#glued_to=-instance_method" title="Sketchup::Image#glued_to= (method)">Sketchup::Image#glued_to=</a></span></p>
+</li><li>
+<p>Added method overload to <span class='object_link'><a href="Sketchup/ComponentInstance.html#glued_to=-instance_method" title="Sketchup::ComponentInstance#glued_to= (method)">Sketchup::ComponentInstance#glued_to=</a></span> allowing to glue to groups images, and components.</p>
+</li><li>
+<p>Increased display time for <span class='object_link'><a href="UI/Notification.html" title="UI::Notification (class)">UI::Notification</a></span> to 10 seconds.</p>
+</li><li>
+<p>Add a separator when a menu is added for the first time to a top level menu. This creates a visual distinction between built-in menus and that of extensions.</p>
+</li><li>
+<p>Added support for adding submenus to the Developer menu.</p>
+</li><li>
+<p><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> is now faster when looking up points in large meshes.  This also improve performance when adding points to large meshes. Note that  the mesh need to be created with an estimated total number of points for this  performance improvement to kick in. The lookup of points for large meshes are  now O(logN) instead of O(N^2).</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed crash when passing invalid parameters to <span class='object_link'><a href="Sketchup/Model.html#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">Sketchup::Model#drawing_element_visible?</a></span>.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">UI::HtmlDialog#bring_to_front</a></span> on Mac, such that calling the method sets focus on the HtmlDialog. This makes the behavior of the method consistent with that on Windows.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">UI::HtmlDialog#set_size</a></span> and <span class='object_link'><a href="UI/HtmlDialog.html#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">UI::HtmlDialog#set_position</a></span> on Windows, such that calling the methods doesn&#39;t set the focus on the HtmlDialog. This makes the behavior of the method consistent with that on Mac.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">UI::HtmlDialog#set_can_close</a></span> Mac implementation so that the callback provided can properly prevent the window from closing.</p>
+</li><li>
+<p>Fixed crash in <span class='object_link'><a href="Sketchup/Image.html#image_rep-instance_method" title="Sketchup::Image#image_rep (method)">Sketchup::Image#image_rep</a></span> when the Image lacks a texture.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> not showing the chosen page on Mac.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> not supporting English page names on localized build on Mac.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2021.0">What&#39;s new in SketchUp 2021.0</h1>
@@ -531,6 +620,8 @@
 <ul><li>
 <p>Upgraded Ruby version from 2.2.4 to 2.5.1 for both Mac and Windows</p>
 </li><li>
+<p>Upgraded CEF (used by <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>) to version 64.</p>
+</li><li>
 <p>Added <span class='object_link'><a href="Sketchup/Tools.html#active_tool-instance_method" title="Sketchup::Tools#active_tool (method)">Sketchup::Tools#active_tool</a></span> that returns the active Ruby tool</p>
 </li><li>
 <p>Added <code>import_materials</code> option to <span class='object_link'><a href="Sketchup/Model.html#import-instance_method" title="Sketchup::Model#import (method)">Sketchup::Model#import</a></span> for dwg importer</p>
@@ -607,13 +698,6 @@
 <p>Fix documentation of <span class='object_link'><a href="Layout/Path.html#append_point-instance_method" title="Layout::Path#append_point (method)">Layout::Path#append_point</a></span>. When appending a bezier path segment, the params should have been (<code>control_1, control_2, point</code>) and not (<code>point, control_1, control_2</code>).</p>
 </li></ul>
 
-<h2 id="label-Updated+Chromium+-28CEF-29-2C+used+in+-7BUI-3A-3AHtmlDialog-7D">Updated Chromium (CEF), used in <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span></h2>
-<ul><li>
-<p><strong>SketchUp 2019:</strong> Chrome/64.0.3282.119</p>
-</li><li>
-<p><strong>SketchUp 2018:</strong> Chrome/56.0.2924.76</p>
-</li></ul>
-
 <h1 id="label-What-27s+new+in+SketchUp+2018+M0">What&#39;s new in SketchUp 2018 M0</h1>
 
 <h2 id="label-LayOut+Ruby+API+for+SketchUp">LayOut Ruby API for SketchUp</h2>
@@ -642,6 +726,8 @@
 
 <h2 id="label-Ruby+Improvements+and+Fixes">Ruby Improvements and Fixes</h2>
 <ul><li>
+<p>Upgraded CEF (used by <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>) to version 56.</p>
+</li><li>
 <p>Added method: <span class='object_link'><a href="UI.html#refresh_toolbars-class_method" title="UI.refresh_toolbars (method)">UI.refresh_toolbars</a></span></p>
 </li><li>
 <p>Added constants to <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span>:</p>
