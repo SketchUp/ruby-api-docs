@@ -49,6 +49,7 @@
 
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
   <!-- SCRIPTS -->
 <script type="text/javascript">
   pathId = "Geom::PolygonMesh";
@@ -186,6 +187,14 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>As of SketchUp 2022.0 the new <span class='object_link'><a href="../Sketchup/EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span> interface can be used to generate bulk geometry. It has similar performance as <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span>, but with similar degree of per-entity control as <span class='object_link'><a href="../Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span>.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span> class contains methods to create polygon mesh structures. This is useful if you need to write a custom importer/exporter in Ruby that works at the level of triangulated polygons. For example, you can determine the triangles that make up a 15-sided <span class='object_link'><a href="../Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> by using this class, or write a <span class='object_link'><a href="../Sketchup/Importer.html" title="Sketchup::Importer (class)">Sketchup::Importer</a></span> that reads a data file, creates a mesh from it, and draws faces based on the mesh.</p>
 
 <p>You can construct a mesh manually using the methods of this class, or you can get a mesh from a face by calling the <span class='object_link'><a href="../Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span> method. See <span class='object_link'><a href="../Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span> for an easy way to convert a mesh back into faces.</p>
@@ -209,6 +218,13 @@
     
   </div>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="../file.generating_geometry.html" title="Guide on Generating Geometry">Guide on Generating Geometry</a></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -327,7 +343,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <code>add_polygon</code> method is used for adding a polygon to a PolygonMesh.</p>
+<p>The <span class='object_link'><a href="#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">#add_polygon</a></span> method is used for adding a polygon to a <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">PolygonMesh</a></span>.</p>
 </div></span>
   
 </li>
@@ -912,9 +928,17 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp 2021.1 this method was improved to be faster. See <span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">#initialize</a></span> for details.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#add_point-instance_method" title="Geom::PolygonMesh#add_point (method)">#add_point</a></span> method is used to add a point to the mesh.</p>
 
-<p>The index can be used for creating polygons.</p>
+<p>The returned index can be used for creating polygons.</p>
 
 
   </div>
@@ -1020,7 +1044,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The <code>add_polygon</code> method is used for adding a polygon to a PolygonMesh. All variations of this method require at least 3 elements to define a polygon, although more may be given.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp 2021.1 this method was improved to be faster. See <span class='object_link'><a href="#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">#initialize</a></span> for details.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">#add_polygon</a></span> method is used for adding a polygon to a <span class='object_link'><a href="" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span>. All variations of this method require at least 3 elements to define a polygon, although more may be given.</p>
 
 
   </div>

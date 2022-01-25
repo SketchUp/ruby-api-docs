@@ -49,6 +49,7 @@
 
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
   <!-- SCRIPTS -->
 <script type="text/javascript">
   pathId = "Sketchup::DefinitionList";
@@ -159,12 +160,12 @@
   <dl>
     <dt>Inherits:</dt>
     <dd>
-      <span class="inheritName">Entity</span>
+      <span class="inheritName"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Entity</li>
+            <li class="next"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></li>
           
             <li class="next">Sketchup::DefinitionList</li>
           
@@ -601,6 +602,16 @@
 
   
   
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Entity.html#attribute_dictionaries-instance_method" title="Sketchup::Entity#attribute_dictionaries (method)">#attribute_dictionaries</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionary-instance_method" title="Sketchup::Entity#attribute_dictionary (method)">#attribute_dictionary</a></span>, <span class='object_link'><a href="Entity.html#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span>, <span class='object_link'><a href="Entity.html#deleted%3F-instance_method" title="Sketchup::Entity#deleted? (method)">#deleted?</a></span>, <span class='object_link'><a href="Entity.html#entityID-instance_method" title="Sketchup::Entity#entityID (method)">#entityID</a></span>, <span class='object_link'><a href="Entity.html#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span>, <span class='object_link'><a href="Entity.html#inspect-instance_method" title="Sketchup::Entity#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Entity.html#model-instance_method" title="Sketchup::Entity#model (method)">#model</a></span>, <span class='object_link'><a href="Entity.html#parent-instance_method" title="Sketchup::Entity#parent (method)">#parent</a></span>, <span class='object_link'><a href="Entity.html#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span>, <span class='object_link'><a href="Entity.html#set_attribute-instance_method" title="Sketchup::Entity#set_attribute (method)">#set_attribute</a></span>, <span class='object_link'><a href="Entity.html#to_s-instance_method" title="Sketchup::Entity#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Entity.html#typename-instance_method" title="Sketchup::Entity#typename (method)">#typename</a></span>, <span class='object_link'><a href="Entity.html#valid%3F-instance_method" title="Sketchup::Entity#valid? (method)">#valid?</a></span></p>
+
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -1236,7 +1247,7 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s <code>Enumable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::DefinitionList#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::DefinitionList#length (method)">#length</a></span>.</p>
+<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s <code>Enumerable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::DefinitionList#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::DefinitionList#length (method)">#length</a></span>.</p>
 </div>
   </div>
 
@@ -2112,7 +2123,7 @@
       
         
         <div class='inline'>
-<p>Calling this method from an <span class='object_link'><a href="../UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>&#39;s action callback on macOS will cause the SketchUp application to become unresponsive. To work around this, defer the call from the action callback with a non-repeating zero-delay timer; <tt>UI.start_timer(0, false) { method_calling_load_from_url }</tt></p>
+<p>Calling this method from an <span class='object_link'><a href="../UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>&#39;s action callback on macOS will cause the SketchUp application to become unresponsive or crash. To work around this, defer the call from the action callback with a non-repeating zero-delay timer; <tt>UI.start_timer(0, false) { method_calling_load_from_url }</tt></p>
 </div>
       
     </li>

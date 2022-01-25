@@ -49,6 +49,7 @@
 
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
   <!-- SCRIPTS -->
 <script type="text/javascript">
   pathId = "Sketchup::UVHelper";
@@ -329,8 +330,10 @@
 face.outer_loop.vertices.each do |vert|
   uvq = uv_helper.get_back_UVQ(vert.position)
   # &quot;Normalize&quot; UVQ to UV.
-  u = uvq.u / unq.q
-  v = uvq.v / unq.q
+  # #x, #y and #z corresponds to U, V and Q respectively,
+  # as SketchUp re-uses the normal Point3d objects for UVQs
+  u = uvq.x / uvq.z
+  v = uvq.y / uvq.z
   puts &quot;u=#{u} v=#{v}&quot;&quot;
 end</code></pre>
     
@@ -447,8 +450,10 @@ end</code></pre>
 face.outer_loop.vertices.each do |vert|
   uvq = uv_helper.get_front_UVQ(vert.position)
   # &quot;Normalize&quot; UVQ to UV.
-  u = uvq.u / unq.q
-  v = uvq.v / unq.q
+  # #x, #y and #z corresponds to U, V and Q respectively,
+  # as SketchUp re-uses the normal Point3d objects for UVQs
+  u = uvq.x / uvq.z
+  v = uvq.y / uvq.z
   puts &quot;u=#{u} v=#{v}&quot;&quot;
 end</code></pre>
     

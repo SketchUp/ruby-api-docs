@@ -49,6 +49,7 @@
 
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
   <!-- SCRIPTS -->
 <script type="text/javascript">
   pathId = "Sketchup::Model";
@@ -1385,7 +1386,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The name method retrieves the string name of the model.</p>
+<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::Model#name (method)">#name</a></span> method retrieves the name of the model.</p>
 </div></span>
   
 </li>
@@ -1394,7 +1395,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; String </a>
+      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; Object </a>
     
 
     
@@ -1409,7 +1410,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The name= method sets the string name of the model.</p>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::Model#name= (method)">#name=</a></span> method sets the string name of the model.</p>
 </div></span>
   
 </li>
@@ -2454,16 +2455,16 @@
 <p>If the API user tries to do this:</p>
 
 <pre class="code"><code class="">model.start_operation(&#39;...&#39;, true)
-model.entities.add_face(...)
+model.active_entities.add_face(...)
 model.active_path = instance_path
-model.entities.add_face(...)
+model.active_entities.add_face(...)
 model.commit_operation
 </code></pre>
 
 <p>Then SketchUp will automatically break it up to something like to this:</p>
 
 <pre class="code"><code class="">model.start_operation(&#39;...&#39;, true)
-model.entities.add_face(...)
+model.active_entities.add_face(...)
 model.commit_operation
 
 model.start_operation(&#39;...&#39;, true, false, true)
@@ -2471,7 +2472,7 @@ model.active_path = instance_path
 model.commit_operation
 
 model.start_operation(&#39;...&#39;, true, false, true)
-model.entities.add_face(...)
+model.active_entities.add_face(...)
 model.commit_operation
 </code></pre>
 
@@ -6077,7 +6078,9 @@ model.commit_operation
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The name method retrieves the string name of the model.</p>
+<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::Model#name (method)">#name</a></span> method retrieves the name of the model.</p>
+
+<p>This property can be seen in Model Info and maps to the component name if the model is inserted into another model. This property should not be confused with the model <span class='object_link'><a href="#path-instance_method" title="Sketchup::Model#path (method)">#path</a></span>.</p>
 
 
   </div>
@@ -6135,7 +6138,7 @@ model.commit_operation
   <h3 class="signature " id="name=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>name=</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+    #<strong>name=</strong>(name)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -6144,7 +6147,7 @@ model.commit_operation
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The name= method sets the string name of the model.</p>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::Model#name= (method)">#name=</a></span> method sets the string name of the model.</p>
 
 
   </div>
@@ -6178,11 +6181,6 @@ model.commit_operation
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>new name of the model</p>
-</div>
-      
     </li>
   
 </ul>
@@ -6190,24 +6188,6 @@ model.commit_operation
 
 </div>
 
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the new name</p>
-</div>
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -6438,7 +6418,7 @@ model.commit_operation
     
 <p>The path method retrieves the path of the file from which the model was opened.</p>
 
-<p>An empty string is returned for a new model (one which has not been saved and opened.)</p>
+<p>An empty string is returned for a model that has not been saved.</p>
 
 
   </div>
@@ -6463,11 +6443,6 @@ model.commit_operation
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>an string containing the path for the currently opened model.</p>
-</div>
       
     </li>
   
@@ -6836,6 +6811,14 @@ model.commit_operation
 
 <p>A ray is a two element array containing a point and a vector [Geom::Point3d(), Geom::Vector3d()]. The point defines the start point of the ray and the vector defines the direction. If direction can not be normalized (e.g. direction = [0, 0, 0]), direction is taken as a point the ray intersects.</p>
 
+<p>first value is a Point3d where the item that the ray passed through exists. The second element is the instance path array of the entity that the ray hit. For example, if the ray hits a face that is contained by a component instance the instance path would be [Component1]. If the ray hit a</p>
+
+<pre class="code"><code class="">face that is contained by a component instance, which
+is contained by another component instance and so on,
+the instance path would be [Component1, Component2,
+Component3...].
+</code></pre>
+
 
   </div>
 </div>
@@ -6913,7 +6896,7 @@ model.commit_operation
       
         &mdash;
         <div class='inline'>
-<p>an array of two values. The first value is a Point3d where the item that the ray passed through exists. The second element is the instance path array of the entity that the ray hit. For example, if the ray hits a face that is contained by a component instance the instance path would be [Component1]. If the ray hit a face that is contained by a component instance, which is contained by another component instance and so on, the instance path would be [Component1, Component2, Component3…].</p>
+<p>an array of two values. The</p>
 </div>
       
     </li>
@@ -7143,10 +7126,13 @@ model.commit_operation
 <span class='comment'># Save the model using the current SketchUp format
 </span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>HOME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchup.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+
 <span class='comment'># Save the model to the current file using the current SketchUp format
 </span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+
 <span class='comment'># Save the model to the current file in SketchUp 8 format
 </span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span>
+
 <span class='comment'># Save the model in SketchUp 8 format
 </span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchup_v8.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span></code></pre>
@@ -7162,13 +7148,47 @@ model.commit_operation
         <div class="docstring">
   <div class="discussion">
     
-<p>Starting with SketchUp 2014, this parameter is optional. If no arguments are provided or the filename is an empty string, model will be saved to the file to which it is associated. It must have already been saved to a file.</p>
+<p>Save model to the path it is already associated with.</p>
 
 
   </div>
 </div>
 <div class="tags">
   
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError if the model is not previosly saved.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
@@ -7179,6 +7199,8 @@ model.commit_operation
         <div class="docstring">
   <div class="discussion">
     
+<p>Save the model to a given path.</p>
+
 
   </div>
 </div>
@@ -7197,13 +7219,29 @@ model.commit_operation
       
         &mdash;
         <div class='inline'>
-<p>The name of the file to save. Starting with SketchUp 2014, this parameter is optional. If not provided or an empty string, model will be saved to the file to which it is associated. It must have already been saved to a file.</p>
+<p>If empty, the model saves to the path it is already associated with.</p>
 </div>
       
     </li>
   
 </ul>
 
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
@@ -7214,6 +7252,8 @@ model.commit_operation
         <div class="docstring">
   <div class="discussion">
     
+<p>Save the model as a specific SketchUp file version to a given path.</p>
+
 
   </div>
 </div>
@@ -7229,11 +7269,6 @@ model.commit_operation
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The path of the file to save to. Starting with SketchUp 2014, this parameter is optional. If not provided or an empty string, model will be saved to the file to which it is associated. It must have already been saved to a file.</p>
-</div>
       
     </li>
   
@@ -7248,13 +7283,60 @@ model.commit_operation
       
         &mdash;
         <div class='inline'>
-<p>(SketchUp 2014+) Optional SketchUp file format to save. If not provided, latest file format will be used. Possible values are: Sketchup::Model::VERSION_3, Sketchup::Model::VERSION_4, Sketchup::Model::VERSION_5, Sketchup::Model::VERSION_6, Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8, Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014, Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016, Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018, Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020, Sketchup::Model::VERSION_2021</p>
+<p>Possible values are:</p>
+<ul><li>
+<p>Sketchup::Model::VERSION_3,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_4,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_5,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_6,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_7,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_8,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2013,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2014,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2015,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2016,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2017,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2018,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2019,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2020,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2021</p>
+</li></ul>
 </div>
       
     </li>
   
 </ul>
 
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2014</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
@@ -7273,23 +7355,7 @@ model.commit_operation
       
         &mdash;
         <div class='inline'>
-<p>true if successful, false if unsuccessful</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Version:</p>
-<ul class="version">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>SketchUp 6.0</p>
+<p><code>true</code> if successful, <code>false</code> if unsuccessful</p>
 </div>
       
     </li>
@@ -7327,6 +7393,7 @@ model.commit_operation
 <span class='comment'># Save copy of the model using the current SketchUp format
 </span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>myModelCopy.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save_copy'>save_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+
 <span class='comment'># Save copy of the model in SketchUp 8 format
 </span><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Home</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Desktop</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mysketchupcopy_v8.skp</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_save_copy'>save_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Model (class)">Model</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#VERSION_8-constant" title="Sketchup::Model::VERSION_8 (constant)">VERSION_8</a></span></span><span class='rparen'>)</span></code></pre>
@@ -7370,7 +7437,38 @@ model.commit_operation
       
         &mdash;
         <div class='inline'>
-<p>(SketchUp 2014+) Optional SketchUp file format to save. If not provided, latest file format will be used. Possible values are: Sketchup::Model::VERSION_3, Sketchup::Model::VERSION_4, Sketchup::Model::VERSION_5, Sketchup::Model::VERSION_6, Sketchup::Model::VERSION_7, Sketchup::Model::VERSION_8, Sketchup::Model::VERSION_2013, Sketchup::Model::VERSION_2014, Sketchup::Model::VERSION_2015, Sketchup::Model::VERSION_2016, Sketchup::Model::VERSION_2017, Sketchup::Model::VERSION_2018, Sketchup::Model::VERSION_2019, Sketchup::Model::VERSION_2020, Sketchup::Model::VERSION_2021</p>
+<p>Optional SketchUp file format to use. If not provided, latest file format will be used. Possible values are:</p>
+<ul><li>
+<p>Sketchup::Model::VERSION_3,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_4,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_5,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_6,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_7,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_8,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2013,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2014,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2015,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2016,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2017,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2018,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2019,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2020,</p>
+</li><li>
+<p>Sketchup::Model::VERSION_2021</p>
+</li></ul>
 </div>
       
     </li>
@@ -8133,6 +8231,24 @@ model.commit_operation
         &mdash;
         <div class='inline'>
 <p><code>true</code> if successful, <code>false</code> if unsuccessful</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if called within the context of <span class='object_link'><a href="Entities.html#build-instance_method" title="Sketchup::Entities#build (method)">Entities#build</a></span>.</p>
 </div>
       
     </li>

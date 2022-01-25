@@ -49,6 +49,7 @@
 
     <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
 
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
   <!-- SCRIPTS -->
 <script type="text/javascript">
   pathId = "UI::HtmlDialog";
@@ -192,7 +193,7 @@
 
 <p>The left, top, width, height etc. dimensions of the dialog are in logical units. This means you provide the units as if they where on a monitor with “normal” DPI. The units given will be multiplied by the same factor as returned by <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">scale_factor</a></span>.</p>
 
-<p>For usage examples, including how to migrate from the old WebDialog class, see <a href="https://github.com/SketchUp/htmldialog-examples">github.com/SketchUp/htmldialog-examples</a>.</p>
+<p>For usage examples, including how to migrate from the old WebDialog class, see <a href="https://github.com/SketchUp/htmldialog-examples">github.com/SketchUp/htmldialog-examples</a>. You may use the <a href="https://sketchup.github.io/modus-for-sketchup-extensions" target="_parent" title="Trimble Modus">Trimble Modus</a> framework for a look and feel of your dialog that matches that of SketchUp&#39;s dialogs.</p>
 
 <p>HtmlDialog uses the following versions of CEF (Chromium Embedded Framework):</p>
 <dl class="rdoc-list label-list"><dt>SketchUp 2021.1
@@ -783,13 +784,6 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Prior to SketchUp 2019 the <code>:width</code> and <code>:height</code> provided is ignored if a <code>:preference_key</code> is also present. To work around this bug on older versions use <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> after you initialize the dialog.</p>
-</div>
-  </div>
-
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
 <p>Prefix <code>preference_key</code> with something unique to your extension.</p>
 </div>
   </div>
@@ -804,7 +798,7 @@
 
 <p>The new method is used to create a new HtmlDialog.</p>
 
-<p>When <code>use_content_size</code> is set to <code>true</code>, <code>width</code>, <code>height</code>, <code>min_width</code>, <tt>max width</tt>, <code>min_height</code>, <code>max_height</code> will represent the size of the content area of the window. This excludes the titlebar and the window frame. When <code>use_content_size</code> is set to <code>false</code> (the default value), the size dimensions will represent the outer frame size.</p>
+<p>In SketchUp 2021.1 <code>use_content_size</code> was added. When set to <code>true</code>, <code>width</code>, <code>height</code>, <code>min_width</code>, <tt>max width</tt>, <code>min_height</code>, <code>max_height</code> will represent the size of the content area of the window. This excludes the titlebar and the window frame. When <code>use_content_size</code> is set to <code>false</code> (the default value), the size dimensions will represent the outer frame size.</p>
 
 <p>The <code>properties</code> hash accepts an optional key <code>style</code> where the value is one of:</p>
 <dl class="rdoc-list label-list"><dt><code>UI::HtmlDialog::STYLE_DIALOG</code>
@@ -1085,6 +1079,70 @@
         
         <div class='inline'>
 <p>SketchUp 2017</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2019 the <code>:width</code> and <code>:height</code> provided is ignored if a <code>:preference_key</code> is also present. To work around this bug on older versions use <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> after you initialize the dialog.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2022.0 fixed a bug where position was set incorrectly when <code>use_content_size</code> was set to <code>true</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2022.0 fixed a bug where <code>max_height</code> and <code>max_width</code> were swapped when <code>use_content_size</code> was set to <code>true</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2022.0 fixed a bug where <code>use_content_size</code> was not persisted (when <code>preferences_key</code> is set).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2022.0 fixed a bug on Mac where size and position of the HtmlDialog were not persisted when SketchUp was closed without first closing the HtmlDialog window.</p>
 </div>
       
     </li>
