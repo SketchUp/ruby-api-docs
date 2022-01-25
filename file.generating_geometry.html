@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AUTHOR and GENERATOR -->
+    <meta name="author" content="SketchUp Extensibility Team">
+    <meta name="generator" content="YARD https://yardoc.org">
+  <!-- TITLE -->
+    <title>
+    File: Generating Geometry &mdash; SketchUp Ruby API Documentation
+    </title>
+  <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="favicon.ico" />
+
+  <!-- GENERIC META PROPERTIES -->
+    <meta name="url"   content="https://ruby.sketchup.com/file.generating_geometry.html" />
+    <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta name="title" content="File: Generating Geometry" />
+    <meta name="name"  content="SketchUp Ruby API Documentation" />
+    <meta name="description" content="Generating Geometry" />
+  <!-- OPEN GRAPH META PROPERTIES -->
+    <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:image"     content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta property="og:image:width"  content="60" />
+    <meta property="og:image:height" content="60" />
+    <meta property="og:title"     content="File: Generating Geometry" />
+    <meta property="og:url"       content="https://ruby.sketchup.com/file.generating_geometry.html" />
+    <meta property="og:description" content="Generating Geometry" />
+  <!-- TWITTER CARD META PROPERTIES -->
+    <meta name="twitter:card"  content="summary"   />
+    <meta name="twitter:site"  content="@sketchup" />
+    <meta name="twitter:title" content="File: Generating Geometry" />
+    <meta name="twitter:description" content="Generating Geometry" />
+    <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
+    <meta name="twitter:url"   content="https://ruby.sketchup.com/file.generating_geometry.html" />
+
+
+  <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/sketchup.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/rubyapi.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/rouge.css" type="text/css" charset="utf-8" />
+  <!-- SCRIPTS -->
+<script type="text/javascript">
+  pathId = "generating_geometry";
+  relpath = '';
+</script>
+
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery-migrate.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+    <script>
+      // Every time this page is loaded, it sends this action to SketchUp, telling
+      // SketchUp that a new page has loaded that has example snippets that should
+      // be replaced with code editors. Nothing happens if the page is loaded in a
+      // regular browser outside of the SketchUp client.
+      $( document ).ready(function() {
+        if (typeof sketchup == 'object') {
+          sketchup.page_loaded();
+        }
+      });
+    </script>
+
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="https://developer.sketchup.com" title="Home">
+                <img src="images/sketchup-logo.svg" alt="SketchUp">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="https://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="https://blog.sketchup.com/">SketchUp Blog</a></li>
+                    <li class="leaf"><a href="https://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="https://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="images/trimble-logo-white.svg" alt="Trimble"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="https://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="https://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: Generating Geometry</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<p>There are multiple ways of creating geometry in SketchUp using the Ruby API. Which approach to choose depends on what the extension is doing.</p>
+
+<h2 id="label-7BSketchup-3A-3AEntities-23add_face-7D+et.+al."><span class='object_link'><a href="Sketchup/Entities.html#add_face-instance_method" title="Sketchup::Entities#add_face (method)">Sketchup::Entities#add_face</a></span> et. al.</h2>
+
+<p><span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> lets you add faces and edges via <span class='object_link'><a href="Sketchup/Entities.html#add_face-instance_method" title="Sketchup::Entities#add_face (method)">Sketchup::Entities#add_face</a></span>, <span class='object_link'><a href="Sketchup/Entities.html#add_line-instance_method" title="Sketchup::Entities#add_line (method)">Sketchup::Entities#add_line</a></span> and <span class='object_link'><a href="Sketchup/Entities.html#add_edges-instance_method" title="Sketchup::Entities#add_edges (method)">Sketchup::Entities#add_edges</a></span>.</p>
+
+<p>These methods will merge and split entities similar to how SketchUp&#39;s own Rectangle and Line tool. They are best suited for scenarios when you only add a few entities at a time - like a drawing tool.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>Example</span>
+
+  <span class='comment'># @example
+</span>  <span class='comment'>#   Example.create_faces_splitting_shared_edge
+</span>  <span class='comment'>#
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_faces_splitting_shared_edge'>create_faces_splitting_shared_edge</span>
+    <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+    <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Faces</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_face1'>face1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>6</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>6</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_face2'>face2</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>6</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>6</span><span class='comma'>,</span> <span class='int'>6</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+</code></pre>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>Example</span>
+
+  <span class='comment'># @example
+</span>  <span class='comment'>#   Example.create_cube
+</span>  <span class='comment'>#
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_cube'>create_cube</span>
+    <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Create Cube</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+    <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+    <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span>   <span class='int'>0</span><span class='comma'>,</span>   <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span>   <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span>   <span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span>
+    <span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_m'>m</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+</code></pre>
+
+<h2 id="label-7BGeom-3A-3APolygonMesh-7D+and+-7BSketchup-3A-3AEntities-23fill_from_mesh-7D"><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> and <span class='object_link'><a href="Sketchup/Entities.html#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">Sketchup::Entities#fill_from_mesh</a></span></h2>
+
+<p><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> serves two purposes. One is to return the triangulation of a <span class='object_link'><a href="Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span>, via <span class='object_link'><a href="Sketchup/Face.html#mesh-instance_method" title="Sketchup::Face#mesh (method)">Sketchup::Face#mesh</a></span>, useful for exporters.</p>
+
+<p>The other purpose is to generate geometry when used along with <span class='object_link'><a href="Sketchup/Entities.html#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">Sketchup::Entities#fill_from_mesh</a></span> and <span class='object_link'><a href="Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span>. <span class='object_link'><a href="Sketchup/Entities.html#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">Sketchup::Entities#fill_from_mesh</a></span> is significantly faster than <span class='object_link'><a href="Sketchup/Entities.html#add_faces_from_mesh-instance_method" title="Sketchup::Entities#add_faces_from_mesh (method)">Sketchup::Entities#add_faces_from_mesh</a></span>.</p>
+
+<p><em>Note that as of SketchUp 2022 <span class='object_link'><a href="Sketchup/EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span> is the recommended method for created large amount of geometry.</em></p>
+
+<p>The combination of <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> and <span class='object_link'><a href="Sketchup/Entities.html#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">Sketchup::Entities#fill_from_mesh</a></span> is fast because it doesn&#39;t merge and split geometry like <span class='object_link'><a href="Sketchup/Entities.html#add_face-instance_method" title="Sketchup::Entities#add_face (method)">Sketchup::Entities#add_face</a></span> does. Instead it only ensures that vertices and edges are de-duplicated and leaves it to the API user to create well formed geometry.</p>
+
+<p>Beware that before SketchUp 2021.1 <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> was very inefficient when de-duplicating points. For that reason it was best to use <span class='object_link'><a href="Geom/PolygonMesh.html#add_point-instance_method" title="Geom::PolygonMesh#add_point (method)">Geom::PolygonMesh#add_point</a></span> first and then use the returned indices with <span class='object_link'><a href="Geom/PolygonMesh.html#add_polygon-instance_method" title="Geom::PolygonMesh#add_polygon (method)">Geom::PolygonMesh#add_polygon</a></span>.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>Example</span>
+
+  <span class='comment'># @param [Integer] rows
+</span>  <span class='comment'># @param [Integer] columns
+</span>  <span class='comment'># @return [Geom::PolygonMesh]
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_generate_grid_mesh'>generate_grid_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_rows'>rows</span><span class='comma'>,</span> <span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span>
+    <span class='comment'># Compute the number of points and polygons we&#39;ll create. This is important
+</span>    <span class='comment'># for max performance so PolygonMesh can allocate enough memory up front
+</span>    <span class='comment'># and choose appropriate internal algorithm for looking up points.
+</span>    <span class='id identifier rubyid_num_polygons'>num_polygons</span> <span class='op'>=</span> <span class='id identifier rubyid_rows'>rows</span> <span class='op'>*</span> <span class='id identifier rubyid_columns'>columns</span>
+
+    <span class='id identifier rubyid_row_points'>row_points</span> <span class='op'>=</span> <span class='id identifier rubyid_rows'>rows</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_col_points'>col_points</span> <span class='op'>=</span> <span class='id identifier rubyid_columns'>columns</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_num_points'>num_points</span> <span class='op'>=</span> <span class='id identifier rubyid_row_points'>row_points</span> <span class='op'>*</span> <span class='id identifier rubyid_col_points'>col_points</span>
+
+    <span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/PolygonMesh.html#initialize-instance_method" title="Geom::PolygonMesh#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_num_points'>num_points</span><span class='comma'>,</span> <span class='id identifier rubyid_num_polygons'>num_polygons</span><span class='rparen'>)</span>
+
+    <span class='comment'># To minimize the number of times points are looked up they are added
+</span>    <span class='comment'># explicitly before adding any polygons.
+</span>    <span class='comment'># As of SketchUp 2021.1 this step is less important, one can pass the points
+</span>    <span class='comment'># to mesh.add_polygon instead of the indicies. There is however always a
+</span>    <span class='comment'># performance benefit of building the polygons with indicies.
+</span>    <span class='id identifier rubyid_indicies'>indicies</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_row_points'>row_points</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+      <span class='id identifier rubyid_col_points'>col_points</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
+        <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='int'>10</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>*</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_indicies'>indicies</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_point'>add_point</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span> 
+      <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+
+    <span class='lparen'>(</span><span class='int'>0</span><span class='op'>...</span><span class='id identifier rubyid_rows'>rows</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+      <span class='lparen'>(</span><span class='int'>0</span><span class='op'>...</span><span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
+        <span class='id identifier rubyid_i1'>i1</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_col_points'>col_points</span> <span class='op'>*</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span>
+        <span class='id identifier rubyid_i2'>i2</span> <span class='op'>=</span> <span class='id identifier rubyid_i1'>i1</span> <span class='op'>+</span> <span class='int'>1</span>
+        <span class='id identifier rubyid_i3'>i3</span> <span class='op'>=</span> <span class='id identifier rubyid_i2'>i2</span> <span class='op'>+</span> <span class='id identifier rubyid_col_points'>col_points</span>
+        <span class='id identifier rubyid_i4'>i4</span> <span class='op'>=</span> <span class='id identifier rubyid_i3'>i3</span> <span class='op'>-</span> <span class='int'>1</span>
+        <span class='id identifier rubyid_polygon'>polygon</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_i1'>i1</span><span class='comma'>,</span> <span class='id identifier rubyid_i2'>i2</span><span class='comma'>,</span> <span class='id identifier rubyid_i3'>i3</span><span class='comma'>,</span> <span class='id identifier rubyid_i4'>i4</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='id identifier rubyid_indicies'>indicies</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+        <span class='id identifier rubyid_mesh'>mesh</span><span class='period'>.</span><span class='id identifier rubyid_add_polygon'>add_polygon</span><span class='lparen'>(</span><span class='id identifier rubyid_polygon'>polygon</span><span class='rparen'>)</span>
+      <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+
+    <span class='id identifier rubyid_mesh'>mesh</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># @example
+</span>  <span class='comment'>#   Example.create_grid(6, 8)
+</span>  <span class='comment'>#
+</span>  <span class='comment'># @param [Integer] rows
+</span>  <span class='comment'># @param [Integer] columns
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_grid'>create_grid</span><span class='lparen'>(</span><span class='id identifier rubyid_rows'>rows</span> <span class='op'>=</span> <span class='int'>5</span><span class='comma'>,</span> <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='int'>5</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_mesh'>mesh</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_generate_grid_mesh'>generate_grid_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_rows'>rows</span><span class='comma'>,</span> <span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Grid</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+    <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_fill_from_mesh'>fill_from_mesh</span><span class='lparen'>(</span><span class='id identifier rubyid_mesh'>mesh</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">PolygonMesh</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/PolygonMesh.html#NO_SMOOTH_OR_HIDE-constant" title="Geom::PolygonMesh::NO_SMOOTH_OR_HIDE (constant)">NO_SMOOTH_OR_HIDE</a></span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+</code></pre>
+
+<p>The downside of this approach is that there is less control per-entity generated. Materials are added by <span class='object_link'><a href="Sketchup/Entities.html#fill_from_mesh-instance_method" title="Sketchup::Entities#fill_from_mesh (method)">Sketchup::Entities#fill_from_mesh</a></span> to the whole mesh. Only limited control over per-edge properties such as <span class='object_link'><a href="Sketchup/Edge.html#soft%3F-instance_method" title="Sketchup::Edge#soft? (method)">Sketchup::Edge#soft?</a></span>, <span class='object_link'><a href="Sketchup/Edge.html#smooth%3F-instance_method" title="Sketchup::Edge#smooth? (method)">Sketchup::Edge#smooth?</a></span> and <span class='object_link'><a href="Sketchup/Drawingelement.html#hidden%3F-instance_method" title="Sketchup::Drawingelement#hidden? (method)">Sketchup::Drawingelement#hidden?</a></span> is offered. This comes a problem for importers of formats that support per-face materials.</p>
+
+<h2 id="label-7BSketchup-3A-3AEntitiesBuilder-7D"><span class='object_link'><a href="Sketchup/EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span></h2>
+
+<p>As of SketchUp 2022.0 the best alterative to generating bulk geometry is the <span class='object_link'><a href="Sketchup/EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span> interface. Similar to <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> it only de-duplicates vertices and edges. It does however have an interface very similar to <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> which allows full control over per-entity properties.</p>
+
+<h3 id="label-Maximizing+performance">Maximizing performance</h3>
+
+<p>In scenarios with very high amount of geometry it might be a slight gain by creating all the unique 3D points in a pool up front and reusing them when creating the faces. Benchmark and profile before you go to this extent.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>Example</span>
+
+  <span class='comment'># @example
+</span>  <span class='comment'>#   Example.create_grid(6, 8)
+</span>  <span class='comment'>#
+</span>  <span class='comment'># @param [Integer] rows
+</span>  <span class='comment'># @param [Integer] columns
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_grid'>create_grid</span><span class='lparen'>(</span><span class='id identifier rubyid_rows'>rows</span> <span class='op'>=</span> <span class='int'>5</span><span class='comma'>,</span> <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='int'>5</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Grid</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+
+    <span class='comment'># In scenarios with very high amount of geometry it might be a slight gain
+</span>    <span class='comment'># by creating all the unique 3D points in a pool up front and reusing them
+</span>    <span class='comment'># when creating the faces. Benchmark and profile before you go to this
+</span>    <span class='comment'># extent.
+</span>    <span class='id identifier rubyid_row_points'>row_points</span> <span class='op'>=</span> <span class='id identifier rubyid_rows'>rows</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_col_points'>col_points</span> <span class='op'>=</span> <span class='id identifier rubyid_columns'>columns</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_row_points'>row_points</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+      <span class='id identifier rubyid_col_points'>col_points</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
+        <span class='id identifier rubyid_points'>points</span> <span class='op'>&lt;&lt;</span> <span class='const'><span class='object_link'><a href="Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='int'>10</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>*</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+      <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_builder'>builder</span><span class='op'>|</span>
+      <span class='lparen'>(</span><span class='int'>0</span><span class='op'>...</span><span class='id identifier rubyid_rows'>rows</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+        <span class='lparen'>(</span><span class='int'>0</span><span class='op'>...</span><span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
+          <span class='id identifier rubyid_i1'>i1</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_col_points'>col_points</span> <span class='op'>*</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_x'>x</span>
+          <span class='id identifier rubyid_i2'>i2</span> <span class='op'>=</span> <span class='id identifier rubyid_i1'>i1</span> <span class='op'>+</span> <span class='int'>1</span>
+          <span class='id identifier rubyid_i3'>i3</span> <span class='op'>=</span> <span class='id identifier rubyid_i2'>i2</span> <span class='op'>+</span> <span class='id identifier rubyid_col_points'>col_points</span>
+          <span class='id identifier rubyid_i4'>i4</span> <span class='op'>=</span> <span class='id identifier rubyid_i3'>i3</span> <span class='op'>-</span> <span class='int'>1</span>
+          <span class='id identifier rubyid_polygon'>polygon</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_i1'>i1</span><span class='comma'>,</span> <span class='id identifier rubyid_i2'>i2</span><span class='comma'>,</span> <span class='id identifier rubyid_i3'>i3</span><span class='comma'>,</span> <span class='id identifier rubyid_i4'>i4</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='id identifier rubyid_points'>points</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+          <span class='id identifier rubyid_builder'>builder</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_polygon'>polygon</span><span class='rparen'>)</span>
+        <span class='rbrace'>}</span>
+      <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Supporting+older+SketchUp+versions">Supporting older SketchUp versions</h3>
+
+<p>In some scenarios it is possible to leverage duck-typing to allow an extension to generate geometry with either <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> or <span class='object_link'><a href="Sketchup/EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span>.</p>
+
+<p>For this to work the code must not rely on <span class='object_link'><a href="Sketchup/Entities.html#add_face-instance_method" title="Sketchup::Entities#add_face (method)">Sketchup::Entities#add_face</a></span>&#39;s ability to split and intersect geometry as <span class='object_link'><a href="Sketchup/EntitiesBuilder.html#add_face-instance_method" title="Sketchup::EntitiesBuilder#add_face (method)">Sketchup::EntitiesBuilder#add_face</a></span> will not behave similarly. The code must also not modify the position of the vertices for the duration of the builder&#39;s block.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>Example</span>
+
+  <span class='comment'># @example
+</span>  <span class='comment'>#   Example.create_cube
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_cube'>create_cube</span>
+    <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Cube</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+    <span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_group'>group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:build</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_builder'>builder</span><span class='op'>|</span>
+        <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_add_cube_faces'>add_cube_faces</span><span class='lparen'>(</span><span class='id identifier rubyid_builder'>builder</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_add_cube_faces'>add_cube_faces</span><span class='lparen'>(</span><span class='id identifier rubyid_entities'>entities</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># This works even though {Sketchup::Entities} and {Sketchup::EntitiesBuilder}
+</span>  <span class='comment'># are different interfaces because the method only uses methods that have
+</span>  <span class='comment'># method signatures that are similar between them.
+</span>  <span class='comment'>#
+</span>  <span class='comment'># @param [Sketchup::Entities, Sketchup::EntitiesBuilder] entities
+</span>  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_add_cube_faces'>add_cube_faces</span><span class='lparen'>(</span><span class='id identifier rubyid_entities'>entities</span><span class='rparen'>)</span>
+    <span class='comment'># ...
+</span>    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points1'>points1</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points2'>points2</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points3'>points3</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points4'>points4</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points5'>points5</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='id identifier rubyid_points6'>points6</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Ruby+C+Extension+considerations">Ruby C Extension considerations</h3>
+
+<h4 id="label-Calling+-7BSketchup-3A-3AEntities-23build-7D">Calling <span class='object_link'><a href="Sketchup/Entities.html#build-instance_method" title="Sketchup::Entities#build (method)">Sketchup::Entities#build</a></span></h4>
+
+<pre class="code cpp"><code class="cpp"><span class="c1">// Good source on how to use Ruby's C API:</span>
+<span class="c1">// https://silverhammermba.github.io/emberb/c/</span>
+
+<span class="n">VALUE</span> <span class="nf">handler</span><span class="p">(</span><span class="n">RB_BLOCK_CALL_FUNC_ARGLIST</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">callback_arg</span><span class="p">))</span>
+<span class="p">{</span>
+  <span class="n">VALUE</span> <span class="n">rb_ary_new_capa</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+  <span class="c1">// Add points ...</span>
+  <span class="n">VALUE</span> <span class="n">face</span> <span class="o">=</span> <span class="n">rb_funcall</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">rb_intern</span><span class="p">(</span><span class="s">"add_face"</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">points</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">Qnil</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">generate</span><span class="p">(</span><span class="n">VALUE</span> <span class="n">entities</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">VALUE</span> <span class="n">result</span> <span class="o">=</span>
+      <span class="n">rb_block_call</span><span class="p">(</span><span class="n">entities</span><span class="p">,</span> <span class="n">rb_intern</span><span class="p">(</span><span class="s">"build"</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">Qnil</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+<h4 id="label-Optimizing+and+keeping+Ruby+objects+alive">Optimizing and keeping Ruby objects alive</h4>
+
+<p>If you are generating geometry from an internal geometry representation you might have code that looks something like this:</p>
+
+<pre class="code cpp"><code class="cpp"><span class="cp">#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+</span>
+<span class="kt">void</span> <span class="nf">generate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">*&gt;</span> <span class="n">faces</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">face</span> <span class="o">:</span> <span class="n">faces</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">VALUE</span> <span class="n">points</span> <span class="o">=</span> <span class="n">rb_ary_new_capa</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vertices</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">()));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">vertex</span> <span class="o">:</span> <span class="n">face</span><span class="o">-&gt;</span><span class="n">vertices</span><span class="p">())</span> <span class="p">{</span>
+      <span class="c1">// This ends up creating a new Ruby point every time.</span>
+      <span class="n">VALUE</span> <span class="n">point</span> <span class="o">=</span> <span class="n">GetRubyVALUE</span><span class="p">(</span><span class="n">vertex</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">());</span>
+      <span class="n">rb_ary_push</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">point</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// builder.add_face(point) ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Similar to the optimization maximization described for <span class='object_link'><a href="Sketchup/EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span> you might find that avoiding unnecessarily creating new Ruby objects can yield some performance benefits. Below is an example of one way of doing that:</p>
+
+<pre class="code cpp"><code class="cpp"><span class="cp">#include &lt;algorithm&gt;
+#include &lt;unordered_map&gt;
+#include &lt;vector&gt;
+</span>
+<span class="kt">void</span> <span class="nf">generate</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">*&gt;</span> <span class="n">faces</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// In some cases it might make sense to create all the unique the Ruby objects</span>
+  <span class="c1">// up front to reduce the overhead.</span>
+  <span class="n">VALUE</span> <span class="n">keep_alive</span> <span class="o">=</span> <span class="n">rb_ary_new_capa</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vertices</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">()));</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">*</span><span class="p">,</span> <span class="n">VALUE</span><span class="o">&gt;</span> <span class="n">ruby_points</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">vertex</span> <span class="o">:</span> <span class="n">vertices</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">VALUE</span> <span class="n">point</span> <span class="o">=</span> <span class="n">GetRubyVALUE</span><span class="p">(</span><span class="n">vertex</span><span class="o">-&gt;</span><span class="n">position</span><span class="p">());</span>
+    <span class="n">ruby_points</span><span class="p">[</span><span class="n">vertex</span><span class="p">]</span> <span class="o">=</span> <span class="n">point</span><span class="p">;</span>
+    <span class="c1">// Ruby will protect VALUE object in the stack from the garbage collection.</span>
+    <span class="c1">// VALUE objects in an unordered_map is on the stack so it's not protected.</span>
+    <span class="c1">// Because of this we need to protect them by using a temporary array.</span>
+    <span class="n">rb_ary_push</span><span class="p">(</span><span class="n">keep_alive</span><span class="p">,</span> <span class="n">point</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">face</span> <span class="o">:</span> <span class="n">faces</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">VALUE</span> <span class="n">points</span> <span class="o">=</span> <span class="n">rb_ary_new_capa</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vertices</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">()));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">vertex</span> <span class="o">:</span> <span class="n">face</span><span class="o">-&gt;</span><span class="n">vertices</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">VALUE</span> <span class="n">point</span> <span class="o">=</span> <span class="n">ruby_points</span><span class="p">[</span><span class="n">vertex</span><span class="p">];</span>
+      <span class="n">rb_ary_push</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">point</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// builder.add_face(point) ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div></div>
+
+      <div id="footer">
+  Generated by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
