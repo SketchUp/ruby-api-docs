@@ -412,7 +412,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#getMenu-instance_method" title="#getMenu (instance method)">#<strong>getMenu</strong>(menu, flags, x, y, view)  &#x21d2; Object </a>
+      <a href="#getMenu-instance_method" title="#getMenu (instance method)">#<strong>getMenu</strong>  &#x21d2; nil </a>
     
 
     
@@ -1401,7 +1401,11 @@ end</code></pre>
   <h3 class="signature " id="getMenu-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>getMenu</strong>(menu, flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>getMenu</strong>(menu)  &#x21d2; <tt>nil</tt> </span>
+    
+      <span class="overload">#<strong>getMenu</strong>(menu, flags, x, y, view)  &#x21d2; <tt>nil</tt> </span>
+    
   
 
   
@@ -1412,7 +1416,7 @@ end</code></pre>
     
 <p>The <span class='object_link'><a href="#getMenu-instance_method" title="Sketchup::Tool#getMenu (method)">#getMenu</a></span> method is called by SketchUp to let the tool provide its own context menu. Most tools will not want to implement this method and, instead, use the normal context menu found on all entities.</p>
 
-<p>If you do implement this method, the argument is a Menu. You should use the add_item method to build the context menu.</p>
+<p>If you do implement this method, the argument is a Menu. You should use the <span class='object_link'><a href="Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">Menu#add_item</a></span> method to build the context menu.</p>
 
 <p>Your tool will use a standard context menu by default if you do not implement this method. Implement this method if you want a context-click to display something other than this default context menu.</p>
 
@@ -1451,11 +1455,15 @@ end</code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>getMenu</strong>(menu)  &#x21d2; <tt>nil</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns nil.</p>
-
 
   </div>
 </div>
@@ -1468,14 +1476,39 @@ end</code></pre>
         <span class='name'>menu</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Menu.html" title="Sketchup::Menu (class)">Sketchup::Menu</a></span></tt>)</span>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A Menu object.</p>
+    </li>
+  
+</ul>
+
+
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>getMenu</strong>(menu, flags, x, y, view)  &#x21d2; <tt>nil</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>menu</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Menu.html" title="Sketchup::Menu (class)">Sketchup::Menu</a></span></tt>)</span>
+      
+      
       
     </li>
   
@@ -1484,13 +1517,13 @@ end</code></pre>
         <span class='name'>flags</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time. Added in SU2015.</p>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
 </div>
       
     </li>
@@ -1500,13 +1533,13 @@ end</code></pre>
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The X coordinate on the screen where the event occurred. Added in SU2015.</p>
+<p>The X coordinate on the screen where the event occurred.</p>
 </div>
       
     </li>
@@ -1516,13 +1549,13 @@ end</code></pre>
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The Y coordinate on the screen where the event occurred. Added in SU2015.</p>
+<p>The Y coordinate on the screen where the event occurred.</p>
 </div>
       
     </li>
@@ -1532,18 +1565,35 @@ end</code></pre>
         <span class='name'>view</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
       
-        &mdash;
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
         <div class='inline'>
-<p>A View object where the method was invoked. Added in SU2015.</p>
+<p>SketchUp 2015</p>
 </div>
       
     </li>
   
 </ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1551,21 +1601,13 @@ end</code></pre>
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>nil</p>
-</div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

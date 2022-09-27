@@ -248,7 +248,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Gets the http body that is going to be used when sending the request.</p>
+<p>Gets the HTTP body that is going to be used when sending the request.</p>
 </div></span>
   
 </li>
@@ -272,7 +272,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Sets the http body that is going to be used when sending the request.</p>
+<p>Sets the HTTP body that is going to be used when sending the request.</p>
 </div></span>
   
 </li>
@@ -320,7 +320,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the http headers that are going to be used when sending the request.</p>
+<p>Returns the HTTP headers that are going to be used when sending the request.</p>
 </div></span>
   
 </li>
@@ -344,7 +344,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Sets the http headers that are going to be used when sending the request.</p>
+<p>Sets the HTTP headers that are going to be used when sending the request.</p>
 </div></span>
   
 </li>
@@ -353,7 +353,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(url, method)  &#x21d2; Request </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(url, method = Sketchup::Http::GET)  &#x21d2; Sketchup::Http::Request </a>
     
 
     
@@ -370,7 +370,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The new method is used to create a new Sketchup::Http::Request.</p>
+<p>The default port is 80, to use a different port define it in the URL when creating a new <span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span>.</p>
 </div></span>
   
 </li>
@@ -394,7 +394,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Returns the http method that is going to be used when sending the request.</p>
+<p>Returns the HTTP method that is going to be used when sending the request.</p>
 </div></span>
   
 </li>
@@ -418,7 +418,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Sets the http method that is going to be used when sending the request.</p>
+<p>Sets the HTTP method that is going to be used when sending the request.</p>
 </div></span>
   
 </li>
@@ -490,7 +490,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Starts the request and optionally add a callback block.</p>
+<p>Starts the request with optionally a response callback block.</p>
 </div></span>
   
 </li>
@@ -499,7 +499,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#status-instance_method" title="#status (instance method)">#<strong>status</strong>  &#x21d2; int </a>
+      <a href="#status-instance_method" title="#status (instance method)">#<strong>status</strong>  &#x21d2; Integer </a>
     
 
     
@@ -555,7 +555,7 @@
   <h3 class="signature first" id="initialize-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>initialize</strong>(url, method)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></tt> 
+    #<strong>initialize</strong>(url, method = Sketchup::Http::GET)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Sketchup::Http::Request</a></span></tt> 
   
 
   
@@ -572,11 +572,9 @@
   </div>
 
 
-<p>The new method is used to create a new Sketchup::Http::Request.</p>
-
 <p>The default port is 80, to use a different port define it in the URL when creating a new <span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Sketchup::Http::Request</a></span>.</p>
 
-<p>The <code>method</code> parameter accepts any custom http method or one of the following:</p>
+<p>The <code>method</code> parameter accepts any custom HTTP method or one of the following:</p>
 <ul><li>
 <p><code>Sketchup::Http::GET</code></p>
 </li><li>
@@ -627,11 +625,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>The targetted URL.</p>
-</div>
-      
     </li>
   
     <li>
@@ -642,11 +635,8 @@
         <span class='type'>(<tt><span class='object_link'><a href="../../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>Sketchup::Http::GET</tt>)</em>
       
-        &mdash;
-        <div class='inline'>
-<p>Optionally, the request method to use, the default is Sketchup::Http::GET</p>
-</div>
       
     </li>
   
@@ -695,7 +685,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Gets the http body that is going to be used when sending the request.</p>
+<p>Gets the HTTP body that is going to be used when sending the request.</p>
 
 
   </div>
@@ -760,7 +750,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sets the http body that is going to be used when sending the request.</p>
+<p>Sets the HTTP body that is going to be used when sending the request.</p>
 
 
   </div>
@@ -912,7 +902,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the http headers that are going to be used when sending the request.</p>
+<p>Returns the HTTP headers that are going to be used when sending the request.</p>
 
 
   </div>
@@ -978,7 +968,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sets the http headers that are going to be used when sending the request.</p>
+<p>Sets the HTTP headers that are going to be used when sending the request.</p>
 
 
   </div>
@@ -1064,7 +1054,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the http method that is going to be used when sending the request.</p>
+<p>Returns the HTTP method that is going to be used when sending the request.</p>
 
 
   </div>
@@ -1129,7 +1119,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Sets the http method that is going to be used when sending the request. The value can be any custom http method or one of the following:</p>
+<p>Sets the HTTP method that is going to be used when sending the request. The value can be any custom HTTP method or one of the following:</p>
 <ul><li>
 <p><code>Sketchup::Http::GET</code></p>
 </li><li>
@@ -1175,7 +1165,7 @@
       
         &mdash;
         <div class='inline'>
-<p>A string containing the http method name.</p>
+<p>A string containing the HTTP method name.</p>
 </div>
       
     </li>
@@ -1484,7 +1474,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Starts the request and optionally add a callback block.</p>
+<p>Starts the request with optionally a response callback block.</p>
 
 
   </div>
@@ -1503,24 +1493,6 @@
     
   </div>
 
-<p class="tag_title">Yields:</p>
-<ul class="yield">
-  
-    <li>
-      
-      
-        <span class='type'></span>
-      
-      
-      
-        
-        <div class='inline'>
-<p>A block that is invoked when the request has finished.</p>
-</div>
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Yield Parameters:</p>
 <ul class="yieldparam">
   
@@ -1529,14 +1501,9 @@
         <span class='name'>request</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Sketchup::Http::Request</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The request object.</p>
-</div>
       
     </li>
   
@@ -1545,14 +1512,9 @@
         <span class='name'>response</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Response.html" title="Sketchup::Http::Response (class)">Response</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Response.html" title="Sketchup::Http::Response (class)">Sketchup::Http::Response</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The response object, use this to read the server response.</p>
-</div>
       
     </li>
   
@@ -1594,7 +1556,7 @@
   <h3 class="signature " id="status-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>status</strong>  &#x21d2; <tt>int</tt> 
+    #<strong>status</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1637,7 +1599,7 @@
     <li>
       
       
-        <span class='type'>(<tt>int</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       

@@ -505,7 +505,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#pick-instance_method" title="#pick (instance method)">#<strong>pick</strong>(view, x, y, inputpoint)  &#x21d2; Object </a>
+      <a href="#pick-instance_method" title="#pick (instance method)">#<strong>pick</strong>(*args)  &#x21d2; Boolean </a>
     
 
     
@@ -520,7 +520,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pick method is used to get the input point at a specific screen position.</p>
+<p>The <span class='object_link'><a href="#pick-instance_method" title="Sketchup::InputPoint#pick (method)">#pick</a></span> method is used to get a input point at a specific screen position.</p>
 </div></span>
   
 </li>
@@ -1607,7 +1607,11 @@
   <h3 class="signature " id="pick-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>pick</strong>(view, x, y, inputpoint)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>pick</strong>(view, x, y)  &#x21d2; <tt>Boolean</tt> </span>
+    
+      <span class="overload">#<strong>pick</strong>(view, x, y, inputpoint)  &#x21d2; <tt>Boolean</tt> </span>
+    
   
 
   
@@ -1616,11 +1620,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The pick method is used to get the input point at a specific screen position.</p>
-
-<p>The first form just uses the screen position to compute the InputPoint. It is used when you don&#39;t want the InputPoint to be dependent on another InputPoint.</p>
-
-<p>The second form uses the screen position and another InputPoint. It will find additional inferences such as along one of the axis directions from the first point.</p>
+<p>The <span class='object_link'><a href="#pick-instance_method" title="Sketchup::InputPoint#pick (method)">#pick</a></span> method is used to get a input point at a specific screen position.</p>
 
 
   </div>
@@ -1634,17 +1634,23 @@
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
 <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='int'>100</span>
 <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='int'>100</span>
-<span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span>
-<span class='id identifier rubyid_inputpoint2'>inputpoint2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_pick'>pick</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span>
-<span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_pick'>pick</span> <span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_inputpoint2'>inputpoint2</span></code></pre>
+<span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_inputpoint2'>inputpoint2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">InputPoint</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::InputPoint#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>300</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_pick'>pick</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_pick'>pick</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_inputpoint2'>inputpoint2</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pick</strong>(view, x, y)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns status - true if a valid InputPoint was picked and it is different than it was before.</p>
+<p>The first form just uses the screen position to compute the InputPoint. It is used when you don&#39;t want the InputPoint to be dependent on another InputPoint.</p>
 
 
   </div>
@@ -1658,14 +1664,9 @@
         <span class='name'>view</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>The current view.</p>
-</div>
       
     </li>
   
@@ -1674,14 +1675,9 @@
         <span class='name'>x</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>A x value.</p>
-</div>
       
     </li>
   
@@ -1690,14 +1686,63 @@
         <span class='name'>y</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>A y value.</p>
+    </li>
+  
+</ul>
+
+
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pick</strong>(view, x, y, inputpoint)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>The second form uses the screen position and another InputPoint. It will find additional inferences such as along one of the axis directions from the first point.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
       
     </li>
   
@@ -1706,7 +1751,7 @@
         <span class='name'>inputpoint</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
       
       
       
@@ -1719,27 +1764,30 @@
   
 </ul>
 
+
+</div>
+      </li>
+    
+  </ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Boolean</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>status - true if a valid InputPoint was picked and it is different than it was before.</p>
+<p><code>true</code> if a valid input point was picked and it is different than it was before.</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
