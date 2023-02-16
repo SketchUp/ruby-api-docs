@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AUTHOR and GENERATOR -->
+    <meta name="author" content="SketchUp Extensibility Team">
+    <meta name="generator" content="YARD https://yardoc.org">
+  <!-- TITLE -->
+    <title>
+    Class: Sketchup::Overlay &mdash; SketchUp Ruby API Documentation
+    </title>
+  <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="../favicon.ico" />
+
+  <!-- GENERIC META PROPERTIES -->
+    <meta name="url"   content="https://ruby.sketchup.com/Sketchup/Overlay.html" />
+    <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta name="title" content="Class: Sketchup::Overlay" />
+    <meta name="name"  content="SketchUp Ruby API Documentation" />
+    <meta name="description" content="An Overlay provides contextual model information directly in the viewport." />
+  <!-- OPEN GRAPH META PROPERTIES -->
+    <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:image"     content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta property="og:image:width"  content="60" />
+    <meta property="og:image:height" content="60" />
+    <meta property="og:title"     content="Class: Sketchup::Overlay" />
+    <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/Overlay.html" />
+    <meta property="og:description" content="An Overlay provides contextual model information directly in the viewport." />
+  <!-- TWITTER CARD META PROPERTIES -->
+    <meta name="twitter:card"  content="summary"   />
+    <meta name="twitter:site"  content="@sketchup" />
+    <meta name="twitter:title" content="Class: Sketchup::Overlay" />
+    <meta name="twitter:description" content="An Overlay provides contextual model information directly in the viewport." />
+    <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
+    <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/Overlay.html" />
+
+
+  <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
+  <!-- SCRIPTS -->
+<script type="text/javascript">
+  pathId = "Sketchup::Overlay";
+  relpath = '../';
+</script>
+
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+    <script>
+      // Every time this page is loaded, it sends this action to SketchUp, telling
+      // SketchUp that a new page has loaded that has example snippets that should
+      // be replaced with code editors. Nothing happens if the page is loaded in a
+      // regular browser outside of the SketchUp client.
+      $( document ).ready(function() {
+        if (typeof sketchup == 'object') {
+          sketchup.page_loaded();
+        }
+      });
+    </script>
+
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="https://developer.sketchup.com" title="Home">
+                <img src="../images/sketchup-logo.svg" alt="SketchUp">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="https://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="https://blog.sketchup.com/">SketchUp Blog</a></li>
+                    <li class="leaf"><a href="https://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="https://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="../images/trimble-logo-white.svg" alt="Trimble"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="https://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="https://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">Overlay</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Sketchup::Overlay
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Sketchup::Overlay</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>An Overlay provides contextual model information directly in the viewport. This can be presented in 2D and 3D.</p>
+
+<p>Examples can be annotations or analytical model information such as geometry analysis, energy analysis, etc.</p>
+
+<p>The overlay feature is not intended as a mechanism to provide custom entities to SketchUp. Whatever overlays draw is not pickable nor exportable.</p>
+
+<p>It is also not allowed to perform model changes from overlay events. Doing so will result in a <code>RuntimeError</code> being thrown.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>Overlay</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_rectangle'>rectangle</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>300</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>300</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='rbracket'>]</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>blue</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw2d'>draw2d</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_QUADS-constant" title="GL_QUADS (constant)">GL_QUADS</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>120</span><span class='comma'>,</span> <span class='int'>120</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello Overlay</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>size:</span> <span class='int'>20</span><span class='comma'>,</span> <span class='label'>bold:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>white</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+
+<span class='comment'># Using an observer to create a new overlay per model.
+</span><span class='kw'>class</span> <span class='const'>ExampleAppObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="AppObserver.html" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_expectsStartupModelNotifications'>expectsStartupModelNotifications</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_register_overlay'>register_overlay</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_overlay'>overlay</span> <span class='op'>=</span> <span class='const'>ExampleOverlay</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_overlays'>overlays</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_overlay'>overlay</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='symbol'>:onNewModel</span><span class='comma'>,</span> <span class='symbol'>:register_overlay</span>
+  <span class='id identifier rubyid_alias_method'>alias_method</span> <span class='symbol'>:onOpenModel</span><span class='comma'>,</span> <span class='symbol'>:register_overlay</span>
+
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_observer'>observer</span> <span class='op'>=</span> <span class='const'>ExampleAppObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_observer'>observer</span><span class='rparen'>)</span>
+
+<span class='comment'># The following line is needed if you copy+paste in the Ruby Console or
+</span><span class='comment'># at the moment the extension is installed:
+</span><span class='id identifier rubyid_observer'>observer</span><span class='period'>.</span><span class='id identifier rubyid_register_overlay'>register_overlay</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <a
+          id="instance_method_summary"
+          href="#instance_method_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#description-instance_method" title="#description (instance method)">#<strong>description</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is a short user facing description of the overlay that will appear in the UI.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#description=-instance_method" title="#description= (instance method)">#<strong>description=</strong>(description)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets a short user facing description of the overlay that will appear in the UI.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#draw-instance_method" title="#draw (instance method)">#<strong>draw</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enabled=-instance_method" title="#enabled= (instance method)">#<strong>enabled=</strong>(enabled)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enabled%3F-instance_method" title="#enabled? (instance method)">#<strong>enabled?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#getExtents-instance_method" title="#getExtents (instance method)">#<strong>getExtents</strong>  &#x21d2; Geom::BoundingBox </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>In order to accurately draw things, SketchUp needs to know the extents of what it is drawing.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(id, name, description: &quot;&quot;)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This is a user facing display name that will appear in the UI.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMouseEnter-instance_method" title="#onMouseEnter (instance method)">#<strong>onMouseEnter</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onMouseEnter-instance_method" title="Sketchup::Overlay#onMouseEnter (method)">#onMouseEnter</a></span> method is called by SketchUp when the mouse enters the viewport.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMouseLeave-instance_method" title="#onMouseLeave (instance method)">#<strong>onMouseLeave</strong>(view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#onMouseLeave-instance_method" title="Sketchup::Overlay#onMouseLeave (method)">#onMouseLeave</a></span> method is called by SketchUp when the mouse enters the viewport.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#onMouseMove-instance_method" title="#onMouseMove (instance method)">#<strong>onMouseMove</strong>(flags, x, y, view)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Try to make this method as efficient as possible because this method is called often.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlay_id-instance_method" title="#overlay_id (instance method)">#<strong>overlay_id</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#source-instance_method" title="#source (instance method)">#<strong>source</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Describes the source associated with the overlay.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#start-instance_method" title="#start (instance method)">#<strong>start</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stop-instance_method" title="#stop (instance method)">#<strong>stop</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  <span class="abstract note title">abstract</span>
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#valid%3F-instance_method" title="#valid? (instance method)">#<strong>valid?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates whether the overlay is valid.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>initialize</strong>(id, name, description: &quot;&quot;)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A short sentence describing the overlay.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>description:</span> <span class='id identifier rubyid_description'>description</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_overlay'>overlay</span> <span class='op'>=</span> <span class='const'>ExampleOverlay</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The string should be unique per overlay subclass. A good pattern would be something like: <tt>“company_name.extension_name.overlay_name”</tt>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>This is a user facing display name that will appear in the UI. Make it short and representative for what the overlay does.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>description</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&quot;&quot;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>This is a user facing description that will appear in the UI. Make it short and representative for what the overlay does.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if <code>id</code> or <code>name</code> is an empty string</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="description-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>description</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This is a short user facing description of the overlay that will appear in the UI.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="description=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>description=</strong>(description)  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets a short user facing description of the overlay that will appear in the UI. Set this before adding to the <span class='object_link'><a href="OverlaysManager.html" title="Sketchup::OverlaysManager (class)">Sketchup::OverlaysManager</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'>: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="draw-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>draw</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>It is called whenever the view updates.</p>
+</div>
+</div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This is called very often. Perform minimal amount of computation in this event. Cache the data needed to draw what the overlay needs whenever possible.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If you draw outside the model bounds you need to implement <span class='object_link'><a href="#getExtents-instance_method" title="Sketchup::Overlay#getExtents (method)">#getExtents</a></span> which return a bounding box large enough to include the points you draw. Otherwise your drawing will be clipped.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='comment'># Draw a square.
+</span>    <span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span>
+    <span class='comment'># Fill
+</span>    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>128</span><span class='comma'>,</span> <span class='int'>128</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_QUADS-constant" title="GL_QUADS (constant)">GL_QUADS</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
+    <span class='comment'># Outline
+</span>    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_line_stipple'>line_stipple</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># Solid line
+</span>    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>64</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_LINE_LOOP-constant" title="GL_LINE_LOOP (constant)">GL_LINE_LOOP</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A View object where the method was invoked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#getExtents-instance_method" title="Sketchup::Overlay#getExtents (method)">#getExtents</a></span></li>
+    
+      <li><span class='object_link'><a href="View.html#draw-instance_method" title="Sketchup::View#draw (method)">View#draw</a></span></li>
+    
+  </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enabled=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>enabled=</strong>(enabled)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In most cases, extensions doesn&#39;t need to expose any new UI for enabling them. This can be done from the Overlays panel. However, in some cases the extension might have additional UI related to the overlays and might want to offer a way to toggle its overlays along with the rest of the UI.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>enabled</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the overlay is not added to a model.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enabled?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>enabled?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_overlay_id'>overlay_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>) Enabled: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="getExtents-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>getExtents</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>The method should be implementing sub-classes ensure what is drawn in 3D space doesn&#39;t appear clipped. If the overlay only draws in 2D this isn&#39;t needed.</p>
+</div>
+</div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This is called very often. Perform minimal amount of computation in this event. Cache the data needed to compute the bounds of what the overlay draws whenever possible.</p>
+</div>
+  </div>
+
+
+<p>In order to accurately draw things, SketchUp needs to know the extents of what it is drawing. If the overlay is doing its own drawing, it may need to implement this method to tell SketchUp the extents of what it will be drawing. If you don&#39;t implement this method, you may find that part of what the overlay is drawing gets clipped to the extents of the rest of the model.</p>
+
+<p>This must return a <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>. In a typical implementation, you will create a new <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>, add points to set the extents of the drawing that the overlay will do and then return it.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='ivar'>@points</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span> <span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_getExtents'>getExtents</span>
+    <span class='id identifier rubyid_bb'>bb</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_bounds'><span class='object_link'><a href="Model.html#bounds-instance_method" title="Sketchup::Model#bounds (method)">bounds</a></span></span>
+    <span class='id identifier rubyid_bb'>bb</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='ivar'>@points</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_bb'>bb</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_QUADS-constant" title="GL_QUADS (constant)">GL_QUADS</a></span></span><span class='comma'>,</span> <span class='ivar'>@points</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>name</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This is a user facing display name that will appear in the UI.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_overlay_id'>overlay_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>) Enabled: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMouseEnter-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onMouseEnter</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>It can be used by implementing sub-classes to react to mouse movement in the viewport.</p>
+</div>
+</div>
+
+<p>The <span class='object_link'><a href="#onMouseEnter-instance_method" title="Sketchup::Overlay#onMouseEnter (method)">#onMouseEnter</a></span> method is called by SketchUp when the mouse enters the viewport.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_onMouseEnter'>onMouseEnter</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseEnter: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>               view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMouseLeave-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onMouseLeave</strong>(view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>It can be used by implementing sub-classes to react to mouse movement in the viewport.</p>
+</div>
+</div>
+
+<p>The <span class='object_link'><a href="#onMouseLeave-instance_method" title="Sketchup::Overlay#onMouseLeave (method)">#onMouseLeave</a></span> method is called by SketchUp when the mouse enters the viewport.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_onMouseLeave'>onMouseLeave</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseLeave</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="onMouseMove-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>onMouseMove</strong>(flags, x, y, view)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>It can be used by implementing sub-classes to react to mouse movement in the viewport.</p>
+</div>
+</div>
+
+<p>Try to make this method as efficient as possible because this method is called often.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_onMouseMove'>onMouseMove</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onMouseMove: flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>               view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>flags</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A bit mask that tells the state of the modifier keys and other mouse buttons at the time.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The X coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Y coordinate on the screen where the event occurred.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>view</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="View.html" title="Sketchup::View (class)">Sketchup::View</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="overlay_id-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>overlay_id</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Implementing</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'>
+<p>Accessing</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_overlay_id'>overlay_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>) Enabled: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="source-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>source</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Describes the source associated with the overlay. This is automatically inferred when the overlay instance is initialized.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (Extension: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="start-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>start</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>It can be used by implementing sub-classes to react when the overlay becomes active, for instance when the user turns it on.</p>
+</div>
+</div>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_start'>start</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Overlay </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='embexpr_end'>}</span><span class='tstring_content'> started</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="stop-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>stop</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <div class="note abstract">
+  <strong>This method is abstract.</strong>
+  <div class='inline'>
+<p>It can be used by implementing sub-classes to react when the overlay becomes inactive, for instance when the user turns it off.</p>
+</div>
+</div>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Overlay </span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='embexpr_end'>}</span><span class='tstring_content'> stopped</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+  
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="valid?-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>valid?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates whether the overlay is valid. An overlay becomes invalid after being removed from the model and cannot be reused.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleOverlay</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Overlay (class)">Overlay</a></span></span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='kw'>super</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example_inc.my_overlay</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example Overlay</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_overlay'>overlay</span> <span class='op'>=</span> <span class='const'>ExampleOverlay</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span> <span class='comment'># =&gt; true
+</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add'><span class='object_link'><a href="OverlaysManager.html#add-instance_method" title="Sketchup::OverlaysManager#add (method)">add</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_overlay'>overlay</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span> <span class='comment'># =&gt; true
+</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'><span class='object_link'><a href="Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">overlays</a></span></span><span class='period'>.</span><span class='id identifier rubyid_remove'><span class='object_link'><a href="OverlaysManager.html#remove-instance_method" title="Sketchup::OverlaysManager#remove (method)">remove</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_overlay'>overlay</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span> <span class='comment'># =&gt; false</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

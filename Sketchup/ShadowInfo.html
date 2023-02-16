@@ -20,7 +20,7 @@
     <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
     <meta name="title" content="Class: Sketchup::ShadowInfo" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="The ShadowInfo class contains method to extract the shadow information for a model." />
+    <meta name="description" content="The Sketchup::ShadowInfo class contains method to extract the shadow information for a model." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::ShadowInfo" />
     <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/ShadowInfo.html" />
-    <meta property="og:description" content="The ShadowInfo class contains method to extract the shadow information for a model." />
+    <meta property="og:description" content="The Sketchup::ShadowInfo class contains method to extract the shadow information for a model." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Sketchup::ShadowInfo" />
-    <meta name="twitter:description" content="The ShadowInfo class contains method to extract the shadow information for a model." />
+    <meta name="twitter:description" content="The Sketchup::ShadowInfo class contains method to extract the shadow information for a model." />
     <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/ShadowInfo.html" />
 
@@ -194,15 +194,12 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The ShadowInfo class contains method to extract the shadow information for a model. The majority of the shadow information returned exists in the Model Info &gt; Location and Model Info &gt; Shadows dialogs inside SketchUp.</p>
+<p>The <span class='object_link'><a href="" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span> class contains method to extract the shadow information for a model. The majority of the shadow information returned exists in the Model Info &gt; Location and Model Info &gt; Shadows dialogs inside SketchUp.</p>
 
 <p>The following shadow information keys are maintained in SketchUp:</p>
 <ul><li>
-<p><code>City</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…) Note that &#39;City&#39; is called</p>
-</li></ul>
-
-<p>&#39;Location&#39; in the UI</p>
-<ul><li>
+<p><code>City</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…) Note that &#39;City&#39; is called &#39;Location&#39; in the UI</p>
+</li><li>
 <p><code>Country</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…)</p>
 </li><li>
 <p><code>Dark</code> (in Window &gt; Shadows)</p>
@@ -211,11 +208,8 @@
 </li><li>
 <p><code>DaylightSavings</code></p>
 </li><li>
-<p><code>DisplayNorth</code> (in View &gt; Toolbars &gt; Solar North) Note that &#39;Toolbar&#39; is called &#39;Tool Palettes&#39;</p>
-</li></ul>
-
-<p>on Mac</p>
-<ul><li>
+<p><code>DisplayNorth</code></p>
+</li><li>
 <p><code>DisplayOnAllFaces</code> (in Window &gt; Shadows)</p>
 </li><li>
 <p><code>DisplayOnGroundPlane</code> (in Window &gt; Shadows)</p>
@@ -230,11 +224,8 @@
 </li><li>
 <p><code>Longitude</code> (in Model Info &gt; Geo-location &gt; Set Manual Location…)</p>
 </li><li>
-<p><code>NorthAngle</code> (in View &gt; Toolbars &gt; Solar North) Note that &#39;Toolbar&#39; is called &#39;Tool Palettes&#39;</p>
-</li></ul>
-
-<p>on Mac</p>
-<ul><li>
+<p><code>NorthAngle</code></p>
+</li><li>
 <p><code>ShadowTime</code> (in Window &gt; Shadows)</p>
 </li><li>
 <p><code>ShadowTime_time_t</code> (ShadowTime in Epoch time)</p>
@@ -254,7 +245,7 @@
 <p><code>UseSunForAllShading</code> (in Window &gt; Shadows)</p>
 </li></ul>
 
-<p>You access the ShadowInfo object by calling Model.shadow_info:</p>
+<p>You access the <span class='object_link'><a href="" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span> object by calling <span class='object_link'><a href="Model.html#shadow_info-instance_method" title="Sketchup::Model#shadow_info (method)">Model#shadow_info</a></span>:</p>
 
 
   </div>
@@ -267,7 +258,7 @@
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_shadowinfo'>shadowinfo</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_shadow_info'>shadow_info</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My city is: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_shadowinfo'>shadowinfo</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>City</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My city is: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_shadowinfo'>shadowinfo</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>City</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -325,7 +316,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The each_key method iterates through all of the shadow information keys.</p>
+<p>The <span class='object_link'><a href="#each_key-instance_method" title="Sketchup::ShadowInfo#each_key (method)">#each_key</a></span> method iterates through all of the shadow information keys.</p>
 </div></span>
   
 </li>
@@ -506,7 +497,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The each_key method iterates through all of the shadow information keys.</p>
+<p>The <span class='object_link'><a href="#each_key-instance_method" title="Sketchup::ShadowInfo#each_key (method)">#each_key</a></span> method iterates through all of the shadow information keys.</p>
 </div></span>
   
 </li>
@@ -667,7 +658,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The each_key method iterates through all of the shadow information keys.</p>
+<p>The <span class='object_link'><a href="#each_key-instance_method" title="Sketchup::ShadowInfo#each_key (method)">#each_key</a></span> method iterates through all of the shadow information keys.</p>
 
 
   </div>
@@ -682,20 +673,17 @@
     
   </div>
 
-<p class="tag_title">Yields:</p>
-<ul class="yield">
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
   
     <li>
       
-      
-        <span class='type'>(<tt>key</tt>)</span>
-      
+        <span class='name'>key</span>
       
       
-        &mdash;
-        <div class='inline'>
-<p>Variable to hold each key as they are found.</p>
-</div>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
       
     </li>
   
@@ -1211,19 +1199,6 @@
     
   </div>
 
-<p class="tag_title">Yields:</p>
-<ul class="yield">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Yield Parameters:</p>
 <ul class="yieldparam">
   
@@ -1303,7 +1278,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The each_key method iterates through all of the shadow information keys.</p>
+<p>The <span class='object_link'><a href="#each_key-instance_method" title="Sketchup::ShadowInfo#each_key (method)">#each_key</a></span> method iterates through all of the shadow information keys.</p>
 
 
   </div>
@@ -1318,20 +1293,17 @@
     
   </div>
 
-<p class="tag_title">Yields:</p>
-<ul class="yield">
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
   
     <li>
       
-      
-        <span class='type'>(<tt>key</tt>)</span>
-      
+        <span class='name'>key</span>
       
       
-        &mdash;
-        <div class='inline'>
-<p>Variable to hold each key as they are found.</p>
-</div>
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
       
     </li>
   
@@ -1401,19 +1373,6 @@
     
   </div>
 
-<p class="tag_title">Yields:</p>
-<ul class="yield">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>key</tt>, <tt>value</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Yield Parameters:</p>
 <ul class="yieldparam">
   

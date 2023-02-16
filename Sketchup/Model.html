@@ -1218,7 +1218,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The {#layers method retrieves a collection of all Layers objects in the model..</p>
+<p>The <span class='object_link'><a href="#layers-instance_method" title="Sketchup::Model#layers (method)">#layers</a></span> method retrieves a collection of all <span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Layers</a></span> objects in the model.</p>
 </div></span>
   
 </li>
@@ -1460,6 +1460,28 @@
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#options-instance_method" title="Sketchup::Model#options (method)">#options</a></span> method retrieves the options manager that defines the options settings for the model.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overlays-instance_method" title="#overlays (instance method)">#<strong>overlays</strong>  &#x21d2; Sketchup::OverlaysManager </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -5593,7 +5615,7 @@ model.commit_operation
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The {#layers method retrieves a collection of all Layers objects in the model.</p>
+<p>The <span class='object_link'><a href="#layers-instance_method" title="Sketchup::Model#layers (method)">#layers</a></span> method retrieves a collection of all <span class='object_link'><a href="Layers.html" title="Sketchup::Layers (class)">Layers</a></span> objects in the model.</p>
 
 
   </div>
@@ -6332,6 +6354,67 @@ model.commit_operation
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="overlays-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>overlays</strong>  &#x21d2; <tt><span class='object_link'><a href="OverlaysManager.html" title="Sketchup::OverlaysManager (class)">Sketchup::OverlaysManager</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_overlays'>overlays</span><span class='period'>.</span><span class='id identifier rubyid_each'><span class='object_link'><a href="OverlaysManager.html#each-instance_method" title="Sketchup::OverlaysManager#each (method)">each</a></span></span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_overlay'>overlay</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='embexpr_end'>}</span><span class='tstring_content'> (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_overlay_id'>overlay_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>) Enabled: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_overlay'>overlay</span><span class='period'>.</span><span class='id identifier rubyid_enabled?'>enabled?</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="OverlaysManager.html" title="Sketchup::OverlaysManager (class)">Sketchup::OverlaysManager</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2023.0</p>
 </div>
       
     </li>
@@ -7110,6 +7193,13 @@ Component3...].
 </div>
   </div>
 
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Starting with SketchUp 2021, SketchUp is using a the same file format across versions. For instance, SketchUp 2021 can open a file made in SketchUp 2022.</p>
+</div>
+  </div>
+
 
 <p>This method is used to save the model to a file.</p>
 
@@ -7437,38 +7527,7 @@ Component3...].
       
         &mdash;
         <div class='inline'>
-<p>Optional SketchUp file format to use. If not provided, latest file format will be used. Possible values are:</p>
-<ul><li>
-<p>Sketchup::Model::VERSION_3,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_4,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_5,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_6,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_7,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_8,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2013,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2014,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2015,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2016,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2017,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2018,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2019,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2020,</p>
-</li><li>
-<p>Sketchup::Model::VERSION_2021</p>
-</li></ul>
+<p>See <span class='object_link'><a href="#save-instance_method" title="Sketchup::Model#save (method)">#save</a></span> for supported values.</p>
 </div>
       
     </li>

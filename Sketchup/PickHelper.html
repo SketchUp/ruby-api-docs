@@ -314,7 +314,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#boundingbox_pick-instance_method" title="#boundingbox_pick (instance method)">#<strong>boundingbox_pick</strong>(bounding_box, pick_type, transformation = IDENTITY)  &#x21d2; Object </a>
+      <a href="#boundingbox_pick-instance_method" title="#boundingbox_pick (instance method)">#<strong>boundingbox_pick</strong>(bounding_box, pick_type, transformation = IDENTITY)  &#x21d2; Integer </a>
     
 
     
@@ -329,7 +329,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Used to pick a set of entities from a model from a BoundingBox.</p>
+<p>Used to pick a set of entities from a model from a <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>.</p>
 </div></span>
   
 </li>
@@ -434,7 +434,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#init-instance_method" title="#init (instance method)">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; PickHelper </a>
+      <a href="#init-instance_method" title="#init (instance method)">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; Sketchup::PickHelper </a>
     
 
     
@@ -849,7 +849,7 @@
   <h3 class="signature " id="boundingbox_pick-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>boundingbox_pick</strong>(bounding_box, pick_type, transformation = IDENTITY)  &#x21d2; <tt>Object</tt> 
+    #<strong>boundingbox_pick</strong>(bounding_box, pick_type, transformation = IDENTITY)  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -858,9 +858,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Used to pick a set of entities from a model from a BoundingBox. The pick criteria can be for completely-contained or partially-contained entities, similar to how the Selection tool works.</p>
-
-<p>transformation) if num_picked &gt; 0 Sketchup.active_model.selection.add(ph.all_picked) end</p>
+<p>Used to pick a set of entities from a model from a <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>. The pick criteria can be for completely-contained or partially-contained entities, similar to how the Selection tool works.</p>
 
 
   </div>
@@ -871,22 +869,26 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>boundingbox = Geom::BoundingBox.new
-boundingbox.add([1, 1, 1], [100, 100, 100])
-ph = Sketchup.active_model.active_view.pick_helper
+      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/BoundingBox.html#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'><span class='object_link'><a href="View.html#pick_helper-instance_method" title="Sketchup::View#pick_helper (method)">pick_helper</a></span></span>
 
-# Rotate the box 45&#39; around the z-axis
-angle = 45
-transformation = Geom::Transformation.new(ORIGIN, Z_AXIS, angle)
+<span class='comment'># Rotate the box 45&#39; around the z-axis
+</span><span class='id identifier rubyid_angle'>angle</span> <span class='op'>=</span> <span class='int'>45</span>
+<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#Z_AXIS-constant" title="Z_AXIS (constant)">Z_AXIS</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_angle'>angle</span><span class='rparen'>)</span>
 
-num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSING,</code></pre>
+<span class='id identifier rubyid_num_picked'>num_picked</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_boundingbox_pick'>boundingbox_pick</span><span class='lparen'>(</span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#PICK_CROSSING-constant" title="Sketchup::PickHelper::PICK_CROSSING (constant)">PICK_CROSSING</a></span></span><span class='comma'>,</span>
+  <span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_num_picked'>num_picked</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+  <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add'><span class='object_link'><a href="Selection.html#add-instance_method" title="Sketchup::Selection#add (method)">add</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_all_picked'>all_picked</span><span class='rparen'>)</span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns The number of Entity objects picked.</p>
+<p>Returns The number of entities picked.</p>
 
 
   </div>
@@ -900,13 +902,13 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
         <span class='name'>bounding_box</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>BoundingBox object defining the volume to use for picking</p>
+<p>Bounding box defining the volume to use for picking.</p>
 </div>
       
     </li>
@@ -916,13 +918,13 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
         <span class='name'>pick_type</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>PICK_INSIDE to select entities completely contained or PICK_CROSSING to select entities partially contained.</p>
+<p><span class='object_link'><a href="#PICK_INSIDE-constant" title="Sketchup::PickHelper::PICK_INSIDE (constant)">PICK_INSIDE</a></span> to select entities completely contained or <span class='object_link'><a href="#PICK_CROSSING-constant" title="Sketchup::PickHelper::PICK_CROSSING (constant)">PICK_CROSSING</a></span> to select entities partially contained.</p>
 </div>
       
     </li>
@@ -932,7 +934,7 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
         <span class='name'>transformation</span>
       
       
-        <span class='type'>(<tt>optional</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
       
       
         <em class="default">(defaults to: <tt>IDENTITY</tt>)</em>
@@ -940,7 +942,7 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
       
         &mdash;
         <div class='inline'>
-<p>Transformation that will be applied to the volume defined by the BoundingBox that allows for a rotation.</p>
+<p>Transformation that will be applied to the volume defined by the <code>bounding_box</code> that allows for a rotation.</p>
 </div>
       
     </li>
@@ -953,13 +955,13 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>The number of Entity objects picked</p>
+<p>The number of entities picked</p>
 </div>
       
     </li>
@@ -1404,7 +1406,7 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
   <h3 class="signature " id="init-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></tt> 
+    #<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> 
   
 
   
@@ -1440,8 +1442,6 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns self.</p>
-
 
   </div>
 </div>
@@ -1501,27 +1501,22 @@ num_picked = ph.boundingbox_pick(boundingbox, Sketchup::PickHelper::PICK_CROSSIN
   
 </ul>
 
+
+</div>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>self</p>
-</div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   

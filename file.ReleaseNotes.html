@@ -169,6 +169,8 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
+<p><strong>SU2023.0</strong> = 23.0.367 on Windows 64-bit, 23.0.366 on Mac 64-bit.</p>
+</li><li>
 <p><strong>SU2022.0.1</strong> = 22.0.354 on Windows 64-bit, 22.0.353 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2022.0</strong> = 22.0.316 on Windows 64-bit, 22.0.315 on Mac 64-bit.</p>
@@ -240,11 +242,66 @@
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
 </li></ul>
 
+<h1 id="label-What-27s+new+in+SketchUp+2023.0">What&#39;s new in SketchUp 2023.0</h1>
+
+<h2 id="label-Overlays">Overlays</h2>
+
+<p>Overlays are a new SketchUp API capability which allows developers to persist extension behaviors while you are using other tools. Effectively, extensions can now continue to analyze, visualize, and create information in the modeling window as you continue evolving a SketchUp model using other native tools and extensions. Previously, extension developers were limited to drawing information to the modeling window only when their extension had a tool active.</p>
+
+<h2 id="label-Update+OpenSSL+to+1.1.1s">Update OpenSSL to 1.1.1s</h2>
+
+<p>The version of OpenSSL in Ruby was updated to 1.1.1s.</p>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup.html#resize_viewport-class_method" title="Sketchup.resize_viewport (method)">Sketchup.resize_viewport</a></span></p>
+</li><li>
+<p>Made <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> skip <code>.rbs</code> files that aren&#39;t SketchUp scrambled Ruby  files. This change is to avoid conflict with Ruby 3&#39;s introduction of <code>.rbs</code>  file extension for type definitions. (<a href="https://github.com/ruby/rbs">github.com/ruby/rbs</a>)</p>
+</li><li>
+<p>Removed restrictions for <span class='object_link'><a href="Sketchup/View.html#load_texture-instance_method" title="Sketchup::View#load_texture (method)">Sketchup::View#load_texture</a></span> that demanded it was  only used when there was a Ruby tool on the tool stack.</p>
+</li><li>
+<p>Added class <span class='object_link'><a href="Sketchup/Overlay.html" title="Sketchup::Overlay (class)">Sketchup::Overlay</a></span></p>
+</li><li>
+<p>Added class <span class='object_link'><a href="Sketchup/OverlaysManager.html" title="Sketchup::OverlaysManager (class)">Sketchup::OverlaysManager</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/Model.html#overlays-instance_method" title="Sketchup::Model#overlays (method)">Sketchup::Model#overlays</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Layout/AutoTextDefinition.html#sequence_type-instance_method" title="Layout::AutoTextDefinition#sequence_type (method)">Layout::AutoTextDefinition#sequence_type</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Layout/AutoTextDefinition.html#sequence_type=-instance_method" title="Layout::AutoTextDefinition#sequence_type= (method)">Layout::AutoTextDefinition#sequence_type=</a></span></p>
+</li><li>
+<p>Added constant <span class='object_link'><a href="Layout/AutoTextDefinition.html#SEQUENCE_TYPE_PER_DOCUMENT-constant" title="Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_DOCUMENT (constant)">Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_DOCUMENT</a></span></p>
+</li><li>
+<p>Added constant <span class='object_link'><a href="Layout/AutoTextDefinition.html#SEQUENCE_TYPE_PER_PAGE-constant" title="Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_PAGE (constant)">Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_PAGE</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/ComponentDefinition.html#thumbnail_camera-instance_method" title="Sketchup::ComponentDefinition#thumbnail_camera (method)">Sketchup::ComponentDefinition#thumbnail_camera</a></span></p>
+</li><li>
+<p>Added method <span class='object_link'><a href="Sketchup/ComponentDefinition.html#thumbnail_camera=-instance_method" title="Sketchup::ComponentDefinition#thumbnail_camera= (method)">Sketchup::ComponentDefinition#thumbnail_camera=</a></span></p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed <span class='object_link'><a href="Sketchup/DefinitionList.html#load-instance_method" title="Sketchup::DefinitionList#load (method)">Sketchup::DefinitionList#load</a></span> not loading component if the model already contained a  different component associted with the same path.</p>
+</li><li>
+<p>Fixed crashes that could occur from erasing instances that was part of the current <span class='object_link'><a href="Sketchup/Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Sketchup::Model#active_path</a></span>. The following methods will now raise an <code>ArgumentError</code> when attempting to erase entities related to the active editing path:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/Entities.html#erase_entities-instance_method" title="Sketchup::Entities#erase_entities (method)">Sketchup::Entities#erase_entities</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Drawingelement.html#erase!-instance_method" title="Sketchup::Drawingelement#erase! (method)">Sketchup::Drawingelement#erase!</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/DefinitionList.html#remove-instance_method" title="Sketchup::DefinitionList#remove (method)">Sketchup::DefinitionList#remove</a></span></p>
+</li></ul>
+</li><li>
+<p>Fixed return value of <span class='object_link'><a href="Sketchup/EntitiesBuilder.html#valid%3F-instance_method" title="Sketchup::EntitiesBuilder#valid? (method)">Sketchup::EntitiesBuilder#valid?</a></span> to correctly return  <code>true</code> instead of <code>0</code> for success.</p>
+</li><li>
+<p>Fixed a bug where calling Sketchup::LayerFolder#parent on a top level tag folder returned an incorrect type.</p>
+</li></ul>
+
 <h1 id="label-What-27s+new+in+SketchUp+2022.0.1">What&#39;s new in SketchUp 2022.0.1</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>In SketchUp 2022.0 a bug might lead to an available name being incorrectly renamed. Or a name that should be unavailable would be duplicated. This was fixed in SketchUp 2022.0.1.</p>
+<p>In SketchUp 2022.0 a bug might lead to an available component definition name being incorrectly renamed. Or a name that should be unavailable would be duplicated. This was fixed in SketchUp 2022.0.1.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2022.0">What&#39;s new in SketchUp 2022.0</h1>
@@ -485,9 +542,9 @@
 </li><li>
 <p>Added method <span class='object_link'><a href="Sketchup/ComponentDefinition.html#live_component%3F-instance_method" title="Sketchup::ComponentDefinition#live_component? (method)">Sketchup::ComponentDefinition#live_component?</a></span></p>
 </li><li>
-<p>Added new method signature to <span class='object_link'><a href="Sketchup.html#open_file-class_method" title="Sketchup.open_file (method)">Sketchup.open_file</a></span>: <code>Sketchup.open_file(filename, with_status: true)</code>  This signature will open the new SketchUp file format if the format is newer.</p>
+<p>Added new method signature to <span class='object_link'><a href="Sketchup.html#open_file-class_method" title="Sketchup.open_file (method)">Sketchup.open_file</a></span>: <code>Sketchup.open_file(filename, with_status: true)</code> This signature will open the new SketchUp file format if the format is newer.</p>
 </li><li>
-<p>Deprecated old method signature: <code>Sketchup.open_file(filename)</code>  Because opening a newer file format might lead to data missing, extension  developers have to explicitly migrate to the new signature.  This is to ensure that no extension inadvertently open and save a file  without knowing of potential data loss.</p>
+<p>Deprecated old method signature: <code>Sketchup.open_file(filename)</code> Because opening a newer file format might lead to data missing, extension developers have to explicitly migrate to the new signature. This is to ensure that no extension inadvertently open and save a file without knowing of potential data loss.</p>
 </li><li>
 <p>Added new method signature to <span class='object_link'><a href="Sketchup/DefinitionList.html#load-instance_method" title="Sketchup::DefinitionList#load (method)">Sketchup::DefinitionList#load</a></span>: <code>Sketchup::DefinitionList#load(filename, allow_newer: true)</code></p>
 </li><li>
@@ -610,12 +667,13 @@
 <p>Added optional <code>:normals</code> parameter to <span class='object_link'><a href="Sketchup/View.html#draw-instance_method" title="Sketchup::View#draw (method)">Sketchup::View#draw</a></span> allowing polygons to be drawn with lighting.</p>
 </li><li>
 <p>Added ability to draw textured polygons with <span class='object_link'><a href="Sketchup/View.html#draw-instance_method" title="Sketchup::View#draw (method)">Sketchup::View#draw</a></span> and <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span></p>
-</li><li>
+<ul><li>
 <p>Added optional <code>:uvs</code> and <code>:texture</code> parameters to <span class='object_link'><a href="Sketchup/View.html#draw-instance_method" title="Sketchup::View#draw (method)">Sketchup::View#draw</a></span> and <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span>.</p>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/View.html#load_texture-instance_method" title="Sketchup::View#load_texture (method)">Sketchup::View#load_texture</a></span>.</p>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/View.html#release_texture-instance_method" title="Sketchup::View#release_texture (method)">Sketchup::View#release_texture</a></span>.</p>
+</li></ul>
 </li><li>
 <p>Added ability to vertically align text drawn with <span class='object_link'><a href="Sketchup/View.html#draw_text-instance_method" title="Sketchup::View#draw_text (method)">Sketchup::View#draw_text</a></span>. New option parameter <code>:vertical_align</code> can be set to one of the following values: <span class='object_link'><a href="top-level-namespace.html#TextVerticalAlignBoundsTop-constant" title="TextVerticalAlignBoundsTop (constant)">TextVerticalAlignBoundsTop</a></span>, <span class='object_link'><a href="top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span>, <span class='object_link'><a href="top-level-namespace.html#TextVerticalAlignCapHeight-constant" title="TextVerticalAlignCapHeight (constant)">TextVerticalAlignCapHeight</a></span> or <span class='object_link'><a href="top-level-namespace.html#TextVerticalAlignCenter-constant" title="TextVerticalAlignCenter (constant)">TextVerticalAlignCenter</a></span>.</p>
 </li><li>
@@ -624,7 +682,7 @@
 <p>Added <span class='object_link'><a href="Sketchup/Model.html#active_path=-instance_method" title="Sketchup::Model#active_path= (method)">Sketchup::Model#active_path=</a></span> to allow the API to open an instance path for editing by the user.</p>
 </li><li>
 <p>Added new unit constants:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Length.html#Yard-constant" title="Length::Yard (constant)">Length::Yard</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Length.html#SquareYard-constant" title="Length::SquareYard (constant)">Length::SquareYard</a></span></p>
@@ -634,16 +692,18 @@
 <p><span class='object_link'><a href="Length.html#Liter-constant" title="Length::Liter (constant)">Length::Liter</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Length.html#USGallon-constant" title="Length::USGallon (constant)">Length::USGallon</a></span></p>
+</li></ul>
 </li><li>
 <p>Added <code>AreaPrecision</code> and <code>VolumePrecision</code> to <code>Sketchup.active_model.options["UnitsOptions"]</code></p>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/Layer.html#display_name-instance_method" title="Sketchup::Layer#display_name (method)">Sketchup::Layer#display_name</a></span> - this will return <code>&quot;Untagged&quot;</code> for layer0 while the old <span class='object_link'><a href="Sketchup/Layer.html#name-instance_method" title="Sketchup::Layer#name (method)">Sketchup::Layer#name</a></span> will continue to return <code>&quot;Layer0&quot;</code>.</p>
 </li><li>
 <p>Additional entity types now return PIDs for <span class='object_link'><a href="Sketchup/Entity.html#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">Sketchup::Entity#persistent_id</a></span>:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Sketchup/Layer.html" title="Sketchup::Layer (class)">Sketchup::Layer</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/LineStyle.html" title="Sketchup::LineStyle (class)">Sketchup::LineStyle</a></span></p>
+</li></ul>
 </li><li>
 <p>Deprecated <span class='object_link'><a href="Sketchup/ComponentDefinition.html#insertion_point-instance_method" title="Sketchup::ComponentDefinition#insertion_point (method)">Sketchup::ComponentDefinition#insertion_point</a></span> and <span class='object_link'><a href="Sketchup/ComponentDefinition.html#insertion_point=-instance_method" title="Sketchup::ComponentDefinition#insertion_point= (method)">Sketchup::ComponentDefinition#insertion_point=</a></span> as this feature was removed in SketchUp. It now returns the origin of the definition and the setter is now a noop.</p>
 </li></ul>
@@ -723,7 +783,7 @@
 
 <h2 id="label-Ruby+API+Breaking+Changes">Ruby API Breaking Changes</h2>
 <ul><li>
-<p>SketchUp changed how it presents units.  Now it adds a space between the number and the unit indicator. If your extension uses a method of your own creation to interpret strings formatted by SketchUp you might find it doesn&#39;t work anymore if you don&#39;t account for the extra space. For example:</p>
+<p>SketchUp changed how it presents units. Now it adds a space between the number and the unit indicator. If your extension uses a method of your own creation to interpret strings formatted by SketchUp you might find it doesn&#39;t work anymore if you don&#39;t account for the extra space. For example:</p>
 </li><li>
 <p>Before 2019: <code>&quot;2.5mm&quot;</code></p>
 </li><li>
@@ -849,7 +909,7 @@
 <p>Added method: <span class='object_link'><a href="UI.html#refresh_toolbars-class_method" title="UI.refresh_toolbars (method)">UI.refresh_toolbars</a></span></p>
 </li><li>
 <p>Added constants to <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span>:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_NORMALS-constant" title="Geom::PolygonMesh::MESH_NORMALS (constant)">Geom::PolygonMesh::MESH_NORMALS</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_POINTS-constant" title="Geom::PolygonMesh::MESH_POINTS (constant)">Geom::PolygonMesh::MESH_POINTS</a></span></p>
@@ -857,17 +917,19 @@
 <p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_UVQ_BACK-constant" title="Geom::PolygonMesh::MESH_UVQ_BACK (constant)">Geom::PolygonMesh::MESH_UVQ_BACK</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Geom/PolygonMesh.html#MESH_UVQ_FRONT-constant" title="Geom::PolygonMesh::MESH_UVQ_FRONT (constant)">Geom::PolygonMesh::MESH_UVQ_FRONT</a></span></p>
+</li></ul>
 </li><li>
 <p>Added method: <span class='object_link'><a href="Sketchup/DefinitionList.html#remove-instance_method" title="Sketchup::DefinitionList#remove (method)">Sketchup::DefinitionList#remove</a></span></p>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span> methods:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Sketchup/Page.html#include_in_animation%3F-instance_method" title="Sketchup::Page#include_in_animation? (method)">Sketchup::Page#include_in_animation?</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/Page.html#include_in_animation=-instance_method" title="Sketchup::Page#include_in_animation= (method)">Sketchup::Page#include_in_animation=</a></span></p>
+</li></ul>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span> methods:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Sketchup/SectionPlane.html#name-instance_method" title="Sketchup::SectionPlane#name (method)">Sketchup::SectionPlane#name</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/SectionPlane.html#name=-instance_method" title="Sketchup::SectionPlane#name= (method)">Sketchup::SectionPlane#name=</a></span></p>
@@ -875,9 +937,10 @@
 <p><span class='object_link'><a href="Sketchup/SectionPlane.html#symbol-instance_method" title="Sketchup::SectionPlane#symbol (method)">Sketchup::SectionPlane#symbol</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/SectionPlane.html#symbol=-instance_method" title="Sketchup::SectionPlane#symbol= (method)">Sketchup::SectionPlane#symbol=</a></span></p>
+</li></ul>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span> class:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Sketchup/ImageRep.html#load_file-instance_method" title="Sketchup::ImageRep#load_file (method)">Sketchup::ImageRep#load_file</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/ImageRep.html#save_file-instance_method" title="Sketchup::ImageRep#save_file (method)">Sketchup::ImageRep#save_file</a></span></p>
@@ -901,6 +964,7 @@
 <p><span class='object_link'><a href="Sketchup/ImageRep.html#color_at_uv-instance_method" title="Sketchup::ImageRep#color_at_uv (method)">Sketchup::ImageRep#color_at_uv</a></span></p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/ImageRep.html#set_data-instance_method" title="Sketchup::ImageRep#set_data (method)">Sketchup::ImageRep#set_data</a></span></p>
+</li></ul>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/Materials.html#unique_name-instance_method" title="Sketchup::Materials#unique_name (method)">Sketchup::Materials#unique_name</a></span></p>
 </li><li>
@@ -911,7 +975,7 @@
 <p>Added <span class='object_link'><a href="Sketchup/Material.html#texture=-instance_method" title="Sketchup::Material#texture= (method)">Sketchup::Material#texture=</a></span> to accept <span class='object_link'><a href="Sketchup/ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span> object as one of the data types it uses.</p>
 </li><li>
 <p>Added rendering options support for filled section cuts:</p>
-</li><li>
+<ul><li>
 <p><span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span> keys added:</p>
 <ul><li>
 <p><code>&quot;SectionCutFilled&quot;</code></p>
@@ -924,6 +988,7 @@
 <p><code>ROPSetSectionCutFilled</code></p>
 </li><li>
 <p><code>ROPSetSectionDefaultFillColor</code></p>
+</li></ul>
 </li></ul>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup.html#send_to_layout-class_method" title="Sketchup.send_to_layout (method)">Sketchup.send_to_layout</a></span></p>
@@ -1271,9 +1336,9 @@
 </li><li>
 <p>Ruby now supports proper unicode strings.</p>
 </li><li>
-<p>Plugins on Windows have now been moved outside the SU Installation folder.  On Vista, Win 7, 8: <code>C:\Users&lt;username&gt;\AppData\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</code>  On Win XP: <code>C:\Documents and Settings&lt;username&gt;\Application Data\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</code></p>
+<p>Plugins on Windows have now been moved outside the SU Installation folder. On Vista, Win 7, 8: <code>C:\Users&lt;username&gt;\AppData\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</code> On Win XP: <code>C:\Documents and Settings&lt;username&gt;\Application Data\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</code></p>
 </li><li>
-<p>On Windows, we also load plugins from a user-independent support directory.  On Win Vista, 7, 8: <code>C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins</code>  On Win XP: <code>C:\Documents and Settings\All Users\Application Data\SketchUp\SketchUp 2014\SketchUp\Plugins</code> This path is only loaded to the <code>$LOAD_PATH</code> array if the folder exists when on the user&#39;s machine when SU starts.</p>
+<p>On Windows, we also load plugins from a user-independent support directory. On Win Vista, 7, 8: <code>C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins</code> On Win XP: <code>C:\Documents and Settings\All Users\Application Data\SketchUp\SketchUp 2014\SketchUp\Plugins</code> This path is only loaded to the <code>$LOAD_PATH</code> array if the folder exists when on the user&#39;s machine when SU starts.</p>
 </li></ul>
 
 <h2 id="label-New-21+-+Dimensions+API">New! - Dimensions API</h2>

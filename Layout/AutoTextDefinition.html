@@ -354,6 +354,12 @@
         <dt id="NUMBER_STYLE_LC_ROMAN-constant" class="">Layout::AutoTextDefinition::NUMBER_STYLE_LC_ROMAN
         </dt>
       
+        <dt id="SEQUENCE_TYPE_PER_DOCUMENT-constant" class="">Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_DOCUMENT
+        </dt>
+      
+        <dt id="SEQUENCE_TYPE_PER_PAGE-constant" class="">Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_PAGE
+        </dt>
+      
     </dl>
   
 
@@ -922,6 +928,54 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#sequence_format=-instance_method" title="Layout::AutoTextDefinition#sequence_format= (method)">#sequence_format=</a></span> method sets the sequence format of a <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code> <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">AutoTextDefinition</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sequence_type-instance_method" title="#sequence_type (instance method)">#<strong>sequence_type</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#sequence_type-instance_method" title="Layout::AutoTextDefinition#sequence_type (method)">#sequence_type</a></span> method returns how the <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code> <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">AutoTextDefinition</a></span> operates over multiple pages in a document.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sequence_type=-instance_method" title="#sequence_type= (instance method)">#<strong>sequence_type=</strong>(sequence_type)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#sequence_type=-instance_method" title="Layout::AutoTextDefinition#sequence_type= (method)">#sequence_type=</a></span> method sets how the <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code> <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">AutoTextDefinition</a></span> operates over multiple pages in a document.</p>
 </div></span>
   
 </li>
@@ -3090,6 +3144,196 @@ page_number_def = doc.auto_text_definitions.add(&quot;RomanPageNumbers&quot;,
         
         <div class='inline'>
 <p>LayOut 2022.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sequence_type-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>sequence_type</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#sequence_type-instance_method" title="Layout::AutoTextDefinition#sequence_type (method)">#sequence_type</a></span> method returns how the <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code> <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">Layout::AutoTextDefinition</a></span> operates over multiple pages in a document.</p>
+
+<p>The sequence type can be one of the following values:</p>
+<dl class="rdoc-list label-list"><dt><code>Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_DOCUMENT</code>
+<dt><code>Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_PAGE</code>
+<dd></dd></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Document.html" title="Layout::Document (class)">Document</a></span></span><span class='period'>.</span><span class='id identifier rubyid_open'><span class='object_link'><a href="Document.html#open-class_method" title="Layout::Document.open (method)">open</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/path/to/document.layout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sequence_def'>sequence_def</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_auto_text_definitions'>auto_text_definitions</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Seq1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">AutoTextDefinition</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#TYPE_SEQUENCE-constant" title="Layout::AutoTextDefinition::TYPE_SEQUENCE (constant)">TYPE_SEQUENCE</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='id identifier rubyid_sequence_def'>sequence_def</span><span class='period'>.</span><span class='id identifier rubyid_sequence_type'>sequence_type</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">Layout::AutoTextDefinition</a></span>&#39;s type is not <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2023.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="sequence_type=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>sequence_type=</strong>(sequence_type)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#sequence_type=-instance_method" title="Layout::AutoTextDefinition#sequence_type= (method)">#sequence_type=</a></span> method sets how the <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code> <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">Layout::AutoTextDefinition</a></span> operates over multiple pages in a document.</p>
+
+<p>The sequence type can be one of the following values:</p>
+<dl class="rdoc-list label-list"><dt><code>Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_DOCUMENT</code>
+<dt><code>Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_PAGE</code>
+<dd></dd></dl>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Document.html" title="Layout::Document (class)">Document</a></span></span><span class='period'>.</span><span class='id identifier rubyid_open'><span class='object_link'><a href="Document.html#open-class_method" title="Layout::Document.open (method)">open</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>C:/path/to/document.layout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sequence_def'>sequence_def</span> <span class='op'>=</span>
+    <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_auto_text_definitions'>auto_text_definitions</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Seq1</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">AutoTextDefinition</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#TYPE_SEQUENCE-constant" title="Layout::AutoTextDefinition::TYPE_SEQUENCE (constant)">TYPE_SEQUENCE</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_sequence_def'>sequence_def</span><span class='period'>.</span><span class='id identifier rubyid_sequence_type'>sequence_type</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">AutoTextDefinition</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#SEQUENCE_TYPE_PER_PAGE-constant" title="Layout::AutoTextDefinition::SEQUENCE_TYPE_PER_PAGE (constant)">SEQUENCE_TYPE_PER_PAGE</a></span></span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>sequence_type</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the <span class='object_link'><a href="" title="Layout::AutoTextDefinition (class)">Layout::AutoTextDefinition</a></span>&#39;s type is not <code>Layout::AutoTextDefinition::TYPE_SEQUENCE</code>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if sequence_type is not a valid sequence type</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2023.0</p>
 </div>
       
     </li>

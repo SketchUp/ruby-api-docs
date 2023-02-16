@@ -311,7 +311,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#erase!-instance_method" title="#erase! (instance method)">#<strong>erase!</strong>  &#x21d2; Boolean </a>
+      <a href="#erase!-instance_method" title="#erase! (instance method)">#<strong>erase!</strong>  &#x21d2; nil </a>
     
 
     
@@ -326,7 +326,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The erase! method is used to erase an element from the model.</p>
+<p>The <span class='object_link'><a href="#erase!-instance_method" title="Sketchup::Drawingelement#erase! (method)">#erase!</a></span> method is used to erase an element from the model.</p>
 </div></span>
   
 </li>
@@ -858,7 +858,7 @@
   <h3 class="signature " id="erase!-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>erase!</strong>  &#x21d2; <tt>Boolean</tt> 
+    #<strong>erase!</strong>  &#x21d2; <tt>nil</tt> 
   
 
   
@@ -867,7 +867,15 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>The erase! method is used to erase an element from the model.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When erasing multiple elements, it&#39;s faster to use <span class='object_link'><a href="Entities.html#erase_entities-instance_method" title="Sketchup::Entities#erase_entities (method)">Entities#erase_entities</a></span> and erase in bulk than to iterate individual drawing elements calling <span class='object_link'><a href="#erase!-instance_method" title="Sketchup::Drawingelement#erase! (method)">#erase!</a></span>.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#erase!-instance_method" title="Sketchup::Drawingelement#erase! (method)">#erase!</a></span> method is used to erase an element from the model.</p>
 
 <p>Erasing an Edge also erases all of the Face objects that use the Edge.</p>
 
@@ -901,13 +909,26 @@
     <li>
       
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>true if successful, false if unsuccessful</p>
+<p>if the drawing element is an instance used by <span class='object_link'><a href="Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Model#active_path</a></span>.</p>
 </div>
       
     </li>
@@ -924,6 +945,22 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2023.0 this could crash SketchUp if you erased an instance used by the active edit path.</p>
 </div>
       
     </li>
