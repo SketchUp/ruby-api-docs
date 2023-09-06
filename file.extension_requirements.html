@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AUTHOR and GENERATOR -->
+    <meta name="author" content="SketchUp Extensibility Team">
+    <meta name="generator" content="YARD https://yardoc.org">
+  <!-- TITLE -->
+    <title>
+    File: Extension Requirements &mdash; SketchUp Ruby API Documentation
+    </title>
+  <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://ruby.sketchup.com/favicon.ico" />
+
+  <!-- GENERIC META PROPERTIES -->
+    <meta name="url"   content="https://ruby.sketchup.com/file.extension_requirements.html" />
+    <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta name="title" content="File: Extension Requirements" />
+    <meta name="name"  content="SketchUp Ruby API Documentation" />
+    <meta name="description" content="Extension Requirements" />
+  <!-- OPEN GRAPH META PROPERTIES -->
+    <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:image"     content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta property="og:image:width"  content="60" />
+    <meta property="og:image:height" content="60" />
+    <meta property="og:title"     content="File: Extension Requirements" />
+    <meta property="og:url"       content="https://ruby.sketchup.com/file.extension_requirements.html" />
+    <meta property="og:description" content="Extension Requirements" />
+  <!-- TWITTER CARD META PROPERTIES -->
+    <meta name="twitter:card"  content="summary"   />
+    <meta name="twitter:site"  content="@sketchup" />
+    <meta name="twitter:title" content="File: Extension Requirements" />
+    <meta name="twitter:description" content="Extension Requirements" />
+    <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
+    <meta name="twitter:url"   content="https://ruby.sketchup.com/file.extension_requirements.html" />
+
+
+  <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/sketchup.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/rubyapi.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="css/rouge.css" type="text/css" charset="utf-8" />
+  <!-- SCRIPTS -->
+<script type="text/javascript">
+  pathId = "extension_requirements";
+  relpath = '';
+</script>
+
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery-migrate.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+    <script>
+      // Every time this page is loaded, it sends this action to SketchUp, telling
+      // SketchUp that a new page has loaded that has example snippets that should
+      // be replaced with code editors. Nothing happens if the page is loaded in a
+      // regular browser outside of the SketchUp client.
+      $( document ).ready(function() {
+        if (typeof sketchup == 'object') {
+          sketchup.page_loaded();
+        }
+      });
+    </script>
+
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="https://developer.sketchup.com" title="Home">
+                <img src="images/sketchup-logo.svg" alt="SketchUp">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="https://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="https://blog.sketchup.com/">SketchUp Blog</a></li>
+                    <li class="leaf"><a href="https://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="https://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="images/trimble-logo-white.svg" alt="Trimble"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="https://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="https://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: Extension Requirements</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Extension+Requirements">Extension Requirements</h1>
+
+<p>SketchUp extensions are distributed as RBZ files. These are the specifications for creating a valid RBZ file that can be used by SketchUp or shared on the Extension Warehouse.</p>
+
+<h2 id="label-The+Basics">The Basics</h2>
+
+<h3 id="label-File+Structure">File Structure</h3>
+
+<p>An RBZ file is a normal ZIP archive with the .rbz file extension. To create one, you can use the ZIP archive tool of your choice, including right clicking the target files and sending them to a ZIP archive, and then rename the file. You may need to change a system setting to display the file extension to be able to change it.</p>
+
+<p>The RBZ archive must contain exactly two items, a root RB file and a support folder by the same name (excluding the .rb extension). The root RB file contains the extension metadata. The support folder contains the main code.</p>
+
+<p><em>Root RB file</em></p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># nn_cuber_maker.rb
+</span>
+<span class='kw'>module</span> <span class='const'>NameyNamesson</span>
+  <span class='kw'>module</span> <span class='const'>CubeMaker</span>
+    <span class='const'>EXTENSION</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SketchupExtension.html#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NN Cube Maker</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/main.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_creator'>creator</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Namey Namesson</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Make cubes in just a few clicks.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.0.0</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_copyright'>copyright</span>   <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2023 Name Namesson</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_extension'><span class='object_link'><a href="Sketchup.html#register_extension-class_method" title="Sketchup.register_extension (method)">register_extension</a></span></span><span class='lparen'>(</span><span class='const'>EXTENSION</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p><em>Main code in support folder</em></p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># nn_cuber_maker/main.rb
+</span>
+<span class='kw'>module</span> <span class='const'>NameyNamesson</span>
+  <span class='kw'>module</span> <span class='const'>CubeMaker</span>
+    <span class='comment'># Code goes here...
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>The root RB file should only register the extension, not contain the extension&#39;s logic or load additional files.</p>
+
+<h3 id="label-Wrapping+Module">Wrapping Module</h3>
+
+<p>SketchUp extensions all run in a shared environment. To avoid clashes between similarly named methods and classes, all your extension&#39;s Ruby code must be wrapped in a single uniquely named module. Typically you can use the name of your company or your name, followed by the name of your extension.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>NameyNamesson</span>
+  <span class='kw'>module</span> <span class='const'>CubeMaker</span>
+    <span class='comment'># Code goes here…
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Undo+Stack">Undo Stack</h3>
+
+<p>When your extension makes several low level draw calls, join them together as one entry to the undo stack using the <code>start_operation</code> and <code>commit_operation</code> methods. If the user activates it as a single high level action, let them also undo it in a single step.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># bad - creates multiple undo steps
+</span><span class='kw'>def</span> <span class='id identifier rubyid_draw_cube'>draw_cube</span>
+  <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+  <span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='comment'># good - creates one undo step
+</span><span class='kw'>def</span> <span class='id identifier rubyid_draw_cube'>draw_cube</span>
+  <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+  <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw Cube</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Global+Variables">Global Variables</h3>
+
+<p>Since SketchUp extensions run in a shared environment, global variables risk clashing between extensions and are not permitted. Instead use instance variables or class variables.</p>
+
+<h3 id="label-Dependency+to+Another+Extension">Dependency to Another Extension</h3>
+
+<p>Ideally, avoid your extension depending on another extension. Prefer duplicating any shared logic between your extensions over publishing a “library extension”, to make installation easier for end users. If your extension does require another extension to work, make sure to clearly state this in its documentation and also show an error message if the dependency is missing.</p>
+
+<h2 id="label-The+Nitty+Gritty+Stuff">The Nitty Gritty Stuff</h2>
+
+<h3 id="label-Monkey+Patching+the+SketchUp+Ruby+API">Monkey Patching the SketchUp Ruby API</h3>
+
+<p>Since SketchUp extensions run in a shared environment, changing the modules and classes of the Ruby API from one extension can clash with another extension. Don&#39;t change these modules and classes.</p>
+
+<h3 id="label-Gems">Gems</h3>
+
+<p>Installing Gems does not work well in SketchUp. It freezes up the program during installation and some Gems need special build tools to be made functional. Also different extensions may want to use different versions of the same gem. Instead copy the code of the Gem into your own extension support folder and wrap it under your unique namespace.</p>
+
+<h3 id="label-24LOAD_PATH">$LOAD_PATH</h3>
+
+<p>Don&#39;t modify the &#39;$LOAD_PATH&#39;. Doing so may cause other extensions to load the wrong files. Instead include your extension support folder in the path whenever you load a file.</p>
+
+<h3 id="label-Exit">Exit</h3>
+
+<p>&#39;exit&#39; and &#39;exit!&#39; should not be used to stop the Ruby execution, as all Ruby extensions run in a shared interpreter. Instead use &#39;return&#39;, &#39;next&#39;, break&#39; or &#39;raise&#39; to stop the execution of your own code.</p>
+
+<h3 id="label-Unsafe+License+Checks">Unsafe License Checks</h3>
+
+<p>Ruby is a very dynamic language where any method can be overridden at runtime. If you extract your licensing checks for a paid extension to a separate method, this method can be overridden and the extension used without a license. For better protection, prefer checking the license inside of the same method containing some of your main logic. Don&#39;t use a constant for your extension identifier as it too can be overridden. Prefer hardcoding the identifier directly where you make the license check</p>
+
+<p>These recommendations make it harder but not impossible to crack the extension. For better security, you can compile your logic and use a Ruby C Extension to integrate it with SketchUp, or run it on a server using HTTP requests.</p>
+
+<h3 id="label-And+More-E2-80-A6">And More…</h3>
+
+<p>This is not a complete list of everything an extension can be denied for. See the below links for more details and use your good judgment when developing.</p>
+
+<h2 id="label-Further+Reading">Further Reading</h2>
+
+<p><a href="https://github.com/SketchUp/sketchup-ruby-api-tutorials">Extension Code Examples</a></p>
+
+<p><a href="https://help.sketchup.com/en/extension-warehouse/extension-development-best-practices">Extension Development Best Practices</a></p>
+
+<p><a href="https://rubocop-sketchup.readthedocs.io/en/latest/cops_requirements/">Robocop cops</a> - Technical list of everything checked by the sketchup-rubocop static code analysis tool.</p>
+
+<p><a href="https://sketchup.github.io/sketchup-extension-ux-guidelines/">Sketchup Extension UX Guidelines</a> Recommendations to make the extension easier to use and fit better into SketchUp.</p>
+</div></div>
+
+      <div id="footer">
+  Generated by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
