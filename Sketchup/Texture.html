@@ -274,7 +274,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#filename-instance_method" title="Sketchup::Texture#filename (method)">#filename</a></span> method retrieves the entire path, including the file, for a texture object.</p>
+<p>The <span class='object_link'><a href="#filename-instance_method" title="Sketchup::Texture#filename (method)">#filename</a></span> method retrieves the full path, if available, for a texture object.</p>
 </div></span>
   
 </li>
@@ -503,7 +503,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The average_color method retrieves a color object with the average color found in the texture.</p>
@@ -514,7 +517,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -586,7 +589,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -597,7 +603,11 @@
   </div>
 
 
-<p>The <span class='object_link'><a href="#filename-instance_method" title="Sketchup::Texture#filename (method)">#filename</a></span> method retrieves the entire path, including the file, for a texture object.</p>
+<p>The <span class='object_link'><a href="#filename-instance_method" title="Sketchup::Texture#filename (method)">#filename</a></span> method retrieves the full path, if available, for a texture object.</p>
+
+<p>Textures for materials shipping with SketchUp might only have a filename, since the path would be invalid on the end user&#39;s machine. Textures dynamically created from ImageRep objects may have an empty path unless saved with <span class='object_link'><a href="ImageRep.html#save_file-instance_method" title="Sketchup::ImageRep#save_file (method)">ImageRep#save_file</a></span> or until the texture is saved with <span class='object_link'><a href="#write-instance_method" title="Sketchup::Texture#write (method)">#write</a></span>.</p>
+
+<p>If you need only the filename of the texture use <tt>filename = File.basename(texture.filename)</tt>.</p>
 
 
   </div>
@@ -605,7 +615,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -665,7 +675,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The height method is used to get the height of a repeatable texture image, in inches.</p>
@@ -676,7 +689,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span></code></pre>
@@ -731,7 +744,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The image_height method retrieves the height of the repeatable texture image, in pixels.</p>
@@ -742,7 +758,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_imageheight'>imageheight</span> <span class='op'>=</span> <span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_image_height'>image_height</span>
@@ -802,7 +818,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#image_rep-instance_method" title="Sketchup::Texture#image_rep (method)">#image_rep</a></span> method returns a copy of a <span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">ImageRep</a></span> object representing the texture pixel data.</p>
@@ -813,7 +832,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_texture'>texture</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_materials'><span class='object_link'><a href="Model.html#materials-instance_method" title="Sketchup::Model#materials (method)">materials</a></span></span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_texture'>texture</span>
@@ -897,7 +916,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The image_width method retrieves the width of the repeatable texture image, in pixels.</p>
@@ -908,7 +930,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_imagewidth'>imagewidth</span> <span class='op'>=</span> <span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_image_width'>image_width</span>
@@ -968,7 +990,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The size= method allows you to set the size of the repeatable texture image, in inches,</p>
@@ -979,7 +1004,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='int'>60</span>
@@ -1080,7 +1105,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The valid? method ensures that a texture is valid.</p>
@@ -1091,7 +1119,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_valid?'>valid?</span>
@@ -1146,7 +1174,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The width method is used to get the width of a repeatable texture image, in inches.</p>
@@ -1157,7 +1188,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_texture'>texture</span><span class='period'>.</span><span class='id identifier rubyid_width'>width</span></code></pre>
@@ -1212,7 +1243,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Writes the texture to file with option to preserve the color adjustments made by the material.</p>
@@ -1223,7 +1257,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_materials'><span class='object_link'><a href="Model.html#materials-instance_method" title="Sketchup::Model#materials (method)">materials</a></span></span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>

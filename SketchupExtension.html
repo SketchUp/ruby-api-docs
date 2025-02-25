@@ -187,7 +187,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The SketchupExtension class contains methods allowing you to create and manipulate SketchUp extensions. Extensions are Ruby scripts that can be loaded and unloaded using the Extension manager (Extensions panel of the Preferences dialog box). Generally you should register your ruby scripts as an extension to give SketchUp users the ability to disable it through the user interface.</p>
+<p>The SketchupExtension class contains methods allowing you to create and manipulate SketchUp extensions. Extensions are Ruby scripts that can be loaded and unloaded using the Extension manager (Extensions panel of the Extension Manager dialog box). Generally you should register your ruby scripts as an extension to give SketchUp users the ability to disable it through the user interface.</p>
 
 <p>The idea here is to take the ruby script that actually creates your functionality and place it in a folder somewhere outside of the /Plugins folder, most commonly a subdirectory like /Plugins/MyExtension. Then you create a new ruby script inside the /Plugins directory that will set up the extension entry and load your original script if the user has your extension turned on.</p>
 
@@ -201,7 +201,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -727,7 +727,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -746,7 +749,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -843,10 +846,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>Loads the extension, meaning the underlying ruby script is immediately interpreted. This is the equivalent of checking the extension&#39;s checkbox in the Preferences &gt; Extensions list.</p>
+<p>Loads the extension, meaning the underlying ruby script is immediately interpreted. This is the equivalent of checking the extension&#39;s checkbox in the Extension Manager.</p>
 
 
   </div>
@@ -854,11 +860,11 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># This will register the extension, a necessary step for it to appear
-</span><span class='comment'># in SketchUp&#39;s Preferences &gt; Extensions list
+</span><span class='comment'># in SketchUp&#39;s Extension Manager &gt; Extensions list
 </span><span class='id identifier rubyid_ext_c'>ext_c</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Stair Tools C</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>StairTools/core.rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_extension'><span class='object_link'><a href="Sketchup.html#register_extension-class_method" title="Sketchup.register_extension (method)">register_extension</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_ext_c'>ext_c</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span>
 
@@ -915,7 +921,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The copyright method returns the copyright string which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -926,7 +935,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -985,7 +994,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The copyright= method sets the copyright string which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -996,7 +1008,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1086,7 +1098,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The creator method returns the creator string which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -1097,7 +1112,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1156,7 +1171,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The creator= method sets the creator string which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -1167,7 +1185,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1257,7 +1275,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The description method returns the long description which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -1268,7 +1289,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1327,7 +1348,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The description= method sets the long description which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -1338,7 +1362,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1428,7 +1452,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The extension_path method returns the file system path to the extension&#39;s outer rb file.</p>
@@ -1486,7 +1513,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The id method returns the Extension Warehouse ID string.</p>
@@ -1544,7 +1574,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns whether the extension is set to load when SketchUp starts up.</p>
@@ -1555,7 +1588,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ext'>ext</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Stair Tools</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>StairTools/core.rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1608,7 +1641,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns whether the extension is currently loaded, meaning the actual ruby script that implements the extension has been evaluated.</p>
@@ -1619,7 +1655,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ext'>ext</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Stair Tools</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>StairTools/core.rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1672,7 +1708,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The name method returns the name which appears for an extension inside the Extensions Manager dialog.</p>
@@ -1683,7 +1722,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1741,7 +1780,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The name= method sets the name which appears for an extension inside the Extensions Manager dialog.</p>
@@ -1752,7 +1794,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -1841,7 +1883,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns whether the extension has been registered via Sketchup.register_extension.</p>
@@ -1852,7 +1897,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ext'>ext</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Stair Tools</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>StairTools/core.rb</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1905,10 +1950,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>Unloads the extension. This is the equivalent of unchecking the extension&#39;s checkbox in the Preferences &gt; Extensions list.</p>
+<p>Unloads the extension. This is the equivalent of unchecking the extension&#39;s checkbox in the Extension Manager &gt; Extensions list.</p>
 
 <p>Note that technically the extension is not “unloaded” in the sense that it stops running during the current SketchUp session, but the next time the user restarts SketchUp, the extension will not be active.</p>
 
@@ -1918,7 +1966,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># This unloads all extensions. The next time SketchUp starts, none of
@@ -1977,7 +2025,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The version method returns the version which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -1988,7 +2039,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -2047,7 +2098,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The version method sets the version which appears beneath an extension inside the Extensions Manager dialog.</p>
@@ -2058,7 +2112,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create an entry in the Extension list that loads a script called
@@ -2148,7 +2202,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The version_id method returns the Extension Warehouse Version ID string.</p>

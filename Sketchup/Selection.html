@@ -20,7 +20,7 @@
     <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
     <meta name="title" content="Class: Sketchup::Selection" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="A set of the currently selected entities." />
+    <meta name="description" content="A set of the currently selected drawing elements." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::Selection" />
     <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/Selection.html" />
-    <meta property="og:description" content="A set of the currently selected entities." />
+    <meta property="og:description" content="A set of the currently selected drawing elements." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Sketchup::Selection" />
-    <meta name="twitter:description" content="A set of the currently selected entities." />
+    <meta name="twitter:description" content="A set of the currently selected drawing elements." />
     <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/Selection.html" />
 
@@ -192,7 +192,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>A set of the currently selected entities. Use the Model.selection method to get a Selection object.  Note that the order of entities (<code>selection[0]</code>, <code>selection[1]</code> and so on) in the set is in no particular order and should not be assumed to be in the same order as the user selected the entities.</p>
+<p>A set of the currently selected drawing elements. Use the Model.selection method to get a Selection object.  Note that the order of drawing elements (<code>selection[0]</code>, <code>selection[1]</code> and so on) in the set is in no particular order and should not be assumed to be in the same order as the user selected the drawing elements.</p>
 
 
   </div>
@@ -200,7 +200,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Get a handle to the selection set.
@@ -248,7 +248,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index)  &#x21d2; Sketchup::Entity<sup>?</sup> </a>
+      <a href="#[]-instance_method" title="#[] (instance method)">#<strong>[]</strong>(index)  &#x21d2; Sketchup::Drawingelement<sup>?</sup> </a>
     
 
     
@@ -263,7 +263,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> from the selection by index.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> from the selection by index.</p>
 </div></span>
   
 </li>
@@ -287,7 +287,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add method is used to add entities to the selection.</p>
+<p>The <span class='object_link'><a href="#add-instance_method" title="Sketchup::Selection#add (method)">#add</a></span> method is used to add Drawingelement to the selection.</p>
 </div></span>
   
 </li>
@@ -320,7 +320,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#at-instance_method" title="#at (instance method)">#<strong>at</strong>(index)  &#x21d2; Sketchup::Entity<sup>?</sup> </a>
+      <a href="#at-instance_method" title="#at (instance method)">#<strong>at</strong>(index)  &#x21d2; Sketchup::Drawingelement<sup>?</sup> </a>
     
 
     
@@ -368,7 +368,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#contains%3F-instance_method" title="#contains? (instance method)">#<strong>contains?</strong>(entity)  &#x21d2; Boolean </a>
+      <a href="#contains%3F-instance_method" title="#contains? (instance method)">#<strong>contains?</strong>(drawing_element)  &#x21d2; Boolean </a>
     
 
     
@@ -414,7 +414,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|entity| ... } &#x21d2; nil </a>
+      <a href="#each-instance_method" title="#each (instance method)">#<strong>each</strong> {|drawing_element| ... } &#x21d2; nil </a>
     
 
     
@@ -429,7 +429,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> method is used to iterate through all of the selected entities.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> method is used to iterate through all of the selected Drawingelements.</p>
 </div></span>
   
 </li>
@@ -453,7 +453,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The empty? method is used to determine if there are entities in the selection.</p>
+<p>The <span class='object_link'><a href="#empty%3F-instance_method" title="Sketchup::Selection#empty? (method)">#empty?</a></span> method is used to determine if there are drawing elements in the selection.</p>
 </div></span>
   
 </li>
@@ -462,7 +462,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#first-instance_method" title="#first (instance method)">#<strong>first</strong>  &#x21d2; Sketchup::Entity </a>
+      <a href="#first-instance_method" title="#first (instance method)">#<strong>first</strong>  &#x21d2; Sketchup::Drawingelement </a>
     
 
     
@@ -477,7 +477,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The first method is used to retrieve the first selected entity.</p>
+<p>The <span class='object_link'><a href="#first-instance_method" title="Sketchup::Selection#first (method)">#first</a></span> method is used to retrieve the first selected Drawingelement.</p>
 </div></span>
   
 </li>
@@ -486,7 +486,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#include%3F-instance_method" title="#include? (instance method)">#<strong>include?</strong>(entity)  &#x21d2; Boolean </a>
+      <a href="#include%3F-instance_method" title="#include? (instance method)">#<strong>include?</strong>(drawing_element)  &#x21d2; Boolean </a>
     
 
     
@@ -501,7 +501,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> is in the selection.</p>
+<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> is in the selection.</p>
 </div></span>
   
 </li>
@@ -549,7 +549,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The is_curve? method is used to determine if the selection contains all edges that belong to a single curve.</p>
+<p>The <span class='object_link'><a href="#is_curve%3F-instance_method" title="Sketchup::Selection#is_curve? (method)">#is_curve?</a></span> method is used to determine if the selection contains all edges that belong to a single curve.</p>
 </div></span>
   
 </li>
@@ -573,7 +573,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The is_surface? method is used to determine if the selection contains only all of the faces that are part of a single curved surface.</p>
+<p>The <span class='object_link'><a href="#is_surface%3F-instance_method" title="Sketchup::Selection#is_surface? (method)">#is_surface?</a></span> method is used to determine if the selection contains only all of the faces that are part of a single curved surface.</p>
 </div></span>
   
 </li>
@@ -597,7 +597,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span> method is used to retrieve the number of selected entities.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span> method is used to retrieve the number of selected drawing elements.</p>
 </div></span>
   
 </li>
@@ -621,7 +621,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The model method retrieves the model for the selection.</p>
+<p>The <span class='object_link'><a href="#model-instance_method" title="Sketchup::Selection#model (method)">#model</a></span> method retrieves the model for the selection.</p>
 </div></span>
   
 </li>
@@ -669,7 +669,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The remove method is used to remove entities from the selection.</p>
+<p>The <span class='object_link'><a href="#remove-instance_method" title="Sketchup::Selection#remove (method)">#remove</a></span> method is used to remove Drawingelements from the selection.</p>
 </div></span>
   
 </li>
@@ -702,7 +702,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#shift-instance_method" title="#shift (instance method)">#<strong>shift</strong>  &#x21d2; Sketchup::Entity </a>
+      <a href="#shift-instance_method" title="#shift (instance method)">#<strong>shift</strong>  &#x21d2; Sketchup::Drawingelement </a>
     
 
     
@@ -717,7 +717,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The shift method is used to remove the first entity from the selection and returns it.</p>
+<p>The <span class='object_link'><a href="#shift-instance_method" title="Sketchup::Selection#shift (method)">#shift</a></span> method is used to remove the first Drawingelement from the selection and returns it.</p>
 </div></span>
   
 </li>
@@ -741,7 +741,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The single_object? method is used to determine if the selection contains a single object.</p>
+<p>The <span class='object_link'><a href="#single_object%3F-instance_method" title="Sketchup::Selection#single_object? (method)">#single_object?</a></span> method is used to determine if the selection contains a single object.</p>
 </div></span>
   
 </li>
@@ -789,7 +789,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The toggle method is used to change whether an entity is part of the selection.</p>
+<p>The <span class='object_link'><a href="#toggle-instance_method" title="Sketchup::Selection#toggle (method)">#toggle</a></span> method is used to change whether a Drawingelement is part of the selection.</p>
 </div></span>
   
 </li>
@@ -810,16 +810,19 @@
   <h3 class="signature first" id="[]-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>[]</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt><sup>?</sup> 
+    #<strong>[]</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt><sup>?</sup> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> from the selection by index. Index 0 is the first entity in the selection.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> from the selection by index. Index 0 is the first Drawingelement in the selection.</p>
 
 <p>This method is not very efficient. If you need to look at every entity in the selection, consider using <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> instead of using this method to manually grab each one.</p>
 
@@ -829,7 +832,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -853,7 +856,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The index of the Entity object to retrieve.</p>
+<p>The index of the Drawingelement object to retrieve.</p>
 </div>
       
     </li>
@@ -866,7 +869,7 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -905,21 +908,24 @@
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>add</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>add</strong>(drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
     
-      <span class="overload">#<strong>add</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>add</strong>(*drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
     
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The add method is used to add entities to the selection.  Entities that are added to the Selection are visually indicated by the selection bounding box.</p>
+<p>The <span class='object_link'><a href="#add-instance_method" title="Sketchup::Selection#add (method)">#add</a></span> method is used to add Drawingelement to the selection. Drawingelements that are added to the Selection are visually indicated by the selection bounding box.</p>
 
-<p>You can pass it individual Entities or an Array of Entities: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on an entity that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given entity.</p>
+<p>You can pass it individual Drawingelements or an Array of Drawingelements: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on a Drawingelement that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given Drawingelement.</p>
 
 
   </div>
@@ -927,13 +933,13 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='comment'># Add by listing the entities...
+      <pre class="example code"><code><span class='comment'># Add by listing the Drawingelements...
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rparen'>)</span>
 
-<span class='comment'># ...or add by passing an Array of entities.
+<span class='comment'># ...or add by passing an Array of Drawingelements.
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
       
@@ -948,7 +954,7 @@
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>add</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>add</strong>(drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -961,10 +967,10 @@
   
     <li>
       
-        <span class='name'>entities</span>
+        <span class='name'>drawing_elements</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
       
       
       
@@ -978,7 +984,7 @@
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>add</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>add</strong>(*drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -991,10 +997,10 @@
   
     <li>
       
-        <span class='name'>entities</span>
+        <span class='name'>drawing_elements</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
       
       
       
@@ -1020,7 +1026,7 @@
       
         &mdash;
         <div class='inline'>
-<p>the number of Entity objects added</p>
+<p>the number of Drawingelement objects added</p>
 </div>
       
     </li>
@@ -1056,7 +1062,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The add_observer method is used to add an observer to the selection object.</p>
@@ -1067,7 +1076,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span>
@@ -1148,13 +1157,16 @@
   <h3 class="signature " id="at-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>at</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt><sup>?</sup> 
+    #<strong>at</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt><sup>?</sup> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#at-instance_method" title="Sketchup::Selection#at (method)">#at</a></span> method is an alias for <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span>.</p>
@@ -1165,7 +1177,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -1189,7 +1201,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The index of the Entity object to retrieve.</p>
+<p>The index of the Drawingelement object to retrieve.</p>
 </div>
       
     </li>
@@ -1202,7 +1214,7 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, <tt>nil</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
@@ -1246,7 +1258,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The clear method is used to clear the selection.</p>
@@ -1257,7 +1272,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
@@ -1304,13 +1319,16 @@
   <h3 class="signature " id="contains?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>contains?</strong>(entity)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>contains?</strong>(drawing_element)  &#x21d2; <tt>Boolean</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#contains%3F-instance_method" title="Sketchup::Selection#contains? (method)">#contains?</a></span> method is and alias of <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span>.</p>
@@ -1321,7 +1339,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -1344,10 +1362,10 @@
   
     <li>
       
-        <span class='name'>entity</span>
+        <span class='name'>drawing_element</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
       
       
       
@@ -1408,7 +1426,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -1425,7 +1446,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span>
@@ -1477,13 +1498,16 @@
   <h3 class="signature " id="each-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>each</strong> {|entity| ... } &#x21d2; <tt>nil</tt> 
+    #<strong>each</strong> {|drawing_element| ... } &#x21d2; <tt>nil</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -1494,9 +1518,9 @@
   </div>
 
 
-<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> method is used to iterate through all of the selected entities.</p>
+<p>The <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> method is used to iterate through all of the selected Drawingelements.</p>
 
-<p>If you want to do something with all of the selected Entities, this is more efficient than using <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span>.</p>
+<p>If you want to do something with all of the selected Drawingelements, this is more efficient than using <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span>.</p>
 
 
   </div>
@@ -1504,10 +1528,10 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_entity'>entity</span><span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_entity'>entity</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_drawing_element'>drawing_element</span><span class='op'>|</span> <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_drawing_element'>drawing_element</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 
@@ -1516,10 +1540,10 @@
   
     <li>
       
-        <span class='name'>entity</span>
+        <span class='name'>drawing_element</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
       
       
       
@@ -1569,10 +1593,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The empty? method is used to determine if there are entities in the selection.</p>
+<p>The <span class='object_link'><a href="#empty%3F-instance_method" title="Sketchup::Selection#empty? (method)">#empty?</a></span> method is used to determine if there are drawing elements in the selection.</p>
 
 
   </div>
@@ -1580,10 +1607,10 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_drawing_element'>drawing_element</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_empty'>empty</span></code></pre>
     
   </div>
@@ -1625,18 +1652,21 @@
   <h3 class="signature " id="first-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>first</strong>  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt> 
+    #<strong>first</strong>  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The first method is used to retrieve the first selected entity</p>
+<p>The <span class='object_link'><a href="#first-instance_method" title="Sketchup::Selection#first (method)">#first</a></span> method is used to retrieve the first selected Drawingelement</p>
 
-<p>Returns nil if nothing is selected. This method is useful when you know that only a single entity is selected, or you are only interested in the first selected entity.</p>
+<p>Returns nil if nothing is selected. This method is useful when you know that only a single Drawingelement is selected, or you are only interested in the first selected Drawingelement.</p>
 
 
   </div>
@@ -1644,11 +1674,11 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
-<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_drawing_element'>drawing_element</span>
+<span class='id identifier rubyid_drawing_element'>drawing_element</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span></code></pre>
     
   </div>
 
@@ -1658,13 +1688,13 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>the first selected Entity object if successful</p>
+<p>the first selected Drawingelement object if successful</p>
 </div>
       
     </li>
@@ -1694,16 +1724,19 @@
   <h3 class="signature " id="include?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>include?</strong>(entity)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>include?</strong>(drawing_element)  &#x21d2; <tt>Boolean</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> is in the selection.</p>
+<p>The <span class='object_link'><a href="#include%3F-instance_method" title="Sketchup::Selection#include? (method)">#include?</a></span> method is used to determine if a given <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> is in the selection.</p>
 
 
   </div>
@@ -1711,7 +1744,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -1734,10 +1767,10 @@
   
     <li>
       
-        <span class='name'>entity</span>
+        <span class='name'>drawing_element</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
       
       
       
@@ -1798,7 +1831,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#invert-instance_method" title="Sketchup::Selection#invert (method)">#invert</a></span> method is used to invert the selection.</p>
@@ -1809,7 +1845,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -1869,10 +1905,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The is_curve? method is used to determine if the selection contains all edges that belong to a single curve.</p>
+<p>The <span class='object_link'><a href="#is_curve%3F-instance_method" title="Sketchup::Selection#is_curve? (method)">#is_curve?</a></span> method is used to determine if the selection contains all edges that belong to a single curve.</p>
 
 
   </div>
@@ -1880,10 +1919,10 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_drawing_element'>drawing_element</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_is_curve?'>is_curve?</span></code></pre>
     
   </div>
@@ -1931,10 +1970,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The is_surface? method is used to determine if the selection contains only all of the faces that are part of a single curved surface.</p>
+<p>The <span class='object_link'><a href="#is_surface%3F-instance_method" title="Sketchup::Selection#is_surface? (method)">#is_surface?</a></span> method is used to determine if the selection contains only all of the faces that are part of a single curved surface.</p>
 
 
   </div>
@@ -1942,10 +1984,10 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
+      <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_drawing_element'>drawing_element</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_is_surface'>is_surface</span></code></pre>
     
   </div>
@@ -1993,10 +2035,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span> method is used to retrieve the number of selected entities.</p>
+<p>The <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span> method is used to retrieve the number of selected drawing elements.</p>
 
 
   </div>
@@ -2004,7 +2049,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span>
@@ -2064,10 +2109,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The model method retrieves the model for the selection.</p>
+<p>The <span class='object_link'><a href="#model-instance_method" title="Sketchup::Selection#model (method)">#model</a></span> method retrieves the model for the selection.</p>
 
 
   </div>
@@ -2075,7 +2123,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span></code></pre>
@@ -2130,7 +2178,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#nitems-instance_method" title="Sketchup::Selection#nitems (method)">#nitems</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span>.</p>
@@ -2141,7 +2192,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span>
@@ -2194,21 +2245,24 @@
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>remove</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>remove</strong>(drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
     
-      <span class="overload">#<strong>remove</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>remove</strong>(*drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
     
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The remove method is used to remove entities from the selection.</p>
+<p>The <span class='object_link'><a href="#remove-instance_method" title="Sketchup::Selection#remove (method)">#remove</a></span> method is used to remove Drawingelements from the selection.</p>
 
-<p>You can pass it individual Entities or an Array of Entities: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on an entity that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given entity.</p>
+<p>You can pass it individual Drawingelements or an Array of Drawingelements: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on a Drawingelement that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given Drawingelement.</p>
 
 
   </div>
@@ -2216,13 +2270,13 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='comment'># Remove by listing the entities...
+      <pre class="example code"><code><span class='comment'># Remove by listing the Drawingelements...
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rparen'>)</span>
 
-<span class='comment'># ...or remove by passing an Array of entities.
+<span class='comment'># ...or remove by passing an Array of Drawingelements.
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
       
@@ -2237,7 +2291,7 @@
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>remove</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>remove</strong>(drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2250,10 +2304,10 @@
   
     <li>
       
-        <span class='name'>entities</span>
+        <span class='name'>drawing_elements</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
       
       
       
@@ -2267,7 +2321,7 @@
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>remove</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>remove</strong>(*drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2280,10 +2334,10 @@
   
     <li>
       
-        <span class='name'>entities</span>
+        <span class='name'>drawing_elements</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
       
       
       
@@ -2309,7 +2363,7 @@
       
         &mdash;
         <div class='inline'>
-<p>the number of Entity objects removed</p>
+<p>the number of Drawingelement objects removed</p>
 </div>
       
     </li>
@@ -2345,7 +2399,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The remove_observer method is used to remove an observer from the selection object.</p>
@@ -2356,7 +2413,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span>
@@ -2437,16 +2494,19 @@
   <h3 class="signature " id="shift-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>shift</strong>  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt> 
+    #<strong>shift</strong>  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The shift method is used to remove the first entity from the selection and returns it.</p>
+<p>The <span class='object_link'><a href="#shift-instance_method" title="Sketchup::Selection#shift (method)">#shift</a></span> method is used to remove the first Drawingelement from the selection and returns it.</p>
 
 
   </div>
@@ -2454,12 +2514,12 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span>
+      <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_drawing_element'>drawing_element</span>
 <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Ready to remove item from selection set</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span></code></pre>
+<span class='id identifier rubyid_drawing_element'>drawing_element</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_shift'>shift</span></code></pre>
     
   </div>
 
@@ -2469,13 +2529,13 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>the first Entity object in the selection set if successful</p>
+<p>the first Drawingelement object in the selection set if successful</p>
 </div>
       
     </li>
@@ -2511,12 +2571,15 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The single_object? method is used to determine if the selection contains a single object.</p>
+<p>The <span class='object_link'><a href="#single_object%3F-instance_method" title="Sketchup::Selection#single_object? (method)">#single_object?</a></span> method is used to determine if the selection contains a single object.</p>
 
-<p>It can either be a single Entity or a group of Entities for which is_curve? or is_surface? will return true.</p>
+<p>It can either be a single DrawingElement or a group of DrawingElements for which is_curve? or is_surface? will return true.</p>
 
 
   </div>
@@ -2524,7 +2587,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_single_object'>single_object</span></code></pre>
@@ -2574,7 +2637,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#size-instance_method" title="Sketchup::Selection#size (method)">#size</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Selection#length (method)">#length</a></span>.</p>
@@ -2585,7 +2651,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_selection'>selection</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span>
@@ -2638,21 +2704,24 @@
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>toggle</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>toggle</strong>(drawings_elements)  &#x21d2; <tt>Integer</tt> </span>
     
-      <span class="overload">#<strong>toggle</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+      <span class="overload">#<strong>toggle</strong>(*drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
     
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The toggle method is used to change whether an entity is part of the selection. Entities that are not already selected are added. Entities that are already selected are removed.</p>
+<p>The <span class='object_link'><a href="#toggle-instance_method" title="Sketchup::Selection#toggle (method)">#toggle</a></span> method is used to change whether a Drawingelement is part of the selection. Drawingelements that are not already selected are added. Drawingelements that are already selected are removed.</p>
 
-<p>You can pass it individual Entities or an Array of Entities: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on an entity that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given entity.</p>
+<p>You can pass it individual Drawingelements or an Array of Drawingelements: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on a Drawingelement that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given Drawingelement.</p>
 
 
   </div>
@@ -2660,13 +2729,13 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='comment'># Toggle by listing the entities...
+      <pre class="example code"><code><span class='comment'># Toggle by listing the Drawingelements...
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_toggle'>toggle</span><span class='lparen'>(</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rparen'>)</span>
 
-<span class='comment'># ...or toggle by passing an Array of entities.
+<span class='comment'># ...or toggle by passing an Array of Drawingelements.
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_toggle'>toggle</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
       
@@ -2681,7 +2750,7 @@
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>toggle</strong>(entities)  &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>toggle</strong>(drawings_elements)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2694,10 +2763,10 @@
   
     <li>
       
-        <span class='name'>entities</span>
+        <span class='name'>drawing_elements</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
       
       
       
@@ -2711,7 +2780,7 @@
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>toggle</strong>(*entities)  &#x21d2; <tt>Integer</tt> </span>
+        <span class="signature">#<strong>toggle</strong>(*drawing_elements)  &#x21d2; <tt>Integer</tt> </span>
         <div class="docstring">
   <div class="discussion">
     
@@ -2724,10 +2793,10 @@
   
     <li>
       
-        <span class='name'>entities</span>
+        <span class='name'>drawing_elements</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
       
       
       
@@ -2753,7 +2822,7 @@
       
         &mdash;
         <div class='inline'>
-<p>the number of Entity objects changed</p>
+<p>the number of Drawingelement objects changed</p>
 </div>
       
     </li>

@@ -214,14 +214,16 @@
 </ul>
 
 </div>
-  <h2>
-    Constant Summary
-    <a
-        id="constant_summary"
-        href="#constant_summary"
-        title="Permalink">#</a>
-  </h2>
   
+    <h2>
+      Constant Summary
+      <a
+          id="constant_summary"
+          href="#constant_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
     <dl class="constants">
       
         <dt id="POINT_TYPE_MOVE_TO-constant" class="">Layout::Path::POINT_TYPE_MOVE_TO
@@ -731,7 +733,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#initialize-instance_method" title="Layout::Path#initialize (method)">#initialize</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> between a start point and an end point, or from a provided <span class='object_link'><a href="Rectangle.html" title="Layout::Rectangle (class)">Rectangle</a></span> or <span class='object_link'><a href="Ellipse.html" title="Layout::Ellipse (class)">Ellipse</a></span>.</p>
@@ -742,7 +747,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code>start = Geom::Point2d.new(1, 1)
@@ -1054,7 +1059,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#new_arc-class_method" title="Layout::Path.new_arc (method)">new_arc</a></span> method creates a new arc-shaped <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -1065,13 +1073,13 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_center'>center</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='float'>2.0</span>
-<span class='id identifier rubyid_start_angle'>start_angle</span> <span class='op'>=</span> <span class='float'>180.0</span>
-<span class='id identifier rubyid_end_angle'>end_angle</span> <span class='op'>=</span> <span class='float'>360.0</span>
+<span class='id identifier rubyid_start_angle'>start_angle</span> <span class='op'>=</span> <span class='float'>3.14159</span>
+<span class='id identifier rubyid_end_angle'>end_angle</span> <span class='op'>=</span> <span class='float'>6.28319</span>
 <span class='id identifier rubyid_arc'>arc</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new_arc'>new_arc</span><span class='lparen'>(</span><span class='id identifier rubyid_center'>center</span><span class='comma'>,</span> <span class='id identifier rubyid_radius'>radius</span><span class='comma'>,</span> <span class='id identifier rubyid_start_angle'>start_angle</span><span class='comma'>,</span> <span class='id identifier rubyid_end_angle'>end_angle</span><span class='rparen'>)</span></code></pre>
     
   </div>
@@ -1109,6 +1117,11 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>in radians</p>
+</div>
+      
     </li>
   
     <li>
@@ -1119,6 +1132,11 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
         <span class='type'>(<tt>Float</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>in radians</p>
+</div>
       
     </li>
   
@@ -1214,7 +1232,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#append_point-instance_method" title="Layout::Path#append_point (method)">#append_point</a></span> method appends a <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> to the end of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -1225,7 +1246,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>2</span><span class='comma'>,</span> <span class='int'>5</span><span class='rparen'>)</span>
@@ -1423,7 +1444,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#arc-instance_method" title="Layout::Path#arc (method)">#arc</a></span> method returns the parameters of an arc from the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>, or <code>nil</code> if path is not an arc.</p>
@@ -1434,7 +1458,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code>start_angle, radius, start, end = path.arc</code></pre>
@@ -1489,7 +1513,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#circle-instance_method" title="Layout::Path#circle (method)">#circle</a></span> method returns the parameters of a circle from the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>, or <code>nil</code> if path is not a circle.</p>
@@ -1500,7 +1527,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_center_point'>center_point</span><span class='comma'>,</span> <span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_circle'>circle</span></code></pre>
@@ -1555,7 +1582,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#close-instance_method" title="Layout::Path#close (method)">#close</a></span> method closes the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -1566,7 +1596,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span></code></pre>
@@ -1649,7 +1679,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#closed%3F-instance_method" title="Layout::Path#closed? (method)">#closed?</a></span> method returns whether the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> is closed.</p>
@@ -1660,7 +1693,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_is_closed'>is_closed</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_closed?'>closed?</span></code></pre>
@@ -1710,7 +1743,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#end_arrow-instance_method" title="Layout::Path#end_arrow (method)">#end_arrow</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> from an end arrow.</p>
@@ -1721,7 +1757,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Path (class)">Path</a></span></span><span class='period'>.</span><span class='id identifier rubyid_end_arrow'>end_arrow</span><span class='lparen'>(</span><span class='id identifier rubyid_path_with_end_arrow'>path_with_end_arrow</span><span class='rparen'>)</span></code></pre>
@@ -1776,7 +1812,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#end_point-instance_method" title="Layout::Path#end_point (method)">#end_point</a></span> method returns the end point of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -1787,7 +1826,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
@@ -1841,7 +1880,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#parametric_length-instance_method" title="Layout::Path#parametric_length (method)">#parametric_length</a></span> method returns the parametric length for the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>. The parametric length is the length with respect to the curve of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -1852,7 +1894,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_parametric_length'>parametric_length</span></code></pre>
@@ -1902,7 +1944,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#point_at-instance_method" title="Layout::Path#point_at (method)">#point_at</a></span> method returns the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span> at a given parametric value.</p>
@@ -1913,7 +1958,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_parametric_length'>parametric_length</span>
@@ -1998,7 +2043,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#point_types-instance_method" title="Layout::Path#point_types (method)">#point_types</a></span> method returns an array of point types corresponding to the <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>s in the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -2018,7 +2066,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_types'>types</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_point_types'>point_types</span></code></pre>
@@ -2073,7 +2121,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#points-instance_method" title="Layout::Path#points (method)">#points</a></span> method returns an array of <span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span>s in the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -2084,7 +2135,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
@@ -2138,7 +2189,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#start_arrow-instance_method" title="Layout::Path#start_arrow (method)">#start_arrow</a></span> method creates a new <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span> from a start arrow.</p>
@@ -2149,7 +2203,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_start_arrow'>start_arrow</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_start_arrow'>start_arrow</span></code></pre>
@@ -2204,7 +2258,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#start_point-instance_method" title="Layout::Path#start_point (method)">#start_point</a></span> method returns the start point of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -2215,7 +2272,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
@@ -2269,7 +2326,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#tangent_at-instance_method" title="Layout::Path#tangent_at (method)">#tangent_at</a></span> method returns the tangent <span class='object_link'><a href="../Geom/Vector2d.html" title="Geom::Vector2d (class)">Geom::Vector2d</a></span> at the given parametric value.</p>
@@ -2280,7 +2340,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_parametric_length'>parametric_length</span>
@@ -2365,7 +2425,10 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#winding-instance_method" title="Layout::Path#winding (method)">#winding</a></span> method returns the winding type of the <span class='object_link'><a href="" title="Layout::Path (class)">Layout::Path</a></span>.</p>
@@ -2382,7 +2445,7 @@ new_path = Layout::Path.new(start, control_1, control_2, end)</code></pre>
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_winding'>winding</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span><span class='period'>.</span><span class='id identifier rubyid_winding'>winding</span></code></pre>

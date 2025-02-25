@@ -20,7 +20,7 @@
     <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
     <meta name="title" content="Class: Sketchup::Http::Request" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="Http::Request objects allows you to send HTTP request to HTTP servers." />
+    <meta name="description" content="Sketchup::Http::Request objects allows you to send HTTP request to HTTP servers." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: Sketchup::Http::Request" />
     <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/Http/Request.html" />
-    <meta property="og:description" content="Http::Request objects allows you to send HTTP request to HTTP servers." />
+    <meta property="og:description" content="Sketchup::Http::Request objects allows you to send HTTP request to HTTP servers." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: Sketchup::Http::Request" />
-    <meta name="twitter:description" content="Http::Request objects allows you to send HTTP request to HTTP servers." />
+    <meta name="twitter:description" content="Sketchup::Http::Request objects allows you to send HTTP request to HTTP servers." />
     <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/Http/Request.html" />
 
@@ -187,7 +187,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Http::Request objects allows you to send HTTP request to HTTP servers.</p>
+<p><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span> objects allows you to send HTTP request to HTTP servers.</p>
 
 
   </div>
@@ -370,7 +370,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The default port is 80, to use a different port define it in the URL when creating a new <span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span>.</p>
+<p>The default port is <code>80</code>, to use a different port define it in the URL when creating a new <span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span>.</p>
 </div></span>
   
 </li>
@@ -561,7 +561,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -571,22 +574,29 @@
 </div>
   </div>
 
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Do not <span class='object_link'><a href="#cancel-instance_method" title="Sketchup::Http::Request#cancel (method)">#cancel</a></span> the request in the response callback.</p>
+</div>
+  </div>
 
-<p>The default port is 80, to use a different port define it in the URL when creating a new <span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Sketchup::Http::Request</a></span>.</p>
 
-<p>The <code>method</code> parameter accepts any custom HTTP method or one of the following:</p>
+<p>The default port is <code>80</code>, to use a different port define it in the URL when creating a new <span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Sketchup::Http::Request</a></span>.</p>
+
+<p>The <span class='object_link'><a href="#method-instance_method" title="Sketchup::Http::Request#method (method)">#method</a></span> parameter accepts any custom HTTP method or one of the following:</p>
 <ul><li>
-<p><code>Sketchup::Http::GET</code></p>
+<p><span class='object_link'><a href="../Http.html#GET-constant" title="Sketchup::Http::GET (constant)">GET</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::POST</code></p>
+<p><span class='object_link'><a href="../Http.html#POST-constant" title="Sketchup::Http::POST (constant)">POST</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::PUT</code></p>
+<p><span class='object_link'><a href="../Http.html#PUT-constant" title="Sketchup::Http::PUT (constant)">PUT</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::DELETE</code></p>
+<p><span class='object_link'><a href="../Http.html#DELETE-constant" title="Sketchup::Http::DELETE (constant)">DELETE</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::HEAD</code></p>
+<p><span class='object_link'><a href="../Http.html#HEAD-constant" title="Sketchup::Http::HEAD (constant)">HEAD</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::OPTIONS</code></p>
+<p><span class='object_link'><a href="../Http.html#OPTIONS-constant" title="Sketchup::Http::OPTIONS (constant)">OPTIONS</a></span></p>
 </li></ul>
 
 
@@ -595,7 +605,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html#GET-constant" title="Sketchup::Http::GET (constant)">GET</a></span></span><span class='rparen'>)</span>
@@ -682,7 +692,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Gets the HTTP body that is going to be used when sending the request.</p>
@@ -693,7 +706,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -747,7 +760,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Sets the HTTP body that is going to be used when sending the request.</p>
@@ -758,7 +774,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -833,9 +849,20 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Do not <span class='object_link'><a href="#cancel-instance_method" title="Sketchup::Http::Request#cancel (method)">#cancel</a></span> the request in the response callback.</p>
+</div>
+  </div>
+
+
 <p>Cancels the request.</p>
 
 
@@ -844,7 +871,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -899,7 +926,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns the HTTP headers that are going to be used when sending the request.</p>
@@ -910,7 +940,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -965,7 +995,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Sets the HTTP headers that are going to be used when sending the request.</p>
@@ -976,7 +1009,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1051,7 +1084,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns the HTTP method that is going to be used when sending the request.</p>
@@ -1062,7 +1098,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1116,22 +1152,27 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>Sets the HTTP method that is going to be used when sending the request. The value can be any custom HTTP method or one of the following:</p>
+<p>Sets the HTTP method that is going to be used when sending the request.</p>
+
+<p>The value can be any custom HTTP method or one of the following:</p>
 <ul><li>
-<p><code>Sketchup::Http::GET</code></p>
+<p><span class='object_link'><a href="../Http.html#GET-constant" title="Sketchup::Http::GET (constant)">GET</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::POST</code></p>
+<p><span class='object_link'><a href="../Http.html#POST-constant" title="Sketchup::Http::POST (constant)">POST</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::PUT</code></p>
+<p><span class='object_link'><a href="../Http.html#PUT-constant" title="Sketchup::Http::PUT (constant)">PUT</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::DELETE</code></p>
+<p><span class='object_link'><a href="../Http.html#DELETE-constant" title="Sketchup::Http::DELETE (constant)">DELETE</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::HEAD</code></p>
+<p><span class='object_link'><a href="../Http.html#HEAD-constant" title="Sketchup::Http::HEAD (constant)">HEAD</a></span></p>
 </li><li>
-<p><code>Sketchup::Http::OPTIONS</code></p>
+<p><span class='object_link'><a href="../Http.html#OPTIONS-constant" title="Sketchup::Http::OPTIONS (constant)">OPTIONS</a></span></p>
 </li></ul>
 
 
@@ -1140,7 +1181,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1215,13 +1256,16 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p><code>total</code> is -1 if the server doesn&#39;t specify a file size in the response header.</p>
+<p><code>total</code> is <code>-1</code> if the server doesn&#39;t specify a file size in the response header.</p>
 </div>
   </div>
 
@@ -1234,7 +1278,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1349,7 +1393,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Adds a upload progress callback block that will get called everytime we have uploaded data to the server until the upload finishes.</p>
@@ -1360,7 +1407,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1471,9 +1518,20 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Do not <span class='object_link'><a href="#cancel-instance_method" title="Sketchup::Http::Request#cancel (method)">#cancel</a></span> the request in the response callback.</p>
+</div>
+  </div>
+
+
 <p>Starts the request with optionally a response callback block.</p>
 
 
@@ -1482,7 +1540,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1562,7 +1620,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns the internal status code. It can be one of the following:</p>
@@ -1584,7 +1645,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1636,7 +1697,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns a copy of the Request&#39;s URL.</p>
@@ -1647,7 +1711,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='ivar'>@request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Http.html" title="Sketchup::Http (module)">Http</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Http::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Http::Request#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://localhost:8080</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
