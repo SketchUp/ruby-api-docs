@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -169,6 +169,8 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
+<p><strong>SU2025.0</strong> = 25.0.571 on Windows 64-bit, 25.0.570 on Mac 64-bit.</p>
+</li><li>
 <p><strong>SU2024.0.2</strong> = 24.0.594 on Windows 64-bit, 24.0.595 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2024.0.1</strong> = 24.0.553 on Windows 64-bit, 24.0.554 on Mac 64-bit.</p>
@@ -258,6 +260,181 @@
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
 </li></ul>
 
+<h1 id="label-What-27s+new+in+SketchUp+2025.0">What&#39;s new in SketchUp 2025.0</h1>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Made <span class='object_link'><a href="Sketchup/Licensing.html#get_extension_license-class_method" title="Sketchup::Licensing.get_extension_license (method)">Sketchup::Licensing.get_extension_license</a></span> automatically try to fetch a license from Extension Warehouse if needed.</p>
+</li><li>
+<p>Added support for Snaps:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/Snap.html" title="Sketchup::Snap (class)">Sketchup::Snap</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Entities.html#add_snap-instance_method" title="Sketchup::Entities#add_snap (method)">Sketchup::Entities#add_snap</a></span></p>
+</li></ul>
+</li><li>
+<p>Added support for PBR materials:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#ao_enabled%3F-instance_method" title="Sketchup::Material#ao_enabled? (method)">Sketchup::Material#ao_enabled?</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#ao_strength-instance_method" title="Sketchup::Material#ao_strength (method)">Sketchup::Material#ao_strength</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#ao_strength=-instance_method" title="Sketchup::Material#ao_strength= (method)">Sketchup::Material#ao_strength=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#ao_texture-instance_method" title="Sketchup::Material#ao_texture (method)">Sketchup::Material#ao_texture</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#ao_texture=-instance_method" title="Sketchup::Material#ao_texture= (method)">Sketchup::Material#ao_texture=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#metallic_factor-instance_method" title="Sketchup::Material#metallic_factor (method)">Sketchup::Material#metallic_factor</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#metallic_factor=-instance_method" title="Sketchup::Material#metallic_factor= (method)">Sketchup::Material#metallic_factor=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#metallic_texture-instance_method" title="Sketchup::Material#metallic_texture (method)">Sketchup::Material#metallic_texture</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#metallic_texture=-instance_method" title="Sketchup::Material#metallic_texture= (method)">Sketchup::Material#metallic_texture=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#metalness_enabled=-instance_method" title="Sketchup::Material#metalness_enabled= (method)">Sketchup::Material#metalness_enabled=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#metalness_enabled%3F-instance_method" title="Sketchup::Material#metalness_enabled? (method)">Sketchup::Material#metalness_enabled?</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_enabled%3F-instance_method" title="Sketchup::Material#normal_enabled? (method)">Sketchup::Material#normal_enabled?</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_scale-instance_method" title="Sketchup::Material#normal_scale (method)">Sketchup::Material#normal_scale</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_scale=-instance_method" title="Sketchup::Material#normal_scale= (method)">Sketchup::Material#normal_scale=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_style-instance_method" title="Sketchup::Material#normal_style (method)">Sketchup::Material#normal_style</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_style=-instance_method" title="Sketchup::Material#normal_style= (method)">Sketchup::Material#normal_style=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_texture-instance_method" title="Sketchup::Material#normal_texture (method)">Sketchup::Material#normal_texture</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#normal_texture=-instance_method" title="Sketchup::Material#normal_texture= (method)">Sketchup::Material#normal_texture=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#roughness_enabled=-instance_method" title="Sketchup::Material#roughness_enabled= (method)">Sketchup::Material#roughness_enabled=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#roughness_enabled%3F-instance_method" title="Sketchup::Material#roughness_enabled? (method)">Sketchup::Material#roughness_enabled?</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#roughness_factor-instance_method" title="Sketchup::Material#roughness_factor (method)">Sketchup::Material#roughness_factor</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#roughness_factor=-instance_method" title="Sketchup::Material#roughness_factor= (method)">Sketchup::Material#roughness_factor=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#roughness_texture-instance_method" title="Sketchup::Material#roughness_texture (method)">Sketchup::Material#roughness_texture</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#roughness_texture=-instance_method" title="Sketchup::Material#roughness_texture= (method)">Sketchup::Material#roughness_texture=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Material.html#workflow-instance_method" title="Sketchup::Material#workflow (method)">Sketchup::Material#workflow</a></span></p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Pages.html#reorder-instance_method" title="Sketchup::Pages#reorder (method)">Sketchup::Pages#reorder</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Style.html#path-instance_method" title="Sketchup::Style#path (method)">Sketchup::Style#path</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Face.html#coplanar_with%3F-instance_method" title="Sketchup::Face#coplanar_with? (method)">Sketchup::Face#coplanar_with?</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/AttributeDictionary.html#empty%3F-instance_method" title="Sketchup::AttributeDictionary#empty? (method)">Sketchup::AttributeDictionary#empty?</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#load_time-instance_method" title="Sketchup::ComponentDefinition#load_time (method)">Sketchup::ComponentDefinition#load_time</a></span>.</p>
+</li><li>
+<p>Added support for environment lighting (IBL):</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/Environment.html" title="Sketchup::Environment (class)">Sketchup::Environment</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Environments.html" title="Sketchup::Environments (class)">Sketchup::Environments</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/EnvironmentsObserver.html" title="Sketchup::EnvironmentsObserver (class)">Sketchup::EnvironmentsObserver</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Model.html#environments-instance_method" title="Sketchup::Model#environments (method)">Sketchup::Model#environments</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Page.html#use_environment%3F-instance_method" title="Sketchup::Page#use_environment? (method)">Sketchup::Page#use_environment?</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Page.html#use_environment=-instance_method" title="Sketchup::Page#use_environment= (method)">Sketchup::Page#use_environment=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Page.html#environment-instance_method" title="Sketchup::Page#environment (method)">Sketchup::Page#environment</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Page.html#environment=-instance_method" title="Sketchup::Page#environment= (method)">Sketchup::Page#environment=</a></span></p>
+</li></ul>
+</li><li>
+<p>Added <code>:pixel_size</code> and <code>:point_size</code> options to <span class='object_link'><a href="Sketchup/View.html#draw_text-instance_method" title="Sketchup::View#draw_text (method)">Sketchup::View#draw_text</a></span>  and <span class='object_link'><a href="Sketchup/View.html#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">Sketchup::View#text_bounds</a></span> for consistent font size across platforms.</p>
+</li><li>
+<p>Added constants for the valid values for <span class='object_link'><a href="Sketchup/View.html#corner-instance_method" title="Sketchup::View#corner (method)">Sketchup::View#corner</a></span>:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/View.html#CORNER_TOP_LEFT-constant" title="Sketchup::View::CORNER_TOP_LEFT (constant)">Sketchup::View::CORNER_TOP_LEFT</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/View.html#CORNER_TOP_RIGHT-constant" title="Sketchup::View::CORNER_TOP_RIGHT (constant)">Sketchup::View::CORNER_TOP_RIGHT</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/View.html#CORNER_BOTTOM_LEFT-constant" title="Sketchup::View::CORNER_BOTTOM_LEFT (constant)">Sketchup::View::CORNER_BOTTOM_LEFT</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/View.html#CORNER_BOTTOM_RIGHT-constant" title="Sketchup::View::CORNER_BOTTOM_RIGHT (constant)">Sketchup::View::CORNER_BOTTOM_RIGHT</a></span></p>
+</li></ul>
+</li><li>
+<p>Upgraded CEF (used by <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>) to version 128.</p>
+</li><li>
+<p>Fixed issue of <span class='object_link'><a href="Sketchup/Styles.html#selected_style=-instance_method" title="Sketchup::Styles#selected_style= (method)">Sketchup::Styles#selected_style=</a></span> for case where trying to set the the <span class='object_link'><a href="Sketchup/Styles.html#selected_style=-instance_method" title="Sketchup::Styles#selected_style= (method)">Sketchup::Styles#selected_style=</a></span> to the <span class='object_link'><a href="Sketchup/Styles.html#active_style-instance_method" title="Sketchup::Styles#active_style (method)">Sketchup::Styles#active_style</a></span>.</p>
+</li></ul>
+
+<h3 id="label-Breaking+Changes+-+Per+Monitor+DPI+support">Breaking Changes - Per Monitor DPI support</h3>
+
+<p>SketchUp 2025.0 introduced support for different DPI per monitor on Windows.</p>
+
+<p>Related to this we have made changes to the Ruby API such that all screen coordinates are now in logical pixels. These changes are applied across Windows and macOS. Note that in this release only the Windows build will update the application DPI scaling factor to match the monitor the window is on.</p>
+
+<p><code>Integer</code> arguments and return values for screen coordinates that are in pixels have been changed to be logical pixels. This means that the values are now scaled by <code>UI.scale_factor(view)</code>.</p>
+
+<p>The old <code>UI.scale_factor</code> will return <code>1.0</code> as a compatibility shim.</p>
+
+<p>These changes should require no or minimal changes to extensions. We also expect that many extensions that were never made DPI aware to now behave better with different DPI settings.</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/View.html#device_width-instance_method" title="Sketchup::View#device_width (method)">Sketchup::View#device_width</a></span> returning physical pixels.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/View.html#device_height-instance_method" title="Sketchup::View#device_height (method)">Sketchup::View#device_height</a></span> returning physical pixels.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ViewObserver.html#onScaleFactorChange-instance_method" title="Sketchup::ViewObserver#onScaleFactorChange (method)">Sketchup::ViewObserver#onScaleFactorChange</a></span></p>
+</li><li>
+<p>Added optional option to <span class='object_link'><a href="Sketchup.html#resize_viewport-class_method" title="Sketchup.resize_viewport (method)">Sketchup.resize_viewport</a></span>: <code>Sketchup.resize_viewport(model, width, height, logical_pixels: false)</code></p>
+</li><li>
+<p>Added overload to <span class='object_link'><a href="UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span>: <code>UI::scale_factor(view)</code></p>
+</li><li>
+<p>Changed <span class='object_link'><a href="UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span> always return <code>1.0</code> as a compatibility shim. This should ensure that existing extensions that took <code>UI.scale_factor</code> into account continue to work without modifications.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#center-instance_method" title="Sketchup::View#center (method)">Sketchup::View#center</a></span> to return logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#corner-instance_method" title="Sketchup::View#corner (method)">Sketchup::View#corner</a></span> to return logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#inputpoint-instance_method" title="Sketchup::View#inputpoint (method)">Sketchup::View#inputpoint</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#pick_helper-instance_method" title="Sketchup::View#pick_helper (method)">Sketchup::View#pick_helper</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#pickray-instance_method" title="Sketchup::View#pickray (method)">Sketchup::View#pickray</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#screen_coords-instance_method" title="Sketchup::View#screen_coords (method)">Sketchup::View#screen_coords</a></span> to return logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#vpwidth-instance_method" title="Sketchup::View#vpwidth (method)">Sketchup::View#vpwidth</a></span> to return logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/View.html#vpheight-instance_method" title="Sketchup::View#vpheight (method)">Sketchup::View#vpheight</a></span> to return logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/PickHelper.html#do_pick-instance_method" title="Sketchup::PickHelper#do_pick (method)">Sketchup::PickHelper#do_pick</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/PickHelper.html#init-instance_method" title="Sketchup::PickHelper#init (method)">Sketchup::PickHelper#init</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/PickHelper.html#window_pick-instance_method" title="Sketchup::PickHelper#window_pick (method)">Sketchup::PickHelper#window_pick</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/InputPoint.html#pick-instance_method" title="Sketchup::InputPoint#pick (method)">Sketchup::InputPoint#pick</a></span> to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/Tool.html" title="Sketchup::Tool (class)">Sketchup::Tool</a></span> mouse events to use logical pixels.</p>
+</li><li>
+<p>Changed <span class='object_link'><a href="Sketchup/Overlay.html" title="Sketchup::Overlay (class)">Sketchup::Overlay</a></span> mouse events to use logical pixels.</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed SketchUp 2024 regression in <span class='object_link'><a href="Sketchup/View.html#draw2d-instance_method" title="Sketchup::View#draw2d (method)">Sketchup::View#draw2d</a></span> with <span class='object_link'><a href="top-level-namespace.html#GL_POINTS-constant" title="GL_POINTS (constant)">GL_POINTS</a></span> that draw the points in model space instead of view space.</p>
+</li><li>
+<p>Fixed SketchUp 2023-2024 regression in <span class='object_link'><a href="Sketchup/Face.html#area-instance_method" title="Sketchup::Face#area (method)">Sketchup::Face#area</a></span> reporting incorrect value when there are glued components on the outer loop.</p>
+</li></ul>
+
 <h1 id="label-What-27s+new+in+SketchUp+2024.0.2">What&#39;s new in SketchUp 2024.0.2</h1>
 
 <h2 id="label-Update+OpenSSL+to+3.2.2">Update OpenSSL to 3.2.2</h2>
@@ -289,11 +466,11 @@
 </li><li>
 <p><span class='object_link'><a href="Sketchup/RenderingOptionsObserver.html" title="Sketchup::RenderingOptionsObserver (class)">Sketchup::RenderingOptionsObserver</a></span> constants:</p>
 <ul><li>
-<p><code>ROPSetAOEnabled</code></p>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#ROPSetAOEnabled-constant" title="Sketchup::RenderingOptions::ROPSetAOEnabled (constant)">Sketchup::RenderingOptions::ROPSetAOEnabled</a></span></p>
 </li><li>
-<p><code>ROPSetAODistance</code></p>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#ROPSetAODistance-constant" title="Sketchup::RenderingOptions::ROPSetAODistance (constant)">Sketchup::RenderingOptions::ROPSetAODistance</a></span></p>
 </li><li>
-<p><code>ROPSetAOIntensity</code></p>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#ROPSetAOIntensity-constant" title="Sketchup::RenderingOptions::ROPSetAOIntensity (constant)">Sketchup::RenderingOptions::ROPSetAOIntensity</a></span></p>
 </li></ul>
 </li></ul>
 </li><li>

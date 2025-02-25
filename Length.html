@@ -196,6 +196,13 @@
 </div>
   </div>
 
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>When serializing a Length object to a string to save for later use, e.g. in a config file, first convert them to Float objects. The string representation of a Length is rounded and uses the local decimal separator which can lead to data loss and portability issues. The string representation is intended for humans, not computers.</p>
+</div>
+  </div>
+
 
 <p>Because length units are used so often in SketchUp, a special class has been added to make it easier to work with length values. You can use a Length object any place that you would use a Float.</p>
 
@@ -298,14 +305,16 @@
 </ul>
 
 </div>
-  <h2>
-    Constant Summary
-    <a
-        id="constant_summary"
-        href="#constant_summary"
-        title="Permalink">#</a>
-  </h2>
   
+    <h2>
+      Length Format
+      <a
+          id="length_format"
+          href="#length_format"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
     <dl class="constants">
       
         <dt id="Decimal-constant" class="">Length::Decimal
@@ -319,6 +328,19 @@
       
         <dt id="Fractional-constant" class="">Length::Fractional
         </dt>
+      
+    </dl>
+  
+    <h2>
+      Length Unit
+      <a
+          id="length_unit"
+          href="#length_unit"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
       
         <dt id="Inches-constant" class="">Length::Inches
         </dt>
@@ -338,6 +360,19 @@
         <dt id="Yard-constant" class="">Length::Yard
         </dt>
       
+    </dl>
+  
+    <h2>
+      Area Unit
+      <a
+          id="area_unit"
+          href="#area_unit"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
         <dt id="SquareInches-constant" class="">Length::SquareInches
         </dt>
       
@@ -355,6 +390,19 @@
       
         <dt id="SquareYard-constant" class="">Length::SquareYard
         </dt>
+      
+    </dl>
+  
+    <h2>
+      Volume Unit
+      <a
+          id="volume_unit"
+          href="#volume_unit"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
       
         <dt id="CubicInches-constant" class="">Length::CubicInches
         </dt>
@@ -638,7 +686,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The &lt; method is used to see if one length is less than another length.</p>
@@ -651,7 +702,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>12</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -743,7 +794,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The &lt;= method is used to see if one length is less than or equal to another length.</p>
@@ -754,7 +808,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -846,7 +900,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The &lt;=&gt; method is used to see if one length is less than equal or greater than another length. Because we change == for Length to do a test based on a tolerance, we also need to change &lt;=&gt; to also take tolerance into account.</p>
@@ -857,7 +914,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>20</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -945,7 +1002,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The == method is used to see if one length is equal to another length.</p>
@@ -958,7 +1018,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>20</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -1046,7 +1106,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The &gt; method is used to see if one length is greater than another length.</p>
@@ -1059,7 +1122,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -1151,7 +1214,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The &gt;= method is used to see if one length is greater than or equal to another length.</p>
@@ -1164,7 +1230,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length1'>length1</span> <span class='op'>=</span> <span class='int'>11</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -1256,7 +1322,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The inspect method is used to retrieve an unformatted string for the length, which is the length in inches, regardless of the user&#39;s model unit settings. See Length.to_s for a way automatically format your Length to the user&#39;s model units.</p>
@@ -1267,7 +1336,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='int'>55</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -1323,7 +1392,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The to_f method is used to convert a length to a normal float.</p>
@@ -1334,7 +1406,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='int'>45</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>
@@ -1390,7 +1462,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Format a length as a String using the current units formatting settings for the model. (So if the user&#39;s model is set to feet, this method will return a nicely formatted length in feet.)</p>
@@ -1401,7 +1476,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_length'>length</span> <span class='op'>=</span> <span class='int'>55</span><span class='period'>.</span><span class='id identifier rubyid_to_l'>to_l</span>

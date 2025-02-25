@@ -226,14 +226,16 @@
 </ul>
 
 </div>
-  <h2>
-    Constant Summary
-    <a
-        id="constant_summary"
-        href="#constant_summary"
-        title="Permalink">#</a>
-  </h2>
   
+    <h2>
+      Constants for PickHelper boundingbox_pick types
+      <a
+          id="constants_for_pickhelper_boundingbox_pick_types"
+          href="#constants_for_pickhelper_boundingbox_pick_types"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
     <dl class="constants">
       
         <dt id="PICK_INSIDE-constant" class="">Sketchup::PickHelper::PICK_INSIDE
@@ -386,7 +388,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#do_pick-instance_method" title="#do_pick (instance method)">#<strong>do_pick</strong>(x, y, aperture = 0)  &#x21d2; Object </a>
+      <a href="#do_pick-instance_method" title="#do_pick (instance method)">#<strong>do_pick</strong>(*args)  &#x21d2; Object </a>
     
 
     
@@ -401,7 +403,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The do_pick method is used to perform the initial pick.</p>
+<p>The <span class='object_link'><a href="#do_pick-instance_method" title="Sketchup::PickHelper#do_pick (method)">#do_pick</a></span> method is used to perform the initial pick.</p>
 </div></span>
   
 </li>
@@ -434,7 +436,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#init-instance_method" title="#init (instance method)">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; Sketchup::PickHelper </a>
+      <a href="#init-instance_method" title="#init (instance method)">#<strong>init</strong>(*args)  &#x21d2; Sketchup::PickHelper </a>
     
 
     
@@ -554,7 +556,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#picked_element-instance_method" title="#picked_element (instance method)">#<strong>picked_element</strong>(index)  &#x21d2; Object </a>
+      <a href="#picked_element-instance_method" title="#picked_element (instance method)">#<strong>picked_element</strong>(*args)  &#x21d2; Sketchup::Drawingelement<sup>?</sup> </a>
     
 
     
@@ -674,7 +676,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#window_pick-instance_method" title="#window_pick (instance method)">#<strong>window_pick</strong>(start_point, end_point, pick_type)  &#x21d2; Object </a>
+      <a href="#window_pick-instance_method" title="#window_pick (instance method)">#<strong>window_pick</strong>(start_point, end_point, pick_type)  &#x21d2; Integer </a>
     
 
     
@@ -715,7 +717,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The all_picked method is used to get an array of entities from the active entities from all the pick paths. Duplicates might occur if there are multiple pick paths for entities that ends in a group or component.</p>
@@ -728,7 +733,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -785,7 +790,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The best_picked method is used to retrieve the “best” entity picked (entity that you would have picked if you were using the select tool).</p>
@@ -798,7 +806,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -855,7 +863,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Used to pick a set of entities from a model from a <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span>. The pick criteria can be for completely-contained or partially-contained entities, similar to how the Selection tool works.</p>
@@ -866,7 +877,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/BoundingBox.html#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
@@ -1000,7 +1011,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The count method is used to count the number of entities picked (number of pick records)</p>
@@ -1011,7 +1025,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_number'>number</span> <span class='op'>=</span> <span class='id identifier rubyid_pickhelper'>pickhelper</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span></code></pre>
@@ -1066,7 +1080,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The depth_at method retrieves the depth of one of the currently picked entities in the list of pick records.</p>
@@ -1077,7 +1094,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_pickhelper'>pickhelper</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -1164,18 +1181,23 @@
   <h3 class="signature " id="do_pick-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>do_pick</strong>(x, y, aperture = 0)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>do_pick</strong>(x, y, aperture = 0)  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>do_pick</strong>(x, y, aperture = 0.0)  &#x21d2; <tt>Integer</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The do_pick method is used to perform the initial pick. This method is generally called before any other methods in the PickHelper class.</p>
-
-<p>Returns the number of entities picked. The x and y values are the screen coordinates of the point at which would want to do a pick.</p>
+<p>The <span class='object_link'><a href="#do_pick-instance_method" title="Sketchup::PickHelper#do_pick (method)">#do_pick</a></span> method is used to perform the initial pick. This method is generally called before any other methods in the PickHelper class.</p>
 
 
   </div>
@@ -1183,17 +1205,33 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helpernum'>pick_helpernum</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_do_pick'>do_pick</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
+<span class='id identifier rubyid_num'>num</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_do_pick'>do_pick</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_best_picked'>best_picked</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>do_pick</strong>(x, y, aperture = 0)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns Integer - The number of Entity objects picked.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns Number of entities picked.</p>
 
 
   </div>
@@ -1207,13 +1245,13 @@
         <span class='name'>x</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>X screen coordinate for the pick.</p>
+<p>Screen coordinate in physical pixels.</p>
 </div>
       
     </li>
@@ -1223,13 +1261,13 @@
         <span class='name'>y</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>Y screen coordinate for the pick.</p>
+<p>Screen coordinate in physical pixels.</p>
 </div>
       
     </li>
@@ -1239,7 +1277,7 @@
         <span class='name'>aperture</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
@@ -1247,7 +1285,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The size of the pick-aperture.</p>
+<p>The size of the aperture in physical pixels.</p>
 </div>
       
     </li>
@@ -1260,13 +1298,29 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Number of entities picked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
       
       
       
         
         <div class='inline'>
-<p>Integer - The number of Entity objects picked</p>
+<p>SketchUp 6.0</p>
 </div>
       
     </li>
@@ -1274,6 +1328,114 @@
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>do_pick</strong>(x, y, aperture = 0.0)  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Number of entities picked.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aperture</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>0.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The size of the aperture in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Number of entities picked.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -1305,7 +1467,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The element_at method is used to retrieve a specific entity in the list of picked elements. This element will be from the active entities.</p>
@@ -1318,7 +1483,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_pickhelper'>pickhelper</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -1406,20 +1571,25 @@
   <h3 class="signature " id="init-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> 
+    
+      <span class="overload">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
+    
+      <span class="overload">#<strong>init</strong>(x, y, aperture = 0.0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#init-instance_method" title="Sketchup::PickHelper#init (method)">#init</a></span> method is used to initialize the PickHelper for testing points.</p>
 
 <p>You do not normally need to call this method, but you can use this if you want to call <span class='object_link'><a href="#test_point-instance_method" title="Sketchup::PickHelper#test_point (method)">#test_point</a></span> or <span class='object_link'><a href="#pick_segment-instance_method" title="Sketchup::PickHelper#pick_segment (method)">#pick_segment</a></span> on a lot of points.</p>
-
-<p>If the optional aperture is given, it is given in pixels.</p>
 
 
   </div>
@@ -1427,7 +1597,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -1439,7 +1609,106 @@
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>init</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aperture</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The size of the aperture in physical pixels. This is the width and height of the square picking aperture.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>init</strong>(x, y, aperture = 0.0)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -1460,7 +1729,7 @@
       
         &mdash;
         <div class='inline'>
-<p>X screen coordinate for the pick.</p>
+<p>Screen coordinate in logical pixels.</p>
 </div>
       
     </li>
@@ -1476,7 +1745,7 @@
       
         &mdash;
         <div class='inline'>
-<p>Y screen coordinate for the pick.</p>
+<p>Screen coordinate in logical pixels.</p>
 </div>
       
     </li>
@@ -1489,20 +1758,39 @@
         <span class='type'>(<tt>Integer</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>0</tt>)</em>
+        <em class="default">(defaults to: <tt>0.0</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>aperture in pixels.</p>
+<p>The size of the aperture in logical pixels. This is the width and height of the square picking aperture.</p>
 </div>
       
     </li>
   
 </ul>
 
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1547,7 +1835,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The leaf_at method retrieves the deepest thing in a pick path.</p>
@@ -1562,7 +1853,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_pickhelper'>pickhelper</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -1655,7 +1946,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The path_at method is used to retrieve the entire path for an entity in the pick list (as an array).</p>
@@ -1670,7 +1964,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_pickhelper'>pickhelper</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -1767,7 +2061,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -1792,7 +2089,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point1'>point1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span> <span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
@@ -1891,7 +2188,7 @@
       
         &mdash;
         <div class='inline'>
-<p>A series of points in the polyline as a list of parameters or an array containing Point3d objects.</p>
+<p>A series of points in the polyline as a list of parameters or an array containing Point3d objects. Model coordinates.</p>
 </div>
       
     </li>
@@ -2002,7 +2299,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The picked_edge method is used to retrieve the “best” Edge picked.</p>
@@ -2015,7 +2315,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -2066,13 +2366,20 @@
   <h3 class="signature " id="picked_element-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>picked_element</strong>(index)  &#x21d2; <tt>Object</tt> 
+    
+      <span class="overload">#<strong>picked_element</strong>  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt><sup>?</sup> </span>
+    
+      <span class="overload">#<strong>picked_element</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt><sup>?</sup> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The picked_element method retrieves the best drawing element, that is not an edge or a face, picked.</p>
@@ -2085,7 +2392,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -2094,11 +2401,16 @@
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>picked_element</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
   <div class="discussion">
     
-<p>Returns element - a drawing element that is not an edge or face if successful.</p>
-
 
   </div>
 </div>
@@ -2111,13 +2423,19 @@
         <span class='name'>index</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
     </li>
   
 </ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -2125,21 +2443,18 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>, <tt>nil</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>element - a drawing element that is not an edge or face if successful</p>
+<p>a drawing element that is not an edge or face</p>
 </div>
       
     </li>
   
 </ul>
-
-</div>
-
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2170,7 +2485,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The picked_face method is used to retrieve the best face picked.</p>
@@ -2183,7 +2501,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -2244,7 +2562,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#test_point-instance_method" title="Sketchup::PickHelper#test_point (method)">#test_point</a></span> method is used to test a point to see if it would be selected using the default or given pick aperture.</p>
@@ -2257,7 +2578,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -2297,6 +2618,11 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>Model coordinate.</p>
+</div>
+      
     </li>
   
 </ul>
@@ -2327,6 +2653,11 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>Model coordinate.</p>
+</div>
+      
     </li>
   
     <li>
@@ -2338,6 +2669,11 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>X screen coordinate for the pick.</p>
+</div>
+      
     </li>
   
     <li>
@@ -2348,6 +2684,11 @@
         <span class='type'>(<tt>Integer</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Y screen coordinate for the pick.</p>
+</div>
       
     </li>
   
@@ -2361,6 +2702,11 @@
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
       
+      
+        &mdash;
+        <div class='inline'>
+<p>aperture in pixels.</p>
+</div>
       
     </li>
   
@@ -2385,6 +2731,13 @@
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#init-instance_method" title="Sketchup::PickHelper#init (method)">#init</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -2415,7 +2768,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The transformation_at method is used to get a transformation at a specific pick path index in the pick helper.</p>
@@ -2428,7 +2784,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_pickhelper'>pickhelper</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
@@ -2439,9 +2795,9 @@
 <span class='rbrace'>}</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Get transformation for specific picked element</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_pickhelper'>pickhelper</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'>pick_helper</span>
 <span class='id identifier rubyid_pickhelper'>pickhelper</span><span class='period'>.</span><span class='id identifier rubyid_do_pick'>do_pick</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
@@ -2536,7 +2892,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#view-instance_method" title="Sketchup::PickHelper#view (method)">#view</a></span> method is used to get the view associated with the <span class='object_link'><a href="" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span>.</p>
@@ -2547,7 +2906,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
@@ -2593,16 +2952,27 @@
   <h3 class="signature " id="window_pick-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>window_pick</strong>(start_point, end_point, pick_type)  &#x21d2; <tt>Object</tt> 
+    #<strong>window_pick</strong>(start_point, end_point, pick_type)  &#x21d2; <tt>Integer</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>Used to pick a set of entities from a model based on a screen coordinate rectangular area defined by two points. The pick criteria can be for completely-contained or partially-contained entities, similar to how the Selection tool works. The z value of the points passed in are ignored.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2025.0 this method expected physical screen coordinates. As of SketchUp 2025.0 they are expected to be logical screen coordinates.</p>
+</div>
+  </div>
+
+
+<p>Used to pick a set of entities from a model based on a screen coordinate rectangular area defined by two points. The pick criteria can be for completely-contained or partially-contained entities, similar to how the Selection tool works. The <code>z</code> value of the points passed in are ignored.</p>
 
 
   </div>
@@ -2610,20 +2980,21 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ph'>ph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_pick_helper'><span class='object_link'><a href="View.html#pick_helper-instance_method" title="Sketchup::View#pick_helper (method)">pick_helper</a></span></span>
 <span class='id identifier rubyid_start_point'>start_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_end_point'>end_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>500</span><span class='comma'>,</span> <span class='int'>500</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_num_picked'>num_picked</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_window_pick'>window_pick</span><span class='lparen'>(</span><span class='id identifier rubyid_start_point'>start_point</span><span class='comma'>,</span> <span class='id identifier rubyid_end_point'>end_point</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#PICK_CROSSING-constant" title="Sketchup::PickHelper::PICK_CROSSING (constant)">PICK_CROSSING</a></span></span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_num_picked'>num_picked</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_window_pick'>window_pick</span><span class='lparen'>(</span><span class='id identifier rubyid_start_point'>start_point</span><span class='comma'>,</span> <span class='id identifier rubyid_end_point'>end_point</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::PickHelper (class)">PickHelper</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#PICK_CROSSING-constant" title="Sketchup::PickHelper::PICK_CROSSING (constant)">PICK_CROSSING</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_picked_entities'>picked_entities</span> <span class='op'>=</span> <span class='id identifier rubyid_ph'>ph</span><span class='period'>.</span><span class='id identifier rubyid_all_picked'>all_picked</span></code></pre>
     
   </div>
 
   <div class="docstring">
   <div class="discussion">
     
-<p>Returns The number of Entity objects picked.</p>
+<p>Returns The number of <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> objects picked.</p>
 
 
   </div>
@@ -2637,7 +3008,7 @@
         <span class='name'>start_point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
@@ -2653,7 +3024,7 @@
         <span class='name'>end_point</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
       
@@ -2669,13 +3040,13 @@
         <span class='name'>pick_type</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>PICK_INSIDE to select entities completely contained or PICK_CROSSING to select entities partially contained.</p>
+<p><span class='object_link'><a href="#PICK_INSIDE-constant" title="Sketchup::PickHelper::PICK_INSIDE (constant)">PICK_INSIDE</a></span> to select entities completely contained or <span class='object_link'><a href="#PICK_CROSSING-constant" title="Sketchup::PickHelper::PICK_CROSSING (constant)">PICK_CROSSING</a></span> to select entities partially contained.</p>
 </div>
       
     </li>
@@ -2688,13 +3059,13 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
-        
+        &mdash;
         <div class='inline'>
-<p>The number of Entity objects picked</p>
+<p>The number of <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> objects picked.</p>
 </div>
       
     </li>

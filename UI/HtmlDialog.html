@@ -204,7 +204,10 @@
 <p>For usage examples, including how to migrate from the old WebDialog class, see <a href="https://github.com/SketchUp/htmldialog-examples">github.com/SketchUp/htmldialog-examples</a>. You may use the <a href="https://sketchup.github.io/modus-for-sketchup-extensions" target="_parent" title="Trimble Modus">Trimble Modus</a> framework for a look and feel of your dialog that matches that of SketchUp&#39;s dialogs.</p>
 
 <p>HtmlDialog uses the following versions of CEF (Chromium Embedded Framework):</p>
-<dl class="rdoc-list label-list"><dt>SketchUp 2024.0
+<dl class="rdoc-list label-list"><dt>SketchUp 2025.0
+<dd>
+<p>CEF 128</p>
+</dd><dt>SketchUp 2024.0
 <dd>
 <p>CEF 112</p>
 </dd><dt>SketchUp 2021.1
@@ -244,14 +247,16 @@
 </ul>
 
 </div>
-  <h2>
-    Constant Summary
-    <a
-        id="constant_summary"
-        href="#constant_summary"
-        title="Permalink">#</a>
-  </h2>
   
+    <h2>
+      Constants for HtmlDialog window styles
+      <a
+          id="constants_for_htmldialog_window_styles"
+          href="#constants_for_htmldialog_window_styles"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
     <dl class="constants">
       
         <dt id="STYLE_WINDOW-constant" class="">UI::HtmlDialog::STYLE_WINDOW
@@ -262,6 +267,19 @@
       
         <dt id="STYLE_UTILITY-constant" class="">UI::HtmlDialog::STYLE_UTILITY
         </dt>
+      
+    </dl>
+  
+    <h2>
+      Constants for Chrome and CEF information
+      <a
+          id="constants_for_chrome_and_cef_information"
+          href="#constants_for_chrome_and_cef_information"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
       
         <dt id="CEF_VERSION-constant" class="">UI::HtmlDialog::CEF_VERSION
         </dt>
@@ -789,7 +807,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -829,12 +850,12 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>With options Hash</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
 <span class='lbrace'>{</span>
@@ -856,9 +877,9 @@
 <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>With keyword style argument</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span>
   <span class='label'>dialog_title:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Dialog Example</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -1192,7 +1213,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -1217,28 +1241,28 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Ruby Code</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_add_action_callback'>add_action_callback</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>say</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_action_context'>action_context</span><span class='comma'>,</span> <span class='id identifier rubyid_param1'>param1</span><span class='comma'>,</span> <span class='id identifier rubyid_param2'>param2</span><span class='op'>|</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>JavaScript said </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_param1'>param1</span><span class='embexpr_end'>}</span><span class='tstring_content'> and </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_param2'>param2</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='rbrace'>}</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>JavaScript</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_sketchup'>sketchup</span><span class='period'>.</span><span class='id identifier rubyid_say'>say</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>42</span><span class='rparen'>)</span><span class='semicolon'>;</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>JavaScript with callback</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_sketchup'>sketchup</span><span class='period'>.</span><span class='id identifier rubyid_say'>say</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='int'>42</span><span class='comma'>,</span> <span class='lbrace'>{</span>
   <span class='label'>onCompleted:</span> <span class='id identifier rubyid_function'>function</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='lbrace'>{</span>
@@ -1378,7 +1402,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">#bring_to_front</a></span> method is used to bring the window to the front, putting it on top of other windows even if its minimized.</p>
@@ -1389,7 +1416,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_bring_to_front'>bring_to_front</span></code></pre>
@@ -1462,7 +1489,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the active model window. If there is no active model window, this function doesn&#39;t do anything.</p>
@@ -1473,7 +1503,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_center'>center</span></code></pre>
@@ -1528,7 +1558,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#close-instance_method" title="UI::HtmlDialog#close (method)">#close</a></span> method is used to close a dialog box.</p>
@@ -1539,7 +1572,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_close'>close</span></code></pre>
@@ -1589,7 +1622,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#execute_script-instance_method" title="UI::HtmlDialog#execute_script (method)">#execute_script</a></span> method is used to execute a JavaScript string on the html dialog asynchronously.</p>
@@ -1600,7 +1636,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_js_command'>js_command</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>document.getElementById(&#39;id&#39;).innerHTML = &#39;&lt;b&gt;Hi!&lt;/b&gt;&#39;</span><span class='tstring_end'>&quot;</span></span>
@@ -1682,7 +1718,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#get_content_size-instance_method" title="UI::HtmlDialog#get_content_size (method)">#get_content_size</a></span> method is used to get the content size of the HtmlDialog, in logical pixels.</p>
@@ -1693,7 +1732,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_get_content_size'>get_content_size</span></code></pre>
@@ -1748,7 +1787,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#get_position-instance_method" title="UI::HtmlDialog#get_position (method)">#get_position</a></span> method is used to get the position of the HtmlDialog relative to the screen, in logical pixels.</p>
@@ -1759,7 +1801,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_left'>left</span><span class='comma'>,</span> <span class='id identifier rubyid_top'>top</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_get_position'>get_position</span></code></pre>
@@ -1814,7 +1856,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#get_size-instance_method" title="UI::HtmlDialog#get_size (method)">#get_size</a></span> method is used to get the outer frame size of the HtmlDialog, in logical pixels.</p>
@@ -1825,7 +1870,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_width'>width</span><span class='comma'>,</span> <span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_get_size'>get_size</span></code></pre>
@@ -1880,7 +1925,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">#set_can_close</a></span> method is used to attach a block that is executed just before closing, this block has to return a boolean, if the block returns false the close will be canceled.</p>
@@ -1891,7 +1939,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_can_close'>set_can_close</span> <span class='lbrace'>{</span> <span class='kw'>false</span> <span class='rbrace'>}</span></code></pre>
@@ -1959,7 +2007,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_content_size-instance_method" title="UI::HtmlDialog#set_content_size (method)">#set_content_size</a></span> method is used to set the content size of the HtmlDialog, in logical pixels.</p>
@@ -1970,7 +2021,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_content_size'>set_content_size</span><span class='lparen'>(</span><span class='int'>600</span><span class='comma'>,</span> <span class='int'>400</span><span class='rparen'>)</span></code></pre>
@@ -2056,7 +2107,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_file-instance_method" title="UI::HtmlDialog#set_file (method)">#set_file</a></span> method is used to identify a local HTML file to display in the HtmlDialog.</p>
@@ -2067,7 +2121,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_file'>set_file</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/mypage.html</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
@@ -2137,7 +2191,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_html-instance_method" title="UI::HtmlDialog#set_html (method)">#set_html</a></span> method is used to load a HtmlDialog with a string of provided HTML.</p>
@@ -2148,7 +2205,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;b&gt;Hello world!&lt;/b&gt;</span><span class='tstring_end'>&#39;</span></span>
@@ -2219,7 +2276,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_on_closed-instance_method" title="UI::HtmlDialog#set_on_closed (method)">#set_on_closed</a></span> method is used to attach a block that will be executed when a dialog is already in the process of closing, do any last minute operations within this block such as saving the current state.</p>
@@ -2230,7 +2290,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_on_closed'>set_on_closed</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_save_selection'>save_selection</span> <span class='rbrace'>}</span></code></pre>
@@ -2280,7 +2340,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">#set_position</a></span> method is used to set the position of the HtmlDialog relative to the screen, in pixels.</p>
@@ -2291,7 +2354,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_position'>set_position</span><span class='lparen'>(</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>50</span><span class='rparen'>)</span></code></pre>
@@ -2398,7 +2461,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">#set_size</a></span> method is used to set the outer frame size of the HtmlDialog, in pixels.</p>
@@ -2409,7 +2475,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_size'>set_size</span><span class='lparen'>(</span><span class='int'>320</span><span class='comma'>,</span> <span class='int'>240</span><span class='rparen'>)</span></code></pre>
@@ -2516,7 +2582,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set_url-instance_method" title="UI::HtmlDialog#set_url (method)">#set_url</a></span> method is used to load a HtmlDialog with the content at a specific URL. This method allows you to load web sites in a HtmlDialog.</p>
@@ -2527,7 +2596,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
@@ -2597,7 +2666,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#show-instance_method" title="UI::HtmlDialog#show (method)">#show</a></span> method is used to display a non-modal dialog box.</p>
@@ -2608,7 +2680,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
@@ -2658,7 +2730,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#show_modal-instance_method" title="UI::HtmlDialog#show_modal (method)">#show_modal</a></span> method is used to display a modal dialog box.</p>
@@ -2669,7 +2744,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show_modal'>show_modal</span></code></pre>
@@ -2719,7 +2794,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#visible%3F-instance_method" title="UI::HtmlDialog#visible? (method)">#visible?</a></span> method is useful to tell if the dialog is shown and still alive, if the dialog is minimized or not visible on the screen this will still return <code>true</code>.</p>
@@ -2730,7 +2808,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='kw'>if</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>

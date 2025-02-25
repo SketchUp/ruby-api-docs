@@ -187,9 +187,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>This class contains methods to manipulate the current point of view of the model. The drawing methods here (draw_line, draw_polyline, etc) are meant to be invoked within a tool&#39;s Tool.draw method. Calling them outside Tool.draw will have no effect.</p>
+<p>This class contains methods to manipulate the current point of view of the model. The drawing methods here (<span class='object_link'><a href="#draw_line-instance_method" title="Sketchup::View#draw_line (method)">#draw_line</a></span>, <span class='object_link'><a href="#draw_polyline-instance_method" title="Sketchup::View#draw_polyline (method)">#draw_polyline</a></span>, etc) are meant to be invoked within a tool&#39;s <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> method. Calling them outside <span class='object_link'><a href="Tool.html#draw-instance_method" title="Sketchup::Tool#draw (method)">Tool#draw</a></span> will have no effect.</p>
 
-<p>You access the View by calling the Model.active_view method.</p>
+<p>You access the <span class='object_link'><a href="" title="Sketchup::View (class)">View</a></span> by calling the <span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">Model#active_view</a></span> method.</p>
 
 
   </div>
@@ -197,7 +197,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span></code></pre>
@@ -222,6 +222,33 @@
 </ul>
 
 </div>
+  
+    <h2>
+      Constants for View draw and View draw2d
+      <a
+          id="constants_for_view_draw_and_view_draw2d"
+          href="#constants_for_view_draw_and_view_draw2d"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="CORNER_TOP_LEFT-constant" class="">Sketchup::View::CORNER_TOP_LEFT
+        </dt>
+      
+        <dt id="CORNER_TOP_RIGHT-constant" class="">Sketchup::View::CORNER_TOP_RIGHT
+        </dt>
+      
+        <dt id="CORNER_BOTTOM_LEFT-constant" class="">Sketchup::View::CORNER_BOTTOM_LEFT
+        </dt>
+      
+        <dt id="CORNER_BOTTOM_RIGHT-constant" class="">Sketchup::View::CORNER_BOTTOM_RIGHT
+        </dt>
+      
+    </dl>
+  
+
 
 
 
@@ -363,7 +390,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#center-instance_method" title="#center (instance method)">#<strong>center</strong>  &#x21d2; Geom::Point3d </a>
+      <a href="#center-instance_method" title="#center (instance method)">#<strong>center</strong>  &#x21d2; Object </a>
     
 
     
@@ -378,7 +405,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The center method is used to retrieve the coordinates of the center of the view in pixels.</p>
+<p>The <span class='object_link'><a href="#center-instance_method" title="Sketchup::View#center (method)">#center</a></span> method is used to retrieve the coordinates of the center of the view in pixels.</p>
 </div></span>
   
 </li>
@@ -387,7 +414,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#corner-instance_method" title="#corner (instance method)">#<strong>corner</strong>(index)  &#x21d2; Array(Integer, Integer) </a>
+      <a href="#corner-instance_method" title="#corner (instance method)">#<strong>corner</strong>(arg)  &#x21d2; Object </a>
     
 
     
@@ -402,7 +429,55 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The corner method is used to retrieve the coordinates of one of the corners of the view.</p>
+<p>The <span class='object_link'><a href="#corner-instance_method" title="Sketchup::View#corner (method)">#corner</a></span> method is used to retrieve the coordinates of one of the corners of the view.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#device_height-instance_method" title="#device_height (instance method)">#<strong>device_height</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#device_height-instance_method" title="Sketchup::View#device_height (method)">#device_height</a></span> method is used to retrieve the height of the viewport for the view in physical pixels.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#device_width-instance_method" title="#device_width (instance method)">#<strong>device_width</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#device_width-instance_method" title="Sketchup::View#device_width (method)">#device_width</a></span> method is used to retrieve the width of the viewport for the view in physical pixels.</p>
 </div></span>
   
 </li>
@@ -522,7 +597,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>This method is used to draw points.</p>
+<p>This method is used to draw points in model space.</p>
 </div></span>
   
 </li>
@@ -747,7 +822,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#inputpoint-instance_method" title="#inputpoint (instance method)">#<strong>inputpoint</strong>(x, y, inputpoint1)  &#x21d2; Sketchup::InputPoint </a>
+      <a href="#inputpoint-instance_method" title="#inputpoint (instance method)">#<strong>inputpoint</strong>(*args)  &#x21d2; Sketchup::InputPoint </a>
     
 
     
@@ -762,7 +837,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The inputpoint method is used to retrieve an input point.</p>
+<p>The <span class='object_link'><a href="#inputpoint-instance_method" title="Sketchup::View#inputpoint (method)">#inputpoint</a></span> method is used to retrieve an <span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span>.</p>
 </div></span>
   
 </li>
@@ -954,7 +1029,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pick_helper method is used to retrieve a pick helper for the view.</p>
+<p>The <span class='object_link'><a href="#pick_helper-instance_method" title="Sketchup::View#pick_helper (method)">#pick_helper</a></span> method is used to retrieve a pick helper for the view.</p>
 </div></span>
   
 </li>
@@ -978,7 +1053,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pickray method is used to retrieve a ray passing through a given screen position in the viewing direction.</p>
+<p>The <span class='object_link'><a href="#pickray-instance_method" title="Sketchup::View#pickray (method)">#pickray</a></span> method is used to retrieve a ray passing through a given screen position in the viewing direction.</p>
 </div></span>
   
 </li>
@@ -1002,7 +1077,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The pixels_to_model method is used to compute a model size from a pixel size at a given point.</p>
+<p>The <span class='object_link'><a href="#pixels_to_model-instance_method" title="Sketchup::View#pixels_to_model (method)">#pixels_to_model</a></span> method is used to compute a model size from a pixel size at a given point.</p>
 </div></span>
   
 </li>
@@ -1083,7 +1158,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#screen_coords-instance_method" title="#screen_coords (instance method)">#<strong>screen_coords</strong>(point3d)  &#x21d2; Geom::Point3d </a>
+      <a href="#screen_coords-instance_method" title="#screen_coords (instance method)">#<strong>screen_coords</strong>(model_point)  &#x21d2; Object </a>
     
 
     
@@ -1098,7 +1173,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The screen_coords method is used to retrieve the screen coordinates of the given point on the screen.</p>
+<p>The <span class='object_link'><a href="#screen_coords-instance_method" title="Sketchup::View#screen_coords (method)">#screen_coords</a></span> method is used to retrieve the screen coordinates of the given point on the screen.</p>
 </div></span>
   
 </li>
@@ -1203,7 +1278,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#vpheight-instance_method" title="#vpheight (instance method)">#<strong>vpheight</strong>  &#x21d2; Integer </a>
+      <a href="#vpheight-instance_method" title="#vpheight (instance method)">#<strong>vpheight</strong>  &#x21d2; Object </a>
     
 
     
@@ -1218,7 +1293,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The vpheight method is used to retrieve the height of the viewport for the view.</p>
+<p>The <span class='object_link'><a href="#vpheight-instance_method" title="Sketchup::View#vpheight (method)">#vpheight</a></span> method is used to retrieve the height of the viewport for the view.</p>
 </div></span>
   
 </li>
@@ -1227,7 +1302,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#vpwidth-instance_method" title="#vpwidth (instance method)">#<strong>vpwidth</strong>  &#x21d2; Integer </a>
+      <a href="#vpwidth-instance_method" title="#vpwidth (instance method)">#<strong>vpwidth</strong>  &#x21d2; Object </a>
     
 
     
@@ -1242,7 +1317,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The vpwidth method is used to retrieve the width of the viewport for the view.</p>
+<p>The <span class='object_link'><a href="#vpwidth-instance_method" title="Sketchup::View#vpwidth (method)">#vpwidth</a></span> method is used to retrieve the width of the viewport for the view.</p>
 </div></span>
   
 </li>
@@ -1340,7 +1415,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The add_observer method is used to add an observer to the current object.</p>
@@ -1351,7 +1429,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
@@ -1438,7 +1516,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#animation=-instance_method" title="Sketchup::View#animation= (method)">#animation=</a></span> method is used to set an animation that is displayed for a view. See <span class='object_link'><a href="Animation.html" title="Sketchup::Animation (class)">Animation</a></span> for details on how to create an animation object.</p>
@@ -1449,7 +1530,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='const'>ViewSpinner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -1515,7 +1596,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The average_refresh_time is used to set the average time used to refresh the current model in the view. This can be used to estimate the frame rate for an animation.</p>
@@ -1526,7 +1610,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -1583,7 +1667,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The camera method is used to retrieve the camera for the view.</p>
@@ -1594,7 +1681,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span></code></pre>
@@ -1653,7 +1740,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#camera=-instance_method" title="Sketchup::View#camera= (method)">#camera=</a></span> method is used to set the camera for the view. If a transition time is given, then it will animate the transition from the current camera to the new one.</p>
@@ -1664,7 +1754,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Camera.html#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='int'>9</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#Z_AXIS-constant" title="Z_AXIS (constant)">Z_AXIS</a></span></span><span class='rparen'>)</span>
@@ -1772,16 +1862,23 @@
   <h3 class="signature " id="center-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>center</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> 
+    
+      <span class="overload">#<strong>center</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt> </span>
+    
+      <span class="overload">#<strong>center</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The center method is used to retrieve the coordinates of the center of the view in pixels. It is returned as an array of 2 values for x and y.</p>
+<p>The <span class='object_link'><a href="#center-instance_method" title="Sketchup::View#center (method)">#center</a></span> method is used to retrieve the coordinates of the center of the view in pixels.</p>
 
 
   </div>
@@ -1789,28 +1886,52 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
-<span class='id identifier rubyid_c'>c</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_center'>center</span></code></pre>
+<span class='id identifier rubyid_center'>center</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_center'>center</span></code></pre>
     
   </div>
 
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>center</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns Physical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>the center of the view</p>
+<p>Physical pixels.</p>
 </div>
       
     </li>
@@ -1834,30 +1955,105 @@
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>center</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Logical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div>
 </div>
     
       <div class="method_details ">
   <h3 class="signature " id="corner-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>corner</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt> 
+    
+      <span class="overload">#<strong>corner</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt> </span>
+    
+      <span class="overload">#<strong>corner</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The corner method is used to retrieve the coordinates of one of the corners of the view. The argument is an index between 0 and 3 that identifies which corner you want. This method returns an array with two integers which are the coordinates of the corner of the view in the view space. If the view uses a Camera with a fixed aspect ratio, then the corners are the corners of the viewing are of the camera which might be different than the actual corners of the view itself.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If the view uses a <span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Camera</a></span> with a fixed aspect ratio, then the corners are the corners of the viewing are of the camera which might be different than the actual corners of the view itself.</p>
+</div>
+  </div>
 
-<p>The index numbers are as follows:</p>
 
-<pre class="code"><code class="">- 0: top left,
-- 1: top right,
-- 2: bottom left,
-- 3: bottom right.
-</code></pre>
+<p>The <span class='object_link'><a href="#corner-instance_method" title="Sketchup::View#corner (method)">#corner</a></span> method is used to retrieve the coordinates of one of the corners of the view. The argument is an index between <code>0</code> and <code>3</code> that identifies which corner you want. This method returns an array with two integers which are the coordinates of the corner of the view in the view space.</p>
+
+<p>The indices are as follows:</p>
+<ul><li>
+<p>0: <span class='object_link'><a href="#CORNER_TOP_LEFT-constant" title="Sketchup::View::CORNER_TOP_LEFT (constant)">CORNER_TOP_LEFT</a></span></p>
+</li><li>
+<p>1: <span class='object_link'><a href="#CORNER_TOP_RIGHT-constant" title="Sketchup::View::CORNER_TOP_RIGHT (constant)">CORNER_TOP_RIGHT</a></span></p>
+</li><li>
+<p>2: <span class='object_link'><a href="#CORNER_BOTTOM_LEFT-constant" title="Sketchup::View::CORNER_BOTTOM_LEFT (constant)">CORNER_BOTTOM_LEFT</a></span></p>
+</li><li>
+<p>3: <span class='object_link'><a href="#CORNER_BOTTOM_RIGHT-constant" title="Sketchup::View::CORNER_BOTTOM_RIGHT (constant)">CORNER_BOTTOM_RIGHT</a></span></p>
+</li></ul>
 
 
   </div>
@@ -1865,16 +2061,45 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span> <span class='id identifier rubyid_index'>index</span></code></pre>
+        <h5 class="example_title"><div class='inline'>
+<p>New preferred style using constants</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='comment'># From SketchUp 2025.0:
+</span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::View (class)">View</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#CORNER_BOTTOM_LEFT-constant" title="Sketchup::View::CORNER_BOTTOM_LEFT (constant)">CORNER_BOTTOM_LEFT</a></span></span><span class='rparen'>)</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Old style using hard coded indices</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='comment'># For SketchUp 2024.0 and older: (Works with newer versions too)
+</span><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>corner</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns a 2D array <tt>[x, y]</tt> representing the screen point in physical pixels.</p>
+
 
   </div>
 </div>
@@ -1893,15 +2118,12 @@
       
         &mdash;
         <div class='inline'>
-<p>A value between (or including) 0 and 3 identifying the corner whose coordinate you want to retrieve.</p>
+<p>A value between (or including) <code>0</code> and <code>3</code> identifying the corner whose coordinate you want to retrieve.</p>
 </div>
       
     </li>
   
 </ul>
-
-
-</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -1915,7 +2137,7 @@
       
         &mdash;
         <div class='inline'>
-<p>a 2d array [w,h] representing the screen point</p>
+<p>a 2D array <tt>[x, y]</tt> representing the screen point in physical pixels.</p>
 </div>
       
     </li>
@@ -1932,6 +2154,223 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>corner</strong>(index)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a 2D array <tt>[x, y]</tt> representing the screen point in logical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>index</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A value between (or including) <code>0</code> and <code>3</code> identifying the corner whose coordinate you want to retrieve.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a 2D array <tt>[x, y]</tt> representing the screen point in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="device_height-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>device_height</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#device_height-instance_method" title="Sketchup::View#device_height (method)">#device_height</a></span> method is used to retrieve the height of the viewport for the view in physical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+<span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_device_height'>device_height</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the height of the viewport in physical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="device_width-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>device_width</strong>  &#x21d2; <tt>Integer</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#device_width-instance_method" title="Sketchup::View#device_width (method)">#device_width</a></span> method is used to retrieve the width of the viewport for the view in physical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_device_width'>device_width</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the width of the viewport in physical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
 </div>
       
     </li>
@@ -1959,7 +2398,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -2011,7 +2453,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
@@ -2432,12 +2874,25 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2025.0 this method accepted the <code>points</code> as physical screen coordinates. As of SketchUp 2025.0 the <code>points</code> are expected to be in logical screen coordinates. Older versions need to apply the scaling factor from <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span> to the points before passing them to this method.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#draw2d-instance_method" title="Sketchup::View#draw2d (method)">#draw2d</a></span> method is used to draw in screen space (using 2D screen coordinates) instead of 3D space.</p>
 
-<p>The second parameter is an <span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span> of <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects (or several individual <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects). These <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects are in screen space, not 3D space. The X value corresponds to the number of pixels from the left edge of the drawing area. The Y value corresponds to the number of pixels down from the top of the drawing area. The Z value is not used.</p>
+<p>The second parameter is an <span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span> of <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects (or several individual <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects). These <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects are in screen space, not 3D space.</p>
+
+<p>The X value corresponds to the number of pixels from the left edge of the drawing area. The Y value corresponds to the number of pixels down from the top of the drawing area. The Z value is not used.</p>
 
 
   </div>
@@ -2445,14 +2900,14 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_points'>points</span> <span class='op'>=</span> <span class='lbracket'>[</span>
   <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
   <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>8</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
   <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>8</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
-  <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='comma'>,</span>
 <span class='rbracket'>]</span>
 <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw2d'>draw2d</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#GL_LINE_STRIP-constant" title="GL_LINE_STRIP (constant)">GL_LINE_STRIP</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_points'>points</span><span class='rparen'>)</span></code></pre>
     
@@ -2835,7 +3290,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The draw_lines method is used to draw disconnected lines.</p>
@@ -2848,7 +3306,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point4'>point4</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
@@ -2994,7 +3452,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The draw_lines method is used to draw disconnected lines.</p>
@@ -3007,7 +3468,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point4'>point4</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
@@ -3149,12 +3610,21 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>This method is used to draw points.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2025.0 this method accepted the <code>size</code> as physical pixels. As of SketchUp 2025.0 the <code>points</code> are expected to be in logical pixels. Older versions need to apply the scaling factor from <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">UI.scale_factor</a></span> to the size before passing them to this method.</p>
+</div>
+  </div>
 
-<p>This method is usually invoked within the draw method of a tool.</p>
+
+<p>This method is used to draw points in model space.</p>
 
 
   </div>
@@ -3162,12 +3632,11 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point3'>point3</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
-<span class='comment'># returns a view
-</span><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_points'>draw_points</span><span class='lparen'>(</span><span class='id identifier rubyid_point3'>point3</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>red</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_points'>draw_points</span><span class='lparen'>(</span><span class='id identifier rubyid_point'>point</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>red</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3189,6 +3658,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>&gt;</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Model coordinates.</p>
+</div>
       
     </li>
   
@@ -3222,8 +3696,21 @@
       
       
         &mdash;
-        <div class='inline'>
-<p>1 = open square, 2 = filled square, 3 = “+”, 4 = “X”, 5 = “*”, 6 = open triangle, 7 = filled triangle.</p>
+        <div class='inline'><ul><li>
+<p><code>1</code> = open square</p>
+</li><li>
+<p><code>2</code> = filled square</p>
+</li><li>
+<p><code>3</code> = plus shape “+”</p>
+</li><li>
+<p><code>4</code> = cross shape “X”</p>
+</li><li>
+<p><code>5</code> = star shape “*”</p>
+</li><li>
+<p><code>6</code> = open triangle</p>
+</li><li>
+<p><code>7</code> = filled triangle</p>
+</li></ul>
 </div>
       
     </li>
@@ -3298,7 +3785,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The draw_polyline method is used to draw a series of connected line segments from pt1 to pt2 to pt3, and so on.</p>
@@ -3311,7 +3801,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point12'>point12</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
@@ -3457,7 +3947,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -3477,7 +3970,7 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The font size is platform dependent. On Windows the method expects points, where on Mac it&#39;s pixels. See “Cross Platform Font Size” example for details.</p>
+<p>The font size is platform dependent. On Windows the method expects points, where on Mac it&#39;s pixels. See “Cross Platform Font Size” example for details. As of SketchUp 2025.0 you can use the <code>:pixel_size</code> or <code>:point_size</code> options to specify the size in pixels or points respectively.</p>
 </div>
   </div>
 
@@ -3498,7 +3991,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
@@ -3525,9 +4018,21 @@
 <span class='kw'>end</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
-<p>Cross Platform Font Size</p>
-</div></p>
+        <h5 class="example_title"><div class='inline'>
+<p>Cross Platform Font Size in SketchUp 2025.0 and newer</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello Pixel World</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>pixel_size:</span> <span class='int'>20</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_draw_text'>draw_text</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>250</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello Point World</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>point_size:</span> <span class='int'>20</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Cross Platform Font Size in SketchUp 2024.0 and older</p>
+</div></h5>
       
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
   <span class='const'>IS_WIN</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'><span class='object_link'><a href="../Sketchup.html#platform-class_method" title="Sketchup.platform (method)">platform</a></span></span> <span class='op'>==</span> <span class='symbol'>:platform_win</span>
@@ -3705,7 +4210,33 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>The size of the font in points</p>
+<p><strong>Legacy</strong>: The size of the font in system-dependent units. On Windows this is in points, on Mac it&#39;s in pixels.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:pixel_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p><strong>Added SketchUp 2025.0</strong>: The size of the font in pixels.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:point_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p><strong>Added SketchUp 2025.0</strong>: The size of the font in points.</p>
 </div>
           
         </li>
@@ -3778,6 +4309,24 @@
     </ul>
   
 
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if combining usage of <code>:size</code>, <code>:pixel_size</code> or <code>:point_size</code> options.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3813,6 +4362,13 @@
     </li>
   
 </ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">#text_bounds</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -3859,7 +4415,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The drawing_color method is used to set the color that is used for drawing to the view.</p>
@@ -3872,7 +4431,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_drawing_color'>drawing_color</span> <span class='op'>=</span> <span class='id identifier rubyid_color'>color</span></code></pre>
@@ -3953,7 +4512,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
 <p>This method is no longer doing anything.</p>
@@ -3969,7 +4531,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_dynamic'>dynamic</span> <span class='op'>=</span> <span class='kw'>true</span></code></pre>
@@ -4045,7 +4607,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The field_of_view method is used get the view&#39;s field of view setting, in degrees.</p>
@@ -4056,7 +4621,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_fov'>fov</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_field_of_view'>field_of_view</span></code></pre>
@@ -4111,7 +4676,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The field_of_view= method is used set the view&#39;s field of view setting, in degrees.</p>
@@ -4122,7 +4690,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_my_view'>my_view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
@@ -4205,7 +4773,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#graphics_engine-instance_method" title="Sketchup::View#graphics_engine (method)">#graphics_engine</a></span> method is used query the type of the graphics engine that&#39;s currently used by this view.</p>
@@ -4216,7 +4787,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_engine'>engine</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_graphics_engine'>graphics_engine</span>
@@ -4270,18 +4841,23 @@
   <h3 class="signature " id="guess_target-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>guess_target</strong>(*args)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> 
+    
+      <span class="overload">#<strong>guess_target</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>guess_target</strong>(screen_point)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The guess_target method is used to guess at what the user is looking at when you have a perspective view.</p>
-
-<p>This method is useful when writing a viewing tool. See also camera.rb which is part of the film and stage ruby scripts.</p>
 
 
   </div>
@@ -4289,12 +4865,48 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_target'>target</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_guess_target'>guess_target</span></code></pre>
     
   </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>guess_target</strong>(screen_point)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>screen_point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -4344,7 +4956,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The inference_locked? method is used to determine if inference locking is on for the view.</p>
@@ -4355,7 +4970,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -4401,18 +5016,29 @@
   <h3 class="signature " id="inputpoint-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>inputpoint</strong>(x, y, inputpoint1)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> 
+    
+      <span class="overload">#<strong>inputpoint</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+    
+      <span class="overload">#<strong>inputpoint</strong>(x, y, inputpoint1)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+    
+      <span class="overload">#<strong>inputpoint</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+    
+      <span class="overload">#<strong>inputpoint</strong>(x, y, inputpoint1)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The inputpoint method is used to retrieve an input point.</p>
+<p>The <span class='object_link'><a href="#inputpoint-instance_method" title="Sketchup::View#inputpoint (method)">#inputpoint</a></span> method is used to retrieve an <span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span>.</p>
 
-<p>This will normally be used inside one of the mouse event handling methods in a tool. Usually, it is preferable to create the InputPoint first and then use the pick method on it.</p>
+<p>This will normally be used inside one of the mouse event handling methods in a tool. Usually, it is preferable to create the <span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span> first and then use the pick method on it.</p>
 
 
   </div>
@@ -4420,16 +5046,66 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_inputpoint1'>inputpoint1</span></code></pre>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_onMouseMove'>onMouseMove</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_inputpoint'>inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_instance_path'>instance_path</span> <span class='op'>=</span> <span class='id identifier rubyid_ip'>ip</span><span class='period'>.</span><span class='id identifier rubyid_instance_path'>instance_path</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Inference from another input point</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_onLButtonUp'>onLButtonUp</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='ivar'>@picked_input</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_onMouseMove'>onMouseMove</span><span class='lparen'>(</span><span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='comment'># Note: It is preferrable to initialize input points using
+</span>    <span class='comment'># Sketchup::InputPoint.new in `initialize` and reuse them doing the
+</span>    <span class='comment'># picking using the `pick` method.
+</span>    <span class='kw'>if</span> <span class='ivar'>@inputpoint</span>
+      <span class='ivar'>@inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='ivar'>@picked_input</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='ivar'>@inputpoint</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+ <span class='kw'>def</span> <span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+   <span class='kw'>if</span> <span class='ivar'>@inputpoint</span>
+     <span class='ivar'>@inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@inputpoint</span><span class='period'>.</span><span class='id identifier rubyid_display?'>display?</span>
+   <span class='kw'>else</span>
+     <span class='ivar'>@picked_input</span><span class='period'>.</span><span class='id identifier rubyid_draw'>draw</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@picked_input</span><span class='period'>.</span><span class='id identifier rubyid_display?'>display?</span>
+   <span class='kw'>end</span>
+ <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>inputpoint</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
 
   </div>
 </div>
@@ -4442,13 +5118,13 @@
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A x value.</p>
+<p>Screen coordinate in physical pixels.</p>
 </div>
       
     </li>
@@ -4458,51 +5134,19 @@
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Numeric.html" title="Numeric (class)">Numeric</a></span></tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>A y value.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>inputpoint1</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>An InputPoint object.</p>
+<p>Screen coordinate in physical pixels.</p>
 </div>
       
     </li>
   
 </ul>
 
-
-</div>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -4521,6 +5165,256 @@
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>inputpoint</strong>(x, y, inputpoint1)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>inputpoint1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>inputpoint</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>inputpoint</strong>(x, y, inputpoint1)  &#x21d2; <tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>inputpoint1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
 </div>
     
       <div class="method_details ">
@@ -4533,7 +5427,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -4552,7 +5449,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -4603,13 +5500,20 @@
   <h3 class="signature " id="last_refresh_time-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>last_refresh_time</strong>(*args)  &#x21d2; <tt>Float</tt> 
+    
+      <span class="overload">#<strong>last_refresh_time</strong>  &#x21d2; <tt>Float</tt> </span>
+    
+      <span class="overload">#<strong>last_refresh_time</strong>(full)  &#x21d2; <tt>Float</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The last_refresh_time method is used to retrieve the time for the last full view refresh.</p>
@@ -4620,12 +5524,48 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_time'>time</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_last_refresh_time'>last_refresh_time</span></code></pre>
     
   </div>
+
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>last_refresh_time</strong>(full)  &#x21d2; <tt>Float</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>full</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -4675,7 +5615,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The line_stipple= method is used to set the line pattern to use for drawing. The stipple pattern is given as a string. Valid strings are:</p>
@@ -4695,7 +5638,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_point8'>point8</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span> <span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span>
@@ -4784,7 +5727,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -4805,7 +5751,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_line_width'>line_width</span> <span class='op'>=</span> <span class='id identifier rubyid_width'>width</span></code></pre>
@@ -4886,7 +5832,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -4912,7 +5861,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
@@ -5048,7 +5997,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#lock_inference-instance_method" title="Sketchup::View#lock_inference (method)">#lock_inference</a></span> method is used to lock or unlock an inference.</p>
@@ -5063,7 +6015,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_lock_inference'>lock_inference</span>
@@ -5118,7 +6070,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Lock inference to X axis.
@@ -5211,7 +6163,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The model method is used to retrieve the model for the current view.</p>
@@ -5222,7 +6177,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_model'>model</span></code></pre>
@@ -5276,17 +6231,20 @@
     
       <span class="overload">#<strong>pick_helper</strong>(x, y, aperture = 0)  &#x21d2; <tt><span class='object_link'><a href="PickHelper.html" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
     
+      <span class="overload">#<strong>pick_helper</strong>(x, y, aperture = 0.0)  &#x21d2; <tt><span class='object_link'><a href="PickHelper.html" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The pick_helper method is used to retrieve a pick helper for the view. See the PickHelper class for information on pick helpers.</p>
-
-<p>This call returns an initialized PickHelper.</p>
+<p>The <span class='object_link'><a href="#pick_helper-instance_method" title="Sketchup::View#pick_helper (method)">#pick_helper</a></span> method is used to retrieve a pick helper for the view.</p>
 
 
   </div>
@@ -5294,7 +6252,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -5312,8 +6270,6 @@
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a PickHelper object.</p>
-
 
   </div>
 </div>
@@ -5329,11 +6285,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>a PickHelper object</p>
-</div>
-      
     </li>
   
 </ul>
@@ -5347,7 +6298,13 @@
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns a PickHelper object.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
 
 
   </div>
@@ -5365,6 +6322,11 @@
       
       
       
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
     </li>
   
     <li>
@@ -5375,6 +6337,11 @@
         <span class='type'>(<tt>Integer</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
       
     </li>
   
@@ -5388,6 +6355,11 @@
       
         <em class="default">(defaults to: <tt>0</tt>)</em>
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The size of the aperture in physical pixels.</p>
+</div>
       
     </li>
   
@@ -5403,9 +6375,118 @@
       
       
       
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pick_helper</strong>(x, y, aperture = 0.0)  &#x21d2; <tt><span class='object_link'><a href="PickHelper.html" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
         &mdash;
         <div class='inline'>
-<p>a PickHelper object</p>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>aperture</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>0.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The size of the aperture in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="PickHelper.html" title="Sketchup::PickHelper (class)">Sketchup::PickHelper</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
 </div>
       
     </li>
@@ -5417,6 +6498,13 @@
     
   </ul>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="PickHelper.html" title="Sketchup::PickHelper (class)">PickHelper</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -5446,15 +6534,22 @@
     
       <span class="overload">#<strong>pickray</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt> </span>
     
+      <span class="overload">#<strong>pickray</strong>(screen_point)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt> </span>
+    
+      <span class="overload">#<strong>pickray</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The pickray method is used to retrieve a ray passing through a given screen position in the viewing direction.</p>
+<p>The <span class='object_link'><a href="#pickray-instance_method" title="Sketchup::View#pickray (method)">#pickray</a></span> method is used to retrieve a ray passing through a given screen position in the viewing direction.</p>
 
 
   </div>
@@ -5462,15 +6557,190 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_ray'>ray</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pickray'>pickray</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_ray'>ray</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pickray'>pickray</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_raytest'>raytest</span><span class='lparen'>(</span><span class='id identifier rubyid_ray'>ray</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
   <p class="tag_title">Overloads:</p>
   <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pickray</strong>(screen_point)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns a ray.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>screen_point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinates in physical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a ray</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>pickray</strong>(x, y)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns a ray.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in physical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>, <span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span>)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a ray</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
     
       
       <li class="overload_item">
@@ -5492,9 +6762,14 @@
         <span class='name'>screen_point</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer)</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinates in logical pixels.</p>
+</div>
       
     </li>
   
@@ -5513,6 +6788,22 @@
         &mdash;
         <div class='inline'>
 <p>a ray</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
 </div>
       
     </li>
@@ -5542,9 +6833,14 @@
         <span class='name'>x</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
       
     </li>
   
@@ -5553,9 +6849,14 @@
         <span class='name'>y</span>
       
       
-        <span class='type'>(<tt>Integer</tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
       
     </li>
   
@@ -5579,12 +6880,35 @@
     </li>
   
 </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
       </li>
     
   </ul>
 
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Model.html#raytest-instance_method" title="Sketchup::Model#raytest (method)">Model#raytest</a></span></li>
+    
+  </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -5615,7 +6939,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -5626,7 +6953,7 @@
   </div>
 
 
-<p>The pixels_to_model method is used to compute a model size from a pixel size at a given point.</p>
+<p>The <span class='object_link'><a href="#pixels_to_model-instance_method" title="Sketchup::View#pixels_to_model (method)">#pixels_to_model</a></span> method is used to compute a model size from a pixel size at a given point.</p>
 
 <p>This method is useful for deciding how big to draw something based on a desired size in pixels.</p>
 
@@ -5636,7 +6963,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_size'>size</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_pixels_to_model'>pixels_to_model</span><span class='lparen'>(</span><span class='id identifier rubyid_pixels'>pixels</span><span class='comma'>,</span> <span class='id identifier rubyid_point'>point</span><span class='rparen'>)</span></code></pre>
@@ -5664,7 +6991,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The pixel size.</p>
+<p>Logical pixels since SketchUp 2017.</p>
 </div>
       
     </li>
@@ -5680,7 +7007,7 @@
       
         &mdash;
         <div class='inline'>
-<p>A Point3d object where the size will be calculated from.</p>
+<p>A model point where the size will be calculated from.</p>
 </div>
       
     </li>
@@ -5738,7 +7065,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -5757,7 +7087,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -5814,7 +7144,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Releases a texture loaded via <span class='object_link'><a href="#load_texture-instance_method" title="Sketchup::View#load_texture (method)">#load_texture</a></span>, freeing up it&#39;s memory. It&#39;s good practice to do so whenever there is no longer any need for the resource.</p>
@@ -5827,7 +7160,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='kw'>module</span> <span class='const'>Example</span>
@@ -5907,7 +7240,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The remove_observer method is used to remove an observer from the current object.</p>
@@ -5918,7 +7254,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
@@ -5999,18 +7335,33 @@
   <h3 class="signature " id="screen_coords-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>screen_coords</strong>(point3d)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> 
+    
+      <span class="overload">#<strong>screen_coords</strong>(model_point)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+    
+      <span class="overload">#<strong>screen_coords</strong>(model_point)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The screen_coords method is used to retrieve the screen coordinates of the given point on the screen.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2025.0 this method returned the points as physical screen coordinates. As of SketchUp 2025.0 the points are returned in logical screen coordinates.</p>
+</div>
+  </div>
 
-<p>The x and y values returned correspond to the x and y screen coordinates. Ignore the z values.  If the referenced point is not in the current viewport,  the x and/or y value may be negative.</p>
+
+<p>The <span class='object_link'><a href="#screen_coords-instance_method" title="Sketchup::View#screen_coords (method)">#screen_coords</a></span> method is used to retrieve the screen coordinates of the given point on the screen.</p>
+
+<p>The <code>x</code> and <code>y</code> values returned correspond to the <code>x</code> and <code>y</code> screen coordinates. Ignore the <code>z</code> values.  If the referenced point is not in the current viewport, the <code>x</code> and/or <code>y</code> value may be negative.</p>
 
 
   </div>
@@ -6018,16 +7369,33 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_screen_coords'>screen_coords</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
+<span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_screen_coords'>screen_coords</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>screen_coords</strong>(model_point)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns Screen coordinate in physical pixels.</p>
+
 
   </div>
 </div>
@@ -6037,7 +7405,7 @@
   
     <li>
       
-        <span class='name'>point3d</span>
+        <span class='name'>model_point</span>
       
       
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
@@ -6046,15 +7414,12 @@
       
         &mdash;
         <div class='inline'>
-<p>A Point3d object.</p>
+<p>Model coordinate.</p>
 </div>
       
     </li>
   
 </ul>
-
-
-</div>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -6068,12 +7433,105 @@
       
         &mdash;
         <div class='inline'>
-<p>A Point3d containing the screen position</p>
+<p>Screen coordinate in physical pixels.</p>
 </div>
       
     </li>
   
 </ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>screen_coords</strong>(model_point)  &#x21d2; <tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Screen coordinate in logical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>model_point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Model coordinate.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Screen coordinate in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -6104,7 +7562,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Set the drawing color for the view based on the direction of a line that you want to draw. These colors will match the axes colors in the SketchUp model (typically blue for straight up and down, etc.)</p>
@@ -6117,7 +7578,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_set_color_from_line'>set_color_from_line</span> <span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span></code></pre>
@@ -6219,7 +7680,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The show_frame method is used to show a frame of an Animation object in the current view.</p>
@@ -6232,7 +7696,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_show_frame'>show_frame</span> <span class='id identifier rubyid_delay'>delay</span></code></pre>
@@ -6313,7 +7777,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
   <div class="note notetag">
@@ -6338,16 +7805,16 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='kw'>class</span> <span class='const'>ExampleTool</span>
   <span class='const'>TEXT_OPTIONS</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='symbol'>:font</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Arial</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-    <span class='symbol'>:size</span> <span class='op'>=&gt;</span> <span class='int'>20</span><span class='comma'>,</span>
-    <span class='symbol'>:bold</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+    <span class='symbol'>:pixel_size</span> <span class='op'>=&gt;</span> <span class='int'>20</span><span class='comma'>,</span> <span class='comment'># Use :size for SketchUp 2024.0 and older.
+</span>    <span class='symbol'>:bold</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
     <span class='symbol'>:align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextAlignRight-constant" title="TextAlignRight (constant)">TextAlignRight</a></span></span><span class='comma'>,</span>
-    <span class='symbol'>:align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span></span>
+    <span class='symbol'>:vertical_align</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#TextVerticalAlignBaseline-constant" title="TextVerticalAlignBaseline (constant)">TextVerticalAlignBaseline</a></span></span>
   <span class='rbrace'>}</span>
 
   <span class='comment'># Since `draw` is called frequently it can be useful to pre-compute and
@@ -6476,7 +7943,33 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>The size of the font in points</p>
+<p><strong>Legacy</strong>: The size of the font in system-dependent units. On Windows this is in points, on Mac it&#39;s in pixels.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:pixel_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p><strong>Added SketchUp 2025.0</strong>: The size of the font in pixels.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:point_size</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p><strong>Added SketchUp 2025.0</strong>: The size of the font in points.</p>
 </div>
           
         </li>
@@ -6536,6 +8029,24 @@
     </ul>
   
 
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if combining usage of <code>:size</code>, <code>:pixel_size</code> or <code>:point_size</code> options.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 
@@ -6589,7 +8100,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Set a tooltip to display in the view. This is useful for displaying tooltips in a tool that you write in Ruby.</p>
@@ -6600,7 +8114,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='id identifier rubyid_string'>string</span></code></pre>
@@ -6680,16 +8194,31 @@
   <h3 class="signature " id="vpheight-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>vpheight</strong>  &#x21d2; <tt>Integer</tt> 
+    
+      <span class="overload">#<strong>vpheight</strong>  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>vpheight</strong>  &#x21d2; <tt>Float</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The vpheight method is used to retrieve the height of the viewport for the view.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2025.0 this method returned the size as physical screen coordinates. As of SketchUp 2025.0 the size are returned in logical screen coordinates.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#vpheight-instance_method" title="Sketchup::View#vpheight (method)">#vpheight</a></span> method is used to retrieve the height of the viewport for the view.</p>
 
 
   </div>
@@ -6697,7 +8226,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
@@ -6706,6 +8235,30 @@
     
   </div>
 
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>vpheight</strong>  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns the height of the viewport in physical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -6742,22 +8295,110 @@
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>vpheight</strong>  &#x21d2; <tt>Float</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the height of the viewport in logical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the height of the viewport in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 </div>
     
       <div class="method_details ">
   <h3 class="signature " id="vpwidth-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>vpwidth</strong>  &#x21d2; <tt>Integer</tt> 
+    
+      <span class="overload">#<strong>vpwidth</strong>  &#x21d2; <tt>Integer</tt> </span>
+    
+      <span class="overload">#<strong>vpwidth</strong>  &#x21d2; <tt>Float</tt> </span>
+    
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The vpwidth method is used to retrieve the width of the viewport for the view.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2025.0 this method returned the size as physical screen coordinates. As of SketchUp 2025.0 the size are returned in logical screen coordinates.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#vpwidth-instance_method" title="Sketchup::View#vpwidth (method)">#vpwidth</a></span> method is used to retrieve the width of the viewport for the view.</p>
 
 
   </div>
@@ -6765,13 +8406,38 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_vpwidth'>vpwidth</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>
+<span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_vpwidth'>vpwidth</span></code></pre>
     
   </div>
 
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>vpwidth</strong>  &#x21d2; <tt>Integer</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Signature for versions prior to SketchUp 2025.0</p>
+</div>
+  </div>
+
+
+<p>Returns the width of the viewport in physical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -6808,6 +8474,79 @@
 </ul>
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>vpwidth</strong>  &#x21d2; <tt>Float</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the width of the viewport in logical pixels.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the width of the viewport in logical pixels.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2025.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
 </div>
     
       <div class="method_details ">
@@ -6815,7 +8554,7 @@
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>write_image</strong>(filename, width = view.vpwidth, height = view.vpheight, antialias = false)  &#x21d2; <tt>Boolean</tt> </span>
+      <span class="overload">#<strong>write_image</strong>(filename, width = view.vpwidth, height = view.vpheight, antialias = false, compression = 1.0)  &#x21d2; <tt>Boolean</tt> </span>
     
       <span class="overload">#<strong>write_image</strong>(options)  &#x21d2; <tt>Boolean</tt> </span>
     
@@ -6826,36 +8565,15 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#write_image-instance_method" title="Sketchup::View#write_image (method)">#write_image</a></span> method is used to write the current view to an image file.</p>
 
-<p>Supported file types are `.png`, `.jpg`, `.jpeg`, `gif`, `.bmp`, `.tif`. For other file formats  available from the GUI in File &gt; Export &gt; 2D Graphics, .e.g `.pdf`, use <span class='object_link'><a href="Model.html#export-instance_method" title="Sketchup::Model#export (method)">Model#export</a></span>.</p>
-
-<p>compression = 1.0)</p>
-
-<pre class="code"><code class="">@note Prefer the overload with option hash instead of this variant. This
-  overload is not updated with new options.
-
-@example
-  filename = File.join(Sketchup.temp_dir, &#39;example.png&#39;)
-  antialias = false
-  compression = 0.9
-  model = Sketchup.active_model
-  view = model.active_view
-  view.write_image(filename, 640, 480, antialias, compression)
-
-@param [String] filename
-  The filename for the saved image
-@param [Integer] width
-  Width in pixels, defaults to the current viewport width {#vpwidth}.
-@param [Integer] height
-  Height in pixels, defaults to the current viewport height {#vpheight}.
-@param [Boolean] antialias
-@param [Float] compression
-  Compression factor for JPEG images, between +0.0+ and +1.0+.
-</code></pre>
+<p>Supported file types are <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>, <code>gif</code>, <code>.bmp</code>, <code>.tif</code>. For other file formats  available from the GUI in <tt>File &gt; Export &gt; 2D Graphics</tt>, .e.g <code>.pdf</code>, use <span class='object_link'><a href="Model.html#export-instance_method" title="Sketchup::Model#export (method)">Model#export</a></span>.</p>
 
 
   </div>
@@ -6866,6 +8584,128 @@
   <ul class="overload">
     
       
+      <li class="overload_item">
+        <span class="signature">#<strong>write_image</strong>(filename, width = view.vpwidth, height = view.vpheight, antialias = false, compression = 1.0)  &#x21d2; <tt>Boolean</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prefer the overload with option hash instead of this variant. This overload is not updated with new options.</p>
+</div>
+  </div>
+
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_temp_dir'><span class='object_link'><a href="../Sketchup.html#temp_dir-class_method" title="Sketchup.temp_dir (method)">temp_dir</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>example.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_antialias'>antialias</span> <span class='op'>=</span> <span class='kw'>false</span>
+<span class='id identifier rubyid_compression'>compression</span> <span class='op'>=</span> <span class='float'>0.9</span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_write_image'>write_image</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='int'>640</span><span class='comma'>,</span> <span class='int'>480</span><span class='comma'>,</span> <span class='id identifier rubyid_antialias'>antialias</span><span class='comma'>,</span> <span class='id identifier rubyid_compression'>compression</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The filename for the saved image</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>width</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>view.vpwidth</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Width in pixels, defaults to the current viewport width <span class='object_link'><a href="#vpwidth-instance_method" title="Sketchup::View#vpwidth (method)">#vpwidth</a></span>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>height</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>view.vpheight</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Height in pixels, defaults to the current viewport height <span class='object_link'><a href="#vpheight-instance_method" title="Sketchup::View#vpheight (method)">#vpheight</a></span>.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>antialias</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>compression</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>1.0</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Compression factor for JPEG images, between <code>0.0</code> and <code>1.0</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
       
       <li class="overload_item">
         <span class="signature">#<strong>write_image</strong>(options)  &#x21d2; <tt>Boolean</tt> </span>
@@ -6878,7 +8718,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -7058,7 +8898,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span>
@@ -7206,7 +9046,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The zoom method is used to zoom in or out by some zoom factor.</p>
@@ -7217,7 +9060,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_zoom'>zoom</span> <span class='id identifier rubyid_factor'>factor</span>
@@ -7306,7 +9149,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The zoom_extents method is used to zoom to the extents about the entire model, as if the user has selected the zoom extents command from the menu.</p>
@@ -7317,7 +9163,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span>

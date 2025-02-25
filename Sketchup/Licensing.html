@@ -210,14 +210,16 @@
   
 </p>
 
-  <h2>
-    Constant Summary
-    <a
-        id="constant_summary"
-        href="#constant_summary"
-        title="Permalink">#</a>
-  </h2>
   
+    <h2>
+      Constants for extension license state
+      <a
+          id="constants_for_extension_license_state"
+          href="#constants_for_extension_license_state"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
     <dl class="constants">
       
         <dt id="LICENSED-constant" class="">Sketchup::Licensing::LICENSED
@@ -274,7 +276,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Acquires a license for a given extension.</p>
+<p>Gets a license for a given extension.</p>
 </div></span>
   
 </li>
@@ -300,10 +302,15 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>Acquires a license for a given extension.</p>
+<p>Gets a license for a given extension.</p>
+
+<p>Starting in SketchUp 2025.0, this method automatically tries to fetch a license from Extension Warehouse if the extension doesn&#39;t have a license on the current device. This only works if the user is signed in. In earlier SketchUp versions, the user has to go to Extension Manager, expand the extension in question and press Update License if the license is missing. (For performance reasons this automatic fetching is skipped during SU startup. Make sure to do a license check when the user interacts with the extension).</p>
 
 
   </div>
@@ -311,7 +318,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_ext_id'>ext_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>4e215280-dd23-40c4-babb-b8a8dd29d5ee</span><span class='tstring_end'>&quot;</span></span>
@@ -365,7 +372,7 @@
       
         &mdash;
         <div class='inline'>
-<p>An object representing licensing state for the extension. Do not store this object, retrieve it again when needed since licensing state may have changed.</p>
+<p>An object representing licensing state for the extension. Do not store this object; retrieve it again when needed since licensing state may have changed.</p>
 </div>
       
     </li>

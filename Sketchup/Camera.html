@@ -195,7 +195,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Create a camera from scratch with an &quot;eye&quot; position in
@@ -676,7 +676,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#is_2d%3F-instance_method" title="Sketchup::Camera#is_2d? (method)">#is_2d?</a></span> method indicates if the camera two-point perspective or match photo mode.</p>
+<p>The <span class='object_link'><a href="#is_2d%3F-instance_method" title="Sketchup::Camera#is_2d? (method)">#is_2d?</a></span> method indicates whether the camera mode is two-point perspective or match photo mode, as opposed to a normal perspective or parallel projection camera.</p>
 </div></span>
   
 </li>
@@ -733,7 +733,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#scale_2d-instance_method" title="#scale_2d (instance method)">#<strong>scale_2d</strong>  &#x21d2; Object </a>
+      <a href="#scale_2d-instance_method" title="#scale_2d (instance method)">#<strong>scale_2d</strong>  &#x21d2; Float </a>
     
 
     
@@ -877,7 +877,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#zaxis-instance_method" title="#zaxis (instance method)">#<strong>zaxis</strong>  &#x21d2; Object </a>
+      <a href="#zaxis-instance_method" title="#zaxis (instance method)">#<strong>zaxis</strong>  &#x21d2; Geom::Vector3d </a>
     
 
     
@@ -919,7 +919,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>Returns a new camera with eye (where the camera is) and targets (where the camera is looking).</p>
@@ -930,7 +933,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_eye'>eye</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>5</span><span class='comma'>,</span> <span class='int'>30</span><span class='rparen'>)</span>
@@ -939,9 +942,9 @@
 <span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_eye'>eye</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_up'>up</span><span class='rparen'>)</span></code></pre>
     
       
-        <p class="example_title"><div class='inline'>
+        <h5 class="example_title"><div class='inline'>
 <p>Arbitrary camera</p>
-</div></p>
+</div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></code></pre>
     
@@ -1107,7 +1110,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#aspect_ratio-instance_method" title="Sketchup::Camera#aspect_ratio (method)">#aspect_ratio</a></span> method is used to retrieve the aspect ratio of the Camera.</p>
@@ -1120,7 +1126,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_camera'><span class='object_link'><a href="View.html#camera-instance_method" title="Sketchup::View#camera (method)">camera</a></span></span>
@@ -1171,7 +1177,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#aspect_ratio=-instance_method" title="Sketchup::Camera#aspect_ratio= (method)">#aspect_ratio=</a></span> method is used to set the aspect ratio for a Camera. Changing this value will cause SketchUp to show gray bars over the screen to show the resulting view.</p>
@@ -1184,7 +1193,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1248,7 +1257,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#center_2d-instance_method" title="Sketchup::Camera#center_2d (method)">#center_2d</a></span> method returns a point with the x and y offset of the camera when it&#39;s in two-point perspective or math photo mode. When the camera is in two-point perspective and the user pans around, the x and y values will change. These values are in normalized device coordinates, so for instance, the range [-1.0, 1.0] spans the full width or height of the screen.</p>
@@ -1261,7 +1273,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_camera'><span class='object_link'><a href="View.html#camera-instance_method" title="Sketchup::View#camera (method)">camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_center_2d'>center_2d</span></code></pre>
@@ -1277,11 +1289,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>]</p>
-</div>
       
     </li>
   
@@ -1316,7 +1323,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#description-instance_method" title="Sketchup::Camera#description (method)">#description</a></span> method is used to retrieve the description for a Camera.</p>
@@ -1327,7 +1337,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1378,7 +1388,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#description=-instance_method" title="Sketchup::Camera#description= (method)">#description=</a></span> method is used to set the description for the Camera.</p>
@@ -1389,7 +1402,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1453,7 +1466,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#direction-instance_method" title="Sketchup::Camera#direction (method)">#direction</a></span> method is used to retrieve a Vector3d object in the direction that the Camera is pointing.</p>
@@ -1464,7 +1480,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1515,7 +1531,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#eye-instance_method" title="Sketchup::Camera#eye (method)">#eye</a></span> method is used to retrieve the eye Point3d object for the Camera.</p>
@@ -1526,7 +1545,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1577,7 +1596,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The focal_length method is used to get the focal length in millimeters of perspective Camera.</p>
@@ -1590,7 +1612,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Calculate focal length based on camera&#39;s current #image_width.
@@ -1658,7 +1680,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#focal_length=-instance_method" title="Sketchup::Camera#focal_length= (method)">#focal_length=</a></span> method allows you to set the field of view by specifying a focal length in millimeters. Focal length must be between 1 and 3000, inclusive.</p>
@@ -1671,7 +1696,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='comment'># Set field of view from focal length using camera&#39;s current #image_width.
@@ -1743,7 +1768,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#fov-instance_method" title="Sketchup::Camera#fov (method)">#fov</a></span> method retrieves the field of view of the Camera.</p>
@@ -1756,7 +1784,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1812,7 +1840,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#fov=-instance_method" title="Sketchup::Camera#fov= (method)">#fov=</a></span> method sets the field of view for a Camera. Field of view must be between 1 and 120 degrees, inclusive.</p>
@@ -1825,7 +1856,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -1894,7 +1925,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#fov_is_height%3F-instance_method" title="Sketchup::Camera#fov_is_height? (method)">#fov_is_height?</a></span> method indicates whether the field of view is measured vertically, as opposed horizontally.</p>
@@ -1905,7 +1939,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_camera'><span class='object_link'><a href="View.html#camera-instance_method" title="Sketchup::View#camera (method)">camera</a></span></span>
@@ -1962,7 +1996,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#height-instance_method" title="Sketchup::Camera#height (method)">#height</a></span> method retrieves the height of a Camera.</p>
@@ -1975,7 +2012,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2032,7 +2069,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#height=-instance_method" title="Sketchup::Camera#height= (method)">#height=</a></span> method is used to set the height for the Camera in inches.</p>
@@ -2045,7 +2085,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2110,7 +2150,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#image_width-instance_method" title="Sketchup::Camera#image_width (method)">#image_width</a></span> method returns the width of the image, as used to calculate the <span class='object_link'><a href="#focal_length-instance_method" title="Sketchup::Camera#focal_length (method)">#focal_length</a></span>. This value has no effect on how the view is displayed in SketchUp.</p>
@@ -2123,7 +2166,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2179,7 +2222,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#image_width=-instance_method" title="Sketchup::Camera#image_width= (method)">#image_width=</a></span> method is used to set the width of the image, as used to calculate the <span class='object_link'><a href="#focal_length-instance_method" title="Sketchup::Camera#focal_length (method)">#focal_length</a></span>. This value has no effect on how the view is displayed in SketchUp.</p>
@@ -2192,7 +2238,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2262,10 +2308,13 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#is_2d%3F-instance_method" title="Sketchup::Camera#is_2d? (method)">#is_2d?</a></span> method indicates if the camera two-point perspective or match photo mode.</p>
+<p>The <span class='object_link'><a href="#is_2d%3F-instance_method" title="Sketchup::Camera#is_2d? (method)">#is_2d?</a></span> method indicates whether the camera mode is two-point perspective or match photo mode, as opposed to a normal perspective or parallel projection camera.</p>
 
 
   </div>
@@ -2273,7 +2322,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_camera'><span class='object_link'><a href="View.html#camera-instance_method" title="Sketchup::View#camera (method)">camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_is_2d?'>is_2d?</span></code></pre>
@@ -2323,7 +2372,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#perspective=-instance_method" title="Sketchup::Camera#perspective= (method)">#perspective=</a></span> method is used to set whether or not this is a perspective camera or an orthographic camera.</p>
@@ -2334,7 +2386,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2398,7 +2450,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#perspective%3F-instance_method" title="Sketchup::Camera#perspective? (method)">#perspective?</a></span> method is used to determine whether a camera is a perspective or orthographic camera.</p>
@@ -2409,7 +2464,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2459,13 +2514,16 @@
   <h3 class="signature " id="scale_2d-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>scale_2d</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>scale_2d</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#scale_2d-instance_method" title="Sketchup::Camera#scale_2d (method)">#scale_2d</a></span> method returns a float indicating the scaling factor of 2 point perspective cameras.</p>
@@ -2478,7 +2536,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_camera'><span class='object_link'><a href="View.html#camera-instance_method" title="Sketchup::View#camera (method)">camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_scale_2d'>scale_2d</span></code></pre>
@@ -2491,14 +2549,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>float</p>
-</div>
       
     </li>
   
@@ -2533,7 +2586,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#set-instance_method" title="Sketchup::Camera#set (method)">#set</a></span> method sets the camera orientation. You have to set the camera eye, target and up parameters at the same time to make sure that you have a valid camera definition.</p>
@@ -2544,7 +2600,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2661,7 +2717,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#target-instance_method" title="Sketchup::Camera#target (method)">#target</a></span> method retrieves Point3d that the camera is pointing at.</p>
@@ -2672,7 +2731,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2723,7 +2782,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#up-instance_method" title="Sketchup::Camera#up (method)">#up</a></span> method is used to retrieve the up vector for the camera. This is</p>
@@ -2737,7 +2799,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2788,7 +2850,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#xaxis-instance_method" title="Sketchup::Camera#xaxis (method)">#xaxis</a></span> method is used to retrieve the x axis of the camera coordinate system.</p>
@@ -2801,7 +2866,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2818,11 +2883,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>]</p>
-</div>
       
     </li>
   
@@ -2857,7 +2917,10 @@
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#yaxis-instance_method" title="Sketchup::Camera#yaxis (method)">#yaxis</a></span> method retrieves the y axis of the camera coordinate system.</p>
@@ -2870,7 +2933,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2888,11 +2951,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>]</p>
-</div>
       
     </li>
   
@@ -2921,13 +2979,16 @@
   <h3 class="signature " id="zaxis-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>zaxis</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>zaxis</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> 
   
 
   
 
   
-</h3><div class="docstring">
+
+  
+</h3>
+<div class="docstring">
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#zaxis-instance_method" title="Sketchup::Camera#zaxis (method)">#zaxis</a></span> method retrieves the z axis of the camera coordinate system.</p>
@@ -2940,7 +3001,7 @@
 <div class="tags">
   
   <div class="examples">
-    <p class="tag_title">Examples:</p>
+    <h4 class="tag_title">Examples:</h4>
     
       
       <pre class="example code"><code><span class='id identifier rubyid_camera'>camera</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::Camera (class)">Camera</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Sketchup::Camera#initialize (method)">new</a></span></span>
@@ -2960,14 +3021,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>vector - a Vector3d object if successful</p>
-</div>
       
     </li>
   
