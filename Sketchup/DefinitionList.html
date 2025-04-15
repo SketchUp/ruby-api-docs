@@ -1956,16 +1956,7 @@
     
 <p>The <span class='object_link'><a href="#load_from_url-instance_method" title="Sketchup::DefinitionList#load_from_url (method)">#load_from_url</a></span> method loads a component from a location specified by string url.</p>
 
-<p>This method throws an exception if an url string is not given, or an error occurs during retrieval from URL and a <code>load_handler</code> was not given. Optional second parameter <code>load_handler</code> can be used to pass in a Ruby object that responds to the following methods:</p>
-<ul><li>
-<p><code>cancelled?</code></p>
-</li><li>
-<p><tt>onPercentChange(percent)</tt></p>
-</li><li>
-<p><tt>onSuccess()</tt></p>
-</li><li>
-<p><tt>onFailure(message_string)</tt></p>
-</li></ul>
+<p>This method throws an exception if an url string is not given, or an error occurs during retrieval from URL and a <span class='object_link'><a href="LoadHandler.html" title="Sketchup::LoadHandler (class)">load_handler</a></span> was not given.</p>
 
 
   </div>
@@ -1980,7 +1971,7 @@
 <p>Download a component using a LoadHandler</p>
 </div></h5>
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>LoadHandler</span>
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'><span class='object_link'><a href="LoadHandler.html" title="Sketchup::LoadHandler (class)">LoadHandler</a></span></span>
   <span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:error</span>
 
   <span class='comment'># @param [Float] percent
@@ -2009,7 +2000,7 @@
 <span class='comment'># Replace this with a real URL...
 </span><span class='id identifier rubyid_url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://www.sketchup.com/model.skp</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
-<span class='id identifier rubyid_load_handler'>load_handler</span> <span class='op'>=</span> <span class='const'>LoadHandler</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_load_handler'>load_handler</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="LoadHandler.html" title="Sketchup::LoadHandler (class)">LoadHandler</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 <span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load_from_url'>load_from_url</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_load_handler'>load_handler</span><span class='rparen'>)</span>
 
 <span class='kw'>if</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>

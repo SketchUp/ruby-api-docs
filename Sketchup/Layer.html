@@ -493,7 +493,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::Layer#name (method)">#name</a></span> method is used to retrieve the name of the layer.</p>
+<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::Layer#name (method)">#name</a></span> method return the internal name of the layer which is handled by the model.</p>
 </div></span>
   
 </li>
@@ -987,7 +987,15 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#display_name-instance_method" title="Sketchup::Layer#display_name (method)">#display_name</a></span> method is used to retrieve the display name of the layer.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The display name and internal name of layers should share the same value except for the Layer0. From version 2020.0 onwards the display name of Layer0 is “Untagged” and it is localized.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#display_name-instance_method" title="Sketchup::Layer#display_name (method)">#display_name</a></span> method is used to retrieve the display name of the layer. This is the name shown to the user in the Sketchup UI.</p>
 
 
   </div>
@@ -1371,7 +1379,15 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::Layer#name (method)">#name</a></span> method is used to retrieve the name of the layer.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The internal layer and display name of layers should share the same value except for the Layer0. From version 2020.0 onwards the display name of Layer0 is “Untagged” and it is localized.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::Layer#name (method)">#name</a></span> method return the internal name of the layer which is handled by the model. Its use is for scripting and internal references.</p>
 
 
   </div>
@@ -1398,6 +1414,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>representing the name of the layer</p>
+</div>
       
     </li>
   

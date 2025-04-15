@@ -159,7 +159,16 @@
 
 <p>An RBZ file is a normal ZIP archive with the .rbz file extension. To create one, you can use the ZIP archive tool of your choice, including right clicking the target files and sending them to a ZIP archive, and then rename the file. You may need to change a system setting to display the file extension to be able to change it.</p>
 
-<p>The RBZ archive must contain exactly two items, a root RB file and a support folder by the same name (excluding the .rb extension). The root RB file contains the extension metadata. The support folder contains the main code.</p>
+<p>The RBZ archive must contain exactly two items, a root RB file and a support folder by the same name (excluding the .rb extension). The root RB file contains the extension metadata, such as name and author. The support folder contains the rest of the extension.</p>
+
+<p><em>File Structure</em></p>
+
+<pre class="code ruby"><code class="ruby">nn_cuber_maker.rbz
+├── nn_cuber_maker.rb (root RB file)
+└── nn_cuber_maker    (support folder containing everything else)
+    ├── main.rb
+    └── some_other_support_file.rb
+</code></pre>
 
 <p><em>Root RB file</em></p>
 
@@ -167,11 +176,11 @@
 </span>
 <span class='kw'>module</span> <span class='const'>NameyNamesson</span>
   <span class='kw'>module</span> <span class='const'>CubeMaker</span>
-    <span class='const'>EXTENSION</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SketchupExtension.html#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NN Cube Maker</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/main.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='const'>EXTENSION</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SketchupExtension.html#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NN Cube Maker</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/main</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_creator'>creator</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Namey Namesson</span><span class='tstring_end'>&quot;</span></span>
     <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Make cubes in just a few clicks.</span><span class='tstring_end'>&quot;</span></span>
     <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_version'>version</span>     <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.0.0</span><span class='tstring_end'>&quot;</span></span>
-    <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_copyright'>copyright</span>   <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2023 Name Namesson</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>EXTENSION</span><span class='period'>.</span><span class='id identifier rubyid_copyright'>copyright</span>   <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2025 Name Namesson</span><span class='tstring_end'>&quot;</span></span>
     <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_register_extension'><span class='object_link'><a href="Sketchup.html#register_extension-class_method" title="Sketchup.register_extension (method)">register_extension</a></span></span><span class='lparen'>(</span><span class='const'>EXTENSION</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
@@ -199,6 +208,29 @@
     <span class='comment'># Code goes here…
 </span>  <span class='kw'>end</span>
 <span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Requiring+Files">Requiring Files</h3>
+
+<p>When requiring Ruby files within your extension, prefer the <code>Sketchup.require</code> method over Ruby&#39;s own <code>require</code> or <code>require_relative</code>. By default Extension Warehouse encrypts extensions, convering <code>.rb</code> files into <code>.rbe</code> files. By omitting the file extension, <code>Sketchup.require</code> will look for both <code>.rb</code>, <code>.rbe</code> and <code>.rbs</code> files.</p>
+
+<p>Hardcoding the <code>.rb</code> extension while also encrypting the extension leads to a load error.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Bad
+</span><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/some_other_file.rb</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>some_other_file.rb</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='comment'># Good
+</span><span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_require'><span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">require</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/some_other_file</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>The same applies to the path when creating the extension object.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Bad
+</span><span class='const'><span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SketchupExtension.html#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NN Cube Maker</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/main.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># Good
+</span><span class='const'><span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="SketchupExtension.html#initialize-instance_method" title="SketchupExtension#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NN Cube Maker</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>nn_cube_maker/main</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 </code></pre>
 
 <h3 id="label-Undo+Stack">Undo Stack</h3>
@@ -257,6 +289,12 @@
 <h3 id="label-And+More-E2-80-A6">And More…</h3>
 
 <p>This is not a complete list of everything an extension can be denied for. See the below links for more details and use your good judgment when developing.</p>
+
+<h2 id="label-RuboCop">RuboCop</h2>
+
+<p><a href="https://github.com/SketchUp/rubocop-sketchup">RuboCop-SetchUp</a> is a static code analyser helping you find issues with your code and comform to these requirements.</p>
+
+<p>RuboCop-SketchUp is used by the Extension Warehouse review team but you can use it yourself before submitting, to find issues earlier and save time.</p>
 
 <h2 id="label-Further+Reading">Further Reading</h2>
 

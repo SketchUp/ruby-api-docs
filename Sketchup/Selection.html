@@ -263,7 +263,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> from the selection by index.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve a <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> from the selection by index.</p>
 </div></span>
   
 </li>
@@ -822,7 +822,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve an <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> from the selection by index. Index 0 is the first Drawingelement in the selection.</p>
+<p>The <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Selection#[] (method)">#[]</a></span> method is used to retrieve a <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span> from the selection by index. Index 0 is the first Drawingelement in the selection.</p>
 
 <p>This method is not very efficient. If you need to look at every entity in the selection, consider using <span class='object_link'><a href="#each-instance_method" title="Sketchup::Selection#each (method)">#each</a></span> instead of using this method to manually grab each one.</p>
 
@@ -925,7 +925,7 @@
     
 <p>The <span class='object_link'><a href="#add-instance_method" title="Sketchup::Selection#add (method)">#add</a></span> method is used to add Drawingelement to the selection. Drawingelements that are added to the Selection are visually indicated by the selection bounding box.</p>
 
-<p>You can pass it individual Drawingelements or an Array of Drawingelements: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on a Drawingelement that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given Drawingelement.</p>
+<p>You can pass it individual Drawingelements or an Array of Drawingelements.</p>
 
 
   </div>
@@ -943,9 +943,9 @@
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_edge'>edge</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_edge'>edge</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2260,9 +2260,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#remove-instance_method" title="Sketchup::Selection#remove (method)">#remove</a></span> method is used to remove Drawingelements from the selection.</p>
-
-<p>You can pass it individual Drawingelements or an Array of Drawingelements: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on a Drawingelement that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given Drawingelement.</p>
+<p>The <span class='object_link'><a href="#remove-instance_method" title="Sketchup::Selection#remove (method)">#remove</a></span> method is used to remove Drawingelements from the selection. You can pass it individual Drawingelements or an Array of Drawingelements.</p>
 
 
   </div>
@@ -2280,9 +2278,12 @@
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_all_connected'>all_connected</span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -2721,7 +2722,7 @@
     
 <p>The <span class='object_link'><a href="#toggle-instance_method" title="Sketchup::Selection#toggle (method)">#toggle</a></span> method is used to change whether a Drawingelement is part of the selection. Drawingelements that are not already selected are added. Drawingelements that are already selected are removed.</p>
 
-<p>You can pass it individual Drawingelements or an Array of Drawingelements: Note that the add, remove, and toggle methods are all aliases for one another. So if you call remove on a Drawingelement that is not selected, it will be toggled to be selected, not removed! Be cautious when writing your code to not make the assumption about the currently selected state of a given Drawingelement.</p>
+<p>You can pass it individual Drawingelements or an Array of Drawingelements.</p>
 
 
   </div>
@@ -2739,9 +2740,12 @@
 </span><span class='id identifier rubyid_ss'>ss</span><span class='period'>.</span><span class='id identifier rubyid_toggle'>toggle</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_e1'>e1</span><span class='comma'>,</span> <span class='id identifier rubyid_e2'>e2</span><span class='comma'>,</span> <span class='id identifier rubyid_e3'>e3</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_entity'>entity</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_entity'>entity</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_all_connected'>all_connected</span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_toggle'>toggle</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
