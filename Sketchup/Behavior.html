@@ -694,26 +694,20 @@
 </span><span class='id identifier rubyid_definitions'>definitions</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span>
 <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find_support_file'><span class='object_link'><a href="../Sketchup.html#find_support_file-class_method" title="Sketchup.find_support_file (method)">find_support_file</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bed.skp</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components/Components Sampler/</span><span class='tstring_end'>&quot;</span></span>
-
-<span class='kw'>begin</span>
-  <span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_path'>path</span>
-<span class='kw'>rescue</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='gvar'>$!</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
-<span class='kw'>end</span>
-
+<span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_path'>path</span>
 <span class='id identifier rubyid_behavior'>behavior</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_behavior'>behavior</span>
 <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera?'>always_face_camera?</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_b'>b</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Component faces camera</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Always Face Camera is equal to false</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Component does not face camera</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera'>always_face_camera</span> <span class='op'>=</span> <span class='kw'>true</span>
 <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_behavior'>behavior</span><span class='period'>.</span><span class='id identifier rubyid_always_face_camera?'>always_face_camera?</span>
 <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='id identifier rubyid_b'>b</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Alwas Face Camera is equal to true</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>else</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Failure</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -1413,8 +1407,8 @@
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Components/Components Sampler/</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>begin</span>
   <span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span> <span class='id identifier rubyid_path'>path</span>
-<span class='kw'>rescue</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span> <span class='gvar'>$!</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
+<span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_exception'>exception</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_exception'>exception</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span>
 <span class='kw'>end</span></code></pre>
     
   </div>

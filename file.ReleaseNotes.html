@@ -169,7 +169,7 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
-<p><strong>SU2025.0</strong> = 25.0.571 on Windows 64-bit, 25.0.570 on Mac 64-bit.</p>
+<p><strong>SU2025.0</strong> = 25.0.634 on Windows 64-bit, 25.0.633 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2024.0.2</strong> = 24.0.594 on Windows 64-bit, 24.0.595 on Mac 64-bit.</p>
 </li><li>
@@ -260,7 +260,29 @@
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
 </li></ul>
 
+<h1 id="label-What-27s+new+in+SketchUp+2025.0.2">What&#39;s new in SketchUp 2025.0.2</h1>
+
+<h2 id="label-Update+OpenSSL+to+3.4.1">Update OpenSSL to 3.4.1</h2>
+
+<p>The version of OpenSSL in Ruby was updated to 3.4.1.</p>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Material.html#normal_enabled=-instance_method" title="Sketchup::Material#normal_enabled= (method)">Sketchup::Material#normal_enabled=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Material.html#ao_enabled=-instance_method" title="Sketchup::Material#ao_enabled= (method)">Sketchup::Material#ao_enabled=</a></span>.</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed <span class='object_link'><a href="Sketchup/Environments.html#current=-instance_method" title="Sketchup::Environments#current= (method)">Sketchup::Environments#current=</a></span> to allow unsetting the current environment.</p>
+</li></ul>
+
 <h1 id="label-What-27s+new+in+SketchUp+2025.0">What&#39;s new in SketchUp 2025.0</h1>
+
+<h2 id="label-Update+OpenSSL+to+3.3.1">Update OpenSSL to 3.3.1</h2>
+
+<p>The version of OpenSSL in Ruby was updated to 3.3.1.</p>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -447,6 +469,8 @@
 
 <h1 id="label-What-27s+new+in+SketchUp+2024.0">What&#39;s new in SketchUp 2024.0</h1>
 
+<h2 id="label-Upgrade+Ruby+to+3.2.2">Upgrade Ruby to 3.2.2</h2>
+
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
 <p>Added support for export option <code>:page_range</code> for <span class='object_link'><a href="Layout/Document.html#export-instance_method" title="Layout::Document#export (method)">Layout::Document#export</a></span>.</p>
@@ -591,6 +615,8 @@
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
 <p>In SketchUp 2022.0 a bug might lead to an available component definition name being incorrectly renamed. Or a name that should be unavailable would be duplicated. This was fixed in SketchUp 2022.0.1.</p>
+</li><li>
+<p>Fixed a bug where <span class='object_link'><a href="Sketchup/Tool.html#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">Sketchup::Tool#onKeyDown</a></span> and <span class='object_link'><a href="Sketchup/Tool.html#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">Sketchup::Tool#onKeyUp</a></span> events were being incorrectly sent to a Ruby tool when the input focus was inside an <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span>.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2022.0">What&#39;s new in SketchUp 2022.0</h1>
@@ -1043,6 +1069,10 @@
 <p>Fixed possible crash in <span class='object_link'><a href="Sketchup/Entities.html#clear!-instance_method" title="Sketchup::Entities#clear! (method)">Sketchup::Entities#clear!</a></span></p>
 </li><li>
 <p>Fixed a bug in .skm serialisation where arrays in material attributes were not written out to file</p>
+</li><li>
+<p>It is no longer possible to assign <span class='object_link'><a href="Sketchup/Image.html" title="Sketchup::Image (class)">Sketchup::Image</a></span> materials to entities.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/ViewObserver.html#onViewChanged-instance_method" title="Sketchup::ViewObserver#onViewChanged (method)">Sketchup::ViewObserver#onViewChanged</a></span> now triggers when the viewport changes size.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2019.1">What&#39;s new in SketchUp 2019.1</h1>
@@ -1312,6 +1342,20 @@
 <p>Fixed a rare crash in <span class='object_link'><a href="Sketchup/MaterialsObserver.html" title="Sketchup::MaterialsObserver (class)">Sketchup::MaterialsObserver</a></span>.</p>
 </li></ul>
 
+<h1 id="label-What-27s+new+in+SketchUp+2017+M2">What&#39;s new in SketchUp 2017 M2</h1>
+
+<h3 id="label-Fixes-2FImprovements+General">Fixes/Improvements General</h3>
+<ul><li>
+<p>(Mac) Fixed issue where SKM files lost attribute dictionaries when saved from  “In Model” to local library.</p>
+</li></ul>
+
+<h3 id="label-Ruby+API">Ruby API</h3>
+<ul><li>
+<p>Fixed an issue with HtmlDialogs where SketchUp would crash when the  dialog was closed before all callbacks were processed.</p>
+</li><li>
+<p>Fixed an issue where extensions with multiple periods in filenames would  not load.</p>
+</li></ul>
+
 <h1 id="label-What-27s+new+in+SketchUp+2017+M0">What&#39;s new in SketchUp 2017 M0</h1>
 
 <h2 id="label-Ruby+2.2">Ruby 2.2</h2>
@@ -1372,6 +1416,90 @@
 <p>Removed a limitation with <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> where callbacks were required to  have at least one argument. Now no arguments are required.</p>
 </li><li>
 <p><span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> no longer opens a Model Info page for <code>&quot;Extensions&quot;</code> as  that page is now replaced by the Extension Manager dialog.</p>
+</li></ul>
+
+<h1 id="label-What-27s+new+in+SketchUp+2016+M1">What&#39;s new in SketchUp 2016 M1</h1>
+
+<h2 id="label-API+Additions">API Additions</h2>
+
+<h3 id="label-New+Module+For+Access+To+Regional+Settings">New Module For Access To Regional Settings</h3>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/RegionalSettings.html" title="Sketchup::RegionalSettings (module)">Sketchup::RegionalSettings</a></span> module</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/RegionalSettings.html#decimal_separator-class_method" title="Sketchup::RegionalSettings.decimal_separator (method)">Sketchup::RegionalSettings.decimal_separator</a></span> method</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/RegionalSettings.html#list_separator-class_method" title="Sketchup::RegionalSettings.list_separator (method)">Sketchup::RegionalSettings.list_separator</a></span> method</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-Bug+Fixes">Bug Fixes</h2>
+
+<h3 id="label-Extensions">Extensions</h3>
+<ul><li>
+<p>Fixed issue where the <span class='object_link'><a href="Sketchup.html#register_extension-class_method" title="Sketchup.register_extension (method)">Sketchup.register_extension</a></span> method&#39;s <code>load_on_start</code> parameter was not being honored on extensions that were manually placed within the Plugins folder.</p>
+</li><li>
+<p>Fixed issue where extensions installed in the <code>&quot;Plugins&quot;</code> directory were not respecting the extension&#39;s <code>load_on_start</code> property.</p>
+</li><li>
+<p>Fixed issue where extensions fail to load / gave errors on launch if you have certain non-English characters in your Ruby path (which can occur if your Windows user name has certain non-English characters). If you’re still seeing an error with the <strong>Trimble Connect</strong> extension, please <a href="https://help.sketchup.com/en/extension-warehouse/managing-extensions" target="_parent" title="update that extension">update that extension</a> in the Extension Warehouse.</p>
+</li><li>
+<p>Fixed issue where the <strong>Trimble Connect</strong> Extension fails to load due to an invalid byte sequence error. Users will need to update to SketchUp 2016 M1 and update the Trimble Connect Extension to version 1.1.1 (via the <strong>Extension Warehouse</strong>) to see this change.</p>
+</li><li>
+<p>(Win) Fixed issue where the unchecking an extension within the <strong>Extensions</strong> panel of the <strong>Preferences</strong> dialog caused the list to scroll back to the top of the list.</p>
+</li><li>
+<p>Fixed issue where unchecking an extension within the <strong>Extensions</strong> panel of the <strong>Preferences</strong> dialog did not change the appearance of the checkbox.</p>
+</li><li>
+<p>Fixed issue where the <strong>Extensions Policy</strong> panel of the <strong>Preferences</strong> dialog incorrectly stated a user was under the “Identified Extensions Only” policy.</p>
+</li><li>
+<p>Updated dialog content for extensions that were installed but not loaded. The dialog now clearly states that the user must load the extension in order to use it.</p>
+</li><li>
+<p>Fixed issue where an extra dialog appeared on startup when loading an uncertified extension that was previously certified.</p>
+</li><li>
+<p>(Mac) Fixed issue where the “Uncertified Extension detected” dialog did not appear when installing an extension through the <strong>Extensions</strong> panel of the <strong>Preferences</strong> dialog.</p>
+</li><li>
+<p>Prevent the unsigned extension dialog from appearing unless the number of unsigned and loaded extensions has changed.</p>
+</li></ul>
+
+<h3 id="label-Exporters">Exporters</h3>
+<ul><li>
+<p>(Mac) Fixed issue where exporter progress dialog had the incorrect title of “Import progress”.</p>
+</li></ul>
+
+<h3 id="label-Importers">Importers</h3>
+<ul><li>
+<p>(Mac) Fixed issue where custom image importers were not being honored.</p>
+</li></ul>
+
+<h3 id="label-LanguageHandler">LanguageHandler</h3>
+<ul><li>
+<p>Fixed issue where the <span class='object_link'><a href="LanguageHandler.html" title="LanguageHandler (class)">LanguageHandler</a></span> class treated all double slashes (<code>//</code>) as comments.</p>
+</li></ul>
+
+<h3 id="label-Ruby">Ruby</h3>
+<ul><li>
+<p>(Win) Fixed issue where third party DLLs in Windows system folders could override the Ruby standard library DLLs.</p>
+</li><li>
+<p>Fixed issue where <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span>/<span class='object_link'><a href="Sketchup.html#load-class_method" title="Sketchup.load (method)">load</a></span> fails to indicate a load failure.</p>
+</li><li>
+<p>For <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span>/<span class='object_link'><a href="Sketchup.html#load-class_method" title="Sketchup.load (method)">load</a></span>, modified the Ruby file loading priority to be <strong><code>.rbe</code></strong>, <strong><code>.rbs</code></strong> then <strong><code>.rb</code></strong>.</p>
+</li></ul>
+
+<h3 id="label-Startup+Cycle">Startup Cycle</h3>
+<ul><li>
+<p>On startup, modified load policy for these files from the SketchUp binary path <code>&quot;Tools&quot;</code> subdirectory: <strong><code>extensions.rb</code></strong>, <strong><code>langhandler.rb</code></strong> and <strong><code>sketchup.rb</code></strong></p>
+<ul><li>
+<p>The the above 3 files in this directory are now digitally signed.</p>
+</li><li>
+<p><strong>Only these 3 files</strong> will be loaded by SketchUp during the startup cycle.</p>
+</li><li>
+<p>On startup, users will be prompted if any of the above 3 files have been modified since being digitally signed.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-UI">UI</h3>
+<ul><li>
+<p>(Win) <span class='object_link'><a href="UI.html#preferences_pages-class_method" title="UI.preferences_pages (method)">UI.preferences_pages</a></span> will now include <code>&quot;Extensions Policy&quot;</code></p>
+</li><li>
+<p>(Win) <span class='object_link'><a href="UI.html#show_preferences-class_method" title="UI.show_preferences (method)">UI.show_preferences(“Extensions Policy”)</a></span> will now open the correct property page.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2016+M0">What&#39;s new in SketchUp 2016 M0</h1>

@@ -194,7 +194,7 @@
 
 <p>If your goal is to simply display a website to your users, consider using <span class='object_link'><a href="../UI.html#openURL-class_method" title="UI.openURL (method)">openURL</a></span>, which will show them a web page in their default browser rather than inside a dialog in SketchUp.</p>
 
-<p>See this blog post for a detailed, step-by-step example: <a href="http://sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html">sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html</a></p>
+<p>See this blog post for a detailed, step-by-step example: <a href="https://sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html">sketchupapi.blogspot.com/2008/02/sharing-data-between-sketchup-ruby-and.html</a></p>
 
 <p>Under Windows the IE render mode is different in webdialogs than from what you see in the normal browser. It will by default pick an older render mode and different versions of SketchUp will use different modes. In order to reliably control the render mode of your webdialogs under Windows you need to insert a special META compatibility tag:</p>
 
@@ -207,7 +207,7 @@
 
 <p>Starting with SketchUp 2013, you can embed a special HTML link in your dialog that will launch Extension Warehouse and show a specified extension&#39;s page. This can be useful if your extension has a dependency on another one and you would like to direct the user to install that extension.</p>
 
-<p>For example, to launch an extension&#39;s page whose URL is: <a href="http://extensions.sketchup.com/en/content/advanced-camera-tools">extensions.sketchup.com/en/content/advanced-camera-tools</a> The link would be:</p>
+<p>For example, to launch an extension&#39;s page whose URL is: <a href="https://extensions.sketchup.com/en/content/advanced-camera-tools">extensions.sketchup.com/en/content/advanced-camera-tools</a> The link would be:</p>
 
 
   </div>
@@ -1083,7 +1083,7 @@
       
       <pre class="example code"><code><span class='id identifier rubyid_dlg'>dlg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::WebDialog (class)">WebDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show sketchup.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ShowSketchupDotCom</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='int'>739</span><span class='comma'>,</span> <span class='int'>641</span><span class='comma'>,</span> <span class='int'>150</span><span class='comma'>,</span> <span class='int'>150</span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='semicolon'>;</span>
-<span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
@@ -3003,7 +3003,7 @@ dialog.get_element_value(&quot;myTextInput&quot;)
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_post_url'>post_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.mydomain.com/formchecker.cgi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_post_url'>post_url</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.mydomain.com/formchecker.cgi</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3546,6 +3546,14 @@ dialog.get_element_value(&quot;myTextInput&quot;)
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p><span class='object_link'><a href="#close-instance_method" title="UI::WebDialog#close (method)">#close</a></span> method should not be called from the <span class='object_link'><a href="#set_on_close-instance_method" title="UI::WebDialog#set_on_close (method)">#set_on_close</a></span> callback. That would make it trigger itself recursively.</p>
+</div>
+  </div>
+
+
 <p>The set_on_close method is used to establish one or more activities to perform when the dialog closes (such as saving values stored in the dialog).</p>
 
 
@@ -3877,7 +3885,7 @@ dialog.get_element_value(&quot;myTextInput&quot;)
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_url'>set_url</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>https://www.sketchup.com</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 

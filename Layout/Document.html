@@ -1718,7 +1718,7 @@
 </span><span class='comment'># first page of a {Layout::Document} is index 0.
 </span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>start_page:</span> <span class='int'>1</span><span class='comma'>,</span>
             <span class='label'>end_page:</span> <span class='int'>3</span><span class='comma'>,</span>
-            <span class='label'>compress_images:</span> <span class='const'>TRUE</span><span class='comma'>,</span>
+            <span class='label'>compress_images:</span> <span class='kw'>true</span><span class='comma'>,</span>
             <span class='label'>compress_quality:</span> <span class='float'>0.75</span> <span class='rbrace'>}</span>
 
 <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/my_export.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -1727,7 +1727,7 @@
 </span><span class='comment'># index 1.
 </span><span class='comment'># `page_range` support added in LayOut 2024.0.
 </span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>page_range:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1,3-5</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-            <span class='label'>compress_images:</span> <span class='const'>TRUE</span><span class='comma'>,</span>
+            <span class='label'>compress_images:</span> <span class='kw'>true</span><span class='comma'>,</span>
             <span class='label'>compress_quality:</span> <span class='float'>0.75</span> <span class='rbrace'>}</span>
 
 <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/my_export.pdf</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span></code></pre>
@@ -1752,7 +1752,7 @@
 </span><span class='comment'># index 1.
 </span><span class='comment'># `page_range` support added in LayOut 2024.0.
 </span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>page_range:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1,3-5</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
-            <span class='label'>compress_images:</span> <span class='const'>TRUE</span><span class='comma'>,</span>
+            <span class='label'>compress_images:</span> <span class='kw'>true</span><span class='comma'>,</span>
             <span class='label'>compress_quality:</span> <span class='float'>0.75</span> <span class='rbrace'>}</span>
 
 <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c:/my_export.png</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span></code></pre>
@@ -1835,6 +1835,19 @@
           
             &mdash; <div class='inline'>
 <p>The last page to export.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">:page_range</span>
+          <span class="type">(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>A string specifying the range of pages to export. The format can include individual page numbers and ranges of pages, separated by commas (e.g., “1,3-5”). This was added in LayOut 2024.0</p>
 </div>
           
         </li>
