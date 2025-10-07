@@ -4707,6 +4707,8 @@ extensions.each{ |extension|
     
       <span class="overload">.<strong>open_file</strong>(filename, with_status: true)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
     
+      <span class="overload">.<strong>open_file</strong>(filename, with_status: true, show_version_warning_dialog: true)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
+    
   
 
   
@@ -4876,6 +4878,108 @@ extensions.each{ |extension|
         
         <div class='inline'>
 <p>SketchUp 2021.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>open_file</strong>(filename, with_status: true, show_version_warning_dialog: true)  &#x21d2; <tt>Integer</tt>, <tt>false</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+<p>Starting with SketchUp 2026.0 SketchUp we added control over displaying the messages about version compatibility.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The model file to open.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>with_status</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>show_version_warning_dialog</span>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>true</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>by default set to true and will display the dialog box</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>, <tt>false</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>status code if opening with <code>with_status</code> set to <code>true</code>, otherwise <code>true</code> or <code>false</code>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.0</p>
 </div>
       
     </li>
@@ -6667,7 +6771,7 @@ extensions.each{ |extension|
 </li><li>
 <p>10576: toggle Render Mode toolbar</p>
 </li><li>
-<p>21019: hide Status bar and VCB</p>
+<p>21019: select the Eraser tool</p>
 </li><li>
 <p>21020: show Status bar and VCB</p>
 </li><li>

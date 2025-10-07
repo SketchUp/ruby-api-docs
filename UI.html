@@ -1149,9 +1149,9 @@
 
 <p>The <span class='object_link'><a href="#create_cursor-class_method" title="UI.create_cursor (method)">create_cursor</a></span> method is used to create a cursor from an image file at the specified location. This must be called from within a custom tool. See the <span class='object_link'><a href="Sketchup/Tool.html" title="Sketchup::Tool (class)">Sketchup::Tool</a></span> documentation for a complete example.</p>
 
-<p>The size of the cursor images should be 32x32 pixels.</p>
+<p>The size of the cursor images should be 32x32 pixels. Any size different from that will be scaled using the shrink-to-fit policy.</p>
 
-<p>The coordinates for the cursor&#39;s hotspot is based from it&#39;s top left corner. For example, a value of (hot_x, hot_y) = (5, 10) would identify the hotpoint of the cursor at 6 pixels from the left edge of your cursor image and 11 pixels from the top edge of your cursor image.</p>
+<p>The coordinates for the cursor&#39;s hotspot are based from it&#39;s top left corner, starting at (0, 0). For example, a value of (hot_x, hot_y) = (5, 10) would identify the hotpoint of the cursor at 5 pixels from the left edge of your cursor image and 10 pixels from the top edge of your cursor image.</p>
 
 
   </div>
@@ -1215,7 +1215,7 @@
       
         &mdash;
         <div class='inline'>
-<p>An x coordinate that is the “hotpoint” for the cursor computed from the left edge of your cursor image.</p>
+<p>The x-coordinate of the “hotpoint” of the cursor, computed from the left edge of your cursor image.</p>
 </div>
       
     </li>
@@ -1231,7 +1231,7 @@
       
         &mdash;
         <div class='inline'>
-<p>A y coordinate that is the “hotpoint” for the cursor computed from the top edge of the of your cursor image.</p>
+<p>The y-coordinate of the “hotpoint” of the cursor, computed from the top edge of your cursor image.</p>
 </div>
       
     </li>
@@ -1254,6 +1254,24 @@
         &mdash;
         <div class='inline'>
 <p>Id associated with the cursor. Use this with <span class='object_link'><a href="#set_cursor-class_method" title="UI.set_cursor (method)">set_cursor</a></span> in <span class='object_link'><a href="Sketchup/Tool.html#onSetCursor-instance_method" title="Sketchup::Tool#onSetCursor (method)">Sketchup::Tool#onSetCursor</a></span>.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RangeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if @param hot_x or @param hot_y are negative or larger than the max value of an Integer.</p>
 </div>
       
     </li>

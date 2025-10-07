@@ -718,7 +718,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_section_plane-instance_method" title="#add_section_plane (instance method)">#<strong>add_section_plane</strong>(plane)  &#x21d2; Sketchup::SectionPlane<sup>?</sup> </a>
+      <a href="#add_section_plane-instance_method" title="#add_section_plane (instance method)">#<strong>add_section_plane</strong>(*args)  &#x21d2; Sketchup::SectionPlane<sup>?</sup> </a>
     
 
     
@@ -733,7 +733,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The add_section_plane method adds a section plane object to the entities.</p>
+<p>Adds a section plane object to the entities.</p>
 </div></span>
   
 </li>
@@ -4512,7 +4512,13 @@
   <h3 class="signature " id="add_section_plane-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>add_section_plane</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> 
+    
+      <span class="overload">#<strong>add_section_plane</strong>(point, vector)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> </span>
+    
+      <span class="overload">#<strong>add_section_plane</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> </span>
+    
+      <span class="overload">#<strong>add_section_plane</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> </span>
+    
   
 
   
@@ -4524,7 +4530,9 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The add_section_plane method adds a section plane object to the entities.</p>
+<p>Adds a section plane object to the entities.</p>
+
+<p>Refer to the <span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span> module for information on how planes are represented.</p>
 
 
   </div>
@@ -4545,7 +4553,89 @@
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_section_plane</strong>(point, vector)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>vector</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_section_plane</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>]</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>, <tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>plane</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>add_section_plane</strong>(plane)  &#x21d2; <tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt><sup>?</sup> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -4560,13 +4650,13 @@
         <span class='name'>plane</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Integer, Integer, Integer, Integer)</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>the geometric plane where the SectionPlane object is to be created. Refer to the Geom module for information on how planes are represented.</p>
+<p>Plane coefficents.</p>
 </div>
       
     </li>
@@ -4575,6 +4665,9 @@
 
 
 </div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -4585,11 +4678,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span></tt>, <tt>nil</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>the created SectionPlane object if successful, nil on failure.</p>
-</div>
       
     </li>
   

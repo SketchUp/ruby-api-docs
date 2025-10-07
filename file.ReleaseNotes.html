@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -169,7 +169,13 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
-<p><strong>SU2025.0</strong> = 25.0.660 on Windows 64-bit, 25.0.659 on Mac 64-bit.</p>
+<p><strong>SU2026.0</strong> = 26.0.429 on Windows 64-bit, 26.0.428 on Mac 64-bit.</p>
+</li><li>
+<p><strong>SU2025.0.3</strong> = 25.0.660 on Windows 64-bit, 25.0.659 on Mac 64-bit.</p>
+</li><li>
+<p><strong>SU2025.0.2</strong> = 25.0.634 on Windows 64-bit, 25.0.633 on Mac 64-bit.</p>
+</li><li>
+<p><strong>SU2025.0</strong> = 25.0.571 on Windows 64-bit, 25.0.570 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2024.0.2</strong> = 24.0.594 on Windows 64-bit, 24.0.595 on Mac 64-bit.</p>
 </li><li>
@@ -258,6 +264,132 @@
 <p><strong>SU7.0</strong> = 7.0.8657 on Windows, 7.0.8656 on Mac.</p>
 </li><li>
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
+</li></ul>
+
+<h1 id="label-What-27s+new+in+SketchUp+2026.0">What&#39;s new in SketchUp 2026.0</h1>
+
+<h2 id="label-Breaking+changes">Breaking changes</h2>
+<ul><li>
+<p>Modifying the properties <span class='object_link'><a href="Sketchup/Axes.html" title="Sketchup::Axes (class)">Sketchup::Axes</a></span>, <span class='object_link'><a href="Sketchup/Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, <span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span>, and <span class='object_link'><a href="Sketchup/ShadowInfo.html" title="Sketchup::ShadowInfo (class)">Sketchup::ShadowInfo</a></span> of a <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span> is now an undoable operation. Scene changes are expected to be called between <span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Sketchup/Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> to not flood the undo stack. Extensions that don&#39;t follow this requirement will be rejected for updates or publication to the Extension Warehouse.</p>
+</li><li>
+<p>Additional error checking is performed regarding non-invertible transforms (typically this means the matrix has zero scale on  one or more axes). Calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or  <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span>,  <span class='object_link'><a href="Sketchup/ComponentInstance.html#move!-instance_method" title="Sketchup::ComponentInstance#move! (method)">Sketchup::ComponentInstance#move!</a></span>, <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span>, or <span class='object_link'><a href="Sketchup/Group.html#move!-instance_method" title="Sketchup::Group#move! (method)">Sketchup::Group#move!</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Model.html#active_section_planes-instance_method" title="Sketchup::Model#active_section_planes (method)">Sketchup::Model#active_section_planes</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Page.html#active_section_planes-instance_method" title="Sketchup::Page#active_section_planes (method)">Sketchup::Page#active_section_planes</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Styles.html#remove_style-instance_method" title="Sketchup::Styles#remove_style (method)">Sketchup::Styles#remove_style</a></span>.</p>
+</li><li>
+<p>Added a new optional parameter for <span class='object_link'><a href="Layout/LinearDimension.html#initialize-instance_method" title="Layout::LinearDimension#initialize (method)">Layout::LinearDimension#initialize</a></span> to specify the dimension line&#39;s alignment on creation. Alignment can be  specified using one of the following constants:</p>
+<ul><li>
+<p><span class='object_link'><a href="Layout/LinearDimension.html#DIMENSION_LINE_ALIGNED-constant" title="Layout::LinearDimension::DIMENSION_LINE_ALIGNED (constant)">Layout::LinearDimension::DIMENSION_LINE_ALIGNED</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Layout/LinearDimension.html#DIMENSION_LINE_VERTICAL-constant" title="Layout::LinearDimension::DIMENSION_LINE_VERTICAL (constant)">Layout::LinearDimension::DIMENSION_LINE_VERTICAL</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Layout/LinearDimension.html#DIMENSION_LINE_HORIZONTAL-constant" title="Layout::LinearDimension::DIMENSION_LINE_HORIZONTAL (constant)">Layout::LinearDimension::DIMENSION_LINE_HORIZONTAL</a></span></p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/LinearDimension.html#leader_line_visible%3F-instance_method" title="Layout::LinearDimension#leader_line_visible? (method)">Layout::LinearDimension#leader_line_visible?</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Style.html#text_strikethrough-instance_method" title="Layout::Style#text_strikethrough (method)">Layout::Style#text_strikethrough</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Style.html#text_strikethrough=-instance_method" title="Layout::Style#text_strikethrough= (method)">Layout::Style#text_strikethrough=</a></span>.</p>
+</li><li>
+<p>Added constants for the valid values for <span class='object_link'><a href="Layout/Style.html#text_strikethrough=-instance_method" title="Layout::Style#text_strikethrough= (method)">Layout::Style#text_strikethrough=</a></span></p>
+<ul><li>
+<p><span class='object_link'><a href="Layout/Style.html#STRIKETHROUGH_NONE-constant" title="Layout::Style::STRIKETHROUGH_NONE (constant)">Layout::Style::STRIKETHROUGH_NONE</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Layout/Style.html#STRIKETHROUGH_SINGLE-constant" title="Layout::Style::STRIKETHROUGH_SINGLE (constant)">Layout::Style::STRIKETHROUGH_SINGLE</a></span></p>
+</li></ul>
+</li><li>
+<p>Modified <span class='object_link'><a href="Sketchup/Styles.html#add_style-instance_method" title="Sketchup::Styles#add_style (method)">Sketchup::Styles#add_style</a></span> to return the added style.</p>
+</li><li>
+<p>Added <code>:show_version_warning_dialog</code> optional argument to <span class='object_link'><a href="Sketchup.html#open_file-class_method" title="Sketchup.open_file (method)">Sketchup.open_file</a></span> to control whether the version compatibility dialog can appear.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Pages.html#unique_name-instance_method" title="Sketchup::Pages#unique_name (method)">Sketchup::Pages#unique_name</a></span>.</p>
+</li><li>
+<p>Modified <span class='object_link'><a href="Sketchup/Pages.html#add-instance_method" title="Sketchup::Pages#add (method)">Sketchup::Pages#add</a></span> so that when adding a new <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span>, if the specified name is already taken, it automatically modifies the name to ensure it is unique.</p>
+</li><li>
+<p>Modified <span class='object_link'><a href="Sketchup/Page.html#name=-instance_method" title="Sketchup::Page#name= (method)">Sketchup::Page#name=</a></span> so that if the given name is already used by another <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span>, it automatically adjusts the name to make it unique.</p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="Sketchup/ComponentDefinition.html#save_as-instance_method" title="Sketchup::ComponentDefinition#save_as (method)">Sketchup::ComponentDefinition#save_as</a></span> and <span class='object_link'><a href="Sketchup/ComponentDefinition.html#save_copy-instance_method" title="Sketchup::ComponentDefinition#save_copy (method)">Sketchup::ComponentDefinition#save_copy</a></span> to return false when saving did not work.</p>
+</li><li>
+<p>Modified <span class='object_link'><a href="Sketchup/Model.html#export-instance_method" title="Sketchup::Model#export (method)">Sketchup::Model#export</a></span> to use a new IFC exporter which comes with the following option changes:</p>
+<ul><li>
+<p>new supported options: <code>:ifc_version</code>, <code>:standard_ifc_hierarchy</code>, <code>:selectionset_only</code>, <code>:tessellated_geometry</code>.</p>
+</li><li>
+<p>options no longer supported: <code>:doublesided_faces</code>, <code>:ifc_mapped_items</code>, <code>:ifc_types</code>.</p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Environments.html#add-instance_method" title="Sketchup::Environments#add (method)">Sketchup::Environments#add</a></span> overload that accepts just the file path. Environment name will be derived from the file being imported.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Entity.html#set_attribute-instance_method" title="Layout::Entity#set_attribute (method)">Layout::Entity#set_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Entity.html#get_attribute-instance_method" title="Layout::Entity#get_attribute (method)">Layout::Entity#get_attribute</a></span> .</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Entity.html#delete_attribute-instance_method" title="Layout::Entity#delete_attribute (method)">Layout::Entity#delete_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Entity.html#attribute_dictionary-instance_method" title="Layout::Entity#attribute_dictionary (method)">Layout::Entity#attribute_dictionary</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Document.html#set_attribute-instance_method" title="Layout::Document#set_attribute (method)">Layout::Document#set_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Document.html#get_attribute-instance_method" title="Layout::Document#get_attribute (method)">Layout::Document#get_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Document.html#delete_attribute-instance_method" title="Layout::Document#delete_attribute (method)">Layout::Document#delete_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Document.html#attribute_dictionary-instance_method" title="Layout::Document#attribute_dictionary (method)">Layout::Document#attribute_dictionary</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Page.html#set_attribute-instance_method" title="Layout::Page#set_attribute (method)">Layout::Page#set_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Page.html#get_attribute-instance_method" title="Layout::Page#get_attribute (method)">Layout::Page#get_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Page.html#delete_attribute-instance_method" title="Layout::Page#delete_attribute (method)">Layout::Page#delete_attribute</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Page.html#attribute_dictionary-instance_method" title="Layout::Page#attribute_dictionary (method)">Layout::Page#attribute_dictionary</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Dictionary.html" title="Layout::Dictionary (class)">Layout::Dictionary</a></span>.</p>
+</li><li>
+<p>Added rendering options support for Ambient Occlusion:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span> keys added:</p>
+<ul><li>
+<p><code>&quot;AmbientOcclusionColor&quot;</code></p>
+</li><li>
+<p><code>&quot;AmbientOcclusionMultiplier&quot;</code></p>
+</li></ul>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/RenderingOptionsObserver.html" title="Sketchup::RenderingOptionsObserver (class)">Sketchup::RenderingOptionsObserver</a></span> constants:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#ROPSetAOColor-constant" title="Sketchup::RenderingOptions::ROPSetAOColor (constant)">Sketchup::RenderingOptions::ROPSetAOColor</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#ROPSetAOMultiplier-constant" title="Sketchup::RenderingOptions::ROPSetAOMultiplier (constant)">Sketchup::RenderingOptions::ROPSetAOMultiplier</a></span></p>
+</li></ul>
+</li></ul>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed a crash in <span class='object_link'><a href="Sketchup/Model.html#place_component-instance_method" title="Sketchup::Model#place_component (method)">Sketchup::Model#place_component</a></span> when placing an empty component.</p>
+</li><li>
+<p>Fixed SketchUp 2021.1 regression in <span class='object_link'><a href="Sketchup/Model.html#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">Sketchup::Model#drawing_element_visible?</a></span> throwing an exception when the last element of an instance path was a  <span class='object_link'><a href="Sketchup/Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span> or <span class='object_link'><a href="Sketchup/ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span>.</p>
+</li><li>
+<p>Fixed an undo crash when using <span class='object_link'><a href="Sketchup/Classifications.html#load_schema-instance_method" title="Sketchup::Classifications#load_schema (method)">Sketchup::Classifications#load_schema</a></span> and <span class='object_link'><a href="Sketchup/ComponentDefinition.html#add_classification-instance_method" title="Sketchup::ComponentDefinition#add_classification (method)">Sketchup::ComponentDefinition#add_classification</a></span> in the same operation.</p>
+</li><li>
+<p>Fixed a bug that involves using a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> that is not invertible. Now calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or  <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span> or  <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
+</li><li>
+<p>Fixed a crash in <span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span> when attempting to render a model containing an environment when that viewport was not yet added to a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>.</p>
+</li><li>
+<p>Fixed a crash when setting line width with <span class='object_link'><a href="Sketchup/View.html#line_width=-instance_method" title="Sketchup::View#line_width= (method)">Sketchup::View#line_width=</a></span> to 0.0 with the new graphics engine. Negative values will raise an <code>ArgumentError</code> and positive values will be clamped to a minimum of 1.0.</p>
+</li></ul>
+
+<h1 id="label-What-27s+new+in+SketchUp+2025.0.3">What&#39;s new in SketchUp 2025.0.3</h1>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed crash using the LayOut Ruby API to add entities to a LayOut document.</p>
 </li></ul>
 
 <h1 id="label-What-27s+new+in+SketchUp+2025.0.2">What&#39;s new in SketchUp 2025.0.2</h1>
@@ -1506,7 +1638,7 @@
 
 <h2 id="label-A+new+LayOut+API">A new LayOut API</h2>
 
-<p>We’re proud to announce our first step towards an extension ecosystem for LayOut. Using this new API developers can now open, create, modify, save, and export .layout files. Practically, this means that other applications can import or export the .layout file format using the C API. (This includes creating a .layout file from SketchUp). We have several sample scripts for developers to try out at release. Check out the API documentation in the <a href="http://extensions.sketchup.com/developer_center/layout_c_api/layout/index.html">Developer Center</a> for more information.</p>
+<p>We’re proud to announce our first step towards an extension ecosystem for LayOut. Using this new API developers can now open, create, modify, save, and export .layout files. Practically, this means that other applications can import or export the .layout file format using the C API. (This includes creating a .layout file from SketchUp). We have several sample scripts for developers to try out at release. Check out the API documentation in the <a href="https://extensions.sketchup.com/developers/layout_c_api/layout/index.html">Developer Center</a> for more information.</p>
 
 <h2 id="label-Digitally+Signing+Extensions+-+Extensions+Loading+Policy">Digitally Signing Extensions - Extensions Loading Policy</h2>
 
@@ -1518,17 +1650,17 @@
 
 <p>To digitally sign your extension, simply upload your .rbz package to our new Digital Signature and Encryption page and we will sign it and return it to you. Visit the new <a href="https://extensions.sketchup.com/en/developer_center/extension_signature">Extension Digital Signature page</a>.</p>
 
-<p>You will need to sign your extension each time you make code changes and want to re-release it. You will need to be a registered Developer on the Extension Warehouse to be able to sign or encrypt extensions. <a href="http://http://extensions.sketchup.com/en/developer">Apply here!</a></p>
+<p>You will need to sign your extension each time you make code changes and want to re-release it. You will need to be a registered Developer on the Extension Warehouse to be able to sign or encrypt extensions. <a href="https://extensions.sketchup.com/application">Apply here!</a></p>
 
 <h2 id="label-Ruby+Encryption+2.0">Ruby Encryption 2.0</h2>
 
-<p>Goodbye .rbs and Hello .rbe! We have added a new encryption that you can use to help protect your extension Intellectual Property (IP). SketchUp 2016 can read both .rbe and .rbs filetypes. This should help make sure that we maintain backwards compatibility for authors who need some time to re-encrypt their extensions. To use our new encryption, simply upload an unencrypted version of your .rbz package to our new Digital Signature and Encryption page and we will encrypt it and return it to you. Visit the new <a href="https://extensions.sketchup.com/en/developer_center/extension_signature">Extension Digital Signature page</a> page here for more information.</p>
+<p>Goodbye .rbs and Hello .rbe! We have added a new encryption that you can use to help protect your extension Intellectual Property (IP). SketchUp 2016 can read both .rbe and .rbs filetypes. This should help make sure that we maintain backwards compatibility for authors who need some time to re-encrypt their extensions. To use our new encryption, simply upload an unencrypted version of your .rbz package to our new Digital Signature and Encryption page and we will encrypt it and return it to you. Visit the new <a href="https://extensions.sketchup.com/extension/sign">Extension Digital Signature page</a> page here for more information.</p>
 
 <p>You will need to be a registered Developer on the Extension Warehouse to be able to sign or encrypt extensions. <a href="http://extensions.sketchup.com/en/developer">Apply here!</a></p>
 
 <h2 id="label-Developer+Center">Developer Center</h2>
 
-<p>Between the new Extension Digital Signature Page, the new LayOut C API and a whole lot of future ideas and potential, we have decided to create a new central location to organize our developer resources, API documentation, etc. Visit (and bookmark!): <a href="https://extensions.sketchup.com/en/developer_center">extensions.sketchup.com/en/developer_center</a></p>
+<p>Between the new Extension Digital Signature Page, the new LayOut C API and a whole lot of future ideas and potential, we have decided to create a new central location to organize our developer resources, API documentation, etc. Visit (and bookmark!): <a href="https://developer.sketchup.com/">extensions.sketchup.com/en/developer_center</a></p>
 
 <h2 id="label-Observer+Upgrades">Observer Upgrades</h2>
 

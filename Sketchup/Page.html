@@ -193,6 +193,21 @@
 
 <p>Note that inside the SketchUp user interface pages are called “Scenes”.</p>
 
+<p>Since SketchUp 2026.0, modifying the <span class='object_link'><a href="Axes.html" title="Sketchup::Axes (class)">Axes</a></span>, <span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Camera</a></span>, <span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">RenderingOptions</a></span>, and <span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">ShadowInfo</a></span> properties of a page is an undoable operation and should be wrapped between <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Model#commit_operation</a></span>. Example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_origin'>origin</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set Page Properties</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_axes'>axes</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#Y_AXIS-constant" title="Y_AXIS (constant)">Y_AXIS</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#X_AXIS-constant" title="X_AXIS (constant)">X_AXIS</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#Z_AXIS-constant" title="Z_AXIS (constant)">Z_AXIS</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_fov'>fov</span> <span class='op'>=</span> <span class='float'>56.78</span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_shadow_info'>shadow_info</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>City</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Brasov, Romania</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'>rendering_options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BackgroundColor</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Pink</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+</code></pre>
+
 
   </div>
 </div>
@@ -237,7 +252,31 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#axes-instance_method" title="#axes (instance method)">#<strong>axes</strong>  &#x21d2; Object </a>
+      <a href="#active_section_planes-instance_method" title="#active_section_planes (instance method)">#<strong>active_section_planes</strong>  &#x21d2; Array&lt;Sketchup::SectionPlane&gt;<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#active_section_planes-instance_method" title="Sketchup::Page#active_section_planes (method)">#active_section_planes</a></span> method is used to retrieve the active section plane for the <span class='object_link'><a href="" title="Sketchup::Page (class)">Page</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#axes-instance_method" title="#axes (instance method)">#<strong>axes</strong>  &#x21d2; Sketchup::Axes </a>
     
 
     
@@ -636,7 +675,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The name= method sets the name for a page&#39;s tab.</p>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::Page#name= (method)">#name=</a></span> method sets the name for a page&#39;s tab.</p>
 </div></span>
   
 </li>
@@ -645,7 +684,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#rendering_options-instance_method" title="#rendering_options (instance method)">#<strong>rendering_options</strong>  &#x21d2; Object </a>
+      <a href="#rendering_options-instance_method" title="#rendering_options (instance method)">#<strong>rendering_options</strong>  &#x21d2; Sketchup::RenderingOptions </a>
     
 
     
@@ -1384,10 +1423,82 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="axes-instance_method">
+  <h3 class="signature first" id="active_section_planes-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>axes</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>active_section_planes</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span>&gt;</tt><sup>?</sup> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#active_section_planes-instance_method" title="Sketchup::Page#active_section_planes (method)">#active_section_planes</a></span> method is used to retrieve the active section plane for the <span class='object_link'><a href="" title="Sketchup::Page (class)">Sketchup::Page</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_active_section_planes'>active_section_planes</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span>&gt;</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Returns <code>nil</code> if the page does not use section planes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="axes-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>axes</strong>  &#x21d2; <tt><span class='object_link'><a href="Axes.html" title="Sketchup::Axes (class)">Sketchup::Axes</a></span></tt> 
   
 
   
@@ -1400,6 +1511,8 @@
   <div class="discussion">
     
 <p>The axes method returns the drawing axes for the page.</p>
+
+<p>Since SketchUp 2026.0, modifying the axes of a scene is an undoable operation.</p>
 
 
   </div>
@@ -1426,14 +1539,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Axes.html" title="Sketchup::Axes (class)">Sketchup::Axes</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>Axes - the axes for the page.</p>
-</div>
       
     </li>
   
@@ -1476,6 +1584,8 @@
     
 <p>The <span class='object_link'><a href="#camera-instance_method" title="Sketchup::Page#camera (method)">#camera</a></span> method retrieves the camera for a particular page.</p>
 
+<p>Since SketchUp 2026.0, modifying the camera properties of a scene is an undoable operation.</p>
+
 
   </div>
 </div>
@@ -1501,12 +1611,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'><ul><li>
-<p>a Camera object if successful</p>
-</li></ul>
-</div>
       
     </li>
   
@@ -2684,7 +2788,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The name= method sets the name for a page&#39;s tab.</p>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::Page#name= (method)">#name=</a></span> method sets the name for a page&#39;s tab. If the name is already used by another page, a unique name is created.</p>
 
 
   </div>
@@ -2769,6 +2873,22 @@
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2026.0 this method did not make the name unique.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -2777,7 +2897,7 @@
   <h3 class="signature " id="rendering_options-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>rendering_options</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>rendering_options</strong>  &#x21d2; <tt><span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span></tt> 
   
 
   
@@ -2789,7 +2909,17 @@
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Most rendering options of a scene are also present in <span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Style</a></span> and are governed by the selected style. Those options should not be changed from the scene. The ones not related to <span class='object_link'><a href="Style.html" title="Sketchup::Style (class)">Style</a></span> like fog (<code>DisplayFog</code>, <code>FogColor</code>) are safe to be changed from the scene.</p>
+</div>
+  </div>
+
+
 <p>The rendering_options method retrieves a RenderingOptions object for the page.</p>
+
+<p>Since SketchUp 2026.0, modifying rendering_options of a scene is an undoable operation.</p>
 
 
   </div>
@@ -2802,7 +2932,7 @@
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
 <span class='id identifier rubyid_pages'>pages</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_pages'>pages</span>
-<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_page'>page</span> <span class='op'>=</span> <span class='id identifier rubyid_pages'>pages</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Page</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_renderingoptions'>renderingoptions</span> <span class='op'>=</span> <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'>rendering_options</span></code></pre>
     
   </div>
@@ -2813,14 +2943,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>renderingoptions - a RenderingOptions object</p>
-</div>
       
     </li>
   
@@ -3137,7 +3262,17 @@
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>While certain shadow settings, such as those available in the Shadows panel, can be controlled on a per-page basis, global settings like north angle, latitude, and longitude are managed at the model level and are not page-specific.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#shadow_info-instance_method" title="Sketchup::Page#shadow_info (method)">#shadow_info</a></span> method retrieves the ShadowInfo object for the page.</p>
+
+<p>Since SketchUp 2026.0, modifying shadow_info of a scene is an undoable operation.</p>
 
 
   </div>
@@ -3164,12 +3299,6 @@
         <span class='type'>(<tt><span class='object_link'><a href="ShadowInfo.html" title="Sketchup::ShadowInfo (class)">Sketchup::ShadowInfo</a></span></tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'><ul><li>
-<p>a ShadowInfo object if successful</p>
-</li></ul>
-</div>
       
     </li>
   

@@ -195,29 +195,78 @@
 
 <p>The <span class='object_link'><a href="" title="Sketchup::Animation (class)">Animation</a></span> interface is implemented to create animations inside SketchUp. At any given time, a single animation can be active on a <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span>. To make your own, build a Ruby class that contains the methods described below:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='comment'># This is an example of a simple animation that floats the camera up to
-</span><span class='comment'># a z position of 200&quot;. The only required method for an animation is
-</span><span class='comment'># nextFrame. It is called whenever you need to show the next frame of
-</span><span class='comment'># the animation. If nextFrame returns false, the animation will stop.
-</span><span class='kw'>class</span> <span class='const'>FloatUpAnimation</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_nextFrame'>nextFrame</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_new_eye'>new_eye</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_eye'>eye</span>
-    <span class='id identifier rubyid_new_eye'>new_eye</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='id identifier rubyid_new_eye'>new_eye</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span> <span class='op'>+</span> <span class='float'>1.0</span>
+<pre class="code ruby"><code class="ruby"><span class='comment'># This example demonstrates a simple animation with implementation of
+</span><span class='comment'># the optional callback method stop, which is invoked
+</span><span class='comment'># by SketchUp during specific animation events.
+</span><span class='kw'>class</span> <span class='const'>SimpleFloatAnimation</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+    <span class='ivar'>@speed</span> <span class='op'>=</span> <span class='float'>1.0</span>           <span class='comment'># Camera movement speed
+</span>    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Animation initialized</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Required method - called for each animation frame
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_nextFrame'>nextFrame</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='comment'># Move camera upward
+</span>    <span class='id identifier rubyid_new_eye'>new_eye</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_eye'>eye</span>
+    <span class='id identifier rubyid_new_eye'>new_eye</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span> <span class='op'>=</span> <span class='id identifier rubyid_new_eye'>new_eye</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span> <span class='op'>+</span> <span class='ivar'>@speed</span>
     <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_new_eye'>new_eye</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_camera'>camera</span><span class='period'>.</span><span class='id identifier rubyid_up'>up</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_show_frame'>show_frame</span>
-    <span class='kw'>return</span> <span class='id identifier rubyid_new_eye'>new_eye</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span> <span class='op'>&lt;</span> <span class='float'>500.0</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
 
-<span class='comment'># This adds an item to the Camera menu to activate our custom animation.
-</span><span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Run Float Up Animation</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
-  <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='const'>FloatUpAnimation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
-<span class='rbrace'>}</span>
+    <span class='comment'># Continue animation until reaching maximum height
+</span>    <span class='kw'>return</span> <span class='id identifier rubyid_new_eye'>new_eye</span><span class='period'>.</span><span class='id identifier rubyid_z'>z</span> <span class='op'>&lt;</span> <span class='float'>500.0</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Optional callback - called by SketchUp when animation is stopped
+</span>  <span class='comment'># Note: This method is called automatically by SketchUp and cannot
+</span>  <span class='comment'># be called directly to stop an animation
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_stop'>stop</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Animation was stopped by SketchUp</span><span class='tstring_end'>&quot;</span></span>
+    <span class='comment'># Cleanup code when animation ends
+</span>  <span class='kw'>end</span>
+ <span class='kw'>end</span>
+
+ <span class='comment'># Add menu item to start the animation
+</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Start Animation</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+   <span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='const'>SimpleFloatAnimation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+   <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='id identifier rubyid_animation'>animation</span>
+ <span class='rbrace'>}</span>
+
+ <span class='comment'># To stop the animation programmatically:
+</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Camera</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Stop Animation</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+   <span class='comment'># Setting animation to nil will trigger the stop method in our animation class
+</span>   <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='kw'>nil</span>
+ <span class='rbrace'>}</span>
 </code></pre>
 
 <p><span class='object_link'><a href="" title="Sketchup::Animation (class)">Animation</a></span> objects are activated by using the <span class='object_link'><a href="View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">View#animation=</a></span> method on a <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span> object. To stop an animation set the view&#39;s animation object to <code>nil</code>, like so:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='kw'>nil</span>
+</code></pre>
+
+<h2 id="label-Managing+Multiple+Animations-3A">Managing Multiple Animations:</h2>
+
+<p>While only one animation object can be active on a <span class='object_link'><a href="View.html" title="Sketchup::View (class)">View</a></span> at any given time, you can create a composite animation class to manage multiple animations simultaneously. This approach allows you to animate different elements, such as objects and the camera, within a single animation framework.</p>
+
+<p>Example:  Combining Animations</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>CombinedAnimation</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_object_animation'>object_animation</span><span class='comma'>,</span> <span class='id identifier rubyid_camera_animation'>camera_animation</span><span class='rparen'>)</span>
+    <span class='ivar'>@object_animation</span> <span class='op'>=</span> <span class='id identifier rubyid_object_animation'>object_animation</span>
+    <span class='ivar'>@camera_animation</span> <span class='op'>=</span> <span class='id identifier rubyid_camera_animation'>camera_animation</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_nextFrame'>nextFrame</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='ivar'>@object_animation</span><span class='period'>.</span><span class='id identifier rubyid_nextFrame'>nextFrame</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='ivar'>@camera_animation</span><span class='period'>.</span><span class='id identifier rubyid_nextFrame'>nextFrame</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='comment'># Usage
+</span><span class='id identifier rubyid_object_animation'>object_animation</span> <span class='op'>=</span> <span class='const'>RotateAnimation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_camera_animation'>camera_animation</span> <span class='op'>=</span> <span class='const'>RotateCamera</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='float'>0.01</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_combined_animation'>combined_animation</span> <span class='op'>=</span> <span class='const'>CombinedAnimation</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_object_animation'>object_animation</span><span class='comma'>,</span> <span class='id identifier rubyid_camera_animation'>camera_animation</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_view'><span class='object_link'><a href="Model.html#active_view-instance_method" title="Sketchup::Model#active_view (method)">active_view</a></span></span><span class='period'>.</span><span class='id identifier rubyid_animation'>animation</span> <span class='op'>=</span> <span class='id identifier rubyid_combined_animation'>combined_animation</span>
 </code></pre>
 
 
@@ -660,7 +709,7 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Do not call Sketchup::Animation#Sketchup#Sketchup::View#Sketchup::View#animation= from this method. This will cause a recursive loop and crash SketchUp 2017 and earlier versions. As of SketchUp 2018 this will raise a <code>RunTimeError</code>.</p>
+<p>Do not call <span class='object_link'><a href="View.html#animation=-instance_method" title="Sketchup::View#animation= (method)">View#animation=</a></span> from this method. This will cause a recursive loop and crash SketchUp 2017 and earlier versions. As of SketchUp 2018 this will raise a <code>RunTimeError</code>.</p>
 </div>
   </div>
 

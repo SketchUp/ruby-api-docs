@@ -3650,6 +3650,14 @@
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>As of SketchUp 2026, this will raise an error if the <span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> is not invertible. Prior to 2026 this would silently set the transformation possibly causing rendering or editing problems.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">#transformation=</a></span> method is used to set the transformation of this group</p>
 
 
@@ -3696,6 +3704,24 @@
 
 </div>
 
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError if the <span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> is not invertible (as of Sketchup 2026)</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
