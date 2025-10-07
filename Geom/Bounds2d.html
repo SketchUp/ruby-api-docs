@@ -257,7 +257,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#height-instance_method" title="#height (instance method)">#<strong>height</strong>  &#x21d2; Geom::Point2d </a>
+      <a href="#height-instance_method" title="#height (instance method)">#<strong>height</strong>  &#x21d2; Float </a>
     
 
     
@@ -346,7 +346,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#set!-instance_method" title="Geom::Bounds2d#set! (method)">#set!</a></span> method sets the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span> to match another one.</p>
+<p>The <span class='object_link'><a href="#set!-instance_method" title="Geom::Bounds2d#set! (method)">#set!</a></span> method is used to update the dimensions and position of a <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span> object so that it matches the specified bounds.</p>
 </div></span>
   
 </li>
@@ -370,7 +370,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> that define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span>s that define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span>.</p>
 </div></span>
   
 </li>
@@ -403,7 +403,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#width-instance_method" title="#width (instance method)">#<strong>width</strong>  &#x21d2; Geom::Point2d </a>
+      <a href="#width-instance_method" title="#width (instance method)">#<strong>width</strong>  &#x21d2; Float </a>
     
 
     
@@ -468,7 +468,11 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds1'>bounds1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_upper_left'>upper_left</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>   <span class='comment'># is equivalent to upper_left = [1, 1]
+</span><span class='id identifier rubyid_lower_right'>lower_right</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Point2d.html#initialize-instance_method" title="Geom::Point2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>3</span><span class='comma'>,</span> <span class='int'>3</span><span class='rparen'>)</span>   <span class='comment'># is equivalent to lower_right = [3, 3]
+</span><span class='id identifier rubyid_bounds2'>bounds2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_upper_left'>upper_left</span><span class='comma'>,</span> <span class='id identifier rubyid_lower_right'>lower_right</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -735,7 +739,10 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>==</span> <span class='id identifier rubyid_entity'>entity</span><span class='period'>.</span><span class='id identifier rubyid_untransformed_bounds'>untransformed_bounds</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds1'>bounds1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>5.0</span><span class='comma'>,</span> <span class='float'>5.0</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_bounds2'>bounds2</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>5</span><span class='comma'>,</span> <span class='int'>5</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='comment'># Return true
+</span><span class='id identifier rubyid_bounds1'>bounds1</span> <span class='op'>==</span> <span class='id identifier rubyid_bounds2'>bounds2</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -791,7 +798,7 @@
   <h3 class="signature " id="height-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>height</strong>  &#x21d2; <tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+    #<strong>height</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -814,7 +821,7 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>5.0</span><span class='comma'>,</span> <span class='float'>5.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>7.0</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_height'>height</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_height'>height</span></code></pre>
     
   </div>
@@ -825,7 +832,7 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       
@@ -879,8 +886,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_l_r'>l_r</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_lower_right'>lower_right</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>2.0</span><span class='comma'>,</span> <span class='float'>2.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+<span class='comment'># The result is a Point2d(3, 3)
+</span><span class='id identifier rubyid_lower_right'>lower_right</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_lower_right'>lower_right</span></code></pre>
     
   </div>
 
@@ -943,7 +951,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#set!-instance_method" title="Geom::Bounds2d#set! (method)">#set!</a></span> method sets the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span> to match another one. The argument is anything that can be converted into a <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#set!-instance_method" title="Geom::Bounds2d#set! (method)">#set!</a></span> method is used to update the dimensions and position of a <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span> object so that it matches the specified bounds. The argument is anything that can be converted into a <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
 
 
   </div>
@@ -1269,7 +1277,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span> that define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
+<p>The <span class='object_link'><a href="#to_a-instance_method" title="Geom::Bounds2d#to_a (method)">#to_a</a></span> method returns an array which contains the <span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Point2d</a></span>s that define the <span class='object_link'><a href="" title="Geom::Bounds2d (class)">Geom::Bounds2d</a></span>.</p>
 
 
   </div>
@@ -1280,7 +1288,7 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>2.0</span><span class='comma'>,</span> <span class='float'>2.0</span><span class='comma'>,</span> <span class='float'>5.0</span><span class='comma'>,</span> <span class='float'>5.0</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_point'>point</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_point'>point</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
@@ -1345,8 +1353,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_u_l'>u_l</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_upper_left'>upper_left</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>2.0</span><span class='comma'>,</span> <span class='float'>2.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+<span class='comment'># The result is a Point2d(2, 2)
+</span><span class='id identifier rubyid_upper_left'>upper_left</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_upper_left'>upper_left</span></code></pre>
     
   </div>
 
@@ -1387,7 +1396,7 @@
   <h3 class="signature " id="width-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>width</strong>  &#x21d2; <tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt> 
+    #<strong>width</strong>  &#x21d2; <tt>Float</tt> 
   
 
   
@@ -1410,7 +1419,7 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>0.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='float'>5.0</span><span class='comma'>,</span> <span class='float'>5.0</span><span class='comma'>,</span> <span class='float'>7.0</span><span class='comma'>,</span> <span class='float'>1.0</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_width'>width</span> <span class='op'>=</span> <span class='id identifier rubyid_bounds'>bounds</span><span class='period'>.</span><span class='id identifier rubyid_width'>width</span></code></pre>
     
   </div>
@@ -1421,7 +1430,7 @@
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Point2d.html" title="Geom::Point2d (class)">Geom::Point2d</a></span></tt>)</span>
+        <span class='type'>(<tt>Float</tt>)</span>
       
       
       

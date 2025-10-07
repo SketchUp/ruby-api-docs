@@ -524,6 +524,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#active_section_planes-instance_method" title="#active_section_planes (instance method)">#<strong>active_section_planes</strong>  &#x21d2; Array&lt;Sketchup::SectionPlane&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#active_section_planes-instance_method" title="Sketchup::Model#active_section_planes (method)">#active_section_planes</a></span> method returns all of the active section planes in the model.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#active_view-instance_method" title="#active_view (instance method)">#<strong>active_view</strong>  &#x21d2; Sketchup::View </a>
     
 
@@ -2708,6 +2732,85 @@ model.commit_operation
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="active_section_planes-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>active_section_planes</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span>&gt;</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#active_section_planes-instance_method" title="Sketchup::Model#active_section_planes (method)">#active_section_planes</a></span> method returns all of the active section planes in the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>SketchUp 2025 and newer</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_section_planes'>section_planes</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_section_planes'>active_section_planes</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>SketchUp 2024 and older</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='comment'># In older SketchUp versions, you can achieve the same result with:
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_entities_collections'>entities_collections</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:entities</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_section_planes'>section_planes</span> <span class='op'>=</span> <span class='id identifier rubyid_entities_collections'>entities_collections</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:active_section_plane</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_compact'>compact</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="SectionPlane.html" title="Sketchup::SectionPlane (class)">Sketchup::SectionPlane</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Sketchup 2026.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="active_view-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -4114,6 +4217,22 @@ model.commit_operation
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to version 2026.0 the method throws an exception when the last element in the instance path is a <span class='object_link'><a href="Group.html" title="Sketchup::Group (class)">Group</a></span> or <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -4363,6 +4482,10 @@ model.commit_operation
 <p>SketchUp Pro 2016+ added PDF export capability.</p>
 </li><li>
 <p>SketchUp Pro 2018+ added options for all 3D exporters.</p>
+</li><li>
+<p>SketchUp 2024+ added glb and usdz exporters.</p>
+</li><li>
+<p>SketchUp 2026+ the IFC exporter has been replaced with a new implementation that provides specific export options.</p>
 </li></ul>
 
 <p>See the <a href="../file.exporter_options.html" title="Exporter Options">Exporter Options</a> file for information on creating a valid hash for the various exporters.</p>
@@ -4412,10 +4535,11 @@ model.commit_operation
 </div></h5>
       
       <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
-<span class='comment'># If no IFC types are passed in, then no geometry will be exported.
-</span><span class='id identifier rubyid_options_hash'>options_hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:hidden_geometry</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
-                 <span class='symbol'>:ifc_mapped_items</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
-                 <span class='symbol'>:ifc_types</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>IfcBuilding</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>IfcDoor</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_options_hash'>options_hash</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:ifc_version</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IFC 4</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                 <span class='symbol'>:standard_ifc_hierarchy</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+                 <span class='symbol'>:selectionset_only</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+                 <span class='symbol'>:hidden_geometry</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+                 <span class='symbol'>:tessellated_geometry</span> <span class='op'>=&gt;</span> <span class='kw'>true</span> <span class='rbrace'>}</span>
 <span class='id identifier rubyid_status'>status</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_export'>export</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>c:/my_export.ifc</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_options_hash'>options_hash</span><span class='rparen'>)</span></code></pre>
     
   </div>
@@ -4594,7 +4718,7 @@ model.commit_operation
       
         
         <div class='inline'>
-<p>IFC export on ARM macs isn&#39;t working since SketchUp 2022.</p>
+<p>IFC export on ARM macs isn&#39;t working for SketchUp 2022-2025.</p>
 </div>
       
     </li>
@@ -4727,9 +4851,9 @@ model.commit_operation
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
     
-      <span class="overload">#<strong>find_entity_by_persistent_id</strong>(ids_or_array)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt> </span>
+      <span class="overload">#<strong>find_entity_by_persistent_id</strong>(ids_or_array)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, ... </span>
     
-      <span class="overload">#<strong>find_entity_by_persistent_id</strong>(ids_or_array, **scope)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt> </span>
+      <span class="overload">#<strong>find_entity_by_persistent_id</strong>(ids_or_array, **scope)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, ... </span>
     
   
 
@@ -4789,11 +4913,11 @@ model.commit_operation
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>find_entity_by_persistent_id</strong>(ids_or_array)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt> </span>
+        <span class="signature">#<strong>find_entity_by_persistent_id</strong>(ids_or_array)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, ... </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
+<p>Returns an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> if a single PID was given or an array of <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found or nil if nothing was found.</p>
 
 
   </div>
@@ -4826,13 +4950,13 @@ model.commit_operation
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>, <tt>nil</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
+<p>Returns an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> if a single PID was given or an array of <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found or nil if nothing was found.</p>
 </div>
       
     </li>
@@ -4844,11 +4968,11 @@ model.commit_operation
     
       
       <li class="overload_item">
-        <span class="signature">#<strong>find_entity_by_persistent_id</strong>(ids_or_array, **scope)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt> </span>
+        <span class="signature">#<strong>find_entity_by_persistent_id</strong>(ids_or_array, **scope)  &#x21d2; <tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, ... </span>
         <div class="docstring">
   <div class="discussion">
     
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
+<p>Returns an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> if a single PID was given or an array of <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found if multiple PIDs were given or nil if nothing was found.</p>
 
 
   </div>
@@ -4999,13 +5123,13 @@ model.commit_operation
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, nil&gt;</tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span></tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>&gt;</tt>, <tt>nil</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>Returns an array with <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found and nil otherwise.</p>
+<p>Returns an <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> if a single PID was given or an array of <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span> objects for each id found if multiple PIDs were given or nil if nothing was found.</p>
 </div>
       
     </li>
@@ -7029,6 +7153,24 @@ model.commit_operation
     </li>
   
 </ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the component cannot not be placed (for example, if it is an empty component definition). Added in SketchUp 2026.0.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -7040,6 +7182,22 @@ model.commit_operation
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Before SketchUp 2026.0, attempting to place an empty component would crash SketchUp. This function will now raise an ArgumentError when called with an empty component definition.</p>
 </div>
       
     </li>
