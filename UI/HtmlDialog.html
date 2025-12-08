@@ -224,11 +224,36 @@
 <p>CEF 52</p>
 </dd></dl>
 
+<p>Starting with SketchUp 2026.1, HtmlDialog exposes a small set of built-in callbacks (mirroring the legacy <code>skp:</code> protocol used by <span class='object_link'><a href="WebDialog.html" title="UI::WebDialog (class)">WebDialog</a></span>).</p>
+<ul><li>
+<p><tt>sketchup.launchEW(id)</tt>  – Opens the Extension Warehouse dialog and show a specified extension&#39;s page.</p>
+</li><li>
+<p><tt>sketchup.installRBZ(url)</tt> – Downloads and installs a Ruby extension from the given <code>.rbz</code> URL. (User will be prompted just like using the Extension Manager.)</p>
+</li></ul>
+
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;-HTML</span>
+<span class='tstring_content'>  &lt;button onclick=&quot;sketchup.launchEW(&#39;b5825acd-ba7c-4544-b255-e9935ddfd63b&#39;)&quot;&gt;
+    Open Advanced Camera Tools in EW
+  &lt;/button&gt;
+  &lt;button onclick=&quot;sketchup.installRBZ(&#39;https://example.com/my_extension.rbz&#39;)&quot;&gt;
+    Install My Extension
+  &lt;/button&gt;
+</span><span class='heredoc_end'>HTML
+</span><span class='id identifier rubyid_dlg'>dlg</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>HtmlDialog</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::HtmlDialog#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>dialog_title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>EW Example</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_set_html'>set_html</span><span class='lparen'>(</span><span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dlg'>dlg</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+    
+  </div>
+
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -495,6 +520,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#get_size-instance_method" title="UI::HtmlDialog#get_size (method)">#get_size</a></span> method is used to get the outer frame size of the HtmlDialog, in logical pixels.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#hide-instance_method" title="#hide (instance method)">#<strong>hide</strong>  &#x21d2; nil </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#hide-instance_method" title="UI::HtmlDialog#hide (method)">#hide</a></span> method is used to hide a dialog box without closing it.</p>
 </div></span>
   
 </li>
@@ -1935,6 +1984,96 @@
         
         <div class='inline'>
 <p>SketchUp 2021.1</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="hide-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>hide</strong>  &#x21d2; <tt>nil</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Modal dialogs cannot be hidden. Attempting to hide a modal dialog will raise an ArgumentError.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#hide-instance_method" title="UI::HtmlDialog#hide (method)">#hide</a></span> method is used to hide a dialog box without closing it. This preserves the dialog&#39;s state and allows it to be shown again later without recreating the dialog.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_hide'>hide</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the dialog is modal</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.1</p>
 </div>
       
     </li>

@@ -2532,6 +2532,14 @@
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Since LayOut 2026.1, passing a non-invertible transformation raises an `ArgumentError`.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#transform!-instance_method" title="Layout::Entity#transform! (method)">#transform!</a></span> method transforms the <span class='object_link'><a href="" title="Layout::Entity (class)">Layout::Entity</a></span> with a given <span class='object_link'><a href="../Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>.</p>
 
 
@@ -2592,6 +2600,20 @@
         &mdash;
         <div class='inline'>
 <p>if the <span class='object_link'><a href="" title="Layout::Entity (class)">Layout::Entity</a></span> is locked</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the transformation matrix is not invertible</p>
 </div>
       
     </li>
