@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -169,6 +169,8 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
+<p><strong>SU2026.1</strong> = 26.1.185 on Windows 64-bit, 26.1.184 on Mac 64-bit.</p>
+</li><li>
 <p><strong>SU2026.0</strong> = 26.0.429 on Windows 64-bit, 26.0.428 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2025.0.3</strong> = 25.0.660 on Windows 64-bit, 25.0.659 on Mac 64-bit.</p>
@@ -266,13 +268,49 @@
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
 </li></ul>
 
+<h1 id="label-What-27s+new+in+SketchUp+2026.1">What&#39;s new in SketchUp 2026.1</h1>
+
+<h2 id="label-Breaking+changes">Breaking changes</h2>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Added <span class='object_link'><a href="UI.html#show_extension_warehouse-class_method" title="UI.show_extension_warehouse (method)">UI.show_extension_warehouse</a></span> which opens the Extension Warehouse home when called without arguments, or navigates directly to a specific extension when given its extension identifier (UUID).</p>
+</li><li>
+<p>Modified <span class='object_link'><a href="Sketchup/ShadowInfo.html#[]=-instance_method" title="Sketchup::ShadowInfo#[]= (method)">Sketchup::ShadowInfo#[]=</a></span> to be stricter and provide better error feedback. It will now raise a <code>KeyError</code> for invalid or read-only keys, and a <code>TypeError</code> for values of an incorrect type.</p>
+</li><li>
+<p>Added built-in JavaScript callbacks <code>sketchup.launchEW(id)</code> and <code>sketchup.installRBZ(url)</code> for HtmlDialog. <code>launchEW</code> with a UUID string opens that extension&#39;s page. <code>installRBZ</code> downloads and installs the <code>.rbz</code> at the given URL.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="UI/HtmlDialog.html#hide-instance_method" title="UI::HtmlDialog#hide (method)">UI::HtmlDialog#hide</a></span> to hide dialogs without closing them, preserving their state.</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed a regression in <span class='object_link'><a href="Sketchup/Tool.html#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">Sketchup::Tool#onKeyDown</a></span> introduced in SketchUp 2026.0 (Windows) where the event didn&#39;t trigger when Return/Enter was pressed.</p>
+</li><li>
+<p>Fixed silent failures when passing non-invertible transformations (e.g. zero-scale transforms). The following methods now correctly raise an <code>ArgumentError</code>:</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/ComponentInstance.html#transform!-instance_method" title="Sketchup::ComponentInstance#transform! (method)">Sketchup::ComponentInstance#transform!</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Group.html#transform!-instance_method" title="Sketchup::Group#transform! (method)">Sketchup::Group#transform!</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Image.html#transform!-instance_method" title="Sketchup::Image#transform! (method)">Sketchup::Image#transform!</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Image.html#transformation=-instance_method" title="Sketchup::Image#transformation= (method)">Sketchup::Image#transformation=</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Entities.html#transform_entities-instance_method" title="Sketchup::Entities#transform_entities (method)">Sketchup::Entities#transform_entities</a></span></p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/Entities.html#add_instance-instance_method" title="Sketchup::Entities#add_instance (method)">Sketchup::Entities#add_instance</a></span></p>
+</li><li>
+<p>Fixed <span class='object_link'><a href="Layout/Entity.html#transform!-instance_method" title="Layout::Entity#transform! (method)">Layout::Entity#transform!</a></span> to raise an <code>ArgumentError</code> when given a non-invertible <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>.</p>
+</li></ul>
+
 <h1 id="label-What-27s+new+in+SketchUp+2026.0">What&#39;s new in SketchUp 2026.0</h1>
 
 <h2 id="label-Breaking+changes">Breaking changes</h2>
 <ul><li>
 <p>Modifying the properties <span class='object_link'><a href="Sketchup/Axes.html" title="Sketchup::Axes (class)">Sketchup::Axes</a></span>, <span class='object_link'><a href="Sketchup/Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, <span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span>, and <span class='object_link'><a href="Sketchup/ShadowInfo.html" title="Sketchup::ShadowInfo (class)">Sketchup::ShadowInfo</a></span> of a <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span> is now an undoable operation. Scene changes are expected to be called between <span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Sketchup/Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> to not flood the undo stack. Extensions that don&#39;t follow this requirement will be rejected for updates or publication to the Extension Warehouse.</p>
 </li><li>
-<p>Additional error checking is performed regarding non-invertible transforms (typically this means the matrix has zero scale on  one or more axes). Calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or  <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span>,  <span class='object_link'><a href="Sketchup/ComponentInstance.html#move!-instance_method" title="Sketchup::ComponentInstance#move! (method)">Sketchup::ComponentInstance#move!</a></span>, <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span>, or <span class='object_link'><a href="Sketchup/Group.html#move!-instance_method" title="Sketchup::Group#move! (method)">Sketchup::Group#move!</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
+<p>Additional error checking is performed regarding non-invertible transforms (typically this means the matrix has zero scale on one or more axes). Calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span>, or <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
 </li></ul>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
