@@ -187,6 +187,14 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Translation convenience: In contexts expecting a pure translation, you can pass a <span class='object_link'><a href="Point3d.html" title="Geom::Point3d (class)">Point3d</a></span>, <span class='object_link'><a href="Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span>, or a 3-element Array [dx, dy, dz] and it will be converted to a translation <span class='object_link'><a href="" title="Geom::Transformation (class)">Transformation</a></span>. For full matrices, pass a 16-element Array.</p>
+</div>
+  </div>
+
+
 <p>Transformations are a standard construct in the 3D world for representing the position, rotation, and sizing of a given entity. In the SketchUp world, <span class='object_link'><a href="../Sketchup/ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span> and <span class='object_link'><a href="../Sketchup/Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span> have a <code>.transformation</code> method that reports their current state and various methods (<code>.move!</code>, <code>transformation=</code>, etc.) that allow them to be manipulated.</p>
 
 <p>Use of the transformation class requires a knowledge of geometrical transformations in 3 dimensions which is covered extensively on the internet.</p>
@@ -259,7 +267,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#interpolate-class_method" title="interpolate (class method)">.<strong>interpolate</strong>(transform1, transform2, weight)  &#x21d2; Geom::Transformation </a>
+      <a href="#interpolate-class_method" title="interpolate (class method)">.<strong>interpolate</strong>(transformation1, transformation2, weight)  &#x21d2; Geom::Transformation </a>
     
 
     
@@ -1385,7 +1393,7 @@
   <h3 class="signature " id="interpolate-class_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    .<strong>interpolate</strong>(transform1, transform2, weight)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
+    .<strong>interpolate</strong>(transformation1, transformation2, weight)  &#x21d2; <tt><span class='object_link'><a href="" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt> 
   
 
   

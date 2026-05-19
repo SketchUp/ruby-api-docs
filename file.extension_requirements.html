@@ -237,14 +237,14 @@
 
 <p>When your extension makes several low level draw calls, join them together as one entry to the undo stack using the <code>start_operation</code> and <code>commit_operation</code> methods. If the user activates it as a single high level action, let them also undo it in a single step.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='comment'># bad - creates multiple undo steps
+<pre class="code ruby"><code class="ruby"><span class='comment'># Bad - creates multiple undo steps
 </span><span class='kw'>def</span> <span class='id identifier rubyid_draw_cube'>draw_cube</span>
   <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
   <span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_face'>face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='int'>10</span><span class='rparen'>)</span>
 <span class='kw'>end</span>
 
-<span class='comment'># good - creates one undo step
+<span class='comment'># Good - creates one undo step
 </span><span class='kw'>def</span> <span class='id identifier rubyid_draw_cube'>draw_cube</span>
   <span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
   <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw Cube</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
@@ -254,7 +254,20 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<h2 id="label-Functioning+as+Advertised">Functioning as Advertised</h2>
+<p>Also wrap changes to attributes to give the model change a meaningful name in the undo stack, even if you just change a single attribute.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Bad - displays with generic name &quot;Properties&quot; in the undo stack
+</span><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Sketchup/Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Sketchup/Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>white</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'><span class='object_link'><a href="Sketchup/Model.html#set_attribute-instance_method" title="Sketchup::Model#set_attribute (method)">set_attribute</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>renderer_extension</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sun_color</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span>
+
+<span class='comment'># Good - tells the user what changed
+</span><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Sketchup/Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Sketchup/Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>white</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_start_operation'><span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">start_operation</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Set Sun Color</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_set_attribute'><span class='object_link'><a href="Sketchup/Model.html#set_attribute-instance_method" title="Sketchup::Model#set_attribute (method)">set_attribute</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>renderer_extension</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sun_color</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span>
+<span class='const'><span class='object_link'><a href="Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'><span class='object_link'><a href="Sketchup/Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">commit_operation</a></span></span>
+</code></pre>
+
+<h3 id="label-Functioning+as+Advertised">Functioning as Advertised</h3>
 
 <p>Extensions will be rejected from Extension Warehouse if they malfunction or cannot be used.</p>
 
@@ -283,7 +296,25 @@
 
 <p>Ideally, avoid your extension depending on another extension. Prefer duplicating any shared logic between your extensions over publishing a “library extension”, to make installation easier for end users. If your extension does require another extension to work, make sure to clearly state this in its documentation and also show an error message if the dependency is missing.</p>
 
+<h3 id="label-Matching+Title+and+Version+Number">Matching Title and Version Number</h3>
+
+<p>When submitting to Extension Warehouse, please make sure the title and version of the submission form matches that of the <code>SketchupExtension</code> in the RBZ.</p>
+
 <h2 id="label-The+Nitty+Gritty+Stuff">The Nitty Gritty Stuff</h2>
+
+<h3 id="label-Data+Loss">Data Loss</h3>
+
+<p>Extensions are not allowed to cause data loss. This includes silently removing or overwriting the user&#39;s data.</p>
+
+<p>For instance, do not silently save over the open model as the user may have made destructive changes they don&#39;t intend to save. Always ask before saving. Also don&#39;t purge unused components or other model assets without asking.</p>
+
+<h3 id="label-Eval">Eval</h3>
+
+<p><code>eval</code> is vulnerable to code injection attacks and should not be used.</p>
+
+<h3 id="label-Third+Party+Updates">Third Party Updates</h3>
+
+<p>SketchUp and Extension Warehouse has infrastructure for extension updates. Adding functionality that downloads and installs updates is not allowed as it bypasses the review.</p>
 
 <h3 id="label-Encryption">Encryption</h3>
 
@@ -299,11 +330,15 @@
 
 <h3 id="label-24LOAD_PATH">$LOAD_PATH</h3>
 
-<p>Don&#39;t modify the &#39;$LOAD_PATH&#39;. Doing so may cause other extensions to load the wrong files. Instead include your extension support folder in the path whenever you load a file.</p>
+<p>Don&#39;t modify the <code>$LOAD_PATH</code>. Doing so may cause other extensions to load the wrong files. Instead include your extension support folder in the path whenever you load a file.</p>
+
+<h3 id="label-Environment+Variables">Environment Variables</h3>
+
+<p>Don&#39;t modify <code>ENV</code>. Doing so can cause other extensions to malfunction.</p>
 
 <h3 id="label-Exit">Exit</h3>
 
-<p>&#39;exit&#39; and &#39;exit!&#39; should not be used to stop the Ruby execution, as all Ruby extensions run in a shared interpreter. Instead use &#39;return&#39;, &#39;next&#39;, break&#39; or &#39;raise&#39; to stop the execution of your own code.</p>
+<p><code>exit</code> and <code>exit!</code> should not be used to stop the Ruby execution, as all Ruby extensions run in a shared interpreter. Instead use <code>return</code>, <code>next</code>, <code>break</code> or <code>raise</code> to stop the execution of your own code.</p>
 
 <h3 id="label-Unsafe+License+Checks">Unsafe License Checks</h3>
 
@@ -311,7 +346,11 @@
 
 <p>These recommendations make it harder but not impossible to crack the extension. For better security, you can compile your logic and use a Ruby C Extension to integrate it with SketchUp, or run it on a server using HTTP requests.</p>
 
-<h3 id="label-And+More-E2-80-A6">And More…</h3>
+<h3 id="label-WebDialog">WebDialog</h3>
+
+<p><code>WebDialog</code> was deprecated in 2017. Use <code>HtmlDialog</code> instead, which has better security, works consistently across platforms, and is actively maintained.</p>
+
+<h2 id="label-And+More-E2-80-A6">And More…</h2>
 
 <p>This is not a complete list of everything an extension can be denied for. See the below links for more details and use your good judgment when developing.</p>
 

@@ -363,7 +363,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an action with a tool.</p>
+<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is invoked when a tool reports a state transition.</p>
 </div></span>
   
 </li>
@@ -435,6 +435,8 @@
     <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ComponentCSTool</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>elsif</span> <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PullTool</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>PushPullTool</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ommentTool</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_tool_name'>tool_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CommentTool</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_tool_name'>tool_name</span>
 <span class='kw'>end</span></code></pre>
@@ -533,6 +535,31 @@
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2026.2 the tool name was incorrect for the following tools:</p>
+<ul><li>
+<p>CommentTool (Was &#39;ommentTool&#39;)</p>
+</li><li>
+<p>FlipTool (Was &#39;lipTool&#39; on Windows and &#39;8FlipTool&#39; on Mac)</p>
+</li><li>
+<p>IglooTool (Was &#39;glooTool&#39; on Windows and &#39;9IglooTool&#39; on Mac)</p>
+</li><li>
+<p>LassoSelectionTool (Was &#39;assoSelectionTool&#39; on Windows and &#39;18LassoSelectionTool&#39; on Mac)</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -556,12 +583,19 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>In SketchUp 6 and SketchUp 7, tool names on the Mac have their first few characters truncated. For instance, on Windows, a tool is <tt>“CameraOrbit”.</tt> On the Mac, is comes across as <tt>“raOrbit”</tt>.  Therefore, use the tool_id to keep track of which tool you need to watch for, or use logic that corrects for the error. This bug was fixed in SketchUp 8.0.</p>
+<p>Behavior changed in SketchUp 2016. Tool state changes are queued and may be delivered after the tool operation has completed. Multiple state changes can be coalesced and some tools may never trigger this callback. The <code>tool_state</code> value is an internal integer that is not standardized across tools and often remains 0. Do not rely on specific numeric values. Prefer <span class='object_link'><a href="#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">#onActiveToolChanged</a></span> for reliable notifications of active tool changes, or tool-specific observers when available.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>In SketchUp 6 and SketchUp 7, tool names on the Mac had their first few characters truncated. For instance, on Windows a tool name was <tt>“CameraOrbit”</tt>, while on the Mac it came across as <tt>“raOrbit”</tt>. This bug was fixed in SketchUp 8.0. Use <code>tool_id</code> if you need a stable identifier.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is called each time the user performs an action with a tool. The actual state that is returned is an internal number that varies tool to tool. If you want to watch existing tools for every interaction, you will need to experiment with the tool state to determine which states you care about. There is little consistency tool to tool.</p>
+<p>The <span class='object_link'><a href="#onToolStateChanged-instance_method" title="Sketchup::ToolsObserver#onToolStateChanged (method)">#onToolStateChanged</a></span> method is invoked when a tool reports a state transition.</p>
 
 
   </div>
@@ -647,7 +681,7 @@
       
         &mdash;
         <div class='inline'>
-<p>A number identifying the state the tool just entered.</p>
+<p>A tool-specific state code. Not standardized and often 0 in modern releases.</p>
 </div>
       
     </li>

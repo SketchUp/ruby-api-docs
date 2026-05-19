@@ -291,7 +291,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#aligned_text_position-instance_method" title="#aligned_text_position (instance method)">#<strong>aligned_text_position</strong>  &#x21d2; Object </a>
+      <a href="#aligned_text_position-instance_method" title="#aligned_text_position (instance method)">#<strong>aligned_text_position</strong>  &#x21d2; Integer </a>
     
 
     
@@ -339,7 +339,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#end-instance_method" title="#end (instance method)">#<strong>end</strong>  &#x21d2; Object </a>
+      <a href="#end-instance_method" title="#end (instance method)">#<strong>end</strong>  &#x21d2; Array(Sketchup::Entity, Geom::Point3d), Array(nil, Geom::Point3d) </a>
     
 
     
@@ -354,7 +354,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The end method returns the point or entity the dimension is referencing at its end.</p>
+<p>The end method returns the point and optional entity the dimension is referencing at its end.</p>
 </div></span>
   
 </li>
@@ -435,7 +435,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#offset_vector-instance_method" title="#offset_vector (instance method)">#<strong>offset_vector</strong>  &#x21d2; Object </a>
+      <a href="#offset_vector-instance_method" title="#offset_vector (instance method)">#<strong>offset_vector</strong>  &#x21d2; Geom::Vector3d </a>
     
 
     
@@ -483,7 +483,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#start-instance_method" title="#start (instance method)">#<strong>start</strong>  &#x21d2; Object </a>
+      <a href="#start-instance_method" title="#start (instance method)">#<strong>start</strong>  &#x21d2; Array(Sketchup::Entity, Geom::Point3d), Array(nil, Geom::Point3d) </a>
     
 
     
@@ -498,7 +498,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The start method returns the point or entity the dimension is referencing at its start.</p>
+<p>The start method returns the point and optional entity the dimension is referencing at its start.</p>
 </div></span>
   
 </li>
@@ -579,7 +579,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#text_position-instance_method" title="#text_position (instance method)">#<strong>text_position</strong>  &#x21d2; Object </a>
+      <a href="#text_position-instance_method" title="#text_position (instance method)">#<strong>text_position</strong>  &#x21d2; Integer </a>
     
 
     
@@ -671,7 +671,7 @@
   <h3 class="signature first" id="aligned_text_position-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>aligned_text_position</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>aligned_text_position</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -718,14 +718,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>an integer specifying the text position</p>
-</div>
       
     </li>
   
@@ -805,14 +800,9 @@
         <span class='name'>pos</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>an integer specifying the text position</p>
-</div>
       
     </li>
   
@@ -863,7 +853,7 @@
   <h3 class="signature " id="end-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>end</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>end</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(nil, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt> 
   
 
   
@@ -875,7 +865,13 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The end method returns the point or entity the dimension is referencing at its end.</p>
+<p>The end method returns the point and optional entity the dimension is referencing at its end.</p>
+
+<p>array of size 2:</p>
+
+<pre class="code"><code class="">- Entity being referenced or nil if not associated.
+- Point3d that contains the referenced location.
+</code></pre>
 
 
   </div>
@@ -901,17 +897,13 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(nil, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>)</span>
       
       
       
-        
-        <div class='inline'>
-<p>Array - An array of size 2:</p>
-<ul><li>
-<p>Entity being referenced or nil if not associated.</p>
-</li><li>
-<p>Point3d that contains the referenced location.</p>
+        &mdash;
+        <div class='inline'><ul><li>
+<p>An</p>
 </li></ul>
 </div>
       
@@ -1203,6 +1195,22 @@
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2026.2 could move the <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span> contained in the instance path.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -1211,7 +1219,7 @@
   <h3 class="signature " id="offset_vector-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>offset_vector</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>offset_vector</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt> 
   
 
   
@@ -1245,14 +1253,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Geom::Vector3d</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>offset vector as a Vector3d</p>
-</div>
       
     </li>
   
@@ -1358,7 +1361,7 @@
   <h3 class="signature " id="start-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>start</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>start</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(nil, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt> 
   
 
   
@@ -1370,7 +1373,13 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The start method returns the point or entity the dimension is referencing at its start.</p>
+<p>The start method returns the point and optional entity the dimension is referencing at its start.</p>
+
+<p>array of size 2:</p>
+
+<pre class="code"><code class="">- Entity being referenced or nil if not associated.
+- Point3d that contains the referenced location.
+</code></pre>
 
 
   </div>
@@ -1396,17 +1405,13 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(<span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Sketchup::Entity</a></span>, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>, <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(nil, <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span>)</tt>)</span>
       
       
       
-        
-        <div class='inline'>
-<p>Array - An array of size 2:</p>
-<ul><li>
-<p>Entity being referenced or nil if not associated.</p>
-</li><li>
-<p>Point3d that contains the referenced location.</p>
+        &mdash;
+        <div class='inline'><ul><li>
+<p>An</p>
 </li></ul>
 </div>
       
@@ -1698,6 +1703,22 @@
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2026.2 could move the <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span> contained in the instance path.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -1706,7 +1727,7 @@
   <h3 class="signature " id="text_position-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>text_position</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>text_position</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -1753,14 +1774,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>an integer specifying the text position</p>
-</div>
       
     </li>
   
@@ -1840,14 +1856,9 @@
         <span class='name'>pos</span>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        &mdash;
-        <div class='inline'>
-<p>an integer specifying the text position</p>
-</div>
       
     </li>
   

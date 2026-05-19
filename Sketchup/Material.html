@@ -430,7 +430,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ao_strength=-instance_method" title="#ao_strength= (instance method)">#<strong>ao_strength=</strong>(strenght)  &#x21d2; Object </a>
+      <a href="#ao_strength=-instance_method" title="#ao_strength= (instance method)">#<strong>ao_strength=</strong>(strength)  &#x21d2; Object </a>
     
 
     
@@ -1215,6 +1215,30 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#display_name-instance_method" title="Sketchup::Material#display_name (method)">#display_name</a></span> method retrieves the name that is displayed within SketchUp for the material.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#duplicate-instance_method" title="#duplicate (instance method)">#<strong>duplicate</strong>  &#x21d2; Sketchup::Material </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#duplicate-instance_method" title="Sketchup::Material#duplicate (method)">#duplicate</a></span> method creates a copy of the material with all its properties.</p>
 </div></span>
   
 </li>
@@ -2067,7 +2091,7 @@
   <h3 class="signature " id="ao_strength=-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>ao_strength=</strong>(strenght)  &#x21d2; <tt>Object</tt> 
+    #<strong>ao_strength=</strong>(strength)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -2100,7 +2124,7 @@
   
     <li>
       
-        <span class='name'>strenght</span>
+        <span class='name'>strength</span>
       
       
         <span class='type'>(<tt>Float</tt>)</span>
@@ -2447,7 +2471,7 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_materials'>materials</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_materials'><span class='object_link'><a href="Model.html#materials-instance_method" title="Sketchup::Model#materials (method)">materials</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add'><span class='object_link'><a href="Materials.html#add-instance_method" title="Sketchup::Materials#add (method)">add</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_materials'><span class='object_link'><a href="Model.html#materials-instance_method" title="Sketchup::Model#materials (method)">materials</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add'><span class='object_link'><a href="Materials.html#add-instance_method" title="Sketchup::Materials#add (method)">add</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Example</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_material'>material</span><span class='period'>.</span><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>red</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='id identifier rubyid_material'>material</span><span class='period'>.</span><span class='id identifier rubyid_color'>color</span></code></pre>
     
@@ -2922,6 +2946,100 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="duplicate-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>duplicate</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::Material (class)">Sketchup::Material</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#duplicate-instance_method" title="Sketchup::Material#duplicate (method)">#duplicate</a></span> method creates a copy of the material with all its properties.</p>
+
+<p>The duplicated material will have a unique name based on the original material&#39;s name.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_materials'>materials</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_materials'><span class='object_link'><a href="Model.html#materials-instance_method" title="Sketchup::Model#materials (method)">materials</a></span></span>
+<span class='id identifier rubyid_original'>original</span> <span class='op'>=</span> <span class='id identifier rubyid_materials'>materials</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Joe</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>red</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_duplicate'>duplicate</span> <span class='op'>=</span> <span class='id identifier rubyid_original'>original</span><span class='period'>.</span><span class='id identifier rubyid_duplicate'>duplicate</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_duplicate'>duplicate</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>  <span class='comment'># Outputs: &quot;Joe1&quot;
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_duplicate'>duplicate</span><span class='period'>.</span><span class='id identifier rubyid_color'>color</span> <span class='comment'># Outputs: Color(255, 0, 0, 255)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::Material (class)">Sketchup::Material</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the newly created material</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RuntimeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the material is used by a layer or image.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.2</p>
 </div>
       
     </li>

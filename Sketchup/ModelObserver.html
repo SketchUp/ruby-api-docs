@@ -193,6 +193,21 @@
 </div>
 </div>
 
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Since SketchUp 2016, all observer events within a transaction are queued and fired only after the operation is committed. This means callbacks like <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> and other model events do not fire in real-time, but are delayed until the transaction completes. The callbacks fire in the correct sequence, but they all occur at commit time, not when the operations themselves happen. This behavior change was made to improve performance and stability.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The API currently lacks a method to query the current operation state (e.g., whether a transaction is currently open). This limitation means observers cannot be used to monitor the real-time state of transactions.</p>
+</div>
+  </div>
+
+
 <p>This observer interface is implemented to react to model events.</p>
 
 <p>Note that the observers related to transactions (aka undoable operations) are primarily for reporting and debugging. Performing any edit operations of your own (such as modifying the model) inside the observer callback should be avoided, as it could cause crashes or model corruption. The most common use for these callbacks is to help debug problems where your Ruby script&#39;s <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> calls are somehow conflicting with SketchUp&#39;s native undo operations. You can set up an observer set to watch precisely what is going on.</p>
@@ -216,6 +231,90 @@
 
 <span class='comment'># Attach the observer.
 </span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="Model.html#add_observer-instance_method" title="Sketchup::Model#add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyModelObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='comment'># This example demonstrates handling both empty and non-empty transactions,
+</span><span class='comment'># while also showing how the observer event queuing works.
+</span><span class='comment'># The key difference is that onTransactionCommit is called when the transaction
+</span><span class='comment'># contains model changes, while onTransactionEmpty is called when no changes were made.
+</span><span class='comment'>#
+</span><span class='comment'># IMPORTANT: Remember that ALL callbacks fire at commit time, not when operations occur.
+</span>
+<span class='kw'>class</span> <span class='const'>TransactionObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>ModelObserver</span>
+
+  <span class='comment'># Called for any transaction, but remember this fires at commit time,
+</span>  <span class='comment'># not when start_operation is actually called
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_onTransactionStart'>onTransactionStart</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Transaction started callback fired: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='comment'># We can&#39;t actually track when the transaction really started,
+</span>    <span class='comment'># so we just record when the callback fired
+</span>    <span class='ivar'>@callback_time</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Called for transactions that modified the model
+</span>  <span class='comment'># This fires immediately after onTransactionStart at commit time
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_onTransactionCommit'>onTransactionCommit</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+    <span class='comment'># We can only calculate time between callbacks, not actual operation time
+</span>    <span class='id identifier rubyid_elapsed'>elapsed</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='ivar'>@callback_time</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Transaction committed with changes (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_elapsed'>elapsed</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>s after callback)</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Note: All callbacks fired at commit time, not during operations</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_handle_transaction_completion'>handle_transaction_completion</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='comma'>,</span> <span class='symbol'>:with_changes</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Called for transactions that didn&#39;t modify the model
+</span>  <span class='comment'># This fires immediately after onTransactionStart at commit time
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_onTransactionEmpty'>onTransactionEmpty</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+    <span class='comment'># We can only calculate time between callbacks, not actual operation time
+</span>    <span class='id identifier rubyid_elapsed'>elapsed</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span> <span class='op'>-</span> <span class='ivar'>@callback_time</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Transaction committed with NO changes (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_elapsed'>elapsed</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='lparen'>(</span><span class='int'>3</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>s after callback)</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Note: All callbacks fired at commit time, not during operations</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_handle_transaction_completion'>handle_transaction_completion</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='comma'>,</span> <span class='symbol'>:empty</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># Common handler for both types of transaction completions
+</span>  <span class='kw'>def</span> <span class='id identifier rubyid_handle_transaction_completion'>handle_transaction_completion</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Transaction complete (</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type'>type</span><span class='embexpr_end'>}</span><span class='tstring_content'>): </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='comment'># Perform actions needed for any completed transaction
+</span>    <span class='comment'># (for example, updating UI, logging, etc.)
+</span>  <span class='kw'>end</span>
+
+  <span class='kw'>def</span> <span class='id identifier rubyid_onTransactionAbort'>onTransactionAbort</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Transaction aborted: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='comment'># Attach the observer
+</span><span class='id identifier rubyid_observer'>observer</span> <span class='op'>=</span> <span class='const'>TransactionObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="Model.html#add_observer-instance_method" title="Sketchup::Model#add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_observer'>observer</span><span class='rparen'>)</span>
+
+<span class='comment'># Demonstration of the queuing behavior
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DEMONSTRATION OF OBSERVER EVENT QUEUING:</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1. Starting transaction at: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Transaction Test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+
+<span class='comment'># Notice that no observer callbacks fire at this point
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2. After start_operation - no callbacks fired yet: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3. Now adding geometry...</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_line'>add_line</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span><span class='int'>0</span><span class='comma'>,</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+<span class='comment'># Still no observer callbacks
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>4. After adding geometry - still no callbacks: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>5. Now committing transaction...</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='comment'># All observer events will fire when we commit
+</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+
+<span class='comment'># The callbacks have now fired in sequence at commit time
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>6. After commit_operation - ALL callbacks have now fired: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='comment'># Try an empty transaction too
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\nEMPTY TRANSACTION TEST:</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1. Starting empty transaction: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Empty Test</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>2. Committing with no changes...</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3. After commit - onTransactionStart and onTransactionEmpty fired: </span><span class='embexpr_beg'>#{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span></code></pre>
     
   </div>
 
@@ -561,7 +660,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is completed.</p>
+<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction containing model changes is completed.</p>
 </div></span>
   
 </li>
@@ -609,7 +708,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a transaction (aka undo operation.) You can programmatically fire a redo by calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a transaction (aka undo operation.) You can programmatically fire a redo by calling <code>Sketchup.send_action(&#39;editRedo:&#39;)</code>.</p>
 </div></span>
   
 </li>
@@ -657,7 +756,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a transaction (aka undo operation.) You can programmatically fire an undo by calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a transaction (aka undo operation.) You can programmatically fire an undo by calling <code>Sketchup.send_action(&#39;editUndo:&#39;)</code>.</p>
 </div></span>
   
 </li>
@@ -1871,7 +1970,9 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction is completed.</p>
+<p>The <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> method is invoked when a transaction containing model changes is completed. This callback is only triggered for transactions that actually modified the model.</p>
+
+<p>If a transaction is committed without any model changes, <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> will be called instead of this method. This is important to understand when implementing transaction event handlers.</p>
 
 
   </div>
@@ -1933,6 +2034,8 @@
     
       <li><span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span></li>
     
+      <li><span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span></li>
+    
   </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -1970,7 +2073,9 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an undoable operation) starts and then is committed without anything being altered in between.</p>
+<p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an undoable operation) starts and then is committed without anything being altered in between. This callback is triggered instead of <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> when a transaction contains no model changes.</p>
+
+<p>This behavior is important to understand when implementing handlers for transaction events. If you need a unified handler for all committed transactions (both empty and non-empty), you&#39;ll need to implement both callbacks.</p>
 
 
   </div>
@@ -1983,7 +2088,10 @@
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionEmpty'>onTransactionEmpty</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionEmpty: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span></code></pre>
+  <span class='comment'># If you need the same handling for both empty and non-empty transactions,
+</span>  <span class='comment'># you can manually call your onTransactionCommit handler:
+</span>  <span class='comment'># onTransactionCommit(model)
+</span><span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -2032,6 +2140,8 @@
     
       <li><span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span></li>
     
+      <li><span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span></li>
+    
   </ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
@@ -2069,7 +2179,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a transaction (aka undo operation.) You can programmatically fire a redo by calling <tt>Sketchup.sendAction(“editRedo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionRedo-instance_method" title="Sketchup::ModelObserver#onTransactionRedo (method)">#onTransactionRedo</a></span> method is invoked when the user “redoes” a transaction (aka undo operation.) You can programmatically fire a redo by calling <code>Sketchup.send_action(&#39;editRedo:&#39;)</code>.</p>
 
 
   </div>
@@ -2161,6 +2271,14 @@
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This callback is not fired immediately when <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> is called. Instead, it is queued and triggered when the transaction is committed, firing just before <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> or <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span>. Since SketchUp 2016, all transaction-related events are queued and fired at commit time in the appropriate sequence, rather than in real-time when the operations occur.</p>
+</div>
+  </div>
+
+
 <p>The <span class='object_link'><a href="#onTransactionStart-instance_method" title="Sketchup::ModelObserver#onTransactionStart (method)">#onTransactionStart</a></span> method is invoked when a transaction (aka an undoable operation) starts.</p>
 
 
@@ -2173,7 +2291,8 @@
     
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onTransactionStart'>onTransactionStart</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionStart: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># Remember: This is triggered at commit time, not when start_operation is called
+</span>  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onTransactionStart: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2260,7 +2379,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a transaction (aka undo operation.) You can programmatically fire an undo by calling <tt>Sketchup.sendAction(“editUndo”)</tt>.</p>
+<p>The <span class='object_link'><a href="#onTransactionUndo-instance_method" title="Sketchup::ModelObserver#onTransactionUndo (method)">method</a></span> is invoked when the user “undoes” a transaction (aka undo operation.) You can programmatically fire an undo by calling <code>Sketchup.send_action(&#39;editUndo:&#39;)</code>.</p>
 
 
   </div>

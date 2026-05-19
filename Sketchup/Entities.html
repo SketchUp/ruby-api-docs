@@ -971,7 +971,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#intersect_with-instance_method" title="Sketchup::Entities#intersect_with (method)">#intersect_with</a></span> method is used to intersect a Sketchup::Entities, Sketchup::Component, or Sketchup::Group object with a entities object.</p>
+<p>The <span class='object_link'><a href="#intersect_with-instance_method" title="Sketchup::Entities#intersect_with (method)">#intersect_with</a></span> method computes the intersections between two sets of entities in different 3D contexts and creates the resulting intersection edges in a third context.</p>
 </div></span>
   
 </li>
@@ -2098,7 +2098,7 @@
 <span class='id identifier rubyid_center_point'>center_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span>
 <span class='comment'># Create a circle perpendicular to the provided vector.
 </span><span class='id identifier rubyid_normal'>normal</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#Z_AXIS-constant" title="Z_AXIS (constant)">Z_AXIS</a></span></span>
-<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span><span class='lparen'>(</span><span class='id identifier rubyid_center_point'>center_point</span><span class='comma'>,</span> <span class='id identifier rubyid_vector'>vector</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span><span class='lparen'>(</span><span class='id identifier rubyid_center_point'>center_point</span><span class='comma'>,</span> <span class='id identifier rubyid_normal'>normal</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -3003,6 +3003,22 @@
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior to SketchUp 2026.2 could move the <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span> if passing an <span class='object_link'><a href="InstancePath.html" title="Sketchup::InstancePath (class)">InstancePath</a></span> containing a construction point.</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -3037,8 +3053,8 @@
       <pre class="example code"><code><span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span>
 <span class='comment'># Create a circle
 </span><span class='id identifier rubyid_center_point'>center_point</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Point3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Point3d.html#initialize-instance_method" title="Geom::Point3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>10</span><span class='comma'>,</span> <span class='int'>10</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_vector'>vector</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Vector3d.html#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span><span class='lparen'>(</span><span class='id identifier rubyid_center_point'>center_point</span><span class='comma'>,</span> <span class='id identifier rubyid_vector'>vector</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_normal'>normal</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Vector3d.html" title="Geom::Vector3d (class)">Vector3d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Vector3d.html#initialize-instance_method" title="Geom::Vector3d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_edges'>edges</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_circle'>add_circle</span><span class='lparen'>(</span><span class='id identifier rubyid_center_point'>center_point</span><span class='comma'>,</span> <span class='id identifier rubyid_normal'>normal</span><span class='comma'>,</span> <span class='int'>10</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_circle'>circle</span> <span class='op'>=</span> <span class='id identifier rubyid_edges'>edges</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_curve'>curve</span>
 <span class='id identifier rubyid_dim'>dim</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_dimension_radial'>add_dimension_radial</span><span class='lparen'>(</span><span class='id identifier rubyid_circle'>circle</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>30</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span></code></pre>
     
@@ -6121,9 +6137,18 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#intersect_with-instance_method" title="Sketchup::Entities#intersect_with (method)">#intersect_with</a></span> method is used to intersect a Sketchup::Entities, Sketchup::Component, or Sketchup::Group object with a entities object.</p>
+<p>The <span class='object_link'><a href="#intersect_with-instance_method" title="Sketchup::Entities#intersect_with (method)">#intersect_with</a></span> method computes the intersections between two sets of entities in different 3D contexts and creates the resulting intersection edges in a third context.</p>
 
-<p>empty if no intersection(s) were found.</p>
+<p>This powerful method operates on three distinct sets of entities:</p>
+<ol><li>
+<p>The Receiver (<code>self</code>): The <span class='object_link'><a href="" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection the method is called on.</p>
+</li><li>
+<p>The Cutting Entities (<code>entities2</code>): The entities that intersect with the receiver.</p>
+</li><li>
+<p>The Result Container (<code>entities1</code>): The <span class='object_link'><a href="" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection where the new intersection edges are placed.</p>
+</li></ol>
+
+<p>The transformations <code>transform1</code> and <code>transform2</code> are used to relate these three different contexts to each other, allowing for intersections to be calculated between objects anywhere in the model hierarchy. The intersection calculation occurs in a common coordinate space, and the transformations are used to bring the geometry into that space.</p>
 
 
   </div>
@@ -6134,26 +6159,67 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
-<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
+      <pre class="example code"><code><span class='comment'># --- Setup ---
+</span><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_start_operation'>start_operation</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Intersect Example</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='kw'>true</span><span class='rparen'>)</span>
 
-<span class='comment'># Create a group to intersect with the model
-</span><span class='id identifier rubyid_group1'>group1</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
-<span class='id identifier rubyid_face1'>face1</span> <span class='op'>=</span> <span class='id identifier rubyid_group1'>group1</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_face1'>face1</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>40</span><span class='rparen'>)</span>
+<span class='comment'># Clear any existing geometry to prevent conflicts
+</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_clear!'>clear!</span>
 
-<span class='comment'># Add geometry into the model
-</span><span class='id identifier rubyid_face2'>face2</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>50</span><span class='comma'>,</span> <span class='int'>50</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>50</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>50</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_face2'>face2</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>100</span><span class='rparen'>)</span>
+<span class='comment'># Create a &quot;cutter&quot; group - a cube shifted in space
+</span><span class='id identifier rubyid_cutter_group'>cutter_group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+<span class='id identifier rubyid_cutter_face'>cutter_face</span> <span class='op'>=</span> <span class='id identifier rubyid_cutter_group'>cutter_group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span>
+  <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>100</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span>
+<span class='id identifier rubyid_cutter_face'>cutter_face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>50</span><span class='rparen'>)</span>
+<span class='comment'># Move the cutter cube to create an interesting intersection
+</span><span class='id identifier rubyid_cutter_group'>cutter_group</span><span class='period'>.</span><span class='id identifier rubyid_transform!'>transform!</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>25</span><span class='comma'>,</span> <span class='int'>25</span><span class='comma'>,</span> <span class='int'>25</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 
-<span class='id identifier rubyid_entities1'>entities1</span> <span class='op'>=</span> <span class='id identifier rubyid_group1'>group1</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span>
-<span class='id identifier rubyid_entities2'>entities2</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
+<span class='comment'># Create a &quot;mesh&quot; group - a larger box that overlaps the cutter
+</span><span class='id identifier rubyid_mesh_group'>mesh_group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
+<span class='id identifier rubyid_mesh_face'>mesh_face</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh_group'>mesh_group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span>
+  <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span>
+<span class='rparen'>)</span>
+<span class='id identifier rubyid_mesh_face'>mesh_face</span><span class='period'>.</span><span class='id identifier rubyid_pushpull'>pushpull</span><span class='lparen'>(</span><span class='op'>-</span><span class='int'>100</span><span class='rparen'>)</span>
+<span class='comment'># Move the mesh_group so it partially overlaps the cutter_group
+</span><span class='id identifier rubyid_mesh_group'>mesh_group</span><span class='period'>.</span><span class='id identifier rubyid_transform!'>transform!</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>50</span><span class='comma'>,</span> <span class='int'>50</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 
-<span class='id identifier rubyid_transformation1'>transformation1</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span>
-<span class='id identifier rubyid_transformation2'>transformation2</span> <span class='op'>=</span> <span class='id identifier rubyid_group1'>group1</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span>
+<span class='comment'># Create an empty group to hold the intersection results
+</span><span class='id identifier rubyid_result_group'>result_group</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_group'>add_group</span>
 
-<span class='comment'># Intersect the group and model geometry
-</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_intersect_with'>intersect_with</span><span class='lparen'>(</span><span class='kw'>true</span><span class='comma'>,</span> <span class='id identifier rubyid_transformation1'>transformation1</span><span class='comma'>,</span> <span class='id identifier rubyid_entities1'>entities1</span><span class='comma'>,</span> <span class='id identifier rubyid_transformation2'>transformation2</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='id identifier rubyid_entities2'>entities2</span><span class='rparen'>)</span></code></pre>
+<span class='comment'># --- Intersection ---
+</span><span class='comment'># Define transformations to relate the three groups. We use the
+</span><span class='comment'># cutter_group&#39;s coordinate space as the common ground.
+</span>
+<span class='comment'># Transformation from the mesh_group&#39;s space to the cutter_group&#39;s space.
+</span><span class='id identifier rubyid_tr_mesh_to_cutter'>tr_mesh_to_cutter</span> <span class='op'>=</span> <span class='id identifier rubyid_cutter_group'>cutter_group</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span><span class='period'>.</span><span class='id identifier rubyid_inverse'>inverse</span> <span class='op'>*</span> <span class='id identifier rubyid_mesh_group'>mesh_group</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span>
+
+<span class='comment'># Transformation from the result_group&#39;s space to the cutter_group&#39;s space.
+</span><span class='id identifier rubyid_tr_result_to_cutter'>tr_result_to_cutter</span> <span class='op'>=</span> <span class='id identifier rubyid_cutter_group'>cutter_group</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span><span class='period'>.</span><span class='id identifier rubyid_inverse'>inverse</span> <span class='op'>*</span> <span class='id identifier rubyid_result_group'>result_group</span><span class='period'>.</span><span class='id identifier rubyid_transformation'>transformation</span>
+
+<span class='comment'># Perform the intersection
+</span><span class='id identifier rubyid_intersecting_edges'>intersecting_edges</span> <span class='op'>=</span> <span class='id identifier rubyid_mesh_group'>mesh_group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_intersect_with'>intersect_with</span><span class='lparen'>(</span>
+  <span class='kw'>false</span><span class='comma'>,</span>                          <span class='comment'># recurse
+</span>  <span class='id identifier rubyid_tr_mesh_to_cutter'>tr_mesh_to_cutter</span><span class='comma'>,</span>              <span class='comment'># transform1 for the receiver (mesh_group)
+</span>  <span class='id identifier rubyid_result_group'>result_group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='comma'>,</span>          <span class='comment'># entities1 (result container)
+</span>  <span class='id identifier rubyid_tr_result_to_cutter'>tr_result_to_cutter</span><span class='comma'>,</span>            <span class='comment'># transform2 for the result container
+</span>  <span class='kw'>true</span><span class='comma'>,</span>                           <span class='comment'># hidden
+</span>  <span class='id identifier rubyid_cutter_group'>cutter_group</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>      <span class='comment'># entities2 (cutting entities)
+</span><span class='rparen'>)</span>
+
+<span class='comment'># Verify the results
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Intersection created </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_intersecting_edges'>intersecting_edges</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> edges</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='comment'># Change the color of the result edges to make them visible
+</span><span class='kw'>if</span> <span class='id identifier rubyid_intersecting_edges'>intersecting_edges</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+<span class='id identifier rubyid_result_group'>result_group</span><span class='period'>.</span><span class='id identifier rubyid_material'>material</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span> <span class='comment'># Red
+</span><span class='kw'>end</span>
+
+<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_commit_operation'>commit_operation</span>
+
+<span class='comment'># Zoom to see the entire model
+</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_view'>active_view</span><span class='period'>.</span><span class='id identifier rubyid_zoom_extents'>zoom_extents</span></code></pre>
     
   </div>
 
@@ -6178,7 +6244,7 @@
       
         &mdash;
         <div class='inline'>
-<p>true if you want this entities object to be recursed (intersection lines will be put inside of groups and components within this entities object).</p>
+<p>If `true`, the intersection will recurse through any nested Groups or Components within the *<strong>receiver</strong>* (`self`).</p>
 </div>
       
     </li>
@@ -6194,7 +6260,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The transformation for this entities object.</p>
+<p>The transformation applied to the *<strong>receiver</strong>* entities (`self`) to position them in the common coordinate space where the intersection will be calculated.</p>
 </div>
       
     </li>
@@ -6210,7 +6276,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The entities object where you want the intersection lines to appear.</p>
+<p>The *<strong>result</strong>* entities collection. This is the drawing context where the new intersection edges will be created.</p>
 </div>
       
     </li>
@@ -6226,7 +6292,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The transformation for entities1.</p>
+<p>The transformation applied to the *<strong>result</strong>* entities collection (`entities1`) to correctly position it relative to the intersection calculation space.</p>
 </div>
       
     </li>
@@ -6242,7 +6308,7 @@
       
         &mdash;
         <div class='inline'>
-<p>true if you want hidden geometry in this entities object to be used in the intersection.</p>
+<p>If <code>true</code>, hidden geometry in the *<strong>receiver</strong>* entities will be considered for the intersection. This parameter only affects hidden geometry in the receiver, not in the cutting entities.</p>
 </div>
       
     </li>
@@ -6258,7 +6324,7 @@
       
         &mdash;
         <div class='inline'>
-<p>A single entity, or an array of entities.</p>
+<p>The *<strong>cutting</strong>* entities. These are the entities that will be intersected with the receiver. This can be a single entity or an array of entities.</p>
 </div>
       
     </li>
@@ -6280,7 +6346,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The intersecting edges created. This array may be</p>
+<p>The intersecting edges created. This array may be empty if no intersection(s) were found.</p>
 </div>
       
     </li>
