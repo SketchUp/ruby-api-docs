@@ -241,7 +241,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#count_edges-instance_method" title="#count_edges (instance method)">#<strong>count_edges</strong>  &#x21d2; Object </a>
+      <a href="#count_edges-instance_method" title="#count_edges (instance method)">#<strong>count_edges</strong>  &#x21d2; Integer </a>
     
 
     
@@ -265,7 +265,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each_edge-instance_method" title="#each_edge (instance method)">#<strong>each_edge</strong>  &#x21d2; Object </a>
+      <a href="#each_edge-instance_method" title="#each_edge (instance method)">#<strong>each_edge</strong> {|edge| ... } &#x21d2; nil </a>
     
 
     
@@ -289,7 +289,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#edges-instance_method" title="#edges (instance method)">#<strong>edges</strong>  &#x21d2; Object </a>
+      <a href="#edges-instance_method" title="#edges (instance method)">#<strong>edges</strong>  &#x21d2; Array&lt;Sketchup::Edge&gt; </a>
     
 
     
@@ -313,7 +313,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#first_edge-instance_method" title="#first_edge (instance method)">#<strong>first_edge</strong>  &#x21d2; Object </a>
+      <a href="#first_edge-instance_method" title="#first_edge (instance method)">#<strong>first_edge</strong>  &#x21d2; Sketchup::Edge </a>
     
 
     
@@ -351,9 +351,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>True if this edge was originally created by the polygon tool, otherwise false.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -361,7 +359,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#last_edge-instance_method" title="#last_edge (instance method)">#<strong>last_edge</strong>  &#x21d2; Object </a>
+      <a href="#last_edge-instance_method" title="#last_edge (instance method)">#<strong>last_edge</strong>  &#x21d2; Sketchup::Edge </a>
     
 
     
@@ -433,7 +431,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#vertices-instance_method" title="#vertices (instance method)">#<strong>vertices</strong>  &#x21d2; Object </a>
+      <a href="#vertices-instance_method" title="#vertices (instance method)">#<strong>vertices</strong>  &#x21d2; Array&lt;Sketchup::Vertex&gt; </a>
     
 
     
@@ -479,7 +477,7 @@
   <h3 class="signature first" id="count_edges-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>count_edges</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>count_edges</strong>  &#x21d2; <tt>Integer</tt> 
   
 
   
@@ -521,14 +519,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>num_edges - the number of edges in the curve</p>
-</div>
       
     </li>
   
@@ -557,7 +550,7 @@
   <h3 class="signature " id="each_edge-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>each_edge</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>each_edge</strong> {|edge| ... } &#x21d2; <tt>nil</tt> 
   
 
   
@@ -593,20 +586,48 @@
     
   </div>
 
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>edge</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Each edge associated with this curve.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Yield Parameters:</p>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='name'>edge</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt>nil</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>edge - a variable that will hold each Edge object as they are found.</p>
-</div>
       
     </li>
   
@@ -635,7 +656,7 @@
   <h3 class="signature " id="edges-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>edges</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>edges</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt> 
   
 
   
@@ -677,14 +698,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>&gt;</tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>edges - an array of Edge objects if successful</p>
-</div>
       
     </li>
   
@@ -713,7 +729,7 @@
   <h3 class="signature " id="first_edge-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>first_edge</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>first_edge</strong>  &#x21d2; <tt><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span></tt> 
   
 
   
@@ -755,14 +771,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>edge - the first Edge object in the curve if successful</p>
-</div>
       
     </li>
   
@@ -803,8 +814,6 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Returns True if this edge was originally created by the polygon tool, otherwise false.</p>
-
 
   </div>
 </div>
@@ -833,11 +842,6 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>True if this edge was originally created by the polygon tool, otherwise false.</p>
-</div>
-      
     </li>
   
 </ul>
@@ -865,7 +869,7 @@
   <h3 class="signature " id="last_edge-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>last_edge</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>last_edge</strong>  &#x21d2; <tt><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span></tt> 
   
 
   
@@ -907,14 +911,9 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span></tt>)</span>
       
       
-      
-        
-        <div class='inline'>
-<p>edge - the last Edge object in the curve if successful</p>
-</div>
       
     </li>
   
@@ -1130,7 +1129,7 @@
   <h3 class="signature " id="vertices-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>vertices</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>vertices</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span>&gt;</tt> 
   
 
   
@@ -1172,13 +1171,14 @@
     <li>
       
       
-        <span class='type'></span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span>&gt;</tt>)</span>
       
       
       
-        
-        <div class='inline'>
-<p>vertices - a collection of the vertices</p>
+        &mdash;
+        <div class='inline'><ul><li>
+<p>a collection of the vertices</p>
+</li></ul>
 </div>
       
     </li>

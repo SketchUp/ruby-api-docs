@@ -239,6 +239,45 @@
 </ul>
 
 </div>
+  
+    <h2>
+      Constant Summary
+      <a
+          id="constant_summary"
+          href="#constant_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="CORNER_LEFT_FRONT_BOTTOM-constant" class="">Geom::BoundingBox::CORNER_LEFT_FRONT_BOTTOM
+        </dt>
+      
+        <dt id="CORNER_RIGHT_FRONT_BOTTOM-constant" class="">Geom::BoundingBox::CORNER_RIGHT_FRONT_BOTTOM
+        </dt>
+      
+        <dt id="CORNER_LEFT_BACK_BOTTOM-constant" class="">Geom::BoundingBox::CORNER_LEFT_BACK_BOTTOM
+        </dt>
+      
+        <dt id="CORNER_RIGHT_BACK_BOTTOM-constant" class="">Geom::BoundingBox::CORNER_RIGHT_BACK_BOTTOM
+        </dt>
+      
+        <dt id="CORNER_LEFT_FRONT_TOP-constant" class="">Geom::BoundingBox::CORNER_LEFT_FRONT_TOP
+        </dt>
+      
+        <dt id="CORNER_RIGHT_FRONT_TOP-constant" class="">Geom::BoundingBox::CORNER_RIGHT_FRONT_TOP
+        </dt>
+      
+        <dt id="CORNER_LEFT_BACK_TOP-constant" class="">Geom::BoundingBox::CORNER_LEFT_BACK_TOP
+        </dt>
+      
+        <dt id="CORNER_RIGHT_BACK_TOP-constant" class="">Geom::BoundingBox::CORNER_RIGHT_BACK_TOP
+        </dt>
+      
+    </dl>
+  
+
 
 
 
@@ -371,7 +410,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The corner method is used to retrieve a point object at a specified corner of the bounding box.</p>
+<p>The <span class='object_link'><a href="#corner-instance_method" title="Geom::BoundingBox#corner (method)">#corner</a></span> method is used to retrieve a point object at a specified corner of the bounding box.</p>
 </div></span>
   
 </li>
@@ -1085,19 +1124,26 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The corner method is used to retrieve a point object at a specified corner of the bounding box.</p>
+<p>The <span class='object_link'><a href="#corner-instance_method" title="Geom::BoundingBox#corner (method)">#corner</a></span> method is used to retrieve a point object at a specified corner of the bounding box.</p>
 
 <p>There are 8 corners to a bounding box, identified by the numbers 0 through 7. Points are returned in the currently set units (inches, by default). These are which index refers to which corner:</p>
-
-<pre class="code"><code class="">- 0 = [0, 0, 0] (left front bottom)
-- 1 = [1, 0, 0] (right front bottom)
-- 2 = [0, 1, 0] (left back bottom)
-- 3 = [1, 1, 0] (right back bottom)
-- 4 = [0, 0, 1] (left front top)
-- 5 = [1, 0, 1] (right front top)
-- 6 = [0, 1, 1] (left back top)
-- 7 = [1, 1, 1] (right back top)
-</code></pre>
+<ul><li>
+<p>0: <span class='object_link'><a href="#CORNER_LEFT_FRONT_BOTTOM-constant" title="Geom::BoundingBox::CORNER_LEFT_FRONT_BOTTOM (constant)">CORNER_LEFT_FRONT_BOTTOM</a></span></p>
+</li><li>
+<p>1: <span class='object_link'><a href="#CORNER_RIGHT_FRONT_BOTTOM-constant" title="Geom::BoundingBox::CORNER_RIGHT_FRONT_BOTTOM (constant)">CORNER_RIGHT_FRONT_BOTTOM</a></span></p>
+</li><li>
+<p>2: <span class='object_link'><a href="#CORNER_LEFT_BACK_BOTTOM-constant" title="Geom::BoundingBox::CORNER_LEFT_BACK_BOTTOM (constant)">CORNER_LEFT_BACK_BOTTOM</a></span></p>
+</li><li>
+<p>3: <span class='object_link'><a href="#CORNER_RIGHT_BACK_BOTTOM-constant" title="Geom::BoundingBox::CORNER_RIGHT_BACK_BOTTOM (constant)">CORNER_RIGHT_BACK_BOTTOM</a></span></p>
+</li><li>
+<p>4: <span class='object_link'><a href="#CORNER_LEFT_FRONT_TOP-constant" title="Geom::BoundingBox::CORNER_LEFT_FRONT_TOP (constant)">CORNER_LEFT_FRONT_TOP</a></span></p>
+</li><li>
+<p>5: <span class='object_link'><a href="#CORNER_RIGHT_FRONT_TOP-constant" title="Geom::BoundingBox::CORNER_RIGHT_FRONT_TOP (constant)">CORNER_RIGHT_FRONT_TOP</a></span></p>
+</li><li>
+<p>6: <span class='object_link'><a href="#CORNER_LEFT_BACK_TOP-constant" title="Geom::BoundingBox::CORNER_LEFT_BACK_TOP (constant)">CORNER_LEFT_BACK_TOP</a></span></p>
+</li><li>
+<p>7: <span class='object_link'><a href="#CORNER_RIGHT_BACK_TOP-constant" title="Geom::BoundingBox::CORNER_RIGHT_BACK_TOP (constant)">CORNER_RIGHT_BACK_TOP</a></span></p>
+</li></ul>
 
 
   </div>
@@ -1108,7 +1154,25 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
+        <h5 class="example_title"><div class='inline'>
+<p>New preferred style using constants</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='comment'># From SketchUp 2026.2 onwards:
+</span><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='comment'># This will return Point3d(100, 200, -400).
+</span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#CORNER_LEFT_FRONT_BOTTOM-constant" title="Geom::BoundingBox::CORNER_LEFT_FRONT_BOTTOM (constant)">CORNER_LEFT_FRONT_BOTTOM</a></span></span><span class='rparen'>)</span>
+<span class='comment'># This will return Point3d(100, 400, 100).
+</span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="#CORNER_LEFT_BACK_TOP-constant" title="Geom::BoundingBox::CORNER_LEFT_BACK_TOP (constant)">CORNER_LEFT_BACK_TOP</a></span></span><span class='rparen'>)</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Old style using magic numbers</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='comment'># For SketchUp 2026.1 and older: (Works with newer versions too)
+</span><span class='id identifier rubyid_boundingbox'>boundingbox</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Geom::BoundingBox (class)">BoundingBox</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Geom::BoundingBox#initialize (method)">new</a></span></span>
 <span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>100</span><span class='comma'>,</span> <span class='int'>200</span><span class='comma'>,</span> <span class='op'>-</span><span class='int'>400</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='int'>400</span><span class='comma'>,</span> <span class='int'>100</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='comment'># This will return Point3d(100, 200, -400).
 </span><span class='id identifier rubyid_boundingbox'>boundingbox</span><span class='period'>.</span><span class='id identifier rubyid_corner'>corner</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>

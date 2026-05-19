@@ -381,6 +381,54 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#font-instance_method" title="#font (instance method)">#<strong>font</strong>  &#x21d2; Hash{Symbol =&gt; String, Integer, Boolean}<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#font-instance_method" title="Sketchup::Text#font (method)">#font</a></span> method returns the font properties of the Text object as a Hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#font=-instance_method" title="#font= (instance method)">#<strong>font=</strong>(properties)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#font=-instance_method" title="Sketchup::Text#font= (method)">#font=</a></span> method sets the font properties of the Text object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#has_leader%3F-instance_method" title="#has_leader? (instance method)">#<strong>has_leader?</strong>  &#x21d2; Boolean </a>
     
 
@@ -1193,6 +1241,228 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="font-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>font</strong>  &#x21d2; <tt>Hash{Symbol =&gt; <span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Integer, Boolean}</tt><sup>?</sup> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#font-instance_method" title="Sketchup::Text#font (method)">#font</a></span> method returns the font properties of the Text object as a Hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Get font properties</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_text'><span class='object_link'><a href="Entities.html#add_text-instance_method" title="Sketchup::Entities#add_text (method)">add_text</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_props'>props</span> <span class='op'>=</span> <span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_font'>font</span>
+<span class='comment'># =&gt; { name: &quot;Arial&quot;, size: 12, bold: false, italic: false }
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_props'>props</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>  <span class='comment'># =&gt; &quot;Arial&quot;
+</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_props'>props</span><span class='lbracket'>[</span><span class='symbol'>:size</span><span class='rbracket'>]</span>  <span class='comment'># =&gt; 12</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash{Symbol =&gt; <span class='object_link'><a href="../String.html" title="String (class)">String</a></span>, Integer, Boolean}</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Hash of font properties. Text is created with a default font, so a Hash is typically always returned. <code>nil</code> only if no per-entity font is associated (the model default is used for display in that case).</p>
+
+<p>Keys:</p>
+<ul><li>
+<p><code>:name</code>   [String]  Font face name.</p>
+</li><li>
+<p><code>:size</code>   [Integer] Size in points (1–1000).</p>
+</li><li>
+<p><code>:bold</code>   [Boolean] Bold weight.</p>
+</li><li>
+<p><code>:italic</code> [Boolean] Italic style.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="font=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>font=</strong>(properties)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>If the <code>:name</code> value is not a font installed on the current system, SketchUp substitutes a system fallback font without raising an error. The stored face name is still set to the requested value and will be honored if the font is later installed.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#font=-instance_method" title="Sketchup::Text#font= (method)">#font=</a></span> method sets the font properties of the Text object.</p>
+
+<p>Keys omitted from the hash inherit their values from the entity&#39;s current font (or the model default if no per-entity font has been set yet). Passing an empty Hash is a no-op.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Set all properties at once</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_text'>text</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_entities'><span class='object_link'><a href="Model.html#entities-instance_method" title="Sketchup::Model#entities (method)">entities</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_text'><span class='object_link'><a href="Entities.html#add_text-instance_method" title="Sketchup::Entities#add_text (method)">add_text</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ORIGIN-constant" title="ORIGIN (constant)">ORIGIN</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_font'>font</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Times New Roman</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>size:</span> <span class='int'>18</span><span class='comma'>,</span> <span class='label'>bold:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>italic:</span> <span class='kw'>true</span> <span class='rbrace'>}</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Change only the size, keeping all other properties</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='id identifier rubyid_font'>font</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>size:</span> <span class='int'>24</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>properties</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Font properties. Keys:</p>
+<ul><li>
+<p><code>:name</code>   [String]  Font face name.</p>
+</li><li>
+<p><code>:size</code>   [Integer] Size in points. Must be in the range 1–1000.</p>
+</li><li>
+<p><code>:bold</code>   [Boolean] Bold weight.</p>
+</li><li>
+<p><code>:italic</code> [Boolean] Italic style.</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>TypeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if <code>properties</code> is not a Hash.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RangeError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if <code>:size</code> is outside the range 1–1000.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.2</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="has_leader?-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -1902,6 +2172,22 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p><span class='object_link'><a href="" title="Sketchup::Text (class)">Sketchup::Text</a></span> objects without leaders that are attached to the model viewport will not immediatly display content changes. Changes can be triggered by the user with a view refresh (clicking inside the view) or programmatically by calling <span class='object_link'><a href="View.html#invalidate-instance_method" title="Sketchup::View#invalidate (method)">View#invalidate</a></span>.</p>
 </div>
       
     </li>

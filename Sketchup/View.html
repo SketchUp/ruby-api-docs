@@ -1182,7 +1182,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#set_color_from_line-instance_method" title="#set_color_from_line (instance method)">#<strong>set_color_from_line</strong>(point1, point2)  &#x21d2; Sketchup::View </a>
+      <a href="#set_color_from_line-instance_method" title="#set_color_from_line (instance method)">#<strong>set_color_from_line</strong>(*args)  &#x21d2; Sketchup::View </a>
     
 
     
@@ -7378,6 +7378,13 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
+<p>This method will return <code>nil</code> if the point cannot be projected to the screen. This is most notably the case for the camera&#39;s eye position itself.</p>
+</div>
+  </div>
+
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
 <p>Prior to SketchUp 2025.0 this method returned the points as physical screen coordinates. As of SketchUp 2025.0 the points are returned in logical screen coordinates.</p>
 </div>
   </div>
@@ -7385,7 +7392,7 @@
 
 <p>The <span class='object_link'><a href="#screen_coords-instance_method" title="Sketchup::View#screen_coords (method)">#screen_coords</a></span> method is used to retrieve the screen coordinates of the given point on the screen.</p>
 
-<p>The <code>x</code> and <code>y</code> values returned correspond to the <code>x</code> and <code>y</code> screen coordinates. Ignore the <code>z</code> values.  If the referenced point is not in the current viewport, the <code>x</code> and/or <code>y</code> value may be negative.</p>
+<p>The <code>x</code> and <code>y</code> values returned correspond to the <code>x</code> and <code>y</code> screen coordinates. Ignore the <code>z</code> values. If the referenced point is not in the current viewport, the <code>x</code> and/or <code>y</code> value may be negative.</p>
 
 
   </div>
@@ -7430,7 +7437,7 @@
         <span class='name'>model_point</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>, <tt><span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span></tt>)</span>
       
       
       
@@ -7481,7 +7488,7 @@
         <span class='name'>model_point</span>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>, <tt><span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span></tt>)</span>
       
       
       
@@ -7558,7 +7565,13 @@
   <h3 class="signature " id="set_color_from_line-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
-    #<strong>set_color_from_line</strong>(point1, point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> 
+    
+      <span class="overload">#<strong>set_color_from_line</strong>(point1, point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>set_color_from_line</strong>(point1, point2, color)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
+      <span class="overload">#<strong>set_color_from_line</strong>(inputpoint1, inputpoint2)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+    
   
 
   
@@ -7570,9 +7583,21 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Set the drawing color for the view based on the direction of a line that you want to draw. These colors will match the axes colors in the SketchUp model (typically blue for straight up and down, etc.)</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Uses only the active axis inference to set the color (red/green/blue). Does not support advanced inference coloring (like parallel/perpendicular) and does not trigger visual highlighting of other geometry.</p>
+</div>
+  </div>
+
+
+<p>Set the drawing color for the view based on the direction of a line that you want to draw. These colors will match the primary model axis colors in the SketchUp model (red, green, blue for the respective axes).</p>
 
 <p>This method is usually invoked within the draw method of a tool.</p>
+
+<p>When two <span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">InputPoint</a></span> objects are passed instead of plain <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects, the method uses only the active axis inference to set the drawing color (red/green/blue for axes). It does not support advanced inference coloring (like magenta for perpendicular or cyan for parallel) and does not trigger visual highlighting of other geometry.</p>
+
+<p>Passing plain <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> objects also derives an axis-based color unless you override it with the optional <code>color</code> argument.</p>
 
 
   </div>
@@ -7583,11 +7608,40 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_set_color_from_line'>set_color_from_line</span> <span class='id identifier rubyid_point1'>point1</span><span class='comma'>,</span> <span class='id identifier rubyid_point2'>point2</span></code></pre>
+        <h5 class="example_title"><div class='inline'>
+<p>Basic usage with 3D points (auto axis color)</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_set_color_from_line'>set_color_from_line</span><span class='lparen'>(</span><span class='id identifier rubyid_pt1'>pt1</span><span class='comma'>,</span> <span class='id identifier rubyid_pt2'>pt2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_line'>draw_line</span><span class='lparen'>(</span><span class='id identifier rubyid_pt1'>pt1</span><span class='comma'>,</span> <span class='id identifier rubyid_pt2'>pt2</span><span class='rparen'>)</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Explicit color override</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_set_color_from_line'>set_color_from_line</span><span class='lparen'>(</span><span class='id identifier rubyid_pt1'>pt1</span><span class='comma'>,</span> <span class='id identifier rubyid_pt2'>pt2</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_line'>draw_line</span><span class='lparen'>(</span><span class='id identifier rubyid_pt1'>pt1</span><span class='comma'>,</span> <span class='id identifier rubyid_pt2'>pt2</span><span class='rparen'>)</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Using InputPoints to set color by axis inference</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_ip1'>ip1</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x1'>x1</span><span class='comma'>,</span> <span class='id identifier rubyid_y1'>y1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_ip2'>ip2</span> <span class='op'>=</span> <span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_inputpoint'>inputpoint</span><span class='lparen'>(</span><span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_set_color_from_line'>set_color_from_line</span><span class='lparen'>(</span><span class='id identifier rubyid_ip1'>ip1</span><span class='comma'>,</span> <span class='id identifier rubyid_ip2'>ip2</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_view'>view</span><span class='period'>.</span><span class='id identifier rubyid_draw_line'>draw_line</span><span class='lparen'>(</span><span class='id identifier rubyid_ip1'>ip1</span><span class='period'>.</span><span class='id identifier rubyid_position'>position</span><span class='comma'>,</span> <span class='id identifier rubyid_ip2'>ip2</span><span class='period'>.</span><span class='id identifier rubyid_position'>position</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
-  <div class="docstring">
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set_color_from_line</strong>(point1, point2)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
   <div class="discussion">
     
 
@@ -7606,10 +7660,46 @@
       
       
       
-        &mdash;
-        <div class='inline'>
-<p>Point3d object representing first point in the line.</p>
+    </li>
+  
+    <li>
+      
+        <span class='name'>point2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set_color_from_line</strong>(point1, point2, color)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span></tt>)</span>
+      
+      
       
     </li>
   
@@ -7622,9 +7712,20 @@
       
       
       
+    </li>
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>, <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
         &mdash;
         <div class='inline'>
-<p>Point3d object representing the second point in the line.</p>
+<p>Explicit color to force (skips automatic axis/inference color). Note that this override will be ignored if the line is parallel to a model axis, in which case the corresponding axis color (red, green, or blue) will be used instead.</p>
 </div>
       
     </li>
@@ -7633,6 +7734,50 @@
 
 
 </div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>set_color_from_line</strong>(inputpoint1, inputpoint2)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::View (class)">Sketchup::View</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>inputpoint1</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>inputpoint2</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="InputPoint.html" title="Sketchup::InputPoint (class)">Sketchup::InputPoint</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -7646,7 +7791,7 @@
       
         &mdash;
         <div class='inline'>
-<p>a View object</p>
+<p>self</p>
 </div>
       
     </li>

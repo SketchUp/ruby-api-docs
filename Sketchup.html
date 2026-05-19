@@ -1024,6 +1024,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#mdi%3F-class_method" title="mdi? (class method)">.<strong>mdi?</strong>  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Can be used to determine if SketchUp is running as MDI or SDI.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#open_file-class_method" title="open_file (class method)">.<strong>open_file</strong>(*args)  &#x21d2; Object </a>
     
 
@@ -1207,7 +1231,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'>#read_default</span> method is used to retrieve the string associated with a value within the specified sub-section section of a .INI file or registry (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
+<p>The <span class='object_link'><a href="#read_default-class_method" title="Sketchup.read_default (method)">Sketchup.read_default</a></span> method is used to retrieve the string associated with a value within the specified sub-section section of a .INI file or registry (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
 </div></span>
   
 </li>
@@ -1255,7 +1279,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'>#register_extension</span> method is used to register an extension with SketchUp&#39;s Extension Manager.</p>
+<p>The <span class='object_link'><a href="#register_extension-class_method" title="Sketchup.register_extension (method)">Sketchup.register_extension</a></span> method is used to register an extension with SketchUp&#39;s Extension Manager.</p>
 </div></span>
   
 </li>
@@ -1381,7 +1405,7 @@
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#send_action-class_method" title="send_action (class method)">.<strong>send_action</strong>(action)  &#x21d2; Boolean </a>
@@ -1394,12 +1418,12 @@
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The send_action method sends a message to the message queue to perform some action asynchronously.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>This method is deprecated and is not being maintained. If you rely on this method, please log a request in our <a href="https://github.com/SketchUp/api-issue-tracker/issues">Issue Tracker</a>.</p>
 </div></span>
   
 </li>
@@ -1711,7 +1735,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'>#write_default</span> method is used to set the string associated with a variable within the specified sub-section of a .plist file on the Mac or the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
+<p>The <span class='object_link'><a href="#write_default-class_method" title="Sketchup.write_default (method)">Sketchup.write_default</a></span> method is used to set the string associated with a variable within the specified sub-section of a .plist file on the Mac or the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
 </div></span>
   
 </li>
@@ -4599,6 +4623,8 @@ extensions.each{ |extension|
 
 <p>You do not need to include the file extension in the path. This method will look for .rb first (unencrypted) and then .rbe (encrypted) and finally .rbs (the deprecated scrambled format) files. See the “Distributing your Plugin” article for details.</p>
 
+<p>Starting with SketchUp 2026.2 this method lets through Ruby Exception consistently to Ruby&#39;s <code>load</code> method. Earlier versions rescued the Exception and printed an error message directly to the Ruby Console.</p>
+
 
   </div>
 </div>
@@ -4662,6 +4688,24 @@ extensions.each{ |extension|
     </li>
   
 </ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>LoadError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Starting in SketchUp 2026.2 if the file can&#39;t be found, consistentely to Ruby&#39;s <code>load</code> method. Earlier versions printed an error message directly to the Ruby console.</p>
+</div>
+      
+    </li>
+  
+</ul>
 <p class="tag_title">Version:</p>
 <ul class="version">
   
@@ -4689,6 +4733,62 @@ extensions.each{ |extension|
         
         <div class='inline'>
 <p>Unlike Ruby&#39;s <code>load</code> method, this method currently can&#39;t load the same file twice. Instead works similar to Ruby&#39;s `require` method.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mdi?-class_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    .<strong>mdi?</strong>  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Can be used to determine if SketchUp is running as MDI or SDI.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.2</p>
 </div>
       
     </li>
@@ -5530,7 +5630,7 @@ extensions.each{ |extension|
   </div>
 
 
-<p>The <span class='object_link'>#read_default</span> method is used to retrieve the string associated with a value within the specified sub-section section of a .INI file or registry (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
+<p>The <span class='object_link'><a href="#read_default-class_method" title="Sketchup.read_default (method)">read_default</a></span> method is used to retrieve the string associated with a value within the specified sub-section section of a .INI file or registry (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
 
 
   </div>
@@ -5736,7 +5836,7 @@ extensions.each{ |extension|
   </div>
 
 
-<p>The <span class='object_link'>#register_extension</span> method is used to register an extension with SketchUp&#39;s Extension Manager.</p>
+<p>The <span class='object_link'><a href="#register_extension-class_method" title="Sketchup.register_extension (method)">register_extension</a></span> method is used to register an extension with SketchUp&#39;s Extension Manager.</p>
 
 
   </div>
@@ -6065,6 +6165,8 @@ extensions.each{ |extension|
 
 <p>You do not need to include the file extension in the path. This method will look for .rbe first (encrypted) and then .rbs (the deprecated scrambled format) and finally .rb (unencrypted) files. The loading order was changed in SketchUp 2016 when the new .rbe encryption was introduced. Prior to SketchUp 2016 the loading order was first .rb then .rbs.</p>
 
+<p>Starting with SketchUp 2026.2 this method lets through Ruby Exception consistently to Ruby&#39;s <code>require</code> method. Earlier versions rescued the Exception and printed an error message directly to the Ruby Console.</p>
+
 
   </div>
 </div>
@@ -6123,6 +6225,24 @@ extensions.each{ |extension|
         &mdash;
         <div class='inline'>
 <p>True if the file is included. False if the file is not included.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>LoadError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>starting in SketchUp 2026.2 if the file can&#39;t be found, consistentely to Ruby&#39;s <code>require</code> method. Earlier versions printed an error message directly to the Ruby console.</p>
 </div>
       
     </li>
@@ -6562,7 +6682,10 @@ extensions.each{ |extension|
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>This method is deprecated and is not being maintained. If you rely on this method, please log a request in our <a href="https://github.com/SketchUp/api-issue-tracker/issues">Issue Tracker</a>.</p>
+</div></div>
+
 <p>The send_action method sends a message to the message queue to perform some action asynchronously.</p>
 
 <p>Valid actions are:</p>
@@ -8129,7 +8252,7 @@ extensions.each{ |extension|
   </div>
 
 
-<p>The <span class='object_link'>#write_default</span> method is used to set the string associated with a variable within the specified sub-section of a .plist file on the Mac or the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
+<p>The <span class='object_link'><a href="#write_default-class_method" title="Sketchup.write_default (method)">write_default</a></span> method is used to set the string associated with a variable within the specified sub-section of a .plist file on the Mac or the registry on Windows (within the Software &gt; SketchUp &gt; SketchUp [Version] section).</p>
 
 
   </div>
