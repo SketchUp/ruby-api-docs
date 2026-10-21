@@ -20,7 +20,7 @@
     <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
     <meta name="title" content="Class: UI::Command" />
     <meta name="name"  content="SketchUp Ruby API Documentation" />
-    <meta name="description" content="The Command class is used to create toolbar buttons and menu entries for invoking your extension." />
+    <meta name="description" content="The Command class is the preferred class for adding tools to the menus and Ruby toolbars." />
   <!-- OPEN GRAPH META PROPERTIES -->
     <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
     <meta property="og:type"      content="website" />
@@ -29,12 +29,12 @@
     <meta property="og:image:height" content="60" />
     <meta property="og:title"     content="Class: UI::Command" />
     <meta property="og:url"       content="https://ruby.sketchup.com/UI/Command.html" />
-    <meta property="og:description" content="The Command class is used to create toolbar buttons and menu entries for invoking your extension." />
+    <meta property="og:description" content="The Command class is the preferred class for adding tools to the menus and Ruby toolbars." />
   <!-- TWITTER CARD META PROPERTIES -->
     <meta name="twitter:card"  content="summary"   />
     <meta name="twitter:site"  content="@sketchup" />
     <meta name="twitter:title" content="Class: UI::Command" />
-    <meta name="twitter:description" content="The Command class is used to create toolbar buttons and menu entries for invoking your extension." />
+    <meta name="twitter:description" content="The Command class is the preferred class for adding tools to the menus and Ruby toolbars." />
     <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
     <meta name="twitter:url"   content="https://ruby.sketchup.com/UI/Command.html" />
 
@@ -187,7 +187,9 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>The Command class is used to create toolbar buttons and menu entries for invoking your extension.</p>
+<p>The Command class is the preferred class for adding tools to the menus and Ruby toolbars. For example, you could add a menu item and pass it a code block directly, or you could first create a Command.</p>
+
+<p>Using Commands gives you greater control over how the item works in the UI, and it allows multiple spots in the UI to call the same code. For example, You might want a toolbar button and a context-click menu item to both point to the same command, and to control the tooltip and its “graying” from a single spot in your code.</p>
 
 
   </div>
@@ -198,24 +200,25 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_file_extension'>file_extension</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'><span class='object_link'><a href="../Sketchup.html#platform-class_method" title="Sketchup.platform (method)">platform</a></span></span> <span class='op'>==</span> <span class='symbol'>:platform_win</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>svg</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pdf</span><span class='tstring_end'>&quot;</span></span>
+      <pre class="example code"><code><span class='comment'># You can add menu items as procedure blocks, as shown here, but
+</span><span class='comment'># you have no control over whether it is grayed out, for example.
+</span><span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="../Sketchup/Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Procedure</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Procedure</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='rbrace'>}</span>
 
-<span class='id identifier rubyid_menu'>menu</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Extensions</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_submenu'><span class='object_link'><a href="../Sketchup/Menu.html#add_submenu-instance_method" title="Sketchup::Menu#add_submenu (method)">add_submenu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Extension</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Extension</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>One sentence explaining what the action does.</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons/my_action.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_file_extension'>file_extension</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-
-<span class='comment'># More commands here...
-</span>
-<span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+<span class='comment'># Better to create a command object.
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'>Command</span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Command</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Command</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_set_validation_proc'>set_validation_proc</span> <span class='lbrace'>{</span>
+  <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="../Sketchup/Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span><span class='period'>.</span><span class='id identifier rubyid_length'><span class='object_link'><a href="../Sketchup/Selection.html#length-instance_method" title="Sketchup::Selection#length (method)">length</a></span></span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_GRAYED-constant" title="MF_GRAYED (constant)">MF_GRAYED</a></span></span>
+  <span class='kw'>else</span>
+    <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_ENABLED-constant" title="MF_ENABLED (constant)">MF_ENABLED</a></span></span>
+  <span class='kw'>end</span>
+<span class='rbrace'>}</span>
+<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="../Sketchup/Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span> <span class='id identifier rubyid_cmd'>cmd</span></code></pre>
     
   </div>
 
@@ -273,7 +276,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#extension-instance_method" title="UI::Command#extension (method)">#extension</a></span> method returns the command’s associated extension.</p>
+<p>The <span class='object_link'><a href="#extension-instance_method" title="UI::Command#extension (method)">#extension</a></span> method returns the command&#39;s associated extension.</p>
 </div></span>
   
 </li>
@@ -297,7 +300,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#extension=-instance_method" title="UI::Command#extension= (method)">#extension=</a></span> method explicitly sets the command’s associated extension.</p>
+<p>The <span class='object_link'><a href="#extension=-instance_method" title="UI::Command#extension= (method)">#extension=</a></span> method explicitly sets the command&#39;s associated extension.</p>
 </div></span>
   
 </li>
@@ -321,7 +324,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#get_validation_proc-instance_method" title="UI::Command#get_validation_proc (method)">#get_validation_proc</a></span> method returns the command’s validation proc.</p>
+<p>The <span class='object_link'><a href="#get_validation_proc-instance_method" title="UI::Command#get_validation_proc (method)">#get_validation_proc</a></span> method returns the command&#39;s validation proc.</p>
 </div></span>
   
 </li>
@@ -371,7 +374,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The large_icon method returns the icon file for the command’s large icon.</p>
+<p>The large_icon method returns the icon file for the command&#39;s large icon.</p>
 </div></span>
   
 </li>
@@ -395,7 +398,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The large_icon= method is used to set the icon file for the command’s large icon.</p>
+<p>The large_icon= method is used to identify the icon file for the command&#39;s large icon.</p>
 </div></span>
   
 </li>
@@ -467,7 +470,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#proc-instance_method" title="UI::Command#proc (method)">#proc</a></span> method returns the command’s proc that is called when the command is invoked.</p>
+<p>The <span class='object_link'><a href="#proc-instance_method" title="UI::Command#proc (method)">#proc</a></span> method returns the command&#39;s proc that is called when the command is invoked.</p>
 </div></span>
   
 </li>
@@ -515,7 +518,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The small_icon method returns the icon file for the command’s small icon.</p>
+<p>The small_icon method returns the icon file for the command&#39;s small icon.</p>
 </div></span>
   
 </li>
@@ -539,7 +542,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The small_icon= method is used to set the icon file for the command’s small icon.</p>
+<p>The small_icon= method is used to identify the icon file for the command&#39;s small icon.</p>
 </div></span>
   
 </li>
@@ -563,7 +566,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The status_bar_text method returns the description of the command.</p>
+<p>The status_bar_text method returns the status bar text for the command.</p>
 </div></span>
   
 </li>
@@ -587,7 +590,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The status_bar_text= method is used to set the description for the command.</p>
+<p>The status_bar_text= method is used to set the status bar text for the command.</p>
 </div></span>
   
 </li>
@@ -611,7 +614,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The tooltip method returns command item’s tooltip’s header text.</p>
+<p>The tooltip method returns command item&#39;s tooltip text.</p>
 </div></span>
   
 </li>
@@ -635,7 +638,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#tooltip=-instance_method" title="UI::Command#tooltip= (method)">#tooltip=</a></span> method is used to define a command item’s tooltip header.</p>
+<p>The <span class='object_link'><a href="#tooltip=-instance_method" title="UI::Command#tooltip= (method)">#tooltip=</a></span> method is used to define a command item&#39;s tooltip header.</p>
 </div></span>
   
 </li>
@@ -664,6 +667,14 @@
 <div class="docstring">
   <div class="discussion">
     
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>Prior to SketchUp 2019 it was not possible to sub-class <span class='object_link'><a href="" title="UI::Command (class)">UI::Command</a></span> due to a bug in how SketchUp initialized the class.</p>
+</div>
+  </div>
+
+
 <p>The new method is used to create a new command.</p>
 
 
@@ -675,8 +686,14 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Example Command</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Extensions</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="../Sketchup/Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_separator'><span class='object_link'><a href="../Sketchup/Menu.html#add_separator-instance_method" title="Sketchup::Menu#add_separator (method)">add_separator</a></span></span>
+
+<span class='comment'># Adds a Test submenu to the Draw menu where the Tester menu item appears
+</span><span class='id identifier rubyid_testmenu'>testmenu</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_submenu'><span class='object_link'><a href="../Sketchup/Menu.html#add_submenu-instance_method" title="Sketchup::Menu#add_submenu (method)">add_submenu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+<span class='comment'># This menu item simply displays Hello World on the screen when clicked.
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_testmenu'>testmenu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span></code></pre>
     
   </div>
 
@@ -701,7 +718,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The text that will appear for this command’s menu item if it appears on a menu.</p>
+<p>The text that will appear for this command&#39;s menu item if it appears on a menu.</p>
 </div>
       
     </li>
@@ -745,22 +762,6 @@
     </li>
   
 </ul>
-<p class="tag_title">Known Bugs:</p>
-<ul class="bug">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>Prior to SketchUp 2019 it was not possible to sub-class <span class='object_link'><a href="" title="UI::Command (class)">UI::Command</a></span> due to a bug in how SketchUp initialized the class.</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 </div>
 </div>
@@ -788,7 +789,15 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#extension-instance_method" title="UI::Command#extension (method)">#extension</a></span> method returns the command’s associated extension.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>This is an advanced feature that extension developers normally won&#39;t have to deal with. It&#39;s purpose is to address scenarios when SketchUp isn&#39;t able to automatically infer which extension the command belongs to.</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#extension-instance_method" title="UI::Command#extension (method)">#extension</a></span> method returns the command&#39;s associated extension.</p>
 
 
   </div>
@@ -800,9 +809,9 @@
     
       
       <pre class="example code"><code><span class='id identifier rubyid_extension'>extension</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extensions'><span class='object_link'><a href="../Sketchup.html#extensions-class_method" title="Sketchup.extensions (method)">extensions</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Sandbox Tools</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_extension'>extension</span> <span class='op'>=</span> <span class='id identifier rubyid_extension'>extension</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_extension'>extension</span> <span class='op'>==</span> <span class='id identifier rubyid_extension'>extension</span></code></pre>
+<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_extension'>extension</span> <span class='op'>=</span> <span class='id identifier rubyid_extension'>extension</span>
+<span class='id identifier rubyid_p'>p</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_extension'>extension</span> <span class='op'>==</span> <span class='id identifier rubyid_extension'>extension</span></code></pre>
     
   </div>
 
@@ -858,12 +867,12 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>This is an advanced feature that extension developers normally won’t have to deal with. It’s purpose is to address scenarios when SketchUp isn’t able to automatically infer which extension the command belongs to. These scenarios are for example an extension using a library to add its commands or command manager extensions.</p>
+<p>This is an advanced feature that extension developers normally won&#39;t have to deal with. It&#39;s purpose is to address scenarios when SketchUp isn&#39;t able to automatically infer which extension the command belongs to. These scenarios are for example an extension using a library to add its commands or command manager extensions.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#extension=-instance_method" title="UI::Command#extension= (method)">#extension=</a></span> method explicitly sets the command’s associated extension.</p>
+<p>The <span class='object_link'><a href="#extension=-instance_method" title="UI::Command#extension= (method)">#extension=</a></span> method explicitly sets the command&#39;s associated extension.</p>
 
 
   </div>
@@ -875,7 +884,7 @@
     
       
       <pre class="example code"><code><span class='id identifier rubyid_extension'>extension</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extensions'><span class='object_link'><a href="../Sketchup.html#extensions-class_method" title="Sketchup.extensions (method)">extensions</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Sandbox Tools</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
 <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_extension'>extension</span> <span class='op'>=</span> <span class='id identifier rubyid_extension'>extension</span></code></pre>
     
   </div>
@@ -931,7 +940,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#get_validation_proc-instance_method" title="UI::Command#get_validation_proc (method)">#get_validation_proc</a></span> method returns the command’s validation proc.</p>
+<p>The <span class='object_link'><a href="#get_validation_proc-instance_method" title="UI::Command#get_validation_proc (method)">#get_validation_proc</a></span> method returns the command&#39;s validation proc.</p>
 
 
   </div>
@@ -942,9 +951,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_set_validation_proc'>set_validation_proc</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_CHECKED-constant" title="MF_CHECKED (constant)">MF_CHECKED</a></span></span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_proc'>proc</span> <span class='op'>=</span> <span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_get_validation_proc'>get_validation_proc</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_set_validation_proc'>set_validation_proc</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_DISABLED-constant" title="MF_DISABLED (constant)">MF_DISABLED</a></span></span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_proc'>proc</span> <span class='op'>=</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_get_validation_proc'>get_validation_proc</span></code></pre>
     
   </div>
 
@@ -1004,7 +1013,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The large_icon method returns the icon file for the command’s large icon.</p>
+<p>The large_icon method returns the icon file for the command&#39;s large icon.</p>
 
 
   </div>
@@ -1015,12 +1024,17 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons/my_action.svg</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This command displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='comment'># Use __dir__ to set the icon paths relative to the current file&#39;s directory
+</span><span class='comment'># __dir__ returns the directory of the file where it is called
+</span><span class='comment'># File.join is used to construct file paths in a platform-independent way
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span></code></pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span></code></pre>
     
   </div>
 
@@ -1033,6 +1047,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>the path to the large icon.</p>
+</div>
       
     </li>
   
@@ -1073,11 +1092,9 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The large_icon= method is used to set the icon file for the command’s large icon. large icons should be 32x32 pixel images for best display quality. Along the edge there should be a 4 px empty margin for the icon to match those of native SketchUp commands.</p>
+<p>The large_icon= method is used to identify the icon file for the command&#39;s large icon. large icons should be 32x32 pixel images for best display quality.</p>
 
-<p>Starting in SketchUp 2016 it is possible to use vector images for better display at varying UI scaling. SVG format for Windows and PDF format for Mac. Since the vector images scale for both small and large icon sizes, you only need to use one.</p>
-
-<p>Starting in SketchUp 2027 it is possible to use SVG on both Windows and Mac.</p>
+<p>Since SketchUp 2016 it is possible to provide vector images for the command. SVG format for Windows and PDF format for OS X. Since the vector images scale for both small and large icon sizes, you may choose to use only one vector image for both variants.</p>
 
 
   </div>
@@ -1088,11 +1105,15 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_file_extension'>file_extension</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'><span class='object_link'><a href="../Sketchup.html#platform-class_method" title="Sketchup.platform (method)">platform</a></span></span> <span class='op'>==</span> <span class='symbol'>:platform_win</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>svg</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pdf</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons/my_action.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_file_extension'>file_extension</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This command displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='comment'># Use __dir__ to set the icon paths relative to the current file&#39;s directory
+</span><span class='comment'># __dir__ returns the directory of the file where it is called
+</span><span class='comment'># File.join is used to construct file paths in a platform-independent way
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
@@ -1188,12 +1209,13 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_add_separator_to_menu'><span class='object_link'><a href="../top-level-namespace.html#add_separator_to_menu-instance_method" title="#add_separator_to_menu (method)">add_separator_to_menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'># Adds a Test submenu to the Draw menu where the Tester menu item appears
+</span><span class='id identifier rubyid_testmenu'>testmenu</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_submenu'><span class='object_link'><a href="../Sketchup/Menu.html#add_submenu-instance_method" title="Sketchup::Menu#add_submenu (method)">add_submenu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New String</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_testmenu'>testmenu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span></code></pre>
     
   </div>
 
@@ -1257,11 +1279,12 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_add_separator_to_menu'><span class='object_link'><a href="../top-level-namespace.html#add_separator_to_menu-instance_method" title="#add_separator_to_menu (method)">add_separator_to_menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'># Adds a Test submenu to the Draw menu where the Tester menu item appears
+</span><span class='id identifier rubyid_testmenu'>testmenu</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_submenu'><span class='object_link'><a href="../Sketchup/Menu.html#add_submenu-instance_method" title="Sketchup::Menu#add_submenu (method)">add_submenu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New String</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_testmenu'>testmenu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span></code></pre>
     
   </div>
 
@@ -1345,7 +1368,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#proc-instance_method" title="UI::Command#proc (method)">#proc</a></span> method returns the command’s proc that is called when the command is invoked.</p>
+<p>The <span class='object_link'><a href="#proc-instance_method" title="UI::Command#proc (method)">#proc</a></span> method returns the command&#39;s proc that is called when the command is invoked.</p>
 
 
   </div>
@@ -1356,8 +1379,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_proc'>proc</span> <span class='op'>=</span> <span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_proc'>proc</span>
+      <pre class="example code"><code><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_set_validation_proc'>set_validation_proc</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_DISABLED-constant" title="MF_DISABLED (constant)">MF_DISABLED</a></span></span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_proc'>proc</span> <span class='op'>=</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_proc'>proc</span>
 <span class='id identifier rubyid_proc'>proc</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span></code></pre>
     
   </div>
@@ -1414,7 +1438,7 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Avoid disabling an command as it often isn’t obvious to the user why it is disabled. Prefer keeping the command enabled but show an error message if pressed when it cannot be used.</p>
+<p>Avoid disabling an command as it often isn&#39;t obvious to the user why it is disabled. Prefer keeping the command enabled but show an error message if pressed when it cannot be used.</p>
 </div>
   </div>
 
@@ -1430,20 +1454,19 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_menu'>menu</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Extensions</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Display Color by Layer</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_rendering_options'>rendering_options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="../Sketchup/Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span>
-  <span class='id identifier rubyid_rendering_options'>rendering_options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DisplayColorByLayer</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='op'>!</span> <span class='id identifier rubyid_rendering_options'>rendering_options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DisplayColorByLayer</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_set_validation_proc'>set_validation_proc</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_rendering_options'>rendering_options</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'><span class='object_link'><a href="../Sketchup/Model.html#rendering_options-instance_method" title="Sketchup::Model#rendering_options (method)">rendering_options</a></span></span>
-  <span class='kw'>if</span> <span class='id identifier rubyid_rendering_options'>rendering_options</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DisplayColorByLayer</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-    <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_CHECKED-constant" title="MF_CHECKED (constant)">MF_CHECKED</a></span></span>
+      <pre class="example code"><code><span class='comment'># Create a command object.
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span>
+  <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Command</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_menu_text'>menu_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Command</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_set_validation_proc'>set_validation_proc</span> <span class='lbrace'>{</span>
+  <span class='kw'>if</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_selection'><span class='object_link'><a href="../Sketchup/Model.html#selection-instance_method" title="Sketchup::Model#selection (method)">selection</a></span></span><span class='period'>.</span><span class='id identifier rubyid_length'><span class='object_link'><a href="../Sketchup/Selection.html#length-instance_method" title="Sketchup::Selection#length (method)">length</a></span></span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_GRAYED-constant" title="MF_GRAYED (constant)">MF_GRAYED</a></span></span>
   <span class='kw'>else</span>
-    <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_UNCHECKED-constant" title="MF_UNCHECKED (constant)">MF_UNCHECKED</a></span></span>
+    <span class='const'><span class='object_link'><a href="../top-level-namespace.html#MF_ENABLED-constant" title="MF_ENABLED (constant)">MF_ENABLED</a></span></span>
   <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='id identifier rubyid_menu'>menu</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span></code></pre>
+<span class='rbrace'>}</span>
+<span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_menu'><span class='object_link'><a href="../UI.html#menu-class_method" title="UI.menu (method)">menu</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Draw</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_add_item'><span class='object_link'><a href="../Sketchup/Menu.html#add_item-instance_method" title="Sketchup::Menu#add_item (method)">add_item</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -1466,7 +1489,7 @@
       
       
         
-        <div class='inline'><dl class="rdoc-list label-list"><dt></dt>
+        <div class='inline'><dl class="rdoc-list label-list"><dt>
 <dd></dd></dl>
 </div>
       
@@ -1540,7 +1563,7 @@
       
         
         <div class='inline'>
-<p>On Mac the validation proc isn’t called as often as it should. For instance a selection change doesn’t trigger it.</p>
+<p>On Mac the validation proc isn&#39;t called as often as it should. For instance a selection change doesn&#39;t trigger it.</p>
 </div>
       
     </li>
@@ -1566,7 +1589,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The small_icon method returns the icon file for the command’s small icon.</p>
+<p>The small_icon method returns the icon file for the command&#39;s small icon.</p>
 
 
   </div>
@@ -1577,12 +1600,17 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons/my_action.svg</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This toolbar command displays Hello World on the screen when clicked.
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='comment'># Use __dir__ to set the icon paths relative to the current file&#39;s directory
+</span><span class='comment'># __dir__ returns the directory of the file where it is called
+</span><span class='comment'># File.join is used to construct file paths in a platform-independent way
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span></code></pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span></code></pre>
     
   </div>
 
@@ -1595,6 +1623,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>the path to the small_icon</p>
+</div>
       
     </li>
   
@@ -1635,11 +1668,9 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The small_icon= method is used to set the icon file for the command’s small icon. Small icons should be 24x24 pixel images for best display quality.</p>
+<p>The small_icon= method is used to identify the icon file for the command&#39;s small icon. Small icons should be 24x24 pixel images for best display quality.</p>
 
-<p>Starting in SketchUp 2016 it is possible to use vector images for better display at varying UI scaling. SVG format for Windows and PDF format for Mac. Since the vector images scale for both small and large icon sizes, you only need to use one.</p>
-
-<p>Starting in SketchUp 2027 it is possible to use SVG on both Windows and Mac.</p>
+<p>Since SketchUp 2016 it is possible to provide vector images for the cursors. SVG format for Windows and PDF format for OS X. Since the vector images scale for both small and large icon sizes, you may choose to use only one vector image for both variants.</p>
 
 
   </div>
@@ -1650,11 +1681,15 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_file_extension'>file_extension</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_platform'><span class='object_link'><a href="../Sketchup.html#platform-class_method" title="Sketchup.platform (method)">platform</a></span></span> <span class='op'>==</span> <span class='symbol'>:platform_win</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>svg</span><span class='tstring_end'>&quot;</span></span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pdf</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons/my_action.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_file_extension'>file_extension</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This toolbar command displays Hello World on the screen when clicked.
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='comment'># Use __dir__ to set the icon paths relative to the current file&#39;s directory
+</span><span class='comment'># __dir__ returns the directory of the file where it is called
+</span><span class='comment'># File.join is used to construct file paths in a platform-independent way
+</span><span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid___dir__'>__dir__</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>icons</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
@@ -1739,7 +1774,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The status_bar_text method returns the description of the command.</p>
+<p>The status_bar_text method returns the status bar text for the command.</p>
 
 
   </div>
@@ -1750,12 +1785,16 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show a message that says hello world.</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'># This toolbar tool simply displays Hello World on the screen
+</span><span class='comment'># when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Testing the toolbars class.</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span></code></pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span></code></pre>
     
   </div>
 
@@ -1768,6 +1807,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>the status bar text.</p>
+</div>
       
     </li>
   
@@ -1808,7 +1852,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The status_bar_text= method is used to set the description for the command. This should typically be a one sentence paragraph with a trailing point.</p>
+<p>The status_bar_text= method is used to set the status bar text for the command. This should be a description what the command does.</p>
 
 
   </div>
@@ -1819,10 +1863,13 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Show a message that says hello world.</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='comment'># This toolbar tool simply displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Tester</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_small_icon'>small_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilSmall.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_large_icon'>large_icon</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ToolPencilLarge.png</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_status_bar_text'>status_bar_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Testing the toolbars class.</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
@@ -1845,6 +1892,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>The text that will appear on the status bar when the cursor is over the command&#39;s menu item.</p>
+</div>
       
     </li>
   
@@ -1902,7 +1954,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The tooltip method returns command item’s tooltip’s header text.</p>
+<p>The tooltip method returns command item&#39;s tooltip text.</p>
 
 
   </div>
@@ -1913,12 +1965,13 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This command displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World Tool</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span></code></pre>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span></code></pre>
     
   </div>
 
@@ -1931,6 +1984,11 @@
         <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p>the tooltip text</p>
+</div>
       
     </li>
   
@@ -1974,12 +2032,12 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>The tooltip text should repeat the commands’ title text. For the command description, use <span class='object_link'><a href="#status_bar_text-instance_method" title="UI::Command#status_bar_text (method)">#status_bar_text</a></span>.</p>
+<p>The tooltip text should repeat the commands&#39; title text. For the command description, use <span class='object_link'><a href="#status_bar_text-instance_method" title="UI::Command#status_bar_text (method)">#status_bar_text</a></span>.</p>
 </div>
   </div>
 
 
-<p>The <span class='object_link'><a href="#tooltip=-instance_method" title="UI::Command#tooltip= (method)">#tooltip=</a></span> method is used to define a command item’s tooltip header. Tooltips will appear when the command is attached to a tool bar and the user hovers their cursor over the icon.</p>
+<p>The <span class='object_link'><a href="#tooltip=-instance_method" title="UI::Command#tooltip= (method)">#tooltip=</a></span> method is used to define a command item&#39;s tooltip header. Tooltips will appear when the command is attached to a tool bar and the user hovers their cursor over the icon.</p>
 
 
   </div>
@@ -1990,10 +2048,11 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Toolbar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_command'>command</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>My Action</span><span class='tstring_end'>&quot;</span></span>
-<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span><span class='lparen'>(</span><span class='id identifier rubyid_command'>command</span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Toolbar.html" title="UI::Toolbar (class)">Toolbar</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Toolbar.html#new-class_method" title="UI::Toolbar.new (method)">new</a></span></span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span>
+<span class='comment'># This command displays Hello World on the screen when clicked
+</span><span class='id identifier rubyid_cmd'>cmd</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::Command (class)">Command</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::Command#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Test</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='period'>.</span><span class='id identifier rubyid_messagebox'><span class='object_link'><a href="../UI.html#messagebox-class_method" title="UI.messagebox (method)">messagebox</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_cmd'>cmd</span><span class='period'>.</span><span class='id identifier rubyid_tooltip'>tooltip</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello World Tool</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_toolbar'>toolbar</span> <span class='op'>=</span> <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_add_item'>add_item</span> <span class='id identifier rubyid_cmd'>cmd</span>
 <span class='id identifier rubyid_toolbar'>toolbar</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>

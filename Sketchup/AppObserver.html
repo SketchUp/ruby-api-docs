@@ -195,7 +195,7 @@
 
 <p>This observer interface is implemented to react to application events. This interface is often used to attach other observers to models as they are opened or started. This ensures that your observers are watching all open models.</p>
 
-<p>For example, when one attaches a <span class='object_link'><a href="SelectionObserver.html" title="Sketchup::SelectionObserver (class)">SelectionObserver</a></span>, it is only attached to the <span class='object_link'><a href="Selection.html" title="Sketchup::Selection (class)">Selection</a></span> collection of a given model. If a 2nd model is opened, the new model’s selection changes will not fire selection callbacks unless you’ve attached a <span class='object_link'><a href="SelectionObserver.html" title="Sketchup::SelectionObserver (class)">SelectionObserver</a></span> to the new model as well. By watching for <span class='object_link'><a href="#onNewModel-instance_method" title="Sketchup::AppObserver#onNewModel (method)">#onNewModel</a></span>, you can be sure to do so.</p>
+<p>For example, when one attaches a <span class='object_link'><a href="SelectionObserver.html" title="Sketchup::SelectionObserver (class)">SelectionObserver</a></span>, it is only attached to the <span class='object_link'><a href="Selection.html" title="Sketchup::Selection (class)">Selection</a></span> collection of a given model. If a 2nd model is opened, the new model&#39;s selection changes will not fire selection callbacks unless you&#39;ve attached a <span class='object_link'><a href="SelectionObserver.html" title="Sketchup::SelectionObserver (class)">SelectionObserver</a></span> to the new model as well. By watching for <span class='object_link'><a href="#onNewModel-instance_method" title="Sketchup::AppObserver#onNewModel (method)">#onNewModel</a></span>, you can be sure to do so.</p>
 
 
   </div>
@@ -206,45 +206,19 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-        <h5 class="example_title"><div class='inline'>
-<p>Complete example with class definition and observer attachment</p>
-</div></h5>
-      
-      <pre class="example code"><code><span class='comment'># Define an observer class that watches for application-level events.
-</span><span class='comment'># This is particularly useful for attaching model-specific observers
-</span><span class='comment'># to ensure all open models are monitored.
+      <pre class="example code"><code><span class='comment'># This is an example of an observer that watches the application for
+</span><span class='comment'># new models and shows a messagebox.
 </span><span class='kw'>class</span> <span class='const'>MyAppObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'>AppObserver</span>
-
   <span class='kw'>def</span> <span class='id identifier rubyid_onNewModel'>onNewModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New model created: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='comment'># Attach observers to the new model here
-</span>    <span class='comment'># model.selection.add_observer(MySelectionObserver.new)
-</span>  <span class='kw'>end</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onNewModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 
-  <span class='kw'>def</span> <span class='id identifier rubyid_onOpenModel'>onOpenModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Model opened: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='comment'># Attach observers to the opened model here
-</span>  <span class='kw'>end</span>
-
-  <span class='kw'>def</span> <span class='id identifier rubyid_onActivateModel'>onActivateModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Model activated: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='comment'># Called when switching between models (Mac supports multiple documents)
-</span>  <span class='kw'>end</span>
-
-  <span class='kw'>def</span> <span class='id identifier rubyid_onQuit'>onQuit</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SketchUp is quitting</span><span class='tstring_end'>&quot;</span></span>
-    <span class='comment'># Save state or clean up before application exits
-</span>  <span class='kw'>end</span>
-
-  <span class='comment'># Return true to receive onNewModel/onOpenModel for startup models
-</span>  <span class='kw'>def</span> <span class='id identifier rubyid_expectsStartupModelNotifications'>expectsStartupModelNotifications</span>
-    <span class='kw'>return</span> <span class='kw'>true</span>
+    <span class='comment'># Here is where one might attach other observers to the new model.
+</span>    <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_selection'>selection</span><span class='period'>.</span><span class='id identifier rubyid_add_observer'>add_observer</span><span class='lparen'>(</span><span class='const'>MySelectionObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span>
 
-<span class='comment'># Create and attach the observer instance
-</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyAppObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>AppObserver attached successfully</span><span class='tstring_end'>&quot;</span></span></code></pre>
+<span class='comment'># Attach the observer
+</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyAppObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -327,30 +301,6 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#onActivateModel-instance_method" title="Sketchup::AppObserver#onActivateModel (method)">#onActivateModel</a></span> method is called when an open model is activated.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#onCloseModel-instance_method" title="#onCloseModel (instance method)">#<strong>onCloseModel</strong>(model)  &#x21d2; nil </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">#onCloseModel</a></span> method is called just before a model is closed, while the model is still valid.</p>
 </div></span>
   
 </li>
@@ -521,19 +471,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyStartupObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onNewModel'>onNewModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New model: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onOpenModel'>onOpenModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Opened model: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_expectsStartupModelNotifications'>expectsStartupModelNotifications</span>
-    <span class='kw'>true</span>  <span class='comment'># Return true to receive startup notifications
-</span>  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyStartupObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='comment'># Restart SketchUp to see startup model notifications</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_expectsStartupModelNotifications'>expectsStartupModelNotifications</span>
+  <span class='kw'>return</span> <span class='kw'>true</span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -602,13 +542,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyActivateObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onActivateModel'>onActivateModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Model activated: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Title: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyActivateObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onActivateModel'>onActivateModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onActivateModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -677,110 +613,6 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="onCloseModel-instance_method">
-  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
-  
-    #<strong>onCloseModel</strong>(model)  &#x21d2; <tt>nil</tt> 
-  
-
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>The <span class='object_link'><a href="#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">#onCloseModel</a></span> method is called just before a model is closed, while the model is still valid. This is useful for cleaning up resources or saving state before the model becomes unavailable.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <h4 class="tag_title">Examples:</h4>
-    
-      
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyCloseObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onCloseModel'>onCloseModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Model closing: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Title: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Entities: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='comment'># Model is still valid here - you can query its properties
-</span>  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyCloseObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='comment'># Then close the model window</span></code></pre>
-    
-  </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>model</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The model being closed.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>nil</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div>
-
-<p class="tag_title">Version:</p>
-<ul class="version">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>SketchUp 2027.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="onExtensionsLoaded-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -807,14 +639,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyExtensionsObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onExtensionsLoaded'>onExtensionsLoaded</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>All extensions have been loaded!</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Total extensions: </span><span class='embexpr_beg'>#{</span><span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_extensions'><span class='object_link'><a href="../Sketchup.html#extensions-class_method" title="Sketchup.extensions (method)">extensions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_count'><span class='object_link'><a href="ExtensionsManager.html#count-instance_method" title="Sketchup::ExtensionsManager#count (method)">count</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyExtensionsObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='comment'># This already fired at startup. Restart SketchUp to see it again.</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onExtensionsLoaded'>onExtensionsLoaded</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onExtensionsLoaded</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -867,16 +694,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyNewModelObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onNewModel'>onNewModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>New model created: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_expectsStartupModelNotifications'>expectsStartupModelNotifications</span>
-    <span class='kw'>true</span>  <span class='comment'># Receive notifications for startup models
-</span>  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyNewModelObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='comment'># Then create a new model: File &gt; New</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onNewModel'>onNewModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onNewModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -963,7 +783,7 @@
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>If a skp file is loaded via the command line or double-clicking on a skp in explorer (which is also is the command line) then this observer will not be called.  The Ruby interpreter in SketchUp is initialized after command line processing so the observer won’t be added in time to get the notification.</p>
+<p>If a skp file is loaded via the command line or double-clicking on a skp in explorer (which is also is the command line) then this observer will not be called.  The Ruby interpreter in SketchUp is initialized after command line processing so the observer won&#39;t be added in time to get the notification.</p>
 </div>
   </div>
 
@@ -979,17 +799,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyOpenModelObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onOpenModel'>onOpenModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Model opened: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Path: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_expectsStartupModelNotifications'>expectsStartupModelNotifications</span>
-    <span class='kw'>true</span>  <span class='comment'># Receive notifications for startup models
-</span>  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyOpenModelObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='comment'># Then open a model: File &gt; Open</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onOpenModel'>onOpenModel</span><span class='lparen'>(</span><span class='id identifier rubyid_model'>model</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onOpenModel: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_model'>model</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -1084,12 +896,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyQuitObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onQuit'>onQuit</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>SketchUp is closing!</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyQuitObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onQuit'>onQuit</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onQuit</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 
@@ -1153,13 +962,9 @@
     <h4 class="tag_title">Examples:</h4>
     
       
-      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyUnloadObserver</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Sketchup::AppObserver (class)">AppObserver</a></span></span>
-  <span class='kw'>def</span> <span class='id identifier rubyid_onUnloadExtension'>onUnloadExtension</span><span class='lparen'>(</span><span class='id identifier rubyid_extension_name'>extension_name</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Extension unloaded: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_extension_name'>extension_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span>
-<span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_add_observer'><span class='object_link'><a href="../Sketchup.html#add_observer-class_method" title="Sketchup.add_observer (method)">add_observer</a></span></span><span class='lparen'>(</span><span class='const'>MyUnloadObserver</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='rparen'>)</span>
-<span class='comment'># Then: Window &gt; Extension Manager &gt; Disable an extension</span></code></pre>
+      <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onUnloadExtension'>onUnloadExtension</span><span class='lparen'>(</span><span class='id identifier rubyid_extension_name'>extension_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onUnloadExtension: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_extension_name'>extension_name</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></code></pre>
     
   </div>
 

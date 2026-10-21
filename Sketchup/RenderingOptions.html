@@ -435,6 +435,9 @@
         <dt id="ROPSetDepthQueWidth-constant" class="">Sketchup::RenderingOptions::ROPSetDepthQueWidth
         </dt>
       
+        <dt id="ROPSetDisplayColorByLayer-constant" class="">Sketchup::RenderingOptions::ROPSetDisplayColorByLayer
+        </dt>
+      
         <dt id="ROPSetDisplayDims-constant" class="">Sketchup::RenderingOptions::ROPSetDisplayDims
         </dt>
       
@@ -604,6 +607,12 @@
         </dt>
       
         <dt id="ROPSetAOIntensity-constant" class="">Sketchup::RenderingOptions::ROPSetAOIntensity
+        </dt>
+      
+        <dt id="ROPSetModelingGrid-constant" class="">Sketchup::RenderingOptions::ROPSetModelingGrid
+        </dt>
+      
+        <dt id="ROPSetHideSpaces-constant" class="">Sketchup::RenderingOptions::ROPSetHideSpaces
         </dt>
       
         <dt id="ROPSetAOColorEnabled-constant" class="">Sketchup::RenderingOptions::ROPSetAOColorEnabled
@@ -871,54 +880,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#hatch_pattern-instance_method" title="#hatch_pattern (instance method)">#<strong>hatch_pattern</strong>  &#x21d2; Sketchup::HatchPatternData </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Retrieves the default section fill style assigned to the rendering options.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#hatch_pattern=-instance_method" title="#hatch_pattern= (instance method)">#<strong>hatch_pattern=</strong>(pattern)  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Assigns the default section fill style to the rendering options.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#keys-instance_method" title="#keys (instance method)">#<strong>keys</strong>  &#x21d2; Array&lt;String&gt; </a>
     
 
@@ -1017,7 +978,6 @@
 
 
 
-  
   
   
   
@@ -1383,7 +1343,7 @@
       
         &mdash;
         <div class='inline'>
-<p>If the given key is invalid, the key’s value is not settable, or the given value is invalid. SketchUp versions earlier than 2024.0 will not raise this error.</p>
+<p>If the given key is invalid, the key&#39;s value is not settable, or the given value is invalid. SketchUp versions earlier than 2024.0 will not raise this error.</p>
 </div>
       
     </li>
@@ -1819,141 +1779,6 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="hatch_pattern-instance_method">
-  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
-  
-    #<strong>hatch_pattern</strong>  &#x21d2; <tt><span class='object_link'><a href="HatchPatternData.html" title="Sketchup::HatchPatternData (class)">Sketchup::HatchPatternData</a></span></tt> 
-  
-
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Retrieves the default section fill style assigned to the rendering options.</p>
-
-<p>The returned object is a frozen snapshot detached from the model. To change the default section fill style, mutate a <code>dup</code> of it (or a new instance) and assign it back via <span class='object_link'><a href="#hatch_pattern=-instance_method" title="Sketchup::RenderingOptions#hatch_pattern= (method)">#hatch_pattern=</a></span>.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <h4 class="tag_title">Examples:</h4>
-    
-      
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
-<span class='id identifier rubyid_hatch_pattern_data'>hatch_pattern_data</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'>rendering_options</span><span class='period'>.</span><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span></code></pre>
-    
-  </div>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="HatchPatternData.html" title="Sketchup::HatchPatternData (class)">Sketchup::HatchPatternData</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Version:</p>
-<ul class="version">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>SketchUp 2027.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="hatch_pattern=-instance_method">
-  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
-  
-    #<strong>hatch_pattern=</strong>(pattern)  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>Assigns the default section fill style to the rendering options.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <h4 class="tag_title">Examples:</h4>
-    
-      
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
-<span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span>
-<span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_rendering_options'>rendering_options</span><span class='period'>.</span><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern1</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span></code></pre>
-    
-  </div>
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>pattern</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="HatchPatternData.html" title="Sketchup::HatchPatternData (class)">Sketchup::HatchPatternData</a></span></tt>, <tt><span class='object_link'><a href="HatchPattern.html" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>, <tt>nil</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Version:</p>
-<ul class="version">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>SketchUp 2027.0</p>
 </div>
       
     </li>

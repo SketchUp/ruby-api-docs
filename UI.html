@@ -386,7 +386,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#menu-class_method" title="UI.menu (method)">UI.menu</a></span> method retrieves a SketchUp’s menu object with a given name.</p>
+<p>The <span class='object_link'><a href="#menu-class_method" title="UI.menu (method)">UI.menu</a></span> method retrieves a SketchUp&#39;s menu object with a given name.</p>
 </div></span>
   
 </li>
@@ -560,7 +560,7 @@
 </li>
 
       
-        <li class="public deprecated">
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#refresh_toolbars-class_method" title="refresh_toolbars (class method)">.<strong>refresh_toolbars</strong>  &#x21d2; nil </a>
@@ -573,12 +573,12 @@
   
   
   
-  <span class="deprecated note title">deprecated</span>
+  
   
 
   
-    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
-<p>As of SketchUp 2027.0 this is no longer needed. Toolbar state refreshes automatically on both platforms.</p>
+    <span class="summary_desc"><div class='inline'>
+<p>Tells SketchUp to refresh all floating toolbars.</p>
 </div></span>
   
 </li>
@@ -1175,7 +1175,7 @@
 
 <p>The size of the cursor images should be 32x32 pixels. Any size different from that will be scaled using the shrink-to-fit policy.</p>
 
-<p>The coordinates for the cursor’s hotspot are based from it’s top left corner, starting at (0, 0). For example, a value of (hot_x, hot_y) = (5, 10) would identify the hotpoint of the cursor at 5 pixels from the left edge of your cursor image and 10 pixels from the top edge of your cursor image.</p>
+<p>The coordinates for the cursor&#39;s hotspot are based from it&#39;s top left corner, starting at (0, 0). For example, a value of (hot_x, hot_y) = (5, 10) would identify the hotpoint of the cursor at 5 pixels from the left edge of your cursor image and 10 pixels from the top edge of your cursor image.</p>
 
 
   </div>
@@ -1772,15 +1772,24 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#menu-class_method" title="UI.menu (method)">menu</a></span> method retrieves a SketchUp’s menu object with a given name. This is the first step toward adding your own custom items to the bottom of SketchUp’s menus.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>The <tt>&#39;Extensions&#39;</tt> menu was named <tt>&#39;Plugins&#39;</tt> prior to SketchUp 2015. For backward compatibility <tt>&#39;Plugins&#39;</tt> still works.</p>
+</div>
+  </div>
 
-<p>Valid menu names are: <tt>‘File’</tt>, <tt>‘Edit’</tt>, <tt>‘View’</tt>, <tt>‘Camera’</tt>, <tt>‘Draw’</tt>, <tt>‘Tools’</tt>, <tt>‘Window’</tt>, <tt>‘Extensions’</tt>, <tt>‘Help’</tt>, <tt>‘Developer’</tt> and <tt>‘Procedures’</tt>.</p>
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p><tt>&#39;Developer&#39;</tt> menu was added with SketchUp 2021.1.</p>
+</div>
+  </div>
 
-<p>The <tt>‘Extensions’</tt> menu was named <tt>‘Plugins’</tt> prior to SketchUp 2015. For backward compatibility <tt>‘Plugins’</tt> still works.</p>
 
-<p>The <tt>‘Developer’</tt> menu was added with SketchUp 2021.1.</p>
+<p>The <span class='object_link'><a href="#menu-class_method" title="UI.menu (method)">menu</a></span> method retrieves a SketchUp&#39;s menu object with a given name. This is the first step toward adding your own custom items to the bottom of SketchUp&#39;s menus.</p>
 
-<p>The <tt>‘Procedures’</tt> menu was added with SketchUp 2027.0.</p>
+<p>Valid menu names are: <tt>&#39;File&#39;</tt>, <tt>&#39;Edit&#39;</tt>, <tt>&#39;View&#39;</tt>, <tt>&#39;Camera&#39;</tt>, <tt>&#39;Draw&#39;</tt>, <tt>&#39;Tools&#39;</tt>, <tt>&#39;Window&#39;</tt>, <tt>&#39;Extensions&#39;</tt>, <tt>&#39;Help&#39;</tt> and <tt>&#39;Developer&#39;</tt>.</p>
 
 
   </div>
@@ -2253,7 +2262,7 @@
       
         
         <div class='inline'>
-<p>Fixed in SketchUp 2014: Wildcards were not working properly from SU7 to SU2013. Wildcard filters did not populate the file type dropdown. The filter string would be shown in the file name field with ‘*’ characters converted to ‘_’ characters. Note, the format of a wildcard filter string has been changed. See the description of the filename parameter below for details.</p>
+<p>Fixed in SketchUp 2014: Wildcards were not working properly from SU7 to SU2013. Wildcard filters did not populate the file type dropdown. The filter string would be shown in the file name field with &#39;*&#39; characters converted to &#39;_&#39; characters. Note, the format of a wildcard filter string has been changed. See the description of the filename parameter below for details.</p>
 </div>
       
     </li>
@@ -2501,7 +2510,7 @@
   <div class="discussion">
     
 <p>The preferences_pages method is used to returns the names of all the preferences pages. These include windows like Templates.</p>
-<dl class="rdoc-list label-list"><dt>SketchUp 2017</dt>
+<dl class="rdoc-list label-list"><dt>SketchUp 2017
 <dd>
 <p><code>&quot;Extensions&quot;</code> page was removed.</p>
 </dd></dl>
@@ -2573,7 +2582,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Tells SketchUp to refresh all inspectors such as the Component Browser and the Outliner. This is useful when you need to manually force a refresh after you’ve made a change to the document via Ruby. Generally, SketchUp will keep these in sync for you, but occasionally it does not, such as when model.start_operation has disabled UI updates.</p>
+<p>Tells SketchUp to refresh all inspectors such as the Component Browser and the Outliner. This is useful when you need to manually force a refresh after you&#39;ve made a change to the document via Ruby. Generally, SketchUp will keep these in sync for you, but occasionally it does not, such as when model.start_operation has disabled UI updates.</p>
 
 
   </div>
@@ -2636,11 +2645,8 @@
 </h3>
 <div class="docstring">
   <div class="discussion">
-    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
-<p>As of SketchUp 2027.0 this is no longer needed. Toolbar state refreshes automatically on both platforms.</p>
-</div></div>
-
-<p>Tells SketchUp to refresh all floating toolbars. This is useful when you need to manually force a refresh after you’ve made a change to the document via Ruby. Generally, SketchUp will keep these in sync for you, but occasionally it does not, such as when <span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> has disabled UI updates. This only affects macOS, on Windows the toolbars are always refreshing.</p>
+    
+<p>Tells SketchUp to refresh all floating toolbars. This is useful when you need to manually force a refresh after you&#39;ve made a change to the document via Ruby. Generally, SketchUp will keep these in sync for you, but occasionally it does not, such as when <span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> has disabled UI updates. This only affects macOS, on Windows the toolbars are always refreshing.</p>
 
 
   </div>
@@ -2833,7 +2839,7 @@
       
         
         <div class='inline'>
-<p>Fixed in SketchUp 2014: Wildcards were not working properly from SU7 to SU2013. Semicolon-separated lists of wildcards did not populate the file type dropdown. The filter string would be shown in the file name field with ‘*’ characters converted to ‘_’ characters.</p>
+<p>Fixed in SketchUp 2014: Wildcards were not working properly from SU7 to SU2013. Semicolon-separated lists of wildcards did not populate the file type dropdown. The filter string would be shown in the file name field with &#39;*&#39; characters converted to &#39;_&#39; characters.</p>
 </div>
       
     </li>
@@ -3305,7 +3311,7 @@
     
 <p>The <span class='object_link'><a href="#set_cursor-class_method" title="UI.set_cursor (method)">set_cursor</a></span> method is used to change the cursor to a new cursor with a given cursor id. See UI.create_cursor and the Tool class for details on creating your own tools with arbitrary cursors.</p>
 
-<p>If you call this while a standard SketchUp tool is active, you will not see your custom cursor, as these tools are constantly setting their own cursors to indicate SketchUp’s state.</p>
+<p>If you call this while a standard SketchUp tool is active, you will not see your custom cursor, as these tools are constantly setting their own cursors to indicate SketchUp&#39;s state.</p>
 
 
   </div>
@@ -3582,7 +3588,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>Show the Extension Warehouse dialog inside SketchUp. If an extension UUID is provided the dialog navigates directly to that extension’s page. If no UUID is provided it opens the Extension Warehouse home page.</p>
+<p>Show the Extension Warehouse dialog inside SketchUp. If an extension UUID is provided the dialog navigates directly to that extension&#39;s page. If no UUID is provided it opens the Extension Warehouse home page.</p>
 
 
   </div>
@@ -3801,7 +3807,7 @@
   <div class="discussion">
     
 <p>The <span class='object_link'><a href="#show_model_info-class_method" title="UI.show_model_info (method)">show_model_info</a></span> method is used to display the model info dialog for a specific page. You can get the list of valid page names with <span class='object_link'><a href="#model_info_pages-class_method" title="UI.model_info_pages (method)">model_info_pages</a></span>.</p>
-<dl class="rdoc-list label-list"><dt>SketchUp 2014</dt>
+<dl class="rdoc-list label-list"><dt>SketchUp 2014
 <dd>
 <p><code>&quot;Classifications&quot;</code> page was added.</p>
 </dd></dl>
@@ -3889,7 +3895,7 @@
       
         
         <div class='inline'>
-<p>Until SketchUp 2021.1 SketchUp on Mac didn’t display the desired page in, but only selected it in the navigation.</p>
+<p>Until SketchUp 2021.1 SketchUp on Mac didn&#39;t display the desired page in, but only selected it in the navigation.</p>
 </div>
       
     </li>
@@ -3901,7 +3907,7 @@
       
         
         <div class='inline'>
-<p>Until SketchUp 2021.1 SketchUp on Mac didn’t accept English page names on localized builds.</p>
+<p>Until SketchUp 2021.1 SketchUp on Mac didn&#39;t accept English page names on localized builds.</p>
 </div>
       
     </li>
@@ -4017,7 +4023,7 @@
       
         
         <div class='inline'>
-<p>Under OSX this method doesn’t currently work.</p>
+<p>Under OSX this method doesn&#39;t currently work.</p>
 </div>
       
     </li>
@@ -4046,6 +4052,8 @@
 <p>The start_timer method is used to start a timer. This is an effective method to create a repeating snippet of code for arbitrary animation.</p>
 
 <p>See this blog post for an detailed example of custom animation using timers: <a href="http://sketchupapi.blogspot.com/2008/10/animate-yo-cheese.html">sketchupapi.blogspot.com/2008/10/animate-yo-cheese.html</a></p>
+
+<p>Note that there is a bug that if you open a modal window in a non-repeating timer the timer will repeat until the window is closed.</p>
 
 
   </div>
@@ -4157,22 +4165,6 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Known Bugs:</p>
-<ul class="bug">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>Prior to SketchUp 2023.1, opening a modal window in a non-repeating timer could cause the timer to repeat until the window closed. This issue has been fixed and was not reproducible in later versions on Windows or macOS.</p>
 </div>
       
     </li>
@@ -4295,7 +4287,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The toolbar method is used to get a Ruby toolbar by name. If the toolbar doesn’t exist a new one will be created.</p>
+<p>The toolbar method is used to get a Ruby toolbar by name. If the toolbar doesn&#39;t exist a new one will be created.</p>
 
 
   </div>

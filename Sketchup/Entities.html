@@ -406,30 +406,6 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#add_copy-instance_method" title="#add_copy (instance method)">#<strong>add_copy</strong>(entities, transform: IDENTITY)  &#x21d2; Array&lt;Sketchup::Drawingelement&gt; </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#add_copy-instance_method" title="Sketchup::Entities#add_copy (method)">#add_copy</a></span> method copies a set of drawing elements into this <span class='object_link'><a href="" title="Sketchup::Entities (class)">Entities</a></span> collection.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#add_cpoint-instance_method" title="#add_cpoint (instance method)">#<strong>add_cpoint</strong>(point)  &#x21d2; Sketchup::ConstructionPoint </a>
     
 
@@ -830,30 +806,6 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>The <span class='object_link'><a href="#at-instance_method" title="Sketchup::Entities#at (method)">#at</a></span> method is an alias for <span class='object_link'><a href="#[]-instance_method" title="Sketchup::Entities#[] (method)">#[]</a></span>.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#bounds-instance_method" title="#bounds (instance method)">#<strong>bounds</strong>  &#x21d2; Geom::BoundingBox </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Entities#bounds (method)">#bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding the collection of entities.</p>
 </div></span>
   
 </li>
@@ -1812,7 +1764,7 @@
         <div class="docstring">
   <div class="discussion">
     
-<p>An array of Edge objects that define the arc. Returns an empty array if <code>radius</code> is <code>0</code>.</p>
+<p>Returns an array of Edge objects that define the arc.</p>
 
 
   </div>
@@ -1931,7 +1883,7 @@
       
         &mdash;
         <div class='inline'>
-<p>an array of Edge objects that define the arc. Returns an empty array if <code>radius</code> is <code>0</code>.</p>
+<p>an array of Edge objects that define the arc.</p>
 </div>
       
     </li>
@@ -1947,7 +1899,7 @@
         <div class="docstring">
   <div class="discussion">
     
-<p>An array of Edge objects that define the arc. Returns an empty array if <code>radius</code> is <code>0</code>.</p>
+<p>Returns an array of Edge objects that define the arc.</p>
 
 
   </div>
@@ -2082,7 +2034,7 @@
       
         &mdash;
         <div class='inline'>
-<p>an array of Edge objects that define the arc. Returns an empty array if <code>radius</code> is <code>0</code>.</p>
+<p>an array of Edge objects that define the arc.</p>
 </div>
       
     </li>
@@ -2243,7 +2195,7 @@
       
         &mdash;
         <div class='inline'>
-<p>an Array object containing edges if successful. Returns an empty array if <code>radius</code> is <code>0</code>.</p>
+<p>an Array object containing edges if successful</p>
 </div>
       
     </li>
@@ -2459,208 +2411,6 @@
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="add_copy-instance_method">
-  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
-  
-    #<strong>add_copy</strong>(entities, transform: IDENTITY)  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt> 
-  
-
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>The <span class='object_link'><a href="#add_copy-instance_method" title="Sketchup::Entities#add_copy (method)">#add_copy</a></span> method copies a set of drawing elements into this <span class='object_link'><a href="" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection.</p>
-
-<p>Source elements’ geometric coordinates from within their parent components are preserved, and they are applied to the copies in this component’s local coordinate frame. The transformation is also interpreted to be in the local coordinates of this (target) component.</p>
-
-<p>The drawing elements being copied may already belong to this collection or to a different one, but they must all share the same parent, and belong to the same model as this collection. Dependent geometry needed to reproduce the originals (e.g. the edges bounding a copied face) are copied automatically and included in the result.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <h4 class="tag_title">Examples:</h4>
-    
-      
-      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
-<span class='id identifier rubyid_entities'>entities</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_active_entities'>active_entities</span>
-<span class='id identifier rubyid_face'>face</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_face'>add_face</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>9</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>9</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_transformation'>transformation</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Transformation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Transformation.html#initialize-instance_method" title="Geom::Transformation#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='int'>20</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_copies'>copies</span> <span class='op'>=</span> <span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_add_copy'>add_copy</span><span class='lparen'>(</span><span class='id identifier rubyid_face'>face</span><span class='comma'>,</span> <span class='label'>transform:</span> <span class='id identifier rubyid_transformation'>transformation</span><span class='rparen'>)</span></code></pre>
-    
-  </div>
-
-  <div class="docstring">
-  <div class="discussion">
-    
-<p>Returns the copied drawing elements. If the elements are split by intersecting geometry, more elements can be returned than were originally passed in.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>entities</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>, <tt><span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span></tt>, <tt><span class='object_link'><a href="Selection.html" title="Sketchup::Selection (class)">Sketchup::Selection</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>The drawing elements to copy.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>transform</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span></tt>)</span>
-      
-      
-        <em class="default">(defaults to: <tt>IDENTITY</tt>)</em>
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>A transformation applied to the copies within the local axes of this component.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>&lt;<span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Sketchup::Drawingelement</a></span>&gt;</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the copied drawing elements. If the elements are split by intersecting geometry, more elements can be returned than were originally passed in.</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-
-<p class="tag_title">Raises:</p>
-<ul class="raise">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>TypeError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if any of the given entities is not a <span class='object_link'><a href="Drawingelement.html" title="Sketchup::Drawingelement (class)">Drawingelement</a></span>.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>ArgumentError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the entities do not share a common parent.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>ArgumentError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the entities do not belong to the same model as this collection.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>ArgumentError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the transformation is not invertible.</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>ArgumentError</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>if the copy would create a recursive component definition.</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Version:</p>
-<ul class="version">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>SketchUp 2027.0</p>
 </div>
       
     </li>
@@ -3040,7 +2790,7 @@
       
         &mdash;
         <div class='inline'>
-<p>the reference point and/or entity at the end of the dimension. This parameter takes the exact same forms as ‘start_pt_or_entity’.</p>
+<p>the reference point and/or entity at the end of the dimension. This parameter takes the exact same forms as &#39;start_pt_or_entity&#39;.</p>
 </div>
       
     </li>
@@ -3056,7 +2806,7 @@
       
         &mdash;
         <div class='inline'>
-<p>the parallel offset vector from the reference line to the dimension line measured from the ‘start’ reference point.</p>
+<p>the parallel offset vector from the reference line to the dimension line measured from the &#39;start&#39; reference point.</p>
 </div>
       
     </li>
@@ -3174,7 +2924,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The Array&lt;Sketchup::Entity&gt; must contain one or more <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>‘s and a leaf entity. The leaf entity can be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, or <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>. The <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> is the point associated with the leaf entity.</p>
+<p>The Array&lt;Sketchup::Entity&gt; must contain one or more <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>&#39;s and a leaf entity. The leaf entity can be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, or <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>. The <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> is the point associated with the leaf entity.</p>
 </div>
       
     </li>
@@ -3190,7 +2940,7 @@
       
         &mdash;
         <div class='inline'>
-<p>The Array&lt;Sketchup::Entity&gt; must contain one or more <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>‘s and a leaf entity. The leaf entity can be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, or <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>. The <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> is the point associated with the leaf entity.</p>
+<p>The Array&lt;Sketchup::Entity&gt; must contain one or more <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>&#39;s and a leaf entity. The leaf entity can be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, or <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>. The <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> is the point associated with the leaf entity.</p>
 </div>
       
     </li>
@@ -3616,13 +3366,6 @@
 </div>
   </div>
 
-  <div class="note notetag">
-    <strong>Note:</strong>
-    <div class='inline'>
-<p>When using the edge array or curve overload this method will return <code>nil</code> and abort any</p>
-</div>
-  </div>
-
 
 <p>The add_face method is used to create a face. You can call this method a number of ways:</p>
 
@@ -3634,13 +3377,6 @@
 </code></pre>
 
 <p>For the last form that takes a Curve, the curve must be closed - like a circle.</p>
-
-<p>open operation if:</p>
-
-<pre class="code"><code class="">- The edges do not form a closed loop
-- The edges are not planar
-In these cases use +$!+ to check for an error message if the face creation fails.
-</code></pre>
 
 
   </div>
@@ -3761,22 +3497,6 @@ In these cases use +$!+ to check for an error message if the face creation fails
         
         <div class='inline'>
 <p>SketchUp 6.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Known Bugs:</p>
-<ul class="bug">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>Prior to SketchUp 2027.0 calls to <span class='object_link'><a href="#add_face-instance_method" title="Sketchup::Entities#add_face (method)">#add_face</a></span> with an array of edges would silently fail and abort any open operation if an existing face was found.</p>
 </div>
       
     </li>
@@ -4466,7 +4186,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>Point3d object representing the edge’s starting point.</p>
+<p>Point3d object representing the edge&#39;s starting point.</p>
 </div>
       
     </li>
@@ -4482,7 +4202,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>Point3d object representing the edge’s ending point.</p>
+<p>Point3d object representing the edge&#39;s ending point.</p>
 </div>
       
     </li>
@@ -5473,7 +5193,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>The array containing one or more <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>‘s and a leaf entity. The leaf entity can be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, or <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>. The <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> is the point associated with the leaf entity.</p>
+<p>The array containing one or more <span class='object_link'><a href="ComponentInstance.html" title="Sketchup::ComponentInstance (class)">ComponentInstance</a></span>&#39;s and a leaf entity. The leaf entity can be a <span class='object_link'><a href="Vertex.html" title="Sketchup::Vertex (class)">Vertex</a></span>, <span class='object_link'><a href="ConstructionPoint.html" title="Sketchup::ConstructionPoint (class)">ConstructionPoint</a></span>, <span class='object_link'><a href="ConstructionLine.html" title="Sketchup::ConstructionLine (class)">ConstructionLine</a></span>, or <span class='object_link'><a href="Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span>. The <span class='object_link'><a href="../Geom/Point3d.html" title="Geom::Point3d (class)">Geom::Point3d</a></span> is the point associated with the leaf entity.</p>
 </div>
       
     </li>
@@ -5649,84 +5369,6 @@ In these cases use +$!+ to check for an error message if the face creation fails
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="bounds-instance_method">
-  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
-  
-    #<strong>bounds</strong>  &#x21d2; <tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt> 
-  
-
-  
-
-  
-
-  
-</h3>
-<div class="docstring">
-  <div class="discussion">
-    
-<p>The <span class='object_link'><a href="#bounds-instance_method" title="Sketchup::Entities#bounds (method)">#bounds</a></span> method is used to retrieve the <span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span> bounding the collection of entities.</p>
-
-<p>For a Procedural Component, <span class='object_link'><a href="ComponentDefinition.html#entities-instance_method" title="Sketchup::ComponentDefinition#entities (method)">ComponentDefinition#entities</a></span> and <span class='object_link'><a href="ComponentDefinition.html#control_entities-instance_method" title="Sketchup::ComponentDefinition#control_entities (method)">ComponentDefinition#control_entities</a></span> have different bounds. For non-procedural components this has the same effect as ComponentDefinition#bounds.</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-  <div class="examples">
-    <h4 class="tag_title">Examples:</h4>
-    
-      
-      <pre class="example code"><code><span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_definitions'><span class='object_link'><a href="Model.html#definitions-instance_method" title="Sketchup::Model#definitions (method)">definitions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
-<span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span></code></pre>
-    
-      
-        <h5 class="example_title"><div class='inline'>
-<p>Get separate bounds for control and output entities of a procedural component</p>
-</div></h5>
-      
-      <pre class="example code"><code><span class='id identifier rubyid_definition'>definition</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_definitions'><span class='object_link'><a href="Model.html#definitions-instance_method" title="Sketchup::Model#definitions (method)">definitions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
-<span class='kw'>if</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_procedural?'>procedural?</span>
-  <span class='id identifier rubyid_control_bounds'>control_bounds</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_control_entities'>control_entities</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span>
-  <span class='id identifier rubyid_output_bounds'>output_bounds</span> <span class='op'>=</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_entities'>entities</span><span class='period'>.</span><span class='id identifier rubyid_bounds'>bounds</span>
-<span class='kw'>end</span></code></pre>
-    
-  </div>
-
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="../Geom/BoundingBox.html" title="Geom::BoundingBox (class)">Geom::BoundingBox</a></span></tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-<p class="tag_title">Version:</p>
-<ul class="version">
-  
-    <li>
-      
-      
-      
-      
-        
-        <div class='inline'>
-<p>SketchUp 2027.0</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-</div>
-</div>
-    
-      <div class="method_details ">
   <h3 class="signature " id="build-instance_method">
   <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
   
@@ -5745,14 +5387,14 @@ In these cases use +$!+ to check for an error message if the face creation fails
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>While using <span class='object_link'><a href="#build-instance_method" title="Sketchup::Entities#build (method)">#build</a></span> it is important to not add or remove vertices by other means than the builder. Also don’t modify the position of the vertices in the <span class='object_link'><a href="" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection. Doing so can break the vertex-cache that de-duplicates the vertices.</p>
+<p>While using <span class='object_link'><a href="#build-instance_method" title="Sketchup::Entities#build (method)">#build</a></span> it is important to not add or remove vertices by other means than the builder. Also don&#39;t modify the position of the vertices in the <span class='object_link'><a href="" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> collection. Doing so can break the vertex-cache that de-duplicates the vertices.</p>
 </div>
   </div>
 
 
 <p>Creates an <span class='object_link'><a href="EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span> that can be used to generate bulk geometry with performance in mind. This is particularly useful for importers where the geometry is already well defined and one wants to recreate it without further processing.</p>
 
-<p>The call to <span class='object_link'><a href="#build-instance_method" title="Sketchup::Entities#build (method)">#build</a></span> starts an implicit operation, even if no other model changes are made within the block. This is not the same as <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Model#start_operation</a></span>, so it’s still recommended to wrap all model changes, including <span class='object_link'><a href="#build-instance_method" title="Sketchup::Entities#build (method)">#build</a></span> with <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Model#commit_operation</a></span>.</p>
+<p>The call to <span class='object_link'><a href="#build-instance_method" title="Sketchup::Entities#build (method)">#build</a></span> starts an implicit operation, even if no other model changes are made within the block. This is not the same as <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Model#start_operation</a></span>, so it&#39;s still recommended to wrap all model changes, including <span class='object_link'><a href="#build-instance_method" title="Sketchup::Entities#build (method)">#build</a></span> with <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Model#commit_operation</a></span>.</p>
 
 <p>Refer to the documentation of <span class='object_link'><a href="EntitiesBuilder.html" title="Sketchup::EntitiesBuilder (class)">Sketchup::EntitiesBuilder</a></span> for more details.</p>
 
@@ -5932,7 +5574,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Since SketchUp 2014 the count method is inherited from Ruby’s <code>Enumerable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::Entities#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Entities#length (method)">#length</a></span>.</p>
+<p>Since SketchUp 2014 the count method is inherited from Ruby&#39;s <code>Enumerable</code> mix-in module. Prior to that the <span class='object_link'><a href="#count-instance_method" title="Sketchup::Entities#count (method)">#count</a></span> method is an alias for <span class='object_link'><a href="#length-instance_method" title="Sketchup::Entities#length (method)">#length</a></span>.</p>
 </div>
   </div>
 
@@ -6010,7 +5652,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Don’t remove content from this collection while iterating over it with <span class='object_link'><a href="#each-instance_method" title="Sketchup::Entities#each (method)">#each</a></span>. This would change the size of the collection and cause elements to be skipped as the indices change. Instead copy the current collection to an array using <code>to_a</code> and then use <code>each</code> on the array, when removing content.</p>
+<p>Don&#39;t remove content from this collection while iterating over it with <span class='object_link'><a href="#each-instance_method" title="Sketchup::Entities#each (method)">#each</a></span>. This would change the size of the collection and cause elements to be skipped as the indices change. Instead copy the current collection to an array using <code>to_a</code> and then use <code>each</code> on the array, when removing content.</p>
 </div>
   </div>
 
@@ -6103,7 +5745,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>It’s faster to use this method and erase in bulk than to iterate individual drawing elements calling <span class='object_link'><a href="Drawingelement.html#erase!-instance_method" title="Sketchup::Drawingelement#erase! (method)">Drawingelement#erase!</a></span>.</p>
+<p>It&#39;s faster to use this method and erase in bulk than to iterate individual drawing elements calling <span class='object_link'><a href="Drawingelement.html#erase!-instance_method" title="Sketchup::Drawingelement#erase! (method)">Drawingelement#erase!</a></span>.</p>
 </div>
   </div>
 
@@ -6268,7 +5910,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         
         <div class='inline'>
-<p>SketchUp 2023.0 and SketchUp 2023.0.1 could incorrectly raise an ‘ArgumentError` when there was an open editing path.</p>
+<p>SketchUp 2023.0 and SketchUp 2023.0.1 could incorrectly raise an `ArgumentError` when there was an open editing path.</p>
 </div>
       
     </li>
@@ -6602,7 +6244,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>If ‘true`, the intersection will recurse through any nested Groups or Components within the <strong>receiver</strong> (`self`).</p>
+<p>If `true`, the intersection will recurse through any nested Groups or Components within the *<strong>receiver</strong>* (`self`).</p>
 </div>
       
     </li>
@@ -6618,7 +6260,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>The transformation applied to the <strong>receiver</strong> entities (‘self`) to position them in the common coordinate space where the intersection will be calculated.</p>
+<p>The transformation applied to the *<strong>receiver</strong>* entities (`self`) to position them in the common coordinate space where the intersection will be calculated.</p>
 </div>
       
     </li>
@@ -6634,7 +6276,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>The <strong>result</strong> entities collection. This is the drawing context where the new intersection edges will be created.</p>
+<p>The *<strong>result</strong>* entities collection. This is the drawing context where the new intersection edges will be created.</p>
 </div>
       
     </li>
@@ -6650,7 +6292,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>The transformation applied to the <strong>result</strong> entities collection (‘entities1`) to correctly position it relative to the intersection calculation space.</p>
+<p>The transformation applied to the *<strong>result</strong>* entities collection (`entities1`) to correctly position it relative to the intersection calculation space.</p>
 </div>
       
     </li>
@@ -6666,7 +6308,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>If <code>true</code>, hidden geometry in the <strong>receiver</strong> entities will be considered for the intersection. This parameter only affects hidden geometry in the receiver, not in the cutting entities.</p>
+<p>If <code>true</code>, hidden geometry in the *<strong>receiver</strong>* entities will be considered for the intersection. This parameter only affects hidden geometry in the receiver, not in the cutting entities.</p>
 </div>
       
     </li>
@@ -6682,7 +6324,7 @@ In these cases use +$!+ to check for an error message if the face creation fails
       
         &mdash;
         <div class='inline'>
-<p>The <strong>cutting</strong> entities. These are the entities that will be intersected with the receiver. This can be a single entity or an array of entities.</p>
+<p>The *<strong>cutting</strong>* entities. These are the entities that will be intersected with the receiver. This can be a single entity or an array of entities.</p>
 </div>
       
     </li>
