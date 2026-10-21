@@ -210,7 +210,7 @@
 
 <p>This observer interface is implemented to react to model events.</p>
 
-<p>Note that the observers related to transactions (aka undoable operations) are primarily for reporting and debugging. Performing any edit operations of your own (such as modifying the model) inside the observer callback should be avoided, as it could cause crashes or model corruption. The most common use for these callbacks is to help debug problems where your Ruby script&#39;s <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> calls are somehow conflicting with SketchUp&#39;s native undo operations. You can set up an observer set to watch precisely what is going on.</p>
+<p>Note that the observers related to transactions (aka undoable operations) are primarily for reporting and debugging. Performing any edit operations of your own (such as modifying the model) inside the observer callback should be avoided, as it could cause crashes or model corruption. The most common use for these callbacks is to help debug problems where your Ruby script’s <span class='object_link'><a href="Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> calls are somehow conflicting with SketchUp’s native undo operations. You can set up an observer set to watch precisely what is going on.</p>
 
 
   </div>
@@ -426,7 +426,7 @@
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#onDeleteModel-instance_method" title="#onDeleteModel (instance method)">#<strong>onDeleteModel</strong>(model)  &#x21d2; nil </a>
@@ -439,18 +439,18 @@
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onDeleteModel-instance_method" title="Sketchup::ModelObserver#onDeleteModel (method)">#onDeleteModel</a></span> method is invoked when a model is deleted.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>This callback is deprecated. To handle model close events, use <span class='object_link'><a href="AppObserver.html#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">AppObserver#onCloseModel</a></span> instead.</p>
 </div></span>
   
 </li>
 
       
-        <li class="public ">
+        <li class="public deprecated">
   <span class="summary_signature">
     
       <a href="#onEraseAll-instance_method" title="#onEraseAll (instance method)">#<strong>onEraseAll</strong>(model)  &#x21d2; nil </a>
@@ -463,12 +463,12 @@
   
   
   
-  
+  <span class="deprecated note title">deprecated</span>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#onEraseAll-instance_method" title="Sketchup::ModelObserver#onEraseAll (method)">#onEraseAll</a></span> method is invoked when everything in a model is erased.</p>
+    <span class="summary_desc"><strong>Deprecated.</strong> <div class='inline'>
+<p>This callback is deprecated. To handle model close events, use <span class='object_link'><a href="AppObserver.html#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">AppObserver#onCloseModel</a></span> instead.</p>
 </div></span>
   
 </li>
@@ -984,7 +984,7 @@
 
 <p>For example, you may decide that you want to add some attribute to every component that is saved out, but you do not want that attribute sticking around inside the current model. Within <span class='object_link'><a href="#onBeforeComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onBeforeComponentSaveAs (method)">#onBeforeComponentSaveAs</a></span> you could add the attribute, and within <span class='object_link'><a href="#onAfterComponentSaveAs-instance_method" title="Sketchup::ModelObserver#onAfterComponentSaveAs (method)">#onAfterComponentSaveAs</a></span> you could delete that attribute.</p>
 
-<p>The callback is not sent the component that is to be saved, but the model&#39;s selection will contain it.</p>
+<p>The callback is not sent the component that is to be saved, but the model’s selection will contain it.</p>
 
 
   </div>
@@ -1075,7 +1075,10 @@
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>This callback is deprecated. To handle model close events, use <span class='object_link'><a href="AppObserver.html#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">AppObserver#onCloseModel</a></span> instead.</p>
+</div></div>
+
 <p>The <span class='object_link'><a href="#onDeleteModel-instance_method" title="Sketchup::ModelObserver#onDeleteModel (method)">#onDeleteModel</a></span> method is invoked when a model is deleted.</p>
 
 
@@ -1167,7 +1170,10 @@
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
+    <div class="note deprecated"><strong>Deprecated.</strong> <div class='inline'>
+<p>This callback is deprecated. To handle model close events, use <span class='object_link'><a href="AppObserver.html#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">AppObserver#onCloseModel</a></span> instead.</p>
+</div></div>
+
 <p>The <span class='object_link'><a href="#onEraseAll-instance_method" title="Sketchup::ModelObserver#onEraseAll (method)">#onEraseAll</a></span> method is invoked when everything in a model is erased.</p>
 
 
@@ -1262,7 +1268,7 @@
     
 <p>The <span class='object_link'><a href="#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">method</a></span> is invoked whenever a component anywhere in this model is exploded. This is an easier way to watch explode events vs. attaching an InstanceObserver to every instance in the model.</p>
 
-<p>Since the callback does not return what was exploded, one solution is to place a selection observer that keeps track of which entities whose explosion you are interested in are in the selection. Since SketchUp&#39;s user interface only provides a means of exploding the selection, this method is a reliable way to know what was just exploded.</p>
+<p>Since the callback does not return what was exploded, one solution is to place a selection observer that keeps track of which entities whose explosion you are interested in are in the selection. Since SketchUp’s user interface only provides a means of exploding the selection, this method is a reliable way to know what was just exploded.</p>
 
 <p>Another method would be to watch ComponentDefinition.count_instances to determine what just changed, as any components that were exploded will now be less an instance.</p>
 
@@ -2075,7 +2081,7 @@
     
 <p>The <span class='object_link'><a href="#onTransactionEmpty-instance_method" title="Sketchup::ModelObserver#onTransactionEmpty (method)">#onTransactionEmpty</a></span> method is invoked when a transaction (aka an undoable operation) starts and then is committed without anything being altered in between. This callback is triggered instead of <span class='object_link'><a href="#onTransactionCommit-instance_method" title="Sketchup::ModelObserver#onTransactionCommit (method)">#onTransactionCommit</a></span> when a transaction contains no model changes.</p>
 
-<p>This behavior is important to understand when implementing handlers for transaction events. If you need a unified handler for all committed transactions (both empty and non-empty), you&#39;ll need to implement both callbacks.</p>
+<p>This behavior is important to understand when implementing handlers for transaction events. If you need a unified handler for all committed transactions (both empty and non-empty), you’ll need to implement both callbacks.</p>
 
 
   </div>
