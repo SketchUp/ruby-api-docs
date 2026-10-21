@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AUTHOR and GENERATOR -->
+    <meta name="author" content="SketchUp Extensibility Team">
+    <meta name="generator" content="YARD https://yardoc.org">
+  <!-- TITLE -->
+    <title>
+    Class: Sketchup::HatchPattern &mdash; SketchUp Ruby API Documentation
+    </title>
+  <!-- SHORTCUT ICON -->
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon"
+    href="https://ruby.sketchup.com/favicon.ico" />
+
+  <!-- GENERIC META PROPERTIES -->
+    <meta name="url"   content="https://ruby.sketchup.com/Sketchup/HatchPattern.html" />
+    <meta name="image" content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta name="title" content="Class: Sketchup::HatchPattern" />
+    <meta name="name"  content="SketchUp Ruby API Documentation" />
+    <meta name="description" content="An Sketchup::HatchPattern object represents an hatch pattern in the model." />
+  <!-- OPEN GRAPH META PROPERTIES -->
+    <meta property="og:site_name" content="SketchUp Ruby API Documentation" />
+    <meta property="og:type"      content="website" />
+    <meta property="og:image"     content="https://ruby.sketchup.com/images/Ruby.svg" />
+    <meta property="og:image:width"  content="60" />
+    <meta property="og:image:height" content="60" />
+    <meta property="og:title"     content="Class: Sketchup::HatchPattern" />
+    <meta property="og:url"       content="https://ruby.sketchup.com/Sketchup/HatchPattern.html" />
+    <meta property="og:description" content="An Sketchup::HatchPattern object represents an hatch pattern in the model." />
+  <!-- TWITTER CARD META PROPERTIES -->
+    <meta name="twitter:card"  content="summary"   />
+    <meta name="twitter:site"  content="@sketchup" />
+    <meta name="twitter:title" content="Class: Sketchup::HatchPattern" />
+    <meta name="twitter:description" content="An Sketchup::HatchPattern object represents an hatch pattern in the model." />
+    <meta name="twitter:image:src"   content="https://ruby.sketchup.com/images/Ruby.svg?s=120" />
+    <meta name="twitter:url"   content="https://ruby.sketchup.com/Sketchup/HatchPattern.html" />
+
+
+  <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" />
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/sketchup.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/rubyapi.css" type="text/css" charset="utf-8" />
+
+    <link rel="stylesheet" href="../css/rouge.css" type="text/css" charset="utf-8" />
+  <!-- SCRIPTS -->
+<script type="text/javascript">
+  pathId = "Sketchup::HatchPattern";
+  relpath = '../';
+</script>
+
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-migrate.js"></script>
+
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+    <script>
+      // Every time this page is loaded, it sends this action to SketchUp, telling
+      // SketchUp that a new page has loaded that has example snippets that should
+      // be replaced with code editors. Nothing happens if the page is loaded in a
+      // regular browser outside of the SketchUp client.
+      $( document ).ready(function() {
+        if (typeof sketchup == 'object') {
+          sketchup.page_loaded();
+        }
+      });
+    </script>
+
+</head>
+<body>
+
+  <!-- SU - start -->
+<header id="navbar" role="banner" class="navbar navbar-fixed-top navbar-inverse">
+    <div id="api-documentation-header">
+        <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="https://developer.sketchup.com" title="Home">
+                <img src="../images/sketchup-logo.svg" alt="SketchUp">
+            </a>
+            <a class="name navbar-brand" href="/en" title="Home">SketchUp Developer Center</a>
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <nav role="navigation">
+                <ul class="menu nav navbar-nav">
+                    <li class="first leaf"><a href="https://forums.sketchup.com/c/developers">Community</a></li>
+                    <li class="leaf"><a href="https://blog.sketchup.com/">SketchUp Blog</a></li>
+                    <li class="leaf"><a href="https://www.sketchup.com/download" class="top-menu--download-button">Download</a></li>
+                    <li class="last expanded dropdown">
+                        <a href="https://www.trimble.com" class="trimble-top-menu-item dropdown-toggle" data-target="#" data-toggle="dropdown"><img src="../images/trimble-logo-white.svg" alt="Trimble"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="first leaf"><a href="https://connect.trimble.com/">Trimble Connect</a></li>
+                            <li class="leaf"><a href="https://www.trimble.com/Corporate/About_Trimble.aspx">About Trimble</a></li>
+                            <li class="last leaf"><a href="https://buildings.trimble.com/">Trimble Buildings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- SU - end -->
+
+
+  <div id="su-content">
+
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span>
+     &raquo; 
+    <span class="title">HatchPattern</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Sketchup::HatchPattern
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></li>
+          
+            <li class="next">Sketchup::HatchPattern</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>An <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span> object represents an hatch pattern in the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <a
+          id="instance_method_summary"
+          href="#instance_method_summary"
+          title="Permalink">#</a>
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear_fill_pattern-instance_method" title="#clear_fill_pattern (instance method)">#<strong>clear_fill_pattern</strong>  &#x21d2; Sketchup::HatchPattern </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#clear_fill_pattern-instance_method" title="Sketchup::HatchPattern#clear_fill_pattern (method)">#clear_fill_pattern</a></span> method removes the .pat line-pattern definition from the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear_fill_texture-instance_method" title="#clear_fill_texture (instance method)">#<strong>clear_fill_texture</strong>  &#x21d2; Sketchup::HatchPattern </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#clear_fill_texture-instance_method" title="Sketchup::HatchPattern#clear_fill_texture (method)">#clear_fill_texture</a></span> method removes the texture fill from the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fill_color-instance_method" title="#fill_color (instance method)">#<strong>fill_color</strong>  &#x21d2; Sketchup::Color </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#fill_color-instance_method" title="Sketchup::HatchPattern#fill_color (method)">#fill_color</a></span> method retrieves the solid fill color of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fill_color=-instance_method" title="#fill_color= (instance method)">#<strong>fill_color=</strong>(color)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#fill_color=-instance_method" title="Sketchup::HatchPattern#fill_color= (method)">#fill_color=</a></span> method sets the solid fill color of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fill_pattern_file_name-instance_method" title="#fill_pattern_file_name (instance method)">#<strong>fill_pattern_file_name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#fill_pattern_file_name-instance_method" title="Sketchup::HatchPattern#fill_pattern_file_name (method)">#fill_pattern_file_name</a></span> method retrieves the file path the .pat line-pattern definition was loaded from.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fill_texture_file_name-instance_method" title="#fill_texture_file_name (instance method)">#<strong>fill_texture_file_name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#fill_texture_file_name-instance_method" title="Sketchup::HatchPattern#fill_texture_file_name (method)">#fill_texture_file_name</a></span> method retrieves the file path the fill texture image was loaded from.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fill_texture_image-instance_method" title="#fill_texture_image (instance method)">#<strong>fill_texture_image</strong>  &#x21d2; Sketchup::ImageRep<sup>?</sup> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#fill_texture_image-instance_method" title="Sketchup::HatchPattern#fill_texture_image (method)">#fill_texture_image</a></span> method retrieves the fill texture image of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>, or <code>nil</code> if the pattern has no texture fill.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">#<strong>name</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::HatchPattern#name (method)">#name</a></span> method retrieves the name of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name=-instance_method" title="#name= (instance method)">#<strong>name=</strong>(name)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::HatchPattern#name= (method)">#name=</a></span> method sets the name for an <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rotation_angle-instance_method" title="#rotation_angle (instance method)">#<strong>rotation_angle</strong>  &#x21d2; Float </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#rotation_angle-instance_method" title="Sketchup::HatchPattern#rotation_angle (method)">#rotation_angle</a></span> method retrieves the rotation angle applied to the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>, in degrees.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rotation_angle=-instance_method" title="#rotation_angle= (instance method)">#<strong>rotation_angle=</strong>(angle)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#rotation_angle=-instance_method" title="Sketchup::HatchPattern#rotation_angle= (method)">#rotation_angle=</a></span> method sets the rotation angle applied to the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>, in degrees.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save_fill_pattern_to_file-instance_method" title="#save_fill_pattern_to_file (instance method)">#<strong>save_fill_pattern_to_file</strong>(file_name)  &#x21d2; Sketchup::HatchPattern </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#save_fill_pattern_to_file-instance_method" title="Sketchup::HatchPattern#save_fill_pattern_to_file (method)">#save_fill_pattern_to_file</a></span> method writes the .pat line-pattern definition to a file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_fill_pattern_from_file-instance_method" title="#set_fill_pattern_from_file (instance method)">#<strong>set_fill_pattern_from_file</strong>(file_name)  &#x21d2; Sketchup::HatchPattern </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#set_fill_pattern_from_file-instance_method" title="Sketchup::HatchPattern#set_fill_pattern_from_file (method)">#set_fill_pattern_from_file</a></span> method loads a .pat line-pattern definition from a file.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_fill_texture_image_and_file_name-instance_method" title="#set_fill_texture_image_and_file_name (instance method)">#<strong>set_fill_texture_image_and_file_name</strong>(image, file_name)  &#x21d2; Sketchup::HatchPattern </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#set_fill_texture_image_and_file_name-instance_method" title="Sketchup::HatchPattern#set_fill_texture_image_and_file_name (method)">#set_fill_texture_image_and_file_name</a></span> method sets the fill texture image and the file path it came from together, as a unit.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_uv_scale-instance_method" title="#set_uv_scale (instance method)">#<strong>set_uv_scale</strong>(u_scale, v_scale)  &#x21d2; Sketchup::HatchPattern </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#set_uv_scale-instance_method" title="Sketchup::HatchPattern#set_uv_scale (method)">#set_uv_scale</a></span> method sets the UV scale of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#thumbnail_image-instance_method" title="#thumbnail_image (instance method)">#<strong>thumbnail_image</strong>  &#x21d2; Sketchup::ImageRep </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#thumbnail_image-instance_method" title="Sketchup::HatchPattern#thumbnail_image (method)">#thumbnail_image</a></span> method retrieves the cached preview image of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span>.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uv_scale-instance_method" title="#uv_scale (instance method)">#<strong>uv_scale</strong>  &#x21d2; Array(Float, Float) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The <span class='object_link'><a href="#uv_scale-instance_method" title="Sketchup::HatchPattern#uv_scale (method)">#uv_scale</a></span> method retrieves the UV scale of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">HatchPattern</a></span> as a <code>u</code> and <code>v</code> pair.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write-instance_method" title="#write (instance method)">#<strong>write</strong>(path)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Writes the hatch pattern to file as a .skh file.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Entity.html" title="Sketchup::Entity (class)">Entity</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Entity.html#add_observer-instance_method" title="Sketchup::Entity#add_observer (method)">#add_observer</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionaries-instance_method" title="Sketchup::Entity#attribute_dictionaries (method)">#attribute_dictionaries</a></span>, <span class='object_link'><a href="Entity.html#attribute_dictionary-instance_method" title="Sketchup::Entity#attribute_dictionary (method)">#attribute_dictionary</a></span>, <span class='object_link'><a href="Entity.html#delete_attribute-instance_method" title="Sketchup::Entity#delete_attribute (method)">#delete_attribute</a></span>, <span class='object_link'><a href="Entity.html#deleted%3F-instance_method" title="Sketchup::Entity#deleted? (method)">#deleted?</a></span>, <span class='object_link'><a href="Entity.html#entityID-instance_method" title="Sketchup::Entity#entityID (method)">#entityID</a></span>, <span class='object_link'><a href="Entity.html#get_attribute-instance_method" title="Sketchup::Entity#get_attribute (method)">#get_attribute</a></span>, <span class='object_link'><a href="Entity.html#inspect-instance_method" title="Sketchup::Entity#inspect (method)">#inspect</a></span>, <span class='object_link'><a href="Entity.html#model-instance_method" title="Sketchup::Entity#model (method)">#model</a></span>, <span class='object_link'><a href="Entity.html#parent-instance_method" title="Sketchup::Entity#parent (method)">#parent</a></span>, <span class='object_link'><a href="Entity.html#persistent_id-instance_method" title="Sketchup::Entity#persistent_id (method)">#persistent_id</a></span>, <span class='object_link'><a href="Entity.html#remove_observer-instance_method" title="Sketchup::Entity#remove_observer (method)">#remove_observer</a></span>, <span class='object_link'><a href="Entity.html#set_attribute-instance_method" title="Sketchup::Entity#set_attribute (method)">#set_attribute</a></span>, <span class='object_link'><a href="Entity.html#to_s-instance_method" title="Sketchup::Entity#to_s (method)">#to_s</a></span>, <span class='object_link'><a href="Entity.html#typename-instance_method" title="Sketchup::Entity#typename (method)">#typename</a></span>, <span class='object_link'><a href="Entity.html#valid%3F-instance_method" title="Sketchup::Entity#valid? (method)">#valid?</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="clear_fill_pattern-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>clear_fill_pattern</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#clear_fill_pattern-instance_method" title="Sketchup::HatchPattern#clear_fill_pattern (method)">#clear_fill_pattern</a></span> method removes the .pat line-pattern definition from the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_clear_fill_pattern'>clear_fill_pattern</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="clear_fill_texture-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>clear_fill_texture</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#clear_fill_texture-instance_method" title="Sketchup::HatchPattern#clear_fill_texture (method)">#clear_fill_texture</a></span> method removes the texture fill from the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_clear_fill_texture'>clear_fill_texture</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fill_color-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>fill_color</strong>  &#x21d2; <tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#fill_color-instance_method" title="Sketchup::HatchPattern#fill_color (method)">#fill_color</a></span> method retrieves the solid fill color of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_fill_color'>fill_color</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the fill color</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fill_color=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>fill_color=</strong>(color)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#fill_color=-instance_method" title="Sketchup::HatchPattern#fill_color= (method)">#fill_color=</a></span> method sets the solid fill color of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_fill_color'>fill_color</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Color</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Color.html#initialize-instance_method" title="Sketchup::Color#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>255</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>color</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fill_pattern_file_name-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>fill_pattern_file_name</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#fill_pattern_file_name-instance_method" title="Sketchup::HatchPattern#fill_pattern_file_name (method)">#fill_pattern_file_name</a></span> method retrieves the file path the .pat line-pattern definition was loaded from.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_fill_pattern_file_name'>fill_pattern_file_name</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the .pat source file path</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fill_texture_file_name-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>fill_texture_file_name</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#fill_texture_file_name-instance_method" title="Sketchup::HatchPattern#fill_texture_file_name (method)">#fill_texture_file_name</a></span> method retrieves the file path the fill texture image was loaded from.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_fill_texture_file_name'>fill_texture_file_name</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the texture source file path</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fill_texture_image-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>fill_texture_image</strong>  &#x21d2; <tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt><sup>?</sup> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#fill_texture_image-instance_method" title="Sketchup::HatchPattern#fill_texture_image (method)">#fill_texture_image</a></span> method retrieves the fill texture image of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>, or <code>nil</code> if the pattern has no texture fill.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_fill_texture_image'>fill_texture_image</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the texture image, or <code>nil</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>name</strong>  &#x21d2; <tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#name-instance_method" title="Sketchup::HatchPattern#name (method)">#name</a></span> method retrieves the name of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span>
+<span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>path/to/pattern.skh</span><span class='tstring_end'>&#39;</span></span>
+<span class='id identifier rubyid_hatch'>hatch</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_hatch'>hatch</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='comment'># Outputs &quot;Pattern&quot;</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the hatch pattern</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="name=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>name=</strong>(name)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#name=-instance_method" title="Sketchup::HatchPattern#name= (method)">#name=</a></span> method sets the name for an <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>. The name must be non-empty and unique within the model.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>New name</span><span class='tstring_end'>&#39;</span></span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the name is empty or already used by another hatch pattern.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rotation_angle-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>rotation_angle</strong>  &#x21d2; <tt>Float</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#rotation_angle-instance_method" title="Sketchup::HatchPattern#rotation_angle (method)">#rotation_angle</a></span> method retrieves the rotation angle applied to the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>, in degrees.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_angle'>angle</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_rotation_angle'>rotation_angle</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the rotation angle in degrees</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rotation_angle=-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>rotation_angle=</strong>(angle)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#rotation_angle=-instance_method" title="Sketchup::HatchPattern#rotation_angle= (method)">#rotation_angle=</a></span> method sets the rotation angle applied to the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>, in degrees.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_rotation_angle'>rotation_angle</span> <span class='op'>=</span> <span class='float'>45.0</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>angle</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save_fill_pattern_to_file-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>save_fill_pattern_to_file</strong>(file_name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#save_fill_pattern_to_file-instance_method" title="Sketchup::HatchPattern#save_fill_pattern_to_file (method)">#save_fill_pattern_to_file</a></span> method writes the .pat line-pattern definition to a file. This writes only the pattern definition, not the whole hatch pattern; use <span class='object_link'><a href="#write-instance_method" title="Sketchup::HatchPattern#write (method)">#write</a></span> for the latter.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_save_fill_pattern_to_file'>save_fill_pattern_to_file</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>C:/patterns/ansi31.pat</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>file_name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the path to write the .pat file to.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the pattern has no .pat definition or the file could not be written.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_fill_pattern_from_file-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>set_fill_pattern_from_file</strong>(file_name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>A .pat file may hold more than one pattern definition. Only the first definition in</p>
+</div>
+  </div>
+
+
+<p>The <span class='object_link'><a href="#set_fill_pattern_from_file-instance_method" title="Sketchup::HatchPattern#set_fill_pattern_from_file (method)">#set_fill_pattern_from_file</a></span> method loads a .pat line-pattern definition from a file.</p>
+
+<p>the file is loaded; any others are ignored.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_set_fill_pattern_from_file'>set_fill_pattern_from_file</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>C:/patterns/ansi31.pat</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>file_name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the path to the .pat file to load.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the .pat file could not be loaded.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_fill_texture_image_and_file_name-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>set_fill_texture_image_and_file_name</strong>(image, file_name)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#set_fill_texture_image_and_file_name-instance_method" title="Sketchup::HatchPattern#set_fill_texture_image_and_file_name (method)">#set_fill_texture_image_and_file_name</a></span> method sets the fill texture image and the file path it came from together, as a unit.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_image_rep'>image_rep</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">ImageRep</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ImageRep.html#initialize-instance_method" title="Sketchup::ImageRep#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>C:/textures/brick.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_set_fill_texture_image_and_file_name'>set_fill_texture_image_and_file_name</span><span class='lparen'>(</span><span class='id identifier rubyid_image_rep'>image_rep</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>C:/textures/brick.png</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>image</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file_name</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the file path the texture was loaded from.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if <code>image</code> is not a <span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">ImageRep</a></span> or does not contain valid image data.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_uv_scale-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>set_uv_scale</strong>(u_scale, v_scale)  &#x21d2; <tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#set_uv_scale-instance_method" title="Sketchup::HatchPattern#set_uv_scale (method)">#set_uv_scale</a></span> method sets the UV scale of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>. Both values must be positive. The scale is a factor applied to the pattern’s repeat; it is not a percentage.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_set_uv_scale'>set_uv_scale</span><span class='lparen'>(</span><span class='float'>12.0</span><span class='comma'>,</span> <span class='float'>12.0</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>u_scale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>v_scale</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>ArgumentError</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if either scale is not a positive value.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="thumbnail_image-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>thumbnail_image</strong>  &#x21d2; <tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#thumbnail_image-instance_method" title="Sketchup::HatchPattern#thumbnail_image (method)">#thumbnail_image</a></span> method retrieves the cached preview image of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_thumbnail_image'>thumbnail_image</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ImageRep.html" title="Sketchup::ImageRep (class)">Sketchup::ImageRep</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the thumbnail image</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="uv_scale-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>uv_scale</strong>  &#x21d2; <tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The <span class='object_link'><a href="#uv_scale-instance_method" title="Sketchup::HatchPattern#uv_scale (method)">#uv_scale</a></span> method retrieves the UV scale of the <span class='object_link'><a href="" title="Sketchup::HatchPattern (class)">Sketchup::HatchPattern</a></span> as a <code>u</code> and <code>v</code> pair. The scale is a positive factor applied to the pattern’s repeat; it is not a percentage.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_model'>model</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span>
+<span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'>hatch_patterns</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_u_scale'>u_scale</span><span class='comma'>,</span> <span class='id identifier rubyid_v_scale'>v_scale</span> <span class='op'>=</span> <span class='id identifier rubyid_hatch_pattern'>hatch_pattern</span><span class='period'>.</span><span class='id identifier rubyid_uv_scale'>uv_scale</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span>(Float, Float)</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the u and v scale factors</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>write</strong>(path)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Writes the hatch pattern to file as a .skh file.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_hp'>hp</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_hatch_patterns'><span class='object_link'><a href="Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">hatch_patterns</a></span></span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Pattern</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_hp'>hp</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>path/to/pattern.skh</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../String.html" title="String (class)">String</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if the method succeeded</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+</div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

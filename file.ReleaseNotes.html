@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -151,7 +151,7 @@
       <div id="content"><div id='filecontents'>
 <h1 id="label-Release+Notes">Release Notes</h1>
 
-<p>The SketchUp API has been around in some fashion since the early days of SketchUp, and with every release we have extended its capabilities. Read below for what&#39;s been changed.</p>
+<p>The SketchUp API has been around in some fashion since the early days of SketchUp, and with every release we have extended its capabilities. Read below for what’s been changed.</p>
 
 <p>Though our adoption rate to the latest version is quite high, it can take time after a release before everyone upgrades. If you are building scripts that rely on functionality from the most recent version, be sure to check the <span class='object_link'><a href="Sketchup.html#version-class_method" title="Sketchup.version (method)">Sketchup.version</a></span> to make sure your users are able to run your script:</p>
 
@@ -169,6 +169,8 @@
 
 <p>Here are the build numbers for recent SketchUp releases. Note that build numbers in languages besides English are larger for each release, so it is best to check for builds that are greater than or equal to the numbers here.</p>
 <ul><li>
+<p><strong>SU2027.0</strong> = 27.0.264 on Windows and Mac 64-bit.</p>
+</li><li>
 <p><strong>SU2026.2</strong> = 26.2.243 on Windows 64-bit, 26.2.242 on Mac 64-bit.</p>
 </li><li>
 <p><strong>SU2026.1.2</strong> = 26.1.252 on Windows 64-bit, 26.1.253 on Mac 64-bit.</p>
@@ -272,7 +274,269 @@
 <p><strong>SU6 M6</strong> = 6.4.265 on Windows, 6.4.263 on Mac.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2026.2">What&#39;s new in SketchUp 2026.2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2027.0">What’s new in SketchUp 2027.0</h1>
+
+<h2 id="label-Upgrade+Ruby+to+3.4.9">Upgrade Ruby to 3.4.9</h2>
+
+<p>For SketchUp 2027.0 we have upgraded the version of Ruby that we ship with SketchUp from 3.2.2 to 3.4.9.</p>
+
+<h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Entities.html#add_copy-instance_method" title="Sketchup::Entities#add_copy (method)">Sketchup::Entities#add_copy</a></span> for copying a set of entities into an entities collection.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Entities.html#bounds-instance_method" title="Sketchup::Entities#bounds (method)">Sketchup::Entities#bounds</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/AppObserver.html#onCloseModel-instance_method" title="Sketchup::AppObserver#onCloseModel (method)">Sketchup::AppObserver#onCloseModel</a></span>, deprecated <span class='object_link'><a href="Sketchup/ModelObserver.html#onDeleteModel-instance_method" title="Sketchup::ModelObserver#onDeleteModel (method)">Sketchup::ModelObserver#onDeleteModel</a></span> and <span class='object_link'><a href="Sketchup/ModelObserver.html#onEraseAll-instance_method" title="Sketchup::ModelObserver#onEraseAll (method)">Sketchup::ModelObserver#onEraseAll</a></span>.</p>
+</li><li>
+<p>Deprecated <span class='object_link'><a href="UI.html#refresh_toolbars-class_method" title="UI.refresh_toolbars (method)">UI.refresh_toolbars</a></span>. Toolbar state now refreshes automatically on both platforms.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Layout/Table.html#size_to_fit-instance_method" title="Layout::Table#size_to_fit (method)">Layout::Table#size_to_fit</a></span>.</p>
+</li><li>
+<p>Callbacks registered with <span class='object_link'><a href="UI/HtmlDialog.html#add_action_callback-instance_method" title="UI::HtmlDialog#add_action_callback (method)">UI::HtmlDialog#add_action_callback</a></span> can now return arrays or hashes which will be passed to the <code>onComplete</code> callback in JavaScript.</p>
+</li><li>
+<p>Fixed documentation of the <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> <code>:style</code> property to describe the intended use of each style, along with how each style has behaved on each platform over time.</p>
+</li><li>
+<p>Added <code>ifc_types_filter</code>, <code>entity_names_filter</code>, <code>guids_filter</code> and <code>filter_mode</code> options to <span class='object_link'><a href="Sketchup/Model.html#import-instance_method" title="Sketchup::Model#import (method)">Sketchup::Model#import</a></span> for ifc importer.</p>
+</li><li>
+<p>Added the Procedures API for creating procedural components:</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Procedure.html" title="Sketchup::Procedure (class)">Sketchup::Procedure</a></span>, the abstract base class extensions subclass to implement a procedure, and <span class='object_link'><a href="Sketchup.html#register_procedure-class_method" title="Sketchup.register_procedure (method)">Sketchup.register_procedure</a></span> to register an instance of it.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#attach_procedure-instance_method" title="Sketchup::ComponentDefinition#attach_procedure (method)">Sketchup::ComponentDefinition#attach_procedure</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#procedural%3F-instance_method" title="Sketchup::ComponentDefinition#procedural? (method)">Sketchup::ComponentDefinition#procedural?</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#control_entities-instance_method" title="Sketchup::ComponentDefinition#control_entities (method)">Sketchup::ComponentDefinition#control_entities</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#get_procedure_parameters-instance_method" title="Sketchup::ComponentDefinition#get_procedure_parameters (method)">Sketchup::ComponentDefinition#get_procedure_parameters</a></span> and <span class='object_link'><a href="Sketchup/ComponentDefinition.html#set_procedure_parameters-instance_method" title="Sketchup::ComponentDefinition#set_procedure_parameters (method)">Sketchup::ComponentDefinition#set_procedure_parameters</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#run_procedures-instance_method" title="Sketchup::ComponentDefinition#run_procedures (method)">Sketchup::ComponentDefinition#run_procedures</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentDefinition.html#make_non_procedural-instance_method" title="Sketchup::ComponentDefinition#make_non_procedural (method)">Sketchup::ComponentDefinition#make_non_procedural</a></span>.</p>
+</li><li>
+<p>Added the <code>Sketchup::PROCEDURE_ID_*</code> constants for attaching native procedures.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Entities.html#bounds-instance_method" title="Sketchup::Entities#bounds (method)">Sketchup::Entities#bounds</a></span>. For a procedural component the bounds of <span class='object_link'><a href="Sketchup/ComponentDefinition.html#entities-instance_method" title="Sketchup::ComponentDefinition#entities (method)">Sketchup::ComponentDefinition#entities</a></span> and <span class='object_link'><a href="Sketchup/ComponentDefinition.html#control_entities-instance_method" title="Sketchup::ComponentDefinition#control_entities (method)">Sketchup::ComponentDefinition#control_entities</a></span> differ.</p>
+</li><li>
+<p>Added the Procedures menu, accessible via <span class='object_link'><a href="UI.html#menu-class_method" title="UI.menu (method)">UI.menu</a></span>.</p>
+</li></ul>
+</li><li>
+<p>Added hatch patterns:</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Model.html#hatch_patterns-instance_method" title="Sketchup::Model#hatch_patterns (method)">Sketchup::Model#hatch_patterns</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#size-instance_method" title="Sketchup::HatchPatterns#size (method)">Sketchup::HatchPatterns#size</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#length-instance_method" title="Sketchup::HatchPatterns#length (method)">Sketchup::HatchPatterns#length</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#each-instance_method" title="Sketchup::HatchPatterns#each (method)">Sketchup::HatchPatterns#each</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#[]-instance_method" title="Sketchup::HatchPatterns#[] (method)">Sketchup::HatchPatterns#[]</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#add-instance_method" title="Sketchup::HatchPatterns#add (method)">Sketchup::HatchPatterns#add</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#remove-instance_method" title="Sketchup::HatchPatterns#remove (method)">Sketchup::HatchPatterns#remove</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#purge_unused-instance_method" title="Sketchup::HatchPatterns#purge_unused (method)">Sketchup::HatchPatterns#purge_unused</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#selected_hatch_pattern-instance_method" title="Sketchup::HatchPatterns#selected_hatch_pattern (method)">Sketchup::HatchPatterns#selected_hatch_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatterns.html#selected_hatch_pattern=-instance_method" title="Sketchup::HatchPatterns#selected_hatch_pattern= (method)">Sketchup::HatchPatterns#selected_hatch_pattern=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#name-instance_method" title="Sketchup::HatchPattern#name (method)">Sketchup::HatchPattern#name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#name=-instance_method" title="Sketchup::HatchPattern#name= (method)">Sketchup::HatchPattern#name=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#uv_scale-instance_method" title="Sketchup::HatchPattern#uv_scale (method)">Sketchup::HatchPattern#uv_scale</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#set_uv_scale-instance_method" title="Sketchup::HatchPattern#set_uv_scale (method)">Sketchup::HatchPattern#set_uv_scale</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#fill_color-instance_method" title="Sketchup::HatchPattern#fill_color (method)">Sketchup::HatchPattern#fill_color</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#fill_color=-instance_method" title="Sketchup::HatchPattern#fill_color= (method)">Sketchup::HatchPattern#fill_color=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#rotation_angle-instance_method" title="Sketchup::HatchPattern#rotation_angle (method)">Sketchup::HatchPattern#rotation_angle</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#rotation_angle=-instance_method" title="Sketchup::HatchPattern#rotation_angle= (method)">Sketchup::HatchPattern#rotation_angle=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#fill_texture_image-instance_method" title="Sketchup::HatchPattern#fill_texture_image (method)">Sketchup::HatchPattern#fill_texture_image</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#fill_texture_file_name-instance_method" title="Sketchup::HatchPattern#fill_texture_file_name (method)">Sketchup::HatchPattern#fill_texture_file_name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#set_fill_texture_image_and_file_name-instance_method" title="Sketchup::HatchPattern#set_fill_texture_image_and_file_name (method)">Sketchup::HatchPattern#set_fill_texture_image_and_file_name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#clear_fill_texture-instance_method" title="Sketchup::HatchPattern#clear_fill_texture (method)">Sketchup::HatchPattern#clear_fill_texture</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#fill_pattern_file_name-instance_method" title="Sketchup::HatchPattern#fill_pattern_file_name (method)">Sketchup::HatchPattern#fill_pattern_file_name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#set_fill_pattern_from_file-instance_method" title="Sketchup::HatchPattern#set_fill_pattern_from_file (method)">Sketchup::HatchPattern#set_fill_pattern_from_file</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#save_fill_pattern_to_file-instance_method" title="Sketchup::HatchPattern#save_fill_pattern_to_file (method)">Sketchup::HatchPattern#save_fill_pattern_to_file</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#clear_fill_pattern-instance_method" title="Sketchup::HatchPattern#clear_fill_pattern (method)">Sketchup::HatchPattern#clear_fill_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#thumbnail_image-instance_method" title="Sketchup::HatchPattern#thumbnail_image (method)">Sketchup::HatchPattern#thumbnail_image</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPattern.html#write-instance_method" title="Sketchup::HatchPattern#write (method)">Sketchup::HatchPattern#write</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Group.html#hatch_pattern-instance_method" title="Sketchup::Group#hatch_pattern (method)">Sketchup::Group#hatch_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Group.html#hatch_pattern=-instance_method" title="Sketchup::Group#hatch_pattern= (method)">Sketchup::Group#hatch_pattern=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/SectionPlane.html#hatch_pattern-instance_method" title="Sketchup::SectionPlane#hatch_pattern (method)">Sketchup::SectionPlane#hatch_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/SectionPlane.html#hatch_pattern=-instance_method" title="Sketchup::SectionPlane#hatch_pattern= (method)">Sketchup::SectionPlane#hatch_pattern=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentInstance.html#hatch_pattern-instance_method" title="Sketchup::ComponentInstance#hatch_pattern (method)">Sketchup::ComponentInstance#hatch_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/ComponentInstance.html#hatch_pattern=-instance_method" title="Sketchup::ComponentInstance#hatch_pattern= (method)">Sketchup::ComponentInstance#hatch_pattern=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Material.html#hatch_pattern-instance_method" title="Sketchup::Material#hatch_pattern (method)">Sketchup::Material#hatch_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Material.html#hatch_pattern=-instance_method" title="Sketchup::Material#hatch_pattern= (method)">Sketchup::Material#hatch_pattern=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/RenderingOptions.html#hatch_pattern-instance_method" title="Sketchup::RenderingOptions#hatch_pattern (method)">Sketchup::RenderingOptions#hatch_pattern</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/RenderingOptions.html#hatch_pattern=-instance_method" title="Sketchup::RenderingOptions#hatch_pattern= (method)">Sketchup::RenderingOptions#hatch_pattern=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/HatchPatternData.html" title="Sketchup::HatchPatternData (class)">Sketchup::HatchPatternData</a></span> for the default section fill style, with:</p>
+<ul><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#initialize-instance_method" title="Sketchup::HatchPatternData#initialize (method)">Sketchup::HatchPatternData#initialize</a></span> and <span class='object_link'><a href="Sketchup/HatchPatternData.html#dup-instance_method" title="Sketchup::HatchPatternData#dup (method)">Sketchup::HatchPatternData#dup</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#==-instance_method" title="Sketchup::HatchPatternData#== (method)">Sketchup::HatchPatternData#==</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#fill_color-instance_method" title="Sketchup::HatchPatternData#fill_color (method)">Sketchup::HatchPatternData#fill_color</a></span> and <span class='object_link'><a href="Sketchup/HatchPatternData.html#fill_color=-instance_method" title="Sketchup::HatchPatternData#fill_color= (method)">Sketchup::HatchPatternData#fill_color=</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#uv_scale-instance_method" title="Sketchup::HatchPatternData#uv_scale (method)">Sketchup::HatchPatternData#uv_scale</a></span> and <span class='object_link'><a href="Sketchup/HatchPatternData.html#set_uv_scale-instance_method" title="Sketchup::HatchPatternData#set_uv_scale (method)">Sketchup::HatchPatternData#set_uv_scale</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#rotation_angle-instance_method" title="Sketchup::HatchPatternData#rotation_angle (method)">Sketchup::HatchPatternData#rotation_angle</a></span> and <span class='object_link'><a href="Sketchup/HatchPatternData.html#rotation_angle=-instance_method" title="Sketchup::HatchPatternData#rotation_angle= (method)">Sketchup::HatchPatternData#rotation_angle=</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#fill_texture_image-instance_method" title="Sketchup::HatchPatternData#fill_texture_image (method)">Sketchup::HatchPatternData#fill_texture_image</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#fill_texture_file_name-instance_method" title="Sketchup::HatchPatternData#fill_texture_file_name (method)">Sketchup::HatchPatternData#fill_texture_file_name</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#set_fill_texture_image_and_file_name-instance_method" title="Sketchup::HatchPatternData#set_fill_texture_image_and_file_name (method)">Sketchup::HatchPatternData#set_fill_texture_image_and_file_name</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#clear_fill_texture-instance_method" title="Sketchup::HatchPatternData#clear_fill_texture (method)">Sketchup::HatchPatternData#clear_fill_texture</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#fill_pattern_file_name-instance_method" title="Sketchup::HatchPatternData#fill_pattern_file_name (method)">Sketchup::HatchPatternData#fill_pattern_file_name</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#set_fill_pattern_from_file-instance_method" title="Sketchup::HatchPatternData#set_fill_pattern_from_file (method)">Sketchup::HatchPatternData#set_fill_pattern_from_file</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#save_fill_pattern_to_file-instance_method" title="Sketchup::HatchPatternData#save_fill_pattern_to_file (method)">Sketchup::HatchPatternData#save_fill_pattern_to_file</a></span>.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/HatchPatternData.html#clear_fill_pattern-instance_method" title="Sketchup::HatchPatternData#clear_fill_pattern (method)">Sketchup::HatchPatternData#clear_fill_pattern</a></span>.</p>
+</li></ul>
+</li></ul>
+</li><li>
+<p>Added the Coordinate Reference System (CRS) API for mapping a model into a projection coordinate system:</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/Model.html#crs_location-instance_method" title="Sketchup::Model#crs_location (method)">Sketchup::Model#crs_location</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/Model.html#crs_location=-instance_method" title="Sketchup::Model#crs_location= (method)">Sketchup::Model#crs_location=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html" title="Sketchup::CRSLocation (class)">Sketchup::CRSLocation</a></span>:</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#name-instance_method" title="Sketchup::CRSLocation#name (method)">Sketchup::CRSLocation#name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#name=-instance_method" title="Sketchup::CRSLocation#name= (method)">Sketchup::CRSLocation#name=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#description-instance_method" title="Sketchup::CRSLocation#description (method)">Sketchup::CRSLocation#description</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#description=-instance_method" title="Sketchup::CRSLocation#description= (method)">Sketchup::CRSLocation#description=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#eastings-instance_method" title="Sketchup::CRSLocation#eastings (method)">Sketchup::CRSLocation#eastings</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#eastings=-instance_method" title="Sketchup::CRSLocation#eastings= (method)">Sketchup::CRSLocation#eastings=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#northings-instance_method" title="Sketchup::CRSLocation#northings (method)">Sketchup::CRSLocation#northings</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#northings=-instance_method" title="Sketchup::CRSLocation#northings= (method)">Sketchup::CRSLocation#northings=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#height-instance_method" title="Sketchup::CRSLocation#height (method)">Sketchup::CRSLocation#height</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#height=-instance_method" title="Sketchup::CRSLocation#height= (method)">Sketchup::CRSLocation#height=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#scale-instance_method" title="Sketchup::CRSLocation#scale (method)">Sketchup::CRSLocation#scale</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#scale=-instance_method" title="Sketchup::CRSLocation#scale= (method)">Sketchup::CRSLocation#scale=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#x_axis-instance_method" title="Sketchup::CRSLocation#x_axis (method)">Sketchup::CRSLocation#x_axis</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#x_axis=-instance_method" title="Sketchup::CRSLocation#x_axis= (method)">Sketchup::CRSLocation#x_axis=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#geodetic_datum-instance_method" title="Sketchup::CRSLocation#geodetic_datum (method)">Sketchup::CRSLocation#geodetic_datum</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#geodetic_datum=-instance_method" title="Sketchup::CRSLocation#geodetic_datum= (method)">Sketchup::CRSLocation#geodetic_datum=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#map_projection-instance_method" title="Sketchup::CRSLocation#map_projection (method)">Sketchup::CRSLocation#map_projection</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#map_projection=-instance_method" title="Sketchup::CRSLocation#map_projection= (method)">Sketchup::CRSLocation#map_projection=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#map_unit-instance_method" title="Sketchup::CRSLocation#map_unit (method)">Sketchup::CRSLocation#map_unit</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#map_unit=-instance_method" title="Sketchup::CRSLocation#map_unit= (method)">Sketchup::CRSLocation#map_unit=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#map_zone-instance_method" title="Sketchup::CRSLocation#map_zone (method)">Sketchup::CRSLocation#map_zone</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#map_zone=-instance_method" title="Sketchup::CRSLocation#map_zone= (method)">Sketchup::CRSLocation#map_zone=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#vertical_datum-instance_method" title="Sketchup::CRSLocation#vertical_datum (method)">Sketchup::CRSLocation#vertical_datum</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#vertical_datum=-instance_method" title="Sketchup::CRSLocation#vertical_datum= (method)">Sketchup::CRSLocation#vertical_datum=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#tgl_id-instance_method" title="Sketchup::CRSLocation#tgl_id (method)">Sketchup::CRSLocation#tgl_id</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#tgl_id=-instance_method" title="Sketchup::CRSLocation#tgl_id= (method)">Sketchup::CRSLocation#tgl_id=</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#calibration_file_name-instance_method" title="Sketchup::CRSLocation#calibration_file_name (method)">Sketchup::CRSLocation#calibration_file_name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSLocation.html#calibration_file_name=-instance_method" title="Sketchup::CRSLocation#calibration_file_name= (method)">Sketchup::CRSLocation#calibration_file_name=</a></span>.</p>
+</li><li>
+<p>Added the <code>Sketchup::CRSLocation::METERS</code>, <code>Sketchup::CRSLocation::FEET</code> and <code>Sketchup::CRSLocation::US_SURVEY_FEET</code> scale constants.</p>
+</li></ul>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSMapUnit.html" title="Sketchup::CRSMapUnit (class)">Sketchup::CRSMapUnit</a></span>:</p>
+<ul><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSMapUnit.html#name-instance_method" title="Sketchup::CRSMapUnit#name (method)">Sketchup::CRSMapUnit#name</a></span>.</p>
+</li><li>
+<p>Added <span class='object_link'><a href="Sketchup/CRSMapUnit.html#conversion-instance_method" title="Sketchup::CRSMapUnit#conversion (method)">Sketchup::CRSMapUnit#conversion</a></span>.</p>
+</li><li>
+<p>Added the <code>Sketchup::CRSMapUnit::METERS</code>, <code>Sketchup::CRSMapUnit::FEET</code> and <code>Sketchup::CRSMapUnit::US_SURVEY_FEET</code> map unit constants.</p>
+</li></ul>
+</li></ul>
+</li><li>
+<p>Upgraded CEF (used by <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>) to version 149.</p>
+</li></ul>
+
+<h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
+<ul><li>
+<p>Fixed a crash on Mac when quitting SketchUp while printing to the Ruby Console.</p>
+</li><li>
+<p>Fixed a bug where the <span class='object_link'><a href="Sketchup/Tool.html#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">Sketchup::Tool#onKeyDown</a></span> and <span class='object_link'><a href="Sketchup/Tool.html#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">Sketchup::Tool#onKeyUp</a></span> flags parameter contained incorrect modifier keys.</p>
+</li><li>
+<p>Fixed a bug where duplicated calls to <span class='object_link'><a href="Sketchup/Entities.html#add_face-instance_method" title="Sketchup::Entities#add_face (method)">Sketchup::Entities#add_face</a></span> with an array of edges (or a curve) would abort an open operation and return <code>nil</code>.</p>
+</li><li>
+<p>Fixed a bug where <span class='object_link'><a href="Sketchup/Entities.html#add_circle-instance_method" title="Sketchup::Entities#add_circle (method)">Sketchup::Entities#add_circle</a></span> and <span class='object_link'><a href="Sketchup/Entities.html#add_arc-instance_method" title="Sketchup::Entities#add_arc (method)">Sketchup::Entities#add_arc</a></span> with zero radius could create invalid geometry. These methods now return an empty array for zero radius.</p>
+</li><li>
+<p>Fixed a bug where the <span class='object_link'><a href="UI/HtmlDialog.html#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">UI::HtmlDialog#set_can_close</a></span> block was not re-invoked on subsequent close attempts after it had returned <code>false</code> once.</p>
+</li><li>
+<p>Fixed a bug where the <span class='object_link'><a href="Sketchup/ComponentDefinition.html#save_copy-instance_method" title="Sketchup::ComponentDefinition#save_copy (method)">Sketchup::ComponentDefinition#save_copy</a></span> method did not retain the original guid of the component definition.</p>
+</li><li>
+<p>Fixed a bug where <span class='object_link'><a href="Sketchup/InstancePath.html#valid%3F-instance_method" title="Sketchup::InstancePath#valid? (method)">Sketchup::InstancePath#valid?</a></span> returned <code>true</code> for a leaf-only path pointing at a nested <span class='object_link'><a href="Sketchup/Vertex.html" title="Sketchup::Vertex (class)">Sketchup::Vertex</a></span>, while an equivalent path to a nested <span class='object_link'><a href="Sketchup/Edge.html" title="Sketchup::Edge (class)">Sketchup::Edge</a></span> or <span class='object_link'><a href="Sketchup/Face.html" title="Sketchup::Face (class)">Sketchup::Face</a></span> correctly returned <code>false</code>. A leaf-only path to any nested entity is now consistently reported as invalid.</p>
+</li><li>
+<p>Modified <span class='object_link'><a href="Sketchup/ShadowInfo.html#[]=-instance_method" title="Sketchup::ShadowInfo#[]= (method)">Sketchup::ShadowInfo#[]=</a></span> to warn rather than raise for read-only keys. The 2026.1 change broke extensions that tried to store and re-apply all ShadowsInfo.</p>
+</li><li>
+<p>Fixed a bug where attaching a <span class='object_link'><a href="Sketchup/DimensionLinear.html" title="Sketchup::DimensionLinear (class)">Sketchup::DimensionLinear</a></span> to a <span class='object_link'><a href="Sketchup/ConstructionLine.html" title="Sketchup::ConstructionLine (class)">Sketchup::ConstructionLine</a></span> inside a group or component (via <span class='object_link'><a href="Sketchup/Entities.html#add_dimension_linear-instance_method" title="Sketchup::Entities#add_dimension_linear (method)">Sketchup::Entities#add_dimension_linear</a></span>, <span class='object_link'><a href="Sketchup/DimensionLinear.html#start_attached_to=-instance_method" title="Sketchup::DimensionLinear#start_attached_to= (method)">Sketchup::DimensionLinear#start_attached_to=</a></span>, or <span class='object_link'><a href="Sketchup/DimensionLinear.html#end_attached_to=-instance_method" title="Sketchup::DimensionLinear#end_attached_to= (method)">Sketchup::DimensionLinear#end_attached_to=</a></span>) applied the instance’s transformation to the attachment point twice, producing an incorrect position.</p>
+</li><li>
+<p>Fixed a bug in <span class='object_link'><a href="Sketchup/DefinitionsObserver.html" title="Sketchup::DefinitionsObserver (class)">Sketchup::DefinitionsObserver</a></span> where it would notify for definitions added to other open models in multi-document environments. Observers now only receive notifications for their own model’s definitions.</p>
+</li><li>
+<p>Fixed a bug in <span class='object_link'><a href="Sketchup/EnvironmentsObserver.html" title="Sketchup::EnvironmentsObserver (class)">Sketchup::EnvironmentsObserver</a></span>, <span class='object_link'><a href="Sketchup/ModelObserver.html#onPidChanged-instance_method" title="Sketchup::ModelObserver#onPidChanged (method)">Sketchup::ModelObserver#onPidChanged</a></span> and <span class='object_link'><a href="Sketchup/MaterialsObserver.html#onMaterialSetCurrent-instance_method" title="Sketchup::MaterialsObserver#onMaterialSetCurrent (method)">Sketchup::MaterialsObserver#onMaterialSetCurrent</a></span> where they would notify for changes made in other open models in multi-document environments. Observers now only receive notifications for their own model.</p>
+</li><li>
+<p><span class='object_link'><a href="Sketchup/EnvironmentsObserver.html#onEnvironmentChange-instance_method" title="Sketchup::EnvironmentsObserver#onEnvironmentChange (method)">Sketchup::EnvironmentsObserver#onEnvironmentChange</a></span> no longer fires for environments that have no parent. This could previously occur while an environment was being added, before it was part of any model. Use <span class='object_link'><a href="Sketchup/EnvironmentsObserver.html#onEnvironmentAdd-instance_method" title="Sketchup::EnvironmentsObserver#onEnvironmentAdd (method)">Sketchup::EnvironmentsObserver#onEnvironmentAdd</a></span> to react to an environment becoming part of the model.</p>
+</li></ul>
+
+<h1 id="label-What-27s+new+in+SketchUp+2026.2">What’s new in SketchUp 2026.2</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -313,9 +577,9 @@
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>Made <span class='object_link'><a href="Sketchup.html#load-class_method" title="Sketchup.load (method)">Sketchup.load</a></span> and <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> pass through Ruby Exceptions similarly to Ruby&#39;s own <code>load</code> and <code>require</code>, instead of rescuing them.</p>
+<p>Made <span class='object_link'><a href="Sketchup.html#load-class_method" title="Sketchup.load (method)">Sketchup.load</a></span> and <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> pass through Ruby Exceptions similarly to Ruby’s own <code>load</code> and <code>require</code>, instead of rescuing them.</p>
 </li><li>
-<p>Made <span class='object_link'><a href="Sketchup.html#load-class_method" title="Sketchup.load (method)">Sketchup.load</a></span> and <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> raise a <code>LoadError</code> when the file cannot be found, similarly to Ruby&#39;s own <code>load</code> and <code>require</code>.</p>
+<p>Made <span class='object_link'><a href="Sketchup.html#load-class_method" title="Sketchup.load (method)">Sketchup.load</a></span> and <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> raise a <code>LoadError</code> when the file cannot be found, similarly to Ruby’s own <code>load</code> and <code>require</code>.</p>
 </li><li>
 <p>Improved consistency of <span class='object_link'><a href="Sketchup/Tools.html#active_tool_name-instance_method" title="Sketchup::Tools#active_tool_name (method)">Sketchup::Tools#active_tool_name</a></span> and the tool name passed to <span class='object_link'><a href="Sketchup/ToolsObserver.html#onActiveToolChanged-instance_method" title="Sketchup::ToolsObserver#onActiveToolChanged (method)">Sketchup::ToolsObserver#onActiveToolChanged</a></span>. Affecting the following tools <code>CommentTool</code>, <code>FlipTool</code>, <code>IglooTool</code> and <code>LassoSelectionTool</code>.</p>
 </li><li>
@@ -326,7 +590,7 @@
 <p>Fixed a bug where <span class='object_link'><a href="Sketchup/DimensionLinear.html#start_attached_to=-instance_method" title="Sketchup::DimensionLinear#start_attached_to= (method)">Sketchup::DimensionLinear#start_attached_to=</a></span> could move the construction point in the instance path.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2026.1">What&#39;s new in SketchUp 2026.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2026.1">What’s new in SketchUp 2026.1</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -334,14 +598,14 @@
 </li><li>
 <p>Modified <span class='object_link'><a href="Sketchup/ShadowInfo.html#[]=-instance_method" title="Sketchup::ShadowInfo#[]= (method)">Sketchup::ShadowInfo#[]=</a></span> to be stricter and provide better error feedback. It will now raise a <code>KeyError</code> for invalid or read-only keys, and a <code>TypeError</code> for values of an incorrect type.</p>
 </li><li>
-<p>Added built-in JavaScript callbacks <code>sketchup.launchEW(id)</code> and <code>sketchup.installRBZ(url)</code> for HtmlDialog. <code>launchEW</code> with a UUID string opens that extension&#39;s page. <code>installRBZ</code> downloads and installs the <code>.rbz</code> at the given URL.</p>
+<p>Added built-in JavaScript callbacks <code>sketchup.launchEW(id)</code> and <code>sketchup.installRBZ(url)</code> for HtmlDialog. <code>launchEW</code> with a UUID string opens that extension’s page. <code>installRBZ</code> downloads and installs the <code>.rbz</code> at the given URL.</p>
 </li><li>
 <p>Added <span class='object_link'><a href="UI/HtmlDialog.html#hide-instance_method" title="UI::HtmlDialog#hide (method)">UI::HtmlDialog#hide</a></span> to hide dialogs without closing them, preserving their state.</p>
 </li></ul>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>Fixed a regression in <span class='object_link'><a href="Sketchup/Tool.html#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">Sketchup::Tool#onKeyDown</a></span> introduced in SketchUp 2026.0 (Windows) where the event didn&#39;t trigger when Return/Enter was pressed.</p>
+<p>Fixed a regression in <span class='object_link'><a href="Sketchup/Tool.html#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">Sketchup::Tool#onKeyDown</a></span> introduced in SketchUp 2026.0 (Windows) where the event didn’t trigger when Return/Enter was pressed.</p>
 </li><li>
 <p>Fixed silent failures when passing non-invertible transformations (e.g. zero-scale transforms). The following methods now correctly raise an <code>ArgumentError</code>:</p>
 <ul><li>
@@ -361,11 +625,11 @@
 <p>Fixed <span class='object_link'><a href="Layout/Entity.html#transform!-instance_method" title="Layout::Entity#transform! (method)">Layout::Entity#transform!</a></span> to raise an <code>ArgumentError</code> when given a non-invertible <span class='object_link'><a href="Geom/Transformation2d.html" title="Geom::Transformation2d (class)">Geom::Transformation2d</a></span>.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2026.0">What&#39;s new in SketchUp 2026.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2026.0">What’s new in SketchUp 2026.0</h1>
 
 <h2 id="label-Breaking+changes">Breaking changes</h2>
 <ul><li>
-<p>Modifying the properties <span class='object_link'><a href="Sketchup/Axes.html" title="Sketchup::Axes (class)">Sketchup::Axes</a></span>, <span class='object_link'><a href="Sketchup/Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, <span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span>, and <span class='object_link'><a href="Sketchup/ShadowInfo.html" title="Sketchup::ShadowInfo (class)">Sketchup::ShadowInfo</a></span> of a <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span> is now an undoable operation. Scene changes are expected to be called between <span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Sketchup/Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> to not flood the undo stack. Extensions that don&#39;t follow this requirement will be rejected for updates or publication to the Extension Warehouse.</p>
+<p>Modifying the properties <span class='object_link'><a href="Sketchup/Axes.html" title="Sketchup::Axes (class)">Sketchup::Axes</a></span>, <span class='object_link'><a href="Sketchup/Camera.html" title="Sketchup::Camera (class)">Sketchup::Camera</a></span>, <span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span>, and <span class='object_link'><a href="Sketchup/ShadowInfo.html" title="Sketchup::ShadowInfo (class)">Sketchup::ShadowInfo</a></span> of a <span class='object_link'><a href="Sketchup/Page.html" title="Sketchup::Page (class)">Sketchup::Page</a></span> is now an undoable operation. Scene changes are expected to be called between <span class='object_link'><a href="Sketchup/Model.html#start_operation-instance_method" title="Sketchup::Model#start_operation (method)">Sketchup::Model#start_operation</a></span> and <span class='object_link'><a href="Sketchup/Model.html#commit_operation-instance_method" title="Sketchup::Model#commit_operation (method)">Sketchup::Model#commit_operation</a></span> to not flood the undo stack. Extensions that don’t follow this requirement will be rejected for updates or publication to the Extension Warehouse.</p>
 </li><li>
 <p>Additional error checking is performed regarding non-invertible transforms (typically this means the matrix has zero scale on one or more axes). Calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span>, or <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
 </li></ul>
@@ -378,7 +642,7 @@
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/Styles.html#remove_style-instance_method" title="Sketchup::Styles#remove_style (method)">Sketchup::Styles#remove_style</a></span>.</p>
 </li><li>
-<p>Added a new optional parameter for <span class='object_link'><a href="Layout/LinearDimension.html#initialize-instance_method" title="Layout::LinearDimension#initialize (method)">Layout::LinearDimension#initialize</a></span> to specify the dimension line&#39;s alignment on creation. Alignment can be  specified using one of the following constants:</p>
+<p>Added a new optional parameter for <span class='object_link'><a href="Layout/LinearDimension.html#initialize-instance_method" title="Layout::LinearDimension#initialize (method)">Layout::LinearDimension#initialize</a></span> to specify the dimension line’s alignment on creation. Alignment can be specified using one of the following constants:</p>
 <ul><li>
 <p><span class='object_link'><a href="Layout/LinearDimension.html#DIMENSION_LINE_ALIGNED-constant" title="Layout::LinearDimension::DIMENSION_LINE_ALIGNED (constant)">Layout::LinearDimension::DIMENSION_LINE_ALIGNED</a></span></p>
 </li><li>
@@ -471,25 +735,25 @@
 <ul><li>
 <p>Fixed a crash in <span class='object_link'><a href="Sketchup/Model.html#place_component-instance_method" title="Sketchup::Model#place_component (method)">Sketchup::Model#place_component</a></span> when placing an empty component.</p>
 </li><li>
-<p>Fixed SketchUp 2021.1 regression in <span class='object_link'><a href="Sketchup/Model.html#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">Sketchup::Model#drawing_element_visible?</a></span> throwing an exception when the last element of an instance path was a  <span class='object_link'><a href="Sketchup/Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span> or <span class='object_link'><a href="Sketchup/ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span>.</p>
+<p>Fixed SketchUp 2021.1 regression in <span class='object_link'><a href="Sketchup/Model.html#drawing_element_visible%3F-instance_method" title="Sketchup::Model#drawing_element_visible? (method)">Sketchup::Model#drawing_element_visible?</a></span> throwing an exception when the last element of an instance path was a <span class='object_link'><a href="Sketchup/Group.html" title="Sketchup::Group (class)">Sketchup::Group</a></span> or <span class='object_link'><a href="Sketchup/ComponentInstance.html" title="Sketchup::ComponentInstance (class)">Sketchup::ComponentInstance</a></span>.</p>
 </li><li>
 <p>Fixed an undo crash when using <span class='object_link'><a href="Sketchup/Classifications.html#load_schema-instance_method" title="Sketchup::Classifications#load_schema (method)">Sketchup::Classifications#load_schema</a></span> and <span class='object_link'><a href="Sketchup/ComponentDefinition.html#add_classification-instance_method" title="Sketchup::ComponentDefinition#add_classification (method)">Sketchup::ComponentDefinition#add_classification</a></span> in the same operation.</p>
 </li><li>
-<p>Fixed a bug that involves using a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> that is not invertible. Now calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or  <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span> or  <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
+<p>Fixed a bug that involves using a <span class='object_link'><a href="Geom/Transformation.html" title="Geom::Transformation (class)">Geom::Transformation</a></span> that is not invertible. Now calling <span class='object_link'><a href="Geom/Transformation.html#inverse-instance_method" title="Geom::Transformation#inverse (method)">Geom::Transformation#inverse</a></span> or <span class='object_link'><a href="Geom/Transformation.html#invert!-instance_method" title="Geom::Transformation#invert! (method)">Geom::Transformation#invert!</a></span> with a non-invertible transform will raise an <code>ArgumentError</code>. In addition, calling <span class='object_link'><a href="Sketchup/ComponentInstance.html#transformation=-instance_method" title="Sketchup::ComponentInstance#transformation= (method)">Sketchup::ComponentInstance#transformation=</a></span> or <span class='object_link'><a href="Sketchup/Group.html#transformation=-instance_method" title="Sketchup::Group#transformation= (method)">Sketchup::Group#transformation=</a></span> with a non-invertible transform as an argument will also raise an <code>ArgumentError</code>.</p>
 </li><li>
 <p>Fixed a crash in <span class='object_link'><a href="Layout/SketchUpModel.html" title="Layout::SketchUpModel (class)">Layout::SketchUpModel</a></span> when attempting to render a model containing an environment when that viewport was not yet added to a <span class='object_link'><a href="Layout/Document.html" title="Layout::Document (class)">Layout::Document</a></span>.</p>
 </li><li>
 <p>Fixed a crash when setting line width with <span class='object_link'><a href="Sketchup/View.html#line_width=-instance_method" title="Sketchup::View#line_width= (method)">Sketchup::View#line_width=</a></span> to 0.0 with the new graphics engine. Negative values will raise an <code>ArgumentError</code> and positive values will be clamped to a minimum of 1.0.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2025.0.3">What&#39;s new in SketchUp 2025.0.3</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2025.0.3">What’s new in SketchUp 2025.0.3</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
 <p>Fixed crash using the LayOut Ruby API to add entities to a LayOut document.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2025.0.2">What&#39;s new in SketchUp 2025.0.2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2025.0.2">What’s new in SketchUp 2025.0.2</h1>
 
 <h2 id="label-Update+OpenSSL+to+3.4.1">Update OpenSSL to 3.4.1</h2>
 
@@ -507,7 +771,7 @@
 <p>Fixed <span class='object_link'><a href="Sketchup/Environments.html#current=-instance_method" title="Sketchup::Environments#current= (method)">Sketchup::Environments#current=</a></span> to allow unsetting the current environment.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2025.0">What&#39;s new in SketchUp 2025.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2025.0">What’s new in SketchUp 2025.0</h1>
 
 <h2 id="label-Update+OpenSSL+to+3.3.1">Update OpenSSL to 3.3.1</h2>
 
@@ -606,7 +870,7 @@
 <p><span class='object_link'><a href="Sketchup/Page.html#environment=-instance_method" title="Sketchup::Page#environment= (method)">Sketchup::Page#environment=</a></span></p>
 </li></ul>
 </li><li>
-<p>Added <code>:pixel_size</code> and <code>:point_size</code> options to <span class='object_link'><a href="Sketchup/View.html#draw_text-instance_method" title="Sketchup::View#draw_text (method)">Sketchup::View#draw_text</a></span>  and <span class='object_link'><a href="Sketchup/View.html#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">Sketchup::View#text_bounds</a></span> for consistent font size across platforms.</p>
+<p>Added <code>:pixel_size</code> and <code>:point_size</code> options to <span class='object_link'><a href="Sketchup/View.html#draw_text-instance_method" title="Sketchup::View#draw_text (method)">Sketchup::View#draw_text</a></span> and <span class='object_link'><a href="Sketchup/View.html#text_bounds-instance_method" title="Sketchup::View#text_bounds (method)">Sketchup::View#text_bounds</a></span> for consistent font size across platforms.</p>
 </li><li>
 <p>Added constants for the valid values for <span class='object_link'><a href="Sketchup/View.html#corner-instance_method" title="Sketchup::View#corner (method)">Sketchup::View#corner</a></span>:</p>
 <ul><li>
@@ -686,17 +950,17 @@
 <p>Fixed SketchUp 2023-2024 regression in <span class='object_link'><a href="Sketchup/Face.html#area-instance_method" title="Sketchup::Face#area (method)">Sketchup::Face#area</a></span> reporting incorrect value when there are glued components on the outer loop.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2024.0.2">What&#39;s new in SketchUp 2024.0.2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2024.0.2">What’s new in SketchUp 2024.0.2</h1>
 
 <h2 id="label-Update+OpenSSL+to+3.2.2">Update OpenSSL to 3.2.2</h2>
 
 <p>The version of OpenSSL in Ruby was updated to 3.2.2.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+2024.0.1">What&#39;s new in SketchUp 2024.0.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2024.0.1">What’s new in SketchUp 2024.0.1</h1>
 
 <p>No Ruby API changes.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+2024.0">What&#39;s new in SketchUp 2024.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2024.0">What’s new in SketchUp 2024.0</h1>
 
 <h2 id="label-Upgrade+Ruby+to+3.2.2">Upgrade Ruby to 3.2.2</h2>
 
@@ -727,7 +991,7 @@
 </li></ul>
 </li></ul>
 </li><li>
-<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#[]=-instance_method" title="Sketchup::RenderingOptions#[]= (method)">Sketchup::RenderingOptions#[]=</a></span> will now raise an <code>ArgumentError</code> if the given value cannot be set  for the given key. This is a breaking change since earlier versions of the API would not indicate any  failures for such erroneous calls.</p>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html#[]=-instance_method" title="Sketchup::RenderingOptions#[]= (method)">Sketchup::RenderingOptions#[]=</a></span> will now raise an <code>ArgumentError</code> if the given value cannot be set for the given key. This is a breaking change since earlier versions of the API would not indicate any failures for such erroneous calls.</p>
 </li></ul>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
@@ -740,10 +1004,10 @@
 </li><li>
 <p>Changed <span class='object_link'><a href="Sketchup/Model.html#close-instance_method" title="Sketchup::Model#close (method)">Sketchup::Model#close</a></span> to set focus to the next open model window on macOS.</p>
 </li><li>
-<p>Fixed regression from SketchUp 2023.1 with the Ruby Console on Windows where new-line  character was incorrectly added to the end of <code>print</code> calls.</p>
+<p>Fixed regression from SketchUp 2023.1 with the Ruby Console on Windows where new-line character was incorrectly added to the end of <code>print</code> calls.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2023.1">What&#39;s new in SketchUp 2023.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2023.1">What’s new in SketchUp 2023.1</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -768,14 +1032,14 @@
 <p>Added method <span class='object_link'><a href="Sketchup/ArcCurve.html#circular%3F-instance_method" title="Sketchup::ArcCurve#circular? (method)">Sketchup::ArcCurve#circular?</a></span></p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2023.0.2">What&#39;s new in SketchUp 2023.0.2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2023.0.2">What’s new in SketchUp 2023.0.2</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>Fixed issues with <span class='object_link'><a href="Sketchup/Entities.html#erase_entities-instance_method" title="Sketchup::Entities#erase_entities (method)">Sketchup::Entities#erase_entities</a></span> incorrectly throwing  and <code>ArgumentError</code> claiming an instance was open for editing.</p>
+<p>Fixed issues with <span class='object_link'><a href="Sketchup/Entities.html#erase_entities-instance_method" title="Sketchup::Entities#erase_entities (method)">Sketchup::Entities#erase_entities</a></span> incorrectly throwing and <code>ArgumentError</code> claiming an instance was open for editing.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2023.0.1">What&#39;s new in SketchUp 2023.0.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2023.0.1">What’s new in SketchUp 2023.0.1</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
@@ -784,7 +1048,7 @@
 <p>Fixed issue where new Ruby toolbars might not show up by default.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2023.0">What&#39;s new in SketchUp 2023.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2023.0">What’s new in SketchUp 2023.0</h1>
 
 <h2 id="label-Overlays">Overlays</h2>
 
@@ -798,9 +1062,9 @@
 <ul><li>
 <p>Added <span class='object_link'><a href="Sketchup.html#resize_viewport-class_method" title="Sketchup.resize_viewport (method)">Sketchup.resize_viewport</a></span></p>
 </li><li>
-<p>Made <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> skip <code>.rbs</code> files that aren&#39;t SketchUp scrambled Ruby  files. This change is to avoid conflict with Ruby 3&#39;s introduction of <code>.rbs</code>  file extension for type definitions. (<a href="https://github.com/ruby/rbs">github.com/ruby/rbs</a>)</p>
+<p>Made <span class='object_link'><a href="Sketchup.html#require-class_method" title="Sketchup.require (method)">Sketchup.require</a></span> skip <code>.rbs</code> files that aren’t SketchUp scrambled Ruby files. This change is to avoid conflict with Ruby 3’s introduction of <code>.rbs</code> file extension for type definitions. (<a href="https://github.com/ruby/rbs">github.com/ruby/rbs</a>)</p>
 </li><li>
-<p>Removed restrictions for <span class='object_link'><a href="Sketchup/View.html#load_texture-instance_method" title="Sketchup::View#load_texture (method)">Sketchup::View#load_texture</a></span> that demanded it was  only used when there was a Ruby tool on the tool stack.</p>
+<p>Removed restrictions for <span class='object_link'><a href="Sketchup/View.html#load_texture-instance_method" title="Sketchup::View#load_texture (method)">Sketchup::View#load_texture</a></span> that demanded it was only used when there was a Ruby tool on the tool stack.</p>
 </li><li>
 <p>Added class <span class='object_link'><a href="Sketchup/Overlay.html" title="Sketchup::Overlay (class)">Sketchup::Overlay</a></span></p>
 </li><li>
@@ -823,7 +1087,7 @@
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>Fixed <span class='object_link'><a href="Sketchup/DefinitionList.html#load-instance_method" title="Sketchup::DefinitionList#load (method)">Sketchup::DefinitionList#load</a></span> not loading component if the model already contained a  different component associted with the same path.</p>
+<p>Fixed <span class='object_link'><a href="Sketchup/DefinitionList.html#load-instance_method" title="Sketchup::DefinitionList#load (method)">Sketchup::DefinitionList#load</a></span> not loading component if the model already contained a different component associted with the same path.</p>
 </li><li>
 <p>Fixed crashes that could occur from erasing instances that was part of the current <span class='object_link'><a href="Sketchup/Model.html#active_path-instance_method" title="Sketchup::Model#active_path (method)">Sketchup::Model#active_path</a></span>. The following methods will now raise an <code>ArgumentError</code> when attempting to erase entities related to the active editing path:</p>
 <ul><li>
@@ -834,12 +1098,12 @@
 <p><span class='object_link'><a href="Sketchup/DefinitionList.html#remove-instance_method" title="Sketchup::DefinitionList#remove (method)">Sketchup::DefinitionList#remove</a></span></p>
 </li></ul>
 </li><li>
-<p>Fixed return value of <span class='object_link'><a href="Sketchup/EntitiesBuilder.html#valid%3F-instance_method" title="Sketchup::EntitiesBuilder#valid? (method)">Sketchup::EntitiesBuilder#valid?</a></span> to correctly return  <code>true</code> instead of <code>0</code> for success.</p>
+<p>Fixed return value of <span class='object_link'><a href="Sketchup/EntitiesBuilder.html#valid%3F-instance_method" title="Sketchup::EntitiesBuilder#valid? (method)">Sketchup::EntitiesBuilder#valid?</a></span> to correctly return <code>true</code> instead of <code>0</code> for success.</p>
 </li><li>
-<p>Fixed a bug where calling <span class='object_link'><a href="Sketchup/Entity.html#parent-instance_method" title="Sketchup::Entity#parent (method)">Sketchup::Entity#parent</a></span> on a top level tag folder returned an incorrect type.</p>
+<p>Fixed a bug where calling <span class='object_link'><a href="Sketchup/Entity.html#parent-instance_method" title="Sketchup::Entity#parent (method)">Sketchup::Entity#parent</a></span> on a top level <span class='object_link'><a href="Sketchup/LayerFolder.html" title="Sketchup::LayerFolder (class)">Sketchup::LayerFolder</a></span> returned an incorrect type.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2022.0.1">What&#39;s new in SketchUp 2022.0.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2022.0.1">What’s new in SketchUp 2022.0.1</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
@@ -848,7 +1112,7 @@
 <p>Fixed a bug where <span class='object_link'><a href="Sketchup/Tool.html#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">Sketchup::Tool#onKeyDown</a></span> and <span class='object_link'><a href="Sketchup/Tool.html#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">Sketchup::Tool#onKeyUp</a></span> events were being incorrectly sent to a Ruby tool when the input focus was inside an <span class='object_link'><a href="UI.html#inputbox-class_method" title="UI.inputbox (method)">UI.inputbox</a></span>.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2022.0">What&#39;s new in SketchUp 2022.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2022.0">What’s new in SketchUp 2022.0</h1>
 
 <h2 id="label-EntitiesBuilder">EntitiesBuilder</h2>
 
@@ -864,7 +1128,7 @@
 
 <h2 id="label-Made+Ruby+Console+output+more+consistent">Made Ruby Console output more consistent</h2>
 
-<p>Earlier versions of SketchUp printed the return values to Ruby Console commands different depending on platform. This has been made consistent following the pattern of Ruby&#39;s own IRB tool. A side effect of this is that the console now uses <code>.inspect</code> instead of <code>.puts</code> when printing the returned value which makes it less ambiguous in many cases. For example <code>nil</code> vs <code>&quot;&quot;</code> that would otherwise print a blank line in both cases.</p>
+<p>Earlier versions of SketchUp printed the return values to Ruby Console commands different depending on platform. This has been made consistent following the pattern of Ruby’s own IRB tool. A side effect of this is that the console now uses <code>.inspect</code> instead of <code>.puts</code> when printing the returned value which makes it less ambiguous in many cases. For example <code>nil</code> vs <code>&quot;&quot;</code> that would otherwise print a blank line in both cases.</p>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -944,14 +1208,14 @@
 <p>Fixed <span class='object_link'><a href="Sketchup/Face.html#uv_tile_at-instance_method" title="Sketchup::Face#uv_tile_at (method)">Sketchup::Face#uv_tile_at</a></span> could return incorrect values in some edge cases.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2021.1.1">What&#39;s new in SketchUp 2021.1.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2021.1.1">What’s new in SketchUp 2021.1.1</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>Fixed <a href="https://github.com/SketchUp/api-issue-tracker/issues/646">regression</a> in <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> from SketchUp 21.1.0 where the methods on JavaScript&#39;s <code>sketchup</code> object for registered action callbacks were missing after navigating away from the initial page.</p>
+<p>Fixed <a href="https://github.com/SketchUp/api-issue-tracker/issues/646">regression</a> in <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> from SketchUp 21.1.0 where the methods on JavaScript’s <code>sketchup</code> object for registered action callbacks were missing after navigating away from the initial page.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2021.1">What&#39;s new in SketchUp 2021.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2021.1">What’s new in SketchUp 2021.1</h1>
 
 <h2 id="label-Upgrade+Ruby+to+2.7.2">Upgrade Ruby to 2.7.2</h2>
 
@@ -1018,7 +1282,7 @@
 </li><li>
 <p>Added support for adding submenus to the Developer menu.</p>
 </li><li>
-<p><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> is now faster when looking up points in large meshes.  This also improve performance when adding points to large meshes. Note that  the mesh need to be created with an estimated total number of points for this  performance improvement to kick in. The lookup of points for large meshes are  now O(logN) instead of O(N^2).</p>
+<p><span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> is now faster when looking up points in large meshes. This also improve performance when adding points to large meshes. Note that the mesh need to be created with an estimated total number of points for this performance improvement to kick in. The lookup of points for large meshes are now O(logN) instead of O(N^2).</p>
 </li></ul>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
@@ -1027,7 +1291,7 @@
 </li><li>
 <p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#bring_to_front-instance_method" title="UI::HtmlDialog#bring_to_front (method)">UI::HtmlDialog#bring_to_front</a></span> on Mac, such that calling the method sets focus on the HtmlDialog. This makes the behavior of the method consistent with that on Windows.</p>
 </li><li>
-<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">UI::HtmlDialog#set_size</a></span> and <span class='object_link'><a href="UI/HtmlDialog.html#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">UI::HtmlDialog#set_position</a></span> on Windows, such that calling the methods doesn&#39;t set the focus on the HtmlDialog. This makes the behavior of the method consistent with that on Mac.</p>
+<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#set_size-instance_method" title="UI::HtmlDialog#set_size (method)">UI::HtmlDialog#set_size</a></span> and <span class='object_link'><a href="UI/HtmlDialog.html#set_position-instance_method" title="UI::HtmlDialog#set_position (method)">UI::HtmlDialog#set_position</a></span> on Windows, such that calling the methods doesn’t set the focus on the HtmlDialog. This makes the behavior of the method consistent with that on Mac.</p>
 </li><li>
 <p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html#set_can_close-instance_method" title="UI::HtmlDialog#set_can_close (method)">UI::HtmlDialog#set_can_close</a></span> Mac implementation so that the callback provided can properly prevent the window from closing.</p>
 </li><li>
@@ -1038,7 +1302,7 @@
 <p>Fixed <span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> not supporting English page names on localized build on Mac.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2021.0">What&#39;s new in SketchUp 2021.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2021.0">What’s new in SketchUp 2021.0</h1>
 
 <h2 id="label-Upgrade+Ruby+to+2.7.1">Upgrade Ruby to 2.7.1</h2>
 
@@ -1092,7 +1356,7 @@
 </li><li>
 <p>Added new method signature to <span class='object_link'><a href="Sketchup/DefinitionList.html#load-instance_method" title="Sketchup::DefinitionList#load (method)">Sketchup::DefinitionList#load</a></span>: <code>Sketchup::DefinitionList#load(filename, allow_newer: true)</code></p>
 </li><li>
-<p>Added method <span class='object_link'><a href="Sketchup/Skp.html#read_guid-class_method" title="Sketchup::Skp.read_guid (method)">Sketchup::Skp.read_guid</a></span> for reading a model&#39;s guid without having to open it in SketchUp.</p>
+<p>Added method <span class='object_link'><a href="Sketchup/Skp.html#read_guid-class_method" title="Sketchup::Skp.read_guid (method)">Sketchup::Skp.read_guid</a></span> for reading a model’s guid without having to open it in SketchUp.</p>
 </li><li>
 <p>Updated OpenSSL to 1.1.1g.</p>
 </li></ul>
@@ -1102,13 +1366,13 @@
 <p>Fixed <span class='object_link'><a href="Sketchup/Texture.html#filename-instance_method" title="Sketchup::Texture#filename (method)">Sketchup::Texture#filename</a></span> such that it appends a file extension matching the data format it was loaded from when the internal texture filename is missing the extension.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2020.2">What&#39;s new in SketchUp 2020.2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2020.2">What’s new in SketchUp 2020.2</h1>
 
 <h2 id="label-Ruby+and+C+Exchange+API">Ruby and C Exchange API</h2>
 
 <p>To allow better interoperability of the Ruby API and C API within the SketchUp application we introduced the ability to exchange entities and image reps between the APIs.</p>
 
-<p>Entities because it&#39;s a key type and ImageRep because it can be an expensive object to copy.</p>
+<p>Entities because it’s a key type and ImageRep because it can be an expensive object to copy.</p>
 <ul><li>
 <p><code>SUEntityToRuby</code></p>
 </li><li>
@@ -1135,7 +1399,7 @@
 <p>Fixed DWG import option, <code>:preserve_origin</code> is ignored.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2020.1">What&#39;s new in SketchUp 2020.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2020.1">What’s new in SketchUp 2020.1</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -1202,7 +1466,7 @@
 <p>Fixed <span class='object_link'><a href="Layout/SketchUpModel.html#render-instance_method" title="Layout::SketchUpModel#render (method)">Layout::SketchUpModel#render</a></span> documentation</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2020.0">What&#39;s new in SketchUp 2020.0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2020.0">What’s new in SketchUp 2020.0</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -1238,7 +1502,7 @@
 <p><span class='object_link'><a href="Length.html#USGallon-constant" title="Length::USGallon (constant)">Length::USGallon</a></span></p>
 </li></ul>
 </li><li>
-<p>Added <code>AreaPrecision</code> and <code>VolumePrecision</code> to <code>Sketchup.active_model.options["UnitsOptions"]</code></p>
+<p>Added <code>AreaPrecision</code> and <code>VolumePrecision</code> to <code>Sketchup.active_model.options[&quot;UnitsOptions&quot;]</code></p>
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/Layer.html#display_name-instance_method" title="Sketchup::Layer#display_name (method)">Sketchup::Layer#display_name</a></span> - this will return <code>&quot;Untagged&quot;</code> for layer0 while the old <span class='object_link'><a href="Sketchup/Layer.html#name-instance_method" title="Sketchup::Layer#name (method)">Sketchup::Layer#name</a></span> will continue to return <code>&quot;Layer0&quot;</code>.</p>
 </li><li>
@@ -1254,12 +1518,12 @@
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
-<p>Fixed potential crash in <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>&#39;s callbacks due to values not protected against Ruby&#39;s garbage collection.</p>
+<p>Fixed potential crash in <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>‘s callbacks due to values not protected against Ruby’s garbage collection.</p>
 </li><li>
 <p>Fixed model validation where it incorrectly flagged some valid UV mapping as invalid and reset it.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2019.3">What&#39;s new in SketchUp 2019.3</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2019.3">What’s new in SketchUp 2019.3</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
@@ -1268,7 +1532,7 @@
 <p>Fixed <span class='object_link'><a href="UI.html#openURL-class_method" title="UI.openURL (method)">UI.openURL</a></span> to not perform URL encoding on Mac for cross platform consistency.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2019.2">What&#39;s new in SketchUp 2019.2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2019.2">What’s new in SketchUp 2019.2</h1>
 
 <h2 id="label-Ruby+API+Additions+and+Improvements">Ruby API Additions and Improvements</h2>
 <ul><li>
@@ -1304,7 +1568,7 @@
 <p><span class='object_link'><a href="Sketchup/ViewObserver.html#onViewChanged-instance_method" title="Sketchup::ViewObserver#onViewChanged (method)">Sketchup::ViewObserver#onViewChanged</a></span> now triggers when the viewport changes size.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2019.1">What&#39;s new in SketchUp 2019.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2019.1">What’s new in SketchUp 2019.1</h1>
 
 <h2 id="label-Ruby+API+Bug+Fixes">Ruby API Bug Fixes</h2>
 <ul><li>
@@ -1312,10 +1576,10 @@
 </li><li>
 <p>Fixed <span class='object_link'><a href="Sketchup/Model.html#save-instance_method" title="Sketchup::Model#save (method)">Sketchup::Model#save</a></span> for <code>VERSION_2019</code></p>
 </li><li>
-<p>Fixed crash when <code>rendering_options["RenderMode"] = 4</code></p>
+<p>Fixed crash when <code>rendering_options[&quot;RenderMode&quot;] = 4</code></p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2019">What&#39;s new in SketchUp 2019</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2019">What’s new in SketchUp 2019</h1>
 
 <h2 id="label-Upgrade+to+Ruby+2.5.1">Upgrade to Ruby 2.5.1</h2>
 
@@ -1331,7 +1595,7 @@
 
 <h2 id="label-Ruby+API+Breaking+Changes">Ruby API Breaking Changes</h2>
 <ul><li>
-<p>SketchUp changed how it presents units. Now it adds a space between the number and the unit indicator. If your extension uses a method of your own creation to interpret strings formatted by SketchUp you might find it doesn&#39;t work anymore if you don&#39;t account for the extra space. For example:</p>
+<p>SketchUp changed how it presents units. Now it adds a space between the number and the unit indicator. If your extension uses a method of your own creation to interpret strings formatted by SketchUp you might find it doesn't work anymore if you don't account for the extra space. For example:</p>
 </li><li>
 <p>Before 2019: <code>&quot;2.5mm&quot;</code></p>
 </li><li>
@@ -1375,7 +1639,7 @@
 </li><li>
 <p>Fixed an issue where <span class='object_link'><a href="Sketchup/Model.html" title="Sketchup::Model (class)">Sketchup::Model</a></span> could become unusable after calling <code>.singleton_class</code>.</p>
 </li><li>
-<p>Fixed Ruby-created dimensions don&#39;t highlight when non-associated</p>
+<p>Fixed Ruby-created dimensions don’t highlight when non-associated</p>
 </li><li>
 <p>Fixed Ruby-created dimensions don’t hide correctly when “Hide Foreshortened” is enabled</p>
 </li><li>
@@ -1393,13 +1657,13 @@
 </li><li>
 <p>Fixed regression in SU2018 when renaming a material with the same name. This used to throw an error when it should have been a no-op</p>
 </li><li>
-<p>Fixed regression in SU2018 where <code>model.materials["MaterialName"]</code> might fail</p>
+<p>Fixed regression in SU2018 where <code>model.materials[&quot;MaterialName&quot;]</code> might fail</p>
 </li><li>
 <p>Fixed a crash when loading a component made in a newer version of SketchUp</p>
 </li><li>
 <p>Fixed unicode characters in the Ruby Console on Windows</p>
 </li><li>
-<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> such that non-resizable dialog doesn&#39;t use width and height from preferences.</p>
+<p>Fixed <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> such that non-resizable dialog doesn’t use width and height from preferences.</p>
 </li><li>
 <p><span class='object_link'><a href="Sketchup/View.html#write_image-instance_method" title="Sketchup::View#write_image (method)">Sketchup::View#write_image</a></span> should throw an error if there are more than 5 params passed in.</p>
 </li><li>
@@ -1424,7 +1688,7 @@
 <p>Fix documentation of <span class='object_link'><a href="Layout/Path.html#append_point-instance_method" title="Layout::Path#append_point (method)">Layout::Path#append_point</a></span>. When appending a bezier path segment, the params should have been (<code>control_1, control_2, point</code>) and not (<code>point, control_1, control_2</code>).</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2018+M0">What&#39;s new in SketchUp 2018 M0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2018+M0">What’s new in SketchUp 2018 M0</h1>
 
 <h2 id="label-LayOut+Ruby+API+for+SketchUp">LayOut Ruby API for SketchUp</h2>
 
@@ -1546,7 +1810,7 @@
 
 <h3 id="label-Bug+Fixes">Bug Fixes</h3>
 <ul><li>
-<p><strong>Breaking Change</strong> - Fixed a bug in <span class='object_link'><a href="Sketchup/Material.html#name=-instance_method" title="Sketchup::Material#name= (method)">Sketchup::Material#name=</a></span> which allowed the API to create materials with duplicate names. Now it will raise <code>ArgumentError</code> if it&#39;s not unique to the model.</p>
+<p><strong>Breaking Change</strong> - Fixed a bug in <span class='object_link'><a href="Sketchup/Material.html#name=-instance_method" title="Sketchup::Material#name= (method)">Sketchup::Material#name=</a></span> which allowed the API to create materials with duplicate names. Now it will raise <code>ArgumentError</code> if it’s not unique to the model.</p>
 </li><li>
 <p><strong>Breaking Change</strong> - Changed <span class='object_link'><a href="Sketchup/Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span> class to be common between LayOut and SketchUp. The potentially breaking change is that <span class='object_link'><a href="Sketchup/Color.html" title="Sketchup::Color (class)">Sketchup::Color</a></span> changed to now compare RGBA values instead of the Ruby objects.</p>
 </li><li>
@@ -1571,25 +1835,25 @@
 <p>Fixed a rare crash in <span class='object_link'><a href="Sketchup/MaterialsObserver.html" title="Sketchup::MaterialsObserver (class)">Sketchup::MaterialsObserver</a></span>.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2017+M2">What&#39;s new in SketchUp 2017 M2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2017+M2">What’s new in SketchUp 2017 M2</h1>
 
 <h3 id="label-Fixes-2FImprovements+General">Fixes/Improvements General</h3>
 <ul><li>
-<p>(Mac) Fixed issue where SKM files lost attribute dictionaries when saved from  “In Model” to local library.</p>
+<p>(Mac) Fixed issue where SKM files lost attribute dictionaries when saved from “In Model” to local library.</p>
 </li></ul>
 
 <h3 id="label-Ruby+API">Ruby API</h3>
 <ul><li>
-<p>Fixed an issue with HtmlDialogs where SketchUp would crash when the  dialog was closed before all callbacks were processed.</p>
+<p>Fixed an issue with HtmlDialogs where SketchUp would crash when the dialog was closed before all callbacks were processed.</p>
 </li><li>
-<p>Fixed an issue where extensions with multiple periods in filenames would  not load.</p>
+<p>Fixed an issue where extensions with multiple periods in filenames would not load.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2017+M0">What&#39;s new in SketchUp 2017 M0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2017+M0">What’s new in SketchUp 2017 M0</h1>
 
 <h2 id="label-Ruby+2.2">Ruby 2.2</h2>
 
-<p>Yes, its that time again - time to update our Ruby Interpreter. We have upgraded to Ruby version 2.2.4. We&#39;re hopeful that extensions that use pure Ruby will be able to upgrade to Ruby 2.2 with little difficulty. Please note that any compiled C extensions will need to be rebuilt.</p>
+<p>Yes, its that time again - time to update our Ruby Interpreter. We have upgraded to Ruby version 2.2.4. We’re hopeful that extensions that use pure Ruby will be able to upgrade to Ruby 2.2 with little difficulty. Please note that any compiled C extensions will need to be rebuilt.</p>
 
 <h2 id="label-Embedded+Web+Framework">Embedded Web Framework</h2>
 
@@ -1638,16 +1902,16 @@
 
 <h3 id="label-Ruby+API">Ruby API</h3>
 <ul><li>
-<p>Fixed <span class='object_link'><a href="Sketchup/Entities.html#transform_by_vectors-instance_method" title="Sketchup::Entities#transform_by_vectors (method)">Sketchup::Entities#transform_by_vectors</a></span> so that it performs a bounds  check on the second array. An <code>ArgumentError</code> is raised if the second array  has less items than the first.</p>
+<p>Fixed <span class='object_link'><a href="Sketchup/Entities.html#transform_by_vectors-instance_method" title="Sketchup::Entities#transform_by_vectors (method)">Sketchup::Entities#transform_by_vectors</a></span> so that it performs a bounds check on the second array. An <code>ArgumentError</code> is raised if the second array has less items than the first.</p>
 </li><li>
-<p>Added ability to <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>s to receive JavaScript arrays and objects  using callbacks.</p>
+<p>Added ability to <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span>s to receive JavaScript arrays and objects using callbacks.</p>
 </li><li>
-<p>Removed a limitation with <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> where callbacks were required to  have at least one argument. Now no arguments are required.</p>
+<p>Removed a limitation with <span class='object_link'><a href="UI/HtmlDialog.html" title="UI::HtmlDialog (class)">UI::HtmlDialog</a></span> where callbacks were required to have at least one argument. Now no arguments are required.</p>
 </li><li>
-<p><span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> no longer opens a Model Info page for <code>&quot;Extensions&quot;</code> as  that page is now replaced by the Extension Manager dialog.</p>
+<p><span class='object_link'><a href="UI.html#show_model_info-class_method" title="UI.show_model_info (method)">UI.show_model_info</a></span> no longer opens a Model Info page for <code>&quot;Extensions&quot;</code> as that page is now replaced by the Extension Manager dialog.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2016+M1">What&#39;s new in SketchUp 2016 M1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2016+M1">What’s new in SketchUp 2016 M1</h1>
 
 <h2 id="label-API+Additions">API Additions</h2>
 
@@ -1665,9 +1929,9 @@
 
 <h3 id="label-Extensions">Extensions</h3>
 <ul><li>
-<p>Fixed issue where the <span class='object_link'><a href="Sketchup.html#register_extension-class_method" title="Sketchup.register_extension (method)">Sketchup.register_extension</a></span> method&#39;s <code>load_on_start</code> parameter was not being honored on extensions that were manually placed within the Plugins folder.</p>
+<p>Fixed issue where the <span class='object_link'><a href="Sketchup.html#register_extension-class_method" title="Sketchup.register_extension (method)">Sketchup.register_extension</a></span> method’s <code>load_on_start</code> parameter was not being honored on extensions that were manually placed within the Plugins folder.</p>
 </li><li>
-<p>Fixed issue where extensions installed in the <code>&quot;Plugins&quot;</code> directory were not respecting the extension&#39;s <code>load_on_start</code> property.</p>
+<p>Fixed issue where extensions installed in the <code>&quot;Plugins&quot;</code> directory were not respecting the extension’s <code>load_on_start</code> property.</p>
 </li><li>
 <p>Fixed issue where extensions fail to load / gave errors on launch if you have certain non-English characters in your Ruby path (which can occur if your Windows user name has certain non-English characters). If you’re still seeing an error with the <strong>Trimble Connect</strong> extension, please <a href="https://help.sketchup.com/en/extension-warehouse/managing-extensions" target="_parent" title="update that extension">update that extension</a> in the Extension Warehouse.</p>
 </li><li>
@@ -1731,7 +1995,7 @@
 <p>(Win) <span class='object_link'><a href="UI.html#show_preferences-class_method" title="UI.show_preferences (method)">UI.show_preferences(“Extensions Policy”)</a></span> will now open the correct property page.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2016+M0">What&#39;s new in SketchUp 2016 M0</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2016+M0">What’s new in SketchUp 2016 M0</h1>
 
 <h2 id="label-A+new+LayOut+API">A new LayOut API</h2>
 
@@ -1765,7 +2029,7 @@
 <ul><li>
 <p>Observer events are now queued up until the active operation is done.</p>
 </li><li>
-<p><span class='object_link'><a href="Sketchup/ModelObserver.html" title="Sketchup::ModelObserver (class)">Sketchup::ModelObserver</a></span> doesn&#39;t notify about intermediate Ruby operations (“transactions”).</p>
+<p><span class='object_link'><a href="Sketchup/ModelObserver.html" title="Sketchup::ModelObserver (class)">Sketchup::ModelObserver</a></span> doesn’t notify about intermediate Ruby operations (“transactions”).</p>
 </li><li>
 <p>Observers should no longer return zombie Ruby objects for entities. See the Observers 2016 pdf for more information.</p>
 </li><li>
@@ -1803,7 +2067,7 @@
 
 <h2 id="label-Bug+Fixes-2FSmall+Improvements">Bug Fixes/Small Improvements</h2>
 <ul><li>
-<p>Fixed <span class='object_link'><a href="Sketchup/Pages.html#erase-instance_method" title="Sketchup::Pages#erase (method)">Sketchup::Pages#erase</a></span> so that it doesn&#39;t incorrectly create an undo operation any more.</p>
+<p>Fixed <span class='object_link'><a href="Sketchup/Pages.html#erase-instance_method" title="Sketchup::Pages#erase (method)">Sketchup::Pages#erase</a></span> so that it doesn’t incorrectly create an undo operation any more.</p>
 </li><li>
 <p>Removed instance of a zombie instance with Curves. See the Observers 2016 pdf for more information.</p>
 </li><li>
@@ -1822,11 +2086,11 @@
 <p><span class='object_link'><a href="Sketchup.html#version_number-class_method" title="Sketchup.version_number (method)">Sketchup.version_number</a></span> now returns the correct value.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2015+M2">What&#39;s new in SketchUp 2015 M2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2015+M2">What’s new in SketchUp 2015 M2</h1>
 
 <p>We fixed a crash on Mac that could occur when a timer was stopped via <span class='object_link'><a href="UI.html#stop_timer-class_method" title="UI.stop_timer (method)">UI.stop_timer</a></span> from within the timer procedure.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+2015">What&#39;s new in SketchUp 2015</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2015">What’s new in SketchUp 2015</h1>
 
 <h2 id="label-Renaming+the+Plugins+Menu">Renaming the Plugins Menu</h2>
 
@@ -1949,7 +2213,7 @@
 <p>HTTPS connections should now work on Windows using <code>&#39;net/https&#39;</code>.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2014+M1">What&#39;s new in SketchUp 2014 M1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2014+M1">What’s new in SketchUp 2014 M1</h1>
 <ul><li>
 <p>Fixed a crash that occurred when exporting an animation while any Ruby tool was active.</p>
 </li><li>
@@ -1970,7 +2234,7 @@
 <p>Fixed an issue where the <span class='object_link'><a href="Sketchup/LayersObserver.html" title="Sketchup::LayersObserver (class)">Sketchup::LayersObserver</a></span> would cause SketchUp to crash when the user would do an undo then a redo.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2014">What&#39;s new in SketchUp 2014</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2014">What’s new in SketchUp 2014</h1>
 
 <p>We have made many additions and improvements to the SketchUp Ruby API. These changes include some big and potentially code-breaking changes in this round of SketchUp. We strongly recommend all developers test their scripts for compatibility with 2014.</p>
 
@@ -1984,7 +2248,7 @@
 </li><li>
 <p>Plugins on Windows have now been moved outside the SU Installation folder. On Vista, Win 7, 8: <code>C:\Users&lt;username&gt;\AppData\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</code> On Win XP: <code>C:\Documents and Settings&lt;username&gt;\Application Data\Roaming\SketchUp\SketchUp 2014\SketchUp\Plugins</code></p>
 </li><li>
-<p>On Windows, we also load plugins from a user-independent support directory. On Win Vista, 7, 8: <code>C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins</code> On Win XP: <code>C:\Documents and Settings\All Users\Application Data\SketchUp\SketchUp 2014\SketchUp\Plugins</code> This path is only loaded to the <code>$LOAD_PATH</code> array if the folder exists when on the user&#39;s machine when SU starts.</p>
+<p>On Windows, we also load plugins from a user-independent support directory. On Win Vista, 7, 8: <code>C:\ProgramData\SketchUp\SketchUp 2014\SketchUp\Plugins</code> On Win XP: <code>C:\Documents and Settings\All Users\Application Data\SketchUp\SketchUp 2014\SketchUp\Plugins</code> This path is only loaded to the <code>$LOAD_PATH</code> array if the folder exists when on the user’s machine when SU starts.</p>
 </li></ul>
 
 <h2 id="label-New-21+-+Dimensions+API">New! - Dimensions API</h2>
@@ -2024,7 +2288,7 @@
 </li><li>
 <p>Added <span class='object_link'><a href="Sketchup/EntitiesObserver.html#onActiveSectionPlaneChanged-instance_method" title="Sketchup::EntitiesObserver#onActiveSectionPlaneChanged (method)">Sketchup::EntitiesObserver#onActiveSectionPlaneChanged</a></span></p>
 </li><li>
-<p><span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span> now exposes a new key <code>&#39;DisplaySectionPlanes&#39;</code> that can be used to show or hide section planes. e.g. <code>Sketchup.active_model.rendering_options['DisplaySectionPlanes'] = false</code></p>
+<p><span class='object_link'><a href="Sketchup/RenderingOptions.html" title="Sketchup::RenderingOptions (class)">Sketchup::RenderingOptions</a></span> now exposes a new key <code>&#39;DisplaySectionPlanes&#39;</code> that can be used to show or hide section planes. e.g. <code>Sketchup.active_model.rendering_options[&#39;DisplaySectionPlanes&#39;] = false</code></p>
 </li></ul>
 
 <h2 id="label-Additional+New+API+Methods+and+Features">Additional New API Methods and Features</h2>
@@ -2139,7 +2403,7 @@
 </li><li>
 <p><span class='object_link'><a href="Sketchup/ModelObserver.html#onExplode-instance_method" title="Sketchup::ModelObserver#onExplode (method)">Sketchup::ModelObserver#onExplode</a></span> now triggers when an instance is exploded via the Ruby API.</p>
 </li><li>
-<p>Fixed the <span class='object_link'><a href="Sketchup/EntitiesObserver.html" title="Sketchup::EntitiesObserver (class)">Sketchup::EntitiesObserver</a></span> bug where a wrong <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> reference would be sent to observer methods when observing a group&#39;s <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span>.</p>
+<p>Fixed the <span class='object_link'><a href="Sketchup/EntitiesObserver.html" title="Sketchup::EntitiesObserver (class)">Sketchup::EntitiesObserver</a></span> bug where a wrong <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> reference would be sent to observer methods when observing a group’s <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span>.</p>
 </li></ul>
 
 <h2 id="label-Moved+the+Set+class+to+-7BSketchup-3A-3ASet-7D">Moved the Set class to <span class='object_link'><a href="Sketchup/Set.html" title="Sketchup::Set (class)">Sketchup::Set</a></span></h2>
@@ -2148,7 +2412,7 @@
 
 <h2 id="label-General+Bug+Fixes">General Bug Fixes</h2>
 <ul><li>
-<p>Ensured that our classes that implement <code>Enumerable</code> don&#39;t override the improved Ruby 2.0 <code>#count</code> method. Also ensured all <code>Enumerable</code> classes implement <code>#length</code> and <code>#size</code>.</p>
+<p>Ensured that our classes that implement <code>Enumerable</code> don’t override the improved Ruby 2.0 <code>#count</code> method. Also ensured all <code>Enumerable</code> classes implement <code>#length</code> and <code>#size</code>.</p>
 </li><li>
 <p>Updated <span class='object_link'><a href="Geom/PolygonMesh.html" title="Geom::PolygonMesh (class)">Geom::PolygonMesh</a></span> API docs to be accurate. Numerous other API documentation fixes and updates.</p>
 </li><li>
@@ -2160,13 +2424,13 @@
 </li><li>
 <p>Fixed a bug where groups that share the same definition would seem to continue to share entities after being made unique in some cases.</p>
 </li><li>
-<p>Fixed <span class='object_link'><a href="Sketchup/Group.html#description=-instance_method" title="Sketchup::Group#description= (method)">Sketchup::Group#description=</a></span> which didn&#39;t make the group unique before setting its description.</p>
+<p>Fixed <span class='object_link'><a href="Sketchup/Group.html#description=-instance_method" title="Sketchup::Group#description= (method)">Sketchup::Group#description=</a></span> which didn’t make the group unique before setting its description.</p>
 </li><li>
 <p>Fixed the erroneous <code>&quot;RangeError: value cannot be negative&quot;</code> that was raised on valid input for <span class='object_link'><a href="Sketchup/ConstructionLine.html#stipple=-instance_method" title="Sketchup::ConstructionLine#stipple= (method)">Sketchup::ConstructionLine#stipple=</a></span></p>
 </li><li>
 <p>Fixed <span class='object_link'><a href="Sketchup/DefinitionList.html#load-instance_method" title="Sketchup::DefinitionList#load (method)">Sketchup::DefinitionList#load</a></span> and load_from_url which did not start Ruby operations properly.</p>
 </li><li>
-<p>Fixed crashes and other oddities that would happen when applying a material that wasn&#39;t in the model already - either selected from Material Browser or a material from another open model. Now the material is recreated in the model it is applied to.</p>
+<p>Fixed crashes and other oddities that would happen when applying a material that wasn’t in the model already - either selected from Material Browser or a material from another open model. Now the material is recreated in the model it is applied to.</p>
 </li><li>
 <p>Fixed <span class='object_link'><a href="Sketchup/Entities.html" title="Sketchup::Entities (class)">Sketchup::Entities</a></span> methods <code>erase_entities</code> and <code>add_3d_text</code> which did not make the group unique when called for a group Entities.</p>
 </li><li>
@@ -2218,10 +2482,10 @@
 </li><li>
 <p>Added <span class='object_link'><a href="Geom/PolygonMesh.html#set_uv-instance_method" title="Geom::PolygonMesh#set_uv (method)">Geom::PolygonMesh#set_uv</a></span></p>
 </li><li>
-<p>Fixed the <span class='object_link'><a href="Sketchup/EntitiesObserver.html" title="Sketchup::EntitiesObserver (class)">Sketchup::EntitiesObserver</a></span> bug where a wrong Entities reference would be sent to observer methods when observing a group&#39;s Entities collection.</p>
+<p>Fixed the <span class='object_link'><a href="Sketchup/EntitiesObserver.html" title="Sketchup::EntitiesObserver (class)">Sketchup::EntitiesObserver</a></span> bug where a wrong Entities reference would be sent to observer methods when observing a group’s Entities collection.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+2013+M1">What&#39;s new in SketchUp 2013 M1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2013+M1">What’s new in SketchUp 2013 M1</h1>
 
 <h2 id="label-Bug+Fixes">Bug Fixes</h2>
 
@@ -2229,7 +2493,7 @@
 
 <p>Fixed a bug in <span class='object_link'><a href="UI/WebDialog.html#get_element_value-instance_method" title="UI::WebDialog#get_element_value (method)">UI::WebDialog#get_element_value</a></span> which caused it to malfunction with some html elements on Mac.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+2013">What&#39;s new in SketchUp 2013</h1>
+<h1 id="label-What-27s+new+in+SketchUp+2013">What’s new in SketchUp 2013</h1>
 
 <h2 id="label-Expanded+the+-7BSketchupExtension-7D+class">Expanded the <span class='object_link'><a href="SketchupExtension.html" title="SketchupExtension (class)">SketchupExtension</a></span> class</h2>
 
@@ -2244,17 +2508,17 @@
 
 <h2 id="label-Documented+the+-7BLanguageHandler-7D+class">Documented the <span class='object_link'><a href="LanguageHandler.html" title="LanguageHandler (class)">LanguageHandler</a></span> class</h2>
 
-<p><a href="http://extensions.sketchup.com/developer">LanguageHandler} was an existing internal class which we are now exposing in the API. It has been updated such that it looks first for translated resources within the Resources folder in the extension directory structure (as explained in the Warehouse Developer Center</a>). All translated resources should be located within the appropriate language folder.</p>
+<p><span class='object_link'><a href="LanguageHandler.html" title="LanguageHandler (class)">LanguageHandler</a></span> was an existing internal class which we are now exposing in the API. It has been updated such that it looks first for translated resources within the Resources folder in the extension directory structure (as explained in the <a href="http://extensions.sketchup.com/developer">Extension Warehouse Developer Center</a>). All translated resources should be located within the appropriate language folder.</p>
 
-<h2 id="label-Added+special+HTML+link+to+launch+an+extension-27s+page+on+Extension+Warehouse">Added special HTML link to launch an extension&#39;s page on Extension Warehouse</h2>
+<h2 id="label-Added+special+HTML+link+to+launch+an+extension-27s+page+on+Extension+Warehouse">Added special HTML link to launch an extension’s page on Extension Warehouse</h2>
 
-<p>See detailed explanation of the <code>&quot;skp:launchEW&quot;</code> link in {UI::WebDialog class documentation.</p>
+<p>See detailed explanation of the <code>&quot;skp:launchEW&quot;</code> link in <span class='object_link'><a href="UI/WebDialog.html" title="UI::WebDialog (class)">UI::WebDialog</a></span> class documentation.</p>
 
 <h2 id="label-Change+in+-7BSketchup.send_action-7D">Change in <span class='object_link'><a href="Sketchup.html#send_action-class_method" title="Sketchup.send_action (method)">Sketchup.send_action</a></span></h2>
 
 <p><code>&quot;addBuilding:&quot;</code> has been removed.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+8+M2">What&#39;s new in SketchUp 8 M2</h1>
+<h1 id="label-What-27s+new+in+SketchUp+8+M2">What’s new in SketchUp 8 M2</h1>
 
 <p>The second maintenance release for SketchUp 8 was available December 1, 2011. It included a handful of Ruby API additions around managing extensions.</p>
 
@@ -2297,7 +2561,7 @@
 <p><span class='object_link'><a href="Sketchup.html#extensions-class_method" title="Sketchup.extensions (method)">Sketchup.extensions</a></span> (hook to get at the <span class='object_link'><a href="Sketchup/ExtensionsManager.html" title="Sketchup::ExtensionsManager (class)">Sketchup::ExtensionsManager</a></span>)</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+8+M1">What&#39;s new in SketchUp 8 M1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+8+M1">What’s new in SketchUp 8 M1</h1>
 
 <p>The first maintenance release for SketchUp 8 was available January 12, 2011. It included several Ruby API fixes and additions.</p>
 
@@ -2386,7 +2650,7 @@
 
 <p><span class='object_link'><a href="Sketchup/Color.html#to_a-instance_method" title="Sketchup::Color#to_a (method)">Sketchup::Color#to_a</a></span> was returning a <code>Bignum</code> when a <code>Fixnum</code> was expected. A <code>Fixnum</code> is now returned.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+8">What&#39;s new in SketchUp 8</h1>
+<h1 id="label-What-27s+new+in+SketchUp+8">What’s new in SketchUp 8</h1>
 
 <h2 id="label-Updated+Ruby+Version+to+1.8.6+on+PC">Updated Ruby Version to 1.8.6 on PC</h2>
 
@@ -2394,7 +2658,7 @@
 
 <h2 id="label-WebDialog+User+Agent+Updated">WebDialog User Agent Updated</h2>
 
-<p>It used to be that WebDialogs would send a useragent string unique to SketchUp. We now send a useragent that is a concatenation with the embedded browser&#39;s original useragent and an extra string to identity SketchUp. This allows the Google Earth plugin (and similar plugins) to correctly detect the kind of browser so it works properly inside SketchUp.</p>
+<p>It used to be that WebDialogs would send a useragent string unique to SketchUp. We now send a useragent that is a concatenation with the embedded browser’s original useragent and an extra string to identity SketchUp. This allows the Google Earth plugin (and similar plugins) to correctly detect the kind of browser so it works properly inside SketchUp.</p>
 
 <h2 id="label-Observer+Bug+Fixes">Observer Bug Fixes</h2>
 <ul><li>
@@ -2466,7 +2730,7 @@
 
 <p>Fixed crash in <span class='object_link'><a href="Sketchup/Pages.html#add-instance_method" title="Sketchup::Pages#add (method)">Sketchup::Pages#add</a></span> and in <span class='object_link'><a href="Sketchup/Model.html#number_faces-instance_method" title="Sketchup::Model#number_faces (method)">Sketchup::Model#number_faces</a></span>.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+7.1">What&#39;s new in SketchUp 7.1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+7.1">What’s new in SketchUp 7.1</h1>
 
 <h2 id="label-New+methods">New methods</h2>
 <ul><li>
@@ -2479,14 +2743,14 @@
 <p><span class='object_link'><a href="UI/WebDialog.html#write_image-instance_method" title="UI::WebDialog#write_image (method)">UI::WebDialog#write_image</a></span> Take a screen grab from any WebDialog.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+7.0+M1">What&#39;s new in SketchUp 7.0 M1</h1>
+<h1 id="label-What-27s+new+in+SketchUp+7.0+M1">What’s new in SketchUp 7.0 M1</h1>
 
 <h2 id="label-New+methods">New methods</h2>
 <ul><li>
 <p><span class='object_link'><a href="Sketchup/Face.html#get_glued_instances-instance_method" title="Sketchup::Face#get_glued_instances (method)">Sketchup::Face#get_glued_instances</a></span> See what instances are glued to a given face.</p>
 </li></ul>
 
-<h1 id="label-What-27s+new+in+SketchUp+7">What&#39;s new in SketchUp 7</h1>
+<h1 id="label-What-27s+new+in+SketchUp+7">What’s new in SketchUp 7</h1>
 
 <h2 id="label-Improved+Script+Performance">Improved Script Performance</h2>
 
@@ -2505,9 +2769,9 @@
 
 <p><a href="http://www.smustard.com/script/MakeFaces">Make faces</a> with 500 faceless cubes 21.7 seconds vs. 14.5 (~66% as long)</p>
 
-<p><a href="http://www.smustard.com/script/Windowizer3">Windowizer 3.0</a> with Four 20&#39;x20&#39; windows, 12x12 16.1 seconds vs. 7.0 seconds (~43% as as long)</p>
+<p><a href="http://www.smustard.com/script/Windowizer3">Windowizer 3.0</a> with Four 20’x20’ windows, 12x12 16.1 seconds vs. 7.0 seconds (~43% as as long)</p>
 
-<p><a href="http://www.smustard.com/script/Windowizer4">Windowizer 4.0</a> with Ten 5&#39;x5&#39; windows, 6x6 22.6 seconds vs 8.7 seconds (~38% as long)</p>
+<p><a href="http://www.smustard.com/script/Windowizer4">Windowizer 4.0</a> with Ten 5’x5’ windows, 6x6 22.6 seconds vs 8.7 seconds (~38% as long)</p>
 
 <h2 id="label-Improved+Web+Dialogs">Improved Web Dialogs</h2>
 
@@ -2563,7 +2827,7 @@
 <span class='id identifier rubyid_edit_mode_transform'>edit_mode_transform</span> <span class='op'>=</span> <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_edit_transform'>edit_transform</span>
 </code></pre>
 
-<p>Easily determine if they&#39;re running in licensed Pro</p>
+<p>Easily determine if they’re running in licensed Pro</p>
 
 <p><code>is_licensed_pro = Sketchup.is_pro?</code></p>
 
@@ -2578,7 +2842,7 @@ def onBeforeComponentSaveAs(instance) { # Add data on save as }
 def onAfterComponentSaveAs(instance) { # Then clean up }
 </code></pre>
 
-<p>Detect if they&#39;ve turned off your extension via the AppObserver</p>
+<p>Detect if they’ve turned off your extension via the AppObserver</p>
 
 <pre class="code ruby"><code class="ruby">def onUnloadExtension(extension_name)
 </code></pre>
@@ -2612,7 +2876,7 @@ def onMButtonUp(flags, x, y, view) # now works!
 
 <p>Finally, we fixed a number of crashing bugs, mostly related to iterating across entities in the model.</p>
 
-<h1 id="label-What-27s+new+in+SketchUp+6">What&#39;s new in SketchUp 6</h1>
+<h1 id="label-What-27s+new+in+SketchUp+6">What’s new in SketchUp 6</h1>
 
 <p>The most substantial addition to the SketchUp 6 Ruby API are the Ruby Observer Mechanism, the Tools class, the WebDialog class, the Styles class, and the Style class.</p>
 

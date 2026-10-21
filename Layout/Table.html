@@ -544,11 +544,36 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#size_to_fit-instance_method" title="#size_to_fit (instance method)">#<strong>size_to_fit</strong>  &#x21d2; Layout::Table </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resizes all rows and columns in the table to fit their text content.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
 
 
+  
   
   
   
@@ -1866,6 +1891,104 @@
         
         <div class='inline'>
 <p>LayOut 2018</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="size_to_fit-instance_method">
+  <a style="float: right;" href="#header" title="Return to Top">&uarr;</a>
+  
+    #<strong>size_to_fit</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="Layout::Table (class)">Layout::Table</a></span></tt> 
+  
+
+  
+
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Resizes all rows and columns in the table to fit their text content.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_bounds'>bounds</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Geom.html" title="Geom (module)">Geom</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Geom/Bounds2d.html" title="Geom::Bounds2d (class)">Bounds2d</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Geom/Bounds2d.html#initialize-instance_method" title="Geom::Bounds2d#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>4</span><span class='comma'>,</span> <span class='int'>4</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_table'>table</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Layout.html" title="Layout (module)">Layout</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="Layout::Table (class)">Table</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="Layout::Table#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_bounds'>bounds</span><span class='comma'>,</span> <span class='int'>3</span><span class='comma'>,</span> <span class='int'>3</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_table'>table</span><span class='period'>.</span><span class='id identifier rubyid_size_to_fit'>size_to_fit</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Layout::Table (class)">Layout::Table</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LockedLayerError.html" title="Layout::LockedLayerError (class)">Layout::LockedLayerError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the table is on a locked layer</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="LockedEntityError.html" title="Layout::LockedEntityError (class)">Layout::LockedEntityError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>if the table is locked</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>LayOut 2027.0</p>
 </div>
       
     </li>
