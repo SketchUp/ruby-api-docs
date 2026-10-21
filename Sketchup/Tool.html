@@ -209,17 +209,20 @@
 <span class='const'><span class='object_link'><a href="../Sketchup.html" title="Sketchup (module)">Sketchup</a></span></span><span class='period'>.</span><span class='id identifier rubyid_active_model'><span class='object_link'><a href="../Sketchup.html#active_model-class_method" title="Sketchup.active_model (method)">active_model</a></span></span><span class='period'>.</span><span class='id identifier rubyid_select_tool'><span class='object_link'><a href="Model.html#select_tool-instance_method" title="Sketchup::Model#select_tool (method)">select_tool</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_my_tool'>my_tool</span><span class='rparen'>)</span>
 </code></pre>
 
-<p>The following table contains several constants you can use when check for certain key presses inside the keyboard handling callbacks:</p>
+<p>The following table contains several constants you can use when checking for modifier key presses and releases inside the keyboard handling callbacks:</p>
 <ul><li>
 <p><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_KEY-constant" title="CONSTRAIN_MODIFIER_KEY (constant)">CONSTRAIN_MODIFIER_KEY</a></span> = Shift Key</p>
 </li><li>
-<p><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span> = Shift Key</p>
-</li><li>
 <p><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_KEY-constant" title="COPY_MODIFIER_KEY (constant)">COPY_MODIFIER_KEY</a></span> = Alt/Option on Mac, Ctrl on PC</p>
 </li><li>
-<p><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span> = Alt/Option on Mac, Ctrl on PC</p>
-</li><li>
 <p><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_KEY-constant" title="ALT_MODIFIER_KEY (constant)">ALT_MODIFIER_KEY</a></span> = Command on Mac, Alt on PC</p>
+</li></ul>
+
+<p>The following table contains several constants you can use when checking for modifier keys that are active inside keyboard and mouse handling callbacks. These values are available via the flags parameter of the callbacks:</p>
+<ul><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span> = Shift Key</p>
+</li><li>
+<p><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span> = Alt/Option on Mac, Ctrl on PC</p>
 </li><li>
 <p><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span> = Command on Mac, Alt on PC</p>
 </li></ul>
@@ -403,7 +406,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>The <span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the directory containing your Tool&#39;s instructor content.</p>
+<p>The <span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the directory containing your Tool’s instructor content.</p>
 </div></span>
   
 </li>
@@ -1281,7 +1284,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>In order to accurately draw things, SketchUp needs to know the extents of what it is drawing. If the tool is doing its own drawing, it may need to implement this method to tell SketchUp the extents of what it will be drawing. If you don&#39;t implement this method, you may find that part of what the tool is drawing gets clipped to the extents of the rest of the model.</p>
+<p>In order to accurately draw things, SketchUp needs to know the extents of what it is drawing. If the tool is doing its own drawing, it may need to implement this method to tell SketchUp the extents of what it will be drawing. If you don’t implement this method, you may find that part of what the tool is drawing gets clipped to the extents of the rest of the model.</p>
 
 
   </div>
@@ -1356,7 +1359,7 @@
   </div>
 
 
-<p>The <span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the directory containing your Tool&#39;s instructor content. To use this, create a custom instructor directory, put an index.html file inside of it, and then return that path via this method. If the SketchUp user has the Instructor window open when they activate your tool, they will see your html file.</p>
+<p>The <span class='object_link'><a href="#getInstructorContentDirectory-instance_method" title="Sketchup::Tool#getInstructorContentDirectory (method)">#getInstructorContentDirectory</a></span> method is used to tell SketchUp the directory containing your Tool’s instructor content. To use this, create a custom instructor directory, put an index.html file inside of it, and then return that path via this method. If the SketchUp user has the Instructor window open when they activate your tool, they will see your html file.</p>
 
 
   </div>
@@ -1794,7 +1797,7 @@ end</code></pre>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>When <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> is implemented and returns <code>true</code>, pressing Esc doesn&#39;t trigger <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span>.</p>
+<p>When <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> is implemented and returns <code>true</code>, pressing Esc doesn’t trigger <span class='object_link'><a href="#onCancel-instance_method" title="Sketchup::Tool#onCancel (method)">#onCancel</a></span>.</p>
 </div>
   </div>
 
@@ -1958,6 +1961,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>        repeat = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_repeat'>repeat</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>         flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>     Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>      Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2080,7 +2086,19 @@ end</code></pre>
       
         
         <div class='inline'>
-<p>SketchUp 2026.0 (Windows) introduced a regression in <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> where the event didn&#39;t trigger when Return/Enter was pressed. This was fixed in SketchUp 2026.1.</p>
+<p>SketchUp 2026.0 (Windows) introduced a regression in <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> where the event didn’t trigger when Return/Enter was pressed. This was fixed in SketchUp 2026.1.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior versions of SketchUp (Windows) had a bug in <span class='object_link'><a href="#onKeyDown-instance_method" title="Sketchup::Tool#onKeyDown (method)">#onKeyDown</a></span> where the flags parameter contained incorrect modifier keys. This was fixed in SketchUp 2027.0</p>
 </div>
       
     </li>
@@ -2118,10 +2136,13 @@ end</code></pre>
     
       
       <pre class="example code"><code><span class='kw'>def</span> <span class='id identifier rubyid_onKeyUp'>onKeyUp</span><span class='lparen'>(</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_repeat'>repeat</span><span class='comma'>,</span> <span class='id identifier rubyid_flags'>flags</span><span class='comma'>,</span> <span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onKeyUp: key = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>      repeat = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_repeat'>repeat</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>       flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>        view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>onKeyUp:   key = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_key'>key</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>        repeat = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_repeat'>repeat</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>         flags = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>     Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>      Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2234,6 +2255,22 @@ end</code></pre>
     </li>
   
 </ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Prior versions of SketchUp (Windows) had a bug in <span class='object_link'><a href="#onKeyUp-instance_method" title="Sketchup::Tool#onKeyUp (method)">#onKeyUp</a></span> where the flags parameter contained incorrect modifier keys. This was fixed in SketchUp 2027.0</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div>
 </div>
@@ -2274,6 +2311,7 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                          y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                       view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2535,6 +2573,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>           Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>      Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>            Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -2796,6 +2837,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>              view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>         Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -3044,7 +3088,7 @@ end</code></pre>
   <div class="note notetag">
     <strong>Note:</strong>
     <div class='inline'>
-<p>Though this method has been documented in the Ruby API for many years, it has never worked properly. We are leaving this documentation in place for now in the hopes of fixing the implementation, but you won&#39;t have any luck trying to use it in SU7 and earlier.</p>
+<p>Though this method has been documented in the Ruby API for many years, it has never worked properly. We are leaving this documentation in place for now in the hopes of fixing the implementation, but you won’t have any luck trying to use it in SU7 and earlier.</p>
 </div>
   </div>
 
@@ -3330,6 +3374,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                    x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                    y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>            Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>       Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>             Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -3593,6 +3640,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>               view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>     Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>           Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -4014,6 +4064,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                  y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>               view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>     Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>           Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -4884,6 +4937,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                   y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>           Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>      Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>            Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -5145,6 +5201,9 @@ end</code></pre>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 x = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>                 y = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
   <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>              view = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_view'>view</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>         Copy flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#COPY_MODIFIER_MASK-constant" title="COPY_MODIFIER_MASK (constant)">COPY_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>    Constrain flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#CONSTRAIN_MODIFIER_MASK-constant" title="CONSTRAIN_MODIFIER_MASK (constant)">CONSTRAIN_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>          Alt flag = </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_flags'>flags</span> <span class='op'>&amp;</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="../top-level-namespace.html#ALT_MODIFIER_MASK-constant" title="ALT_MODIFIER_MASK (constant)">ALT_MODIFIER_MASK</a></span></span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></code></pre>
     
   </div>
@@ -5468,7 +5527,7 @@ end</code></pre>
       
         
         <div class='inline'>
-<p>SketchUp 2025.0 (Windows) introduced a regression where the event didn&#39;t trigger when Return/Enter was pressed. This was fixed in SketchUp 2026.0.</p>
+<p>SketchUp 2025.0 (Windows) introduced a regression where the event didn’t trigger when Return/Enter was pressed. This was fixed in SketchUp 2026.0.</p>
 </div>
       
     </li>

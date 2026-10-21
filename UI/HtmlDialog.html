@@ -201,35 +201,38 @@
 
 <p>The left, top, width, height etc. dimensions of the dialog are in logical units. This means you provide the units as if they where on a monitor with “normal” DPI. The units given will be multiplied by the same factor as returned by <span class='object_link'><a href="../UI.html#scale_factor-class_method" title="UI.scale_factor (method)">scale_factor</a></span>.</p>
 
-<p>For usage examples, including how to migrate from the old WebDialog class, see <a href="https://github.com/SketchUp/htmldialog-examples">github.com/SketchUp/htmldialog-examples</a>. You may use the <a href="https://sketchup.github.io/modus-for-sketchup-extensions" target="_parent" title="Trimble Modus">Trimble Modus</a> framework for a look and feel of your dialog that matches that of SketchUp&#39;s dialogs.</p>
+<p>For usage examples, including how to migrate from the old WebDialog class, see <a href="https://github.com/SketchUp/htmldialog-examples">github.com/SketchUp/htmldialog-examples</a>. You may use the <a href="https://sketchup.github.io/modus-for-sketchup-extensions" target="_parent" title="Trimble Modus">Trimble Modus</a> framework for a look and feel of your dialog that matches that of SketchUp’s dialogs.</p>
 
 <p>HtmlDialog uses the following versions of CEF (Chromium Embedded Framework):</p>
-<dl class="rdoc-list label-list"><dt>SketchUp 2026.0
+<dl class="rdoc-list label-list"><dt>SketchUp 2027.0</dt>
+<dd>
+<p>CEF 149</p>
+</dd><dt>SketchUp 2026.0</dt>
 <dd>
 <p>CEF 137</p>
-</dd><dt>SketchUp 2025.0
+</dd><dt>SketchUp 2025.0</dt>
 <dd>
 <p>CEF 128</p>
-</dd><dt>SketchUp 2024.0
+</dd><dt>SketchUp 2024.0</dt>
 <dd>
 <p>CEF 112</p>
-</dd><dt>SketchUp 2021.1
+</dd><dt>SketchUp 2021.1</dt>
 <dd>
 <p>CEF 88</p>
-</dd><dt>SketchUp 2019.0
+</dd><dt>SketchUp 2019.0</dt>
 <dd>
 <p>CEF 64</p>
-</dd><dt>SketchUp 2018.0
+</dd><dt>SketchUp 2018.0</dt>
 <dd>
 <p>CEF 56</p>
-</dd><dt>SketchUp 2017.0
+</dd><dt>SketchUp 2017.0</dt>
 <dd>
 <p>CEF 52</p>
 </dd></dl>
 
 <p>Starting with SketchUp 2026.1, HtmlDialog exposes a small set of built-in callbacks (mirroring the legacy <code>skp:</code> protocol used by <span class='object_link'><a href="WebDialog.html" title="UI::WebDialog (class)">WebDialog</a></span>).</p>
 <ul><li>
-<p><tt>sketchup.launchEW(id)</tt>  – Opens the Extension Warehouse dialog and show a specified extension&#39;s page.</p>
+<p><tt>sketchup.launchEW(id)</tt>  – Opens the Extension Warehouse dialog and show a specified extension’s page.</p>
 </li><li>
 <p><tt>sketchup.installRBZ(url)</tt> – Downloads and installs a Ruby extension from the given <code>.rbz</code> URL. (User will be prompted just like using the Extension Manager.)</p>
 </li></ul>
@@ -884,17 +887,86 @@
 
 <p>In SketchUp 2021.1 <code>use_content_size</code> was added. When set to <code>true</code>, <code>width</code>, <code>height</code>, <code>min_width</code>, <tt>max width</tt>, <code>min_height</code>, <code>max_height</code> will represent the size of the content area of the window. This excludes the titlebar and the window frame. When <code>use_content_size</code> is set to <code>false</code> (the default value), the size dimensions will represent the outer frame size.</p>
 
-<p>The <code>properties</code> hash accepts an optional key <code>style</code> where the value is one of:</p>
-<dl class="rdoc-list label-list"><dt><code>UI::HtmlDialog::STYLE_DIALOG</code>
+<p>The <code>properties</code> hash accepts an optional key <code>style</code> that controls the type of window, where the value is one of:</p>
+<dl class="rdoc-list label-list"><dt><code>UI::HtmlDialog::STYLE_DIALOG</code></dt>
 <dd>
-<p>HtmlDialog stays at the top of SketchUp.</p>
-</dd><dt><code>UI::HtmlDialog::STYLE_WINDOW</code>
+<p>Default window type.</p>
+</dd><dt><code>UI::HtmlDialog::STYLE_UTILITY</code></dt>
 <dd>
-<p>HtmlDialog can go behind SketchUp and doesn&#39;t disappear when SketchUp looses focus.</p>
-</dd><dt><code>UI::HtmlDialog::STYLE_UTILITY</code>
+<p>The window is intended to be used as a floating tool.</p>
+</dd><dt><code>UI::HtmlDialog::STYLE_WINDOW</code></dt>
 <dd>
-<p>HtmlDialog is shown with small titlebar and stays on top of SketchUp.</p>
+<p>Deprecated. Used in previous SketchUp versions, but now superseded by <code>UI::HtmlDialog::STYLE_DIALOG</code>.</p>
 </dd></dl>
+
+<p>The specific behaviour of these styles is <strong>not</strong> guaranteed for future SketchUp releases and should not be relied on, but the intended use will not change. Current and past behaviour is:</p>
+
+<p><strong>SketchUp 2023 or later on Windows / SketchUp 2027 or later on macOS</strong></p>
+
+<table role="table">
+<thead>
+<tr>
+<th>style</th>
+<th>Always stays on top of SketchUp</th>
+<th>Disappears when SketchUp loses focus</th>
+<th>Smaller titlebar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STYLE_DIALOG</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>STYLE_WINDOW</code></td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>STYLE_UTILITY</code></td>
+<td>Yes</td>
+<td>Mac - Yes, Windows - No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>SketchUp 2022 or earlier on Windows / SketchUp 2026 or earlier on macOS</strong></p>
+
+<table role="table">
+<thead>
+<tr>
+<th>style</th>
+<th>Always stays on top of SketchUp</th>
+<th>Disappears when SketchUp loses focus</th>
+<th>Smaller titlebar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STYLE_DIALOG</code></td>
+<td>Yes</td>
+<td>Mac - Yes, Windows - No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>STYLE_WINDOW</code></td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>STYLE_UTILITY</code></td>
+<td>Yes</td>
+<td>Mac - Yes, Windows - No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</p>
 
 
   </div>
@@ -1278,6 +1350,13 @@
 </div>
   </div>
 
+  <div class="note notetag">
+    <strong>Note:</strong>
+    <div class='inline'>
+<p>JavaScript integers larger than 2147483647 (2^31 - 1) are stored by the underlying V8 engine as 64-bit floats, causing them to be received by Ruby as a <code>Float</code> instead of an <code>Integer</code>. Small whole numbers within the 32-bit range will arrive as an <code>Integer</code>.</p>
+</div>
+  </div>
+
 
 <p>The <span class='object_link'><a href="#add_action_callback-instance_method" title="UI::HtmlDialog#add_action_callback (method)">#add_action_callback</a></span> method establishes a Ruby callback method that your html dialog can call to perform some function.</p>
 
@@ -1286,6 +1365,8 @@
 <p>The call is asynchronous. JavaScript call might return before Ruby callback even called. Use <code>onCompleted</code> callback to get notified for completion.</p>
 
 <p>Basic types such as booleans, numbers, strings, arrays and hashes are automatically converted between Ruby and JavaScript.</p>
+
+<p>Starting with SketchUp 2027.0, this method supports returning structured data from Ruby callbacks. Arrays and hashes returned by callbacks registered with the method are delivered to JavaScript through <code>onCompleted</code> callback.</p>
 
 
   </div>
@@ -1350,6 +1431,26 @@
 <span class='rbrace'>}</span>
 
 <span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span> <span class='comment'># should be called directly after binding callbacks</span></code></pre>
+    
+      
+        <h5 class="example_title"><div class='inline'>
+<p>Handling JavaScript integers exceeding the 32-bit range</p>
+</div></h5>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_dialog'>dialog</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="UI::HtmlDialog (class)">HtmlDialog</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="#initialize-instance_method" title="UI::HtmlDialog#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_html'>html</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&lt;button onclick=&quot;sketchup.process_ids(42, 3000000000)&quot;&gt;Click&lt;/button&gt;</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_set_html'>set_html</span><span class='lparen'>(</span><span class='id identifier rubyid_html'>html</span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_add_action_callback'>add_action_callback</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>process_ids</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_action_context'>action_context</span><span class='comma'>,</span> <span class='id identifier rubyid_small_id'>small_id</span><span class='comma'>,</span> <span class='id identifier rubyid_large_id'>large_id</span><span class='op'>|</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Small ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_small_id'>small_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>                <span class='comment'># =&gt; Integer (fits in 32-bit)
+</span>  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Large ID (Float): </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_large_id'>large_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>        <span class='comment'># =&gt; Float   (exceeds 32-bit, arrives as Float)
+</span>
+  <span class='comment'># To guarantee you are working with an Integer:
+</span>  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Large ID (Integer): </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_large_id'>large_id</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># =&gt; Integer
+</span><span class='rbrace'>}</span>
+
+<span class='id identifier rubyid_dialog'>dialog</span><span class='period'>.</span><span class='id identifier rubyid_show'>show</span></code></pre>
     
   </div>
 
@@ -1576,7 +1677,7 @@
 <div class="docstring">
   <div class="discussion">
     
-<p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the active model window. If there is no active model window, this function doesn&#39;t do anything.</p>
+<p>The <span class='object_link'><a href="#center-instance_method" title="UI::HtmlDialog#center (method)">#center</a></span> method is used to center the HtmlDialog relative to the active model window. If there is no active model window, this function doesn’t do anything.</p>
 
 
   </div>
@@ -2023,7 +2124,7 @@
   </div>
 
 
-<p>The <span class='object_link'><a href="#hide-instance_method" title="UI::HtmlDialog#hide (method)">#hide</a></span> method is used to hide a dialog box without closing it. This preserves the dialog&#39;s state and allows it to be shown again later without recreating the dialog.</p>
+<p>The <span class='object_link'><a href="#hide-instance_method" title="UI::HtmlDialog#hide (method)">#hide</a></span> method is used to hide a dialog box without closing it. This preserves the dialog’s state and allows it to be shown again later without recreating the dialog.</p>
 
 
   </div>
@@ -2169,6 +2270,22 @@
         
         <div class='inline'>
 <p>SketchUp 2017</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Known Bugs:</p>
+<ul class="bug">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>SketchUp 2026.2 introduced a bug where the block was not re-invoked on subsequent close attempts once it had returned <code>false</code> — the cancelled result was cached.</p>
 </div>
       
     </li>

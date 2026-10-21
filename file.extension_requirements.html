@@ -153,7 +153,7 @@
 
 <p>These are the requirements for publishing an extension to Extension Warehouse, but we recommend you follow these wherever you may publish your extension. Ignoring these requirements comes with the risk of your extension malfunctioning or causing other extensions to malfunction.</p>
 
-<h2 id="label-The+Basics">The Basics</h2>
+<h2 id="label-Requirements">Requirements</h2>
 
 <h3 id="label-File+Structure">File Structure</h3>
 
@@ -197,11 +197,11 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<p>The root RB file should only register the extension, not contain the extension&#39;s logic or load additional files.</p>
+<p>The root RB file should only register the extension, not contain the extension’s logic or load additional files.</p>
 
 <h3 id="label-Wrapping+Module">Wrapping Module</h3>
 
-<p>SketchUp extensions all run in a shared environment. To avoid clashes between similarly named methods and classes, all your extension&#39;s Ruby code must be wrapped in a single uniquely named module. Typically you can use the name of your company or your name, followed by the name of your extension.</p>
+<p>SketchUp extensions all run in a shared environment. To avoid clashes between similarly named methods and classes, all your extension’s Ruby code must be wrapped in a single uniquely named module. Typically you can use the name of your company or your name, followed by the name of your extension.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='kw'>module</span> <span class='const'>NameyNamesson</span>
   <span class='kw'>module</span> <span class='const'>CubeMaker</span>
@@ -212,7 +212,7 @@
 
 <h3 id="label-Requiring+Files">Requiring Files</h3>
 
-<p>When requiring Ruby files within your extension, prefer the <code>Sketchup.require</code> method over Ruby&#39;s own <code>require</code> or <code>require_relative</code>. By default Extension Warehouse encrypts extensions, converting <code>.rb</code> files into <code>.rbe</code> files. By omitting the file extension, <code>Sketchup.require</code> will look for both <code>.rb</code>, <code>.rbe</code> and <code>.rbs</code> files.</p>
+<p>When requiring Ruby files within your extension, prefer the <code>Sketchup.require</code> method over Ruby’s own <code>require</code> or <code>require_relative</code>. By default Extension Warehouse encrypts extensions, converting <code>.rb</code> files into <code>.rbe</code> files. By omitting the file extension, <code>Sketchup.require</code> will look for both <code>.rb</code>, <code>.rbe</code> and <code>.rbs</code> files.</p>
 
 <p>Hardcoding the <code>.rb</code> extension while also encrypting the extension leads to a load error.</p>
 
@@ -271,13 +271,21 @@
 
 <p>Extensions will be rejected from Extension Warehouse if they malfunction or cannot be used.</p>
 
+<h3 id="label-Safe">Safe</h3>
+
+<p>Extensions must be safe to install and use. For a starting point in SketchUp extension safety, see <a href="https://developer.sketchup.com/article-security-best-practises">this article</a>.</p>
+
+<h3 id="label-Readable+to+Reviewer">Readable to Reviewer</h3>
+
+<p>Extension code must be readable to the reviewer to verify its safety. Extensions should not be obfuscated or contain compiled binaries.</p>
+
 <h3 id="label-Global+Variables">Global Variables</h3>
 
 <p>Since SketchUp extensions run in a shared environment, global variables risk clashing between extensions and are not permitted. Instead use instance variables or class variables.</p>
 
 <h3 id="label-Printing+to+the+Console">Printing to the Console</h3>
 
-<p>Printing to the Ruby console can be useful for debugging. But if everyone does it, the console gets cluttered and you can&#39;t easily see what information comes from your extension and what comes from some other extension.</p>
+<p>Printing to the Ruby console can be useful for debugging. But if everyone does it, the console gets cluttered and you can’t easily see what information comes from your extension and what comes from some other extension.</p>
 
 <p>Remove or disable <code>puts</code>, <code>print</code> and <code>p</code> before publishing your extension.</p>
 
@@ -292,21 +300,25 @@
 <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>testing testing</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='const'>DEBUG_MODE</span>
 </code></pre>
 
+<h3 id="label-Library+Extensions">Library Extensions</h3>
+
+<p>Extensions that are not providing any functionality of their own, just supporting other extensions, are no longer allowed. Such extensions cause needless friction both for end users and in the extension review process, for very little benefit.</p>
+
+<p>If you have common logic you want to share between extensions, instead duplicate the code between them. Each extension should be self-contained.</p>
+
 <h3 id="label-Dependency+to+Another+Extension">Dependency to Another Extension</h3>
 
-<p>Ideally, avoid your extension depending on another extension. Prefer duplicating any shared logic between your extensions over publishing a “library extension”, to make installation easier for end users. If your extension does require another extension to work, make sure to clearly state this in its documentation and also show an error message if the dependency is missing.</p>
+<p>Avoid your extension depending on another extension. In the rare case your extension does require another extension to work, make sure to clearly state this in its documentation and also show an error message if the dependency is missing.</p>
 
 <h3 id="label-Matching+Title+and+Version+Number">Matching Title and Version Number</h3>
 
 <p>When submitting to Extension Warehouse, please make sure the title and version of the submission form matches that of the <code>SketchupExtension</code> in the RBZ.</p>
 
-<h2 id="label-The+Nitty+Gritty+Stuff">The Nitty Gritty Stuff</h2>
-
 <h3 id="label-Data+Loss">Data Loss</h3>
 
-<p>Extensions are not allowed to cause data loss. This includes silently removing or overwriting the user&#39;s data.</p>
+<p>Extensions are not allowed to cause data loss. This includes silently removing or overwriting the user’s data.</p>
 
-<p>For instance, do not silently save over the open model as the user may have made destructive changes they don&#39;t intend to save. Always ask before saving. Also don&#39;t purge unused components or other model assets without asking.</p>
+<p>For instance, do not silently save over the open model as the user may have made destructive changes they don’t intend to save. Always ask before saving. Also don’t purge unused components or other model assets without asking.</p>
 
 <h3 id="label-Eval">Eval</h3>
 
@@ -322,7 +334,7 @@
 
 <h3 id="label-Monkey+Patching+the+SketchUp+Ruby+API">Monkey Patching the SketchUp Ruby API</h3>
 
-<p>Since SketchUp extensions run in a shared environment, changing the modules and classes of the Ruby API from one extension can clash with another extension. Don&#39;t change these modules and classes.</p>
+<p>Since SketchUp extensions run in a shared environment, changing the modules and classes of the Ruby API from one extension can clash with another extension. Don’t change these modules and classes.</p>
 
 <h3 id="label-Gems">Gems</h3>
 
@@ -330,11 +342,11 @@
 
 <h3 id="label-24LOAD_PATH">$LOAD_PATH</h3>
 
-<p>Don&#39;t modify the <code>$LOAD_PATH</code>. Doing so may cause other extensions to load the wrong files. Instead include your extension support folder in the path whenever you load a file.</p>
+<p>Don’t modify the <code>$LOAD_PATH</code>. Doing so may cause other extensions to load the wrong files. Instead include your extension support folder in the path whenever you load a file.</p>
 
 <h3 id="label-Environment+Variables">Environment Variables</h3>
 
-<p>Don&#39;t modify <code>ENV</code>. Doing so can cause other extensions to malfunction.</p>
+<p>Don’t modify <code>ENV</code>. Doing so can cause other extensions to malfunction.</p>
 
 <h3 id="label-Exit">Exit</h3>
 
@@ -342,9 +354,9 @@
 
 <h3 id="label-Unsafe+License+Checks">Unsafe License Checks</h3>
 
-<p>Ruby is a very dynamic language where any method can be overridden at runtime. If you extract your licensing checks for a paid extension to a separate method, this method can be overridden and the extension used without a license. For better protection, prefer checking the license inside of the same method containing some of your main logic. Don&#39;t use a constant for your extension identifier as it too can be overridden. Prefer hardcoding the identifier directly where you make the license check</p>
+<p>Ruby is a very dynamic language where any method can be overridden at runtime. If you extract your licensing checks for a paid extension to a separate method, this method can be overridden and the extension used without a license. For better protection, prefer checking the license inside of the same method containing some of your main logic. Don’t use a constant for your extension identifier as it too can be overridden. Prefer hardcoding the identifier directly where you make the license check</p>
 
-<p>These recommendations make it harder but not impossible to crack the extension. For better security, you can compile your logic and use a Ruby C Extension to integrate it with SketchUp, or run it on a server using HTTP requests.</p>
+<p>These recommendations make it harder but not impossible to crack the extension. For better security, you can run your main application as a cloud service and use <code>HtmlDialog</code> or <code>Http</code> to connect to it from the extension.</p>
 
 <h3 id="label-WebDialog">WebDialog</h3>
 
@@ -353,6 +365,10 @@
 <h2 id="label-And+More-E2-80-A6">And More…</h2>
 
 <p>This is not a complete list of everything an extension can be denied for. See the below links for more details and use your good judgment when developing.</p>
+
+<h2 id="label-Exceptions">Exceptions</h2>
+
+<p>In individual cases trusted extension developers can be exempt from some of these requirements when there is a good technical reason for doing so.</p>
 
 <h2 id="label-RuboCop">RuboCop</h2>
 
